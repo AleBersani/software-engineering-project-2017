@@ -16,14 +16,18 @@ public class Goods {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param resources
+     * Constructor with only Resources, set points as default (0)
+     * @param resources resources to set
      */
     public Goods(Resources resources) {
         this.resources = resources;
         points = new Points();
     }
 
+    /**
+     * Constructor with only Points, set resources as default (0)
+     * @param points points to set
+     */
     public Goods(Points points) {
         resources = new Resources();
         this.points = points;
