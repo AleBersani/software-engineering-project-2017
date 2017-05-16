@@ -1,5 +1,6 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.basics;
 
+import it.polimi.ingsw.gamelogic.basics.Resources;
 import org.junit.Before;
 import org.junit.Test;
 

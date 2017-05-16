@@ -1,20 +1,28 @@
+package it.polimi.ingsw.gamelogic.board;
+
+import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
+import it.polimi.ingsw.gamelogic.basics.Goods;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CouncilPalace {
+    /*
+    TODO: Stream
+     */
     private List<String> playerOrder;
-    //private ExchangingGoods instantGoods;
+    private ExchangingGoods instantGoods;
     private int requiredValue;
 
     public static void main(String argv[]) {
-        CouncilPalace councilPalace = new CouncilPalace(1);
+        CouncilPalace councilPalace = new CouncilPalace(new ExchangingGoods(1), 1);
         councilPalace.addToPlayerOrder("Dennis");
         councilPalace.addToPlayerOrder("Fabri");
         councilPalace.addToPlayerOrder("Cami");
         System.out.println(councilPalace.isAlreadyPresent("Fabri"));
     }
 
-    public CouncilPalace(/*ExchangingGoods instantGoods,*/ int requiredValue) {
+    public CouncilPalace(ExchangingGoods instantGoods, int requiredValue) {
         //this.instantGoods = instantGoods;
         this.requiredValue = requiredValue;
         playerOrder = new ArrayList<>();
@@ -49,15 +57,15 @@ public class CouncilPalace {
     public void setPlayerOrder(List<String> playerOrder) {
         this.playerOrder = playerOrder;
     }
-/*
-    public Goods getInstantGoods() {
+
+    public ExchangingGoods getInstantGoods() {
         return instantGoods;
     }
 
-    public void setInstantGoods(Goods instantGoods) {
+    public void setInstantGoods(ExchangingGoods instantGoods) {
         this.instantGoods = instantGoods;
     }
-*/
+
     public int getRequiredValue() {
         return requiredValue;
     }

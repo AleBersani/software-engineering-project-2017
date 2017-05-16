@@ -1,3 +1,6 @@
+package it.polimi.ingsw.gamelogic.board;
+
+import it.polimi.ingsw.gamelogic.basics.Goods;
 
 public class ActionSpaceWithInstantGoods extends ActionSpace {
     private Goods instantGoods;

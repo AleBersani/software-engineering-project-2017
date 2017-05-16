@@ -1,4 +1,6 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.basics;
+
+import it.polimi.ingsw.gamelogic.Util;
 
 import java.util.Objects;
 
@@ -45,11 +47,21 @@ public class Resources {
         coins += resourcesToAdd.getCoins();
     }
 
+    /*
+    TODO: delete subtractOrSetToZero
+     */
     public void subtract(Resources resourcesToSubtract) {
         woods = Util.subtractOrSetToZero(woods, resourcesToSubtract.getWoods());
         stones = Util.subtractOrSetToZero(stones, resourcesToSubtract.getStones());
         servants = Util.subtractOrSetToZero(servants, resourcesToSubtract.getServants());
         coins = Util.subtractOrSetToZero(coins, resourcesToSubtract.getCoins());
+    }
+
+    public boolean isMoreThan(Resources resourcesToConfront) {
+        /*
+        TODO: method
+         */
+        return false;
     }
 
     public boolean isEmpty() {

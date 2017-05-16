@@ -1,4 +1,6 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.actions;
+
+import it.polimi.ingsw.gamelogic.actions.ActionDescription;
 
 /**
  * Class that represent every action related to a Leader Card, in particular:

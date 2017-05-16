@@ -1,4 +1,6 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.actions;
+
+import it.polimi.ingsw.gamelogic.basics.Goods;
 
 /**
  * Class that describes actions related to collecting a card from the Towers.

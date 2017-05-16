@@ -1,4 +1,6 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.actions;
+
+import it.polimi.ingsw.gamelogic.basics.Goods;
 
 /**
  * This class describes the flash action of some Development Cards requiring a certain number of "things"

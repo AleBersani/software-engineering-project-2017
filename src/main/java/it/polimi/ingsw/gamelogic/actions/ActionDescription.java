@@ -1,4 +1,4 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.actions;
 
 /**
  * Abstract Class representing the most basic information of an Action.

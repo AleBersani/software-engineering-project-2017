@@ -1,4 +1,6 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.actions;
+
+import it.polimi.ingsw.gamelogic.actions.ActionDescription;
 
 /**
  * This Class describes an action concerning the activation of an Action Space on the Board.

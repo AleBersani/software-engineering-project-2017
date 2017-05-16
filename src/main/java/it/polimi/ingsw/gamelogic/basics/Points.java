@@ -1,4 +1,6 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.basics;
+
+import it.polimi.ingsw.gamelogic.Util;
 
 import java.util.Objects;
 
@@ -40,10 +42,20 @@ public class Points {
         faith += pointsToAdd.getFaith();
     }
 
+    /*
+    TODO: delete subtractOrSetToZero
+     */
     public void subtract(Points pointsToSubtract) {
         victory = Util.subtractOrSetToZero(victory, pointsToSubtract.getVictory());
         military = Util.subtractOrSetToZero(military, pointsToSubtract.getMilitary());
         faith = Util.subtractOrSetToZero(faith, pointsToSubtract.getFaith());
+    }
+
+    public boolean isMoreThan(Points pointsToConfront) {
+        /*
+        TODO: method
+         */
+        return false;
     }
 
     public boolean isEmpty(){

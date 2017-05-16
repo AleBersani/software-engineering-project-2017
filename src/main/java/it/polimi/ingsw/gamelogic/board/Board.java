@@ -1,3 +1,7 @@
+package it.polimi.ingsw.gamelogic.board;
+
+import it.polimi.ingsw.gamelogic.cards.ExcommunicationTile;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,6 +9,9 @@ public class Board {
     private List<Tower> towers;
     private List<ExcommunicationTile> excommunicationTiles;
     private CouncilPalace councilPalace;
+    /*
+    TODO: wrapper for List<ActionSpace>
+     */
     private List<ActionSpace> productionArea;
     private List<ActionSpace> harvestArea;
     private List<ActionSpace> marketArea;
@@ -25,29 +32,17 @@ public class Board {
     /**
      * It returns the value associated to a specific coloured Dice
      **/
+    /*
+    TODO: color is an ENUM
+     */
     public int getDiceValueWithColor(String color) {
-        for (Dice T : this.dices)
+        for (Dice T : dices)
             if(T.getColor().equals(color))
                 return T.getValue();
-    }
-
-    public ActionSpace getFreeProductionArea() {
-        return this.getFreeActionSpace(this.productionArea);
-    }
-
-    public ActionSpace getFreeHarvestArea() {
-        return this.getFreeActionSpace(this.harvestArea);
-    }
-
-    public ActionSpace getFreeMarketArea() {
-        return this.getFreeActionSpace(this.marketArea);
-    }
-
-    private ActionSpace getFreeActionSpace(List<ActionSpace> actionSpaces) {
-        for( ActionSpace T : actionSpaces )
-            if(!T.isAlreadyTaken())
-                return T;
-        return null;
+        /*
+        TODO: check return statement. Return 0 was missing
+         */
+        return 0;
     }
 
     public List<Tower> getTowers() {

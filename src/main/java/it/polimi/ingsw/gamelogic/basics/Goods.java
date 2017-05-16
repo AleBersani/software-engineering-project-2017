@@ -1,4 +1,4 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.basics;
 
 import java.util.Objects;
 
@@ -15,6 +15,10 @@ public class Goods {
         points = new Points();
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param resources
+     */
     public Goods(Resources resources) {
         this.resources = resources;
         points = new Points();

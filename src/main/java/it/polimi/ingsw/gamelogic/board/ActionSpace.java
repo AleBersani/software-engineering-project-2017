@@ -1,3 +1,4 @@
+package it.polimi.ingsw.gamelogic.board;
 
 public class ActionSpace {
     protected boolean alreadyTaken;

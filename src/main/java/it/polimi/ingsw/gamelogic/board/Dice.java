@@ -1,5 +1,9 @@
+package it.polimi.ingsw.gamelogic.board;
 
 public class Dice {
+    /*
+    TODO: color is an ENUM
+     */
     private String color;
     private int value;
 

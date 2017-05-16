@@ -1,4 +1,7 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.cards;
+
+import it.polimi.ingsw.gamelogic.basics.CardCost;
+import it.polimi.ingsw.gamelogic.basics.FlashEffect;
 
 public class FlashEffectLeaderCard extends LeaderCard {
     private FlashEffect flashEffect;

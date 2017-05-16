@@ -1,4 +1,4 @@
-package it.polimi.ingsw.gamelogic;
+package it.polimi.ingsw.gamelogic.basics;
 
 import java.util.Objects;
 
@@ -17,6 +17,9 @@ public class ExchangingGoods extends Goods {
         this.numberOfCouncilPrivilege = numberOfCouncilPrivilege;
     }
 
+    /*
+    TODO: contructor with only Goods
+     */
     public ExchangingGoods(Resources resources, int numberOfCouncilPrivilege) {
         super(resources);
         this.numberOfCouncilPrivilege = numberOfCouncilPrivilege;
