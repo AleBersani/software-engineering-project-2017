@@ -6,12 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CouncilPalace {
-    /*
-    TODO: Stream
-     */
-    private List<String> playerOrder;
     private ExchangingGoods instantGoods;
     private int requiredValue;
+
+    private List<String> playerOrder;
 
     public CouncilPalace(ExchangingGoods instantGoods, int requiredValue) {
         this.instantGoods = instantGoods;
@@ -33,15 +31,8 @@ public class CouncilPalace {
      * It controls if the player is already in the Player Order list
      **/
     private boolean isAlreadyPresent(String player) {
-        return playerOrder.stream().anyMatch(e -> e.equals(player));
-    }
-
-    public List<String> getPlayerOrder() {
-        return playerOrder;
-    }
-
-    public void setPlayerOrder(List<String> playerOrder) {
-        this.playerOrder = playerOrder;
+        return playerOrder.stream()
+                .anyMatch(e -> e.equals(player));
     }
 
     public ExchangingGoods getInstantGoods() {
@@ -58,5 +49,13 @@ public class CouncilPalace {
 
     public void setRequiredValue(int requiredValue) {
         this.requiredValue = requiredValue;
+    }
+
+    public List<String> getPlayerOrder() {
+        return playerOrder;
+    }
+
+    public void setPlayerOrder(List<String> playerOrder) {
+        this.playerOrder = playerOrder;
     }
 }

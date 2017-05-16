@@ -1,37 +1,36 @@
 package it.polimi.ingsw.gamelogic.board;
 
-import it.polimi.ingsw.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.gamelogic.enums.GlobalColor;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Tower {
-    private GeneralColor color;
-    /*
-    TODO: streams
-     */
+    private GlobalColor color;
     private List<TowerSlot> tower;
+
     private List<PawnColor> positionedPawnsColors;
 
-    public Tower(GeneralColor color, List<TowerSlot> tower) {
+    public Tower(GlobalColor color, List<TowerSlot> tower) {
         this.color = color;
         this.tower = tower;
         positionedPawnsColors = new ArrayList<>();
     }
 
     /**
-     *  It adds a specific coloured pawn if that colour is not present on the tower yet
+     *  It adds a specific coloured pawn if that colour is not present on the tower yet.
+     *  Control delegated to the implementing class.
      **/
     public void addPositionedPawn(PawnColor color) {
         positionedPawnsColors.add(color);
     }
 
-    public GeneralColor getColor() {
+    public GlobalColor getColor() {
         return color;
     }
 
-    public void setColor(GeneralColor color) {
+    public void setColor(GlobalColor color) {
         this.color = color;
     }
 

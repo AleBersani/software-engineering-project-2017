@@ -46,10 +46,6 @@ public class ExchangingGoods extends Goods {
         return Objects.hash(super.hashCode(), getNumberOfCouncilPrivilege());
     }
 
-    /*
-    TODO: method that returns Reward
-     */
-
     public int getNumberOfCouncilPrivilege() {
         return numberOfCouncilPrivilege;
     }

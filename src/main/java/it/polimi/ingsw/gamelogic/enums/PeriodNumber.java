@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.enums;
 
-public enum PeriodEnum {
+public enum PeriodNumber {
     FIRST,
     SECOND,
     THIRD

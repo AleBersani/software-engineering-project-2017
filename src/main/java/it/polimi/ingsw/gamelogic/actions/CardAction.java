@@ -9,6 +9,7 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 public class CardAction extends ActionDescription {
     private String spaceIdentifier;
     private int actionValue;
+
     private int numberOfServants;
     private Goods discount;
 

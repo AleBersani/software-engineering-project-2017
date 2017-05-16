@@ -7,8 +7,8 @@ public class TowerSlot {
     private DevelopmentCard card;
     private int requestedValue;
     private Goods instantGoods;
-    private boolean occupiedTowerSlot;
 
+    private boolean occupiedTowerSlot;
 
     public TowerSlot(DevelopmentCard card, int requestedValue, Goods instantGoods) {
         this.card = card;

@@ -2,39 +2,54 @@ package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.cards.ExcommunicationTile;
 import it.polimi.ingsw.gamelogic.enums.DiceColor;
+import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
     private List<Tower> towers;
-    private List<ExcommunicationTile> excommunicationTiles;
     private CouncilPalace councilPalace;
-    /*
-    TODO: wrapper for List<ActionSpace>
-     */
-    private List<ActionSpace> productionArea;
-    private List<ActionSpace> harvestArea;
-    private List<ActionSpace> marketArea;
+    private BoardActionSpaces boardActionSpaces;
+
+    private List<ExcommunicationTile> excommunicationTiles;
     private List<Dice> dices;
 
-
-    public Board(List<Tower> towers, CouncilPalace councilPalace,
-                 List<ActionSpace> productionArea, List<ActionSpace> harvestArea, List<ActionSpace> marketArea) {
+    public Board(List<Tower> towers, CouncilPalace councilPalace, BoardActionSpaces boardActionSpaces) {
         this.towers = towers;
-        excommunicationTiles = new ArrayList<>();
         this.councilPalace = councilPalace;
-        this.productionArea = productionArea;
-        this.harvestArea = harvestArea;
-        this.marketArea = marketArea;
+        this.boardActionSpaces = boardActionSpaces;
+        excommunicationTiles = new ArrayList<>();
         dices = new ArrayList<>();
     }
 
+    /*
+    TODO: auxiliaries methods
+     */
+
     /**
-     * It returns the value associated to a specific coloured Dice
-     **/
-    public int getDiceValueWithColor(DiceColor color) {
-        return dices.stream().filter(e -> e.equals(color)).findFirst().get().getValue();
+     * Get Excommunication Tile by passing the number of the period as parameter
+     * @param periodNumber
+     * @return selected Excommunication Tile
+     */
+    public ExcommunicationTile getExcommunicationTileGivenPeriod(PeriodNumber periodNumber) {
+        return excommunicationTiles.stream()
+                .filter(e -> e.equals(periodNumber))
+                .findFirst()
+                .get();
+    }
+
+    /**
+     * Methods to get the value associated to a specific coloured Dice
+     * @param color type of color
+     * @return value associated to a specific coloured Dice
+     */
+    public int getDiceValueGivenColor(DiceColor color) {
+        return dices.stream()
+                .filter(e -> e.equals(color))
+                .findFirst()
+                .get()
+                .getValue();
     }
 
     public List<Tower> getTowers() {
@@ -45,14 +60,6 @@ public class Board {
         this.towers = towers;
     }
 
-    public List<ExcommunicationTile> getExcommunicationTiles() {
-        return excommunicationTiles;
-    }
-
-    public void setExcommunicationTiles(List<ExcommunicationTile> excommunicationTiles) {
-        this.excommunicationTiles = excommunicationTiles;
-    }
-
     public CouncilPalace getCouncilPalace() {
         return councilPalace;
     }
@@ -61,28 +68,20 @@ public class Board {
         this.councilPalace = councilPalace;
     }
 
-    public List<ActionSpace> getProductionArea() {
-        return productionArea;
+    public BoardActionSpaces getBoardActionSpaces() {
+        return boardActionSpaces;
     }
 
-    public void setProductionArea(List<ActionSpace> productionArea) {
-        this.productionArea = productionArea;
+    public void setBoardActionSpaces(BoardActionSpaces boardActionSpaces) {
+        this.boardActionSpaces = boardActionSpaces;
     }
 
-    public List<ActionSpace> getHarvestArea() {
-        return harvestArea;
+    public List<ExcommunicationTile> getExcommunicationTiles() {
+        return excommunicationTiles;
     }
 
-    public void setHarvestArea(List<ActionSpace> harvestArea) {
-        this.harvestArea = harvestArea;
-    }
-
-    public List<ActionSpace> getMarketArea() {
-        return marketArea;
-    }
-
-    public void setMarketArea(List<ActionSpace> marketArea) {
-        this.marketArea = marketArea;
+    public void setExcommunicationTiles(List<ExcommunicationTile> excommunicationTiles) {
+        this.excommunicationTiles = excommunicationTiles;
     }
 
     public List<Dice> getDices() {

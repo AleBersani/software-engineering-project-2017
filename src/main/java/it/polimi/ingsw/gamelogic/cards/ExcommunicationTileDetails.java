@@ -1,10 +1,10 @@
 package it.polimi.ingsw.gamelogic.cards;
 
-import it.polimi.ingsw.gamelogic.enums.PeriodEnum;
+import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
 public class ExcommunicationTileDetails {
     private String excommunicationTileName;
-    private PeriodEnum period;
+    private PeriodNumber period;
 
     public String getExcommunicationTileName() {
         return excommunicationTileName;
@@ -14,11 +14,11 @@ public class ExcommunicationTileDetails {
         this.excommunicationTileName = excommunicationTileName;
     }
 
-    public PeriodEnum getPeriod() {
+    public PeriodNumber getPeriod() {
         return period;
     }
 
-    public void setPeriod(PeriodEnum period) {
+    public void setPeriod(PeriodNumber period) {
         this.period = period;
     }
 }

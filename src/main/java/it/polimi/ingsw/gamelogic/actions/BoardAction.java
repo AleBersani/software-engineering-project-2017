@@ -9,6 +9,7 @@ import it.polimi.ingsw.gamelogic.actions.ActionDescription;
 public class BoardAction extends ActionDescription {
     private String spaceIdentifier;
     private int actionValue;
+
     private int numberOfServants;
     private String pawnColor;
 

@@ -16,10 +16,8 @@ public class CardActionInstantPoints extends ActionDescription {
     private String typeOfObjectRequired;
     private int numberOfObjectRequired;
 
-    public CardActionInstantPoints(String actionIdentifier,
-                                   Goods rewardForExchange,
-                                   String typeOfObjectRequired,
-                                   int numberOfObjectRequired) {
+    public CardActionInstantPoints(String actionIdentifier, Goods rewardForExchange,
+                                   String typeOfObjectRequired, int numberOfObjectRequired) {
         super(actionIdentifier);
         this.rewardForExchange = rewardForExchange;
         this.typeOfObjectRequired = typeOfObjectRequired;
