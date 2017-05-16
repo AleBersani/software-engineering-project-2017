@@ -2,34 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3565f9e9-2953-4477-96c2-c965b7d6ccb1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/DevelopmentCard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/ExcommunicationTile.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/ActionDescription.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/actions/ActionDescription.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/ActionSpace.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/ActionSpace.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/ActionSpaceWithInstantGoods.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/ActionSpaceWithInstantGoods.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/Board.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/Board.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/BoardAction.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/actions/BoardAction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/CardAction.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/actions/CardAction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/CardActionInstantPoints.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/actions/CardActionInstantPoints.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/CardCost.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CardCost.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/CouncilPalace.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/CouncilPalace.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/Dice.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/Dice.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/DoubleFlashEffect.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/DoubleFlashEffect.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/ExchangingGoods.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/ExchangingGoods.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/FlashEffect.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/FlashEffect.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/FlashEffectLeaderCard.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/FlashEffectLeaderCard.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/Goods.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/Goods.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/LeaderAction.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/actions/LeaderAction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/LeaderCard.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/LeaderCard.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/LeaderCost.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/LeaderCost.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/Points.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/Points.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/Resources.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/Resources.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/SpecialEffectLeaderCard.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/SpecialEffectLeaderCard.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/Tower.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/Tower.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/TowerSlot.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/TowerSlot.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/GoodsTest.java" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/basics/GoodsTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/PointsTest.java" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/basics/PointsTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/ResourcesTest.java" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/basics/ResourcesTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1163,7 +1135,7 @@
       <workItem from="1494593296341" duration="18064000" />
       <workItem from="1494920795707" duration="5618000" />
       <workItem from="1494932559742" duration="574000" />
-      <workItem from="1494933242200" duration="5631000" />
+      <workItem from="1494933242200" duration="5840000" />
     </task>
     <task id="LOCAL-00001" summary="Upload default project">
       <created>1494538976217</created>
@@ -1214,7 +1186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494924864137</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactor Model">
+      <created>1494939734636</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1494939734636</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1250,7 +1229,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32353000" />
+    <option name="totallyTimeSpent" value="32562000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1263,7 +1242,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1340,7 +1318,8 @@
     <MESSAGE value="Setting the -source and -target of the Java Compiler" />
     <MESSAGE value="Added GSON dependency" />
     <MESSAGE value="Game Logic classes and tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Game Logic classes and tests" />
+    <MESSAGE value="Refactor Model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
