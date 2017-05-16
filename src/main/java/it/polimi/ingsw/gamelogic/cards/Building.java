@@ -10,9 +10,9 @@ public class Building extends DevelopmentCard {
     private List<ExchangingGoods> productionResult;
     private List<Goods> requirementsForProductionExchange;
 
-    public Building(CardInformation cardInformation, List<Goods> cost,
-                    FlashEffect instantEffect, int productionActionValueRequired,
-                    List<ExchangingGoods> productionResult, List<Goods> requirementsForProductionExchange) {
+    public Building(CardInformation cardInformation, List<Goods> cost, FlashEffect instantEffect,
+                    int productionActionValueRequired, List<ExchangingGoods> productionResult,
+                    List<Goods> requirementsForProductionExchange) {
         super(cardInformation, cost, instantEffect);
         this.productionActionValueRequired = productionActionValueRequired;
         this.productionResult = productionResult;

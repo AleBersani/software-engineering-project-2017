@@ -6,19 +6,18 @@ import it.polimi.ingsw.gamelogic.basics.Points;
 import java.util.List;
 
 public class Venture extends DevelopmentCard {
-    private Points endGamePoints;
+    private Goods endGameReward;
 
-    public Venture(CardInformation cardInformation, List<Goods> cost,
-                   FlashEffect instantEffect, Points endGamePoints) {
+    public Venture(CardInformation cardInformation, List<Goods> cost, FlashEffect instantEffect, Goods endGameReward) {
         super(cardInformation, cost, instantEffect);
-        this.endGamePoints = endGamePoints;
+        this.endGameReward = endGameReward;
     }
 
-    public Points getEndGamePoints() {
-        return endGamePoints;
+    public Goods getEndGameReward() {
+        return endGameReward;
     }
 
-    public void setEndGamePoints(Points endGamePoints) {
-        this.endGamePoints = endGamePoints;
+    public void setEndGameReward(Goods endGameReward) {
+        this.endGameReward = endGameReward;
     }
 }

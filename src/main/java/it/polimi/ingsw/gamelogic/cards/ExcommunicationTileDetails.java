@@ -6,6 +6,11 @@ public class ExcommunicationTileDetails {
     private String excommunicationTileName;
     private PeriodNumber period;
 
+    public ExcommunicationTileDetails(String excommunicationTileName, PeriodNumber period) {
+        this.excommunicationTileName = excommunicationTileName;
+        this.period = period;
+    }
+
     public String getExcommunicationTileName() {
         return excommunicationTileName;
     }

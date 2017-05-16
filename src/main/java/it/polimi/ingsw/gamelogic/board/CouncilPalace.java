@@ -1,6 +1,7 @@
 package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
+import it.polimi.ingsw.gamelogic.player.PlayerDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ public class CouncilPalace {
     private ExchangingGoods instantGoods;
     private int requiredValue;
 
-    private List<String> playerOrder;
+    private List<PlayerDetails> playerOrder;
 
     public CouncilPalace(ExchangingGoods instantGoods, int requiredValue) {
         this.instantGoods = instantGoods;
@@ -22,7 +23,7 @@ public class CouncilPalace {
      * the Council Palace for the first time in the game
      * @param player Name of the player added to the list
      **/
-    public void addToPlayerOrder(String player) {
+    public void addToPlayerOrder(PlayerDetails player) {
         if (playerOrder.isEmpty() || !isAlreadyPresent(player))
             playerOrder.add(player);
     }
@@ -30,7 +31,7 @@ public class CouncilPalace {
     /**
      * It controls if the player is already in the Player Order list
      **/
-    private boolean isAlreadyPresent(String player) {
+    private boolean isAlreadyPresent(PlayerDetails player) {
         return playerOrder.stream()
                 .anyMatch(e -> e.equals(player));
     }
@@ -51,11 +52,11 @@ public class CouncilPalace {
         this.requiredValue = requiredValue;
     }
 
-    public List<String> getPlayerOrder() {
+    public List<PlayerDetails> getPlayerOrder() {
         return playerOrder;
     }
 
-    public void setPlayerOrder(List<String> playerOrder) {
+    public void setPlayerOrder(List<PlayerDetails> playerOrder) {
         this.playerOrder = playerOrder;
     }
 }

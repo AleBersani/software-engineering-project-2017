@@ -13,6 +13,26 @@ public class PlayerDetails {
         this.playerColor = playerColor;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PlayerDetails)) return false;
+
+        PlayerDetails that = (PlayerDetails) o;
+
+        if (!getPlayerIdentifier().equals(that.getPlayerIdentifier())) return false;
+        if (!getPlayerName().equals(that.getPlayerName())) return false;
+        return getPlayerColor() == that.getPlayerColor();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getPlayerIdentifier().hashCode();
+        result = 31 * result + getPlayerName().hashCode();
+        result = 31 * result + getPlayerColor().hashCode();
+        return result;
+    }
+
     public String getPlayerIdentifier() {
         return playerIdentifier;
     }

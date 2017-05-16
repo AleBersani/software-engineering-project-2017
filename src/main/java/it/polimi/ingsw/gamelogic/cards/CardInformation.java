@@ -1,12 +1,14 @@
 package it.polimi.ingsw.gamelogic.cards;
 
+import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
+
 public class CardInformation {
     private int number;
     private String name;
-    private int period;
+    private PeriodNumber period;
     private String cardColor;
 
-    public CardInformation(int number, String name, int period, String cardColor) {
+    public CardInformation(int number, String name, PeriodNumber period, String cardColor) {
         this.number = number;
         this.name = name;
         this.period = period;
@@ -29,11 +31,11 @@ public class CardInformation {
         this.name = name;
     }
 
-    public int getPeriod() {
+    public PeriodNumber getPeriod() {
         return period;
     }
 
-    public void setPeriod(int period) {
+    public void setPeriod(PeriodNumber period) {
         this.period = period;
     }
 

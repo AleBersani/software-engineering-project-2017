@@ -9,9 +9,8 @@ public class Territory extends DevelopmentCard {
     private int harvestActionValueRequired;
     private ExchangingGoods harvestResult;
 
-    public Territory(CardInformation cardInformation, List<Goods> cost,
-                     FlashEffect instantEffect, int harvestActionValueRequired,
-                     ExchangingGoods harvestResult) {
+    public Territory(CardInformation cardInformation, List<Goods> cost, FlashEffect instantEffect,
+                     int harvestActionValueRequired, ExchangingGoods harvestResult) {
         super(cardInformation, cost, instantEffect);
         this.harvestActionValueRequired = harvestActionValueRequired;
         this.harvestResult = harvestResult;

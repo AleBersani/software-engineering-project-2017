@@ -27,6 +27,8 @@ public class Board {
     TODO: auxiliaries methods
      */
 
+
+
     /**
      * Get Excommunication Tile by passing the number of the period as parameter
      * @param periodNumber
