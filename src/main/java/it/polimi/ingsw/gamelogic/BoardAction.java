@@ -2,7 +2,7 @@ package it.polimi.ingsw.gamelogic;
 
 /**
  * This Class describes an action concerning the activation of an Action Space on the Board.
- * It can be set by the player of by the effect of a Card (Leader or Development).
+ * It can be set by the player using the effect of a Card (Leader or Development).
  */
 public class BoardAction extends ActionDescription {
     private String spaceIdentifier;

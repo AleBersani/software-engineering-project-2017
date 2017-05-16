@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic;
 
 /**
- * Class which represents the cost of a Card.
+ * Class that represents the cost of a Card.
  * Wrapper of Goods, it's necessary because we can extend this to represent some peculiar costs of the Leader Cards.
  */
 public class CardCost {

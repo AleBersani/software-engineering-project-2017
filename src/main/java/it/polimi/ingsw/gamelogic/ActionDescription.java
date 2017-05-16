@@ -1,8 +1,8 @@
 package it.polimi.ingsw.gamelogic;
 
 /**
- * Abstract Class representing the most basic information for an Action.
- * In order to determine the right action additional information are needed, which's why it's declared as abstract.
+ * Abstract Class representing the most basic information of an Action.
+ * In order to determine the right action additional information are needed, which is why it's declared as abstract.
  */
 public abstract class ActionDescription {
     protected String actionIdentifier;

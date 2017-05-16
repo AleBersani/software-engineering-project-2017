@@ -9,7 +9,7 @@ public class ExchangingGoods extends Goods {
     private int numberOfCouncilPrivilege;
 
     /**
-     * Constructr useful when we have only Councile's Privileges
+     * Constructor useful when we have only Councile's Privileges
      * @param numberOfCouncilPrivilege number of Council's Privileges
      */
     public ExchangingGoods(int numberOfCouncilPrivilege) {
