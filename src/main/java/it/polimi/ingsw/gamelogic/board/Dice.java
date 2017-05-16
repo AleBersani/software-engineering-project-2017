@@ -1,28 +1,22 @@
 package it.polimi.ingsw.gamelogic.board;
 
+import it.polimi.ingsw.gamelogic.enums.DiceColor;
+
 public class Dice {
-    /*
-    TODO: color is an ENUM
-     */
-    private String color;
+    private DiceColor diceColor;
     private int value;
 
-    public Dice() {
-        color = "";
-        value = 0;
-    }
-
-    public Dice(String color, int value) {
-        this.color = color;
+    public Dice(DiceColor diceColor, int value) {
+        this.diceColor = diceColor;
         this.setValue(value);
     }
 
-    public String getColor() {
-        return color;
+    public DiceColor getDiceColor() {
+        return diceColor;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setDiceColor(DiceColor diceColor) {
+        this.diceColor = diceColor;
     }
 
     public int getValue() {

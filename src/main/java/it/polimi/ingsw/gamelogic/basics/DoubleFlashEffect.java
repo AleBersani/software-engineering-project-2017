@@ -4,7 +4,7 @@ public class DoubleFlashEffect extends FlashEffect {
     /*
     TODO: private ActionDetails Action
      */
-    public DoubleFlashEffect(ExchangingGoods instantGoods) {
+    public DoubleFlashEffect(Goods instantGoods) {
         super(instantGoods);
     }
 }

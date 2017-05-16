@@ -1,6 +1,7 @@
 package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.cards.ExcommunicationTile;
+import it.polimi.ingsw.gamelogic.enums.DiceColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,17 +33,8 @@ public class Board {
     /**
      * It returns the value associated to a specific coloured Dice
      **/
-    /*
-    TODO: color is an ENUM
-     */
-    public int getDiceValueWithColor(String color) {
-        for (Dice T : dices)
-            if(T.getColor().equals(color))
-                return T.getValue();
-        /*
-        TODO: check return statement. Return 0 was missing
-         */
-        return 0;
+    public int getDiceValueWithColor(DiceColor color) {
+        return dices.stream().filter(e -> e.equals(color)).findFirst().get().getValue();
     }
 
     public List<Tower> getTowers() {

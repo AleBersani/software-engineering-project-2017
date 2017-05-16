@@ -17,9 +17,6 @@ public class ExchangingGoods extends Goods {
         this.numberOfCouncilPrivilege = numberOfCouncilPrivilege;
     }
 
-    /*
-    TODO: contructor with only Goods
-     */
     public ExchangingGoods(Resources resources, int numberOfCouncilPrivilege) {
         super(resources);
         this.numberOfCouncilPrivilege = numberOfCouncilPrivilege;
@@ -61,3 +58,4 @@ public class ExchangingGoods extends Goods {
         this.numberOfCouncilPrivilege = numberOfCouncilPrivilege;
     }
 }
+

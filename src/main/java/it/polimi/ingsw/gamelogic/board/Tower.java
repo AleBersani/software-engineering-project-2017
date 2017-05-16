@@ -1,54 +1,37 @@
 package it.polimi.ingsw.gamelogic.board;
 
+import it.polimi.ingsw.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.gamelogic.enums.PawnColor;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Tower {
-    /*
-    TODO: color is an ENUM
-     */
-    private String color;
+    private GeneralColor color;
     /*
     TODO: streams
      */
     private List<TowerSlot> tower;
-    private List<String> positionedPawnsColors;
+    private List<PawnColor> positionedPawnsColors;
 
-    public Tower(String color, List<TowerSlot> tower) {
+    public Tower(GeneralColor color, List<TowerSlot> tower) {
         this.color = color;
         this.tower = tower;
         positionedPawnsColors = new ArrayList<>();
     }
 
     /**
-     * It controls if the tower is already occupied by a specific coloured pawn
-     **/
-    /*
-    TODO: pawnColor is an ENUM
-     */
-    public boolean hasSameColor(String pawnColor) {
-        for (String p: positionedPawnsColors)
-            if (p.equals(pawnColor))
-                return true;
-        return false;
-    }
-
-    /**
      *  It adds a specific coloured pawn if that colour is not present on the tower yet
      **/
-    /*
-    TODO: pawnColor is an ENUM & return type boolean
-     */
-    public void addPositionedPawn(String color) {
-        if(!hasSameColor(color))
-            positionedPawnsColors.add(color);
+    public void addPositionedPawn(PawnColor color) {
+        positionedPawnsColors.add(color);
     }
 
-    public String getColor() {
+    public GeneralColor getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(GeneralColor color) {
         this.color = color;
     }
 
@@ -60,11 +43,11 @@ public class Tower {
         this.tower = tower;
     }
 
-    public List<String> getPositionedPawnsColors() {
+    public List<PawnColor> getPositionedPawnsColors() {
         return positionedPawnsColors;
     }
 
-    public void setPositionedPawnsColors(List<String> positionedPawnsColors) {
+    public void setPositionedPawnsColors(List<PawnColor> positionedPawnsColors) {
         this.positionedPawnsColors = positionedPawnsColors;
     }
 }

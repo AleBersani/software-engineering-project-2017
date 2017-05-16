@@ -1,20 +1,17 @@
 package it.polimi.ingsw.gamelogic.basics;
 
 public class FlashEffect {
-    /*
-    TODO: change to Goods
-     */
-    protected ExchangingGoods instantGoods;
+    protected Goods instantGoods;
 
-    public FlashEffect(ExchangingGoods instantGoods) {
+    public FlashEffect(Goods instantGoods) {
         this.instantGoods = instantGoods;
     }
 
-    public ExchangingGoods getInstantGoods() {
+    public Goods getInstantGoods() {
         return instantGoods;
     }
 
-    public void setInstantGoods(ExchangingGoods instantGoods) {
+    public void setInstantGoods(Goods instantGoods) {
         this.instantGoods = instantGoods;
     }
 }
