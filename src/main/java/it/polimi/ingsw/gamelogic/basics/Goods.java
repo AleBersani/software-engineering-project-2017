@@ -3,8 +3,7 @@ package it.polimi.ingsw.gamelogic.basics;
 import java.util.Objects;
 
 /**
- * This class is a wrapper for the Classes Resources and Points,
- * since in most of the cases we need to work with both of them at the same time.
+ * Composition of Resources and Points
  */
 public class Goods {
     private Resources resources;
@@ -52,51 +51,95 @@ public class Goods {
         return Objects.hash(getResources(), getPoints());
     }
 
+    /**
+     * Add Goods to the instance
+     * @param goodsToAdd added Goods
+     */
     public void addAll(Goods goodsToAdd) {
-        resources.add(goodsToAdd.getResources());
-        points.add(goodsToAdd.getPoints());
+        addAll(goodsToAdd.getResources(), goodsToAdd.getPoints());
     }
 
+    /**
+     * Add Resources and Points objects to the instance
+     * @param resourcesToAdd added Resources
+     * @param pointsToAdd added Points
+     */
     public void addAll(Resources resourcesToAdd, Points pointsToAdd) {
-        resources.add(resourcesToAdd);
-        points.add(pointsToAdd);
+        addResources(resourcesToAdd);
+        addPoints(pointsToAdd);
     }
 
+    /**
+     * Add only Resources
+     * @param resourcesToAdd added Resources
+     */
     public void addResources(Resources resourcesToAdd) {
         resources.add(resourcesToAdd);
     }
 
+    /**
+     * Add only Points
+     * @param pointsToAdd added Points
+     */
     public void addPoints(Points pointsToAdd) {
         points.add(pointsToAdd);
     }
 
+    /**
+     * Subtract Goods to the instance
+     * @param goodsToSubtract subtracted Goods
+     */
     public void subtractAll(Goods goodsToSubtract) {
-        resources.subtract(goodsToSubtract.getResources());
-        points.subtract(goodsToSubtract.getPoints());
+        subtractAll(goodsToSubtract.getResources(), goodsToSubtract.getPoints());
     }
 
+    /**
+     * Subtract Resources and Points to the instance
+     * @param resourcesToSubtract subtracted Resources
+     * @param pointsToSubtract subtracted Points
+     */
     public void subtractAll(Resources resourcesToSubtract, Points pointsToSubtract) {
-        resources.subtract(resourcesToSubtract);
-        points.subtract(pointsToSubtract);
+        subtractResources(resourcesToSubtract);
+        subtractPoints(pointsToSubtract);
     }
 
+    /**
+     * Subtract only Resources
+     * @param resourcesToSubtract subtracted Resources
+     */
     public void subtractResources(Resources resourcesToSubtract) {
         resources.subtract(resourcesToSubtract);
     }
 
+    /**
+     * Subtract only Points
+     * @param pointsToSubtract subtracted Points
+     */
     public void subtractPoints(Points pointsToSubtract) {
         points.subtract(pointsToSubtract);
     }
 
+    /**
+     * Auxiliary method
+     * @return true if resources and Points are empty
+     */
     public boolean isEmpty() {
-        return resources.isEmpty() &&
-                points.isEmpty();
+        return hasNoResources() &&
+                hasNoPoints();
     }
 
+    /**
+     * Auxiliary method
+     * @return true if resources is empty
+     */
     public boolean hasNoResources() {
         return resources.isEmpty();
     }
 
+    /**
+     * Auxiliary method
+     * @return true if points is empty
+     */
     public boolean hasNoPoints() {
         return points.isEmpty();
     }

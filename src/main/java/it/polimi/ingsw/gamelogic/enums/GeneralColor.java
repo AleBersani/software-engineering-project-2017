@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.enums;
 /**
  * Represents colors for Players, Towers and Development Cards
  */
-public enum GlobalColor {
+public enum GeneralColor {
     GREEN,
     YELLOW,
     BLUE,

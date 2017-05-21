@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.board;
 
-import it.polimi.ingsw.gamelogic.cards.ExcommunicationTile;
+import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.gamelogic.enums.DiceColor;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 

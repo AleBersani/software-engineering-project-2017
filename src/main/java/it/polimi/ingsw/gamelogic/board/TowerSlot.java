@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.board;
 
-import it.polimi.ingsw.gamelogic.cards.DevelopmentCard;
+import it.polimi.ingsw.gamelogic.cards.developmentcards.DevelopmentCard;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
 public class TowerSlot {

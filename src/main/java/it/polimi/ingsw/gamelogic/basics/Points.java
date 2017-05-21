@@ -34,18 +34,30 @@ public class Points {
         return Objects.hash(getVictory(), getMilitary(), getFaith());
     }
 
+    /**
+     * Add other Points to this instance
+     * @param pointsToAdd added Points
+     */
     public void add(Points pointsToAdd) {
         victory += pointsToAdd.getVictory();
         military += pointsToAdd.getMilitary();
         faith += pointsToAdd.getFaith();
     }
 
+    /**
+     * Subtract other Points to this instance
+     * @param pointsToSubtract subtracted Points
+     */
     public void subtract(Points pointsToSubtract) {
         victory -= pointsToSubtract.getVictory();
         military -= pointsToSubtract.getMilitary();
         faith -= pointsToSubtract.getFaith();
     }
 
+    /**
+     * Check if all attributes are 0
+     * @return true if all attributes are 0
+     */
     public boolean isEmpty(){
         return victory == 0 &&
                 military == 0 &&

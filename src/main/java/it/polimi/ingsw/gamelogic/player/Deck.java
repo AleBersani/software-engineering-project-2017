@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.player;
 
-import it.polimi.ingsw.gamelogic.cards.ExcommunicationTile;
-import it.polimi.ingsw.gamelogic.cards.LeaderCard;
+import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
+import it.polimi.ingsw.gamelogic.cards.leadercards.LeaderCard;
 
 import java.util.ArrayList;
 import java.util.List;

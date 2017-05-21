@@ -1,68 +1,69 @@
 package it.polimi.ingsw.gamelogic.basics;
 
-import it.polimi.ingsw.gamelogic.basics.Resources;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class ResourcesTest {
-    Resources resources;
 
-    @Before
-    public void setUp() throws Exception {
+class ResourcesTest {
+    private Resources resources;
+
+    @BeforeEach
+    void setUp() {
         resources = new Resources(1,2,3,4);
     }
 
     @Test
-    public void testEquals() throws Exception {
+    void testEquals() {
         Resources resourcesToConfront = new Resources(1,2,3,4);
         assertTrue(resources.equals(resourcesToConfront));
     }
 
     @Test
-    public void testAddFixedValue() throws Exception {
+    void testAddFixedValue() {
         Resources resourcesToAdd = new Resources(1,2,3,4);
         resources.add(resourcesToAdd);
         assertTrue(resources.equals(new Resources(2,4,6,8)));
     }
 
     @Test
-    public void testAddGeneralValue() throws Exception {
+    void testAddGeneralValue() {
         Resources resourcesToAdd = new Resources(4,3,2,1);
         resources.add(resourcesToAdd);
         assertEquals(new Resources(5,5,5,5), resources);
     }
 
     @Test
-    public void testSubtractFixedValue() throws Exception {
+    void testSubtractFixedValue() {
         Resources resourcesToSubtract = new Resources(1,2,3,4);
         resources.subtract(resourcesToSubtract);
         assertEquals(new Resources(), resources);
     }
 
     @Test
-    public void testSubtractGeneralValue() throws Exception {
+    void testSubtractGeneralValue() {
         Resources resourcesToSubtract = new Resources(1,1,1,1);
         resources.subtract(resourcesToSubtract);
         assertEquals(new Resources(0,1,2,3), resources);
     }
 
     @Test
-    public void testSubtractWithNegativeResult() throws Exception {
+    void testSubtractWithNegativeResult() {
         Resources resourcesToSubtract = new Resources(2,3,4,5);
         resources.subtract(resourcesToSubtract);
-        assertEquals(new Resources(), resources);
+        assertEquals(new Resources(-1,-1,-1,-1), resources);
     }
 
     @Test
-    public void testIsEmptyTrue() throws Exception {
+    void testIsEmptyTrue() {
         Resources emptyResources = new Resources();
         assertTrue(emptyResources.isEmpty());
     }
 
     @Test
-    public void testIsEmptyFalse() throws Exception {
+    void testIsEmptyFalse() {
         assertFalse(resources.isEmpty());
     }
+
 }

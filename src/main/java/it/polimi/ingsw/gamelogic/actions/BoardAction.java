@@ -1,29 +1,21 @@
 package it.polimi.ingsw.gamelogic.actions;
 
-import it.polimi.ingsw.gamelogic.actions.ActionDescription;
-
 /**
  * This Class describes an action concerning the activation of an Action Space on the Board.
  * It can be set by the player using the effect of a Card (Leader or Development).
  */
-public class BoardAction extends ActionDescription {
+public class BoardAction implements ActionSupplement  {
     private String spaceIdentifier;
     private int actionValue;
 
     private int numberOfServants;
     private String pawnColor;
 
-    public BoardAction(String actionIdentifier, String spaceIdentifier, int actionValue) {
-        super(actionIdentifier);
+    public BoardAction(String spaceIdentifier, int actionValue) {
         this.spaceIdentifier = spaceIdentifier;
         this.actionValue = actionValue;
         numberOfServants = 0;
         pawnColor = "";
-    }
-
-    @Override
-    public String getConcatenatedActionIdentifier() {
-        return actionIdentifier + ":" + spaceIdentifier;
     }
 
     public String getSpaceIdentifier() {

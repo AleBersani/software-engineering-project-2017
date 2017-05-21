@@ -6,24 +6,18 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
  * Class that describes actions related to collecting a card from the Towers.
  * This action can eventually have a "bonus" (called discount) that represents a discount on the action's cost.
  */
-public class CardAction extends ActionDescription {
+public class CardAction implements ActionSupplement {
     private String spaceIdentifier;
     private int actionValue;
 
     private int numberOfServants;
     private Goods discount;
 
-    public CardAction(String actionIdentifier, String spaceIdentifier, int actionValue) {
-        super(actionIdentifier);
+    public CardAction(String spaceIdentifier, int actionValue) {
         this.spaceIdentifier = spaceIdentifier;
         this.actionValue = actionValue;
         numberOfServants = 0;
         discount = new Goods();
-    }
-
-    @Override
-    public String getConcatenatedActionIdentifier() {
-        return actionIdentifier + ":" + spaceIdentifier;
     }
 
     public String getSpaceIdentifier() {

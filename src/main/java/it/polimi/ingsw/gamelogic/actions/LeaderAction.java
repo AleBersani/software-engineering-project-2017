@@ -6,17 +6,11 @@ package it.polimi.ingsw.gamelogic.actions;
  *      - activation of a Leader
  *      - discard of a Leader
  */
-public class LeaderAction extends ActionDescription {
+public class LeaderAction implements ActionSupplement {
     private String leaderName;
 
-    public LeaderAction(String actionIdentifier, String leaderName) {
-        super(actionIdentifier);
+    public LeaderAction(String leaderName) {
         this.leaderName = leaderName;
-    }
-
-    @Override
-    public String getConcatenatedActionIdentifier() {
-        return actionIdentifier + ":" + leaderName;
     }
 
     public String getLeaderName() {

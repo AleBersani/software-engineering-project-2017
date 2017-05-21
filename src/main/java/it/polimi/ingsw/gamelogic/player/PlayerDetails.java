@@ -1,13 +1,13 @@
 package it.polimi.ingsw.gamelogic.player;
 
-import it.polimi.ingsw.gamelogic.enums.GlobalColor;
+import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 
 public class PlayerDetails {
     private String playerIdentifier;
     private String playerName;
-    private GlobalColor playerColor;
+    private GeneralColor playerColor;
 
-    public PlayerDetails(String playerIdentifier, String playerName, GlobalColor playerColor) {
+    public PlayerDetails(String playerIdentifier, String playerName, GeneralColor playerColor) {
         this.playerIdentifier = playerIdentifier;
         this.playerName = playerName;
         this.playerColor = playerColor;
@@ -49,11 +49,11 @@ public class PlayerDetails {
         this.playerName = playerName;
     }
 
-    public GlobalColor getPlayerColor() {
+    public GeneralColor getPlayerColor() {
         return playerColor;
     }
 
-    public void setPlayerColor(GlobalColor playerColor) {
+    public void setPlayerColor(GeneralColor playerColor) {
         this.playerColor = playerColor;
     }
 }

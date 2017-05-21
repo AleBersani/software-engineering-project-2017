@@ -1,4 +1,4 @@
-package it.polimi.ingsw.gamelogic.cards;
+package it.polimi.ingsw.gamelogic.cards.excommunicationtiles;
 
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 

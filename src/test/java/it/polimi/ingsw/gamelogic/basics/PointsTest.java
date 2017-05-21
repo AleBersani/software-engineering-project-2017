@@ -1,27 +1,26 @@
 package it.polimi.ingsw.gamelogic.basics;
 
-import it.polimi.ingsw.gamelogic.basics.Points;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class PointsTest {
+class PointsTest {
     private Points points;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    void setUp() {
         points = new Points(1,2,3);
     }
 
     @Test
-    public void testEquals() throws Exception {
+    void testEquals() {
         Points pointsToConfront = new Points(1,2,3);
         assertTrue(points.equals(pointsToConfront));
     }
 
     @Test
-    public void testAddFixedValue() throws Exception {
+    void testAddFixedValue() {
         Points pointsToAdd = new Points(3,2,1);
         Points expectedResult = new Points(4,4,4);
         points.add(pointsToAdd);
@@ -29,7 +28,7 @@ public class PointsTest {
     }
 
     @Test
-    public void testAddGeneralValue() throws Exception {
+    void testAddGeneralValue() {
         Points pointsToAdd = new Points(1,1,1);
         Points expectedResult = new Points(2,3,4);
         points.add(pointsToAdd);
@@ -37,14 +36,14 @@ public class PointsTest {
     }
 
     @Test
-    public void testReflectiveAddition() throws Exception {
+    void testReflectiveAddition() {
         Points excpectedResult = new Points(2,4,6);
         points.add(points);
         assertEquals(excpectedResult, points);
     }
 
     @Test
-    public void testSubtract() throws Exception {
+    void testSubtract() {
         Points pointsToSubtract = new Points(1,1,1);
         Points expectedResult = new Points(0,1,2);
         points.subtract(pointsToSubtract);
@@ -52,21 +51,20 @@ public class PointsTest {
     }
 
     @Test
-    public void testSubtractWithNegativeResult()throws Exception {
+    void testSubtractWithNegativeResult() {
         Points pointsToSubtract = new Points(5,5,5);
         points.subtract(pointsToSubtract);
-        assertEquals(new Points(), points);
+        assertEquals(new Points(-4,-3,-2), points);
     }
 
     @Test
-    public void testIsEmptyTrue() throws Exception {
+    void testIsEmptyTrue() {
         Points pointsToTest = new Points(0,0,0);
         assertTrue(pointsToTest.isEmpty());
     }
 
     @Test
-    public void testIsEmptyFalse() throws Exception {
+    void testIsEmptyFalse() {
         points.isEmpty();
     }
-
 }

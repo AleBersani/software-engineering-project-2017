@@ -1,18 +1,18 @@
 package it.polimi.ingsw.gamelogic.board;
 
-import it.polimi.ingsw.gamelogic.enums.GlobalColor;
+import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Tower {
-    private GlobalColor color;
+    private GeneralColor color;
     private List<TowerSlot> tower;
 
     private List<PawnColor> positionedPawnsColors;
 
-    public Tower(GlobalColor color, List<TowerSlot> tower) {
+    public Tower(GeneralColor color, List<TowerSlot> tower) {
         this.color = color;
         this.tower = tower;
         positionedPawnsColors = new ArrayList<>();
@@ -26,11 +26,11 @@ public class Tower {
         positionedPawnsColors.add(color);
     }
 
-    public GlobalColor getColor() {
+    public GeneralColor getColor() {
         return color;
     }
 
-    public void setColor(GlobalColor color) {
+    public void setColor(GeneralColor color) {
         this.color = color;
     }
 

@@ -1,36 +1,34 @@
 package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
-import it.polimi.ingsw.gamelogic.enums.GlobalColor;
+import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.player.PlayerDetails;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
-import java.util.stream.Collectors;
+import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.Assert.*;
-
-public class CouncilPalaceTest {
+class CouncilPalaceTest {
     private CouncilPalace councilPalace;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    void setUp() {
         councilPalace = new CouncilPalace(new ExchangingGoods(1), 1);
-        councilPalace.addToPlayerOrder(new PlayerDetails("#0", "Dennis", GlobalColor.BLUE));
-        councilPalace.addToPlayerOrder(new PlayerDetails("#1", "Cami", GlobalColor.GREEN));
+        councilPalace.addToPlayerOrder(new PlayerDetails("#0", "Dennis", GeneralColor.BLUE));
+        councilPalace.addToPlayerOrder(new PlayerDetails("#1", "Cami", GeneralColor.GREEN));
     }
 
-    @Test
-    public void testAddToPlayerOrder() throws Exception {
-        councilPalace.addToPlayerOrder(new PlayerDetails("#2", "Fabri", GlobalColor.YELLOW));
-        assertEquals(new PlayerDetails("#2", "Fabri", GlobalColor.YELLOW),
+   @Test
+    void testAddToPlayerOrder() {
+        councilPalace.addToPlayerOrder(new PlayerDetails("#2", "Fabri", GeneralColor.YELLOW));
+        assertEquals(new PlayerDetails("#2", "Fabri", GeneralColor.YELLOW),
                 councilPalace.getPlayerOrder().get(2));
     }
 
     @Test
-    public void testAlreadyAddedToPlayerOrder() throws Exception {
-        councilPalace.addToPlayerOrder(new PlayerDetails("#0", "Dennis", GlobalColor.BLUE));
+    void testAlreadyAddedToPlayerOrder() {
+        councilPalace.addToPlayerOrder(new PlayerDetails("#0", "Dennis", GeneralColor.BLUE));
         assertEquals(2, councilPalace.getPlayerOrder().stream().count());
     }
+
 }

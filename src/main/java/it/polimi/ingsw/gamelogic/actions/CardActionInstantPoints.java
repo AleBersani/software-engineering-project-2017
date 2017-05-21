@@ -8,7 +8,7 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
  * In the current version of the game this reward is always a defined number of Victory Points,
  * it's been decided to use the class Goods to represent it for maintainability and compatibility.
  */
-public class CardActionInstantPoints extends ActionDescription {
+public class CardActionInstantPoints implements ActionSupplement {
     /**
      * Always Victory Points in the current version of the game
      */
@@ -16,17 +16,10 @@ public class CardActionInstantPoints extends ActionDescription {
     private String typeOfObjectRequired;
     private int numberOfObjectRequired;
 
-    public CardActionInstantPoints(String actionIdentifier, Goods rewardForExchange,
-                                   String typeOfObjectRequired, int numberOfObjectRequired) {
-        super(actionIdentifier);
+    public CardActionInstantPoints(Goods rewardForExchange, String typeOfObjectRequired, int numberOfObjectRequired) {
         this.rewardForExchange = rewardForExchange;
         this.typeOfObjectRequired = typeOfObjectRequired;
         this.numberOfObjectRequired = numberOfObjectRequired;
-    }
-
-    @Override
-    public String getConcatenatedActionIdentifier() {
-        return actionIdentifier;
     }
 
     public Goods getRewardForExchange() {

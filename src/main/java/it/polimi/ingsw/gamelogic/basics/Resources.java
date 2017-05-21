@@ -38,6 +38,10 @@ public class Resources {
         return Objects.hash(getWoods(), getStones(), getServants(), getCoins());
     }
 
+    /**
+     * Add other Resources to this instance
+     * @param resourcesToAdd added Resources
+     */
     public void add(Resources resourcesToAdd) {
         woods += resourcesToAdd.getWoods();
         stones += resourcesToAdd.getStones();
@@ -45,6 +49,10 @@ public class Resources {
         coins += resourcesToAdd.getCoins();
     }
 
+    /**
+     * Subtract other Resources to this instance
+     * @param resourcesToSubtract subtracted Resources
+     */
     public void subtract(Resources resourcesToSubtract) {
         woods -= resourcesToSubtract.getWoods();
         stones -= resourcesToSubtract.getStones();
@@ -52,6 +60,10 @@ public class Resources {
         coins -= resourcesToSubtract.getCoins();
     }
 
+    /**
+     * Check if all attributes are 0
+     * @return true if all attributes are 0
+     */
     public boolean isEmpty() {
         return woods == 0 &&
                 stones == 0 &&

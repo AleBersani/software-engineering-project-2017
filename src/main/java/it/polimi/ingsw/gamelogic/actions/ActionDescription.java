@@ -1,25 +1,24 @@
 package it.polimi.ingsw.gamelogic.actions;
 
 /**
- * Abstract Class representing the most basic information of an Action.
- * In order to determine the right action additional information are needed, which is why it's declared as abstract.
+ * Class representing the information of a class, with a supplement attribute which describes the additional
+ * information of the specific action.
  */
-public abstract class ActionDescription {
-    protected String actionIdentifier;
+public class ActionDescription<T extends ActionSupplement> {
+    private String actionIdentifier;
+    private T supplement;
 
-    public ActionDescription() {
+    private ActionDescription() {
         actionIdentifier = "";
+        /*
+            TODO: instantiate supplement
+         */
     }
 
-    public ActionDescription(String actionIdentifier) {
+    public ActionDescription(String actionIdentifier, T supplement) {
         this.actionIdentifier = actionIdentifier;
+        this.supplement = supplement;
     }
-
-    /**
-     * Methods to pick out the combination of all String object that identify the action
-     * @return actionIdentifier
-     */
-    public abstract String getConcatenatedActionIdentifier();
 
     public String getActionIdentifier() {
         return actionIdentifier;
@@ -27,5 +26,13 @@ public abstract class ActionDescription {
 
     public void setActionIdentifier(String actionIdentifier) {
         this.actionIdentifier = actionIdentifier;
+    }
+
+    public T getSupplement() {
+        return supplement;
+    }
+
+    public void setSupplement(T supplement) {
+        this.supplement = supplement;
     }
 }

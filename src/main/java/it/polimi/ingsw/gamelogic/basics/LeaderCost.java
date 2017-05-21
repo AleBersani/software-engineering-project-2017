@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.basics;
 
-import it.polimi.ingsw.gamelogic.enums.GlobalColor;
+import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 
 import java.util.Map;
 
@@ -9,18 +9,18 @@ import java.util.Map;
  * number of Cards of a determined color to activate.
  */
 public class LeaderCost extends CardCost {
-    private Map<Integer, GlobalColor> requiredCardsNumberAndColor;
+    private Map<Integer, GeneralColor> requiredCardsNumberAndColor;
 
-    public LeaderCost(Goods requiredGoods, Map<Integer, GlobalColor> requiredCardsNumberAndColor) {
+    public LeaderCost(Goods requiredGoods, Map<Integer, GeneralColor> requiredCardsNumberAndColor) {
         super(requiredGoods);
         this.requiredCardsNumberAndColor = requiredCardsNumberAndColor;
     }
 
-    public Map<Integer, GlobalColor> getRequiredCardsNumberAndColor() {
+    public Map<Integer, GeneralColor> getRequiredCardsNumberAndColor() {
         return requiredCardsNumberAndColor;
     }
 
-    public void setRequiredCardsNumberAndColor(Map<Integer, GlobalColor> requiredCardsNumberAndColor) {
+    public void setRequiredCardsNumberAndColor(Map<Integer, GeneralColor> requiredCardsNumberAndColor) {
         this.requiredCardsNumberAndColor = requiredCardsNumberAndColor;
     }
 }
