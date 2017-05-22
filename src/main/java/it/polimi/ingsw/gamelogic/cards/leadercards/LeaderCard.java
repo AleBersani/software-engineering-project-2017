@@ -2,12 +2,9 @@ package it.polimi.ingsw.gamelogic.cards.leadercards;
 
 import it.polimi.ingsw.gamelogic.basics.CardCost;
 
-public abstract class LeaderCard {
-    protected String name;
-    protected CardCost cardCost;
-    /*
-    TODO: add decorator already instantiated
-     */
+public class LeaderCard {
+    private String name;
+    private CardCost cardCost;
 
     public LeaderCard(String name, CardCost cardCost) {
         this.name = name;

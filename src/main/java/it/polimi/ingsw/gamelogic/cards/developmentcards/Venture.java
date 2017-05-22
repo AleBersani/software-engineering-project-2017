@@ -10,10 +10,9 @@ public class Venture implements Collectible {
     private DevelopmentCard developmentCard; // Composite object attribute
     private Points endGameReward;
 
-    public Venture(DevelopmentCard developmentCard, Points endGameReward) {
-        this.developmentCard = developmentCard;
-        this.endGameReward = endGameReward;
-    }
+    /*
+        TODO
+     */
 
     @Override
     public CardInformation getCardInformation() {
@@ -28,21 +27,5 @@ public class Venture implements Collectible {
     @Override
     public FlashEffect getInstantEffect() {
         return developmentCard.getInstantEffect();
-    }
-
-    public DevelopmentCard getDevelopmentCard() {
-        return developmentCard;
-    }
-
-    public void setDevelopmentCard(DevelopmentCard developmentCard) {
-        this.developmentCard = developmentCard;
-    }
-
-    public Points getEndGameReward() {
-        return endGameReward;
-    }
-
-    public void setEndGameReward(Points endGameReward) {
-        this.endGameReward = endGameReward;
     }
 }

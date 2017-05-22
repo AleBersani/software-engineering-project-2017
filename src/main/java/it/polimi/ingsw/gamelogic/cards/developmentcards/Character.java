@@ -2,14 +2,18 @@ package it.polimi.ingsw.gamelogic.cards.developmentcards;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.cards.FlashEffect;
+import it.polimi.ingsw.gamelogic.requirements.Requirements;
+import it.polimi.ingsw.gamelogic.rewards.Rewards;
 
 import java.util.List;
 
 public class Character implements Collectible {
-    private DevelopmentCard developmentCard; // Composite object attribute
+    private DevelopmentCard developmentCard; // Composite
+    private Requirements requirements; // Decorator for Requirements
+    private Rewards rewards; // Decorator for Rewards
 
     /*
-        TODO: Constructor, decorator attribute, getters and setters
+        TODO
      */
 
     @Override

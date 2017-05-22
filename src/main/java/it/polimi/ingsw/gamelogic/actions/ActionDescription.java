@@ -11,7 +11,7 @@ public class ActionDescription<T extends ActionSupplement> {
     private ActionDescription() {
         actionIdentifier = "";
         /*
-            TODO: instantiate supplement
+            TODO
          */
     }
 

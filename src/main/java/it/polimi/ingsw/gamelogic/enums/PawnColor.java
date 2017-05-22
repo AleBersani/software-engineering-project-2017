@@ -4,5 +4,6 @@ public enum PawnColor {
     ORANGE,
     WHITE,
     BLACK,
-    NEUTRAL
+    NEUTRAL,
+    UNCOLORED
 }
