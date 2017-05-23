@@ -1,39 +1,53 @@
 package it.polimi.ingsw.gamelogic.actions;
 
+import it.polimi.ingsw.gamecontroller.Action;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
 /**
  * Class that describes actions related to collecting a card from the Towers.
  * This action can eventually have a "bonus" (called discount) that represents a discount on the action's cost.
  */
-public class CardAction implements ActionSupplement {
-    private String spaceIdentifier;
-    private int actionValue;
+public class CardAction implements ActionDescription {
+    private BasicAction basicAction;
 
     private int numberOfServants;
     private Goods discount;
 
-    public CardAction(String spaceIdentifier, int actionValue) {
-        this.spaceIdentifier = spaceIdentifier;
-        this.actionValue = actionValue;
+    public CardAction(BasicAction basicAction) {
+        this.basicAction = basicAction;
         numberOfServants = 0;
         discount = new Goods();
     }
 
-    public String getSpaceIdentifier() {
-        return spaceIdentifier;
+    public CardAction(BasicAction basicAction, int numberOfServants) {
+        this.basicAction = basicAction;
+        this.numberOfServants = numberOfServants;
+        discount = new Goods();
     }
 
-    public void setSpaceIdentifier(String spaceIdentifier) {
-        this.spaceIdentifier = spaceIdentifier;
+    public CardAction(BasicAction basicAction, Goods discount) {
+        this.basicAction = basicAction;
+        this.discount = discount;
+        numberOfServants = 0;
     }
 
-    public int getActionValue() {
-        return actionValue;
+    public CardAction(BasicAction basicAction, int numberOfServants, Goods discount) {
+        this.basicAction = basicAction;
+        this.numberOfServants = numberOfServants;
+        this.discount = discount;
     }
 
-    public void setActionValue(int actionValue) {
-        this.actionValue = actionValue;
+    @Override
+    public void callAction(Action action) {
+        action.readAction(this);
+    }
+
+    public BasicAction getBasicAction() {
+        return basicAction;
+    }
+
+    public void setBasicAction(BasicAction basicAction) {
+        this.basicAction = basicAction;
     }
 
     public int getNumberOfServants() {

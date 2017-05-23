@@ -1,38 +1,10 @@
 package it.polimi.ingsw.gamelogic.actions;
 
+import it.polimi.ingsw.gamecontroller.Action;
+
 /**
- * Class representing the information of a class, with a supplement attribute which describes the additional
- * information of the specific action.
+ * TODO
  */
-public class ActionDescription<T extends ActionSupplement> {
-    private String actionIdentifier;
-    private T supplement;
-
-    private ActionDescription() {
-        actionIdentifier = "";
-        /*
-            TODO
-         */
-    }
-
-    public ActionDescription(String actionIdentifier, T supplement) {
-        this.actionIdentifier = actionIdentifier;
-        this.supplement = supplement;
-    }
-
-    public String getActionIdentifier() {
-        return actionIdentifier;
-    }
-
-    public void setActionIdentifier(String actionIdentifier) {
-        this.actionIdentifier = actionIdentifier;
-    }
-
-    public T getSupplement() {
-        return supplement;
-    }
-
-    public void setSupplement(T supplement) {
-        this.supplement = supplement;
-    }
+public interface ActionDescription {
+    void callAction(Action action);
 }

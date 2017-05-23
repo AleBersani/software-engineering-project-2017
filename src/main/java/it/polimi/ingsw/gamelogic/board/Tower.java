@@ -6,6 +6,9 @@ import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TODO
+ */
 public class Tower {
     private GeneralColor color;
     private List<TowerSlot> tower;
@@ -19,11 +22,20 @@ public class Tower {
     }
 
     /**
-     *  It adds a specific coloured pawn if that colour is not present on the tower yet.
-     *  Control delegated to the implementing class.
-     **/
+     * It adds a specific coloured pawn if that colour is not present on the tower yet.
+     * Control delegated to the implementing class.
+     * @param color color of the pawn
+     */
     public void addPositionedPawn(PawnColor color) {
         positionedPawnsColors.add(color);
+    }
+
+    /**
+     * Check if the towers is occupied
+     * @return true if the tower is occupied
+     */
+    public boolean isTowerOccupied() {
+        return positionedPawnsColors.size() > 0;
     }
 
     public GeneralColor getColor() {

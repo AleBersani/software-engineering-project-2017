@@ -1,6 +1,8 @@
 package it.polimi.ingsw.gamelogic.actions;
 
+import it.polimi.ingsw.gamecontroller.Action;
 import it.polimi.ingsw.gamelogic.basics.Goods;
+import it.polimi.ingsw.gamelogic.enums.AvailableActions;
 
 /**
  * This class describes the flash action of some Development Cards requiring a certain number of "things"
@@ -8,7 +10,8 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
  * In the current version of the game this reward is always a defined number of Victory Points,
  * it's been decided to use the class Goods to represent it for maintainability and compatibility.
  */
-public class CardActionInstantPoints implements ActionSupplement {
+public class CardActionInstantPoints implements ActionDescription {
+    private AvailableActions actionType;
     /**
      * Always Victory Points in the current version of the game
      */
@@ -16,33 +19,12 @@ public class CardActionInstantPoints implements ActionSupplement {
     private String typeOfObjectRequired;
     private int numberOfObjectRequired;
 
-    public CardActionInstantPoints(Goods rewardForExchange, String typeOfObjectRequired, int numberOfObjectRequired) {
-        this.rewardForExchange = rewardForExchange;
-        this.typeOfObjectRequired = typeOfObjectRequired;
-        this.numberOfObjectRequired = numberOfObjectRequired;
-    }
+    /*
+        TODO
+     */
 
-    public Goods getRewardForExchange() {
-        return rewardForExchange;
-    }
-
-    public void setRewardForExchange(Goods rewardForExchange) {
-        this.rewardForExchange = rewardForExchange;
-    }
-
-    public String getTypeOfObjectRequired() {
-        return typeOfObjectRequired;
-    }
-
-    public void setTypeOfObjectRequired(String typeOfObjectRequired) {
-        this.typeOfObjectRequired = typeOfObjectRequired;
-    }
-
-    public int getNumberOfObjectRequired() {
-        return numberOfObjectRequired;
-    }
-
-    public void setNumberOfObjectRequired(int numberOfObjectRequired) {
-        this.numberOfObjectRequired = numberOfObjectRequired;
+    @Override
+    public void callAction(Action action) {
+        action.readAction(this);
     }
 }

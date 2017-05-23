@@ -30,7 +30,9 @@ public class CouncilPalace {
 
     /**
      * It controls if the player is already in the Player Order list
-     **/
+     * @param player player details
+     * @return true if the player is already present
+     */
     private boolean isAlreadyPresent(PlayerDetails player) {
         return playerOrder.stream()
                 .anyMatch(e -> e.equals(player));

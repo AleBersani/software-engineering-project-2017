@@ -1,8 +1,10 @@
 package it.polimi.ingsw.gamelogic.board;
 
-
 import java.util.List;
 
+/**
+ * TODO
+ */
 public class BoardActionSpaces {
     private List<ActionSpace> productionArea;
     private List<ActionSpace> harvestArea;
@@ -14,6 +16,30 @@ public class BoardActionSpaces {
         this.productionArea = productionArea;
         this.harvestArea = harvestArea;
         this.marketArea = marketArea;
+    }
+
+    /**
+     * TODO
+     * @param production
+     */
+    public void addToProductionArea(ActionSpace production) {
+        productionArea.add(production);
+    }
+
+    /**
+     * TODO
+     * @param harvest
+     */
+    public void addToHarvestArea(ActionSpace harvest) {
+        harvestArea.add(harvest);
+    }
+
+    /**
+     * TODO
+     * @param market
+     */
+    public void addToMarketArea(ActionSpace market) {
+        marketArea.add(market);
     }
 
     public List<ActionSpace> getProductionArea() {

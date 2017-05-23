@@ -1,51 +1,32 @@
 package it.polimi.ingsw.gamelogic.board;
 
-import it.polimi.ingsw.gamelogic.cards.developmentcards.DevelopmentCard;
-import it.polimi.ingsw.gamelogic.basics.Goods;
+import it.polimi.ingsw.gamelogic.cards.developmentcards.Collectible;
 
+/**
+ * TODO
+ */
 public class TowerSlot {
-    private DevelopmentCard card;
-    private int requestedValue;
-    private Goods instantGoods;
+    private Space space;
+    private Collectible developmentCard;
 
-    private boolean occupiedTowerSlot;
-
-    public TowerSlot(DevelopmentCard card, int requestedValue, Goods instantGoods) {
-        this.card = card;
-        this.requestedValue = requestedValue;
-        this.instantGoods = instantGoods;
-        occupiedTowerSlot = false;
+    public TowerSlot(Space space, Collectible developmentCard) {
+        this.space = space;
+        this.developmentCard = developmentCard;
     }
 
-    public DevelopmentCard getCard() {
-        return card;
+    public Space getSpace() {
+        return space;
     }
 
-    public void setCard(DevelopmentCard card) {
-        this.card = card;
+    public void setSpace(Space space) {
+        this.space = space;
     }
 
-    public int getRequestedValue() {
-        return requestedValue;
+    public Collectible getDevelopmentCard() {
+        return developmentCard;
     }
 
-    public void setRequestedValue(int requestedValue) {
-        this.requestedValue = requestedValue;
-    }
-
-    public Goods getInstantGoods() {
-        return instantGoods;
-    }
-
-    public void setInstantGoods(Goods instantGoods) {
-        this.instantGoods = instantGoods;
-    }
-
-    public boolean isOccupiedTowerSlot() {
-        return occupiedTowerSlot;
-    }
-
-    public void setOccupiedTowerSlot(boolean occupiedTowerSlot) {
-        this.occupiedTowerSlot = occupiedTowerSlot;
+    public void setDevelopmentCard(Collectible developmentCard) {
+        this.developmentCard = developmentCard;
     }
 }

@@ -1,14 +1,14 @@
 package it.polimi.ingsw.gamelogic.cards.leadercards;
 
-import it.polimi.ingsw.gamelogic.basics.CardCost;
+import it.polimi.ingsw.gamelogic.basics.LeaderCost;
 
 public class LeaderCard {
     private String name;
-    private CardCost cardCost;
+    private LeaderCost leaderCost;
 
-    public LeaderCard(String name, CardCost cardCost) {
+    public LeaderCard(String name, LeaderCost leaderCost) {
         this.name = name;
-        this.cardCost = cardCost;
+        this.leaderCost = leaderCost;
     }
 
     public String getName() {
@@ -19,11 +19,11 @@ public class LeaderCard {
         this.name = name;
     }
 
-    public CardCost getCardCost() {
-        return cardCost;
+    public LeaderCost getLeaderCost() {
+        return leaderCost;
     }
 
-    public void setCardCost(CardCost cardCost) {
-        this.cardCost = cardCost;
+    public void setLeaderCost(LeaderCost leaderCost) {
+        this.leaderCost = leaderCost;
     }
 }

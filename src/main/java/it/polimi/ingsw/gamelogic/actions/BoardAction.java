@@ -1,37 +1,59 @@
 package it.polimi.ingsw.gamelogic.actions;
 
+import it.polimi.ingsw.gamecontroller.Action;
+import it.polimi.ingsw.gamelogic.enums.PawnColor;
+
 /**
  * This Class describes an action concerning the activation of an Action Space on the Board.
  * It can be set by the player using the effect of a Card (Leader or Development).
  */
-public class BoardAction implements ActionSupplement  {
-    private String spaceIdentifier;
-    private int actionValue;
+public class BoardAction implements ActionDescription {
+    private BasicAction basicAction;
 
+    private PawnColor pawnColor;
     private int numberOfServants;
-    private String pawnColor;
 
-    public BoardAction(String spaceIdentifier, int actionValue) {
-        this.spaceIdentifier = spaceIdentifier;
-        this.actionValue = actionValue;
+    public BoardAction(BasicAction basicAction) {
+        this.basicAction = basicAction;
+        pawnColor = PawnColor.UNCOLORED;
         numberOfServants = 0;
-        pawnColor = "";
     }
 
-    public String getSpaceIdentifier() {
-        return spaceIdentifier;
+    public BoardAction(BasicAction basicAction, PawnColor pawnColor) {
+        this.basicAction = basicAction;
+        this.pawnColor = pawnColor;
     }
 
-    public void setSpaceIdentifier(String spaceIdentifier) {
-        this.spaceIdentifier = spaceIdentifier;
+    public BoardAction(BasicAction basicAction, int numberOfServants) {
+        this.basicAction = basicAction;
+        this.numberOfServants = numberOfServants;
     }
 
-    public int getActionValue() {
-        return actionValue;
+    public BoardAction(BasicAction basicAction, PawnColor pawnColor, int numberOfServants) {
+        this.basicAction = basicAction;
+        this.pawnColor = pawnColor;
+        this.numberOfServants = numberOfServants;
     }
 
-    public void setActionValue(int actionValue) {
-        this.actionValue = actionValue;
+    @Override
+    public void callAction(Action action) {
+        action.readAction(this);
+    }
+
+    public BasicAction getBasicAction() {
+        return basicAction;
+    }
+
+    public void setBasicAction(BasicAction basicAction) {
+        this.basicAction = basicAction;
+    }
+
+    public PawnColor getPawnColor() {
+        return pawnColor;
+    }
+
+    public void setPawnColor(PawnColor pawnColor) {
+        this.pawnColor = pawnColor;
     }
 
     public int getNumberOfServants() {
@@ -40,13 +62,5 @@ public class BoardAction implements ActionSupplement  {
 
     public void setNumberOfServants(int numberOfServants) {
         this.numberOfServants = numberOfServants;
-    }
-
-    public String getPawnColor() {
-        return pawnColor;
-    }
-
-    public void setPawnColor(String pawnColor) {
-        this.pawnColor = pawnColor;
     }
 }

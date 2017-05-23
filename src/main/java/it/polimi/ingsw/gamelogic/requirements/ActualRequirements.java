@@ -1,9 +1,9 @@
 package it.polimi.ingsw.gamelogic.requirements;
 
-import it.polimi.ingsw.gamelogic.basics.CardCost;
+import it.polimi.ingsw.gamelogic.basics.LeaderCost;
 
 public class ActualRequirements implements Requirements{
-    private CardCost cardCost;
+    private LeaderCost leaderCost;
     private int actionValue;
     private boolean spaceAvailability;
     /*

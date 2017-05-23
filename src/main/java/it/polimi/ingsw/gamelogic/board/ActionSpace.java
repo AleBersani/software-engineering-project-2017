@@ -1,23 +1,31 @@
 package it.polimi.ingsw.gamelogic.board;
 
+import it.polimi.ingsw.gamelogic.basics.Goods;
+import it.polimi.ingsw.gamelogic.enums.BoardIdentifiers;
+
 public class ActionSpace {
-    protected int requestedValue;
-    protected int requiredPlayersNumber;
+    private Space space;
+    private int requiredPlayersNumber;
+    private Goods instantGoods; // Optional
 
-    protected boolean alreadyTaken;
-
-    public ActionSpace(int requestedValue, int requiredPlayersNumber) {
-        this.requestedValue = requestedValue;
+    public ActionSpace(Space space, int requiredPlayersNumber) {
+        this.space = space;
         this.requiredPlayersNumber = requiredPlayersNumber;
-        alreadyTaken = false;
+        instantGoods = new Goods();
     }
 
-    public int getRequestedValue() {
-        return requestedValue;
+    public ActionSpace(Space space, int requiredPlayersNumber, Goods instantGoods) {
+        this.space = space;
+        this.requiredPlayersNumber = requiredPlayersNumber;
+        this.instantGoods = instantGoods;
     }
 
-    public void setRequestedValue(int requestedValue) {
-        this.requestedValue = requestedValue;
+    public Space getSpace() {
+        return space;
+    }
+
+    public void setSpace(Space space) {
+        this.space = space;
     }
 
     public int getRequiredPlayersNumber() {
@@ -28,11 +36,11 @@ public class ActionSpace {
         this.requiredPlayersNumber = requiredPlayersNumber;
     }
 
-    public boolean isAlreadyTaken() {
-        return alreadyTaken;
+    public Goods getInstantGoods() {
+        return instantGoods;
     }
 
-    public void setAlreadyTaken(boolean alreadyTaken) {
-        this.alreadyTaken = alreadyTaken;
+    public void setInstantGoods(Goods instantGoods) {
+        this.instantGoods = instantGoods;
     }
 }

@@ -11,20 +11,12 @@ public class PlayerBoard {
     private Goods goods;
 
     private List<Pawn> pawns;
-    private Deck deck;
-    private List<DevelopmentCard> developmentCards;
 
     public PlayerBoard(BonusTiles bonusTiles, Goods goods) {
         this.bonusTiles = bonusTiles;
         this.goods = goods;
         pawns = new ArrayList<>();
-        deck = new Deck();
-        developmentCards = new ArrayList<>();
     }
-
-    /*
-    TODO: methods for decorators or other auxiliaries methods?
-     */
 
     public BonusTiles getBonusTiles() {
         return bonusTiles;
@@ -48,21 +40,5 @@ public class PlayerBoard {
 
     public void setPawns(List<Pawn> pawns) {
         this.pawns = pawns;
-    }
-
-    public Deck getDeck() {
-        return deck;
-    }
-
-    public void setDeck(Deck deck) {
-        this.deck = deck;
-    }
-
-    public List<DevelopmentCard> getDevelopmentCards() {
-        return developmentCards;
-    }
-
-    public void setDevelopmentCards(List<DevelopmentCard> developmentCards) {
-        this.developmentCards = developmentCards;
     }
 }

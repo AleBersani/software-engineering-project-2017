@@ -12,7 +12,7 @@ public class Board {
     private CouncilPalace councilPalace;
     private BoardActionSpaces boardActionSpaces;
 
-    private List<ExcommunicationTile> excommunicationTiles;
+    private List<ExcommunicationTile> excommunicationTiles; /* TODO: check */
     private List<Dice> dices;
 
     public Board(List<Tower> towers, CouncilPalace councilPalace, BoardActionSpaces boardActionSpaces) {
@@ -24,10 +24,8 @@ public class Board {
     }
 
     /*
-    TODO: auxiliaries methods
+        TODO: auxiliaries methods
      */
-
-
 
     /**
      * Get Excommunication Tile by passing the number of the period as parameter

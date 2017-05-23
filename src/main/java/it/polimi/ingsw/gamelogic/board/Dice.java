@@ -2,6 +2,9 @@ package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.enums.DiceColor;
 
+/**
+ * TODO
+ */
 public class Dice {
     private DiceColor diceColor;
     private int value;
