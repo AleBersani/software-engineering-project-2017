@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.enums;
 
 /**
- * TODO
+ * TODO: JavaDoc
  */
 public enum AvailableActions {
     GREEN_TOWER,

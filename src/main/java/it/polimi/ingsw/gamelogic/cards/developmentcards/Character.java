@@ -13,7 +13,7 @@ public class Character implements Collectible {
     private Rewards rewards; // Decorator for Rewards
 
     /*
-        TODO
+        TODO: Constructor and methods
      */
 
     @Override

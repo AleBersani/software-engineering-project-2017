@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.board;
 import it.polimi.ingsw.gamelogic.cards.developmentcards.Collectible;
 
 /**
- * TODO
+ * TODO: JavaDoc
  */
 public class TowerSlot {
     private Space space;

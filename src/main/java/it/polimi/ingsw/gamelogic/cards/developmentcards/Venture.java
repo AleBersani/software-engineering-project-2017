@@ -11,7 +11,7 @@ public class Venture implements Collectible {
     private Points endGameReward;
 
     /*
-        TODO
+        TODO Constructor and methods
      */
 
     @Override

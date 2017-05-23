@@ -8,8 +8,6 @@ public class FlashEffect {
         TODO ActionDescription
      */
 
-
-
     /*
         TODO: auxiliaries methods to check if attributes are empty or not?
      */

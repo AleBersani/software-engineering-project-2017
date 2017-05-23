@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO
+ * TODO: JavaDoc
  */
 public class Player {
     private PlayerDetails playerDetails;

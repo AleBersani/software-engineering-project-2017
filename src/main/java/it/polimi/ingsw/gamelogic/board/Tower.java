@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO
+ * TODO: JavaDoc
  */
 public class Tower {
     private GeneralColor color;

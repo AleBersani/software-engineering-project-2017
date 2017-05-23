@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.board;
 import java.util.List;
 
 /**
- * TODO
+ * TODO: JavaDoc
  */
 public class BoardActionSpaces {
     private List<ActionSpace> productionArea;
@@ -19,7 +19,7 @@ public class BoardActionSpaces {
     }
 
     /**
-     * TODO
+     * TODO: JavaDoc
      * @param production
      */
     public void addToProductionArea(ActionSpace production) {
@@ -27,7 +27,7 @@ public class BoardActionSpaces {
     }
 
     /**
-     * TODO
+     * TODO: JavaDoc
      * @param harvest
      */
     public void addToHarvestArea(ActionSpace harvest) {
@@ -35,7 +35,7 @@ public class BoardActionSpaces {
     }
 
     /**
-     * TODO
+     * TODO: JavaDoc
      * @param market
      */
     public void addToMarketArea(ActionSpace market) {

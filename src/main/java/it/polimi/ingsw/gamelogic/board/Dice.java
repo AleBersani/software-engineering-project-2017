@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.board;
 import it.polimi.ingsw.gamelogic.enums.DiceColor;
 
 /**
- * TODO
+ * TODO: JavaDoc
  */
 public class Dice {
     private DiceColor diceColor;
