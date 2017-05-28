@@ -1,13 +1,13 @@
 package it.polimi.ingsw.gamelogic.cards.leadercards;
 
 import it.polimi.ingsw.gamelogic.actions.ActionDescription;
-import it.polimi.ingsw.gamelogic.actions.BoardAction;
+import it.polimi.ingsw.gamelogic.cards.leadercards.common.LeaderCard;
 
 /**
  * Leader Cards having an ActionDescription
  */
-public class InstantActionLeader implements LeadersBehaviour {
-    private  LeaderCard leaderCard; // Composite
+public class InstantActionLeader {
+    private LeaderCard leaderCard;
     private ActionDescription actionDescription;
 
     public InstantActionLeader(LeaderCard leaderCard, ActionDescription actionDescription) {

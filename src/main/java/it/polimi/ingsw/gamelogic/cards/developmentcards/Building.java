@@ -12,6 +12,7 @@ public class Building implements Collectible {
     private int productionActionValueRequired;
     private List<ExchangingGoods> productionResult;
     private List<Goods> requirementsForProductionExchange;
+    // ActionDescription
 
     public Building(DevelopmentCard developmentCard, int productionActionValueRequired,
                     List<ExchangingGoods> productionResult) {

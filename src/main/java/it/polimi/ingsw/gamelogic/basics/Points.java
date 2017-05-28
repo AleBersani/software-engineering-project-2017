@@ -20,6 +20,15 @@ public class Points {
     }
 
     @Override
+    public String toString() {
+        return "Points{" +
+                "victory=" + victory +
+                ", military=" + military +
+                ", faith=" + faith +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

@@ -1,11 +1,12 @@
 package it.polimi.ingsw.gamelogic.cards.leadercards;
 
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
+import it.polimi.ingsw.gamelogic.cards.leadercards.common.LeaderCard;
 
 /**
  * Leader Cards having an instant Goods
  */
-public class InstantGoodsLeader implements LeadersBehaviour {
+public class InstantGoodsLeader {
     private LeaderCard leaderCard; // Composite
     private ExchangingGoods instantGoods;
 

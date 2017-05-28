@@ -23,6 +23,16 @@ public class Resources {
     }
 
     @Override
+    public String toString() {
+        return "Resources{" +
+                "woods=" + woods +
+                ", stones=" + stones +
+                ", servants=" + servants +
+                ", coins=" + coins +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

@@ -38,6 +38,14 @@ public class Goods {
     }
 
     @Override
+    public String toString() {
+        return "Goods{" +
+                "" + resources.toString() +
+                ", " + points.toString() +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

@@ -1,11 +1,5 @@
 package it.polimi.ingsw.gamelogic.cards.excommunicationtiles;
 
-import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.basics.Points;
-import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
-import it.polimi.ingsw.gamelogic.rewards.ActualRewards;
-import it.polimi.ingsw.gamelogic.rewards.Rewards;
-
 public class ExcommunicationTile<T> {
     private ExcommunicationTileDetails excommunicationTileDetails;
     private T decorator;

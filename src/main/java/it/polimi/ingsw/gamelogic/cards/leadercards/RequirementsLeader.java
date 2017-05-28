@@ -1,12 +1,13 @@
 package it.polimi.ingsw.gamelogic.cards.leadercards;
 
-import it.polimi.ingsw.gamelogic.requirements.Requirements;
+import it.polimi.ingsw.gamelogic.cards.leadercards.common.LeaderCard;
+import it.polimi.ingsw.gamelogic.decorators.requirements.Requirements;
 
 /**
  * Leader Cards having a decorator of Requirements
  * @see Requirements
  */
-public class RequirementsLeader implements LeadersBehaviour {
+public class RequirementsLeader {
     private LeaderCard leaderCard;
     private Requirements requirements;
 

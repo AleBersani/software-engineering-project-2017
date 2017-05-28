@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.enums;
 /**
  * TODO: JavaDoc
  */
-public enum AvailableActions {
+public enum ActionType {
     GREEN_TOWER,
     YELLOW_TOWER,
     BLUE_TOWER,
@@ -15,7 +15,5 @@ public enum AvailableActions {
     LEADER_PLACEMENT,
     LEADER_ACTIVATION,
     LEARD_DISCARD,
-    TOWERS_A,
-    ACTIONSPACES_A,
     GENERAL_A
 }

@@ -1,20 +1,23 @@
-package it.polimi.ingsw.gamelogic.actions;
+package it.polimi.ingsw.gamelogic.decorators.requirements;
 
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;
+import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
-/**
- * Class representing the basic information of an action
- */
-public class BasicAction {
+public class SpaceActionRequirements {
     private ActionType actionType;
     private BoardIdentifier boardIdentifier;
+    private PawnColor pawnColor;
     private int actionValue;
+    private int numberOfServants;
 
-    public BasicAction(ActionType actionType, BoardIdentifier boardIdentifier, int actionValue) {
+    public SpaceActionRequirements(ActionType actionType, BoardIdentifier boardIdentifier,
+                                   PawnColor pawnColor, int actionValue, int numberOfServants) {
         this.actionType = actionType;
         this.boardIdentifier = boardIdentifier;
+        this.pawnColor = pawnColor;
         this.actionValue = actionValue;
+        this.numberOfServants = numberOfServants;
     }
 
     public ActionType getActionType() {
@@ -33,6 +36,14 @@ public class BasicAction {
         this.boardIdentifier = boardIdentifier;
     }
 
+    public PawnColor getPawnColor() {
+        return pawnColor;
+    }
+
+    public void setPawnColor(PawnColor pawnColor) {
+        this.pawnColor = pawnColor;
+    }
+
     public int getActionValue() {
         return actionValue;
     }
@@ -41,6 +52,11 @@ public class BasicAction {
         this.actionValue = actionValue;
     }
 
-    public BasicAction() {
+    public int getNumberOfServants() {
+        return numberOfServants;
+    }
+
+    public void setNumberOfServants(int numberOfServants) {
+        this.numberOfServants = numberOfServants;
     }
 }

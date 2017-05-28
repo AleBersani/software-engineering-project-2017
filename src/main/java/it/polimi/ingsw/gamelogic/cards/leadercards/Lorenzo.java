@@ -1,6 +1,12 @@
 package it.polimi.ingsw.gamelogic.cards.leadercards;
 
-public class Lorenzo<T extends LeadersBehaviour> {
+import it.polimi.ingsw.gamelogic.cards.leadercards.common.LeaderCard;
+
+/**
+ * TODO: JavaDoc
+ * @param <T>
+ */
+public class Lorenzo<T> {
     private LeaderCard leaderCard;
     private T copiedBehaviour;
 

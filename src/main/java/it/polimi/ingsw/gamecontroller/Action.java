@@ -1,38 +1,18 @@
 package it.polimi.ingsw.gamecontroller;
 
 import it.polimi.ingsw.gamelogic.actions.*;
-import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.enums.AvailableActions;
-import it.polimi.ingsw.gamelogic.enums.BoardIdentifiers;
-import it.polimi.ingsw.gamelogic.requirements.ActualRequirements;
-import it.polimi.ingsw.gamelogic.requirements.Requirements;
-import it.polimi.ingsw.gamelogic.rewards.ActualRewards;
-import it.polimi.ingsw.gamelogic.rewards.Rewards;
+import it.polimi.ingsw.gamelogic.decorators.rewards.RewardsModifier;
+import it.polimi.ingsw.gamelogic.decorators.requirements.Requirements;
 
 public class Action {
     private ActionDescription actionDescription;
     private Requirements requiredRequirements;
-    private Rewards rewards;
+    private RewardsModifier rewardsModifier;
 
-    public static void main(String argv[]) {
-        ActionDescription actionDescription = new BoardAction(
-                new BasicAction(AvailableActions.ACTIONSPACES_A, BoardIdentifiers.COUNCIL_PALACE, 0));
-        Requirements requirements = new ActualRequirements();
-        Rewards rewards = new ActualRewards(new Goods());
-
-        Action action = new Action(actionDescription, requirements, rewards);
-
-        action.getActionDescription().callAction(action);
-
-        action.setActionDescription(new LeaderAction(AvailableActions.LEADER_ACTIVATION,""));
-
-        action.getActionDescription().callAction(action);
-    }
-
-    public Action(ActionDescription actionDescription, Requirements requiredRequirements, Rewards rewards) {
+    public Action(ActionDescription actionDescription, Requirements requiredRequirements, RewardsModifier rewardsModifier) {
         this.actionDescription = actionDescription;
         this.requiredRequirements = requiredRequirements;
-        this.rewards = rewards;
+        this.rewardsModifier = rewardsModifier;
     }
 
     public void readAction(BoardAction boardAction) {
@@ -67,11 +47,11 @@ public class Action {
         this.requiredRequirements = requiredRequirements;
     }
 
-    public Rewards getRewards() {
-        return rewards;
+    public RewardsModifier getRewardsModifier() {
+        return rewardsModifier;
     }
 
-    public void setRewards(Rewards rewards) {
-        this.rewards = rewards;
+    public void setRewardsModifier(RewardsModifier rewardsModifier) {
+        this.rewardsModifier = rewardsModifier;
     }
 }

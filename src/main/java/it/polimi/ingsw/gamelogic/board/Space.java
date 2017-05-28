@@ -1,34 +1,34 @@
 package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.enums.BoardIdentifiers;
+import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;
 
 public class Space {
-    private BoardIdentifiers boardIdentifier;
+    private BoardIdentifier boardIdentifier;
     private int requestedValue;
     private Goods instantGoods; // Optional
 
     private boolean alreadyTaken;
 
-    public Space(BoardIdentifiers boardIdentifier, int requestedValue) {
+    public Space(BoardIdentifier boardIdentifier, int requestedValue) {
         this.boardIdentifier = boardIdentifier;
         this.requestedValue = requestedValue;
         instantGoods = new Goods();
         alreadyTaken = false;
     }
 
-    public Space(BoardIdentifiers boardIdentifier, int requestedValue, Goods instantGoods) {
+    public Space(BoardIdentifier boardIdentifier, int requestedValue, Goods instantGoods) {
         this.boardIdentifier = boardIdentifier;
         this.requestedValue = requestedValue;
         this.instantGoods = instantGoods;
         alreadyTaken = false;
     }
 
-    public BoardIdentifiers getBoardIdentifier() {
+    public BoardIdentifier getBoardIdentifier() {
         return boardIdentifier;
     }
 
-    public void setBoardIdentifier(BoardIdentifiers boardIdentifier) {
+    public void setBoardIdentifier(BoardIdentifier boardIdentifier) {
         this.boardIdentifier = boardIdentifier;
     }
 

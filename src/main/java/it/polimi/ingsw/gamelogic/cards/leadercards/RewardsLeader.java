@@ -1,18 +1,19 @@
 package it.polimi.ingsw.gamelogic.cards.leadercards;
 
-import it.polimi.ingsw.gamelogic.rewards.Rewards;
+import it.polimi.ingsw.gamelogic.cards.leadercards.common.LeaderCard;
+import it.polimi.ingsw.gamelogic.decorators.rewards.RewardsModifier;
 
 /**
  * Leader Cards having a decorator of Requirements
- * @see Rewards
+ * @see RewardsModifier
  */
-public class RewardsLeader implements LeadersBehaviour {
+public class RewardsLeader {
     private LeaderCard leaderCard; // Composite
-    private Rewards rewards;
+    private RewardsModifier rewardsModifier;
 
-    public RewardsLeader(LeaderCard leaderCard, Rewards rewards) {
+    public RewardsLeader(LeaderCard leaderCard, RewardsModifier rewardsModifier) {
         this.leaderCard = leaderCard;
-        this.rewards = rewards;
+        this.rewardsModifier = rewardsModifier;
     }
 
     public LeaderCard getLeaderCard() {
@@ -23,11 +24,11 @@ public class RewardsLeader implements LeadersBehaviour {
         this.leaderCard = leaderCard;
     }
 
-    public Rewards getRewards() {
-        return rewards;
+    public RewardsModifier getRewardsModifier() {
+        return rewardsModifier;
     }
 
-    public void setRewards(Rewards rewards) {
-        this.rewards = rewards;
+    public void setRewardsModifier(RewardsModifier rewardsModifier) {
+        this.rewardsModifier = rewardsModifier;
     }
 }

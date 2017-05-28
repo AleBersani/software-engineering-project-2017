@@ -2,7 +2,7 @@ package it.polimi.ingsw.gamelogic.actions;
 
 import it.polimi.ingsw.gamecontroller.Action;
 import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.enums.AvailableActions;
+import it.polimi.ingsw.gamelogic.enums.ActionType;
 
 /**
  * This class describes the flash action of some Development Cards requiring a certain number of "things"
@@ -11,7 +11,7 @@ import it.polimi.ingsw.gamelogic.enums.AvailableActions;
  * it's been decided to use the class Goods to represent it for maintainability and compatibility.
  */
 public class CardActionInstantPoints implements ActionDescription {
-    private AvailableActions actionType;
+    private ActionType actionType;
     /**
      * Always Victory Points in the current version of the game
      */

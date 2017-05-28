@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.actions;
 
 import it.polimi.ingsw.gamecontroller.Action;
-import it.polimi.ingsw.gamelogic.enums.AvailableActions;
+import it.polimi.ingsw.gamelogic.enums.ActionType;
 
 /**
  * Class that represent every action related to a Leader Card, in particular:
@@ -10,10 +10,10 @@ import it.polimi.ingsw.gamelogic.enums.AvailableActions;
  *      - discard of a Leader
  */
 public class LeaderAction implements ActionDescription {
-    private AvailableActions actionType;
+    private ActionType actionType;
     private String leaderName;
 
-    public LeaderAction(AvailableActions actionType, String leaderName) {
+    public LeaderAction(ActionType actionType, String leaderName) {
         this.actionType = actionType;
         this.leaderName = leaderName;
     }
@@ -23,11 +23,11 @@ public class LeaderAction implements ActionDescription {
         action.readAction(this);
     }
 
-    public AvailableActions getActionType() {
+    public ActionType getActionType() {
         return actionType;
     }
 
-    public void setActionType(AvailableActions actionType) {
+    public void setActionType(ActionType actionType) {
         this.actionType = actionType;
     }
 
