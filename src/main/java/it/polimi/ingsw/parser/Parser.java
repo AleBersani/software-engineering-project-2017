@@ -6,10 +6,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.cards.development.Building;
-import it.polimi.ingsw.gamelogic.cards.development.CardInformation;
-import it.polimi.ingsw.gamelogic.cards.development.DevelopmentCard;
-import it.polimi.ingsw.gamelogic.cards.development.Territory;
+import it.polimi.ingsw.gamelogic.basics.Points;
+import it.polimi.ingsw.gamelogic.basics.Resources;
+import it.polimi.ingsw.gamelogic.cards.development.*;
+import it.polimi.ingsw.gamelogic.cards.development.Character;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
@@ -19,16 +19,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Parser Class manages the parsing from Json to Java Objects.
+ */
 public class Parser {
     private BufferedReader br = null;
     private FileReader fr = null;
-    private final static String PATH = System.getProperty("user.dir") + "/src/json/DevelopmentCards.json";
+    private static String PATH;
     public Parser() throws IOException {
-
+        PATH = System.getProperty("user.dir") + "/src/json/";
     }
 
+    /**
+     * Method that parses Territory Development Cards from Json.
+     * @throws IOException
+     */
     public void parseTerritory() throws IOException {
-        open();
+        String path = PATH + "DevelopmentCards.json";
+        open(path);
 
         JsonParser parser = new JsonParser();
         JsonObject object = parser.parse(br).getAsJsonObject();
@@ -37,38 +46,112 @@ public class Parser {
         List<Territory> territories = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++){
             JsonObject card = cards.get(index).getAsJsonObject();
+            DevelopmentCard developmentCard = parseDevelopmentCard(card);
 
-            CardInformation cardInfo = parseCardInformation(card);
+            /*CardInformation cardInfo = parseCardInformation(card);
             List<Goods> costs = parseCosts(card);
-            // FlashEffect instantEffect = parseFlashEffect(card);
+            ExchangingGoods instantExchangingGoods = parseExchangingGoods(card);*/
+
             int harvestActionValueRequired = card.get("harvestActionValueRequired").getAsInt();
-            ExchangingGoods harvestResult = parseHarvestResult(card);
-            territories.add(new Territory(new DevelopmentCard(cardInfo, costs, instantEffect), harvestActionValueRequired, harvestResult));
+            ExchangingGoods harvestResult = parseExchangingGoods(card);
+            territories.add(new Territory(developmentCard, harvestActionValueRequired, harvestResult));
 
         }
         territories.forEach((Territory s) -> System.out.print(s.toString() + "\n"));
         close();
     }
 
+    /**
+     * Method that parses Building Development Cards from Json
+     * @throws IOException
+     */
     public void parseBuilding() throws IOException {
-        open();
+        String path = PATH + "DevelopmentCards.json";
+        open(path);
         JsonParser parser = new JsonParser();
         JsonObject object = parser.parse(br).getAsJsonObject();
         JsonArray cards = object.get("building").getAsJsonArray();
         List<Building> buildings = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++){
             JsonObject card = cards.get(index).getAsJsonObject();
-            CardInformation cardInfo = parseCardInformation(card);
-            List<Goods> costs = parseCosts(card);
-
-
+            DevelopmentCard developmentCard = parseDevelopmentCard(card);
+            buildings.add(new Building(developmentCard));
         }
-
+        buildings.forEach((Building s) -> System.out.println(s.toString() + "\n"));
+        close();
     }
 
+    /**
+     * Method that parses Character Development Cards from Json
+     * @throws IOException
+     */
+    public void parseCharacter() throws IOException {
+        String path = PATH + "DevelopmentCards.json";
+        open(path);
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(br).getAsJsonObject();
+        JsonArray cards = object.get("character").getAsJsonArray();
+        List<Character> characters = new ArrayList<>();
+        for(int index = 0; index<cards.size(); index++) {
+            JsonObject card = cards.get(index).getAsJsonObject();
+            DevelopmentCard developmentCard = parseDevelopmentCard(card);
+            characters.add(new Character(developmentCard));
+        }
+        characters.forEach((Character s) -> System.out.println(s.toString() + "\n"));
+    }
 
+    /**
+     * Method that parses Venture Development Cards from Json
+     * @throws IOException
+     */
+    public void parseVenture() throws IOException {
+        String path = PATH + "DevelopmentCards.json";
+        open(path);
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(br).getAsJsonObject();
+        JsonArray cards = object.get("venture").getAsJsonArray();
+        List<Venture> ventures = new ArrayList<>();
+        for(int index = 0; index<cards.size(); index++) {
+            JsonObject card = cards.get(index).getAsJsonObject();
+            DevelopmentCard developmentCard = parseDevelopmentCard(card);
+            Goods endGameRewards = parseEndGameRewards(card);
+            ventures.add(new Venture(developmentCard, endGameRewards));
+        }
+    }
 
+    /**
+     * Private method used for Venture Development Cards parsing,
+     * that parses Points from JsonObject and returns a Goods Object.
+     * @param card JsonObject from which method gets a specific value.
+     * @return Goods Object containing endGamePoints set in Json file.
+     */
+    private Goods parseEndGameRewards(JsonObject card) {
+        Gson gson = new Gson();
+        JsonArray costs = card.get("endGamePoints").getAsJsonArray();
+        Points endGamePoints = gson.fromJson(costs, Points.class);
+        return new Goods(new Resources(), endGamePoints);
+    }
 
+    /**
+     * Private method used for Development Cards parsing,
+     * that parses a DevelopmentCard Object from a JsonObject
+     * @param card JsonObject from which method gets a specific value.
+     * @return DevelopmentCard Object containing cardInformation, cost and instantEffect set in Json file.
+     */
+    private DevelopmentCard parseDevelopmentCard(JsonObject card) {
+        CardInformation cardInfo = parseCardInformation(card);
+        List<Goods> costs = parseCosts(card);
+        ExchangingGoods instantExchangingGoods = parseExchangingGoods(card);
+
+        return new DevelopmentCard(cardInfo, costs, instantExchangingGoods);
+    }
+
+    /**
+     * Private method used by parseDevelopmentCard,
+     * that parses a CardInformation Object from a JsonObject.
+     * @param card JsonObject from which method gets a specific value.
+     * @return CardInformation Object containing cardInformation set in Json file.
+     */
     private CardInformation parseCardInformation(JsonObject card) {
         JsonArray cardInfos = card.get("cardInformations").getAsJsonArray();
         JsonObject cardInfo = cardInfos.get(0).getAsJsonObject();
@@ -81,6 +164,11 @@ public class Parser {
         return new CardInformation(number, name, periodNumber, cardColorEnum);
     }
 
+    /**
+     * Method that sets during parsing GeneralColor Enum attributes.
+     * @param cardColor
+     * @return
+     */
     private GeneralColor decideColorEnum(String cardColor) {
         GeneralColor cardColorOfficial = null;
         switch(cardColor) {
@@ -118,49 +206,21 @@ public class Parser {
         return parsedCosts;
     }
 
-    /*private FlashEffect parseFlashEffect(JsonObject card) {
+    private ExchangingGoods parseExchangingGoods(JsonObject card) {
         Gson gson = new Gson();
         JsonArray instantEffect = card.get("instantEffect").getAsJsonArray();
         ExchangingGoods parsedInstantEffect = gson.fromJson(instantEffect.get(0).getAsJsonObject(),
                 ExchangingGoods.class);
 
-        return new FlashEffect (parsedInstantEffect);
-    }*/
-
-    private ExchangingGoods parseHarvestResult(JsonObject card) {
-        Gson gson = new Gson();
-        JsonArray harvestResult = card.get("harvestResult").getAsJsonArray();
-        ExchangingGoods parsedHarvestResult = gson.fromJson(harvestResult.get(0).getAsJsonObject(),
-                ExchangingGoods.class);
-        return parsedHarvestResult;
+        return parsedInstantEffect;
     }
 
-
-    /*public void parseFile2() throws IOException{
-        open();
-        Gson gson = new Gson();
-        JsonParser parser = new JsonParser();
-        JsonObject object = parser.parse(br).getAsJsonObject();
-        JsonArray cards = object.get("cards").getAsJsonArray();
-        for(int index = 0; index<cards.size(); index++){
-            JsonObject cardObject = cards.get(index).getAsJsonObject();
-            Card card = gson.fromJson(cardObject, Card.class);
-
-            System.out.println(card.getName() + "-" + card.getPeriod() + "-" + card.getColor());
-        }
-        close();
-    }*/
-
-    private void open() throws IOException{
-        fr = new FileReader(PATH);
+    private void open(String path) throws IOException{
+        fr = new FileReader(path);
         br = new BufferedReader(fr);
     }
     private void close() throws IOException{
         br.close();
         fr.close();
     }
-
-
-
-
 }

@@ -12,6 +12,15 @@ public class Building implements Collectible {
     private DevelopmentCard developmentCard;
     private ExchangingGoods productionResult;
 
+    public Building(DevelopmentCard developmentCard) {
+        this.developmentCard = developmentCard;
+        productionResult = new ExchangingGoods();
+    }
+
+    /*
+    * TODO:
+    */
+
     @Override
     public CardInformation getCardInformation() {
         return developmentCard.getCardInformation();
