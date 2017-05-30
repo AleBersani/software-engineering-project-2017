@@ -1,0 +1,6583 @@
+{
+	"DevelopmentCard": {
+		"territory": [
+			{
+				"cardInformations": [
+					{
+						"name": "Avamposto Commerciale",
+						"number": "1",
+						"period": "1",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "1",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Bosco",
+						"number": "2",
+						"period": "1",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "2",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Borgo",
+						"number": "3",
+						"period": "1",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "3",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "1",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Cava di Ghiaia",
+						"number": "4",
+						"period": "1",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "2",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "4",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "2",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Foresta",
+						"number": "5",
+						"period": "1",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "5",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "3",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Monastero",
+						"number": "6",
+						"period": "1",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "1",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "2",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "6",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Rocca",
+						"number": "7",
+						"period": "1",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "5",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "2",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Citta'",
+						"number": "8",
+						"period": "1",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "6",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Miniera d'Oro",
+						"number": "9",
+						"period": "2",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "1",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Villaggio Montano",
+						"number": "10",
+						"period": "2",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "1",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "3",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "1",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Villaggio Minerario",
+						"number": "11",
+						"period": "2",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "2",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "4",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "2",
+							"servants": "1",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Cava di Pietra",
+						"number": "12",
+						"period": "2",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "3",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "3",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Possedimento",
+						"number": "13",
+						"period": "2",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "2",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "4",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Eremo",
+						"number": "14",
+						"period": "2",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "2",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Maniero",
+						"number": "15",
+						"period": "2",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "5",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "2",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "2",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Ducato",
+						"number": "16",
+						"period": "2",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "6",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "1",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Citta' Mercantile",
+						"number": "17",
+						"period": "3",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "1",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "1",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Tenuta",
+						"number": "18",
+						"period": "3",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "1",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "3",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Colonia",
+						"number": "19",
+						"period": "3",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "2",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "5",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "4",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Cava di Marmo",
+						"number": "20",
+						"period": "3",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "3",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "2",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "2",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "1",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Provincia",
+						"number": "21",
+						"period": "3",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"harvestActionValueRequired": "6",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "4",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Santuario",
+						"number": "22",
+						"period": "3",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "1",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Castello",
+						"number": "23",
+						"period": "3",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "4",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "1",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "3",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Citta' Fortificata",
+						"number": "24",
+						"period": "3",
+						"cardColor": "green"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "1",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "2",
+							"faith": "0"
+						},
+						"councilePrivilege": "0"
+					}
+				],
+				"harvestActionValueRequired": "2",
+				"harvestResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "2",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "1",
+							"faith": "0"
+						},
+						"councilePrivilege": "0"
+					}
+				]
+			}
+		],
+		"building": [
+			{
+				"cardInformations": [
+					{
+						"name": "Zecca",
+						"number": "25",
+						"period": "1",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "3",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "5",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "5",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": "yellow"
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Esattoria",
+						"number": "26",
+						"period": "1",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "3",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "5",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "5",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": "green"
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Arco di Trionfo",
+						"number": "27",
+						"period": "1",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "2",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "6",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "6",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "1",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": "purple"
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Teatro",
+						"number": "28",
+						"period": "1",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "0",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "6",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "6",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "1",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": "blue"
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Falegnameria",
+						"number": "29",
+						"period": "1",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "3",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "4",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "5"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Tagliapietre",
+						"number": "30",
+						"period": "1",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "2",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "3",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "5"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "2",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Cappella",
+						"number": "31",
+						"period": "1",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "2",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Residenza",
+						"number": "32",
+						"period": "1",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "2",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "1",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "1",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Mercato",
+						"number": "33",
+						"period": "2",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "3",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "3",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "2",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Tesoreria",
+						"number": "34",
+						"period": "2",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "3",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "4",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "3",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "3",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "5",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Gilda dei Pittori",
+						"number": "35",
+						"period": "2",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "4",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "5",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "4",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "3",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "7",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "3",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Gilda degli Scultori",
+						"number": "36",
+						"period": "2",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "4",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "6",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "5",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "3",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "7",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "3",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Gilda dei Costruttori",
+						"number": "37",
+						"period": "2",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "2",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "4",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "4",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "6",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "1",
+							"servants": "1",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Battistero",
+						"number": "38",
+						"period": "2",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "3",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "2",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Caserma",
+						"number": "39",
+						"period": "2",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "3",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "1",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "3",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "1",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Fortezza",
+						"number": "40",
+						"period": "2",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "2",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "8",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "6",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "2",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Banca",
+						"number": "41",
+						"period": "3",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "3",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "7",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "2",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "5"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Fiera",
+						"number": "42",
+						"period": "3",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "3",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "8",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "4",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "3",
+							"stones": "3",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Giardino",
+						"number": "43",
+						"period": "3",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "4",
+							"stones": "2",
+							"servants": "2",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "10",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "1",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "3",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Castelletto",
+						"number": "44",
+						"period": "3",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "4",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "9",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "5",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Palazzo",
+						"number": "45",
+						"period": "3",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "3",
+							"stones": "1",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "9",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "6",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "2",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "4",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Basilica",
+						"number": "46",
+						"period": "3",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "4",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "5",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "1",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "2"
+						},
+						"councilPrivilege": "0"
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "2"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Accademia Militare",
+						"number": "47",
+						"period": "3",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "2",
+							"stones": "2",
+							"servants": "1",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "7",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "3",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "1",
+							"military": "3",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "1",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Cattedrale",
+						"number": "48",
+						"period": "3",
+						"cardColor": "yellow"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "4",
+							"stones": "4",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "7",
+							"military": "0",
+							"faith": "3"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"productionActionValueRequired": "2",
+				"productionResult": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "1",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsForProductionExchange": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"cardRequiredForProductionExchange": ""
+			}
+		],
+		"character": [
+			{
+				"cardInformations": [
+					{
+						"name": "Condottiero",
+						"number": "49",
+						"period": "1",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "3",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "2",
+				"decorator": "",
+				"actionSpaceIdentifier" : "greenTower",
+				"discountOnAction" : [{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Costruttore",
+						"number": "50",
+						"period": "1",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "2",
+				"decorator": "BonusPawn",
+				"actionSpaceIdentifier" : "yellowTower",
+				"discountOnAction" : [
+					{
+					"resources": {
+						"woods": "1",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Dama",
+						"number": "51",
+						"period": "1",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "2",
+				"decorator": "BonusPawn",
+				"actionSpaceIdentifier" : "blueTower",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Cavaliere",
+						"number": "52",
+						"period": "1",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "2"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "2",
+				"decorator": "BonusPawn",
+				"actionSpaceIdentifier" : "purpleTower",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Contadino",
+						"number": "53",
+						"period": "1",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "2",
+				"decorator": "BonusPawn",
+				"actionSpaceIdentifier" : "harvest",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Artigiano",
+						"number": "54",
+						"period": "1",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "2",
+				"decorator": "BonusPawn",
+				"actionSpaceIdentifier" : "production",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Predicatore",
+						"number": "55",
+						"period": "1",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "4"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "",
+				"decorator": "NoBoardBonusRewards",
+				"actionSpaceIdentifier" : "",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Badessa",
+						"number": "56",
+						"period": "1",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "4",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "towers",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Capitano",
+						"number": "57",
+						"period": "2",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "2",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "6",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "greenTower",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Architetto",
+						"number": "58",
+						"period": "2",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "6",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Mecenate",
+						"number": "59",
+						"period": "2",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "6",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "blueTower",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Eroe",
+						"number": "60",
+						"period": "2",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "6",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "purpleTower",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Fattore",
+						"number": "61",
+						"period": "2",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "3",
+				"decorator": "BonusPawn",
+				"actionSpaceIdentifier" : "harvest",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Studioso",
+						"number": "62",
+						"period": "2",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "3",
+				"decorator": "BonusPawn",
+				"actionSpaceIdentifier" : "production",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Messo Papale",
+						"number": "63",
+						"period": "2",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "5"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "3"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Messo Reale",
+						"number": "64",
+						"period": "2",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "5"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "3"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Nobile",
+						"number": "65",
+						"period": "3",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "6"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "green",
+				"actionValue": "",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Governatore",
+						"number": "66",
+						"period": "3",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "6"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "yellow",
+				"actionValue": "",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Cortigiana",
+						"number": "67",
+						"period": "3",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "7"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "blue",
+				"actionValue": "",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Araldo",
+						"number": "68",
+						"period": "3",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "6"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "purple",
+				"actionValue": "",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Cardinale",
+						"number": "69",
+						"period": "3",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "4"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "2"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "4",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "harvest",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Vescovo",
+						"number": "70",
+						"period": "3",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "5"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "4",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "production",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Generale",
+						"number": "71",
+						"period": "3",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "5"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "1",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "military",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Ambasciatore",
+						"number": "72",
+						"period": "3",
+						"cardColor": "blue"
+					}
+				],
+				"cost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "6"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"pointsRequiredForInstantExchangeEffect": "",
+				"cardRequiredForInstantExchangeEffect": "",
+				"actionValue": "7",
+				"actionValueSurplus": "",
+				"decorator": "",
+				"actionSpaceIdentifier" : "towers",
+				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
+			}
+		],
+		"venture": [
+			{
+				"cardInformations": [
+					{
+						"name": "Ingaggiare reclute",
+						"number": "73",
+						"period": "1",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "4"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "5",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "4",
+					"military": "0",
+					"faith": "0"
+				}]
+
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Riparare la Chiesa",
+						"number": "74",
+						"period": "1",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "1",
+									"stones": "1",
+									"servants": "0",
+									"coins": "1"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "5",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Costruire le Mura",
+						"number": "75",
+						"period": "1",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "3",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "2",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "3",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Innalzare una Statua",
+						"number": "76",
+						"period": "1",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "2",
+									"stones": "2",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "2"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "4",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Campagna Militare",
+						"number": "77",
+						"period": "1",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "2",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "3",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "5",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Ospitare i Mendicanti",
+						"number": "78",
+						"period": "1",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "3",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "4",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"requirementsOnCost2": [{
+				"victory": "0",
+				"military": "0",
+				"faith": "0"
+			}],
+				"endGamePoints": [{
+					"victory": "4",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Combattere le Eresie",
+						"number": "79",
+						"period": "1",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "3",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "5",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "2"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "5",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Sostegno al Vescovo",
+						"number": "80",
+						"period": "1",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+						{
+							"resources": {
+								"woods": "1",
+								"stones": "1",
+								"servants": "0",
+								"coins": "2"
+							},
+							"points": {
+								"victory": "0",
+								"military": "0",
+								"faith": "0"
+							}
+						}
+					],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "2",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "4",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "3"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "1",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Ingaggiare Soldati",
+						"number": "81",
+						"period": "2",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "6"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "6",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "5",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Riparare l'Abbazia",
+						"number": "82",
+						"period": "2",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "2",
+									"stones": "2",
+									"servants": "0",
+									"coins": "2"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "2"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "6",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Costruire i Bastioni",
+						"number": "83",
+						"period": "2",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "4",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "3",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "2",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Supporto al Re",
+						"number": "84",
+						"period": "2",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "3",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "6",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "5"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "3",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Scavare Canalizzazioni",
+						"number": "85",
+						"period": "2",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "2",
+									"coins": "3"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "4",
+				"actionSpaceId": "harvest",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "5",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Accogliere gli Stranieri",
+						"number": "86",
+						"period": "2",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "4",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "5",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "4",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Crociata",
+						"number": "87",
+						"period": "2",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "4",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "8",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "5"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "5",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Sostegno al Cardinale",
+						"number": "88",
+						"period": "2",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "2",
+									"stones": "2",
+									"servants": "0",
+									"coins": "3"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "4",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "7",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "3"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "4",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Ingaggiare Mercenari",
+						"number": "89",
+						"period": "3",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "8"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "7",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "6",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Riparare la Cattedrale",
+						"number": "90",
+						"period": "3",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "3",
+									"stones": "3",
+									"servants": "0",
+									"coins": "3"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "7",
+				"actionSpaceId": "towers",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "1"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "5",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Costruire le Torri",
+						"number": "91",
+						"period": "3",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "6",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "4",
+							"faith": "0"
+						},
+						"councilPrivilege": "1"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "4",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Commissionare Arte Sacra",
+						"number": "92",
+						"period": "3",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "6",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "3"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "3",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Conquista Militare",
+						"number": "93",
+						"period": "3",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "6",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "12",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "3",
+							"stones": "3",
+							"servants": "0",
+							"coins": "3"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "7",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Migliorare le strade",
+						"number": "94",
+						"period": "3",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "3",
+									"coins": "4"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "0",
+					"faith": "0"
+				}],
+				"actionValue": "3",
+				"actionSpaceId": "production",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "5",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Guerra Santa",
+						"number": "95",
+						"period": "3",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "8",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "15",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "4"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+					"victory": "8",
+					"military": "0",
+					"faith": "0"
+				}]
+			},
+			{
+				"cardInformations": [
+					{
+						"name": "Sostegno al Papa",
+						"number": "",
+						"period": "3",
+						"cardColor": "purple"
+					}
+				],
+				"cost": [
+					{
+						"cost1": [
+							{
+								"resources": {
+									"woods": "3",
+									"stones": "3",
+									"servants": "0",
+									"coins": "4"
+								},
+								"points": {
+									"victory": "0",
+									"military": "0",
+									"faith": "0"
+								}
+							}
+						],
+						"cost2": [
+							{
+								"resources": {
+									"woods": "0",
+									"stones": "0",
+									"servants": "0",
+									"coins": "0"
+								},
+								"points": {
+									"victory": "0",
+									"military": "5",
+									"faith": "0"
+								}
+							}
+						]
+					}
+				],
+				"requirementsOnCost2": [{
+					"victory": "0",
+					"military": "10",
+					"faith": "0"
+				}],
+				"actionValue": "0",
+				"actionSpaceId": "",
+				"instantEffect": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "2"
+						},
+						"councilPrivilege": "0"
+					}
+				],
+				"endGamePoints": [{
+						"victory": "10",
+						"military": "0",
+						"faith": "0"
+					}]
+			}
+		]
+	}
+	
+}
+
+		
+
+
+
+		
