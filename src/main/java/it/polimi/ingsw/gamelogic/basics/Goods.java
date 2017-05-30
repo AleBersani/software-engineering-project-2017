@@ -59,6 +59,10 @@ public class Goods {
         return Objects.hash(getResources(), getPoints());
     }
 
+    /*
+    TODO: isLessThan
+     */
+
     /**
      * Add Goods to the instance
      * @param goodsToAdd added Goods

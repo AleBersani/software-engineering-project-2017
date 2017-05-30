@@ -1,30 +1,32 @@
 package it.polimi.ingsw.gamelogic.cards.excommunicationtiles;
 
+import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
+
 /**
  * TODO: JavaDoc
  */
-public class ExcommunicationTile<T> {
-    private ExcommunicationTileDetails excommunicationTileDetails;
-    private T decorator;
+public class ExcommunicationTile {
+    private String excommunicationTileName;
+    private PeriodNumber period;
 
-    public ExcommunicationTile(ExcommunicationTileDetails excommunicationTileDetails, T decorator) {
-        this.excommunicationTileDetails = excommunicationTileDetails;
-        this.decorator = decorator;
+    public ExcommunicationTile(String excommunicationTileName, PeriodNumber period) {
+        this.excommunicationTileName = excommunicationTileName;
+        this.period = period;
     }
 
-    public ExcommunicationTileDetails getExcommunicationTileDetails() {
-        return excommunicationTileDetails;
+    public String getExcommunicationTileName() {
+        return excommunicationTileName;
     }
 
-    public void setExcommunicationTileDetails(ExcommunicationTileDetails excommunicationTileDetails) {
-        this.excommunicationTileDetails = excommunicationTileDetails;
+    public void setExcommunicationTileName(String excommunicationTileName) {
+        this.excommunicationTileName = excommunicationTileName;
     }
 
-    public T getDecorator() {
-        return decorator;
+    public PeriodNumber getPeriod() {
+        return period;
     }
 
-    public void setDecorator(T decorator) {
-        this.decorator = decorator;
+    public void setPeriod(PeriodNumber period) {
+        this.period = period;
     }
 }

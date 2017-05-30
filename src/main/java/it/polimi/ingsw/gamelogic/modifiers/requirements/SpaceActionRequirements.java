@@ -1,4 +1,4 @@
-package it.polimi.ingsw.gamelogic.decorators.requirements;
+package it.polimi.ingsw.gamelogic.modifiers.requirements;
 
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;

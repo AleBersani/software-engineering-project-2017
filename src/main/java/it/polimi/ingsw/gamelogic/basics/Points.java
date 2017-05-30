@@ -46,6 +46,10 @@ public class Points {
         return Objects.hash(getVictory(), getMilitary(), getFaith());
     }
 
+    /*
+    TODO: isLessThan
+     */
+
     /**
      * Add other Points to this instance
      * @param pointsToAdd added Points

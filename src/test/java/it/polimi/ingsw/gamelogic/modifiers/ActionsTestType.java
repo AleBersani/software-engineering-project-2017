@@ -1,4 +1,4 @@
-package it.polimi.ingsw.gamelogic.decorators;
+package it.polimi.ingsw.gamelogic.modifiers;
 
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import org.junit.jupiter.api.BeforeEach;

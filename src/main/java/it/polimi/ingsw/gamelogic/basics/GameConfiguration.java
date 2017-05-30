@@ -1,14 +1,13 @@
 package it.polimi.ingsw.gamelogic.basics;
 
+/**
+ * TODO: JavaDoc
+ */
 public final class GameConfiguration {
     private static int maxNumberOfPlayer;
     private static int startingGameTimeout;
     private static int moveTimeout;
     private static int numberOfPeriods;
-
-    public GameConfiguration() {
-
-    }
 
     public static int getMaxNumberOfPlayer() {
         return maxNumberOfPlayer;

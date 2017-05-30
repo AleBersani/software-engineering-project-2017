@@ -10,10 +10,6 @@ public final class BoardConfiguration {
     private static int maxMilitaryPoints;
     private static int maxFaithPoints;
 
-    public BoardConfiguration() {
-        // TODO
-    }
-
     public static int getNumberOfTowers() {
         return numberOfTowers;
     }

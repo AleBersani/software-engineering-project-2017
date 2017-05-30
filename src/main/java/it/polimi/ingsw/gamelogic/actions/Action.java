@@ -1,8 +1,10 @@
 package it.polimi.ingsw.gamelogic.actions;
 
 import it.polimi.ingsw.gamelogic.actions.description.*;
-import it.polimi.ingsw.gamelogic.decorators.rewards.BasicRewards;
-import it.polimi.ingsw.gamelogic.decorators.requirements.Requirements;
+import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
+import it.polimi.ingsw.gamelogic.modifiers.requirements.Requirements;
+
+import java.util.List;
 
 /**
  * TODO: JavaDoc
@@ -10,7 +12,7 @@ import it.polimi.ingsw.gamelogic.decorators.requirements.Requirements;
 public class Action implements ActionVisitor {
     private ActionDescription actionDescription;
     private Requirements requiredRequirements;
-    private BasicRewards basicRewards;
+    private List<BasicRewards> basicRewardsList;
 
     /*
      TODO: ALL

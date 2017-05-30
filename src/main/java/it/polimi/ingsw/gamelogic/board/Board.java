@@ -1,7 +1,6 @@
 package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
-import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTileDetails;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderInformation;
 import it.polimi.ingsw.gamelogic.enums.DiceColor;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
@@ -17,7 +16,7 @@ public class Board {
     private CouncilPalace councilPalace;
     private BoardActionSpaces boardActionSpaces;
 
-    private List<ExcommunicationTileDetails> excommunicationTiles;
+    private List<ExcommunicationTile> excommunicationTiles;
     private List<Dice> dices;
     private List<LeaderInformation> leaderInformationList;
 
@@ -42,11 +41,6 @@ public class Board {
     public ExcommunicationTile getExcommunicationTileGivenPeriod(PeriodNumber periodNumber) {
         // TODO
         return null;
-        /*
-        return excommunicationTiles.stream()
-                .filter(e -> e.equals(periodNumber))
-                .findFirst()
-                .get();*/
     }
 
     /**
@@ -86,11 +80,11 @@ public class Board {
         this.boardActionSpaces = boardActionSpaces;
     }
 
-    public List<ExcommunicationTileDetails> getExcommunicationTiles() {
+    public List<ExcommunicationTile> getExcommunicationTiles() {
         return excommunicationTiles;
     }
 
-    public void setExcommunicationTiles(List<ExcommunicationTileDetails> excommunicationTiles) {
+    public void setExcommunicationTiles(List<ExcommunicationTile> excommunicationTiles) {
         this.excommunicationTiles = excommunicationTiles;
     }
 

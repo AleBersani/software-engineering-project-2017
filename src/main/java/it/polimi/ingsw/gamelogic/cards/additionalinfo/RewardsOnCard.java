@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.cards.additionalinfo;
 
 import it.polimi.ingsw.gamelogic.cards.CardVisitor;
-import it.polimi.ingsw.gamelogic.decorators.rewards.RewardsModifier;
+import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 
 /**
  * TODO: JavaDoc

@@ -51,6 +51,10 @@ public class Resources {
         return Objects.hash(getWoods(), getStones(), getServants(), getCoins());
     }
 
+    /*
+    TODO: isLessThan
+     */
+
     /**
      * Add other Resources to this instance
      * @param resourcesToAdd added Resources

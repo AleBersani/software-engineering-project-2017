@@ -1,4 +1,4 @@
-package it.polimi.ingsw.gamelogic.decorators.rewards;
+package it.polimi.ingsw.gamelogic.modifiers.rewards;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.enums.ActionType;

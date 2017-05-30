@@ -11,10 +11,6 @@ public final class PlayerConfiguration {
     private static List<Goods> startingGoods;
     private static int numberOfPawns;
 
-    public PlayerConfiguration() {
-        // TODO
-    }
-
     public static int getNumberOfLeaders() {
         return numberOfLeaders;
     }

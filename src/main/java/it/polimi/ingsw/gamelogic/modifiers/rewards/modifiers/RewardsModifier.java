@@ -1,6 +1,7 @@
-package it.polimi.ingsw.gamelogic.decorators.rewards;
+package it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers;
 
-import it.polimi.ingsw.gamelogic.decorators.AvailableActions;
+import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
+import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
 
 /**
  * TODO: JavaDoc
