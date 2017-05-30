@@ -6,18 +6,18 @@ import it.polimi.ingsw.gamelogic.cards.development.Collectible;
 /**
  * TODO: JavaDoc
  */
-public class TowerSlot {
+public class TowerSlot<T extends Collectible> {
     private Space space;
     private Goods instantGoods;
-    private Collectible developmentCard;
+    private T developmentCard;
 
-    public TowerSlot(Space space, Collectible developmentCard) {
+    public TowerSlot(Space space, T developmentCard) {
         this.space = space;
         this.developmentCard = developmentCard;
         instantGoods = new Goods();
     }
 
-    public TowerSlot(Space space, Goods instantGoods, Collectible developmentCard) {
+    public TowerSlot(Space space, Goods instantGoods, T developmentCard) {
         this.space = space;
         this.instantGoods = instantGoods;
         this.developmentCard = developmentCard;
@@ -39,11 +39,11 @@ public class TowerSlot {
         this.instantGoods = instantGoods;
     }
 
-    public Collectible getDevelopmentCard() {
+    public T getDevelopmentCard() {
         return developmentCard;
     }
 
-    public void setDevelopmentCard(Collectible developmentCard) {
+    public void setDevelopmentCard(T developmentCard) {
         this.developmentCard = developmentCard;
     }
 }

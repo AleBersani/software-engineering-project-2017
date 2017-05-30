@@ -1,9 +1,7 @@
 package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
