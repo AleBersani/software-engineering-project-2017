@@ -2,6 +2,9 @@ package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
+/**
+ * TODO: JavaDoc
+ */
 public class BonusTiles {
     private Goods productionBonus;
     private Goods harvestBonus;

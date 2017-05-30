@@ -6,6 +6,9 @@ import it.polimi.ingsw.gamelogic.player.PlayerDetails;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TODO: JavaDoc
+ */
 public class CouncilPalace {
     private ExchangingGoods instantGoods;
     private int requiredValue;

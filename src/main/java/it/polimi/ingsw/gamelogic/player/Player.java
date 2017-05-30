@@ -11,18 +11,19 @@ import java.util.List;
 public class Player {
     private PlayerDetails playerDetails;
     private PlayerBoard playerBoard;
-
-    private Deck deck;
     private ActionDescription actualAction;
     private List<ActionDescription> possibleActionsForTurn;
 
     public Player(PlayerDetails playerDetails, PlayerBoard playerBoard) {
         this.playerDetails = playerDetails;
         this.playerBoard = playerBoard;
-        deck = new Deck();
         // TODO: initialization of actualAction
         possibleActionsForTurn = new ArrayList<>();
     }
+
+    /*
+    TODO: aux methods
+     */
 
     /**
      * Clean the list of possible action at the and of the turn (inside a round)
@@ -45,14 +46,6 @@ public class Player {
 
     public void setPlayerBoard(PlayerBoard playerBoard) {
         this.playerBoard = playerBoard;
-    }
-
-    public Deck getDeck() {
-        return deck;
-    }
-
-    public void setDeck(Deck deck) {
-        this.deck = deck;
     }
 
     public ActionDescription getActualAction() {

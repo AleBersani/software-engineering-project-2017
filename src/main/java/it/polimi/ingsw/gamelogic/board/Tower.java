@@ -13,29 +13,24 @@ public class Tower {
     private GeneralColor color;
     private List<TowerSlot> tower;
 
-    private List<PawnColor> positionedPawnsColors;
-
     public Tower(GeneralColor color, List<TowerSlot> tower) {
         this.color = color;
         this.tower = tower;
-        positionedPawnsColors = new ArrayList<>();
     }
 
-    /**
-     * It adds a specific coloured pawn if that colour is not present on the tower yet.
-     * Control delegated to the implementing class.
-     * @param color color of the pawn
+    /*
+    TODO: Aux methods
      */
-    public void addPositionedPawn(PawnColor color) {
-        positionedPawnsColors.add(color);
-    }
 
     /**
      * Check if the towers is occupied
      * @return true if the tower is occupied
      */
     public boolean isTowerOccupied() {
-        return positionedPawnsColors.size() > 0;
+        /*
+        TODO
+         */
+        return true;
     }
 
     public GeneralColor getColor() {
@@ -52,13 +47,5 @@ public class Tower {
 
     public void setTower(List<TowerSlot> tower) {
         this.tower = tower;
-    }
-
-    public List<PawnColor> getPositionedPawnsColors() {
-        return positionedPawnsColors;
-    }
-
-    public void setPositionedPawnsColors(List<PawnColor> positionedPawnsColors) {
-        this.positionedPawnsColors = positionedPawnsColors;
     }
 }

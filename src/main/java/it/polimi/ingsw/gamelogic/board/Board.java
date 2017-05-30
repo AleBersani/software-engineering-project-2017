@@ -1,19 +1,25 @@
 package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
+import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTileDetails;
+import it.polimi.ingsw.gamelogic.cards.leader.LeaderInformation;
 import it.polimi.ingsw.gamelogic.enums.DiceColor;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TODO: JavaDoc
+ */
 public class Board {
     private List<Tower> towers;
     private CouncilPalace councilPalace;
     private BoardActionSpaces boardActionSpaces;
 
-    private List<ExcommunicationTile> excommunicationTiles; /* TODO: check */
+    private List<ExcommunicationTileDetails> excommunicationTiles;
     private List<Dice> dices;
+    private List<LeaderInformation> leaderInformationList;
 
     public Board(List<Tower> towers, CouncilPalace councilPalace, BoardActionSpaces boardActionSpaces) {
         this.towers = towers;
@@ -21,6 +27,7 @@ public class Board {
         this.boardActionSpaces = boardActionSpaces;
         excommunicationTiles = new ArrayList<>();
         dices = new ArrayList<>();
+        leaderInformationList = new ArrayList<>();
     }
 
     /*
@@ -33,10 +40,13 @@ public class Board {
      * @return selected Excommunication Tile
      */
     public ExcommunicationTile getExcommunicationTileGivenPeriod(PeriodNumber periodNumber) {
+        // TODO
+        return null;
+        /*
         return excommunicationTiles.stream()
                 .filter(e -> e.equals(periodNumber))
                 .findFirst()
-                .get();
+                .get();*/
     }
 
     /**
@@ -76,11 +86,11 @@ public class Board {
         this.boardActionSpaces = boardActionSpaces;
     }
 
-    public List<ExcommunicationTile> getExcommunicationTiles() {
+    public List<ExcommunicationTileDetails> getExcommunicationTiles() {
         return excommunicationTiles;
     }
 
-    public void setExcommunicationTiles(List<ExcommunicationTile> excommunicationTiles) {
+    public void setExcommunicationTiles(List<ExcommunicationTileDetails> excommunicationTiles) {
         this.excommunicationTiles = excommunicationTiles;
     }
 
@@ -90,5 +100,13 @@ public class Board {
 
     public void setDices(List<Dice> dices) {
         this.dices = dices;
+    }
+
+    public List<LeaderInformation> getLeaderInformationList() {
+        return leaderInformationList;
+    }
+
+    public void setLeaderInformationList(List<LeaderInformation> leaderInformationList) {
+        this.leaderInformationList = leaderInformationList;
     }
 }

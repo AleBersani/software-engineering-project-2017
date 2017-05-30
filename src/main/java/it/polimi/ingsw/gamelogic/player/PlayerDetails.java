@@ -2,10 +2,19 @@ package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 
+/**
+ * TODO: JavaDoc
+ */
 public class PlayerDetails {
     private String playerIdentifier;
     private String playerName;
     private GeneralColor playerColor;
+
+    public PlayerDetails() {
+        playerIdentifier = "";
+        playerName = "";
+        playerColor = GeneralColor.UNDEFINED;
+    }
 
     public PlayerDetails(String playerIdentifier, String playerName, GeneralColor playerColor) {
         this.playerIdentifier = playerIdentifier;

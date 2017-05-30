@@ -6,13 +6,13 @@ import java.util.List;
  * TODO: JavaDoc
  */
 public class BoardActionSpaces {
-    private List<ActionSpace> productionArea;
-    private List<ActionSpace> harvestArea;
-    private List<ActionSpace> marketArea;
+    private List<ProductionHarvestSpace> productionArea;
+    private List<ProductionHarvestSpace> harvestArea;
+    private List<MarketSpace> marketArea;
 
-    public BoardActionSpaces(List<ActionSpace> productionArea,
-                             List<ActionSpace> harvestArea,
-                             List<ActionSpace> marketArea) {
+    public BoardActionSpaces(List<ProductionHarvestSpace> productionArea,
+                             List<ProductionHarvestSpace> harvestArea,
+                             List<MarketSpace> marketArea) {
         this.productionArea = productionArea;
         this.harvestArea = harvestArea;
         this.marketArea = marketArea;
@@ -22,7 +22,7 @@ public class BoardActionSpaces {
      * TODO: JavaDoc
      * @param production
      */
-    public void addToProductionArea(ActionSpace production) {
+    public void addToProductionArea(ProductionHarvestSpace production) {
         productionArea.add(production);
     }
 
@@ -30,7 +30,7 @@ public class BoardActionSpaces {
      * TODO: JavaDoc
      * @param harvest
      */
-    public void addToHarvestArea(ActionSpace harvest) {
+    public void addToHarvestArea(ProductionHarvestSpace harvest) {
         harvestArea.add(harvest);
     }
 
@@ -38,31 +38,31 @@ public class BoardActionSpaces {
      * TODO: JavaDoc
      * @param market
      */
-    public void addToMarketArea(ActionSpace market) {
+    public void addToMarketArea(MarketSpace market) {
         marketArea.add(market);
     }
 
-    public List<ActionSpace> getProductionArea() {
+    public List<ProductionHarvestSpace> getProductionArea() {
         return productionArea;
     }
 
-    public void setProductionArea(List<ActionSpace> productionArea) {
+    public void setProductionArea(List<ProductionHarvestSpace> productionArea) {
         this.productionArea = productionArea;
     }
 
-    public List<ActionSpace> getHarvestArea() {
+    public List<ProductionHarvestSpace> getHarvestArea() {
         return harvestArea;
     }
 
-    public void setHarvestArea(List<ActionSpace> harvestArea) {
+    public void setHarvestArea(List<ProductionHarvestSpace> harvestArea) {
         this.harvestArea = harvestArea;
     }
 
-    public List<ActionSpace> getMarketArea() {
+    public List<MarketSpace> getMarketArea() {
         return marketArea;
     }
 
-    public void setMarketArea(List<ActionSpace> marketArea) {
+    public void setMarketArea(List<MarketSpace> marketArea) {
         this.marketArea = marketArea;
     }
 }

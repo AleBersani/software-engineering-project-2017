@@ -2,6 +2,9 @@ package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
+/**
+ * TODO: JavaDoc
+ */
 public class Pawn {
     private int value;
     private PawnColor pawnColor;
