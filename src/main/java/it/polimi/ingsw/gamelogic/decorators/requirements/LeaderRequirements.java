@@ -1,9 +1,12 @@
 package it.polimi.ingsw.gamelogic.decorators.requirements;
 
-import it.polimi.ingsw.gamelogic.cards.leadercards.common.LeaderCost;
+import it.polimi.ingsw.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
-import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;
+import it.polimi.ingsw.gamelogic.player.Player;
 
+/**
+ * TODO: JavaDoc
+ */
 public class LeaderRequirements implements Requirements {
     private ActionType actionType;
     private String leaderName;
@@ -13,6 +16,14 @@ public class LeaderRequirements implements Requirements {
         this.actionType = actionType;
         this.leaderName = leaderName;
         this.leaderCost = leaderCost;
+    }
+
+    @Override
+    public boolean hasRequirements(Player player) {
+        /*
+        TODO
+         */
+        return false;
     }
 
     public ActionType getActionType() {

@@ -1,7 +1,6 @@
-package it.polimi.ingsw.gamelogic.cards.leadercards.common;
+package it.polimi.ingsw.gamelogic.cards.leader;
 
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
-import it.polimi.ingsw.gamelogic.enums.LeaderContext;
 
 /**
  * TODO: JavaDoc
@@ -9,14 +8,11 @@ import it.polimi.ingsw.gamelogic.enums.LeaderContext;
 public class LeaderInformation {
     private String name;
     private String effectDescription;
-    private LeaderContext leaderContext;
     private LeaderCategory leaderCategory;
 
-    public LeaderInformation(String name, String effectDescription,
-                             LeaderContext leaderContext, LeaderCategory leaderCategory) {
+    public LeaderInformation(String name, String effectDescription, LeaderCategory leaderCategory) {
         this.name = name;
         this.effectDescription = effectDescription;
-        this.leaderContext = leaderContext;
         this.leaderCategory = leaderCategory;
     }
 
@@ -34,14 +30,6 @@ public class LeaderInformation {
 
     public void setEffectDescription(String effectDescription) {
         this.effectDescription = effectDescription;
-    }
-
-    public LeaderContext getLeaderContext() {
-        return leaderContext;
-    }
-
-    public void setLeaderContext(LeaderContext leaderContext) {
-        this.leaderContext = leaderContext;
     }
 
     public LeaderCategory getLeaderCategory() {

@@ -1,7 +1,7 @@
-package it.polimi.ingsw.gamelogic.cards.developmentcards;
+package it.polimi.ingsw.gamelogic.cards.development;
 
+import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.cards.FlashEffect;
 
 import java.util.List;
 
@@ -13,5 +13,5 @@ import java.util.List;
 public interface Collectible {
     CardInformation getCardInformation();
     List<Goods> getCosts();
-    FlashEffect getInstantEffect();
+    ExchangingGoods getInstantEffect();
 }

@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.board;
 
-import it.polimi.ingsw.gamelogic.cards.developmentcards.Collectible;
+import it.polimi.ingsw.gamelogic.cards.development.Collectible;
 
 /**
  * TODO: JavaDoc

@@ -12,5 +12,5 @@ public abstract class RewardsModifier {
         this.availableActions = availableActions;
     }
 
-    public abstract BasicRewards modifyRewards(BasicRewards basicRewards);
+    public abstract void modifyRewards(BasicRewards basicRewards);
 }

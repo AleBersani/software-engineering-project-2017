@@ -2,6 +2,9 @@ package it.polimi.ingsw.gamelogic.basics;
 
 import java.util.Objects;
 
+/**
+ * TODO: JavaDoc
+ */
 public class Points {
     private int victory;
     private int military;

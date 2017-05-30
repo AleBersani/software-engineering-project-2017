@@ -1,13 +1,10 @@
-package it.polimi.ingsw.gamelogic.cards.leadercards.common;
+package it.polimi.ingsw.gamelogic.cards.leader;
 
 import it.polimi.ingsw.gamelogic.basics.CardsRequired;
 import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * TODO: JavaDoc
@@ -15,11 +12,6 @@ import java.util.Map;
 public class LeaderCost {
     private Goods requiredGoods;
     private List<CardsRequired> cardsRequiredList;
-
-    public LeaderCost() {
-        requiredGoods = new Goods();
-        cardsRequiredList = new ArrayList<>();
-    }
 
     public LeaderCost(Goods requiredGoods) {
         this.requiredGoods = requiredGoods;

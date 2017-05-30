@@ -5,6 +5,9 @@ import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TODO: JavaDoc
+ */
 public class AvailableIdentifiers {
     private List<BoardIdentifier> boardIdentifiers;
 

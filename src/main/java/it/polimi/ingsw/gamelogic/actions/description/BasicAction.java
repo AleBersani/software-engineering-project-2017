@@ -1,4 +1,4 @@
-package it.polimi.ingsw.gamelogic.actions;
+package it.polimi.ingsw.gamelogic.actions.description;
 
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;

@@ -14,6 +14,5 @@ public enum ActionType {
     MARKET,
     LEADER_PLACEMENT,
     LEADER_ACTIVATION,
-    LEARD_DISCARD,
-    GENERAL_A
+    LEARD_DISCARD
 }

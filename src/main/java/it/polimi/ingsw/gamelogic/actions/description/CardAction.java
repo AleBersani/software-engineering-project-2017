@@ -1,6 +1,6 @@
-package it.polimi.ingsw.gamelogic.actions;
+package it.polimi.ingsw.gamelogic.actions.description;
 
-import it.polimi.ingsw.gamecontroller.Action;
+import it.polimi.ingsw.gamelogic.actions.ActionVisitor;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
 /**
@@ -38,8 +38,8 @@ public class CardAction implements ActionDescription {
     }
 
     @Override
-    public void callAction(Action action) {
-        action.readAction(this);
+    public void acceptActionVisitor(ActionVisitor actionVisitor) {
+        actionVisitor.visitCardAction(this);
     }
 
     public BasicAction getBasicAction() {

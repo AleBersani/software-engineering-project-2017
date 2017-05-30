@@ -1,5 +1,8 @@
 package it.polimi.ingsw.gamelogic.enums;
 
+/**
+ * TODO: JavaDoc
+ */
 public enum BoardIdentifier {
     T_G_1, T_G_2, T_G_3, T_G_4,
     T_B_1, T_B_2, T_B_3, T_B_4,

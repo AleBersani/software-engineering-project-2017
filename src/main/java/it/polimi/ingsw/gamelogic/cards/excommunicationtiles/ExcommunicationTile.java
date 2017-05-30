@@ -1,5 +1,8 @@
 package it.polimi.ingsw.gamelogic.cards.excommunicationtiles;
 
+/**
+ * TODO: JavaDoc
+ */
 public class ExcommunicationTile<T> {
     private ExcommunicationTileDetails excommunicationTileDetails;
     private T decorator;

@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.player;
 
-import it.polimi.ingsw.gamelogic.actions.ActionDescription;
+import it.polimi.ingsw.gamelogic.actions.description.ActionDescription;
 
 import java.util.ArrayList;
 import java.util.List;

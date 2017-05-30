@@ -1,23 +1,25 @@
 package it.polimi.ingsw.gamelogic.decorators.requirements;
 
 import it.polimi.ingsw.gamelogic.enums.ActionType;
-import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
+/**
+ * TODO: JavaDoc
+ */
 public class SpaceActionRequirements {
     private ActionType actionType;
-    private BoardIdentifier boardIdentifier;
     private PawnColor pawnColor;
     private int actionValue;
     private int numberOfServants;
+    private boolean occupied;
 
-    public SpaceActionRequirements(ActionType actionType, BoardIdentifier boardIdentifier,
-                                   PawnColor pawnColor, int actionValue, int numberOfServants) {
+    public SpaceActionRequirements(ActionType actionType, PawnColor pawnColor, int actionValue,
+                                   int numberOfServants, boolean occupied) {
         this.actionType = actionType;
-        this.boardIdentifier = boardIdentifier;
         this.pawnColor = pawnColor;
         this.actionValue = actionValue;
         this.numberOfServants = numberOfServants;
+        this.occupied = occupied;
     }
 
     public ActionType getActionType() {
@@ -26,14 +28,6 @@ public class SpaceActionRequirements {
 
     public void setActionType(ActionType actionType) {
         this.actionType = actionType;
-    }
-
-    public BoardIdentifier getBoardIdentifier() {
-        return boardIdentifier;
-    }
-
-    public void setBoardIdentifier(BoardIdentifier boardIdentifier) {
-        this.boardIdentifier = boardIdentifier;
     }
 
     public PawnColor getPawnColor() {
@@ -58,5 +52,13 @@ public class SpaceActionRequirements {
 
     public void setNumberOfServants(int numberOfServants) {
         this.numberOfServants = numberOfServants;
+    }
+
+    public boolean isOccupied() {
+        return occupied;
+    }
+
+    public void setOccupied(boolean occupied) {
+        this.occupied = occupied;
     }
 }

@@ -1,7 +1,6 @@
-package it.polimi.ingsw.gamelogic.cards.leadercards.common;
+package it.polimi.ingsw.gamelogic.cards.leader;
 
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
-import it.polimi.ingsw.gamelogic.enums.LeaderContext;
 
 /**
  * TODO: JavaDoc
@@ -17,14 +16,6 @@ public class LeaderCard {
         this.leaderCost = leaderCost;
         placedOnBoard = false;
         playable = true;
-    }
-
-    /**
-     * TODO: JavaDoc
-     * @return
-     */
-    public LeaderContext getLeaderContext() {
-        return leaderInformation.getLeaderContext();
     }
 
     /**

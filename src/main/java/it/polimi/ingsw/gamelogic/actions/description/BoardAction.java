@@ -1,6 +1,6 @@
-package it.polimi.ingsw.gamelogic.actions;
+package it.polimi.ingsw.gamelogic.actions.description;
 
-import it.polimi.ingsw.gamecontroller.Action;
+import it.polimi.ingsw.gamelogic.actions.ActionVisitor;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
 /**
@@ -22,11 +22,13 @@ public class BoardAction implements ActionDescription {
     public BoardAction(BasicAction basicAction, PawnColor pawnColor) {
         this.basicAction = basicAction;
         this.pawnColor = pawnColor;
+        numberOfServants = 0;
     }
 
     public BoardAction(BasicAction basicAction, int numberOfServants) {
         this.basicAction = basicAction;
         this.numberOfServants = numberOfServants;
+        pawnColor = PawnColor.UNCOLORED;
     }
 
     public BoardAction(BasicAction basicAction, PawnColor pawnColor, int numberOfServants) {
@@ -36,8 +38,8 @@ public class BoardAction implements ActionDescription {
     }
 
     @Override
-    public void callAction(Action action) {
-        action.readAction(this);
+    public void acceptActionVisitor(ActionVisitor actionVisitor) {
+        actionVisitor.visitBoardAction(this);
     }
 
     public BasicAction getBasicAction() {

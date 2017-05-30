@@ -1,13 +1,15 @@
-package it.polimi.ingsw.gamelogic.cards.developmentcards;
+package it.polimi.ingsw.gamelogic.cards.development;
 
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.cards.FlashEffect;
 
 import java.util.List;
 
+/**
+ * TODO: JavaDoc
+ */
 public class Territory implements Collectible {
-    private DevelopmentCard developmentCard; // Composite object attribute
+    private DevelopmentCard developmentCard;
     private int harvestActionValueRequired;
     private ExchangingGoods harvestResult;
 
@@ -28,8 +30,8 @@ public class Territory implements Collectible {
     }
 
     @Override
-    public FlashEffect getInstantEffect() {
-        return developmentCard.getInstantEffect();
+    public ExchangingGoods getInstantEffect() {
+        return developmentCard.getInstantExchangingGoods();
     }
 
     public DevelopmentCard getDevelopmentCard() {

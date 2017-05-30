@@ -1,8 +1,11 @@
-package it.polimi.ingsw.gamelogic.cards.developmentcards;
+package it.polimi.ingsw.gamelogic.cards.development;
 
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
+/**
+ * TODO: JavaDoc
+ */
 public class CardInformation {
     private int number;
     private String name;

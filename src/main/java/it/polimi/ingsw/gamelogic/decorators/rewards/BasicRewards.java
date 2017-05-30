@@ -3,14 +3,10 @@ package it.polimi.ingsw.gamelogic.decorators.rewards;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 
-import java.util.logging.*;
-
 /**
  * TODO: JavaDoc
  */
 public class BasicRewards {
-    private final static Logger LOGGER = Logger.getLogger(BasicRewards.class.getName());
-
     private ActionType actionType;
     private Goods rewards;
     private Goods additionalRewards;
@@ -26,6 +22,10 @@ public class BasicRewards {
         bonusAndMalus = new Goods();
     }
 
+    /**
+     * TODO: JavaDoc
+     * @return
+     */
     public Goods calculateFinalRewards() {
         Goods goods = getRewards();
         goods.addAll(bonusAndMalus);
