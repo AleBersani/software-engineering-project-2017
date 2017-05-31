@@ -39,7 +39,7 @@ public class BoardAction implements ActionDescription {
 
     @Override
     public void acceptActionVisitor(ActionVisitor actionVisitor) {
-        actionVisitor.visitBoardAction(this);
+        actionVisitor.visitActionDescription(this);
     }
 
     public BasicAction getBasicAction() {

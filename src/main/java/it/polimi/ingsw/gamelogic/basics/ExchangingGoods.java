@@ -66,12 +66,15 @@ public class ExchangingGoods {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         ExchangingGoods that = (ExchangingGoods) o;
 
-        if (getNumberOfCouncilPrivilege() != that.getNumberOfCouncilPrivilege()) return false;
+        if (getNumberOfCouncilPrivilege() != that.getNumberOfCouncilPrivilege())
+            return false;
         return getGoods().equals(that.getGoods());
     }
 

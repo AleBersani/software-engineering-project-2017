@@ -25,7 +25,7 @@ public class AvailableActions {
     }
 
     /**
-     * TODO: JavaDocTODO: JavaDoc
+     * TODO: JavaDoc
      * @param actionTypes
      * @return
      */

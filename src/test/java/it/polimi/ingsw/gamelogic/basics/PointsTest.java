@@ -58,13 +58,25 @@ class PointsTest {
     }
 
     @Test
-    void testIsEmptyTrue() {
+    void testTrueIsLessThan() {
+        Points pointsToConfront = new Points(5,4,3);
+        assertTrue(points.isLessThan(pointsToConfront));
+    }
+
+    @Test
+    void testFalseIsLessThan() {
+        Points pointsToConfront = new Points(1,1,1);
+        assertFalse(points.isLessThan(pointsToConfront));
+    }
+
+    @Test
+    void testTrueIsEmpty() {
         Points pointsToTest = new Points(0,0,0);
         assertTrue(pointsToTest.isEmpty());
     }
 
     @Test
-    void testIsEmptyFalse() {
+    void testFalseIsEmpty() {
         points.isEmpty();
     }
 }

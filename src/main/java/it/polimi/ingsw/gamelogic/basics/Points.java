@@ -33,8 +33,10 @@ public class Points {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Points points = (Points) o;
         return getVictory() == points.getVictory() &&
                 getMilitary() == points.getMilitary() &&
@@ -45,10 +47,6 @@ public class Points {
     public int hashCode() {
         return Objects.hash(getVictory(), getMilitary(), getFaith());
     }
-
-    /*
-    TODO: isLessThan
-     */
 
     /**
      * Add other Points to this instance
@@ -68,6 +66,17 @@ public class Points {
         victory -= pointsToSubtract.getVictory();
         military -= pointsToSubtract.getMilitary();
         faith -= pointsToSubtract.getFaith();
+    }
+
+    /**
+     * Check if Points passed is major than this
+     * @param pointsToConfront Points to confront
+     * @return true if Points to confront is major or equal than this
+     */
+    public boolean isLessThan(Points pointsToConfront) {
+        return victory <= pointsToConfront.getVictory() &&
+                military <= pointsToConfront.getMilitary() &&
+                faith <= pointsToConfront.getFaith();
     }
 
     /**

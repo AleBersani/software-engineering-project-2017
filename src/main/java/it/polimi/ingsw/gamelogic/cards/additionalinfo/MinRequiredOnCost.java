@@ -16,7 +16,7 @@ public class MinRequiredOnCost extends AdditionalCardInfo {
 
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
-        cardVisitor.visitMinRequiredOnCost(this);
+        cardVisitor.visitAdditionalCardInfo(this);
     }
 
     public Goods getMin() {

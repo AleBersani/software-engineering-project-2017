@@ -4,9 +4,7 @@ import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.basics.Points;
 import it.polimi.ingsw.gamelogic.cards.CardVisitor;
-import it.polimi.ingsw.gamelogic.cards.additionalinfo.AdditionalCardInfo;
-import it.polimi.ingsw.gamelogic.cards.additionalinfo.CardFlashExchangingGoods;
-import it.polimi.ingsw.gamelogic.cards.additionalinfo.MinRequiredOnCost;
+import it.polimi.ingsw.gamelogic.cards.additionalinfo.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,20 +25,45 @@ public class ImplVisitor implements CardVisitor {
 
         implVisitor = new ImplVisitor();
 
-        additionalCardInfoList.get(1).acceptCardVisitor(implVisitor);
+        additionalCardInfoList.get(0).acceptCardVisitor(implVisitor);
         additionalCardInfoList.get(1).acceptCardVisitor(implVisitor);
     }
 
     @Override
-    public void visitCardFlashExchangingGoods(CardFlashExchangingGoods cardFlashExchangingGoods) {
+    public void visitAdditionalCardInfo(CardFlashExchangingGoods cardFlashExchangingGoods) {
         System.out.println("Visitor Card Flash blalbwASGEASDG");
         System.out.println(cardFlashExchangingGoods.getName() + " " + cardFlashExchangingGoods
                 .getExchangingGoods().getGoods().toString());
     }
 
     @Override
-    public void visitMinRequiredOnCost(MinRequiredOnCost minRequiredOnCost) {
+    public void visitAdditionalCardInfo(MinRequiredOnCost minRequiredOnCost) {
         System.out.println("Visitor Min Resadfgdsagfves");
         System.out.println(minRequiredOnCost.getName() + " " + minRequiredOnCost.getMin().toString());
+    }
+
+    @Override
+    public void visitAdditionalCardInfo(CardFlashAction cardFlashAction) {
+        //TODO
+    }
+
+    @Override
+    public void visitAdditionalCardInfo(ConditionalProduction conditionalProduction) {
+        //TODO
+    }
+
+    @Override
+    public void visitAdditionalCardInfo(MultipleProduction multipleProduction) {
+        //TODO
+    }
+
+    @Override
+    public void visitAdditionalCardInfo(RequirementsOnCard requirementsOnCard) {
+        //TODO
+    }
+
+    @Override
+    public void visitAdditionalCardInfo(RewardsOnCard rewardsOnCard) {
+        //TODO
     }
 }

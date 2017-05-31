@@ -9,8 +9,8 @@ import it.polimi.ingsw.gamelogic.actions.description.LeaderAction;
  * TODO: JavaDoc
  */
 public interface ActionVisitor {
-    void visitBoardAction(BoardAction boardAction);
-    void visitCardAction(CardAction cardAction);
-    void visitCardActionInstantPoints(CardActionInstantPoints cardActionInstantPoints);
-    void visitLeaderAction(LeaderAction leaderAction);
+    void visitActionDescription(BoardAction boardAction);
+    void visitActionDescription(CardAction cardAction);
+    void visitActionDescription(CardActionInstantPoints cardActionInstantPoints);
+    void visitActionDescription(LeaderAction leaderAction);
 }

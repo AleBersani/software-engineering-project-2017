@@ -25,6 +25,6 @@ public class CardActionInstantPoints implements ActionDescription {
 
     @Override
     public void acceptActionVisitor(ActionVisitor actionVisitor) {
-        actionVisitor.visitCardActionInstantPoints(this);
+        actionVisitor.visitActionDescription(this);
     }
 }

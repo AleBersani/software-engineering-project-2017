@@ -55,13 +55,25 @@ class ResourcesTest {
     }
 
     @Test
-    void testIsEmptyTrue() {
+    void testTrueIsLessThan() {
+        Resources resourcesToConfront = new Resources(5,5,5,5);
+        assertTrue(resources.isLessThan(resourcesToConfront));
+    }
+
+    @Test
+    void testFalseIsLessThan() {
+        Resources resourcesToConfront = new Resources(1,1,1,1);
+        assertFalse(resources.isLessThan(resourcesToConfront));
+    }
+
+    @Test
+    void testTrueIsEmpty() {
         Resources emptyResources = new Resources();
         assertTrue(emptyResources.isEmpty());
     }
 
     @Test
-    void testIsEmptyFalse() {
+    void testFalseIsEmpty() {
         assertFalse(resources.isEmpty());
     }
 

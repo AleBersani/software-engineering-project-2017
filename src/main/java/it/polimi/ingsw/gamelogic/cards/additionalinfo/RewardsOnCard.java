@@ -16,9 +16,7 @@ public class RewardsOnCard extends AdditionalCardInfo {
 
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
-        /*
-        TODO
-         */
+        cardVisitor.visitAdditionalCardInfo(this);
     }
 
     public RewardsModifier getRewardsModifier() {

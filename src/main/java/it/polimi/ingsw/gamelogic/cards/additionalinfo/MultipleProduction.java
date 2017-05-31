@@ -21,9 +21,7 @@ public class MultipleProduction extends AdditionalCardInfo {
 
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
-        /*
-        TODO
-         */
+        cardVisitor.visitAdditionalCardInfo(this);
     }
 
     public List<Goods> getCosts() {

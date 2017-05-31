@@ -25,9 +25,7 @@ public class RequirementsOnCard extends AdditionalCardInfo {
 
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
-        /*
-        TODO
-         */
+        cardVisitor.visitAdditionalCardInfo(this);
     }
 
     public List<RequirementsModifier> getRequirementsModifiers() {

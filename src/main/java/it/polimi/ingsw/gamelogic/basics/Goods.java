@@ -47,8 +47,10 @@ public class Goods {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Goods goods = (Goods) o;
         return Objects.equals(getResources(), goods.getResources()) &&
                 Objects.equals(getPoints(), goods.getPoints());
@@ -58,10 +60,6 @@ public class Goods {
     public int hashCode() {
         return Objects.hash(getResources(), getPoints());
     }
-
-    /*
-    TODO: isLessThan
-     */
 
     /**
      * Add Goods to the instance
@@ -129,6 +127,47 @@ public class Goods {
      */
     public void subtractPoints(Points pointsToSubtract) {
         points.subtract(pointsToSubtract);
+    }
+
+    public boolean isLessThan(Goods goodsToConfront) {
+        return resources.isLessThan(goodsToConfront.getResources()) &&
+                points.isLessThan(goodsToConfront.getPoints());
+    }
+
+    /**
+     * TODO: JavaDoc
+     * @param goodsToConfront
+     * @return
+     */
+    public boolean hasLessResourcesThan(Goods goodsToConfront) {
+        return resources.isLessThan(goodsToConfront.getResources());
+    }
+
+    /**
+     * TODO: JavaDoc
+     * @param resourcesToConfront
+     * @return
+     */
+    public boolean hasLessResourcesThan(Resources resourcesToConfront) {
+        return resources.isLessThan(resourcesToConfront);
+    }
+
+    /**
+     * TODO: JavaDoc
+     * @param goodsToConfront
+     * @return
+     */
+    public boolean hasLessPointsThan(Goods goodsToConfront) {
+        return points.isLessThan(goodsToConfront.getPoints());
+    }
+
+    /**
+     * TODO: JavaDoc
+     * @param pointsToConfront
+     * @return
+     */
+    public boolean hasLessPointsThan(Points pointsToConfront) {
+        return points.isLessThan(pointsToConfront);
     }
 
     /**

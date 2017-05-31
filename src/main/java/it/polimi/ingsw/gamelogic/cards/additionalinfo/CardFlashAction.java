@@ -19,9 +19,7 @@ public class CardFlashAction extends AdditionalCardInfo {
 
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
-        /*
-        TODO
-         */
+        cardVisitor.visitAdditionalCardInfo(this);
     }
 
     public BasicAction getBasicAction() {

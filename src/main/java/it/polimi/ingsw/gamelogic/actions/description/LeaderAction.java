@@ -20,7 +20,7 @@ public class LeaderAction implements ActionDescription {
 
     @Override
     public void acceptActionVisitor(ActionVisitor actionVisitor) {
-        actionVisitor.visitLeaderAction(this);
+        actionVisitor.visitActionDescription(this);
     }
 
     public ActionType getActionType() {

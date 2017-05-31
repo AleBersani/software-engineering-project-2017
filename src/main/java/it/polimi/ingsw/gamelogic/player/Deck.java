@@ -7,6 +7,9 @@ import it.polimi.ingsw.gamelogic.cards.development.Venture;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TODO: JavaDoc
+ */
 public class Deck {
     private List<Territory> territories;
     private List<Building> buildings;

@@ -37,8 +37,10 @@ public class Resources {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Resources resources = (Resources) o;
         return getWoods() == resources.getWoods() &&
                 getStones() == resources.getStones() &&
@@ -50,10 +52,6 @@ public class Resources {
     public int hashCode() {
         return Objects.hash(getWoods(), getStones(), getServants(), getCoins());
     }
-
-    /*
-    TODO: isLessThan
-     */
 
     /**
      * Add other Resources to this instance
@@ -75,6 +73,18 @@ public class Resources {
         stones -= resourcesToSubtract.getStones();
         servants -= resourcesToSubtract.getServants();
         coins -= resourcesToSubtract.getCoins();
+    }
+
+    /**
+     * Check if Resources passed is major than this
+     * @param resourcesToConfront Resources to confront
+     * @return true if Points to confront is major or equal than this
+     */
+    public boolean isLessThan(Resources resourcesToConfront) {
+        return woods <= resourcesToConfront.getWoods() &&
+                stones <= resourcesToConfront.getStones() &&
+                servants <= resourcesToConfront.getServants() &&
+                coins <= resourcesToConfront.getCoins();
     }
 
     /**

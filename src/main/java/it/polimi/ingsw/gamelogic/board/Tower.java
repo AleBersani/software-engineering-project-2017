@@ -9,11 +9,11 @@ import java.util.List;
  */
 public class Tower {
     private GeneralColor color;
-    private List<TowerSlot> tower;
+    private List<TowerSlot> towerSlots;
 
-    public Tower(GeneralColor color, List<TowerSlot> tower) {
+    public Tower(GeneralColor color, List<TowerSlot> towerSlots) {
         this.color = color;
-        this.tower = tower;
+        this.towerSlots = towerSlots;
     }
 
     /*
@@ -39,11 +39,11 @@ public class Tower {
         this.color = color;
     }
 
-    public List<TowerSlot> getTower() {
-        return tower;
+    public List<TowerSlot> getTowerSlots() {
+        return towerSlots;
     }
 
-    public void setTower(List<TowerSlot> tower) {
-        this.tower = tower;
+    public void setTowerSlots(List<TowerSlot> towerSlots) {
+        this.towerSlots = towerSlots;
     }
 }

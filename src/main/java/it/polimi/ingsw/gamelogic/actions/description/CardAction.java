@@ -39,7 +39,7 @@ public class CardAction implements ActionDescription {
 
     @Override
     public void acceptActionVisitor(ActionVisitor actionVisitor) {
-        actionVisitor.visitCardAction(this);
+        actionVisitor.visitActionDescription(this);
     }
 
     public BasicAction getBasicAction() {
