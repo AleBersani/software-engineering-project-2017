@@ -27,6 +27,7 @@ public class Parser {
     private BufferedReader br = null;
     private FileReader fr = null;
     private static String PATH;
+
     public Parser() throws IOException {
         PATH = System.getProperty("user.dir") + "/src/json/";
     }
@@ -165,7 +166,7 @@ public class Parser {
     }
 
     /**
-     * Method that sets during parsing GeneralColor Enum attributes.
+     * Private method that sets during parsing, GeneralColor Enum attributes.
      * @param cardColor
      * @return
      */
@@ -182,6 +183,11 @@ public class Parser {
         return cardColorOfficial;
     }
 
+    /**
+     * Private method that sets during parsing, PeriodNumber Enum attributes.
+     * @param period Int variable that is translated in Enum attribute.
+     * @return PeriodNumberEnum Object.
+     */
     private PeriodNumber decidePeriodEnum(int period) {
         PeriodNumber periodNumber = null;
         switch(period) {
@@ -194,6 +200,11 @@ public class Parser {
         return periodNumber;
     }
 
+    /**
+     * Private method that parses cost in a List of Goods Objects, from a JsonArray.
+     * @param card JsonObject from which method gets a specific field.
+     * @return List of Goods containing one or more costs set in Json file.
+     */
     private List<Goods> parseCosts(JsonObject card) {
         Gson gson = new Gson();
         JsonArray costs = card.get("cost").getAsJsonArray();
@@ -206,11 +217,16 @@ public class Parser {
         return parsedCosts;
     }
 
+    /**
+     * Private method that parses instantEffect in an ExchangingGoods Object, from Json.
+     * @param card JsonObject from which method gets a specific field.
+     * @return ExchangingGoods Object containing instantEffect set in Json file.
+     */
     private ExchangingGoods parseExchangingGoods(JsonObject card) {
         Gson gson = new Gson();
         JsonArray instantEffect = card.get("instantEffect").getAsJsonArray();
         ExchangingGoods parsedInstantEffect = gson.fromJson(instantEffect.get(0).getAsJsonObject(),
-                ExchangingGoods.class);
+                                                            ExchangingGoods.class);
 
         return parsedInstantEffect;
     }
