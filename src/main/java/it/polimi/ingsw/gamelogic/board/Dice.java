@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.board;
 import it.polimi.ingsw.gamelogic.enums.DiceColor;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the dices thrown every semiperiod, they define the value of the players' pawns
  */
 public class Dice {
     private DiceColor diceColor;

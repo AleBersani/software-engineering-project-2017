@@ -5,7 +5,7 @@ import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
 /**
  * This Class describes an action concerning the activation of an Action Space on the Board.
- * It can be set by the player using the effect of a Card (Leader or Development).
+ * It can be set up by the player using the effect of a Card (Leader or Development).
  */
 public class BoardAction implements ActionDescription {
     private BasicAction basicAction;

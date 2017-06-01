@@ -1,7 +1,8 @@
 package it.polimi.ingsw.gamelogic.board;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the single space where the player can put one of his/her pawn in order to perform
+ * an action
  */
 public class ActionSpace {
     private Space space;

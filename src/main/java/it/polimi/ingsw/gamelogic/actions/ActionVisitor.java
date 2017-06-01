@@ -6,7 +6,7 @@ import it.polimi.ingsw.gamelogic.actions.description.CardActionInstantPoints;
 import it.polimi.ingsw.gamelogic.actions.description.LeaderAction;
 
 /**
- * TODO: JavaDoc
+ * Interface that defines methods that are implemented by the classes that want to call the Visitors
  */
 public interface ActionVisitor {
     void visitActionDescription(BoardAction boardAction);

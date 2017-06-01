@@ -1,7 +1,8 @@
 package it.polimi.ingsw.gamelogic.basics;
 
 /**
- * TODO: JavaDoc
+ * Class that sets up the game with the basic playing rules such as the number of players, a timeout for the game
+ * to start and one for each player's move, and the duration of the game in number of periods
  */
 public final class GameConfiguration {
     private static int maxNumberOfPlayer;

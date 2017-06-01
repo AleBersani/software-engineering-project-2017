@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.basics;
 
 /**
- * TODO: JavaDoc
+ * This class sets up the board with the basic settings (Towers, Dices, Points)
  */
 public final class BoardConfiguration {
     private static int numberOfTowers;

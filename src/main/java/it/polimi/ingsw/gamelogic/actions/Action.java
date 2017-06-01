@@ -8,7 +8,9 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.Requirements;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that implements the Visitor interface (ActionVisitor). Given the type of Action, set by the Action
+ * Description, one of the "visit-" methods is implemented. Then it checks the if the Requirements for that
+ * Action are satisfied and if they are, the Rewards are given to the player.
  */
 public class Action implements ActionVisitor {
     private ActionDescription actionDescription;

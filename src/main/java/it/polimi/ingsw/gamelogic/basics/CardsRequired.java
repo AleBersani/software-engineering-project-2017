@@ -3,7 +3,9 @@ package it.polimi.ingsw.gamelogic.basics;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the situation where an Action has as a Requirement a number of cards of a certain color,
+ * so there's the number of how many cards are required (numberOfCardsRequired) and the color is defined by the
+ * GeneralColor enum.
  */
 public class CardsRequired {
     private int numberOfCardsRequired;

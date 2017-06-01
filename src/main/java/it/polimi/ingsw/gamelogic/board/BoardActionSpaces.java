@@ -3,7 +3,9 @@ package it.polimi.ingsw.gamelogic.board;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the areas of the board where if the player puts one of his/her pawns he/she can
+ * either set an action that has as a result Goods or Points (productionArea and harvestArea),
+ * or get Goods directly (marketArea)
  */
 public class BoardActionSpaces {
     private List<ProductionHarvestSpace> productionArea;
@@ -19,7 +21,7 @@ public class BoardActionSpaces {
     }
 
     /**
-     * TODO: JavaDoc
+     * Adds a single productionArea
      * @param production
      */
     public void addToProductionArea(ProductionHarvestSpace production) {
@@ -27,7 +29,7 @@ public class BoardActionSpaces {
     }
 
     /**
-     * TODO: JavaDoc
+     * Adds a single harvestArea
      * @param harvest
      */
     public void addToHarvestArea(ProductionHarvestSpace harvest) {
@@ -35,7 +37,7 @@ public class BoardActionSpaces {
     }
 
     /**
-     * TODO: JavaDoc
+     * Adds a single marketArea
      * @param market
      */
     public void addToMarketArea(MarketSpace market) {

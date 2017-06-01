@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.basics;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that sets up the player with the basic settings to start the game
  */
 public final class PlayerConfiguration {
     private static int numberOfLeaders;

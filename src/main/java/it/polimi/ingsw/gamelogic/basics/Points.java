@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.basics;
 import java.util.Objects;
 
 /**
- * TODO: JavaDoc
+ * Class that defines the categories of points of the game
  */
 public class Points {
     private int victory;

@@ -4,7 +4,7 @@ import it.polimi.ingsw.gamelogic.actions.ActionVisitor;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 
 /**
- * Class that represent every action related to a Leader Card, in particular:
+ * Class that represents every action related to a Leader Card, in particular:
  *      - placement of a Leader
  *      - activation of a Leader
  *      - discard of a Leader

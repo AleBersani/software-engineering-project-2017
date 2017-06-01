@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the game board with the different kind of sets of ActionSpaces
  */
 public class Board {
     private List<Tower> towers;

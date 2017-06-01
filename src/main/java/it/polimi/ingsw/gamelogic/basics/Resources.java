@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.basics;
 import java.util.Objects;
 
 /**
- * TODO: JavaDoc
+ * Class that defines the different categories of resources available in the game
  */
 public class Resources {
     private int woods;

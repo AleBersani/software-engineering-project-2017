@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Council Palace space, where if the player puts his/her pawn he/she gets a Council's
+ * Privilege that can be converted into a Good chosen by the player
  */
 public class CouncilPalace {
     private ExchangingGoods instantGoods;

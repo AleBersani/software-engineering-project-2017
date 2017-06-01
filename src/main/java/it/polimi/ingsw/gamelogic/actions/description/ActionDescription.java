@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.actions.description;
 import it.polimi.ingsw.gamelogic.actions.ActionVisitor;
 
 /**
- * TODO: JavaDoc
+ * Interface with the method that accepts all the visitors of the various ActionDescriptions
  */
 public interface ActionDescription {
     void acceptActionVisitor(ActionVisitor actionVisitor);
