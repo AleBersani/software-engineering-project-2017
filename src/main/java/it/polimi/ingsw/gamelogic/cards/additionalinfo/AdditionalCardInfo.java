@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.cards.additionalinfo;
 import it.polimi.ingsw.gamelogic.cards.CardVisitor;
 
 /**
- * TODO: JavaDoc
+ * Class that is the father of the classes that describe the different permanent "effects" that the cards might have
  */
 public abstract class AdditionalCardInfo {
     private String name;

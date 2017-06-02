@@ -5,7 +5,8 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.cards.CardVisitor;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the immediate action of a card. The Flash Effect takes place as the player picks up the
+ * card from the board, in this case it can be the possibility to perform an action that has some Goods as a resul
  */
 public class CardFlashAction extends AdditionalCardInfo {
     private BasicAction basicAction;
