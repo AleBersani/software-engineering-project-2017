@@ -4,7 +4,8 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.cards.CardVisitor;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the situation where the card requires that the player has a minimum number of a certain
+ * Good to be picked up
  */
 public class MinRequiredOnCost extends AdditionalCardInfo {
     private Goods min;

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Building cards
  */
 public class Building implements Collectible {
     private DevelopmentCard developmentCard;

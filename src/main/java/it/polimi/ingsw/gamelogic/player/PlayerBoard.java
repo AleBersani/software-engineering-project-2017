@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Player's personal Board
  */
 public class PlayerBoard {
     private BonusTiles bonusTiles;

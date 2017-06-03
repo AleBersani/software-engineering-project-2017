@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the player
  */
 public class Player {
     private PlayerDetails playerDetails;

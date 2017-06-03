@@ -4,7 +4,8 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.cards.development.Collectible;
 
 /**
- * TODO: JavaDoc
+ * Class that describes a single Tower Slot, it has a space identifier, it can have an instant Good and has a
+ * Development card of the same color as the tower
  */
 public class TowerSlot<T extends Collectible> {
     private Space space;

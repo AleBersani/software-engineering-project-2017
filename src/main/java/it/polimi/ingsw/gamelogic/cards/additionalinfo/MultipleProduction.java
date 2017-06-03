@@ -7,7 +7,7 @@ import it.polimi.ingsw.gamelogic.cards.CardVisitor;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the situation where it's possible to have a multiple production
  */
 public class MultipleProduction extends AdditionalCardInfo {
     private List<Goods> costs;

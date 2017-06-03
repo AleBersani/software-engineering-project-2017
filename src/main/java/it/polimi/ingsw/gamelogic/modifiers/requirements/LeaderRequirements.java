@@ -5,7 +5,7 @@ import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.player.Player;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the requirements of a Leader Action
  */
 public class LeaderRequirements implements Requirements {
     private ActionType actionType;

@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.player;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
 /**
- * TODO: JavaDoc
+ * Class that describes a Bonus Tile
  */
 public class BonusTiles {
     private Goods productionBonus;

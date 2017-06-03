@@ -3,7 +3,8 @@ package it.polimi.ingsw.gamelogic.cards.leader;
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Leader cards in general, with basic information, a cost defined as Leader Cost,
+ * if the card has been placed on the board and if it can be played or not.
  */
 public class LeaderCard {
     private LeaderInformation leaderInformation;
@@ -19,8 +20,8 @@ public class LeaderCard {
     }
 
     /**
-     * TODO: JavaDoc
-     * @return
+     * Gets the Leader's Category
+     * @return Leader's Category
      */
     public LeaderCategory getLeaderCategory() {
         return leaderInformation.getLeaderCategory();

@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.board;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the spaces where the player can perform the Harvest or the Production Actions
  */
 public class ProductionHarvestSpace {
     private Space space;

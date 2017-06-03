@@ -5,7 +5,8 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
 
 /**
- * TODO: JavaDoc
+ * CLass that describes the effect of a Leader Card (Santa Rita) that doubles the rewards the Player gets from
+ * the Flash Effect
  */
 public class DoubleRewards extends RewardsModifier {
     public DoubleRewards(AvailableActions availableActions) {

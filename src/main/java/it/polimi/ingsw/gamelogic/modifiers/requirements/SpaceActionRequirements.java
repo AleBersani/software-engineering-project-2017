@@ -4,7 +4,7 @@ import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the requirements of an action originated by an Action Space
  */
 public class SpaceActionRequirements {
     private ActionType actionType;

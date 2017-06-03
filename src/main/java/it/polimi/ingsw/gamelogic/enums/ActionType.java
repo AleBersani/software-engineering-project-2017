@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.enums;
 
 /**
- * TODO: JavaDoc
+ * Enum that describes the types of action th eplayer can perform
  */
 public enum ActionType {
     GREEN_TOWER,

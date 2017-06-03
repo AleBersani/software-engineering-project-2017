@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.cards.excommunicationtiles;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the basic information of the Excommunication Tiles
  */
 public class ExcommunicationTile {
     private String excommunicationTileName;

@@ -6,7 +6,8 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Development cards in general, with basic information, a cost defined as a list
+ * of Goods and an Exchanging Good as an instant reward
  */
 public class DevelopmentCard {
     private CardInformation cardInformation;

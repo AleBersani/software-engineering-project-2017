@@ -5,7 +5,8 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the effect of an Excommunication Tile that prevents the Player to collect the instantGoods
+ * of the Tower slots
  */
 public class NoTowerBonusRewards extends RewardsModifier {
     public NoTowerBonusRewards(AvailableActions availableActions) {

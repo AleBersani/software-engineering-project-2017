@@ -6,7 +6,7 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Territory cards
  */
 public class Territory implements Collectible {
     private DevelopmentCard developmentCard;

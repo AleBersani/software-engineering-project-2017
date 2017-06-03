@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.board;
 import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the basic information of a Space on the Board
  */
 public class Space {
     private BoardIdentifier boardIdentifier;

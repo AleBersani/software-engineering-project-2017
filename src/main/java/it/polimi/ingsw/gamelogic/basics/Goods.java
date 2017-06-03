@@ -135,36 +135,36 @@ public class Goods {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param goodsToConfront
-     * @return
+     * Checks if the Goods to confront are less than the resources
+     * @param goodsToConfront Good that need to be confronted
+     * @return true if the goodsToConfront are less than the Resources
      */
     public boolean hasLessResourcesThan(Goods goodsToConfront) {
         return resources.isLessThan(goodsToConfront.getResources());
     }
 
     /**
-     * TODO: JavaDoc
-     * @param resourcesToConfront
-     * @return
+     * Checks if the Resources to confront are less than the resources
+     * @param resourcesToConfront Resources that need to be confronted
+     * @return true if the resourcesToConfront are less than the Resources
      */
     public boolean hasLessResourcesThan(Resources resourcesToConfront) {
         return resources.isLessThan(resourcesToConfront);
     }
 
     /**
-     * TODO: JavaDoc
-     * @param goodsToConfront
-     * @return
+     * Checks if the Points to confront are less than the Goods
+     * @param goodsToConfront Goods that need to be confronted
+     * @return true if the goodsToConfront are less than the Goods
      */
     public boolean hasLessPointsThan(Goods goodsToConfront) {
         return points.isLessThan(goodsToConfront.getPoints());
     }
 
     /**
-     * TODO: JavaDoc
-     * @param pointsToConfront
-     * @return
+     * hecks if the Points to confront are less than the Points
+     * @param pointsToConfront Points that need to be confronted
+     * @return true if the pointsToConfront are less than the Resources
      */
     public boolean hasLessPointsThan(Points pointsToConfront) {
         return points.isLessThan(pointsToConfront);

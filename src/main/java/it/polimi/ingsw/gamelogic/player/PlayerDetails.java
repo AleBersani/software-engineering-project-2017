@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.player;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Player's basic information
  */
 public class PlayerDetails {
     private String playerIdentifier;

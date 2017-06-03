@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the available actions in a given situation
  */
 public class AvailableActions {
     private List<ActionType> actionTypes;

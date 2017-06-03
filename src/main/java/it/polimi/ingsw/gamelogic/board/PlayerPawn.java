@@ -4,7 +4,7 @@ import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import it.polimi.ingsw.gamelogic.player.PlayerDetails;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Player's Pawns
  */
 public class PlayerPawn {
     private PlayerDetails playerDetails;

@@ -4,7 +4,7 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the basic type of rewards
  */
 public class BasicRewards {
     private ActionType actionType;
@@ -23,8 +23,8 @@ public class BasicRewards {
     }
 
     /**
-     * TODO: JavaDoc
-     * @return
+     * Calculates the rewards at the end of an action
+     * @return Goods as rewards
      */
     public Goods calculateFinalRewards() {
         Goods goods = getRewards();

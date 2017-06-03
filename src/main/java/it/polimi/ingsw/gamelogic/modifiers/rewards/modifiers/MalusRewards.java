@@ -5,7 +5,7 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
 
 /**
- * TODO: JavaDoc
+ * CLass that describes an effect that reduces the Player's Goods
  */
 public class MalusRewards extends RewardsModifier {
     private Goods malus;

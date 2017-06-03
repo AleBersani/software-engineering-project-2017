@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.cards.leader;
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the basic information of a Leader Card
  */
 public class LeaderInformation {
     private String name;

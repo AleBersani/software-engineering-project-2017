@@ -5,7 +5,8 @@ import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Tower element of the board. Each Tower contains 4 TowerSlots and has a color defined
+ * by the enum GeneralColor
  */
 public class Tower {
     private GeneralColor color;

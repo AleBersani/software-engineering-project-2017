@@ -4,7 +4,8 @@ import it.polimi.ingsw.gamelogic.cards.CardVisitor;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the rewards of a card
+ * TODO:check
  */
 public class RewardsOnCard extends AdditionalCardInfo {
     private RewardsModifier rewardsModifier;

@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.cards;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.*;
 
 /**
- * TODO: JavaDoc
+ * Interface that defines methods that are implemented by the classes that want to call the Visitors
  */
 public interface CardVisitor {
     void visitAdditionalCardInfo(CardFlashAction cardFlashAction);

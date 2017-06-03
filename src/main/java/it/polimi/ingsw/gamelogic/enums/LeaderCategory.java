@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.enums;
 
 /**
- * TODO: JavaDoc
+ * Enum that describes the effects of Leader cards
  */
 public enum LeaderCategory {
     PERMANENT,

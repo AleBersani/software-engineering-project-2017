@@ -6,7 +6,7 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Character cards
  */
 public class Character implements Collectible {
     private DevelopmentCard developmentCard;

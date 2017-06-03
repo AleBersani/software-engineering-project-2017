@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the deck as a set of lists of Development Cards
  */
 public class Deck {
     private List<Territory> territories;

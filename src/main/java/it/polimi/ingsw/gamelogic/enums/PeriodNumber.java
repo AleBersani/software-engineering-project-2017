@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.enums;
 
 /**
- * TODO: JavaDoc
+ * Enum that describes the periods of the game
  */
 public enum PeriodNumber {
     FIRST,

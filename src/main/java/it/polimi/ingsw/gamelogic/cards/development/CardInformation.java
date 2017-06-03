@@ -4,7 +4,7 @@ import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the basic information of each Development card
  */
 public class CardInformation {
     private int number;

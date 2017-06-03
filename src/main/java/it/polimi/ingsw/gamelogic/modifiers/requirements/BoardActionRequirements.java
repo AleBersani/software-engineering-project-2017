@@ -4,7 +4,7 @@ import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.player.Player;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the requirements of a BoardAction
  */
 public class BoardActionRequirements implements Requirements {
     private SpaceActionRequirements spaceActionRequirements;
@@ -29,7 +29,7 @@ public class BoardActionRequirements implements Requirements {
     }
 
     /**
-     * TODO: JavaDOc
+     * TODO
      * @return
      */
     public ActionType getActionType() {

@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.enums;
 
 /**
- * TODO: JavaDoc
+ * Enum that describes the identifiers of the spaces on the board
  */
 public enum BoardIdentifier {
     T_G_1, T_G_2, T_G_3, T_G_4,

@@ -5,7 +5,7 @@ import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.player.Player;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the requirements of a Tower Action
  */
 public class TowerActionRequirements implements Requirements {
     private SpaceActionRequirements spaceActionRequirements;
@@ -54,8 +54,8 @@ public class TowerActionRequirements implements Requirements {
     }
 
     /**
-     * TODO: JavaDOc
-     * @return
+     * Gets the Action Type
+     * @return Action Type
      */
     public ActionType getActionType() {
         return spaceActionRequirements.getActionType();

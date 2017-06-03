@@ -6,7 +6,7 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Venture cards
  */
 public class Venture implements Collectible {
     private DevelopmentCard developmentCard;

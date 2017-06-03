@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the cost of a Leader Card
  */
 public class LeaderCost {
     private Goods requiredGoods;

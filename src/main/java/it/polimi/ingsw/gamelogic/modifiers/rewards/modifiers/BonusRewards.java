@@ -5,7 +5,7 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the Bonus on a certain Action
  */
 public class BonusRewards extends RewardsModifier {
     private Goods bonus;
