@@ -1,45 +1,18 @@
 package it.polimi.ingsw.gamelogic.cards.development;
 
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
-import it.polimi.ingsw.gamelogic.basics.Goods;
-
-import java.util.List;
 
 /**
  * Class that describes the Territory cards
  */
-public class Territory implements Collectible {
-    private DevelopmentCard developmentCard;
+public class Territory extends Collection {
     private int harvestActionValueRequired;
     private ExchangingGoods harvestResult;
 
     public Territory(DevelopmentCard developmentCard, int harvestActionValueRequired, ExchangingGoods harvestResult) {
-        this.developmentCard = developmentCard;
+        super(developmentCard);
         this.harvestActionValueRequired = harvestActionValueRequired;
         this.harvestResult = harvestResult;
-    }
-
-    @Override
-    public CardInformation getCardInformation() {
-        return developmentCard.getCardInformation();
-    }
-
-    @Override
-    public List<Goods> getCosts() {
-        return developmentCard.getCosts();
-    }
-
-    @Override
-    public ExchangingGoods getInstantEffect() {
-        return developmentCard.getInstantExchangingGoods();
-    }
-
-    public DevelopmentCard getDevelopmentCard() {
-        return developmentCard;
-    }
-
-    public void setDevelopmentCard(DevelopmentCard developmentCard) {
-        this.developmentCard = developmentCard;
     }
 
     public int getHarvestActionValueRequired() {
