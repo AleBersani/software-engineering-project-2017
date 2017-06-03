@@ -101,7 +101,7 @@
             }],
             "decoratorIdentifier": "BonusPawns",
             "actionValueSurplus": "3",
-            "pawnColor": [{"neutral"}],
+            "pawnColor": ["neutral"],
             "actionValue": "",
             "abilityType": "permanent"
         },
@@ -301,7 +301,7 @@
             }],
             "decoratorIdentifier": "FixedPawnsValue",
             "actionValueSurplus": "",
-            "pawnColor": {"orange", "white", "black"},
+            "pawnColor": ["orange", "white", "black"],
             "actionValue": "5",
             "abilityType": "permanent"
         },
@@ -387,7 +387,7 @@
             ],
             "decoratorIdentifier": "BonusPawns",
             "actionValueSurplus": "2",
-            "pawnColor": {"orange", "white", "black"},
+            "pawnColor": ["orange", "white", "black"],
             "actionValue": "",
             "abilityType": "permanent"
         },

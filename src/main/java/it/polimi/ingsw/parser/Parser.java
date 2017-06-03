@@ -4,20 +4,25 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
-import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.basics.Points;
-import it.polimi.ingsw.gamelogic.basics.Resources;
+import it.polimi.ingsw.gamelogic.basics.*;
+import it.polimi.ingsw.gamelogic.cards.additionalinfo.*;
 import it.polimi.ingsw.gamelogic.cards.development.*;
 import it.polimi.ingsw.gamelogic.cards.development.Character;
+import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
+import it.polimi.ingsw.gamelogic.cards.leader.LeaderCard;
+import it.polimi.ingsw.gamelogic.cards.leader.LeaderCost;
+import it.polimi.ingsw.gamelogic.cards.leader.LeaderInformation;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -32,6 +37,7 @@ public class Parser {
         PATH = System.getProperty("user.dir") + "/src/json/";
     }
 
+
     /**
      * Method that parses Territory Development Cards from Json.
      * @throws IOException
@@ -39,10 +45,10 @@ public class Parser {
     public void parseTerritory() throws IOException {
         String path = PATH + "DevelopmentCards.json";
         open(path);
-
         JsonParser parser = new JsonParser();
         JsonObject object = parser.parse(br).getAsJsonObject();
-        JsonArray cards = object.get("territory").getAsJsonArray();
+        JsonObject devCards = object.get("DevelopmentCards").getAsJsonObject();
+        JsonArray cards = devCards.get("territory").getAsJsonArray();
 
         List<Territory> territories = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++){
@@ -118,6 +124,252 @@ public class Parser {
             Goods endGameRewards = parseEndGameRewards(card);
             ventures.add(new Venture(developmentCard, endGameRewards));
         }
+    }
+
+    /**
+     * TODO: Javadoc
+     * @return
+     * @throws IOException
+     */
+    public List<ExcommunicationTile> parseExcommunicationTiles() throws IOException {
+        String path = PATH + "ExcommunicationTiles.json";
+        open(path);
+        Gson gson = new Gson();
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(br).getAsJsonObject();
+        JsonArray cards = object.get("excommunicationTiles").getAsJsonArray();
+        List<ExcommunicationTile> excommunicationTiles = new ArrayList<>();
+        JsonObject card;
+        JsonArray excommunicationTile;
+        for(int index=0; index<cards.size(); index++){
+            card = cards.get(index).getAsJsonObject();
+            excommunicationTile = card.get("excommunicationDetails").getAsJsonArray();
+            ExcommunicationTile parsedExcommunicationTile = gson.fromJson(excommunicationTile,
+                                                                            ExcommunicationTile.class);
+            excommunicationTiles.add(parsedExcommunicationTile);
+        }
+        close();
+        return excommunicationTiles;
+    }
+
+    /**
+     * TODO Javadoc
+     * @return
+     * @throws IOException
+     */
+    public List<LeaderCard> parseLeaderCards() throws IOException {
+        String path = PATH + "leadercards.json";
+        open(path);
+        Gson gson = new Gson();
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(br).getAsJsonObject();
+        JsonArray leaders = object.get("leaderCards").getAsJsonArray();
+
+        List<LeaderCard> parsedLeaderCards = new ArrayList<>();
+        List<LeaderCost> parsedLeaderCostList;
+        LeaderInformation cardInfo;
+        JsonArray leaderCosts;
+        for(int index=0; index<leaders.size(); index++){
+            cardInfo = parseLeaderInformation(leaders.get(index).getAsJsonObject());
+            leaderCosts = leaders.get(index).getAsJsonObject().get("requirements").getAsJsonArray();
+            parsedLeaderCostList = parseLeaderCosts(leaderCosts);
+            //parsedLeaderCards.add(new LeaderCard(cardInfo, parsedLeaderCostList));
+        }
+        return parsedLeaderCards;
+    }
+
+    public Map<String, List<AdditionalCardInfo>> parseAdditionalInfoMap() throws IOException {
+        Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap = new HashMap<>();
+        parseAdditionalInfoDevCards(parsedAdditionalInfoMap);
+        parseAdditionalInfoLeaders(parsedAdditionalInfoMap);
+        parseAdditionalInfoExcommunications(parsedAdditionalInfoMap);
+        return parsedAdditionalInfoMap;
+    }
+
+    private void parseAdditionalInfoExcommunications(Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap) {
+
+    }
+
+    private void parseAdditionalInfoLeaders(Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap) {
+
+    }
+
+    private void parseAdditionalInfoDevCards(Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap)
+                                                                                                throws IOException {
+        String path = PATH + "DevelopmentCards.json";
+        open(path);
+        Gson gson = new Gson();
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(br).getAsJsonObject();
+        parseTerritoryAddInfo(parsedAdditionalInfoMap, object.get("territory").getAsJsonArray());
+
+    }
+
+    private void parseTerritoryAddInfo(Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap, JsonArray territory) {
+        JsonObject card;
+        String name;
+        for(int index=0; index<territory.size(); index++){
+            card = territory.get(index).getAsJsonObject();
+            name = card.get("cardInformations").getAsJsonArray().get(0).getAsJsonObject().get("name").getAsString();
+            List<AdditionalCardInfo> addInfoList = new ArrayList<>();
+            parseListAddInfo(addInfoList, card);
+        }
+    }
+
+    private void parseListAddInfo(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+        JsonArray addInfoTypes = card.get("additionalCardInfoType").getAsJsonArray();
+        for(int index=0; index<addInfoList.size(); index++){
+            String type = addInfoTypes.get(index).getAsString();
+            switch (type) {
+                case "cardFlashAction": parseCardFlashAction(addInfoList, card); break;
+                case "conditionalProduction": parseConditionalProduction(addInfoList, card); break;
+                case "minRequiredOnCost": parseMinRequiredOnCost(addInfoList, card); break;
+                case "multipleProduction": parseMultipleProduction(addInfoList, card); break;
+                case "requirementsOnCard": parseRequirementsOnCard(addInfoList, card); break;
+                case "rewardsOnCard": parseRewardsOnCard(addInfoList, card); break;
+                default: parseCardFlashExchangingGoods(addInfoList, card); break;
+            }
+        }
+
+    }
+
+    /**
+     * TODO all
+     * @param addInfoList
+     * @param card
+     */
+    private void parseCardFlashAction(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+
+    }
+
+    /**
+     * TODO all
+     * @param addInfoList
+     * @param card
+     */
+    private void parseConditionalProduction(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+
+    }
+
+    /**
+     * TODO all
+     * @param addInfoList
+     * @param card
+     */
+    private void parseMinRequiredOnCost(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+
+    }
+
+    /**
+     * TODO all
+     * @param addInfoList
+     * @param card
+     */
+    private void parseMultipleProduction(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+
+    }
+
+    /**
+     * TODO all
+     * @param addInfoList
+     * @param card
+     */
+    private void parseRequirementsOnCard(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+
+    }
+
+    /**
+     * TODO all
+     * @param addInfoList
+     * @param card
+     */
+    private void parseRewardsOnCard(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+
+    }
+
+    /**
+     * TODO CHANGE INSTANTGOODS NAME FROM JSON AND IN THE REMAINING PARSING METHODS IN CONSUMABLEGOODS
+     * TODO CARDINFORMATIONS IN OTHER JSON?
+     * @param addInfoList
+     * @param card
+     */
+    private void parseCardFlashExchangingGoods(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+        String name = card.get("cardInformations").getAsJsonArray().get(0).getAsJsonObject().get("name").getAsString();
+        ExchangingGoods parsedExchangingGoods = parseExchangingGoods(card);
+        addInfoList.add(new CardFlashExchangingGoods(name, parsedExchangingGoods));
+    }
+
+
+    /**
+     * TODO Javadoc
+     * @return
+     * @throws IOException
+     */
+    private LeaderInformation parseLeaderInformation(JsonObject card) {
+        String name = card.get("name").getAsString();
+        return new LeaderInformation(name, "", parseLeaderCategory(card));
+    }
+
+    /**
+     * TODO Javadoc
+     * @return
+     * @throws IOException
+     */
+    private List<LeaderCost> parseLeaderCosts(JsonArray leaderCosts) {
+        List<LeaderCost> parsedLeaderCosts = new ArrayList<>();
+        JsonObject cardCost;
+        List<CardsRequired> parsedCardsRequired = new ArrayList<>();
+        Goods requiredGoods;
+        for(int index =0; index<leaderCosts.size(); index++){
+            cardCost = leaderCosts.get(index).getAsJsonObject();
+            parsedCardsRequired = parseCardsRequiredList(cardCost.get("developmentCards").
+                                                                                getAsJsonObject());
+            requiredGoods = parseGoods(cardCost);
+            parsedLeaderCosts.add(new LeaderCost(requiredGoods, parsedCardsRequired));
+        }
+        return parsedLeaderCosts;
+    }
+
+    /**
+     * TODO Javadoc
+     * @return
+     * @throws IOException
+     */
+    private LeaderCategory parseLeaderCategory(JsonObject card) {
+        if(card.get("abilityType").getAsString().equals("permanent"))
+            return LeaderCategory.PERMANENT;
+        return LeaderCategory.CONSUMABLE;
+    }
+
+    /**
+     * TODO Javadoc
+     * @return
+     * @throws IOException
+     */
+    private List<CardsRequired> parseCardsRequiredList(JsonObject cardsRequired) {
+        List<CardsRequired> parsedCardsRequired = new ArrayList<>();
+        if (cardsRequired.get("territories").getAsInt() != 0)
+            parsedCardsRequired.add(new CardsRequired(cardsRequired.get("territories").getAsInt(), GeneralColor.GREEN));
+        else if (cardsRequired.get("characters").getAsInt() != 0)
+            parsedCardsRequired.add(new CardsRequired(cardsRequired.get("characters").getAsInt(), GeneralColor.BLUE));
+        else if (cardsRequired.get("buildings").getAsInt() != 0)
+            parsedCardsRequired.add(new CardsRequired(cardsRequired.get("buildings").getAsInt(), GeneralColor.YELLOW));
+        else if (cardsRequired.get("ventures").getAsInt() != 0)
+            parsedCardsRequired.add(new CardsRequired(cardsRequired.get("ventures").getAsInt(), GeneralColor.PURPLE));
+
+        return parsedCardsRequired;
+    }
+
+    /**
+     * TODO Javadoc
+     * @return
+     * @throws IOException
+     */
+    private Goods parseGoods(JsonObject leaderCost) {
+        JsonObject resources = leaderCost.get("resources").getAsJsonObject();
+        JsonObject points = leaderCost.get("points").getAsJsonObject();
+        Gson gson = new Gson();
+        return new Goods(gson.fromJson(resources, Resources.class), gson.fromJson(points, Points.class));
     }
 
     /**
@@ -235,7 +487,7 @@ public class Parser {
         fr = new FileReader(path);
         br = new BufferedReader(fr);
     }
-    private void close() throws IOException{
+    private void close() throws IOException {
         br.close();
         fr.close();
     }
