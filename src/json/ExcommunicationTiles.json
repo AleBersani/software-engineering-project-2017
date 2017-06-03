@@ -1,5 +1,5 @@
 {
-	"ExcommunicationTile1": [
+	"excommunicationTiles" : [
 		{
 			"excommunicationTileDetails": [
 				{
@@ -25,9 +25,7 @@
 			],
 			"actionSpaceId": "",
 			"actionValueMalus": ""
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -53,9 +51,7 @@
 			],
 			"actionSpaceId": "",
 			"actionValueMalus": ""
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -81,9 +77,7 @@
 			],
 			"actionSpaceId": "",
 			"actionValueMalus": ""
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -122,9 +116,7 @@
 			],
 			"actionSpaceId": "",
 			"actionValueMalus": ""
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -150,9 +142,7 @@
 			],
 			"actionSpaceId": "harvest",
 			"actionValueMalus": "3"
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -178,9 +168,7 @@
 			],
 			"actionSpaceId": "production",
 			"actionValueMalus": "3"
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -206,9 +194,7 @@
 			],
 			"actionSpaceId": "general",
 			"actionValueMalus": "1"
-		}
-	],
-	"ExcommunicationTile2": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -219,9 +205,7 @@
 			"decoratorIdentifier": "MalusPawns",
 			"actionSpaceId": "greenTower",
 			"actionValueMalus": "4"
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -232,9 +216,7 @@
 			"decoratorIdentifier": "MalusPawns",
 			"actionSpaceId": "yellowTower",
 			"actionValueMalus": "4"
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -245,9 +227,7 @@
 			"decoratorIdentifier": "MalusPawns",
 			"actionSpaceId": "blueTower",
 			"actionValueMalus": "4"
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -258,9 +238,7 @@
 			"decoratorIdentifier": "MalusPawns",
 			"actionSpaceId": "purpleTower",
 			"actionValueMalus": "4"
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -271,9 +249,7 @@
 			"decoratorIdentifier": "NoMarketPlacement",
 			"actionSpaceId": "",
 			"actionValueMalus": ""
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -284,9 +260,7 @@
 			"decoratorIdentifier": "HalfServantsValue",
 			"actionSpaceId": "",
 			"actionValueMalus": ""
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -297,9 +271,7 @@
 			"decoratorIdentifier": "NoFirstPlacement",
 			"actionSpaceId": "",
 			"actionValueMalus": ""
-		}
-	],
-	"ExcommunicationTile3": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -324,9 +296,7 @@
 					}
 				}
 			]
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -351,9 +321,7 @@
 					}
 				}
 			]
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -378,9 +346,7 @@
 					}
 				}
 			]
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -405,9 +371,7 @@
 					}
 				}
 			]
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -432,9 +396,7 @@
 					}
 				}
 			]
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
@@ -459,9 +421,7 @@
 					}
 				}
 			]
-		}
-	],
-	"ExcommunicationTile": [
+		},
 		{
 			"excommunicationTileDetails": [
 				{
