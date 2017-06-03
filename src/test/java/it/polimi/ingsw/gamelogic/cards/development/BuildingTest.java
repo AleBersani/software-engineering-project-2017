@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class BuildingTest {
     private Building building;
@@ -24,6 +24,6 @@ class BuildingTest {
 
     @Test
     public void testOptionalReturn() {
-        assertTrue(building.getAdditionalCardInfo().isPresent());
+        assertFalse(building.getAdditionalCardInfo().isPresent());
     }
 }
