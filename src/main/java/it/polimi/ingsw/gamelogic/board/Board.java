@@ -7,6 +7,7 @@ import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Class that describes the game board with the different kind of sets of ActionSpaces
@@ -39,8 +40,14 @@ public class Board {
      * @return selected Excommunication Tile
      */
     public ExcommunicationTile getExcommunicationTileGivenPeriod(PeriodNumber periodNumber) {
-        // TODO
-        return null;
+        Optional<ExcommunicationTile> excommunicationTile = excommunicationTiles.stream()
+                .filter(predicate -> predicate.getPeriod() == periodNumber)
+                .reduce((a, b) -> { throw new IllegalStateException("More than one Tile found");});
+
+        if (excommunicationTile.isPresent())
+            return excommunicationTile.get();
+        else
+            throw new IllegalStateException("No Tile found");
     }
 
     /**
@@ -49,11 +56,17 @@ public class Board {
      * @return value associated to a specific coloured Dice
      */
     public int getDiceValueGivenColor(DiceColor color) {
+        Optional<Dice> dice = getDiceGivenColor(color);
+        if (dice.isPresent())
+            return dice.get().getValue();
+        else
+            throw new IllegalStateException("No Dice found");
+    }
+
+    private Optional<Dice> getDiceGivenColor(DiceColor color) {
         return dices.stream()
-                .filter(e -> e.equals(color))
-                .findFirst()
-                .get()
-                .getValue();
+                .filter(predicate -> predicate.getDiceColor() == color)
+                .reduce((a, b) -> { throw new IllegalStateException("More than one dice found"); });
     }
 
     public List<Tower> getTowers() {

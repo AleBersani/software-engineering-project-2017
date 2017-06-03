@@ -53,8 +53,8 @@ public class Building extends Collection {
     }
 
     /**
-     * TODO: JavaDoc
-     * @return
+     * Optional getter for AdditionalCardInfo
+     * @return Optional.empty() if the attribute is null
      */
     public Optional<AdditionalCardInfo> getAdditionalCardInfo() {
         if (additionalCardInfo == null)

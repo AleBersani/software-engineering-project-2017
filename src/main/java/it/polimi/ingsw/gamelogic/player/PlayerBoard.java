@@ -1,9 +1,11 @@
 package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
+import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Class that describes the Player's personal Board
@@ -22,9 +24,43 @@ public class PlayerBoard {
         pawns = new ArrayList<>();
     }
 
-    /*
-    TODO: Aux method
-     */
+    public Goods getProductionBonus() {
+        return bonusTiles.getProductionBonus();
+    }
+
+    public Goods getHarvestBonus() {
+        return bonusTiles.getHarvestBonus();
+    }
+
+    public int getNumberOfTerritories() {
+        return deck.getNumberOfTerritories();
+    }
+
+    public int getNumberOfBuildings () {
+        return deck.getNumberOfBuildings();
+    }
+
+    public int getNumberOfCharacters () {
+        return deck.getNumberOfCharacters();
+    }
+
+    public int getNumberOfVentures () {
+        return deck.getNumberOfVentures();
+    }
+
+    public int getPawnValueGivenColor(PawnColor pawnColor) {
+        Optional<Pawn> pawn = getPawnGivenColor(pawnColor);
+        if (pawn.isPresent())
+            return pawn.get().getValue();
+        else
+            throw new IllegalStateException("No pawn found");
+    }
+
+    public Optional<Pawn> getPawnGivenColor(PawnColor pawnColor) {
+        return pawns.stream()
+                .filter(predicate -> predicate.getPawnColor() == pawnColor)
+                .reduce((a, b) -> { throw new IllegalStateException("More than one Pawn found"); });
+    }
 
     public BonusTiles getBonusTiles() {
         return bonusTiles;

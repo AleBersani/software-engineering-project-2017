@@ -21,10 +21,8 @@ public class PlayerPawn {
     }
 
     public boolean isEmpty() {
-        /*
-        TODO
-         */
-        return true;
+        return playerDetails.isEmpty() &&
+                pawnColor == PawnColor.UNCOLORED;
     }
 
     public PlayerDetails getPlayerDetails() {

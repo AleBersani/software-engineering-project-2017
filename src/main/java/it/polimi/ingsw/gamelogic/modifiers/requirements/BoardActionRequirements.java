@@ -29,7 +29,7 @@ public class BoardActionRequirements implements Requirements {
     }
 
     /**
-     * TODO
+     * TODO: JavaDoc
      * @return
      */
     public ActionType getActionType() {

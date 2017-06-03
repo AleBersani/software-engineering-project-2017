@@ -1,9 +1,12 @@
 package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.actions.description.ActionDescription;
+import it.polimi.ingsw.gamelogic.basics.Goods;
+import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Class that describes the player
@@ -17,13 +20,25 @@ public class Player {
     public Player(PlayerDetails playerDetails, PlayerBoard playerBoard) {
         this.playerDetails = playerDetails;
         this.playerBoard = playerBoard;
-        // TODO: initialization of actualAction
+        actualAction = null;
         possibleActionsForTurn = new ArrayList<>();
     }
 
-    /*
-    TODO: aux methods
-     */
+    public void setPlayerGoods(Goods goods) {
+        playerBoard.setGoods(goods);
+    }
+
+    public Goods getPlayerGoods() {
+        return playerBoard.getGoods();
+    }
+
+    public int getPawnValueGivenColor(PawnColor pawnColor) {
+        return playerBoard.getPawnValueGivenColor(pawnColor);
+    }
+
+    public Optional<Pawn> getPawnGivenColor(PawnColor pawnColor) {
+        return playerBoard.getPawnGivenColor(pawnColor);
+    }
 
     /**
      * Clean the list of possible action at the and of the turn (inside a round)
@@ -48,8 +63,14 @@ public class Player {
         this.playerBoard = playerBoard;
     }
 
-    public ActionDescription getActualAction() {
-        return actualAction;
+    /**
+     * Optional getter for actualAction
+     * @return Optional.empty() if the attribute is null
+     */
+    public Optional<ActionDescription> getActualAction() {
+        if (actualAction == null)
+            return Optional.empty();
+        return Optional.of(actualAction);
     }
 
     public void setActualAction(ActionDescription actualAction) {

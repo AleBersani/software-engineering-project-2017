@@ -42,6 +42,16 @@ public class PlayerDetails {
         return result;
     }
 
+    /**
+     * Check if details are empty
+     * @return true if instance is empty
+     */
+    public boolean isEmpty() {
+        return "".equals(playerIdentifier) &&
+                "".equals(playerName) &&
+                playerColor == GeneralColor.UNDEFINED;
+    }
+
     public String getPlayerIdentifier() {
         return playerIdentifier;
     }

@@ -31,39 +31,39 @@ public class ImplVisitor implements CardVisitor {
 
     @Override
     public void visitAdditionalCardInfo(CardFlashExchangingGoods cardFlashExchangingGoods) {
-        System.out.println("Visitor Card Flash blalbwASGEASDG");
+        System.out.println("Visitor CardFlashExchangingGoods");
         System.out.println(cardFlashExchangingGoods.getName() + " " + cardFlashExchangingGoods
                 .getExchangingGoods().getGoods().toString());
     }
 
     @Override
     public void visitAdditionalCardInfo(MinRequiredOnCost minRequiredOnCost) {
-        System.out.println("Visitor Min Resadfgdsagfves");
+        System.out.println("Visitor MinRequiredOnCost");
         System.out.println(minRequiredOnCost.getName() + " " + minRequiredOnCost.getMin().toString());
     }
 
     @Override
     public void visitAdditionalCardInfo(CardFlashAction cardFlashAction) {
-        //TODO
+        System.out.println("Visitor CardFlashAction");
     }
 
     @Override
     public void visitAdditionalCardInfo(ConditionalProduction conditionalProduction) {
-        //TODO
+        System.out.println("Visitor ConditionalProduction");
     }
 
     @Override
     public void visitAdditionalCardInfo(MultipleProduction multipleProduction) {
-        //TODO
+        System.out.println("Visitor MultipleProduction");
     }
 
     @Override
     public void visitAdditionalCardInfo(RequirementsOnCard requirementsOnCard) {
-        //TODO
+        System.out.println("Visitor RequirementsOnCard");
     }
 
     @Override
     public void visitAdditionalCardInfo(RewardsOnCard rewardsOnCard) {
-        //TODO
+        System.out.println("Visitor RewardsOnCard");
     }
 }

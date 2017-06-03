@@ -14,6 +14,27 @@ public class Pawn {
         this.pawnColor = pawnColor;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Pawn))
+            return false;
+
+        Pawn pawn = (Pawn) o;
+
+        if (getValue() != pawn.getValue())
+            return false;
+        return getPawnColor() == pawn.getPawnColor();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getValue();
+        result = 31 * result + getPawnColor().hashCode();
+        return result;
+    }
+
     public int getValue() {
         return value;
     }

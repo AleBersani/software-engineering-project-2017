@@ -23,9 +23,21 @@ public class Deck {
         ventures = new ArrayList<>();
     }
 
-    /*
-    TODO: Aux methods
-     */
+    public int getNumberOfTerritories() {
+        return territories.size();
+    }
+
+    public int getNumberOfBuildings () {
+        return buildings.size();
+    }
+
+    public int getNumberOfCharacters () {
+        return characters.size();
+    }
+
+    public int getNumberOfVentures () {
+        return ventures.size();
+    }
 
     public List<Territory> getTerritories() {
         return territories;

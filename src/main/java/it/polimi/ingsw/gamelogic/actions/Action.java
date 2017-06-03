@@ -29,25 +29,21 @@ public class Action implements ActionVisitor {
 
     @Override
     public void visitActionDescription(BoardAction boardAction) {
-        //TODO
         System.out.println("Board Action");
     }
 
     @Override
     public void visitActionDescription(CardAction cardAction) {
-        //TODO
         System.out.println("Card Action");
     }
 
     @Override
     public void visitActionDescription(CardActionInstantPoints cardActionInstantPoints) {
-        //TODO
         System.out.println("Card Action Insta Points");
     }
 
     @Override
     public void visitActionDescription(LeaderAction leaderAction) {
-        //TODO
         System.out.println("Leader Action");
     }
 
