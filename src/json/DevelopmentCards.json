@@ -4661,8 +4661,7 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": "",
-				"actionSpaceIdentifier" : "greenTower",
+				"decorator": ["bonusActionValue"],
 				"discountOnAction" : [{
 					"resources": {
 						"woods": "0",
@@ -4675,7 +4674,17 @@
 						"military": "0",
 						"faith": "0"
 					}
-				}]
+				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"bonusValue":"2",
+				"actionType": ["GREEN_TOWER"]
 			},
 			{
 				"cardInformations": [
@@ -4721,26 +4730,63 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": "BonusPawn",
-				"actionSpaceIdentifier" : "yellowTower",
+				"decorator": ["bonusActionValue", "BonusOnCardCost", "BonusOnCardCost"],
 				"discountOnAction" : [
 					{
-					"resources": {
-						"woods": "1",
-						"stones": "0",
-						"servants": "0",
-						"coins": "0"
+						"resources": {
+							"woods": "1",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
 					},
-					"points": {
-						"victory": "0",
-						"military": "0",
-						"faith": "0"
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
 					}
 				},
 					{
 						"resources": {
 							"woods": "0",
 							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"bonusValue":"2",
+				"actionType": ["YELLOW_TOWER"],
+				"bonus": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "0",
 							"servants": "0",
 							"coins": "0"
 						},
@@ -4796,9 +4842,33 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": "BonusPawn",
-				"actionSpaceIdentifier" : "blueTower",
+				"decorator": ["bonusOnActionValue","bonusOnCardCost"],
 				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"bonusValue":"2",
+				"actionType": ["BLUE_TOWER"],
+				"bonus": [
 					{
 						"resources": {
 							"woods": "0",
@@ -4858,8 +4928,7 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": "BonusPawn",
-				"actionSpaceIdentifier" : "purpleTower",
+				"decorator": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -4874,7 +4943,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"bonusValue":"2",
+				"actionType": ["PURPLE_TOWER"]
 			},
 			{
 				"cardInformations": [
@@ -4920,8 +4999,7 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": "BonusPawn",
-				"actionSpaceIdentifier" : "harvest",
+				"decorator": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -4936,7 +5014,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"bonusValue":"2",
+				"actionType": ["HARVEST"]
 			},
 			{
 				"cardInformations": [
@@ -4982,8 +5070,8 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": "BonusPawn",
-				"actionSpaceIdentifier" : "production",
+				"decorator": ["bonusActionValue"],
+				"actionSpaceIdentifier" : ["PRODUCTION_1", "PRODUCTION_2"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -4998,7 +5086,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"bonusValue":"2",
+				"actionType": ["PRODUCTION"]
 			},
 			{
 				"cardInformations": [
@@ -5044,8 +5142,7 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "",
-				"decorator": "NoBoardBonusRewards",
-				"actionSpaceIdentifier" : "",
+				"decorator": ["noBonusGoodsOnTower"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5060,7 +5157,19 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"actionType": ["GREEN_TOWER",
+					"YELLOW_TOWER",
+					"BLUE_TOWER",
+					"PURPLE_TOWER"]
 			},
 			{
 				"cardInformations": [
@@ -5107,7 +5216,6 @@
 				"actionValue": "4",
 				"actionValueSurplus": "",
 				"decorator": "",
-				"actionSpaceIdentifier" : "towers",
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5122,7 +5230,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"actionType": ["yellowTower", "blueTower", "greenTower", "purpleTower"],
+				"discount": ""
 			},
 			{
 				"cardInformations": [
@@ -5169,7 +5287,6 @@
 				"actionValue": "6",
 				"actionValueSurplus": "",
 				"decorator": "",
-				"actionSpaceIdentifier" : "greenTower",
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5184,7 +5301,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": ["cardFlashAction"],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"actionType": ["greenTower"],
+				"discount": ""
 			},
 			{
 				"cardInformations": [
@@ -5246,6 +5373,31 @@
 							"faith": "0"
 						}
 					}
+				],
+				"additionalInfoFlash": {
+					"onChoice": ["cardFlashAction", "bonusOnCardCost"],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"actionType": ["yellowTower"],
+				"discount": "",
+				"bonus": [
+					{
+						"resources": {
+							"woods": "1",
+							"stones": "1",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
 				]
 			},
 			{
@@ -5293,8 +5445,32 @@
 				"actionValue": "6",
 				"actionValueSurplus": "",
 				"decorator": "",
-				"actionSpaceIdentifier" : "blueTower",
 				"discountOnAction" : [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "2"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"additionalInfoFlash": {
+					"onChoice": ["cardFlashAction", "bonusOnCardCost"],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"actionType": ["blueTower"],
+				"discount": "",
+				"bonus": [
 					{
 						"resources": {
 							"woods": "0",
@@ -5354,8 +5530,7 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "6",
 				"actionValueSurplus": "",
-				"decorator": "",
-				"actionSpaceIdentifier" : "purpleTower",
+				"decorator": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5370,7 +5545,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": ["cardFlashAction"],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"actionType": ["purpleTower"],
+				"discount": ""
 			},
 			{
 				"cardInformations": [
@@ -5416,8 +5601,7 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "3",
-				"decorator": "BonusPawn",
-				"actionSpaceIdentifier" : "harvest",
+				"decorator": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5432,7 +5616,18 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"bonusValue":"3",
+				"actionType": ["harvest"]
+
 			},
 			{
 				"cardInformations": [
@@ -5478,8 +5673,7 @@
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "3",
-				"decorator": "BonusPawn",
-				"actionSpaceIdentifier" : "production",
+				"decorator": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5494,7 +5688,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"bonusValue":"3",
+				"actionType": ["production"]
 			},
 			{
 				"cardInformations": [
@@ -5556,7 +5760,15 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				}
 			},
 			{
 				"cardInformations": [
@@ -5618,7 +5830,15 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				}
 			},
 			{
 				"cardInformations": [
@@ -5680,7 +5900,32 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": ["goodsBasedOnPossessions"]
+				},
+				"rewardsForPossessions": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"typeOfObjectRequired": "green",
+				"numberOfObjectRequired": "1"
 			},
 			{
 				"cardInformations": [
@@ -5742,7 +5987,32 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": ["goodsBasedOnPossessions"]
+				},
+				"rewardsForPossessions": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"typeOfObjectRequired": "yellow",
+				"numberOfObjectRequired": "1"
 			},
 			{
 				"cardInformations": [
@@ -5804,7 +6074,32 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": ["goodsBasedOnPossessions"]
+				},
+				"rewardsForPossessions": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"typeOfObjectRequired": "blue",
+				"numberOfObjectRequired": "1"
 			},
 			{
 				"cardInformations": [
@@ -5866,7 +6161,32 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": ["goodsBasedOnPossessions"]
+				},
+				"rewardsForPossessions": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "2",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"typeOfObjectRequired": "purple",
+				"numberOfObjectRequired": "1"
 			},
 			{
 				"cardInformations": [
@@ -5928,7 +6248,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashAction"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"actionType": ["harvest"],
+				"discount": ""
 			},
 			{
 				"cardInformations": [
@@ -5990,7 +6320,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashAction"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"actionType": ["production"],
+				"discount": ""
 			},
 			{
 				"cardInformations": [
@@ -6052,7 +6392,32 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": ["goodsBasedOnPossessions"]
+				},
+				"rewardsForPossessions": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "1",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"typeOfObjectRequired": "military",
+				"numberOfObjectRequired": "2"
 			},
 			{
 				"cardInformations": [
@@ -6099,7 +6464,6 @@
 				"actionValue": "7",
 				"actionValueSurplus": "",
 				"decorator": "",
-				"actionSpaceIdentifier" : "towers",
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -6114,7 +6478,17 @@
 							"faith": "0"
 						}
 					}
-				]
+				],
+				"additionalInfoFlash": {
+					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
+					"NotChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"actionType": ["yellowTower", "blueTower", "greenTower", "purpleTower"],
+				"discount": ""
 			}
 		],
 	"venture": [

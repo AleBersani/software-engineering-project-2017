@@ -8,7 +8,7 @@ public enum ActionType {
     YELLOW_TOWER,
     BLUE_TOWER,
     PURPLE_TOWER,
-    COUCILE_PALACE,
+    COUNCIL_PALACE,
     PRODUCTION,
     HARVEST,
     MARKET,

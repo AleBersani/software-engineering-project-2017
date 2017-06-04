@@ -18,7 +18,7 @@ class ActionsTestType {
     void setUp() {
         List<ActionType> actionTypeList = new ArrayList<>();
         actionTypeList.add(ActionType.PRODUCTION);
-        actionTypeList.add(ActionType.COUCILE_PALACE);
+        actionTypeList.add(ActionType.COUNCIL_PALACE);
         actionTypeList.add(ActionType.YELLOW_TOWER);
         actionTypeList.add(ActionType.MARKET);
         availableActions = new AvailableActions(actionTypeList);
@@ -42,7 +42,7 @@ class ActionsTestType {
     @Test
     void testHasAvailableActions() {
         List<ActionType> testList = new ArrayList<>();
-        testList.add(ActionType.COUCILE_PALACE);
+        testList.add(ActionType.COUNCIL_PALACE);
         testList.add(ActionType.MARKET);
         assertTrue(availableActions.hasAvailableActions(testList));
     }
@@ -50,7 +50,7 @@ class ActionsTestType {
     @Test
     void testHasAvailableActionsFalse() {
         List<ActionType> testList = new ArrayList<>();
-        testList.add(ActionType.COUCILE_PALACE);
+        testList.add(ActionType.COUNCIL_PALACE);
         testList.add(ActionType.BLUE_TOWER);
         assertFalse(availableActions.hasAvailableActions(testList));
     }
