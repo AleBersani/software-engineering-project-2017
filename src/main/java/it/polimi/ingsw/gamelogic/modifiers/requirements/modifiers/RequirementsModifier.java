@@ -2,7 +2,6 @@ package it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers;
 
 import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirements;
-import it.polimi.ingsw.gamelogic.modifiers.requirements.LeaderRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 public abstract class RequirementsModifier {

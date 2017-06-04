@@ -2,7 +2,6 @@ package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.actions.description.ActionDescription;
 import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.basics.Points;
 import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
