@@ -19,7 +19,7 @@ class BuildingTest {
                 new DevelopmentCard(new CardInformation(1,
                         "Name",
                         PeriodNumber.FIRST,
-                        GeneralColor.YELLOW), new ArrayList<>(), new ExchangingGoods()));
+                        GeneralColor.YELLOW), new ArrayList<>()));
     }
 
     @Test
