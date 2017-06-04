@@ -6,7 +6,7 @@ import java.util.List;
  * Composition with Class Goods, it contains the number of Council's privileges.
  */
 public class ExchangingGoods {
-    private Goods goods; // Composite object attribute
+    private Goods goods;
     private int numberOfCouncilPrivilege;
 
     public ExchangingGoods() {

@@ -2,6 +2,7 @@ package it.polimi.ingsw.gamelogic.modifiers.requirements;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
+import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import it.polimi.ingsw.gamelogic.player.Player;
 
 /**
@@ -10,12 +11,11 @@ import it.polimi.ingsw.gamelogic.player.Player;
 public class TowerActionRequirements implements Requirements {
     private SpaceActionRequirements spaceActionRequirements;
     private Goods requiredGoods;
-    private Goods bonusGoods;
+    private Goods bonusGoods; // Tower bonus
     private Goods occupiedTowerCost;
     private boolean occupiedTower;
     private boolean occupiedByMyColouredPawn;
 
-    private Goods cardCost;
     private Goods discount;
     private boolean playerHasEnoughMilitaryPoints;
 
@@ -28,22 +28,19 @@ public class TowerActionRequirements implements Requirements {
         this.occupiedTowerCost = occupiedTowerCost;
         this.occupiedTower = occupiedTower;
         this.occupiedByMyColouredPawn = occupiedByMyColouredPawn;
-        cardCost = requiredGoods;
         discount = new Goods();
         playerHasEnoughMilitaryPoints = true;
     }
 
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
                                    Goods bonusGoods, Goods occupiedTowerCost,
-                                   boolean occupiedTower, boolean occupiedByMyColouredPawn,
-                                   Goods cardCost, Goods discount) {
+                                   boolean occupiedTower, boolean occupiedByMyColouredPawn, Goods discount) {
         this.spaceActionRequirements = spaceActionRequirements;
         this.requiredGoods = requiredGoods;
         this.bonusGoods = bonusGoods;
         this.occupiedTowerCost = occupiedTowerCost;
         this.occupiedTower = occupiedTower;
         this.occupiedByMyColouredPawn = occupiedByMyColouredPawn;
-        this.cardCost = cardCost;
         this.discount = discount;
         playerHasEnoughMilitaryPoints = true;
     }
@@ -51,24 +48,40 @@ public class TowerActionRequirements implements Requirements {
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
                                    Goods bonusGoods, Goods occupiedTowerCost,
                                    boolean occupiedTower, boolean occupiedByMyColouredPawn,
-                                   Goods cardCost, Goods discount, boolean playerHasEnoughMilitaryPoints) {
+                                   Goods discount, boolean playerHasEnoughMilitaryPoints) {
         this.spaceActionRequirements = spaceActionRequirements;
         this.requiredGoods = requiredGoods;
         this.bonusGoods = bonusGoods;
         this.occupiedTowerCost = occupiedTowerCost;
         this.occupiedTower = occupiedTower;
         this.occupiedByMyColouredPawn = occupiedByMyColouredPawn;
-        this.cardCost = cardCost;
         this.discount = discount;
         this.playerHasEnoughMilitaryPoints = playerHasEnoughMilitaryPoints;
     }
 
     @Override
     public boolean hasRequirements(Player player) {
-        /*
-        TODO
-         */
-        return false;
+        if (!spaceActionRequirements.hasRequirements(player))
+            return false;
+
+        if (!playerHasEnoughMilitaryPoints)
+            return false;
+
+        Goods actualRequiredGoods = requiredGoods;
+        actualRequiredGoods.subtractAll(bonusGoods);
+        actualRequiredGoods.subtractAll(discount);
+
+        if (occupiedTower)
+            actualRequiredGoods.addAll(occupiedTowerCost);
+
+        if (!actualRequiredGoods.isLessThan(player.getPlayerGoods()))
+            return false;
+
+        if (occupiedByMyColouredPawn)
+            if (spaceActionRequirements.getPawnColor() != PawnColor.NEUTRAL)
+                return false;
+
+        return true;
     }
 
     /**
@@ -125,14 +138,6 @@ public class TowerActionRequirements implements Requirements {
 
     public void setOccupiedByMyColouredPawn(boolean occupiedByMyColouredPawn) {
         this.occupiedByMyColouredPawn = occupiedByMyColouredPawn;
-    }
-
-    public Goods getCardCost() {
-        return cardCost;
-    }
-
-    public void setCardCost(Goods cardCost) {
-        this.cardCost = cardCost;
     }
 
     public Goods getDiscount() {

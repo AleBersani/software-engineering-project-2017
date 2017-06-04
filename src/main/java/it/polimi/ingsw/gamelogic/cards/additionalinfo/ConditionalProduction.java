@@ -14,6 +14,10 @@ public class ConditionalProduction extends AdditionalCardInfo {
         this.cardColor = cardColor;
     }
 
+    /**
+     * Visitor method
+     * @param cardVisitor concrete visitor
+     */
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
         cardVisitor.visitAdditionalCardInfo(this);

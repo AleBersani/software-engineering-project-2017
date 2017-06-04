@@ -5,7 +5,7 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * Class that describes when it's given a Bonus on
+ * Class that describes when it's given a Bonus on a card cost
  */
 public class BonusOnCardCost extends RequirementsModifier {
     private Goods bonus;
@@ -19,9 +19,9 @@ public class BonusOnCardCost extends RequirementsModifier {
     public TowerActionRequirements modifyRequirements(TowerActionRequirements towerActionRequirements) {
         if (availableActions.hasAvailableAction(towerActionRequirements.getActionType())) {
             TowerActionRequirements bonusOnCardCost = towerActionRequirements;
-            Goods actualDiscount = towerActionRequirements.getDiscount();
-            bonus.addAll(actualDiscount);
-            bonusOnCardCost.setBonusGoods(bonus);
+            Goods actualDiscount = bonusOnCardCost.getDiscount();
+            actualDiscount.addAll(bonus);
+            bonusOnCardCost.setDiscount(actualDiscount);
             return bonusOnCardCost;
         }
         return towerActionRequirements;

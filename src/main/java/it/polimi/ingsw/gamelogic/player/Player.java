@@ -3,6 +3,7 @@ package it.polimi.ingsw.gamelogic.player;
 import it.polimi.ingsw.gamelogic.actions.description.ActionDescription;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.basics.Resources;
+import it.polimi.ingsw.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
 import java.util.*;
@@ -14,12 +15,15 @@ import java.util.function.IntSupplier;
 public class Player {
     private PlayerDetails playerDetails;
     private PlayerBoard playerBoard;
+
+    private List<LeaderCard> leaderCards;
     private ActionDescription actualAction;
     private List<ActionDescription> possibleActionsForTurn;
 
     public Player(PlayerDetails playerDetails, PlayerBoard playerBoard) {
         this.playerDetails = playerDetails;
         this.playerBoard = playerBoard;
+        leaderCards = new ArrayList<>();
         actualAction = null;
         possibleActionsForTurn = new ArrayList<>();
     }
@@ -36,6 +40,21 @@ public class Player {
         return playerBoard.getPawnValueGivenColor(pawnColor);
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param leaderName
+     * @return
+     */
+    public boolean hasLeader(String leaderName) {
+        return leaderCards.stream()
+                .anyMatch(leaderCard -> leaderCard.getLeaderName().equals(leaderName));
+    }
+
+    /**
+     * TODO: JavaDoc
+     * @param pawnColor
+     * @return
+     */
     public Optional<Pawn> getPawnGivenColor(PawnColor pawnColor) {
         return playerBoard.getPawnGivenColor(pawnColor);
     }

@@ -20,6 +20,10 @@ public class GoodsBasedOnPossessions extends AdditionalCardInfo {
         this.numberOfObjectRequired = numberOfObjectRequired;
     }
 
+    /**
+     * Visitor method
+     * @param cardVisitor concrete visitor
+     */
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
         cardVisitor.visitAdditionalCardInfo(this);

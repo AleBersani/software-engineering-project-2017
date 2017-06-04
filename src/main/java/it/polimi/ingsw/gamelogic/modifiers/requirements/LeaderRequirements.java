@@ -1,8 +1,11 @@
 package it.polimi.ingsw.gamelogic.modifiers.requirements;
 
+import it.polimi.ingsw.gamelogic.basics.CardsRequired;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.player.Player;
+
+import java.util.List;
 
 /**
  * Class that describes the requirements of a Leader Action
@@ -18,12 +21,29 @@ public class LeaderRequirements implements Requirements {
         this.leaderCost = leaderCost;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param player
+     * @return
+     */
     @Override
     public boolean hasRequirements(Player player) {
-        /*
-        TODO
-         */
-        return false;
+        if (!player.hasLeader(leaderName))
+            return false;
+
+        if (!leaderCost.getRequiredGoods().isLessThan(player.getPlayerGoods()))
+            return false;
+
+        boolean hasRequiredCards = false;
+        if (!leaderCost.getCardsRequiredList().isEmpty()) {
+            List<CardsRequired> cardsRequiredList = leaderCost.getCardsRequiredList();
+            for (CardsRequired cardsRequired : cardsRequiredList) {
+                if (player.countGivenIdentifier(cardsRequired.toString()) >= cardsRequired.getNumberOfCardsRequired())
+                    hasRequiredCards = true;
+            }
+        }
+
+        return hasRequiredCards;
     }
 
     public ActionType getActionType() {

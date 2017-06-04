@@ -26,8 +26,16 @@ public class BoardActionRequirements implements Requirements {
 
     @Override
     public boolean hasRequirements(Player player) {
+        if (!spaceActionRequirements.hasRequirements(player))
+            return false;
 
-        return false;
+        if (spaceActionRequirements.getFinalActionValue() - malusValue < spaceActionRequirements.getRequiredValue())
+            return false;
+
+        if (!canPlace)
+            return false;
+
+        return true;
     }
 
     public ActionType getActionType() {

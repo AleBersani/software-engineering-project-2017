@@ -44,8 +44,8 @@ public class MalusColouredPawns extends RequirementsModifier {
     private void bonusValueIfSameColorPawn(SpaceActionRequirements spaceActionRequirements) {
         if (pawnColors.stream()
                 .anyMatch(predicate -> predicate == spaceActionRequirements.getPawnColor())) {
-            int actualBonusValue = spaceActionRequirements.getBonusActionValue();
-            spaceActionRequirements.setBonusActionValue(actualBonusValue - value);
+            int actualBonusValue = spaceActionRequirements.getActionValueModifier();
+            spaceActionRequirements.setActionValueModifier(actualBonusValue - value);
         }
     }
 }

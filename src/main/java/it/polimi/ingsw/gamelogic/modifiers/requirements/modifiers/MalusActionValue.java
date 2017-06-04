@@ -37,7 +37,7 @@ public class MalusActionValue extends RequirementsModifier {
     }
 
     private void addBonusActionValue(SpaceActionRequirements spaceActionRequirements) {
-        int actualBonusValue = spaceActionRequirements.getBonusActionValue();
-        spaceActionRequirements.setBonusActionValue(actualBonusValue - malusValue);
+        int actualBonusValue = spaceActionRequirements.getActionValueModifier();
+        spaceActionRequirements.setActionValueModifier(actualBonusValue - malusValue);
     }
 }

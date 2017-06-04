@@ -10,22 +10,24 @@ import it.polimi.ingsw.gamelogic.player.Player;
 public class SpaceActionRequirements implements Requirements {
     private ActionType actionType;
     private PawnColor pawnColor;
+    private int requiredValue;
     private int actionValue;
     private int numberOfServants;
     private boolean occupied;
 
     private int initialActionValue;
-    private int bonusActionValue;
+    private int actionValueModifier;
 
-    public SpaceActionRequirements(ActionType actionType, PawnColor pawnColor, int actionValue,
+    public SpaceActionRequirements(ActionType actionType, PawnColor pawnColor, int requiredValue, int actionValue,
                                    int numberOfServants, boolean occupied) {
         this.actionType = actionType;
         this.pawnColor = pawnColor;
+        this.requiredValue = requiredValue;
         this.actionValue = actionValue;
         this.numberOfServants = numberOfServants;
         this.occupied = occupied;
         initialActionValue = actionValue;
-        bonusActionValue = 0;
+        actionValueModifier = 0;
     }
 
     @Override
@@ -36,11 +38,17 @@ public class SpaceActionRequirements implements Requirements {
             }
         }
 
-        int finalActionValue = actionValue + numberOfServants + bonusActionValue;
+        if (getFinalActionValue() < requiredValue)
+            return false;
 
-
+        if (occupied)
+            return false;
 
         return true;
+    }
+
+    public int getFinalActionValue() {
+        return actionValue + numberOfServants + actionValueModifier;
     }
 
     public boolean modifiedActionValue() {
@@ -61,6 +69,14 @@ public class SpaceActionRequirements implements Requirements {
 
     public void setPawnColor(PawnColor pawnColor) {
         this.pawnColor = pawnColor;
+    }
+
+    public int getRequiredValue() {
+        return requiredValue;
+    }
+
+    public void setRequiredValue(int requiredValue) {
+        this.requiredValue = requiredValue;
     }
 
     public int getActionValue() {
@@ -95,11 +111,11 @@ public class SpaceActionRequirements implements Requirements {
         this.initialActionValue = initialActionValue;
     }
 
-    public int getBonusActionValue() {
-        return bonusActionValue;
+    public int getActionValueModifier() {
+        return actionValueModifier;
     }
 
-    public void setBonusActionValue(int bonusActionValue) {
-        this.bonusActionValue = bonusActionValue;
+    public void setActionValueModifier(int actionValueModifier) {
+        this.actionValueModifier = actionValueModifier;
     }
 }

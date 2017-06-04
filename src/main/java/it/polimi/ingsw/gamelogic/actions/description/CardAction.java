@@ -37,6 +37,10 @@ public class CardAction implements ActionDescription {
         this.discount = discount;
     }
 
+    /**
+     * Visitor method
+     * @param actionVisitor concrete visitor
+     */
     @Override
     public void acceptActionVisitor(ActionVisitor actionVisitor) {
         actionVisitor.visitActionDescription(this);

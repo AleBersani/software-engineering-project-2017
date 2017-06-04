@@ -1,6 +1,7 @@
 package it.polimi.ingsw.gamelogic.basics;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class that sets up the player with the basic settings to start the game
@@ -10,6 +11,7 @@ public final class PlayerConfiguration {
     private static int maxNumberOfDevCardsForCategory;
     private static List<Goods> startingGoods;
     private static int numberOfPawns;
+    private static Map<Integer, Points> requiredPointsForTerritories;
 
     public static int getNumberOfLeaders() {
         return numberOfLeaders;
@@ -41,5 +43,13 @@ public final class PlayerConfiguration {
 
     public static void setNumberOfPawns(int numberOfPawns) {
         PlayerConfiguration.numberOfPawns = numberOfPawns;
+    }
+
+    public static Map<Integer, Points> getRequiredPointsForTerritories() {
+        return requiredPointsForTerritories;
+    }
+
+    public static void setRequiredPointsForTerritories(Map<Integer, Points> requiredPointsForTerritories) {
+        PlayerConfiguration.requiredPointsForTerritories = requiredPointsForTerritories;
     }
 }

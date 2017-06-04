@@ -37,6 +37,10 @@ public class BoardAction implements ActionDescription {
         this.numberOfServants = numberOfServants;
     }
 
+    /**
+     * Visitor method
+     * @param actionVisitor concrete visitor
+     */
     @Override
     public void acceptActionVisitor(ActionVisitor actionVisitor) {
         actionVisitor.visitActionDescription(this);

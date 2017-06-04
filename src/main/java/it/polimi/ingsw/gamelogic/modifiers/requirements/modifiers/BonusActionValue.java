@@ -37,7 +37,7 @@ public class BonusActionValue extends RequirementsModifier {
     }
 
     private void addBonusActionValue(SpaceActionRequirements spaceActionRequirements) {
-        int actualBonusValue = spaceActionRequirements.getBonusActionValue();
-        spaceActionRequirements.setBonusActionValue(bonusValue + actualBonusValue);
+        int actualBonusValue = spaceActionRequirements.getActionValueModifier();
+        spaceActionRequirements.setActionValueModifier(bonusValue + actualBonusValue);
     }
 }

@@ -42,8 +42,8 @@ public class BonusPawnValue extends RequirementsModifier {
 
     private void bonusValueIfSameColorPawn(SpaceActionRequirements spaceActionRequirements) {
         if (pawnColor == spaceActionRequirements.getPawnColor()) {
-            int actualBonusPawnValue = spaceActionRequirements.getBonusActionValue();
-            spaceActionRequirements.setBonusActionValue(bonusPawnValue + actualBonusPawnValue);
+            int actualBonusPawnValue = spaceActionRequirements.getActionValueModifier();
+            spaceActionRequirements.setActionValueModifier(bonusPawnValue + actualBonusPawnValue);
         }
     }
 }

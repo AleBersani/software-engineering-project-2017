@@ -21,10 +21,10 @@ public class LeaderCard {
         playable = true;
     }
 
-    /**
-     * Gets the Leader's Category
-     * @return Leader's Category
-     */
+    public String getLeaderName() {
+        return leaderInformation.getName();
+    }
+
     public LeaderCategory getLeaderCategory() {
         return leaderInformation.getLeaderCategory();
     }
