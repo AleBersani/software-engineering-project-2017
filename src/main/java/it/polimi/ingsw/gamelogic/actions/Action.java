@@ -38,11 +38,6 @@ public class Action implements ActionVisitor {
     }
 
     @Override
-    public void visitActionDescription(CardActionInstantPoints cardActionInstantPoints) {
-        System.out.println("Card Action Insta Points");
-    }
-
-    @Override
     public void visitActionDescription(LeaderAction leaderAction) {
         System.out.println("Leader Action");
     }

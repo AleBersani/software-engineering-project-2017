@@ -4,9 +4,8 @@ import it.polimi.ingsw.gamelogic.actions.description.ActionDescription;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.function.IntSupplier;
 
 /**
  * Class that describes the player
@@ -38,6 +37,25 @@ public class Player {
 
     public Optional<Pawn> getPawnGivenColor(PawnColor pawnColor) {
         return playerBoard.getPawnGivenColor(pawnColor);
+    }
+
+    /**
+     * TODO: Test and JavaDoc
+     * @param identifier
+     * @return
+     */
+    public int countGivenIdentifier(String identifier) {
+        return getCounters().get(identifier).getAsInt();
+    }
+
+    private Map<String, IntSupplier> getCounters() {
+        Map<String, IntSupplier> counters = new HashMap<>();
+        counters.put("military", () -> getPlayerGoods().getPoints().getMilitary());
+        counters.put("green", () -> playerBoard.getNumberOfTerritories());
+        counters.put("yellow", () -> playerBoard.getNumberOfBuildings());
+        counters.put("blue", () -> playerBoard.getNumberOfCharacters());
+        counters.put("purple", () -> playerBoard.getNumberOfVentures());
+        return counters;
     }
 
     /**
