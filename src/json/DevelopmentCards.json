@@ -1,6 +1,5 @@
 {
-	"DevelopmentCard": {
-		"territory": [
+	"territory": [
 			{
 				"cardInformations": [
 					{
@@ -57,7 +56,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+				"additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -115,7 +115,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -173,7 +174,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -231,7 +233,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -289,7 +292,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -347,7 +351,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -405,7 +410,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -463,7 +469,8 @@
 						},
 						"councilPrivilege": "1"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -521,7 +528,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -579,7 +587,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -637,7 +646,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -695,7 +705,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -753,7 +764,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -811,7 +823,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -869,7 +882,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -927,7 +941,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -985,7 +1000,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -1043,7 +1059,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -1101,7 +1118,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -1159,7 +1177,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -1217,7 +1236,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -1275,7 +1295,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -1333,7 +1354,8 @@
 						},
 						"councilPrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			},
 			{
 				"cardInformations": [
@@ -1391,10 +1413,11 @@
 						},
 						"councilePrivilege": "0"
 					}
-				]
+				],
+			  "additionalInfo":[]
 			}
 		],
-		"building": [
+	"building": [
 			{
 				"cardInformations": [
 					{
@@ -1467,7 +1490,32 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": "yellow"
+				"cardRequiredForProductionExchange": "yellow",
+				"additionalInfoFlash": {
+                  "onChoice": [],
+                  "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": ["goodsBasedOnPossessions"]
+                },
+				"rewardsForPossessions": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"typeOfObjectRequired": "yellow",
+				"numberOfObjectRequired": "1"
 			},
 			{
 				"cardInformations": [
@@ -1541,7 +1589,32 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": "green"
+				"cardRequiredForProductionExchange": "green",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": ["goodsBasedOnPossessions"]
+                },
+				"rewardsForPossessions": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "1"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
+				"typeOfObjectRequired": "green",
+				"numberOfObjectRequired": "1"
 			},
 			{
 				"cardInformations": [
@@ -1615,7 +1688,32 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": "purple"
+				"cardRequiredForProductionExchange": "purple",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": ["goodsBasedOnPossessions"]
+                },
+                "rewardsForPossessions": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                          },
+                        "points": {
+                            "victory": "1",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "typeOfObjectRequired": "purple",
+                "numberOfObjectRequired": "1"
 			},
 			{
 				"cardInformations": [
@@ -1689,7 +1787,32 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": "blue"
+				"cardRequiredForProductionExchange": "blue",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": ["goodsBasedOnPossessions"]
+                },
+                "rewardsForPossessions": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "1",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "typeOfObjectRequired": "blue",
+                "numberOfObjectRequired": "1"
 			},
 			{
 				"cardInformations": [
@@ -1790,7 +1913,74 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "1",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "2",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "3"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "5"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -1891,7 +2081,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "1",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "2",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                    ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "3"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "5"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -1965,7 +2221,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                  "onChoice": [],
+                  "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                  "onChoice": ["multipleProduction"],
+                  "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "1"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "1"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "1"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "1"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -2039,7 +2361,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "1"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "1"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "1"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "1"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -2113,7 +2501,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "3"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "3"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                    ],
+                    "result": [
+                        {
+                            "resources": {
+                                "woods": "2",
+                                "stones": "2",
+                                "servants": "0",
+                                "coins": "0"
+                            },
+                            "points": {
+                                "victory": "0",
+                                "military": "0",
+                                "faith": "0"
+                            },
+                            "councilPrivilege": "0"
+                        },
+                        {
+                            "resources": {
+                                "woods": "2",
+                                "stones": "2",
+                                "servants": "0",
+                                "coins": "0"
+                            },
+                            "points": {
+                                "victory": "0",
+                                "military": "0",
+                                "faith": "0"
+                            },
+                            "councilPrivilege": "0"
+                        }
+                  ]
 			},
 			{
 				"cardInformations": [
@@ -2214,7 +2668,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "1"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "2"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                    ],
+                    "result": [
+                        {
+                            "resources": {
+                                "woods": "0",
+                                "stones": "0",
+                                "servants": "0",
+                                "coins": "0"
+                            },
+                            "points": {
+                                "victory": "3",
+                                "military": "0",
+                                "faith": "0"
+                            },
+                            "councilPrivilege": "0"
+                        },
+                        {
+                            "resources": {
+                                "woods": "0",
+                                "stones": "0",
+                                "servants": "0",
+                                "coins": "0"
+                            },
+                            "points": {
+                                "victory": "5",
+                                "military": "0",
+                                "faith": "0"
+                            },
+                            "councilPrivilege": "0"
+                        }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -2315,7 +2835,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "1",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "3",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                    ],
+                    "result": [
+                        {
+                            "resources": {
+                                "woods": "0",
+                                "stones": "0",
+                                "servants": "0",
+                                "coins": "0"
+                            },
+                            "points": {
+                                "victory": "3",
+                                "military": "0",
+                                "faith": "0"
+                            },
+                            "councilPrivilege": "0"
+                        },
+                        {
+                            "resources": {
+                                "woods": "0",
+                                "stones": "0",
+                                "servants": "0",
+                                "coins": "0"
+                            },
+                            "points": {
+                                "victory": "7",
+                                "military": "0",
+                                "faith": "0"
+                            },
+                            "councilPrivilege": "0"
+                        }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -2416,7 +3002,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "1",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "3",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "3",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "7",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -2490,7 +3142,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "1",
+                            "stones": "1",
+                            "servants": "1",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "1",
+                            "stones": "1",
+                            "servants": "1",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "6",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "6",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -2564,7 +3282,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "1"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "1"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "2"
+                        },
+                        "points": {
+                            "victory": "2",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "2"
+                        },
+                        "points": {
+                            "victory": "2",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -2638,7 +3422,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "1",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "1",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "3",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "3",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -2860,7 +3710,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "4"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "4"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "3",
+                            "stones": "3",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "3",
+                            "stones": "3",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -3082,7 +3998,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                  "onChoice": [],
+                  "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                  "onChoice": ["multipleProduction"],
+                  "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "1"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "1"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "2",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "4",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "2",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "2",
+                            "military": "0",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -3183,7 +4165,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": ["multipleProduction"],
+                    "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "1",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                      }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "1",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "2"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "2"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -3257,7 +4305,73 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+                "additionalInfoFlash": {
+                  "onChoice": [],
+                  "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                  "onChoice": ["multipleProduction"],
+                  "notChoosable": []
+                },
+                "costs": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "1",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "1",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "0",
+                            "military": "0",
+                            "faith": "0"
+                        }
+                    }
+                ],
+                "result": [
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "1",
+                            "military": "3",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    },
+                    {
+                        "resources": {
+                            "woods": "0",
+                            "stones": "0",
+                            "servants": "0",
+                            "coins": "0"
+                        },
+                        "points": {
+                            "victory": "1",
+                            "military": "3",
+                            "faith": "0"
+                        },
+                        "councilPrivilege": "0"
+                    }
+                ]
 			},
 			{
 				"cardInformations": [
@@ -3334,7 +4448,7 @@
 				"cardRequiredForProductionExchange": ""
 			}
 		],
-		"character": [
+	"character": [
 			{
 				"cardInformations": [
 					{
@@ -4835,7 +5949,7 @@
 				]
 			}
 		],
-		"venture": [
+	"venture": [
 			{
 				"cardInformations": [
 					{
@@ -4907,7 +6021,6 @@
 					"military": "0",
 					"faith": "0"
 				}]
-
 			},
 			{
 				"cardInformations": [
@@ -6572,5 +7685,4 @@
 					}]
 			}
 		]
-	}
 }

@@ -7,8 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class that describes the requirements needed to pick up a card
- * TODO: check
+ * Class that describes the requirements modifier of a card
  */
 public class RequirementsOnCard extends AdditionalCardInfo {
     private List<RequirementsModifier> requirementsModifiers;
