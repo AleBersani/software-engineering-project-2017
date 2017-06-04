@@ -23,7 +23,7 @@
 					}
 				}
 			],
-			"actionSpaceId": "",
+			"actionType": "",
 			"actionValueMalus": ""
 		},
 		{
@@ -49,7 +49,7 @@
 					}
 				}
 			],
-			"actionSpaceId": "",
+			"actionType": "",
 			"actionValueMalus": ""
 		},
 		{
@@ -75,7 +75,7 @@
 					}
 				}
 			],
-			"actionSpaceId": "",
+			"actionType": "",
 			"actionValueMalus": ""
 		},
 		{
@@ -114,7 +114,7 @@
 					}
 				}
 			],
-			"actionSpaceId": "",
+			"actionType": "",
 			"actionValueMalus": ""
 		},
 		{
@@ -140,7 +140,7 @@
 					}
 				}
 			],
-			"actionSpaceId": "harvest",
+			"actionType": "harvest",
 			"actionValueMalus": "3"
 		},
 		{
@@ -166,7 +166,7 @@
 					}
 				}
 			],
-			"actionSpaceId": "production",
+			"actionType": "production",
 			"actionValueMalus": "3"
 		},
 		{
@@ -192,7 +192,7 @@
 					}
 				}
 			],
-			"actionSpaceId": "general",
+			"actionType": "general",
 			"actionValueMalus": "1"
 		},
 		{
@@ -203,7 +203,7 @@
 				}
 			],
 			"decoratorIdentifier": "MalusPawns",
-			"actionSpaceId": "greenTower",
+			"actionType": "greenTower",
 			"actionValueMalus": "4"
 		},
 		{
@@ -214,7 +214,7 @@
 				}
 			],
 			"decoratorIdentifier": "MalusPawns",
-			"actionSpaceId": "yellowTower",
+			"actionType": "yellowTower",
 			"actionValueMalus": "4"
 		},
 		{
@@ -225,7 +225,7 @@
 				}
 			],
 			"decoratorIdentifier": "MalusPawns",
-			"actionSpaceId": "blueTower",
+			"actionType": "blueTower",
 			"actionValueMalus": "4"
 		},
 		{
@@ -236,7 +236,7 @@
 				}
 			],
 			"decoratorIdentifier": "MalusPawns",
-			"actionSpaceId": "purpleTower",
+			"actionType": "purpleTower",
 			"actionValueMalus": "4"
 		},
 		{
@@ -247,7 +247,7 @@
 				}
 			],
 			"decoratorIdentifier": "NoMarketPlacement",
-			"actionSpaceId": "",
+			"actionType": "",
 			"actionValueMalus": ""
 		},
 		{
@@ -258,7 +258,7 @@
 				}
 			],
 			"decoratorIdentifier": "HalfServantsValue",
-			"actionSpaceId": "",
+			"actionType": "",
 			"actionValueMalus": ""
 		},
 		{
@@ -269,7 +269,7 @@
 				}
 			],
 			"decoratorIdentifier": "NoFirstPlacement",
-			"actionSpaceId": "",
+			"actionType": "",
 			"actionValueMalus": ""
 		},
 		{

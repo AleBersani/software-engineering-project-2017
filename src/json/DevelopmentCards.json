@@ -5960,8 +5960,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -5975,8 +5973,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -5990,16 +5987,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6032,8 +6035,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "1",
@@ -6047,8 +6048,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6062,16 +6062,23 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
+
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6104,8 +6111,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -6119,8 +6124,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6134,16 +6138,23 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
+
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6176,8 +6187,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "2",
@@ -6191,8 +6200,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6206,16 +6214,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6248,8 +6262,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -6263,8 +6275,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6278,16 +6289,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "3",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 
 				"instantEffect": [
 					{
@@ -6321,8 +6338,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "3",
@@ -6336,8 +6351,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6351,16 +6365,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6398,8 +6418,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -6413,8 +6431,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6428,16 +6445,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "5",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6470,8 +6493,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 						{
 							"resources": {
 								"woods": "1",
@@ -6485,8 +6506,7 @@
 								"faith": "0"
 							}
 						}
-					],
-						"cost2": [
+					,
 							{
 								"resources": {
 									"woods": "0",
@@ -6500,16 +6520,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "4",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6542,8 +6568,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -6557,8 +6581,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6572,16 +6595,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6614,8 +6643,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "2",
@@ -6629,8 +6656,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6644,16 +6670,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6686,8 +6718,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -6701,8 +6731,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6716,16 +6745,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6758,8 +6793,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -6773,8 +6806,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6788,16 +6820,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "6",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6830,8 +6868,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -6844,9 +6880,7 @@
 									"military": "0",
 									"faith": "0"
 								}
-							}
-						],
-						"cost2": [
+							},
 							{
 								"resources": {
 									"woods": "0",
@@ -6860,16 +6894,35 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashAction"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "4",
-				"actionSpaceId": "harvest",
+				"actionType": ["harvest"],
+				"discount": {
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				},
 				"instantEffect": [
 					{
 						"resources": {
@@ -6902,8 +6955,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "4",
@@ -6917,8 +6968,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -6932,16 +6982,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -6974,8 +7030,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -6989,8 +7043,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7004,16 +7057,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "8",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -7046,8 +7105,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "2",
@@ -7061,8 +7118,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7076,16 +7132,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "7",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -7118,8 +7180,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -7133,8 +7193,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7148,16 +7207,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -7190,8 +7255,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "3",
@@ -7205,8 +7268,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7220,16 +7282,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "7",
-				"actionSpaceId": "towers",
+				"actionType": ["greenTower", "yellowTower", "purpleTower", "blueTower"],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7262,8 +7330,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -7277,8 +7343,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7292,16 +7357,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -7334,8 +7405,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "6",
@@ -7349,8 +7418,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7364,16 +7432,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -7406,8 +7480,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -7421,8 +7493,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7436,16 +7507,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "12",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -7478,8 +7555,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -7493,8 +7568,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7508,16 +7582,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "0",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashAction"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "3",
-				"actionSpaceId": "production",
+				"actionType": ["production"],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7550,8 +7630,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "0",
@@ -7565,8 +7643,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7580,16 +7657,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "15",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {
@@ -7622,8 +7705,6 @@
 					}
 				],
 				"cost": [
-					{
-						"cost1": [
 							{
 								"resources": {
 									"woods": "3",
@@ -7637,8 +7718,7 @@
 									"faith": "0"
 								}
 							}
-						],
-						"cost2": [
+						,
 							{
 								"resources": {
 									"woods": "0",
@@ -7652,16 +7732,22 @@
 									"faith": "0"
 								}
 							}
-						]
-					}
 				],
 				"requirementsOnCost2": [{
 					"victory": "0",
 					"military": "10",
 					"faith": "0"
 				}],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"NotChoosable": ["cardFlashExchangingGoods"]
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"actionValue": "0",
-				"actionSpaceId": "",
+				"actionType": "",
 				"instantEffect": [
 					{
 						"resources": {

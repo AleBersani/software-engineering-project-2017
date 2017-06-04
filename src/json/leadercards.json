@@ -22,7 +22,7 @@
                 }
             }],
             "actionValue": "1",
-            "actionSpaceId": "harvest",
+            "actionType": "harvest",
             "abilityType": "consumable"
         },
         {
@@ -238,7 +238,7 @@
                 }
             }],
             "actionValue": "0",
-            "actionSpaceId": "production",
+            "actionType": "production",
             "abilityType": "consumable"
         },
         {
@@ -413,7 +413,7 @@
                 }
             },
             "actionValue": "6",
-            "actionSpaceId": "towers",
+            "actionType": "towers",
             "abilityType": "consumable"
         },
         {

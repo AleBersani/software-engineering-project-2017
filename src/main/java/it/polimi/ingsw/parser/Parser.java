@@ -5,6 +5,7 @@ import it.polimi.ingsw.gamelogic.basics.*;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.AdditionalCardInfo;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.CardFlashExchangingGoods;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.ConditionalProduction;
+import it.polimi.ingsw.gamelogic.cards.additionalinfo.MultipleProduction;
 import it.polimi.ingsw.gamelogic.cards.development.*;
 import it.polimi.ingsw.gamelogic.cards.development.Character;
 import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
@@ -254,13 +255,12 @@ public class Parser {
                 case "cardFlashAction": parseCardFlashAction(addInfoList, card, actionTypeIndex, name);
                                         actionTypeIndex++; break;
                 case "conditionalProduction": parseConditionalProduction(addInfoList, card, name); break;
-                case "multipleProduction": parseMultipleProduction(addInfoList, card); break;
+                case "multipleProduction": parseMultipleProduction(addInfoList, card, name); break;
                 case "requirementsOnCard": parseRequirementsOnCard(addInfoList, card); break;
                 case "rewardsOnCard": parseRewardsOnCard(addInfoList, card); break;
                 default: parseCardFlashExchangingGoods(addInfoList, card); break;
             }
         }
-
     }
 
     /**
@@ -306,11 +306,24 @@ public class Parser {
      * TODO all
      * @param addInfoList
      * @param card
+     * @param name
      */
-    private void parseMultipleProduction(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+    private void parseMultipleProduction(List<AdditionalCardInfo> addInfoList, JsonObject card, String name) {
         JsonArray costs = card.get("costs").getAsJsonArray();
+        JsonArray result = card.get("result").getAsJsonArray();
         List<Goods> parsedCosts = parseRequirementsOnCosts(costs);
+        List<ExchangingGoods> parsedResults = parseResults(result);
+        addInfoList.add(new MultipleProduction(name, parsedCosts, parsedResults));
+    }
 
+    private List<ExchangingGoods> parseResults(JsonArray result) {
+        List<ExchangingGoods> parsedResults = new ArrayList<>();
+        Gson gson = new Gson();
+        for(int index=0; index<result.size(); index++){
+            ExchangingGoods singleResult = gson.fromJson(result.get(index).getAsJsonObject(), ExchangingGoods.class);
+            parsedResults.add(singleResult);
+        }
+        return parsedResults;
     }
 
     /**
