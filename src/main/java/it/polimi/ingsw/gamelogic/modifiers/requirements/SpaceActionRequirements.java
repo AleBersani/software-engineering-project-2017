@@ -2,11 +2,12 @@ package it.polimi.ingsw.gamelogic.modifiers.requirements;
 
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
+import it.polimi.ingsw.gamelogic.player.Player;
 
 /**
  * Class that describes the requirements of an action originated by an Action Space
  */
-public class SpaceActionRequirements {
+public class SpaceActionRequirements implements Requirements {
     private ActionType actionType;
     private PawnColor pawnColor;
     private int actionValue;
@@ -25,6 +26,21 @@ public class SpaceActionRequirements {
         this.occupied = occupied;
         initialActionValue = actionValue;
         bonusActionValue = 0;
+    }
+
+    @Override
+    public boolean hasRequirements(Player player) {
+        if (player.getPawnGivenColor(pawnColor).isPresent()) {
+            if (player.getPawnGivenColor(pawnColor).get().isPlacedOnBoard()) {
+                return false;
+            }
+        }
+
+        int finalActionValue = actionValue + numberOfServants + bonusActionValue;
+
+
+
+        return true;
     }
 
     public boolean modifiedActionValue() {

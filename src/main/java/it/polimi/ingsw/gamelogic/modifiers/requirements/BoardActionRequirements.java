@@ -26,9 +26,7 @@ public class BoardActionRequirements implements Requirements {
 
     @Override
     public boolean hasRequirements(Player player) {
-        /*
-        TODO
-         */
+
         return false;
     }
 

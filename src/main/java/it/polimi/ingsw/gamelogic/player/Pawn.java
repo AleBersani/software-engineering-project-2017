@@ -9,9 +9,12 @@ public class Pawn {
     private int value;
     private PawnColor pawnColor;
 
+    private boolean placedOnBoard;
+
     public Pawn(int value, PawnColor pawnColor) {
         this.value = value;
         this.pawnColor = pawnColor;
+        placedOnBoard = false;
     }
 
     @Override
@@ -49,5 +52,13 @@ public class Pawn {
 
     public void setPawnColor(PawnColor pawnColor) {
         this.pawnColor = pawnColor;
+    }
+
+    public boolean isPlacedOnBoard() {
+        return placedOnBoard;
+    }
+
+    public void setPlacedOnBoard(boolean placedOnBoard) {
+        this.placedOnBoard = placedOnBoard;
     }
 }
