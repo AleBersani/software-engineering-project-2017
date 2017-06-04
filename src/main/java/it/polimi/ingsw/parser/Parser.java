@@ -1,9 +1,8 @@
 package it.polimi.ingsw.parser;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
+import it.polimi.ingsw.gamelogic.actions.Action;
+import it.polimi.ingsw.gamelogic.actions.description.BasicAction;
 import it.polimi.ingsw.gamelogic.basics.*;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.AdditionalCardInfo;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.CardFlashExchangingGoods;
@@ -13,6 +12,7 @@ import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderInformation;
+import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static it.polimi.ingsw.gamelogic.enums.ActionType.YELLOW_TOWER;
 
 
 /**
@@ -39,18 +41,30 @@ public class Parser {
     }
 
 
+
     /**
      * Method that parses Territory Development Cards from Json.
      * @throws IOException
      */
-    public void parseTerritory() throws IOException {
-        String path = PATH + "DevelopmentCards.json";
+    public List<Territory> completeParseTerritory() throws IOException {
+        JsonObject devCards = extractJsonObject("DevelopmentCards.json");
+        JsonArray cards = devCards.get("territory").getAsJsonArray();
+
+        List<Territory> territories = parseTerritories(cards);
+        //territories.forEach((Territory s) -> System.out.print(s.toString() + "\n"));
+        return territories;
+    }
+
+    private JsonObject extractJsonObject(String jsonName) throws IOException {
+        String path = PATH + jsonName;
         open(path);
         JsonParser parser = new JsonParser();
         JsonObject object = parser.parse(br).getAsJsonObject();
-        JsonObject devCards = object.get("DevelopmentCards").getAsJsonObject();
-        JsonArray cards = devCards.get("territory").getAsJsonArray();
+        close();
+        return object;
+    }
 
+    private List<Territory> parseTerritories(JsonArray cards) {
         List<Territory> territories = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++){
             JsonObject card = cards.get(index).getAsJsonObject();
@@ -65,59 +79,64 @@ public class Parser {
             territories.add(new Territory(developmentCard, harvestActionValueRequired, harvestResult));
 
         }
-        territories.forEach((Territory s) -> System.out.print(s.toString() + "\n"));
-        close();
+        return territories;
     }
 
     /**
      * Method that parses Building Development Cards from Json
      * @throws IOException
      */
-    public void parseBuilding() throws IOException {
-        String path = PATH + "DevelopmentCards.json";
-        open(path);
-        JsonParser parser = new JsonParser();
-        JsonObject object = parser.parse(br).getAsJsonObject();
-        JsonArray cards = object.get("building").getAsJsonArray();
+    public List<Building> completeParseBuilding() throws IOException {
+        JsonObject devCards = extractJsonObject("DevelopmentCards.json");
+        JsonArray cards = devCards.get("building").getAsJsonArray();
+        List<Building> buildings = parseBuildings(cards);
+        //buildings.forEach((Building s) -> System.out.println(s.toString() + "\n"));
+        return buildings;
+    }
+
+    private List<Building> parseBuildings(JsonArray cards) {
         List<Building> buildings = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++){
             JsonObject card = cards.get(index).getAsJsonObject();
             DevelopmentCard developmentCard = parseDevelopmentCard(card);
             buildings.add(new Building(developmentCard));
         }
-        buildings.forEach((Building s) -> System.out.println(s.toString() + "\n"));
-        close();
+        return buildings;
     }
 
     /**
      * Method that parses Character Development Cards from Json
      * @throws IOException
      */
-    public void parseCharacter() throws IOException {
-        String path = PATH + "DevelopmentCards.json";
-        open(path);
-        JsonParser parser = new JsonParser();
-        JsonObject object = parser.parse(br).getAsJsonObject();
-        JsonArray cards = object.get("character").getAsJsonArray();
+    public List<Character> completeParseCharacter() throws IOException {
+        JsonObject devCards = extractJsonObject("DevelopmentCards.json");
+        JsonArray cards = devCards.get("character").getAsJsonArray();
+        List<Character> characters = parseCharacters(cards);
+        return characters;
+    }
+
+    private List<Character> parseCharacters(JsonArray cards) {
         List<Character> characters = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++) {
             JsonObject card = cards.get(index).getAsJsonObject();
             DevelopmentCard developmentCard = parseDevelopmentCard(card);
             characters.add(new Character(developmentCard));
         }
-        characters.forEach((Character s) -> System.out.println(s.toString() + "\n"));
+        return characters;
     }
 
     /**
      * Method that parses Venture Development Cards from Json
      * @throws IOException
      */
-    public void parseVenture() throws IOException {
-        String path = PATH + "DevelopmentCards.json";
-        open(path);
-        JsonParser parser = new JsonParser();
-        JsonObject object = parser.parse(br).getAsJsonObject();
-        JsonArray cards = object.get("venture").getAsJsonArray();
+    public List<Venture> completeParseVenture() throws IOException {
+        JsonObject devCards = extractJsonObject("DevelopmentCards.json");
+        JsonArray cards = devCards.get("venture").getAsJsonArray();
+        List<Venture> ventures = parseVentures(cards);
+        return ventures;
+    }
+
+    private List<Venture> parseVentures(JsonArray cards) {
         List<Venture> ventures = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++) {
             JsonObject card = cards.get(index).getAsJsonObject();
@@ -125,6 +144,7 @@ public class Parser {
             Goods endGameRewards = parseEndGameRewards(card);
             ventures.add(new Venture(developmentCard, endGameRewards));
         }
+        return ventures;
     }
 
     /**
@@ -132,24 +152,26 @@ public class Parser {
      * @return
      * @throws IOException
      */
-    public List<ExcommunicationTile> parseExcommunicationTiles() throws IOException {
-        String path = PATH + "ExcommunicationTiles.json";
-        open(path);
-        Gson gson = new Gson();
-        JsonParser parser = new JsonParser();
-        JsonObject object = parser.parse(br).getAsJsonObject();
-        JsonArray cards = object.get("excommunicationTiles").getAsJsonArray();
+    public List<ExcommunicationTile> completeParseExcommunicationTiles() throws IOException {
+
+        JsonObject excommunications = extractJsonObject("ExcommunicationTiles.json");
+        JsonArray cards = excommunications.get("excommunicationTiles").getAsJsonArray();
+        List<ExcommunicationTile> excommunicationTiles = parseExcommunicationTiles(cards);
+        return excommunicationTiles;
+    }
+
+    private List<ExcommunicationTile> parseExcommunicationTiles(JsonArray cards) {
         List<ExcommunicationTile> excommunicationTiles = new ArrayList<>();
+        Gson gson = new Gson();
         JsonObject card;
         JsonArray excommunicationTile;
         for(int index=0; index<cards.size(); index++){
             card = cards.get(index).getAsJsonObject();
             excommunicationTile = card.get("excommunicationDetails").getAsJsonArray();
             ExcommunicationTile parsedExcommunicationTile = gson.fromJson(excommunicationTile,
-                                                                            ExcommunicationTile.class);
+                    ExcommunicationTile.class);
             excommunicationTiles.add(parsedExcommunicationTile);
         }
-        close();
         return excommunicationTiles;
     }
 
@@ -158,22 +180,19 @@ public class Parser {
      * @return
      * @throws IOException
      */
-    public List<LeaderCard> parseLeaderCards() throws IOException {
-        String path = PATH + "leadercards.json";
-        open(path);
-        Gson gson = new Gson();
-        JsonParser parser = new JsonParser();
-        JsonObject object = parser.parse(br).getAsJsonObject();
+    public List<LeaderCard> completeParseLeaderCards() throws IOException {
+        JsonObject object = extractJsonObject("leadercards.json");
         JsonArray leaders = object.get("leaderCards").getAsJsonArray();
+        List<LeaderCard> parsedLeaderCards = parseLeaderCards(leaders);
+        return parsedLeaderCards;
+    }
 
+    private List<LeaderCard> parseLeaderCards(JsonArray leaders) {
         List<LeaderCard> parsedLeaderCards = new ArrayList<>();
-        List<LeaderCost> parsedLeaderCostList;
-        LeaderInformation cardInfo;
-        JsonArray leaderCosts;
         for(int index=0; index<leaders.size(); index++){
-            cardInfo = parseLeaderInformation(leaders.get(index).getAsJsonObject());
-            leaderCosts = leaders.get(index).getAsJsonObject().get("requirements").getAsJsonArray();
-            parsedLeaderCostList = parseLeaderCosts(leaderCosts);
+            LeaderInformation cardInfo = parseLeaderInformation(leaders.get(index).getAsJsonObject());
+            JsonArray leaderCosts = leaders.get(index).getAsJsonObject().get("requirements").getAsJsonArray();
+            List<LeaderCost> parsedLeaderCostList = parseLeaderCosts(leaderCosts);
             //parsedLeaderCards.add(new LeaderCard(cardInfo, parsedLeaderCostList));
         }
         return parsedLeaderCards;
@@ -213,18 +232,20 @@ public class Parser {
             card = territory.get(index).getAsJsonObject();
             name = card.get("cardInformations").getAsJsonArray().get(0).getAsJsonObject().get("name").getAsString();
             List<AdditionalCardInfo> addInfoList = new ArrayList<>();
-            parseListAddInfo(addInfoList, card);
+            parseListAddInfo(addInfoList, card, "", name);
         }
     }
 
-    private void parseListAddInfo(List<AdditionalCardInfo> addInfoList, JsonObject card) {
-        JsonArray addInfoTypes = card.get("additionalCardInfoType").getAsJsonArray();
+    private void parseListAddInfo(List<AdditionalCardInfo> addInfoList, JsonObject card,
+                                  String addInfoToInstantiate, String name) {
+        JsonArray addInfoTypes = card.get(addInfoToInstantiate).getAsJsonArray();
+        int actionTypeIndex = 0;
         for(int index=0; index<addInfoList.size(); index++){
             String type = addInfoTypes.get(index).getAsString();
             switch (type) {
-                case "cardFlashAction": parseCardFlashAction(addInfoList, card); break;
-                case "conditionalProduction": parseConditionalProduction(addInfoList, card); break;
-                case "minRequiredOnCost": parseMinRequiredOnCost(addInfoList, card); break;
+                case "cardFlashAction": parseCardFlashAction(addInfoList, card, actionTypeIndex, name);
+                                        actionTypeIndex++; break;
+                case "conditionalProduction": parseConditionalProduction(addInfoList, card, name); break;
                 case "multipleProduction": parseMultipleProduction(addInfoList, card); break;
                 case "requirementsOnCard": parseRequirementsOnCard(addInfoList, card); break;
                 case "rewardsOnCard": parseRewardsOnCard(addInfoList, card); break;
@@ -238,9 +259,29 @@ public class Parser {
      * TODO all
      * @param addInfoList
      * @param card
+     * @param actionTypeIndex
+     * @param name
      */
-    private void parseCardFlashAction(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+    private void parseCardFlashAction(List<AdditionalCardInfo> addInfoList, JsonObject card,
+                                      int actionTypeIndex, String name) {
+        JsonObject actionType = card.get("actionType").getAsJsonArray().get(actionTypeIndex).getAsJsonObject();
+        ActionType parsedActionType = parseActionType(actionType);
+        int actionValue = card.get("actionValue").getAsInt();
+        Gson gson = new Gson();
+        Goods discount = gson.fromJson(card.get("discount").getAsJsonArray().get(0).getAsJsonObject(), Goods.class);
+        //addInfoList.add(new CardFlashAction(name, ,actionValue), discount));
+    }
 
+    private ActionType parseActionType(JsonElement actionType) {
+        String actionTypeToParse = actionType.getAsString();
+        Map<String, ActionType> valuesToReturn = new HashMap<>();
+        valuesToReturn.put ("greenTower", ActionType.GREEN_TOWER);
+        valuesToReturn.put("yellowTower", ActionType.YELLOW_TOWER);
+        valuesToReturn.put("blueTower", ActionType.BLUE_TOWER);
+        valuesToReturn.put("purpleTower",ActionType.PURPLE_TOWER);
+        valuesToReturn.put("production",ActionType.PRODUCTION);
+        valuesToReturn.put("harvest",ActionType.HARVEST);
+        return valuesToReturn.get(actionTypeToParse);
     }
 
     /**
@@ -248,17 +289,9 @@ public class Parser {
      * @param addInfoList
      * @param card
      */
-    private void parseConditionalProduction(List<AdditionalCardInfo> addInfoList, JsonObject card) {
-
-    }
-
-    /**
-     * TODO all
-     * @param addInfoList
-     * @param card
-     */
-    private void parseMinRequiredOnCost(List<AdditionalCardInfo> addInfoList, JsonObject card) {
-
+    private void parseConditionalProduction(List<AdditionalCardInfo> addInfoList, JsonObject card, String name) {
+        GeneralColor cardColor = decideColorEnum(card.get("cardColor").getAsString());
+        addInfoList.add(new ConditionalProduction(name, cardColor));
     }
 
     /**
@@ -423,16 +456,13 @@ public class Parser {
      * @return
      */
     private GeneralColor decideColorEnum(String cardColor) {
-        GeneralColor cardColorOfficial = null;
-        switch(cardColor) {
-            case "blue": cardColorOfficial = GeneralColor.BLUE; break;
-            case "yellow": cardColorOfficial = GeneralColor.YELLOW; break;
-            case "green": cardColorOfficial = GeneralColor.GREEN; break;
-            case "purple": cardColorOfficial = GeneralColor.PURPLE; break;
-            default:
-                System.out.println("Invalid String");
-        }
-        return cardColorOfficial;
+        Map<String, GeneralColor> cardColorToReturn = new HashMap<>();
+            cardColorToReturn.put("blue", GeneralColor.BLUE);
+            cardColorToReturn.put("yellow", GeneralColor.YELLOW);
+            cardColorToReturn.put("green", GeneralColor.GREEN);
+            cardColorToReturn.put("purple", GeneralColor.PURPLE);
+
+        return cardColorToReturn.get(cardColor);
     }
 
     /**
