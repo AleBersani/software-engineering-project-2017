@@ -53,6 +53,11 @@ public class ImplVisitor implements CardVisitor {
     }
 
     @Override
+    public void visitAdditionalCardInfo(GoodsBasedOnPossessions goodsBasedOnPossessions) {
+        System.out.println("Visitor GoodsBasedOnPossessions");
+    }
+
+    @Override
     public void visitAdditionalCardInfo(MultipleProduction multipleProduction) {
         System.out.println("Visitor MultipleProduction");
     }

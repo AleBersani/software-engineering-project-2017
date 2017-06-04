@@ -33,14 +33,6 @@ public abstract class Collection {
         return developmentCard.getCosts();
     }
 
-    /**
-     * TODO: JavaDoc
-     * @return
-     */
-    public ExchangingGoods getInstantEffect() {
-        return developmentCard.getInstantExchangingGoods();
-    }
-
     public DevelopmentCard getDevelopmentCard() {
         return developmentCard;
     }
