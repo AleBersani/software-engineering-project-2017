@@ -1,11 +1,10 @@
 package it.polimi.ingsw.parser;
 
 import com.google.gson.*;
-import it.polimi.ingsw.gamelogic.actions.Action;
-import it.polimi.ingsw.gamelogic.actions.description.BasicAction;
 import it.polimi.ingsw.gamelogic.basics.*;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.AdditionalCardInfo;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.CardFlashExchangingGoods;
+import it.polimi.ingsw.gamelogic.cards.additionalinfo.ConditionalProduction;
 import it.polimi.ingsw.gamelogic.cards.development.*;
 import it.polimi.ingsw.gamelogic.cards.development.Character;
 import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
@@ -24,8 +23,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static it.polimi.ingsw.gamelogic.enums.ActionType.YELLOW_TOWER;
 
 
 /**
@@ -142,9 +139,20 @@ public class Parser {
             JsonObject card = cards.get(index).getAsJsonObject();
             DevelopmentCard developmentCard = parseDevelopmentCard(card);
             Goods endGameRewards = parseEndGameRewards(card);
-            ventures.add(new Venture(developmentCard, endGameRewards));
+            List<Goods> requirementsOnCosts = parseRequirementsOnCosts(card.get("costs").getAsJsonArray());
+            ventures.add(new Venture(developmentCard, endGameRewards, requirementsOnCosts));
         }
         return ventures;
+    }
+
+    private List<Goods> parseRequirementsOnCosts(JsonArray costs) {
+        List<Goods> parsedCosts = new ArrayList<>();
+        Gson gson = new Gson();
+        for(int index=0; index<costs.size(); index++){
+            Goods cost = gson.fromJson(costs.get(index).getAsJsonObject(), Goods.class);
+            parsedCosts.add(cost);
+        }
+        return parsedCosts;
     }
 
     /**
@@ -300,6 +308,8 @@ public class Parser {
      * @param card
      */
     private void parseMultipleProduction(List<AdditionalCardInfo> addInfoList, JsonObject card) {
+        JsonArray costs = card.get("costs").getAsJsonArray();
+        List<Goods> parsedCosts = parseRequirementsOnCosts(costs);
 
     }
 
