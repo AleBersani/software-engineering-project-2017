@@ -2,7 +2,10 @@ package it.polimi.ingsw.gamelogic.modifiers.requirements;
 
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
+import it.polimi.ingsw.gamelogic.player.Pawn;
 import it.polimi.ingsw.gamelogic.player.Player;
+
+import java.util.Optional;
 
 /**
  * Class that describes the requirements of an action originated by an Action Space
@@ -32,8 +35,10 @@ public class SpaceActionRequirements implements Requirements {
 
     @Override
     public boolean hasRequirements(Player player) {
-        if (player.getPawnGivenColor(pawnColor).isPresent()) {
-            if (player.getPawnGivenColor(pawnColor).get().isPlacedOnBoard()) {
+        Optional<Pawn> optionalPawn = player.getPawnGivenColor(pawnColor);
+        if (optionalPawn.isPresent()) {
+            Pawn pawn = optionalPawn.get();
+            if (pawn.isPlacedOnBoard()) {
                 return false;
             }
         }
