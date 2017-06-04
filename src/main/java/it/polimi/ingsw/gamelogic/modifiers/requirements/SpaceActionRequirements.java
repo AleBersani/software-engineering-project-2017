@@ -13,6 +13,9 @@ public class SpaceActionRequirements {
     private int numberOfServants;
     private boolean occupied;
 
+    private int initialActionValue;
+    private int bonusActionValue;
+
     public SpaceActionRequirements(ActionType actionType, PawnColor pawnColor, int actionValue,
                                    int numberOfServants, boolean occupied) {
         this.actionType = actionType;
@@ -20,6 +23,12 @@ public class SpaceActionRequirements {
         this.actionValue = actionValue;
         this.numberOfServants = numberOfServants;
         this.occupied = occupied;
+        initialActionValue = actionValue;
+        bonusActionValue = 0;
+    }
+
+    public boolean modifiedActionValue() {
+        return actionValue != initialActionValue;
     }
 
     public ActionType getActionType() {
@@ -60,5 +69,21 @@ public class SpaceActionRequirements {
 
     public void setOccupied(boolean occupied) {
         this.occupied = occupied;
+    }
+
+    public int getInitialActionValue() {
+        return initialActionValue;
+    }
+
+    public void setInitialActionValue(int initialActionValue) {
+        this.initialActionValue = initialActionValue;
+    }
+
+    public int getBonusActionValue() {
+        return bonusActionValue;
+    }
+
+    public void setBonusActionValue(int bonusActionValue) {
+        this.bonusActionValue = bonusActionValue;
     }
 }

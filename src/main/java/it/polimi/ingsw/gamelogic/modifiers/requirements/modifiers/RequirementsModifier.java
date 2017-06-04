@@ -12,9 +12,11 @@ public abstract class RequirementsModifier {
         this.availableActions = availableActions;
     }
 
-    public abstract BoardActionRequirements modifyRequirements(BoardActionRequirements boardActionRequirements);
+    public BoardActionRequirements modifyRequirements(BoardActionRequirements boardActionRequirements) {
+        return boardActionRequirements;
+    }
 
-    public abstract LeaderRequirements modifyRequirements(LeaderRequirements leaderRequirements);
-
-    public abstract TowerActionRequirements modifyRequirements(TowerActionRequirements towerActionRequirements);
+    public TowerActionRequirements modifyRequirements(TowerActionRequirements towerActionRequirements) {
+        return towerActionRequirements;
+    }
 }

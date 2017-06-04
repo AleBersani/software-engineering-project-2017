@@ -1,6 +1,5 @@
 package it.polimi.ingsw.gamelogic.cards.development;
 
-import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
 import java.util.List;

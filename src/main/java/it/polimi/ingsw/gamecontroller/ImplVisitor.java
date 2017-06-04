@@ -16,17 +16,13 @@ public class ImplVisitor implements CardVisitor {
 
         AdditionalCardInfo one = new CardFlashExchangingGoods("Card 1", new ExchangingGoods(
                 new Goods(new Points(1,2,3))));
-        AdditionalCardInfo two = new MinRequiredOnCost("Card 2",
-                new Goods(new Points(1,2,3)));
 
         additionalCardInfoList = new ArrayList<>();
         additionalCardInfoList.add(one);
-        additionalCardInfoList.add(two);
 
         implVisitor = new ImplVisitor();
 
         additionalCardInfoList.get(0).acceptCardVisitor(implVisitor);
-        additionalCardInfoList.get(1).acceptCardVisitor(implVisitor);
     }
 
     @Override
@@ -34,12 +30,6 @@ public class ImplVisitor implements CardVisitor {
         System.out.println("Visitor CardFlashExchangingGoods");
         System.out.println(cardFlashExchangingGoods.getName() + " " + cardFlashExchangingGoods
                 .getExchangingGoods().getGoods().toString());
-    }
-
-    @Override
-    public void visitAdditionalCardInfo(MinRequiredOnCost minRequiredOnCost) {
-        System.out.println("Visitor MinRequiredOnCost");
-        System.out.println(minRequiredOnCost.getName() + " " + minRequiredOnCost.getMin().toString());
     }
 
     @Override

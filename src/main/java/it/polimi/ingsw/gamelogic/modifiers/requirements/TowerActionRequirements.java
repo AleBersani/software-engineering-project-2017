@@ -17,6 +17,7 @@ public class TowerActionRequirements implements Requirements {
 
     private Goods cardCost;
     private Goods discount;
+    private boolean playerHasEnoughMilitaryPoints;
 
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
                                    Goods bonusGoods, Goods occupiedTowerCost,
@@ -29,6 +30,7 @@ public class TowerActionRequirements implements Requirements {
         this.occupiedByMyColouredPawn = occupiedByMyColouredPawn;
         cardCost = requiredGoods;
         discount = new Goods();
+        playerHasEnoughMilitaryPoints = true;
     }
 
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
@@ -43,6 +45,22 @@ public class TowerActionRequirements implements Requirements {
         this.occupiedByMyColouredPawn = occupiedByMyColouredPawn;
         this.cardCost = cardCost;
         this.discount = discount;
+        playerHasEnoughMilitaryPoints = true;
+    }
+
+    public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
+                                   Goods bonusGoods, Goods occupiedTowerCost,
+                                   boolean occupiedTower, boolean occupiedByMyColouredPawn,
+                                   Goods cardCost, Goods discount, boolean playerHasEnoughMilitaryPoints) {
+        this.spaceActionRequirements = spaceActionRequirements;
+        this.requiredGoods = requiredGoods;
+        this.bonusGoods = bonusGoods;
+        this.occupiedTowerCost = occupiedTowerCost;
+        this.occupiedTower = occupiedTower;
+        this.occupiedByMyColouredPawn = occupiedByMyColouredPawn;
+        this.cardCost = cardCost;
+        this.discount = discount;
+        this.playerHasEnoughMilitaryPoints = playerHasEnoughMilitaryPoints;
     }
 
     @Override
@@ -123,5 +141,13 @@ public class TowerActionRequirements implements Requirements {
 
     public void setDiscount(Goods discount) {
         this.discount = discount;
+    }
+
+    public boolean isPlayerHasEnoughMilitaryPoints() {
+        return playerHasEnoughMilitaryPoints;
+    }
+
+    public void setPlayerHasEnoughMilitaryPoints(boolean playerHasEnoughMilitaryPoints) {
+        this.playerHasEnoughMilitaryPoints = playerHasEnoughMilitaryPoints;
     }
 }

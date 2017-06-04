@@ -6,13 +6,17 @@ import java.util.List;
  * Abstraction of the different Goods for which a Council's Privilege can be exchanged.
  */
 public class CouncilePrivilege {
-    private static List<Goods> possibleChoices;
+    private List<Goods> possibleChoices;
 
-    public static List<Goods> getPossibleChoices() {
+    public CouncilePrivilege(List<Goods> possibleChoices) {
+        this.possibleChoices = possibleChoices;
+    }
+
+    public List<Goods> getPossibleChoices() {
         return possibleChoices;
     }
 
-    public static void setPossibleChoices(List<Goods> possibleChoices) {
-        possibleChoices = possibleChoices;
+    public void setPossibleChoices(List<Goods> possibleChoices) {
+        this.possibleChoices = possibleChoices;
     }
 }

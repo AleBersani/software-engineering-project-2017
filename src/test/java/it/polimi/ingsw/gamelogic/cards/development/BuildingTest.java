@@ -1,6 +1,5 @@
 package it.polimi.ingsw.gamelogic.cards.development;
 
-import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 import org.junit.jupiter.api.BeforeEach;

@@ -30,10 +30,6 @@ public class Board {
         leaderInformationList = new ArrayList<>();
     }
 
-    /*
-        TODO: auxiliaries methods
-     */
-
     /**
      * Get Excommunication Tile by passing the number of the period as parameter
      * @param periodNumber
