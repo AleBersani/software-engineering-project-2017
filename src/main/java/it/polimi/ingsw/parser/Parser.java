@@ -394,9 +394,8 @@ public class Parser {
     private DevelopmentCard parseDevelopmentCard(JsonObject card) {
         CardInformation cardInfo = parseCardInformation(card);
         List<Goods> costs = parseCosts(card);
-        ExchangingGoods instantExchangingGoods = parseExchangingGoods(card);
 
-        return new DevelopmentCard(cardInfo, costs, instantExchangingGoods);
+        return new DevelopmentCard(cardInfo, costs);
     }
 
     /**
