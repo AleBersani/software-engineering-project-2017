@@ -10,14 +10,18 @@ public class BoardActionRequirements implements Requirements {
     private SpaceActionRequirements spaceActionRequirements;
     private int malusValue;
 
+    private boolean canPlace;
+
     public BoardActionRequirements(SpaceActionRequirements spaceActionRequirements) {
         this.spaceActionRequirements = spaceActionRequirements;
         malusValue = 0;
+        canPlace = true;
     }
 
     public BoardActionRequirements(SpaceActionRequirements spaceActionRequirements, int malusValue) {
         this.spaceActionRequirements = spaceActionRequirements;
         this.malusValue = malusValue;
+        canPlace = true;
     }
 
     @Override
@@ -50,5 +54,13 @@ public class BoardActionRequirements implements Requirements {
 
     public void setMalusValue(int malusValue) {
         this.malusValue = malusValue;
+    }
+
+    public boolean isCanPlace() {
+        return canPlace;
+    }
+
+    public void setCanPlace(boolean canPlace) {
+        this.canPlace = canPlace;
     }
 }

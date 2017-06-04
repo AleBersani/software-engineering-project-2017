@@ -2,11 +2,12 @@ package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.actions.description.ActionDescription;
 import it.polimi.ingsw.gamelogic.basics.Goods;
+import it.polimi.ingsw.gamelogic.basics.Points;
+import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.function.IntSupplier;
 
 /**
  * Class that describes the player
@@ -38,6 +39,34 @@ public class Player {
 
     public Optional<Pawn> getPawnGivenColor(PawnColor pawnColor) {
         return playerBoard.getPawnGivenColor(pawnColor);
+    }
+
+    /**
+     * TODO: Test and JavaDoc
+     * @param identifier
+     * @return
+     */
+    public int countGivenIdentifier(String identifier) {
+        return getCounters().get(identifier).getAsInt();
+    }
+
+    private Map<String, IntSupplier> getCounters() {
+        Map<String, IntSupplier> counters = new HashMap<>();
+        counters.put("MILITARY", () -> getPlayerGoods().getPoints().getMilitary());
+        counters.put("GREEN", () -> playerBoard.getNumberOfTerritories());
+        counters.put("YELLOW", () -> playerBoard.getNumberOfBuildings());
+        counters.put("BLUE", () -> playerBoard.getNumberOfCharacters());
+        counters.put("PURPLE", () -> playerBoard.getNumberOfVentures());
+        counters.put("GOODS", () -> sumOfAllResources());
+        return counters;
+    }
+
+    private int sumOfAllResources() {
+        Resources resources = getPlayerGoods().getResources();
+        return resources.getWoods() +
+                resources.getStones() +
+                resources.getCoins() +
+                resources.getServants();
     }
 
     /**

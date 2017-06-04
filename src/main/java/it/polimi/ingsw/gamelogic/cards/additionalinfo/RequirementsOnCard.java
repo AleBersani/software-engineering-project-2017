@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+<<<<<<< HEAD
  * Class that describes the requirements modifier of a card
+=======
+ * Class that describes the requirements modifiers on the card
+>>>>>>> origin/master
  */
 public class RequirementsOnCard extends AdditionalCardInfo {
     private List<RequirementsModifier> requirementsModifiers;

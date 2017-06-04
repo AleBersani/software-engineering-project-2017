@@ -1,6 +1,5 @@
 package it.polimi.ingsw.gamelogic.cards.development;
 
-import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
 import java.util.List;
@@ -31,14 +30,6 @@ public abstract class Collection {
      */
     public List<Goods> getCosts() {
         return developmentCard.getCosts();
-    }
-
-    /**
-     * TODO: JavaDoc
-     * @return
-     */
-    public ExchangingGoods getInstantEffect() {
-        return developmentCard.getInstantExchangingGoods();
     }
 
     public DevelopmentCard getDevelopmentCard() {

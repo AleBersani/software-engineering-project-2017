@@ -2,19 +2,21 @@ package it.polimi.ingsw.gamelogic.cards.leader;
 
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
 
+import java.util.List;
+
 /**
  * Class that describes the Leader cards in general, with basic information, a cost defined as Leader Cost,
  * if the card has been placed on the board and if it can be played or not.
  */
 public class LeaderCard {
     private LeaderInformation leaderInformation;
-    private LeaderCost leaderCost;
+    private List<LeaderCost> leaderCosts;
     private boolean placedOnBoard;
     private boolean playable;
 
-    public LeaderCard(LeaderInformation leaderInformation, LeaderCost leaderCost) {
+    public LeaderCard(LeaderInformation leaderInformation, List<LeaderCost> leaderCosts) {
         this.leaderInformation = leaderInformation;
-        this.leaderCost = leaderCost;
+        this.leaderCosts = leaderCosts;
         placedOnBoard = false;
         playable = true;
     }
@@ -35,12 +37,12 @@ public class LeaderCard {
         this.leaderInformation = leaderInformation;
     }
 
-    public LeaderCost getLeaderCost() {
-        return leaderCost;
+    public List<LeaderCost> getLeaderCosts() {
+        return leaderCosts;
     }
 
-    public void setLeaderCost(LeaderCost leaderCost) {
-        this.leaderCost = leaderCost;
+    public void setLeaderCosts(List<LeaderCost> leaderCosts) {
+        this.leaderCosts = leaderCosts;
     }
 
     public boolean isPlacedOnBoard() {

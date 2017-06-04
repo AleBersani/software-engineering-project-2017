@@ -5,7 +5,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import it.polimi.ingsw.gamelogic.basics.*;
-import it.polimi.ingsw.gamelogic.cards.additionalinfo.*;
+import it.polimi.ingsw.gamelogic.cards.additionalinfo.AdditionalCardInfo;
+import it.polimi.ingsw.gamelogic.cards.additionalinfo.CardFlashExchangingGoods;
 import it.polimi.ingsw.gamelogic.cards.development.*;
 import it.polimi.ingsw.gamelogic.cards.development.Character;
 import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
@@ -394,9 +395,8 @@ public class Parser {
     private DevelopmentCard parseDevelopmentCard(JsonObject card) {
         CardInformation cardInfo = parseCardInformation(card);
         List<Goods> costs = parseCosts(card);
-        ExchangingGoods instantExchangingGoods = parseExchangingGoods(card);
 
-        return new DevelopmentCard(cardInfo, costs, instantExchangingGoods);
+        return new DevelopmentCard(cardInfo, costs);
     }
 
     /**

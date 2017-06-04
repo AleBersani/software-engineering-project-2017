@@ -17,21 +17,6 @@ public class Tower {
         this.towerSlots = towerSlots;
     }
 
-    /*
-    TODO: Aux methods
-     */
-
-    /**
-     * Check if the towers is occupied
-     * @return true if the tower is occupied
-     */
-    public boolean isTowerOccupied() {
-        /*
-        TODO
-         */
-        return true;
-    }
-
     public GeneralColor getColor() {
         return color;
     }

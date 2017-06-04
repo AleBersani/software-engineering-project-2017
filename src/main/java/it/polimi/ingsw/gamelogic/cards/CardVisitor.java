@@ -9,7 +9,7 @@ public interface CardVisitor {
     void visitAdditionalCardInfo(CardFlashAction cardFlashAction);
     void visitAdditionalCardInfo(CardFlashExchangingGoods cardFlashExchangingGoods);
     void visitAdditionalCardInfo(ConditionalProduction conditionalProduction);
-    void visitAdditionalCardInfo(MinRequiredOnCost minRequiredOnCost);
+    void visitAdditionalCardInfo(GoodsBasedOnPossessions goodsBasedOnPossessions);
     void visitAdditionalCardInfo(MultipleProduction multipleProduction);
     void visitAdditionalCardInfo(RequirementsOnCard requirementsOnCard);
     void visitAdditionalCardInfo(RewardsOnCard rewardsOnCard);
