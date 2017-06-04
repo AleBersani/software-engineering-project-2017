@@ -6,7 +6,8 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the possibility for the player to place one of his/hers pawns in an already occupied
+ * Action Space
  */
 public class CanPlaceOnOccupiedSpace extends RequirementsModifier {
     public CanPlaceOnOccupiedSpace(AvailableActions availableActions) {

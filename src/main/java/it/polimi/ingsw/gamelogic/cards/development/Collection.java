@@ -16,18 +16,10 @@ public abstract class Collection {
         this.developmentCard = developmentCard;
     }
 
-    /**
-     * TODO: JavaDoc
-     * @return
-     */
     public CardInformation getCardInformation() {
         return developmentCard.getCardInformation();
     }
 
-    /**
-     * TODO: JavaDoc
-     * @return
-     */
     public List<Goods> getCosts() {
         return developmentCard.getCosts();
     }

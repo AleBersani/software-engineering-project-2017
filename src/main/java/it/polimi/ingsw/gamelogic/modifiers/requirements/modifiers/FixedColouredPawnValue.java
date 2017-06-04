@@ -7,7 +7,7 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that represents the effect of a card that fixes the value of one of the player's pawn
  */
 public class FixedColouredPawnValue extends RequirementsModifier {
     private PawnColor pawnColor;

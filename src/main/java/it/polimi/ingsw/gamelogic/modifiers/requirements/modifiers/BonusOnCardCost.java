@@ -5,7 +5,7 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that describes when it's given a Bonus on
  */
 public class BonusOnCardCost extends RequirementsModifier {
     private Goods bonus;

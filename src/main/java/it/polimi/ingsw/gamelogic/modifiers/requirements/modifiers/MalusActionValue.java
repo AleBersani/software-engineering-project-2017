@@ -6,7 +6,7 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that represents the effect of an Excommunication Tile that reduces the value of an Action
  */
 public class MalusActionValue extends RequirementsModifier {
     private int malusValue;

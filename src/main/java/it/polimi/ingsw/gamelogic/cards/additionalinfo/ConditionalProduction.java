@@ -4,7 +4,7 @@ import it.polimi.ingsw.gamelogic.cards.CardVisitor;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 
 /**
- * TODO: JavaDoc
+ * Class that represent when the player receives some Goods based on the number of cards of a certain color
  */
 public class ConditionalProduction extends AdditionalCardInfo {
     private GeneralColor cardColor;

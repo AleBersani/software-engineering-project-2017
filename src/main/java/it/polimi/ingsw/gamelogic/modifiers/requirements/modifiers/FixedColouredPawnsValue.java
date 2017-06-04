@@ -9,7 +9,7 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that represents the effect of a card that fixes the value of every player's pawn
  */
 public class FixedColouredPawnsValue extends RequirementsModifier {
     private List<PawnColor> pawnColors;

@@ -5,7 +5,8 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that represents the effect of an Excommunication Tile that prevents the player to collect the Goods from
+ * the Tower slots
  */
 public class NoBonusGoodsOnTower extends RequirementsModifier {
     public NoBonusGoodsOnTower(AvailableActions availableActions) {

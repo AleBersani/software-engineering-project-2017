@@ -9,7 +9,7 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Class that represents the effect of an Excommunication Tile that reduces the value of the player's coloured pawns
  */
 public class MalusColouredPawns extends RequirementsModifier {
     private List<PawnColor> pawnColors;

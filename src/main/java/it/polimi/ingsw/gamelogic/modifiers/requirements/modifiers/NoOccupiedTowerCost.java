@@ -5,7 +5,8 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the effect of a Leader card that allows the player not to pay if he/she places a pawn on an
+ * already occupied tower
  */
 public class NoOccupiedTowerCost extends RequirementsModifier {
     public NoOccupiedTowerCost(AvailableActions availableActions) {

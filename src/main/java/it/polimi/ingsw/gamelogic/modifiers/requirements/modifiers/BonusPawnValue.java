@@ -8,7 +8,7 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that represents an additional value for just one of the player's pawn
  */
 public class BonusPawnValue extends RequirementsModifier {
     private PawnColor pawnColor;

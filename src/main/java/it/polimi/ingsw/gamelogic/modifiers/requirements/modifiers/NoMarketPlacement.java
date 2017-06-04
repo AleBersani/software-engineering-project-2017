@@ -4,7 +4,8 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that represents the effect of an Excommunication Tile that prevents the player to place any of his pawns
+ * in the Market Slots
  */
 public class NoMarketPlacement extends RequirementsModifier {
     public NoMarketPlacement(AvailableActions availableActions) {

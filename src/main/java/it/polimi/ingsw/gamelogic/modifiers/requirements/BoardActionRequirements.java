@@ -32,10 +32,6 @@ public class BoardActionRequirements implements Requirements {
         return false;
     }
 
-    /**
-     * TODO: JavaDoc
-     * @return
-     */
     public ActionType getActionType() {
         return spaceActionRequirements.getActionType();
     }

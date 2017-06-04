@@ -57,7 +57,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-				"additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -116,7 +123,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -175,7 +189,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -234,7 +255,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -293,7 +321,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -352,7 +387,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -411,7 +453,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -470,7 +519,14 @@
 						"councilPrivilege": "1"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -529,7 +585,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -588,7 +651,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -647,7 +717,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -706,7 +783,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -765,7 +849,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -824,7 +915,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -883,7 +981,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -942,7 +1047,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -1001,7 +1113,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -1060,7 +1179,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -1119,7 +1245,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -1178,7 +1311,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -1237,7 +1377,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -1296,7 +1443,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -1355,7 +1509,14 @@
 						"councilPrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			},
 			{
 				"cardInformations": [
@@ -1414,7 +1575,14 @@
 						"councilePrivilege": "0"
 					}
 				],
-			  "additionalInfo":[]
+                "additionalInfoFlash": {
+                    "onChoice": [],
+                    "NotChoosable": []
+                },
+                "additionalInfoPermanent": {
+                    "onChoice": [],
+                    "notChoosable": []
+                }
 			}
 		],
 	"building": [
@@ -1492,8 +1660,8 @@
 				],
 				"cardRequiredForProductionExchange": "yellow",
 				"additionalInfoFlash": {
-                  "onChoice": [],
-                  "NotChoosable": []
+                    "onChoice": [],
+                    "NotChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],

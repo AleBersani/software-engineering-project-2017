@@ -4,7 +4,8 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the effect of a Leader card that allows the player to pick as many territory cards he/she
+ * wants without caring about the number of Military points
  */
 public class NoMilitaryForTerritories extends RequirementsModifier {
     public NoMilitaryForTerritories(AvailableActions availableActions) {

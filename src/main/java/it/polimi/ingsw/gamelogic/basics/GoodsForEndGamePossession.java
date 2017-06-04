@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.basics;
 
 /**
- * TODO: JavaDoc
+ * Class that represents the points assigned to the player at the end of the game counting the player's Goods
  */
 public class GoodsForEndGamePossession {
     private int numberOfObjectsRequired;

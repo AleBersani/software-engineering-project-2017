@@ -6,7 +6,7 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that describes when it's given a Bonus value to perform an action
  */
 public class BonusActionValue extends RequirementsModifier {
     private int bonusValue;

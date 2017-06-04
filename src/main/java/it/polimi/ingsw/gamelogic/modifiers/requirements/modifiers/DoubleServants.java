@@ -6,7 +6,8 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Class that describes the effect of a card that halves the value of the servants, so to increase the value of a
+ * pawn of one point the player will have to sacrifice two servants instead of one
  */
 public class DoubleServants extends RequirementsModifier {
     public DoubleServants(AvailableActions availableActions) {

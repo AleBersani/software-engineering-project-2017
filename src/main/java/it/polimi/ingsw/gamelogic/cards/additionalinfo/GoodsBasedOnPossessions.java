@@ -5,7 +5,7 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.cards.CardVisitor;
 
 /**
- * TODO: JavaDoc
+ * Class that represents when the player can get some Goods based on the number of cards of a certain color
  */
 public class GoodsBasedOnPossessions extends AdditionalCardInfo {
     private Goods rewardForPossession;
