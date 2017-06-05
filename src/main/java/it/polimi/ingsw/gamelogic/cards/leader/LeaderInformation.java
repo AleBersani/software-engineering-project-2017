@@ -7,12 +7,10 @@ import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
  */
 public class LeaderInformation {
     private String name;
-    private String effectDescription;
     private LeaderCategory leaderCategory;
 
-    public LeaderInformation(String name, String effectDescription, LeaderCategory leaderCategory) {
+    public LeaderInformation(String name, LeaderCategory leaderCategory) {
         this.name = name;
-        this.effectDescription = effectDescription;
         this.leaderCategory = leaderCategory;
     }
 
@@ -22,14 +20,6 @@ public class LeaderInformation {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getEffectDescription() {
-        return effectDescription;
-    }
-
-    public void setEffectDescription(String effectDescription) {
-        this.effectDescription = effectDescription;
     }
 
     public LeaderCategory getLeaderCategory() {

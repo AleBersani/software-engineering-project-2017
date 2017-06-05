@@ -110,6 +110,14 @@ public class Player {
         this.playerBoard = playerBoard;
     }
 
+    public List<LeaderCard> getLeaderCards() {
+        return leaderCards;
+    }
+
+    public void setLeaderCards(List<LeaderCard> leaderCards) {
+        this.leaderCards = leaderCards;
+    }
+
     /**
      * Optional getter for actualAction
      * @return Optional.empty() if the attribute is null
