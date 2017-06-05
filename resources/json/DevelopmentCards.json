@@ -6530,11 +6530,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -6606,11 +6629,34 @@
 							}
 
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+					],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -6682,11 +6728,34 @@
 							}
 
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -6757,11 +6826,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -6832,11 +6924,33 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "3",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "3",
+							"faith": "0"
+						}
+					}],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -6908,11 +7022,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -6939,7 +7076,7 @@
 						"councilPrivilege": "0"
 					}
 				],
-				"requirementsOnCost2": [{
+				"requirementsOnCost": [{
 				"victory": "0",
 				"military": "0",
 				"faith": "0"
@@ -6988,11 +7125,33 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "5",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "5",
+							"faith": "0"
+						}
+					}],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7063,11 +7222,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "4",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "4",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7138,11 +7320,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7213,11 +7418,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7288,11 +7516,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7363,11 +7614,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "6",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "6",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7437,11 +7711,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashAction"]
@@ -7525,11 +7822,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7600,11 +7920,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "8",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "8",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7675,11 +8018,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "7",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "7",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7750,11 +8116,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7825,11 +8214,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7900,11 +8312,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -7975,11 +8410,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -8050,11 +8508,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "12",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -8125,11 +8606,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "0",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashAction"]
@@ -8200,11 +8704,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "15",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "15",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
@@ -8275,11 +8802,34 @@
 								}
 							}
 				],
-				"requirementsOnCost2": [{
-					"victory": "0",
-					"military": "10",
-					"faith": "0"
-				}],
+				"requirementsOnCost": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					},
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points":{
+							"victory": "0",
+							"military": "10",
+							"faith": "0"
+						}
+					}
+				],
 				"additionalInfoFlash": {
 					"onChoice": [],
 					"NotChoosable": ["cardFlashExchangingGoods"]
