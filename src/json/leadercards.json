@@ -21,9 +21,30 @@
                     "faith": "0"
                 }
             }],
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashAction"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            },
+            "actionType": ["harvest"],
+            "abilityType": "consumable",
             "actionValue": "1",
-            "actionType": "harvest",
-            "abilityType": "consumable"
+            "discount": {
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }
         },
         {
             "name": "Ludovico Ariosto",
@@ -46,10 +67,17 @@
                     "faith": "0"
                 }
             }],
-            "decoratorIdentifier": "OccupiedSlot",
-            "actionValueSurplus": "",
-            "actionValue": "",
-            "abilityType": "permanent"
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "decoratorIdentifier": "canPlaceOnOccupiedSpace",
+            "abilityType": "permanent",
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower", "councilPalace", "production", "harvest", "market"]
 
         },
         {
@@ -73,10 +101,18 @@
                     "faith": "0"
                 }
             }],
-            "decoratorIdentifier": "NoOccupiedSlotFee",
-            "actionValueSurplus": "",
-            "actionValue": "",
-            "abilityType": "permanent"
+
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "abilityType": "permanent",
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower"],
+            "decoratorIdentifier": "NoOccupiedTowerCost"
         },
         {
             "name": "Sigismondo Malatesta",
@@ -99,10 +135,17 @@
                     "faith": "3"
                 }
             }],
-            "decoratorIdentifier": "BonusPawns",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "decoratorIdentifier": "bonusPawnValue",
             "actionValueSurplus": "3",
             "pawnColor": ["neutral"],
-            "actionValue": "",
             "abilityType": "permanent"
         },
         {
@@ -140,7 +183,16 @@
                 },
                 "councilPriviledge": "0"
             }],
-            "abilityType": "consumable"
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
+
         },
         {
             "name": "Michelangelo Buonarroti",
@@ -177,7 +229,15 @@
                 },
                 "councilPriviledge": "0"
             }],
-            "abilityType": "consumable"
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
         },
         {
             "name": "Giovanni dalle Bande Nere",
@@ -214,7 +274,15 @@
                 },
                 "councilPriviledge": "0"
             }],
-            "abilityType": "consumable"
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
         },
         {
             "name": "Leonardo da Vinci",
@@ -238,8 +306,29 @@
                 }
             }],
             "actionValue": "0",
-            "actionType": "production",
-            "abilityType": "consumable"
+            "actionType": ["production"],
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": ["cardFlashAction"],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            },
+            "discount": {
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }
         },
         {
             "name": "Sandro Botticelli",
@@ -276,7 +365,15 @@
                 },
                 "councilPriviledge": "0"
             }],
-            "abilityType": "consumable"
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
         },
         {
             "name": "Ludovico il Moro",
@@ -299,11 +396,20 @@
                     "faith": "0"
                 }
             }],
-            "decoratorIdentifier": "FixedPawnsValue",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "decoratorIdentifier": "fixedColouredPawnsValue",
             "actionValueSurplus": "",
             "pawnColor": ["orange", "white", "black"],
-            "actionValue": "5",
-            "abilityType": "permanent"
+            "pawnsValue": "5",
+            "abilityType": "permanent",
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower", "councilPalace", "production", "harvest", "market"]
         },
         {
             "name": "Lucrezia Borgia",
@@ -385,11 +491,20 @@
                     }
                 }
             ],
-            "decoratorIdentifier": "BonusPawns",
+            "decoratorIdentifier": "bonusPawnsValue",
             "actionValueSurplus": "2",
             "pawnColor": ["orange", "white", "black"],
-            "actionValue": "",
-            "abilityType": "permanent"
+            "abilityType": "permanent",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower", "councilPalace", "production", "harvest", "market"]
+
         },
         {
             "name": "Federico da Montefeltro",
@@ -413,8 +528,19 @@
                 }
             },
             "actionValue": "6",
-            "actionType": "towers",
-            "abilityType": "consumable"
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": ["requirementsOnCards"],
+                "notChoosable": []
+            },
+            "decoratorIdentifier": ["bonusPawnValue", "bonusPawnValue", "bonusPawnValue"],
+            "pawnColor": ["orange", "white", "black"],
+            "abilityType": "consumable",
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower"]
+
         },
         {
             "name": "Lorenzo de' Medici",
@@ -437,10 +563,6 @@
                     "faith": "0"
                 }
             }],
-            "decoratorIdentifier": "CopyCardEffect",
-            "actionValueSurplus": "",
-            "pawnColor": {},
-            "actionValue": "",
             "abilityType": "permanent"
         },
         {
@@ -463,8 +585,8 @@
                     "military": "0",
                     "faith": "0"
                 }
-            }]
-            /*COME TRATTARLO?*/
+            }],
+            "state": "givePointForSupportChurch"
         },
         {
             "name": "Cesare Borgia",
@@ -487,11 +609,17 @@
                     "faith": "2"
                 }
             }],
-            "decoratorIdentifier": "NoMilitaryPointsForTerritories",
-            "actionValueSurplus": "",
-            "pawnColor": {},
-            "actionValue": "",
-            "abilityType": "permanent"
+            "decoratorIdentifier": "NoMilitaryForTerritories",
+            "actionValue": ["greenTower"],
+            "abilityType": "permanent",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            }
         },
         {
             "name": "Santa Rita",
@@ -514,11 +642,17 @@
                     "faith": "8"
                 }
             }],
-            "decoratorIdentifier": "DoubleRewards",
-            "actionValueSurplus": "",
-            "pawnColor": {},
-            "actionValue": "",
-            "abilityType": "permanent"
+            "decoratorIdentifier": "doubleRewards",
+            "abilityType": "permanent",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["rewardsOnCards"]
+            },
+            "actionType": ["greenTower", "yellowTower", "purpleTower", "blueTower"]
         },
         {
             "name": "Cosimo de' Medici",
@@ -555,7 +689,15 @@
                 },
                 "councilPriviledge": "0"
             }],
-            "abilityType": "consumable"
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
         },
         {
             "name": "Bartolomeo Colleoni",
@@ -592,7 +734,15 @@
                 },
                 "councilPriviledge": "0"
             }],
-            "abilityType": "consumable"
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
         },
         {
             "name": "Ludovico III Gonzaga",
@@ -629,7 +779,15 @@
                 },
                 "councilPriviledge": "1"
             }],
-            "abilityType": "consumable"
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
         },
         {
             "name": "Pico della Mirandola",
@@ -652,11 +810,30 @@
                     "faith": "0"
                 }
             }],
-            "decoratorIdentifier": "BonusGoods", /*E' DECORATOR?*/
-            "actionValueSurplus": "",
-            "pawnColor": {},
-            "actionValue": "",
-            "abilityType": "permanent"
+            "decoratorIdentifier": "bonusOnCardCost",
+            "bonus": {
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "3"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            },
+            "abilityType": "permanent",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "actionType": ["greenTower", "yellowTower", "purpleTower", "blueTower"]
         }
     ]
 }
