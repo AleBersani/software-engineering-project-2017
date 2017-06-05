@@ -14,7 +14,8 @@ public class BasicEndGameRewards {
     private Points onePointLessForEveryWoodAndStoneOnBuilding;
     private Points onePointLessForEveryResource;
 
-    public BasicEndGameRewards(Points pointsForCharacterCards, Points pointsForVentureCards, Points pointsForTerritoryCards) {
+    public BasicEndGameRewards(Points pointsForCharacterCards, Points pointsForVentureCards,
+                               Points pointsForTerritoryCards) {
         this.pointsForCharacterCards = pointsForCharacterCards;
         this.pointsForVentureCards = pointsForVentureCards;
         this.pointsForTerritoryCards = pointsForTerritoryCards;

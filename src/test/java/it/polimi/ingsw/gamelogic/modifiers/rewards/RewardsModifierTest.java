@@ -14,7 +14,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class RewardsTest {
+class RewardsModifierTest {
     private BasicRewards basicRewards;
     private List<ActionType> actionTypes;
     private AvailableActions availableActions;
