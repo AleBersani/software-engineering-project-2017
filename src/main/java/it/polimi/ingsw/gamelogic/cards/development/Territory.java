@@ -5,12 +5,12 @@ import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 /**
  * Class that describes the Territory cards
  */
-public class Territory extends Collection {
+public class Territory extends DevelopmentCard {
     private int harvestActionValueRequired;
     private ExchangingGoods harvestResult;
 
-    public Territory(DevelopmentCard developmentCard, int harvestActionValueRequired, ExchangingGoods harvestResult) {
-        super(developmentCard);
+    public Territory(BasicDevelopmentCard basicDevelopmentCard, int harvestActionValueRequired, ExchangingGoods harvestResult) {
+        super(basicDevelopmentCard);
         this.harvestActionValueRequired = harvestActionValueRequired;
         this.harvestResult = harvestResult;
     }

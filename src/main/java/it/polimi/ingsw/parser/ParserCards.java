@@ -112,7 +112,7 @@ public class ParserCards {
         List<Territory> territories = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++){
             JsonObject card = cards.get(index).getAsJsonObject();
-            DevelopmentCard developmentCard = parseDevelopmentCard(card);
+            BasicDevelopmentCard basicDevelopmentCard = parseDevelopmentCard(card);
 
             /*CardInformation cardInfo = parseCardInformation(card);
             List<Goods> costs = parseListGoods(card);
@@ -120,7 +120,7 @@ public class ParserCards {
 
             int harvestActionValueRequired = card.get("harvestActionValueRequired").getAsInt();
             ExchangingGoods harvestResult = parseExchangingGoods(card, "harvestResult");
-            territories.add(new Territory(developmentCard, harvestActionValueRequired, harvestResult));
+            territories.add(new Territory(basicDevelopmentCard, harvestActionValueRequired, harvestResult));
 
         }
         return territories;
@@ -135,10 +135,10 @@ public class ParserCards {
         List<Building> buildings = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++){
             JsonObject card = cards.get(index).getAsJsonObject();
-            DevelopmentCard developmentCard = parseDevelopmentCard(card);
+            BasicDevelopmentCard basicDevelopmentCard = parseDevelopmentCard(card);
             int productionActionValueRequired = card.get("productionActionValueRequired").getAsInt();
             ExchangingGoods productionResult = parseExchangingGoods(card, "productionResult");
-            buildings.add(new Building(developmentCard, productionActionValueRequired, productionResult));
+            buildings.add(new Building(basicDevelopmentCard, productionActionValueRequired, productionResult));
         }
         return buildings;
     }
@@ -152,8 +152,8 @@ public class ParserCards {
         List<Character> characters = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++) {
             JsonObject card = cards.get(index).getAsJsonObject();
-            DevelopmentCard developmentCard = parseDevelopmentCard(card);
-            characters.add(new Character(developmentCard));
+            BasicDevelopmentCard basicDevelopmentCard = parseDevelopmentCard(card);
+            characters.add(new Character(basicDevelopmentCard));
         }
         return characters;
     }
@@ -167,10 +167,10 @@ public class ParserCards {
         List<Venture> ventures = new ArrayList<>();
         for(int index = 0; index<cards.size(); index++) {
             JsonObject card = cards.get(index).getAsJsonObject();
-            DevelopmentCard developmentCard = parseDevelopmentCard(card);
+            BasicDevelopmentCard basicDevelopmentCard = parseDevelopmentCard(card);
             Goods endGameRewards = parseEndGameRewards(card);
             List<Goods> requirementsOnCosts = parseListGoods(card.get("requirementsOnCost").getAsJsonArray());
-            ventures.add(new Venture(developmentCard, endGameRewards, requirementsOnCosts));
+            ventures.add(new Venture(basicDevelopmentCard, endGameRewards, requirementsOnCosts));
         }
         return ventures;
     }
@@ -181,11 +181,11 @@ public class ParserCards {
      * @param card JsonObject from which method gets a specific value.
      * @return DevelopmentCard Object containing cardInformation, cost and instantEffect set in Json file.
      */
-    private DevelopmentCard parseDevelopmentCard(JsonObject card) {
+    private BasicDevelopmentCard parseDevelopmentCard(JsonObject card) {
         CardInformation cardInfo = parseCardInformation(card);
         List<Goods> costs = parseListGoods(card.get("cost").getAsJsonArray());
 
-        return new DevelopmentCard(cardInfo, costs);
+        return new BasicDevelopmentCard(cardInfo, costs);
     }
 
     /**

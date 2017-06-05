@@ -8,29 +8,29 @@ import java.util.Optional;
 /**
  * Class that describes the Building cards
  */
-public class Building extends Collection {
+public class Building extends DevelopmentCard {
     private int productionActionValueRequired;
     private ExchangingGoods productionResult;
     private AdditionalCardInfo additionalCardInfo;
 
-    public Building(DevelopmentCard developmentCard) {
-        super(developmentCard);
+    public Building(BasicDevelopmentCard basicDevelopmentCard) {
+        super(basicDevelopmentCard);
         productionActionValueRequired = 0;
         productionResult = new ExchangingGoods();
         additionalCardInfo = null;
     }
 
-    public Building(DevelopmentCard developmentCard, int productionActionValueRequired,
+    public Building(BasicDevelopmentCard basicDevelopmentCard, int productionActionValueRequired,
                     ExchangingGoods productionResult) {
-        super(developmentCard);
+        super(basicDevelopmentCard);
         this.productionActionValueRequired = productionActionValueRequired;
         this.productionResult = productionResult;
         additionalCardInfo = null;
     }
 
-    public Building(DevelopmentCard developmentCard, int productionActionValueRequired,
+    public Building(BasicDevelopmentCard basicDevelopmentCard, int productionActionValueRequired,
                     ExchangingGoods productionResult, AdditionalCardInfo additionalCardInfo) {
-        super(developmentCard);
+        super(basicDevelopmentCard);
         this.productionActionValueRequired = productionActionValueRequired;
         this.productionResult = productionResult;
         this.additionalCardInfo = additionalCardInfo;
