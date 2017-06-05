@@ -333,7 +333,7 @@ public class ParserCards {
      */
     private LeaderInformation parseLeaderInformation(JsonObject card) {
         String name = card.get("name").getAsString();
-        return new LeaderInformation(name, "", parseLeaderCategory(card.get("abilityType").getAsString()));
+        return new LeaderInformation(name, parseLeaderCategory(card.get("abilityType").getAsString()));
     }
 
     /**

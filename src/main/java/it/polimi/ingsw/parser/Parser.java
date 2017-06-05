@@ -36,26 +36,6 @@ public class Parser {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private List<Goods> parseRequirementsOnCosts(JsonArray costs) {
         List<Goods> parsedCosts = new ArrayList<>();
         Gson gson = new Gson();
@@ -74,60 +54,22 @@ public class Parser {
 
 
 
-    public Map<String, List<AdditionalCardInfo>> parseAdditionalInfoMap() throws IOException {
+    /*public Map<String, List<AdditionalCardInfo>> parseAdditionalInfoMap() throws IOException {
         Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap = new HashMap<>();
         //parseAdditionalInfoDevCards(parsedAdditionalInfoMap);
         parseAdditionalInfoLeaders(parsedAdditionalInfoMap);
         parseAdditionalInfoExcommunications(parsedAdditionalInfoMap);
         return parsedAdditionalInfoMap;
-    }
+    }*/
 
-    private void parseAdditionalInfoExcommunications(Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap) {
 
-    }
-
-    private void parseAdditionalInfoLeaders(Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap) {
-
-    }
-
-    /*private void parseAdditionalInfoDevCards(Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap)
-                                                                                                throws IOException {
-        String path = PATH + "DevelopmentCards.json";
-        open(path);
-        Gson gson = new Gson();
-        JsonParser parser = new JsonParser();
-        JsonObject object = parser.parse(br).getAsJsonObject();
-        parseTerritoryAddInfo(parsedAdditionalInfoMap, object.get("territory").getAsJsonArray());
-
-    }
-    */
-
-    private void parseTerritoryAddInfo(Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap, JsonArray territory) {
-        JsonObject card;
-        String name;
-        for(int index=0; index<territory.size(); index++){
-            card = territory.get(index).getAsJsonObject();
-            name = card.get("cardInformations").getAsJsonArray().get(0).getAsJsonObject().get("name").getAsString();
-            List<AdditionalCardInfo> addInfoList = new ArrayList<>();
-            parseListAddInfo(addInfoList, card, "", name);
-        }
-    }
 
     private void parseListAddInfo(List<AdditionalCardInfo> addInfoList, JsonObject card,
                                   String addInfoToInstantiate, String name) {
         JsonArray addInfoTypes = card.get(addInfoToInstantiate).getAsJsonArray();
         int actionTypeIndex = 0;
         for(int index=0; index<addInfoList.size(); index++){
-            String type = addInfoTypes.get(index).getAsString();
-            switch (type) {
-                case "cardFlashAction": parseCardFlashAction(addInfoList, card, actionTypeIndex, name);
-                                        actionTypeIndex++; break;
-                case "conditionalProduction": parseConditionalProduction(addInfoList, card, name); break;
-                case "multipleProduction": parseMultipleProduction(addInfoList, card, name); break;
-                case "requirementsOnCard": parseRequirementsOnCard(addInfoList, card); break;
-                case "rewardsOnCard": parseRewardsOnCard(addInfoList, card); break;
-                default: parseCardFlashExchangingGoods(addInfoList, card); break;
-            }
+
         }
     }
 
