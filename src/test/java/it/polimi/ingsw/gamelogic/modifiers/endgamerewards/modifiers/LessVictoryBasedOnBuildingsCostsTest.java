@@ -5,10 +5,11 @@ import it.polimi.ingsw.gamelogic.basics.Points;
 import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.cards.development.Building;
 import it.polimi.ingsw.gamelogic.cards.development.CardInformation;
-import it.polimi.ingsw.gamelogic.cards.development.BasicDevelopmentCard;
+import it.polimi.ingsw.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
+import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCosts;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -32,11 +33,11 @@ class LessVictoryBasedOnBuildingsCostsTest {
         goodsList.add(new Goods(new Resources(1,2,3,4)));
 
         List<Building> buildings = new ArrayList<>();
-        buildings.add(new Building(new BasicDevelopmentCard(
+        buildings.add(new Building(new DevelopmentCard(
                 new CardInformation(1, "", PeriodNumber.FIRST, GeneralColor.YELLOW), goodsList)));
-        buildings.add(new Building(new BasicDevelopmentCard(
+        buildings.add(new Building(new DevelopmentCard(
                 new CardInformation(2, "", PeriodNumber.SECOND, GeneralColor.YELLOW), goodsList)));
-        buildings.add(new Building(new BasicDevelopmentCard(
+        buildings.add(new Building(new DevelopmentCard(
                 new CardInformation(3, "", PeriodNumber.THIRD, GeneralColor.YELLOW), goodsList)));
 
         LessVictoryBasedOnBuildingsCosts modifier = new LessVictoryBasedOnBuildingsCosts(buildings);

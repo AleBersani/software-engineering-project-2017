@@ -9,18 +9,10 @@ import it.polimi.ingsw.gamelogic.enums.ActionType;
 public class BasicRewards {
     private ActionType actionType;
     private Goods rewards;
-
     private Goods additionalRewards;
+
     private Goods rewardsCopy;
     private Goods bonusAndMalus;
-
-    public BasicRewards(ActionType actionType, Goods rewards) {
-        this.actionType = actionType;
-        this.rewards = rewards;
-        additionalRewards = new Goods();
-        rewardsCopy = rewards;
-        bonusAndMalus = new Goods();
-    }
 
     public BasicRewards(ActionType actionType, Goods rewards, Goods additionalRewards) {
         this.actionType = actionType;
@@ -35,9 +27,8 @@ public class BasicRewards {
      * @return Goods as rewards
      */
     public Goods calculateFinalRewards() {
-        Goods goods = rewards;
+        Goods goods = getRewards();
         goods.addAll(bonusAndMalus);
-        goods.addAll(additionalRewards);
         return goods;
     }
 

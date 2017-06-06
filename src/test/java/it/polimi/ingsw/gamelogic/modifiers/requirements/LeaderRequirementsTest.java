@@ -37,8 +37,5 @@ class LeaderRequirementsTest {
     @Test
     void testHasRequirements() {
         // assertTrue(leaderRequirements.hasRequirements(player));
-        /*
-        TODO: changes
-         */
     }
 }
