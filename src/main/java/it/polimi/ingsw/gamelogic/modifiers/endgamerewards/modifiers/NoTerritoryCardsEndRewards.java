@@ -7,6 +7,10 @@ import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
  * TODO: JavaDoc
  */
 public class NoTerritoryCardsEndRewards implements EndGameRewardsModifier {
+
+    public NoTerritoryCardsEndRewards() {
+    }
+
     @Override
     public void modifyEndGameRewards(BasicEndGameRewards basicEndGameRewards) {
         basicEndGameRewards.setPointsForTerritoryCards(new Points());

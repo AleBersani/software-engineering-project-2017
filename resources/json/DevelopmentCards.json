@@ -5239,7 +5239,7 @@
 					"onChoice": [],
 					"notChoosable": []
 				},
-				"actionType": ["yellowTower", "blueTower", "greenTower", "purpleTower"],
+				"actionType": ["YELLOW_TOWER", "BLUE_TOWER", "GREEN_TOWER", "PURPLE_TOWER"],
 				"discount": ""
 			},
 			{
@@ -5310,7 +5310,7 @@
 					"onChoice": [],
 					"notChoosable": []
 				},
-				"actionType": ["greenTower"],
+				"actionType": ["GREEN_TOWER"],
 				"discount": ""
 			},
 			{
@@ -5382,7 +5382,7 @@
 					"onChoice": [],
 					"notChoosable": []
 				},
-				"actionType": ["yellowTower"],
+				"actionType": ["YELLOW_TOWER"],
 				"discount": "",
 				"bonus": [
 					{
@@ -5468,7 +5468,7 @@
 					"onChoice": [],
 					"notChoosable": []
 				},
-				"actionType": ["blueTower"],
+				"actionType": ["BLUE_TOWER"],
 				"discount": "",
 				"bonus": [
 					{
@@ -5554,7 +5554,7 @@
 					"onChoice": [],
 					"notChoosable": []
 				},
-				"actionType": ["purpleTower"],
+				"actionType": ["PURPLE_TOWER"],
 				"discount": ""
 			},
 			{
@@ -5626,7 +5626,7 @@
 					"notChoosable": []
 				},
 				"bonusValue":"3",
-				"actionType": ["harvest"]
+				"actionType": ["HARVEST"]
 
 			},
 			{
@@ -5698,7 +5698,7 @@
 					"notChoosable": []
 				},
 				"bonusValue":"3",
-				"actionType": ["production"]
+				"actionType": ["PRODUCTION"]
 			},
 			{
 				"cardInformations": [
@@ -6257,7 +6257,7 @@
 					"onChoice": [],
 					"notChoosable": []
 				},
-				"actionType": ["harvest"],
+				"actionType": ["HARVEST"],
 				"discount": ""
 			},
 			{
@@ -6329,7 +6329,7 @@
 					"onChoice": [],
 					"notChoosable": []
 				},
-				"actionType": ["production"],
+				"actionType": ["PRODUCTION"],
 				"discount": ""
 			},
 			{
@@ -6487,7 +6487,7 @@
 					"onChoice": [],
 					"notChoosable": []
 				},
-				"actionType": ["yellowTower", "blueTower", "greenTower", "purpleTower"],
+				"actionType": ["YELLOW_TOWER", "BLUE_TOWER", "GREEN_TOWER", "PURPLE_TOWER"],
 				"discount": ""
 			}
 		],
@@ -6567,7 +6567,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -6666,7 +6666,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -6765,7 +6765,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -6863,7 +6863,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -6960,7 +6960,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 
 				"instantEffect": [
 					{
@@ -7059,7 +7059,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7161,7 +7161,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7259,7 +7259,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7357,7 +7357,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7455,7 +7455,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7553,7 +7553,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7651,7 +7651,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7748,7 +7748,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "4",
-				"actionType": ["harvest"],
+				"actionType": ["HARVEST"],
 				"discount": {
 					"resources": {
 						"woods": "0",
@@ -7859,7 +7859,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7957,7 +7957,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -8055,7 +8055,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -8153,7 +8153,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -8251,7 +8251,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "7",
-				"actionType": ["greenTower", "yellowTower", "purpleTower", "blueTower"],
+				"actionType": ["GREEN_TOWER", "YELLOW_TOWER", "PURPLE_TOWER", "BLUE_TOWER"],
 				"instantEffect": [
 					{
 						"resources": {
@@ -8349,7 +8349,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -8447,7 +8447,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -8545,7 +8545,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -8643,7 +8643,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "3",
-				"actionType": ["production"],
+				"actionType": ["PRODUCTION"],
 				"instantEffect": [
 					{
 						"resources": {
@@ -8741,7 +8741,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {
@@ -8839,7 +8839,7 @@
 					"notChoosable": []
 				},
 				"actionValue": "0",
-				"actionType": "",
+				"actionType": [],
 				"instantEffect": [
 					{
 						"resources": {

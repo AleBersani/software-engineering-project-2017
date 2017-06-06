@@ -12,6 +12,9 @@ public class ParserSettings {
     private FileReader fr = null;
     private static String PATH = System.getProperty("user.dir") + "/resources/json/";
 
+    public ParserSettings() {
+    }
+
     public JsonObject extractJsonObject(String jsonName) throws IOException {
         String path = PATH + jsonName;
         open(path);
