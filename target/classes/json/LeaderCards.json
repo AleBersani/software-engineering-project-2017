@@ -1,0 +1,839 @@
+{
+    "leaderCards": [
+        {
+            "name": "Francesco Sforza",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "5"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashAction"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            },
+            "actionType": ["harvest"],
+            "abilityType": "consumable",
+            "actionValue": "1",
+            "discount": {
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }
+        },
+        {
+            "name": "Ludovico Ariosto",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "5",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "decoratorIdentifier": "canPlaceOnOccupiedSpace",
+            "abilityType": "permanent",
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower", "councilPalace", "production", "harvest", "market"]
+
+        },
+        {
+            "name": "Filippo Brunelleschi",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "5",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "abilityType": "permanent",
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower"],
+            "decoratorIdentifier": "NoOccupiedTowerCost"
+        },
+        {
+            "name": "Sigismondo Malatesta",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "7",
+                    "faith": "3"
+                }
+            }],
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "decoratorIdentifier": "bonusPawnValue",
+            "actionValueSurplus": "3",
+            "pawnColor": ["neutral"],
+            "abilityType": "permanent"
+        },
+        {
+            "name": "Girolamo Savonarola",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "18"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "consumableGoods": [{
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "1"
+                },
+                "councilPriviledge": "0"
+            }],
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
+
+        },
+        {
+            "name": "Michelangelo Buonarroti",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "10",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "consumableGoods": [{
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "3"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                },
+                "councilPriviledge": "0"
+            }],
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
+        },
+        {
+            "name": "Giovanni dalle Bande Nere",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "12",
+                    "faith": "0"
+                }
+            }],
+            "consumableGoods": [{
+                "resources": {
+                    "woods": "1",
+                    "stones": "1",
+                    "servants": "0",
+                    "coins": "1"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                },
+                "councilPriviledge": "0"
+            }],
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
+        },
+        {
+            "name": "Leonardo da Vinci",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "2",
+                    "buildings": "4",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "actionValue": "0",
+            "actionType": ["production"],
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": ["cardFlashAction"],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            },
+            "discount": {
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }
+        },
+        {
+            "name": "Sandro Botticelli",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "10",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "consumableGoods": [{
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "1",
+                    "military": "2",
+                    "faith": "0"
+                },
+                "councilPriviledge": "0"
+            }],
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
+        },
+        {
+            "name": "Ludovico il Moro",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "2",
+                    "buildings": "2",
+                    "characters": "2",
+                    "ventures": "2"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "decoratorIdentifier": "fixedColouredPawnsValue",
+            "actionValueSurplus": "",
+            "pawnColor": ["orange", "white", "black"],
+            "pawnsValue": "5",
+            "abilityType": "permanent",
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower", "councilPalace", "production", "harvest", "market"]
+        },
+        {
+            "name": "Lucrezia Borgia",
+            "requirements": [
+                {
+                    "developmentCards": {
+                        "territories": "6",
+                        "buildings": "0",
+                        "characters": "0",
+                        "ventures": "0"
+                    },
+                    "resources": {
+                        "woods": "0",
+                        "stones": "0",
+                        "servants": "0",
+                        "coins": "0"
+                    },
+                    "points": {
+                        "victory": "0",
+                        "military": "0",
+                        "faith": "0"
+                    }
+                },
+                {
+                    "developmentCards": {
+                        "territories": "0",
+                        "buildings": "6",
+                        "characters": "0",
+                        "ventures": "0"
+                    },
+                    "resources": {
+                        "woods": "0",
+                        "stones": "0",
+                        "servants": "0",
+                        "coins": "0"
+                    },
+                    "points": {
+                        "victory": "0",
+                        "military": "0",
+                        "faith": "0"
+                    }
+                },
+                {
+                    "developmentCards": {
+                        "territories": "0",
+                        "buildings": "0",
+                        "characters": "6",
+                        "ventures": "0"
+                    },
+                    "resources": {
+                        "woods": "0",
+                        "stones": "0",
+                        "servants": "0",
+                        "coins": "0"
+                    },
+                    "points": {
+                        "victory": "0",
+                        "military": "0",
+                        "faith": "0"
+                    }
+                },
+                {
+                    "developmentCards": {
+                        "territories": "0",
+                        "buildings": "0",
+                        "characters": "0",
+                        "ventures": "6"
+                    },
+                    "resources": {
+                        "woods": "0",
+                        "stones": "0",
+                        "servants": "0",
+                        "coins": "0"
+                    },
+                    "points": {
+                        "victory": "0",
+                        "military": "0",
+                        "faith": "0"
+                    }
+                }
+            ],
+            "decoratorIdentifier": "bonusPawnsValue",
+            "actionValueSurplus": "2",
+            "pawnColor": ["orange", "white", "black"],
+            "abilityType": "permanent",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower", "councilPalace", "production", "harvest", "market"]
+
+        },
+        {
+            "name": "Federico da Montefeltro",
+            "requirements": {
+                "developmentCards": {
+                    "territories": "5",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            },
+            "actionValue": "6",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": ["requirementsOnCards"],
+                "notChoosable": []
+            },
+            "decoratorIdentifier": ["bonusPawnValue", "bonusPawnValue", "bonusPawnValue"],
+            "pawnColor": ["orange", "white", "black"],
+            "abilityType": "consumable",
+            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower"]
+
+        },
+        {
+            "name": "Lorenzo de' Medici",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "35",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "abilityType": "permanent"
+        },
+        {
+            "name": "Sisto IV",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "6",
+                    "stones": "6",
+                    "servants": "6",
+                    "coins": "6"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "state": "givePointForSupportChurch"
+        },
+        {
+            "name": "Cesare Borgia",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "3",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "12"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "2"
+                }
+            }],
+            "decoratorIdentifier": "NoMilitaryForTerritories",
+            "actionValue": ["greenTower"],
+            "abilityType": "permanent",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            }
+        },
+        {
+            "name": "Santa Rita",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "8"
+                }
+            }],
+            "decoratorIdentifier": "doubleRewards",
+            "abilityType": "permanent",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["rewardsOnCards"]
+            },
+            "actionType": ["greenTower", "yellowTower", "purpleTower", "blueTower"]
+        },
+        {
+            "name": "Cosimo de' Medici",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "4",
+                    "characters": "2",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "consumableGoods": [{
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "3",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "1",
+                    "military": "0",
+                    "faith": "0"
+                },
+                "councilPriviledge": "0"
+            }],
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
+        },
+        {
+            "name": "Bartolomeo Colleoni",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "4",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "2"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "consumableGoods": [{
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "4",
+                    "military": "0",
+                    "faith": "0"
+                },
+                "councilPriviledge": "0"
+            }],
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
+        },
+        {
+            "name": "Ludovico III Gonzaga",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "0",
+                    "characters": "0",
+                    "ventures": "0"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "15",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "consumableGoods": [{
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "4",
+                    "military": "0",
+                    "faith": "0"
+                },
+                "councilPriviledge": "1"
+            }],
+            "abilityType": "consumable",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": ["cardFlashExchangingGoods"]
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
+        },
+        {
+            "name": "Pico della Mirandola",
+            "requirements": [{
+                "developmentCards": {
+                    "territories": "0",
+                    "buildings": "2",
+                    "characters": "0",
+                    "ventures": "4"
+                },
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "0"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            }],
+            "decoratorIdentifier": "bonusOnCardCost",
+            "bonus": {
+                "resources": {
+                    "woods": "0",
+                    "stones": "0",
+                    "servants": "0",
+                    "coins": "3"
+                },
+                "points": {
+                    "victory": "0",
+                    "military": "0",
+                    "faith": "0"
+                }
+            },
+            "abilityType": "permanent",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "NotChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": ["requirementsOnCards"]
+            },
+            "actionType": ["greenTower", "yellowTower", "purpleTower", "blueTower"]
+        }
+    ]
+}

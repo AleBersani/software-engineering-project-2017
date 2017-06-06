@@ -7,12 +7,12 @@ import java.util.List;
 /**
  * Class that describes the Venture cards
  */
-public class Venture extends Collection {
+public class Venture extends DevelopmentCard {
     private Goods endGameReward;
     private List<Goods> minCostRequirements;
 
-    public Venture(DevelopmentCard developmentCard, Goods endGameReward, List<Goods> minCostRequirements) {
-        super(developmentCard);
+    public Venture(BasicDevelopmentCard basicDevelopmentCard, Goods endGameReward, List<Goods> minCostRequirements) {
+        super(basicDevelopmentCard);
         this.endGameReward = endGameReward;
         this.minCostRequirements = minCostRequirements;
     }
