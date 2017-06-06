@@ -40,7 +40,4 @@ public class BasicAction {
     public void setActionValue(int actionValue) {
         this.actionValue = actionValue;
     }
-
-    public BasicAction() {
-    }
 }
