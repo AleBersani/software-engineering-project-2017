@@ -18,7 +18,8 @@ class LessVictoryBasedOnMilitaryTest {
 
     @Test
     void testModifyEndGameRewards() {
-        LessVictoryBasedOnMilitary modifier = new LessVictoryBasedOnMilitary(new Points(10,10,10));
+        LessVictoryBasedOnMilitary modifier = new LessVictoryBasedOnMilitary();
+        modifier.setPlayerMilitary(new Points(10,10,10));
         modifier.modifyEndGameRewards(basicEndGameRewards);
 
         assertEquals(new Points(20,0,0), basicEndGameRewards.calculateFinalEndGameRewards());

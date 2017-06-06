@@ -19,7 +19,8 @@ class LessVictoryBasedOnVictoryTest {
 
     @Test
     void testModifyEndGameRewards() {
-        LessVictoryBasedOnVictory modifier = new LessVictoryBasedOnVictory(new Points(50, 10,10));
+        LessVictoryBasedOnVictory modifier = new LessVictoryBasedOnVictory();
+        modifier.setPlayerVictory(new Points(50, 10,10));
         modifier.modifyEndGameRewards(basicEndGameRewards);
 
         assertEquals(new Points(20, 0, 0), basicEndGameRewards.calculateFinalEndGameRewards());
@@ -27,7 +28,8 @@ class LessVictoryBasedOnVictoryTest {
 
     @Test
     void testModifyEndGameRewardsWithOddValue() {
-        LessVictoryBasedOnVictory modifier = new LessVictoryBasedOnVictory(new Points(51, 10,10));
+        LessVictoryBasedOnVictory modifier = new LessVictoryBasedOnVictory();
+        modifier.setPlayerVictory(new Points(51, 10,10));
         modifier.modifyEndGameRewards(basicEndGameRewards);
 
         assertEquals(new Points(20, 0, 0), basicEndGameRewards.calculateFinalEndGameRewards());

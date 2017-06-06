@@ -19,8 +19,8 @@ class LessVictoryForResourcesTest {
 
     @Test
     void testModifyEndGameRewards() {
-        LessVictoryForResources modifier = new LessVictoryForResources(
-                new Resources(1,2,3,4));
+        LessVictoryForResources modifier = new LessVictoryForResources();
+        modifier.setResources(new Resources(1,2,3,4));
         modifier.modifyEndGameRewards(basicEndGameRewards);
 
         assertEquals(new Points(20, 0, 0), basicEndGameRewards.calculateFinalEndGameRewards());

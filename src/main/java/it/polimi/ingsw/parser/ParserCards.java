@@ -120,7 +120,7 @@ public class ParserCards {
 
             int harvestActionValueRequired = card.get("harvestActionValueRequired").getAsInt();
             ExchangingGoods harvestResult = parseExchangingGoods(card, "harvestResult");
-            territories.add(new Territory(developmentCard, harvestActionValueRequired, harvestResult));
+            //territories.add(new Territory(developmentCard, harvestActionValueRequired, harvestResult));
 
         }
         return territories;
@@ -138,7 +138,7 @@ public class ParserCards {
             DevelopmentCard developmentCard = parseDevelopmentCard(card);
             int productionActionValueRequired = card.get("productionActionValueRequired").getAsInt();
             ExchangingGoods productionResult = parseExchangingGoods(card, "productionResult");
-            buildings.add(new Building(developmentCard, productionActionValueRequired, productionResult));
+            //buildings.add(new Building(developmentCard, productionActionValueRequired, productionResult));
         }
         return buildings;
     }
@@ -153,7 +153,7 @@ public class ParserCards {
         for(int index = 0; index<cards.size(); index++) {
             JsonObject card = cards.get(index).getAsJsonObject();
             DevelopmentCard developmentCard = parseDevelopmentCard(card);
-            characters.add(new Character(developmentCard));
+            //characters.add(new Character(developmentCard));
         }
         return characters;
     }
@@ -172,7 +172,7 @@ public class ParserCards {
             Goods endGameRewards = parseEndGameRewards(card);
             List<Goods> requirementsOnCosts = gson.fromJson(card.get("requirementsOnCost").getAsJsonArray(),
                                                             new TypeToken<ArrayList<Goods>>(){}.getType());
-            ventures.add(new Venture(developmentCard, endGameRewards, requirementsOnCosts));
+            //ventures.add(new Venture(developmentCard, endGameRewards, requirementsOnCosts));
         }
         return ventures;
     }
@@ -189,7 +189,7 @@ public class ParserCards {
         JsonArray cost = card.get("cost").getAsJsonArray();
         List<Goods> costs = gson.fromJson(cost, new TypeToken<ArrayList<Goods>>(){}.getType());
 
-        return new DevelopmentCard(cardInfo, costs);
+        return null; //new DevelopmentCard(cardInfo, costs);
     }
 
     /*

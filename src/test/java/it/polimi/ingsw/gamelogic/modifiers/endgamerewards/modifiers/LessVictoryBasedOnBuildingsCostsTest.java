@@ -39,7 +39,8 @@ class LessVictoryBasedOnBuildingsCostsTest {
         buildings.add(new Building(new BasicDevelopmentCard(
                 new CardInformation(3, "", PeriodNumber.THIRD, GeneralColor.YELLOW), goodsList)));
 
-        LessVictoryBasedOnBuildingsCosts modifier = new LessVictoryBasedOnBuildingsCosts(buildings);
+        LessVictoryBasedOnBuildingsCosts modifier = new LessVictoryBasedOnBuildingsCosts();
+        modifier.setBuildings(buildings);
         modifier.modifyEndGameRewards(basicEndGameRewards);
 
         assertEquals(new Points(21,0,0), basicEndGameRewards.calculateFinalEndGameRewards());
