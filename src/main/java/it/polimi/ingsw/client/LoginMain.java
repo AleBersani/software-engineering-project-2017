@@ -11,7 +11,7 @@ public class LoginMain extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/client/login.fxml"));
         primaryStage.setTitle("Lorenzo il Magnifico");
-        primaryStage.setScene(new Scene(root, 500, 400));
+        primaryStage.setScene(new Scene(root, 650, 500));
         primaryStage.show();
     }
 
