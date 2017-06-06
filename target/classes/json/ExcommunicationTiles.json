@@ -1,0 +1,430 @@
+{
+	"excommunicationTiles" : [
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.1",
+					"period": "1"
+				},
+			"decoratorIdentifier": "RewardsMalus",
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "1",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": "",
+			"actionValueMalus": ""
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.2",
+					"period": "1"
+				},
+			"decoratorIdentifier": "RewardsMalus",
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "1"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": "",
+			"actionValueMalus": ""
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.3",
+					"period": "1"
+				},
+			"decoratorIdentifier": "RewardsMalus",
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "1",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": "",
+			"actionValueMalus": ""
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.4",
+					"period": "1"
+				},
+			"decoratorIdentifier": "RewardsMalus",
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "1",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				},
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "1",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": "",
+			"actionValueMalus": ""
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.5",
+					"period": "1"
+				},
+			"decoratorIdentifier": "MalusPawns",
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": "harvest",
+			"actionValueMalus": "3"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.6",
+					"period": "1"
+				},
+			"decoratorIdentifier": "MalusPawns",
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": "production",
+			"actionValueMalus": "3"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.7",
+					"period": "1"
+				},
+			"decoratorIdentifier": "MalusPawns",
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": "general",
+			"actionValueMalus": "1"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.1",
+					"period": "2"
+				},
+			"decoratorIdentifier": "MalusPawns",
+			"actionType": "greenTower",
+			"actionValueMalus": "4"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.2",
+					"period": "2"
+				},
+			"decoratorIdentifier": "MalusPawns",
+			"actionType": "yellowTower",
+			"actionValueMalus": "4"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.3",
+					"period": "2"
+				},
+			"decoratorIdentifier": "MalusPawns",
+			"actionType": "blueTower",
+			"actionValueMalus": "4"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.4",
+					"period": "2"
+				},
+			"decoratorIdentifier": "MalusPawns",
+			"actionType": "purpleTower",
+			"actionValueMalus": "4"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.5",
+					"period": "2"
+				},
+			"decoratorIdentifier": "NoMarketPlacement",
+			"actionType": "",
+			"actionValueMalus": ""
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.6",
+					"period": "2"
+				},
+			"decoratorIdentifier": "HalfServantsValue",
+			"actionType": "",
+			"actionValueMalus": ""
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.7",
+					"period": "2"
+				},
+			"decoratorIdentifier": "NoFirstPlacement",
+			"actionType": "",
+			"actionValueMalus": ""
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.1",
+					"period": "3"
+				},
+			"decoratorIdentifier": "NoEndGameVictoryPoints",
+			"noEndGameVictoryPointsCard": "blue",
+			"endGameGoodsForMinusVictoryPoint": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.2",
+					"period": "3"
+				},
+			"decoratorIdentifier": "NoEndGameVictoryPoints",
+			"noEndGameVictoryPointsCard": "purple",
+			"endGameGoodsForMinusVictoryPoint": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.3",
+					"period": "3"
+				},
+			"decoratorIdentifier": "NoEndGameVictoryPoints",
+			"noEndGameVictoryPointsCard": "green",
+			"endGameGoodsForMinusVictoryPoint": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.4",
+					"period": "3"
+				},
+			"decoratorIdentifier": "EndGameMinusVictoryPoint",
+			"noEndGameVictoryPointsCard": "",
+			"endGameGoodsForMinusVictoryPoint": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "5",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.5",
+					"period": "3"
+				},
+			"decoratorIdentifier": "EndGameMinusVictoryPoint",
+			"noEndGameVictoryPointsCard": "",
+			"endGameGoodsForMinusVictoryPoint": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "1",
+						"faith": "0"
+					}
+				}
+			]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.6",
+					"period": "3"
+				},
+			"decoratorIdentifier": "EndGameMinusVictoryPointCost",
+			"noEndGameVictoryPointsCard": "",
+			"endGameGoodsForMinusVictoryPoint": [
+				{
+					"resources": {
+						"woods": "1",
+						"stones": "1",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.7",
+					"period": "3"
+				},
+			"decoratorIdentifier": "EndGameMinusVictoryPoint",
+			"noEndGameVictoryPointsCard": "",
+			"endGameGoodsForMinusVictoryPoint": [
+				{
+					"resources": {
+						"woods": "1",
+						"stones": "1",
+						"servants": "1",
+						"coins": "1"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			]
+		}
+	]
+}
