@@ -15,7 +15,7 @@ class BuildingTest {
     @BeforeEach
     void setUp() {
         building = new Building(
-                new BasicDevelopmentCard(new CardInformation(1,
+                new DevelopmentCard(new CardInformation(1,
                         "Name",
                         PeriodNumber.FIRST,
                         GeneralColor.YELLOW), new ArrayList<>()));

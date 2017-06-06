@@ -9,8 +9,8 @@ import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 public class LessVictoryBasedOnVictory implements EndGameRewardsModifier {
     private Points playerVictory;
 
-    public LessVictoryBasedOnVictory(Points playerVictory) {
-        this.playerVictory = playerVictory;
+    public LessVictoryBasedOnVictory() {
+        playerVictory = new Points();
     }
 
     @Override
@@ -18,5 +18,9 @@ public class LessVictoryBasedOnVictory implements EndGameRewardsModifier {
         int victoryPoints = playerVictory.getVictory();
         int pointsToSubtract = victoryPoints / 5;
         basicEndGameRewards.setOnePointLessForEveryFiveVictoryPoints(new Points(pointsToSubtract, 0, 0));
+    }
+
+    public void setPlayerVictory(Points playerVictory) {
+        this.playerVictory = playerVictory;
     }
 }

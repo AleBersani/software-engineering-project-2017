@@ -18,15 +18,9 @@ public class MalusRewards extends RewardsModifier {
     @Override
     public void modifyRewards(BasicRewards basicRewards) {
         if (availableActions.hasAvailableAction(basicRewards.getActionType())) {
-            Goods bonusAndMalus = basicRewards.getBonusAndMalus();
-            bonusAndMalus.subtractAll(malus);
-            basicRewards.setBonusAndMalus(bonusAndMalus);
-
-            Goods additionalRewards = basicRewards.getAdditionalRewards();
-            if (malus.isLessThan(additionalRewards)) {
-                additionalRewards.subtractAll(malus);
-                basicRewards.setAdditionalRewards(additionalRewards);
-            }
+            Goods goods = basicRewards.getBonusAndMalus();
+            goods.subtractAll(malus);
+            basicRewards.setBonusAndMalus(goods);
         }
     }
 }

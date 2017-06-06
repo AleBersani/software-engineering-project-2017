@@ -10,8 +10,8 @@ import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 public class LessVictoryForResources implements EndGameRewardsModifier {
     private Resources resources;
 
-    public LessVictoryForResources(Resources resources) {
-        this.resources = resources;
+    public LessVictoryForResources() {
+        resources = new Resources();
     }
 
     @Override
@@ -21,5 +21,9 @@ public class LessVictoryForResources implements EndGameRewardsModifier {
                 resources.getServants() +
                 resources.getCoins();
         basicEndGameRewards.setOnePointLessForEveryResource(new Points(sumOfResources, 0, 0));
+    }
+
+    public void setResources(Resources resources) {
+        this.resources = resources;
     }
 }

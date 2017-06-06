@@ -4,13 +4,14 @@ import it.polimi.ingsw.gamelogic.basics.Points;
 import it.polimi.ingsw.gamelogic.cards.development.Building;
 import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LessVictoryBasedOnBuildingsCosts implements EndGameRewardsModifier {
     private List<Building> buildings;
 
-    public LessVictoryBasedOnBuildingsCosts(List<Building> buildings) {
-        this.buildings = buildings;
+    public LessVictoryBasedOnBuildingsCosts() {
+        buildings = new ArrayList<>();
     }
 
     @Override
@@ -23,5 +24,9 @@ public class LessVictoryBasedOnBuildingsCosts implements EndGameRewardsModifier 
                 .reduce(0, (x, y) -> x + y);
         basicEndGameRewards
                 .setOnePointLessForEveryWoodAndStoneOnBuilding(new Points(woods + stones, 0, 0));
+    }
+
+    public void setBuildings(List<Building> buildings) {
+        this.buildings = buildings;
     }
 }

@@ -73,58 +73,13 @@ public class Parser {
         }
     }
 
-    /**
-     * TODO all
-     * @param addInfoList
-     * @param card
-     * @param actionTypeIndex
-     * @param name
-     */
-    private void parseCardFlashAction(List<AdditionalCardInfo> addInfoList, JsonObject card,
-                                      int actionTypeIndex, String name) {
-        JsonObject actionType = card.get("actionType").getAsJsonArray().get(actionTypeIndex).getAsJsonObject();
-        ActionType parsedActionType = parseActionType(actionType);
-        int actionValue = card.get("actionValue").getAsInt();
-        Gson gson = new Gson();
-        Goods discount = gson.fromJson(card.get("discount").getAsJsonArray().get(0).getAsJsonObject(), Goods.class);
-        //addInfoList.add(new CardFlashAction(name, ,actionValue), discount));
-    }
 
-    private ActionType parseActionType(JsonElement actionType) {
-        String actionTypeToParse = actionType.getAsString();
-        Map<String, ActionType> valuesToReturn = new HashMap<>();
-        valuesToReturn.put ("greenTower", ActionType.GREEN_TOWER);
-        valuesToReturn.put("yellowTower", ActionType.YELLOW_TOWER);
-        valuesToReturn.put("blueTower", ActionType.BLUE_TOWER);
-        valuesToReturn.put("purpleTower",ActionType.PURPLE_TOWER);
-        valuesToReturn.put("production",ActionType.PRODUCTION);
-        valuesToReturn.put("harvest",ActionType.HARVEST);
-        return valuesToReturn.get(actionTypeToParse);
-    }
 
-    /**
-     * TODO all
-     * @param addInfoList
-     * @param card
-     */
-    private void parseConditionalProduction(List<AdditionalCardInfo> addInfoList, JsonObject card, String name) {
-        GeneralColor cardColor = decideGeneralColorEnum(card.get("cardColor").getAsString());
-        addInfoList.add(new ConditionalProduction(name, cardColor));
-    }
 
-    /**
-     * TODO all
-     * @param addInfoList
-     * @param card
-     * @param name
-     */
-    private void parseMultipleProduction(List<AdditionalCardInfo> addInfoList, JsonObject card, String name) {
-        JsonArray costs = card.get("costs").getAsJsonArray();
-        JsonArray result = card.get("result").getAsJsonArray();
-        List<Goods> parsedCosts = parseRequirementsOnCosts(costs);
-        List<ExchangingGoods> parsedResults = parseResults(result);
-        addInfoList.add(new MultipleProduction(name, parsedCosts, parsedResults));
-    }
+
+
+
+
 
     private List<ExchangingGoods> parseResults(JsonArray result) {
         List<ExchangingGoods> parsedResults = new ArrayList<>();
@@ -136,35 +91,7 @@ public class Parser {
         return parsedResults;
     }
 
-    /**
-     * TODO all
-     * @param addInfoList
-     * @param card
-     */
-    private void parseRequirementsOnCard(List<AdditionalCardInfo> addInfoList, JsonObject card) {
 
-    }
-
-    /**
-     * TODO all
-     * @param addInfoList
-     * @param card
-     */
-    private void parseRewardsOnCard(List<AdditionalCardInfo> addInfoList, JsonObject card) {
-
-    }
-
-    /**
-     * TODO CHANGE INSTANTGOODS NAME FROM JSON AND IN THE REMAINING PARSING METHODS IN CONSUMABLEGOODS
-     * TODO CARDINFORMATIONS IN OTHER JSON?
-     * @param addInfoList
-     * @param card
-     */
-    private void parseCardFlashExchangingGoods(List<AdditionalCardInfo> addInfoList, JsonObject card) {
-        String name = card.get("cardInformations").getAsJsonArray().get(0).getAsJsonObject().get("name").getAsString();
-        ExchangingGoods parsedExchangingGoods = parseExchangingGoods(card, "instantGoods");
-        addInfoList.add(new CardFlashExchangingGoods(name, parsedExchangingGoods));
-    }
 
     /**
      * Private method that sets during parsing, GeneralColor Enum attributes.

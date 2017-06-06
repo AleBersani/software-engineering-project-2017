@@ -5,30 +5,31 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import java.util.List;
 
 /**
- * This Class allows to declare all the different kinds of Development Cards as the same type
- * whenever we need to use and represent them as a set of objects with the same behaviour
- * @see it.polimi.ingsw.gamelogic.board.TowerSlot
+ * Class that describes the Development cards in general, with basic information, a cost defined as a list
+ * of Goods and an Exchanging Good as an instant reward
  */
-public abstract class DevelopmentCard {
-    private BasicDevelopmentCard basicDevelopmentCard;
+public class DevelopmentCard {
+    private CardInformation cardInformation;
+    private List<Goods> costs;
 
-    public DevelopmentCard(BasicDevelopmentCard basicDevelopmentCard) {
-        this.basicDevelopmentCard = basicDevelopmentCard;
+    public DevelopmentCard(CardInformation cardInformation, List<Goods> costs) {
+        this.cardInformation = cardInformation;
+        this.costs = costs;
     }
 
     public CardInformation getCardInformation() {
-        return basicDevelopmentCard.getCardInformation();
+        return cardInformation;
+    }
+
+    public void setCardInformation(CardInformation cardInformation) {
+        this.cardInformation = cardInformation;
     }
 
     public List<Goods> getCosts() {
-        return basicDevelopmentCard.getCosts();
+        return costs;
     }
 
-    public BasicDevelopmentCard getBasicDevelopmentCard() {
-        return basicDevelopmentCard;
-    }
-
-    public void setBasicDevelopmentCard(BasicDevelopmentCard basicDevelopmentCard) {
-        this.basicDevelopmentCard = basicDevelopmentCard;
+    public void setCosts(List<Goods> costs) {
+        this.costs = costs;
     }
 }
