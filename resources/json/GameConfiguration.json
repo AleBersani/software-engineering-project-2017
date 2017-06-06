@@ -1,0 +1,80 @@
+{
+  "maxNumberOfPlayer": "4",
+  "startingGameTimeout": "60",
+  "moveTimeout": "45",
+  "numberOfPeriods": "3",
+
+  "numberOfTowers": "4",
+  "numberOfSlotsForTowers": "4",
+  "numberOfDices": "3",
+  "maxMilitaryPoints": "25",
+  "maxFaithPoints": "15",
+
+  "possibleChoices": [
+    {
+      "resources": {
+        "woods": "1",
+        "stones": "1",
+        "servants": "0",
+        "coins": "0"
+      },
+      "points": {
+        "victory": "0",
+        "military": "0",
+        "faith": "0"
+      }
+    },
+    {
+      "resources": {
+        "woods": "0",
+        "stones": "0",
+        "servants": "2",
+        "coins": "0"
+      },
+      "points": {
+        "victory": "0",
+        "military": "0",
+        "faith": "0"
+      }
+    },
+    {
+      "resources": {
+        "woods": "0",
+        "stones": "0",
+        "servants": "0",
+        "coins": "2"
+      },
+      "points": {
+        "victory": "0",
+        "military": "0",
+        "faith": "0"
+      }
+    },
+    {
+      "resources": {
+        "woods": "0",
+        "stones": "0",
+        "servants": "0",
+        "coins": "0"
+      },
+      "points": {
+        "victory": "0",
+        "military": "2",
+        "faith": "0"
+      }
+    },
+    {
+      "resources": {
+        "woods": "0",
+        "stones": "0",
+        "servants": "0",
+        "coins": "0"
+      },
+      "points": {
+        "victory": "0",
+        "military": "0",
+        "faith": "1"
+      }
+    }
+  ]
+}

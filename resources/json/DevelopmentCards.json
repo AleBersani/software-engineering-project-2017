@@ -59,7 +59,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -125,7 +125,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -191,7 +191,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -257,7 +257,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -323,7 +323,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -389,7 +389,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -455,7 +455,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -521,7 +521,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -587,7 +587,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -653,7 +653,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -719,7 +719,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -785,7 +785,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -851,7 +851,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -917,7 +917,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -983,7 +983,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1049,7 +1049,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1115,7 +1115,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1181,7 +1181,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1247,7 +1247,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1313,7 +1313,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1379,7 +1379,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1445,7 +1445,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1511,7 +1511,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1577,7 +1577,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1661,7 +1661,7 @@
 				"cardRequiredForProductionExchange": "yellow",
 				"additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1760,7 +1760,7 @@
 				"cardRequiredForProductionExchange": "green",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1859,7 +1859,7 @@
 				"cardRequiredForProductionExchange": "purple",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1958,7 +1958,7 @@
 				"cardRequiredForProductionExchange": "blue",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -2084,7 +2084,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -2252,7 +2252,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -2392,7 +2392,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                   "onChoice": [],
-                  "NotChoosable": []
+                  "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                   "onChoice": ["multipleProduction"],
@@ -2532,7 +2532,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -2672,7 +2672,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -2839,7 +2839,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3006,7 +3006,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3173,7 +3173,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3313,7 +3313,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3453,7 +3453,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3593,7 +3593,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3730,7 +3730,15 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				}
 			},
 			{
 				"cardInformations": [
@@ -3804,7 +3812,15 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				}
 			},
 			{
 				"cardInformations": [
@@ -3881,7 +3897,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -4018,7 +4034,15 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				}
 			},
 			{
 				"cardInformations": [
@@ -4076,7 +4100,16 @@
 						},
 						"councilPrivilege": "1"
 					}
+
 				],
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				},
 				"requirementsForProductionExchange": [
 					{
 						"resources": {
@@ -4169,7 +4202,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                   "onChoice": [],
-                  "NotChoosable": []
+                  "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                   "onChoice": ["multipleProduction"],
@@ -4336,7 +4369,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "NotChoosable": []
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -4476,7 +4509,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                   "onChoice": [],
-                  "NotChoosable": []
+                  "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                   "onChoice": ["multipleProduction"],
@@ -4613,7 +4646,15 @@
 						}
 					}
 				],
-				"cardRequiredForProductionExchange": ""
+				"cardRequiredForProductionExchange": "",
+				"additionalInfoFlash": {
+					"onChoice": [],
+					"notChoosable": []
+				},
+				"additionalInfoPermanent": {
+					"onChoice": [],
+					"notChoosable": []
+				}
 			}
 		],
 	"character": [
@@ -4677,7 +4718,7 @@
 				}],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -4761,7 +4802,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -4860,7 +4901,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -4946,7 +4987,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5017,7 +5058,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5089,7 +5130,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5160,7 +5201,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5233,7 +5274,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5304,7 +5345,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction"],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5376,7 +5417,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction", "bonusOnCardCost"],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5462,7 +5503,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction", "bonusOnCardCost"],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5548,7 +5589,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction"],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5619,7 +5660,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5691,7 +5732,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5763,7 +5804,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5833,7 +5874,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5903,7 +5944,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5990,7 +6031,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6077,7 +6118,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6164,7 +6205,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6251,7 +6292,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashAction"]
+					"notChoosable": ["cardFlashAction"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6323,7 +6364,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashAction"]
+					"notChoosable": ["cardFlashAction"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6395,7 +6436,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6481,7 +6522,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
-					"NotChoosable": []
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6560,7 +6601,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6659,7 +6700,7 @@
 					],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6758,7 +6799,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6856,7 +6897,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6953,7 +6994,7 @@
 					}],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7052,7 +7093,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7154,7 +7195,7 @@
 					}],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7252,7 +7293,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7350,7 +7391,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7448,7 +7489,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7546,7 +7587,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7644,7 +7685,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7741,7 +7782,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashAction"]
+					"notChoosable": ["cardFlashAction"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7852,7 +7893,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7950,7 +7991,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8048,7 +8089,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8146,7 +8187,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8244,7 +8285,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8342,7 +8383,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8440,7 +8481,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8538,7 +8579,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8636,7 +8677,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashAction"]
+					"notChoosable": ["cardFlashAction"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8734,7 +8775,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8768,7 +8809,7 @@
 				"cardInformations": [
 					{
 						"name": "Sostegno al Papa",
-						"number": "",
+						"number": "96",
 						"period": "3",
 						"cardColor": "purple"
 					}
@@ -8832,7 +8873,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"NotChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],

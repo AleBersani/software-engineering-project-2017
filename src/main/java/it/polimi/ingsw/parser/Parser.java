@@ -98,15 +98,7 @@ public class Parser {
      * @param cardColor
      * @return
      */
-    private GeneralColor decideGeneralColorEnum(String cardColor) {
-        Map<String, GeneralColor> cardColorToReturn = new HashMap<>();
-        cardColorToReturn.put("blue", GeneralColor.BLUE);
-        cardColorToReturn.put("yellow", GeneralColor.YELLOW);
-        cardColorToReturn.put("green", GeneralColor.GREEN);
-        cardColorToReturn.put("purple", GeneralColor.PURPLE);
 
-        return cardColorToReturn.get(cardColor);
-    }
 
     /**
      * Private method that parses instantEffect in an ExchangingGoods Object, from Json.

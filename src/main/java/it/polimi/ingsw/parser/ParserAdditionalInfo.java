@@ -26,6 +26,19 @@ public class ParserAdditionalInfo {
         settings = new ParserSettings();
     }
 
+    public void parseMapsAdditionalInfo(Map<String, List<AdditionalCardInfo>> flashOnChoice,
+                                        Map<String, List<AdditionalCardInfo>> flashNotChoosable,
+                                        Map<String, List<AdditionalCardInfo>> permanentOnChoice,
+                                        Map<String, List<AdditionalCardInfo>> permanentNotChoosable) throws Exception {
+        String category1, category2;
+        category1 = "additionalInfoFlash";
+        category2 = "additionalInfoPermanent";
+        parseCategoryDevCards(flashOnChoice, flashNotChoosable, category1);
+        parseCategoryDevCards(permanentOnChoice, permanentNotChoosable, category2);
+        parseCategoryOthers(flashOnChoice, flashNotChoosable, category1);
+        parseCategoryOthers(permanentOnChoice, permanentNotChoosable, category2);
+    }
+
     /**
      * TODO JAVADOC
      * @param parsedAddOnChoice
@@ -33,9 +46,9 @@ public class ParserAdditionalInfo {
      * @param additionalInfoCategory
      * @throws IOException
      */
-    public void parseSingleAddCardInfosCategoryDevCards(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
-                                            Map<String, List<AdditionalCardInfo>> parsedAddNotChoosable,
-                                            String additionalInfoCategory) throws Exception {
+    public void parseCategoryDevCards(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
+                                       Map<String, List<AdditionalCardInfo>> parsedAddNotChoosable,
+                                       String additionalInfoCategory) throws Exception {
         JsonArray cards;
         JsonObject card;
         String name, jsonName;
@@ -48,52 +61,51 @@ public class ParserAdditionalInfo {
             for(int index=0; index<cards.size(); index++){
                 card = cards.get(index).getAsJsonObject();
                 name = getDevCardName(card);
-                parsedAddInfo = parseSingleListAddInfoDevCards(additionalInfoCategory, "onChoice",
-                                                                    card, jsonName);
+                parsedAddInfo = parseSingleListAddInfo(additionalInfoCategory, "onChoice",
+                                                        card, jsonName);
                 addToMap(name, parsedAddInfo, parsedAddOnChoice);
-                parsedAddInfo = parseSingleListAddInfoDevCards(additionalInfoCategory, "notChoosable",
-                                                                    card, jsonName);
+                parsedAddInfo = parseSingleListAddInfo(additionalInfoCategory, "notChoosable",
+                                                        card, jsonName);
                 addToMap(name, parsedAddInfo, parsedAddNotChoosable);
             }
         }
-
     }
 
-    public void parseSingleAddCardInfosCategoryOthers(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
-                                                      Map<String, List<AdditionalCardInfo>> parsedAddNotChoosable,
-                                                      String additionalInfoCategory, String jsonName){
+    private void parseCategoryOthers(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
+                                Map<String, List<AdditionalCardInfo>> parsedAddNotChoosable,
+                                String additionalInfoCategory) throws Exception {
+        String[] jsonKeys = {"ExcommunicationTiles", "LeaderCards"};
+        String jsonName;
+        JsonObject openJson, card;
         JsonArray cards;
-        JsonObject singleCard;
-        String name;
+        List<AdditionalCardInfo> parsedAddInfo;
 
+        for (String json : jsonKeys) {
+            jsonName = json + ".json";
+            openJson = settings.extractJsonObject(jsonName);
+            cards = openJson.get(json).getAsJsonArray();
+            for (int index=0; index<cards.size(); index++) {
+                card = cards.get(index).getAsJsonObject();
+                parsedAddInfo = parseSingleListAddInfo(additionalInfoCategory, "onChoice",
+                                                        card, jsonName);
+                addToMap(getName(card, jsonName), parsedAddInfo, parsedAddOnChoice);
+                parsedAddInfo = parseSingleListAddInfo(additionalInfoCategory, "notChoosable",
+                                                        card, jsonName);
+                addToMap(getName(card, jsonName), parsedAddInfo, parsedAddNotChoosable);
+            }
+        }
     }
 
-    /**
-     * TODO JAVADOC
-     * @param name
-     * @param parsedAddInfo
-     * @param mapToModify
-     */
-    private void addToMap(String name, List<AdditionalCardInfo> parsedAddInfo,
-                          Map<String, List<AdditionalCardInfo>> mapToModify) {
-        if(parsedAddInfo.size()>0)
-            mapToModify.put(name, parsedAddInfo);
-    }
 
 
-
-    private List<AdditionalCardInfo> parseSingleListAddInfoDevCards(String addInfoCategory, String addInfoType,
-                                                                    JsonObject card, String jsonName) throws Exception {
+    private List<AdditionalCardInfo> parseSingleListAddInfo(String addInfoCategory, String addInfoType,
+                                                            JsonObject card, String jsonName) throws Exception {
         int actionTypeIndex=0;
         String name, type;
         List<AdditionalCardInfo> parsedAddInfo = new ArrayList<>();
         JsonObject addInfoCategoryObject = card.get(addInfoCategory).getAsJsonObject();
         List<String> addInfoToInstantiate = getAddInfoToInstantiateFromField(addInfoCategoryObject, addInfoType);
-        Map<String, Callable<String>> commands = new HashMap<>();
-        commands.put("DevelopmentCards.json", ()->getDevCardName(card));
-        commands.put("LeaderCards.json", ()->getLeaderName(card));
-        commands.put("ExcommunicationTiles.json", ()->getExcommunicationName(card));
-        name = commands.get(jsonName).call();
+        name = getName(card, jsonName);
 
         for(int index=0; index<addInfoToInstantiate.size(); index++){
             type = addInfoToInstantiate.get(index);
@@ -152,7 +164,8 @@ public class ParserAdditionalInfo {
         JsonArray costs = card.get("costs").getAsJsonArray();
         JsonArray result = card.get("result").getAsJsonArray();
         List<Goods> parsedCosts = gson.fromJson(costs, new TypeToken<ArrayList<Goods>>(){}.getType());
-        List<ExchangingGoods> parsedResults = gson.fromJson(result, new TypeToken<ArrayList<ExchangingGoods>>(){}.getType());
+        List<ExchangingGoods> parsedResults = gson.fromJson(result,
+                                                new TypeToken<ArrayList<ExchangingGoods>>(){}.getType());
         AdditionalCardInfo object = new MultipleProduction(name, parsedCosts, parsedResults);
         return object;
     }
@@ -221,6 +234,20 @@ public class ParserAdditionalInfo {
     /**
      * TODO JAVADOC
      * @param card
+     * @param jsonName
+     * @return
+     * @throws Exception
+     */
+    private String getName(JsonObject card, String jsonName) throws Exception {
+        Map<String, Callable<String>> commands = new HashMap<>();
+        commands.put("DevelopmentCards.json", ()->getDevCardName(card));
+        commands.put("LeaderCards.json", ()->getLeaderName(card));
+        commands.put("ExcommunicationTiles.json", ()->getExcommunicationName(card));
+        return commands.get(jsonName).call();
+    }
+    /**
+     * TODO JAVADOC
+     * @param card
      * @return
      */
     private String getDevCardName(JsonObject card) {
@@ -266,14 +293,17 @@ public class ParserAdditionalInfo {
 
     /**
      * TODO JAVADOC
-     * @param addInfoList
-     * @return
+     * @param name
+     * @param parsedAddInfo
+     * @param mapToModify
      */
-    private boolean isEmpty(JsonArray addInfoList) {
-        if(addInfoList.size()>0)
-            return false;
-        return true;
+    private void addToMap(String name, List<AdditionalCardInfo> parsedAddInfo,
+                          Map<String, List<AdditionalCardInfo>> mapToModify) {
+        if(parsedAddInfo.size()>0)
+            mapToModify.put(name, parsedAddInfo);
     }
+
+
 
 
 

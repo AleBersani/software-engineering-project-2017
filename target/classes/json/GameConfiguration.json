@@ -1,0 +1,6 @@
+{
+  "maxNumberOfPlayer": "4",
+  "startingGameTimeout": "60",
+  "moveTimeout": "45",
+  "numberOfPeriods": "3"
+}

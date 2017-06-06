@@ -1,5 +1,5 @@
 {
-    "leaderCards": [
+    "LeaderCards": [
         {
             "name": "Francesco Sforza",
             "requirements": [{
@@ -23,7 +23,7 @@
             }],
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": ["cardFlashAction"]
+                "notChoosable": ["cardFlashAction"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -69,7 +69,7 @@
             }],
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -104,7 +104,7 @@
 
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -137,7 +137,7 @@
             }],
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -186,7 +186,7 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -232,7 +232,7 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -277,7 +277,7 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -310,7 +310,7 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": ["cardFlashAction"],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -368,7 +368,7 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -398,7 +398,7 @@
             }],
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -497,7 +497,7 @@
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -530,7 +530,7 @@
             "actionValue": "6",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": ["requirementsOnCards"],
@@ -614,7 +614,7 @@
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -646,7 +646,7 @@
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -692,7 +692,7 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -737,7 +737,7 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -782,7 +782,7 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
@@ -827,7 +827,7 @@
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "NotChoosable": []
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
