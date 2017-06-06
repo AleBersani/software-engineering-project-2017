@@ -17,16 +17,6 @@ public class Action implements ActionVisitor {
     private Requirements requiredRequirements;
     private List<BasicRewards> basicRewardsList;
 
-    public static void main(String argv[]) {
-        Action action = new Action();
-
-        action.setActionDescription(new BoardAction(new BasicAction()));
-        action.getActionDescription().acceptActionVisitor(action);
-
-        action.setActionDescription(new LeaderAction(ActionType.LEADER_ACTIVATION, "Leader name"));
-        action.getActionDescription().acceptActionVisitor(action);
-    }
-
     @Override
     public void visitActionDescription(BoardAction boardAction) {
         System.out.println("Board Action");
