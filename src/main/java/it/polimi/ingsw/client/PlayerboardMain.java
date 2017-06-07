@@ -11,7 +11,7 @@ public class PlayerboardMain extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/client/playerboard.fxml"));
         primaryStage.setTitle("Playerboard");
-        primaryStage.setScene(new Scene(root, 800, 550));
+        primaryStage.setScene(new Scene(root, 770, 550));
         primaryStage.show();
     }
 
