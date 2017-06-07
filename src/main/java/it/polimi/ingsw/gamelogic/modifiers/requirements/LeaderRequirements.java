@@ -28,6 +28,9 @@ public class LeaderRequirements implements Requirements {
      */
     @Override
     public boolean hasRequirements(Player player) {
+        if (actionType != ActionType.LEADER_PLACEMENT)
+            return true;
+
         if (!player.hasLeader(leaderName))
             return false;
 
