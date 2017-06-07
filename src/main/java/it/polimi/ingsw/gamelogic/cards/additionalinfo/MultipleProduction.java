@@ -19,10 +19,6 @@ public class MultipleProduction extends AdditionalCardInfo {
         this.result = result;
     }
 
-    /**
-     * Visitor method
-     * @param cardVisitor concrete visitor
-     */
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
         cardVisitor.visitAdditionalCardInfo(this);

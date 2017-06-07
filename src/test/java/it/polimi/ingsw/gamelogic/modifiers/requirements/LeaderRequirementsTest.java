@@ -1,6 +1,8 @@
 package it.polimi.ingsw.gamelogic.modifiers.requirements;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
+import it.polimi.ingsw.gamelogic.basics.Points;
+import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderInformation;
@@ -22,7 +24,7 @@ class LeaderRequirementsTest {
 
     @BeforeEach
     void setUp() {
-        leaderRequirements = new LeaderRequirements(ActionType.LEADER_ACTIVATION, "Lorenzo il Magnifico",
+        leaderRequirements = new LeaderRequirements(ActionType.LEADER_PLACEMENT, "Lorenzo il Magnifico",
                 new LeaderCost(new Goods()));
 
         player = new Player(new PlayerDetails(),
@@ -36,9 +38,18 @@ class LeaderRequirementsTest {
 
     @Test
     void testHasRequirements() {
-        // assertTrue(leaderRequirements.hasRequirements(player));
-        /*
-        TODO: changes
-         */
+        assertTrue(leaderRequirements.hasRequirements(player));
+    }
+
+    @Test
+    void testHasRequirementsWhenPlayerDoesntHaveCard() {
+        leaderRequirements.setLeaderName("Lucrezia Borgia");
+        assertFalse(leaderRequirements.hasRequirements(player));
+    }
+
+    @Test
+    void testHasRequirementsWhenPlayerCantPay() {
+        leaderRequirements.setLeaderCost(new LeaderCost(new Goods(new Points(10 ,0,0))));
+        assertFalse(leaderRequirements.hasRequirements(player));
     }
 }

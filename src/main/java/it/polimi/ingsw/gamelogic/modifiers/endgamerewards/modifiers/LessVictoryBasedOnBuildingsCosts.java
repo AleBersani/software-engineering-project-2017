@@ -7,6 +7,9 @@ import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TODO: JavaDoc
+ */
 public class LessVictoryBasedOnBuildingsCosts implements EndGameRewardsModifier {
     private List<Building> buildings;
 

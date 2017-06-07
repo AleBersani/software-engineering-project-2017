@@ -4,6 +4,9 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
+/**
+ * TODO: JavaDoc
+ */
 public abstract class RequirementsModifier {
     protected AvailableActions availableActions;
 

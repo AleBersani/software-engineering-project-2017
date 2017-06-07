@@ -24,6 +24,11 @@ public class BoardActionRequirements implements Requirements {
         canPlace = true;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param player
+     * @return
+     */
     @Override
     public boolean hasRequirements(Player player) {
         if (!spaceActionRequirements.hasRequirements(player))

@@ -19,6 +19,15 @@ public class TowerActionRequirements implements Requirements {
     private Goods discount;
     private boolean playerHasEnoughMilitaryPoints;
 
+    /**
+     * TODO: JavaDoc
+     * @param spaceActionRequirements
+     * @param requiredGoods
+     * @param bonusGoods
+     * @param occupiedTowerCost
+     * @param occupiedTower
+     * @param occupiedByMyColouredPawn
+     */
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
                                    Goods bonusGoods, Goods occupiedTowerCost,
                                    boolean occupiedTower, boolean occupiedByMyColouredPawn) {
@@ -32,6 +41,16 @@ public class TowerActionRequirements implements Requirements {
         playerHasEnoughMilitaryPoints = true;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param spaceActionRequirements
+     * @param requiredGoods
+     * @param bonusGoods
+     * @param occupiedTowerCost
+     * @param occupiedTower
+     * @param occupiedByMyColouredPawn
+     * @param discount
+     */
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
                                    Goods bonusGoods, Goods occupiedTowerCost,
                                    boolean occupiedTower, boolean occupiedByMyColouredPawn, Goods discount) {
@@ -45,6 +64,17 @@ public class TowerActionRequirements implements Requirements {
         playerHasEnoughMilitaryPoints = true;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param spaceActionRequirements
+     * @param requiredGoods
+     * @param bonusGoods
+     * @param occupiedTowerCost
+     * @param occupiedTower
+     * @param occupiedByMyColouredPawn
+     * @param discount
+     * @param playerHasEnoughMilitaryPoints
+     */
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
                                    Goods bonusGoods, Goods occupiedTowerCost,
                                    boolean occupiedTower, boolean occupiedByMyColouredPawn,
@@ -59,6 +89,11 @@ public class TowerActionRequirements implements Requirements {
         this.playerHasEnoughMilitaryPoints = playerHasEnoughMilitaryPoints;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param player
+     * @return
+     */
     @Override
     public boolean hasRequirements(Player player) {
         if (!spaceActionRequirements.hasRequirements(player))

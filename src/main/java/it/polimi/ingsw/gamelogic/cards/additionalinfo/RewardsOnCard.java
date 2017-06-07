@@ -14,10 +14,6 @@ public class RewardsOnCard extends AdditionalCardInfo {
         this.rewardsModifier = rewardsModifier;
     }
 
-    /**
-     * Visitor method
-     * @param cardVisitor concrete visitor
-     */
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
         cardVisitor.visitAdditionalCardInfo(this);

@@ -33,14 +33,22 @@ public class SpaceActionRequirements implements Requirements {
         actionValueModifier = 0;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param player
+     * @return
+     */
     @Override
     public boolean hasRequirements(Player player) {
         Optional<Pawn> optionalPawn = player.getPawnGivenColor(pawnColor);
         if (optionalPawn.isPresent()) {
             Pawn pawn = optionalPawn.get();
-            if (pawn.isPlacedOnBoard()) {
+            if (pawn.isPlacedOnBoard())
                 return false;
-            }
+            if (pawn.getValue() != initialActionValue)
+                return  false;
+        } else {
+            return false;
         }
 
         if (getFinalActionValue() < requiredValue)

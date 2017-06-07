@@ -60,7 +60,7 @@ public class Player {
     }
 
     /**
-     * TODO: Test and JavaDoc
+     * TODO: JavaDoc
      * @param identifier
      * @return
      */

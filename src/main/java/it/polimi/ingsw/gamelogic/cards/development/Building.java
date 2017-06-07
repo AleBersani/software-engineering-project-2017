@@ -13,6 +13,10 @@ public class Building extends DevelopmentCard {
     private ExchangingGoods productionResult;
     private AdditionalCardInfo additionalCardInfo;
 
+    /**
+     * TODO: JavaDoc
+     * @param basicDevelopmentCard
+     */
     public Building(BasicDevelopmentCard basicDevelopmentCard) {
         super(basicDevelopmentCard);
         productionActionValueRequired = 0;
@@ -20,6 +24,12 @@ public class Building extends DevelopmentCard {
         additionalCardInfo = null;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param basicDevelopmentCard
+     * @param productionActionValueRequired
+     * @param productionResult
+     */
     public Building(BasicDevelopmentCard basicDevelopmentCard, int productionActionValueRequired,
                     ExchangingGoods productionResult) {
         super(basicDevelopmentCard);
@@ -28,6 +38,13 @@ public class Building extends DevelopmentCard {
         additionalCardInfo = null;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param basicDevelopmentCard
+     * @param productionActionValueRequired
+     * @param productionResult
+     * @param additionalCardInfo
+     */
     public Building(BasicDevelopmentCard basicDevelopmentCard, int productionActionValueRequired,
                     ExchangingGoods productionResult, AdditionalCardInfo additionalCardInfo) {
         super(basicDevelopmentCard);

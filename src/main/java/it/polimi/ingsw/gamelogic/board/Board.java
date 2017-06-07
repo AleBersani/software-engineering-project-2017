@@ -59,6 +59,11 @@ public class Board {
             throw new IllegalStateException("No Dice found");
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param color
+     * @return
+     */
     private Optional<Dice> getDiceGivenColor(DiceColor color) {
         return dices.stream()
                 .filter(predicate -> predicate.getDiceColor() == color)

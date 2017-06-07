@@ -16,10 +16,6 @@ public class CardFlashExchangingGoods extends AdditionalCardInfo {
         this.exchangingGoods = exchangingGoods;
     }
 
-    /**
-     * Visitor method
-     * @param cardVisitor concrete visitor
-     */
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
         cardVisitor.visitAdditionalCardInfo(this);

@@ -37,8 +37,9 @@ public class LeaderRequirements implements Requirements {
         if (!leaderCost.getRequiredGoods().isLessThan(player.getPlayerGoods()))
             return false;
 
-        boolean hasRequiredCards = false;
+        boolean hasRequiredCards = true;
         if (!leaderCost.getCardsRequiredList().isEmpty()) {
+            hasRequiredCards = false;
             List<CardsRequired> cardsRequiredList = leaderCost.getCardsRequiredList();
             for (CardsRequired cardsRequired : cardsRequiredList) {
                 if (player.countGivenIdentifier(cardsRequired.toString()) >= cardsRequired.getNumberOfCardsRequired())

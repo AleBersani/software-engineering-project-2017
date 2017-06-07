@@ -54,11 +54,22 @@ public class ExchangingGoods {
         this.numberOfCouncilPrivilege = numberOfCouncilPrivilege;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param goods
+     * @param numberOfCouncilPrivilege
+     */
     public ExchangingGoods(Goods goods, int numberOfCouncilPrivilege) {
         this.goods = goods;
         this.numberOfCouncilPrivilege = numberOfCouncilPrivilege;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param resources
+     * @param points
+     * @param numberOfCouncilPrivilege
+     */
     public ExchangingGoods(Resources resources, Points points, int numberOfCouncilPrivilege) {
         this.goods = new Goods(resources, points);
         this.numberOfCouncilPrivilege = numberOfCouncilPrivilege;
