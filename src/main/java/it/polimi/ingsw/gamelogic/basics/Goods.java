@@ -10,7 +10,7 @@ public class Goods {
     private Points points;
 
     /**
-     * TODO: JavaDoc
+     * Constructor that sets both Resources and Points as default (0)
      */
     public Goods() {
         resources = new Resources();
@@ -36,7 +36,7 @@ public class Goods {
     }
 
     /**
-     * TODO: JavaDoc
+     * Constructor with both Resources and Points
      * @param resources
      * @param points
      */
@@ -138,9 +138,9 @@ public class Goods {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param goodsToConfront
-     * @return
+     * Checks if Goods are less than the Goods to Confront
+     * @param goodsToConfront Goods the need to be confronted
+     * @return true if the goodsToConfront are less than the Goods
      */
     public boolean isLessThan(Goods goodsToConfront) {
         return resources.isLessThan(goodsToConfront.getResources()) &&

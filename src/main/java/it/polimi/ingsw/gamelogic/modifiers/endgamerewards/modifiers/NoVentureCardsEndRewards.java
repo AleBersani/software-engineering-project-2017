@@ -4,7 +4,8 @@ import it.polimi.ingsw.gamelogic.basics.Points;
 import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 
 /**
- * TODO: JavaDOoc
+ * Describes the effect of an Excommunication Tile that prevents the Player to collect the Victory Points from the
+ * Venture cards
  */
 public class NoVentureCardsEndRewards implements EndGameRewardsModifier {
     @Override

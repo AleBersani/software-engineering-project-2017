@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers;
 import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 
 /**
- * TODO: JavaDoc
+ * Interface implemented by the Rewards Modifiers
  */
 public interface EndGameRewardsModifier {
     void modifyEndGameRewards(BasicEndGameRewards basicEndGameRewards);

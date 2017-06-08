@@ -11,7 +11,7 @@ public class Points {
     private int faith;
 
     /**
-     * TODO: JavaDoc
+     * Constructor that sets all the kind of points as default (0)
      */
     public Points() {
         victory = 0;
@@ -20,10 +20,10 @@ public class Points {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param victory
-     * @param military
-     * @param faith
+     * Constructor with all kind of points
+     * @param victory victory points to set
+     * @param military military points to set
+     * @param faith faith points to set
      */
     public Points(int victory, int military, int faith) {
         this.victory = victory;

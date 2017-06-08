@@ -25,9 +25,9 @@ public class AvailableActions {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param actionTypes
-     * @return
+     * Checks if all the action types match with the Available Actions
+     * @param actionTypes all the action type
+     * @return true if all the action type match the available actions
      */
     public boolean hasAvailableActions(List<ActionType> actionTypes) {
         return actionTypes.stream()
@@ -35,9 +35,9 @@ public class AvailableActions {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param actionTypeToVerify
-     * @return
+     * Checks if at least one of the action types matches an available action
+     * @param actionTypeToVerify action to check
+     * @return true if the actionTypeToVerify matches at least one availableAction
      */
     public boolean hasAvailableAction(ActionType actionTypeToVerify) {
         return actionTypes.stream()

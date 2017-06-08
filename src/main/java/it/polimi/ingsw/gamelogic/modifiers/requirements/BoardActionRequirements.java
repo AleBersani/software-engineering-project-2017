@@ -25,9 +25,9 @@ public class BoardActionRequirements implements Requirements {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param player
-     * @return
+     * Checks if the Player fulfills the requirements to perform an Action
+     * @param player player whose turn it is
+     * @return true if the player fulfills the requirements
      */
     @Override
     public boolean hasRequirements(Player player) {

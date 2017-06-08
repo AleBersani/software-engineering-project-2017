@@ -5,7 +5,7 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
 /**
- * TODO: JavaDoc
+ * Abstract class that is extended by the modifiers related to the Requirements
  */
 public abstract class RequirementsModifier {
     protected AvailableActions availableActions;

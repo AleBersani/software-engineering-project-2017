@@ -4,7 +4,7 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
 
 /**
- * TODO: JavaDoc
+ * Abstract class that is extended by the modifiers related to the Rewards
  */
 public abstract class RewardsModifier {
     protected AvailableActions availableActions;

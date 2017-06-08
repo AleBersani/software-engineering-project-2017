@@ -34,9 +34,9 @@ public class SpaceActionRequirements implements Requirements {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param player
-     * @return
+     * Checks the pawn if it is present, then checks if it is placed on the board
+     * @param player player whose turn it is
+     * @return true if all the check are passed
      */
     @Override
     public boolean hasRequirements(Player player) {

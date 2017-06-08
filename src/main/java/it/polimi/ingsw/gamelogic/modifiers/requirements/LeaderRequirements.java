@@ -22,9 +22,13 @@ public class LeaderRequirements implements Requirements {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param player
-     * @return
+     * Checks:
+     * - if the action is different from Leader placement
+     * - if the player has a Leader
+     * - if the player has enough goods to fulfill the leader cost
+     * - if the player has the needed number of required cards
+     * @param player player whose turn it is
+     * @return true if the player passes all the checks
      */
     @Override
     public boolean hasRequirements(Player player) {

@@ -5,7 +5,8 @@ import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 
 /**
- * TODO: JavaDoc
+ * Describes the effect of an Excommunication Tile that reduces the Player's Victory Points basing on the number of
+ * the Player's Resources
  */
 public class LessVictoryForResources implements EndGameRewardsModifier {
     private Resources resources;

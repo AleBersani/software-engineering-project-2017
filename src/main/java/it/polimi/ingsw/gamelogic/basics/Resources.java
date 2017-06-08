@@ -12,7 +12,7 @@ public class Resources {
     private int coins;
 
     /**
-     * TODO: JavaDoc
+     * Constructor that sets all the Resources as default (0)
      */
     public Resources() {
         woods = 0;
@@ -22,11 +22,11 @@ public class Resources {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param woods
-     * @param stones
-     * @param servants
-     * @param coins
+     * Constructor with all the resources
+     * @param woods woods to set
+     * @param stones stones to set
+     * @param servants servants to set
+     * @param coins coins to set
      */
     public Resources(int woods, int stones, int servants, int coins) {
         this.woods = woods;

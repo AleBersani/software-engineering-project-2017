@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: JavaDoc
+ * Describes th effect of an Excommunication Tile that reduces the Player's Victory points basing on the costs
+ * of the Player's Building cards
  */
 public class LessVictoryBasedOnBuildingsCosts implements EndGameRewardsModifier {
     private List<Building> buildings;

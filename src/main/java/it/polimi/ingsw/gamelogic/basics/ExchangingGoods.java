@@ -55,9 +55,9 @@ public class ExchangingGoods {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param goods
-     * @param numberOfCouncilPrivilege
+     * Constructor that assigns directly the goods
+     * @param goods instance of Goods
+     * @param numberOfCouncilPrivilege number of Council's Privileges
      */
     public ExchangingGoods(Goods goods, int numberOfCouncilPrivilege) {
         this.goods = goods;
@@ -65,10 +65,10 @@ public class ExchangingGoods {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param resources
-     * @param points
-     * @param numberOfCouncilPrivilege
+     * Constructor that calls the constructor of Goods through Points and Points
+     * @param resources instance of Resources
+     * @param points instance of Points
+     * @param numberOfCouncilPrivilege number of Council's Privileges
      */
     public ExchangingGoods(Resources resources, Points points, int numberOfCouncilPrivilege) {
         this.goods = new Goods(resources, points);

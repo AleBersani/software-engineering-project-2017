@@ -21,8 +21,8 @@ public class PlayerPawn {
     }
 
     /**
-     * TODO: JavaDoc
-     * @return
+     * Checks if the player details are empty
+     * @return true if the player details are empty
      */
     public boolean isEmpty() {
         return playerDetails.isEmpty() &&

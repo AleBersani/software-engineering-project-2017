@@ -4,7 +4,8 @@ import it.polimi.ingsw.gamelogic.basics.Points;
 import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 
 /**
- * TODO: JavaDoc
+ * Describes the effect of an Excommunication Tile that reduces the Player's Victory Points basing on the number of
+ * the Player's Military Points
  */
 public class LessVictoryBasedOnMilitary implements EndGameRewardsModifier {
     private Points playerMilitary;

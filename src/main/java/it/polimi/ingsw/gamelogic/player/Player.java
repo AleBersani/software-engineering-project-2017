@@ -41,28 +41,23 @@ public class Player {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param leaderName
-     * @return
+     * Checks if the Player has a certain Leader Card
+     * @param leaderName Leader Card that needs to be checked
+     * @return true if the Player has the Leader Card
      */
     public boolean hasLeader(String leaderName) {
         return leaderCards.stream()
                 .anyMatch(leaderCard -> leaderCard.getLeaderName().equals(leaderName));
     }
 
-    /**
-     * TODO: JavaDoc
-     * @param pawnColor
-     * @return
-     */
     public Optional<Pawn> getPawnGivenColor(PawnColor pawnColor) {
         return playerBoard.getPawnGivenColor(pawnColor);
     }
 
     /**
-     * TODO: JavaDoc
-     * @param identifier
-     * @return
+     * Counts the item linked to the identifier
+     * @param identifier type of object
+     * @return the count
      */
     public int countGivenIdentifier(String identifier) {
         return getCounters().get(identifier).getAsInt();

@@ -49,9 +49,9 @@ public class PlayerBoard {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param pawnColor
-     * @return
+     * Checks the value of the Pawn of a given color
+     * @param pawnColor color of the Pawn that needs to be checked
+     * @return the value of the Pawn if it is present
      */
     public int getPawnValueGivenColor(PawnColor pawnColor) {
         Optional<Pawn> pawn = getPawnGivenColor(pawnColor);
@@ -62,9 +62,9 @@ public class PlayerBoard {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param pawnColor
-     * @return
+     * Checks if there is the Pawn of the given color
+     * @param pawnColor color to check
+     * @return true if there is the pawn
      */
     public Optional<Pawn> getPawnGivenColor(PawnColor pawnColor) {
         return pawns.stream()

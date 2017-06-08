@@ -60,9 +60,9 @@ public class Board {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param color
-     * @return
+     * Checks if the dice of the given color exists
+     * @param color color to check
+     * @return the dice if it exists
      */
     private Optional<Dice> getDiceGivenColor(DiceColor color) {
         return dices.stream()

@@ -3,7 +3,7 @@ package it.polimi.ingsw.gamelogic.modifiers.endgamerewards;
 import it.polimi.ingsw.gamelogic.basics.Points;
 
 /**
- * TODO: JavaDoc
+ * Describes the ways the Points are calculated at the end of the game
  */
 public class BasicEndGameRewards {
     private Points pointsForCharacterCards;
@@ -26,8 +26,8 @@ public class BasicEndGameRewards {
     }
 
     /**
-     * TODO: JavaDoc
-     * @return
+     * Calculates all the final points considering the Modifiers
+     * @return sum of the final points
      */
     public Points calculateFinalEndGameRewards() {
         Points finalPoints = new Points();

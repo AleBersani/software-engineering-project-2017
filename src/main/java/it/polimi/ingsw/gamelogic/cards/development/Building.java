@@ -14,7 +14,8 @@ public class Building extends DevelopmentCard {
     private AdditionalCardInfo additionalCardInfo;
 
     /**
-     * TODO: JavaDoc
+     * Constructor with production that set the required value for the production as default (0) and the
+     * addtional card information to null
      * @param basicDevelopmentCard
      */
     public Building(BasicDevelopmentCard basicDevelopmentCard) {
@@ -25,10 +26,11 @@ public class Building extends DevelopmentCard {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param basicDevelopmentCard
-     * @param productionActionValueRequired
-     * @param productionResult
+     * Constructor with the value required to perform the production action and the production result, additional
+     * card info is set as null
+     * @param basicDevelopmentCard card
+     * @param productionActionValueRequired value requested to perform the production
+     * @param productionResult result of the production
      */
     public Building(BasicDevelopmentCard basicDevelopmentCard, int productionActionValueRequired,
                     ExchangingGoods productionResult) {
@@ -39,11 +41,11 @@ public class Building extends DevelopmentCard {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param basicDevelopmentCard
-     * @param productionActionValueRequired
-     * @param productionResult
-     * @param additionalCardInfo
+     * Constructor with all the attributes
+     * @param basicDevelopmentCard card
+     * @param productionActionValueRequired value requested to perform the production
+     * @param productionResult result of the production
+     * @param additionalCardInfo other card information
      */
     public Building(BasicDevelopmentCard basicDevelopmentCard, int productionActionValueRequired,
                     ExchangingGoods productionResult, AdditionalCardInfo additionalCardInfo) {

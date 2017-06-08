@@ -16,7 +16,8 @@
     <tabs>
         <Tab text="Territory_Building" >
             <content>
-            <BorderPane fx:id="pane"  prefHeight="400.0" prefWidth="600.0" stylesheets="/client/playerboard.css">
+
+                <BorderPane fx:id="pane"  prefHeight="400.0" prefWidth="600.0" stylesheets="/client/playerboard.css">
 
                 <center>
                     <TilePane hgap="7" minHeight="200" minWidth="600.0" prefColumns="6" prefRows="2" vgap="8">
@@ -30,8 +31,6 @@
                                 <Image preserveRatio="true" url="/client/devcards/Avamposto Commerciale.png" />
                             </ImageView>
                         </StackPane>
-
-
                     </TilePane>
                 </center>
 
@@ -71,8 +70,10 @@
             </BorderPane>
         </content>
         </Tab>
+
         <Tab text="Ventures_Characters">
             <content>
+
                 <BorderPane fx:id="pane"  prefHeight="400.0" prefWidth="600.0" stylesheets="/client/playerboard.css">
 
                     <center>
@@ -87,9 +88,6 @@
                                     <Image preserveRatio="true" url="/client/devcards/Avamposto Commerciale.png" />
                                 </ImageView>
                             </StackPane>
-
-
-
                         </TilePane>
                     </center>
 
@@ -128,18 +126,27 @@
                     </bottom>
                 </BorderPane>
             </content>
-
         </Tab>
+
         <Tab text="Leaders">
-            <BorderPane prefHeight="400.0" prefWidth="600.0" >
-                <center>
-                    
-                        <ImageView fx:id="led1" preserveRatio="true" fitHeight="200" fitWidth="108">
+            <HBox prefHeight="400.0" prefWidth="600.0" spacing="20" alignment="CENTER">
+
+
+                        <ImageView fx:id="led1" preserveRatio="true" fitHeight="250" fitWidth="158" >
                             <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
                         </ImageView>
+                <ImageView fx:id="led1" preserveRatio="true" fitHeight="250" fitWidth="158" >
+                    <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
+                </ImageView>
+                <ImageView fx:id="led1" preserveRatio="true" fitHeight="250" fitWidth="158" >
+                    <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
+                </ImageView>
+                <ImageView fx:id="led1" preserveRatio="true" fitHeight="250" fitWidth="158" >
+                    <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
+                </ImageView>
 
-                </center>
-            </BorderPane>
+
+            </HBox>
 
 
         </Tab>

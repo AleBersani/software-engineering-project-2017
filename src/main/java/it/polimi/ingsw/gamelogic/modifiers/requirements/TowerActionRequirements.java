@@ -20,13 +20,14 @@ public class TowerActionRequirements implements Requirements {
     private boolean playerHasEnoughMilitaryPoints;
 
     /**
-     * TODO: JavaDoc
-     * @param spaceActionRequirements
-     * @param requiredGoods
-     * @param bonusGoods
-     * @param occupiedTowerCost
-     * @param occupiedTower
-     * @param occupiedByMyColouredPawn
+     * Constructor with all the attributes except discount and if the player has enough military points that
+     * are set as default
+     * @param spaceActionRequirements requirements of the Action Space
+     * @param requiredGoods Goods required to perform the Action
+     * @param bonusGoods Goods as bonus from the Tower Slot
+     * @param occupiedTowerCost Added cost if the tower is occupied
+     * @param occupiedTower if the Tower is occupied
+     * @param occupiedByMyColouredPawn if the Player has one of his coloured Pawns in this Tower
      */
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
                                    Goods bonusGoods, Goods occupiedTowerCost,
@@ -42,14 +43,14 @@ public class TowerActionRequirements implements Requirements {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param spaceActionRequirements
-     * @param requiredGoods
-     * @param bonusGoods
-     * @param occupiedTowerCost
-     * @param occupiedTower
-     * @param occupiedByMyColouredPawn
-     * @param discount
+     * Constructor with all the attributes except if the player has enough military points that is set as default
+     * @param spaceActionRequirements requirements of the Action Space
+     * @param requiredGoods Goods required to perform the Action
+     * @param bonusGoods Goods as bonus from the Tower Slot
+     * @param occupiedTowerCost Added cost if the tower is occupied
+     * @param occupiedTower if the Tower is occupied
+     * @param occupiedByMyColouredPawn if the Player has one of his coloured Pawns in this Tower
+     * @param discount discount as the effect of some card
      */
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
                                    Goods bonusGoods, Goods occupiedTowerCost,
@@ -65,15 +66,15 @@ public class TowerActionRequirements implements Requirements {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param spaceActionRequirements
-     * @param requiredGoods
-     * @param bonusGoods
-     * @param occupiedTowerCost
-     * @param occupiedTower
-     * @param occupiedByMyColouredPawn
-     * @param discount
-     * @param playerHasEnoughMilitaryPoints
+     * Constructor with all the attributes
+     * @param spaceActionRequirements requirements of the Action Space
+     * @param requiredGoods Goods required to perform the Action
+     * @param bonusGoods Goods as bonus from the Tower Slot
+     * @param occupiedTowerCost Added cost if the tower is occupied
+     * @param occupiedTower if the Tower is occupied
+     * @param occupiedByMyColouredPawn if the Player has one of his coloured Pawns in this Tower
+     * @param discount discount as the effect of some card
+     * @param playerHasEnoughMilitaryPoints if the player has enough Military Points to collect a Territory Card
      */
     public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
                                    Goods bonusGoods, Goods occupiedTowerCost,
@@ -90,9 +91,9 @@ public class TowerActionRequirements implements Requirements {
     }
 
     /**
-     * TODO: JavaDoc
-     * @param player
-     * @return
+     * Checks if the player has the requirements to place a pawn on a tower slot
+     * @param player player whose turn it is
+     * @return true if all the checks are passed
      */
     @Override
     public boolean hasRequirements(Player player) {
