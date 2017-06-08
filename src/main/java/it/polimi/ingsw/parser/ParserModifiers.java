@@ -4,46 +4,37 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
+import it.polimi.ingsw.gamelogic.basics.EndGameRewards;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
-import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.EndGameRewardsModifier;
-import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCosts;
-import it.polimi.ingsw.gamelogic.modifiers.requirements.Requirements;
+import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.*;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.*;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.Callable;
 
 public class ParserModifiers {
 
     public List<RequirementsModifier> parseListRequirementsModifier(List<String> modifiers, JsonObject card) throws Exception {
         List<RequirementsModifier> modifierList = new ArrayList<>();
-        String key;
-        Map<String, Callable<RequirementsModifier>> commands = new HashMap<>();
-        commands.put("bonusActionValue", ()->parseBonusActionValue(card));
-        commands.put("bonusPawnsValue", ()->parseBonusPawnsValue(card));
-        commands.put("bonusPawnValue", ()->parseBonusPawnValue(card));
-        commands.put("canPlaceOnOccupiedSpace", ()->parseCanPlaceOnOccupiedSpace(card));
-        commands.put("doubleServants", ()->parseDoubleServants(card));
-        commands.put("fixedColouredPawnsValue", ()->parseFixedColouredPawnsValue(card));
-        commands.put("fixedColouredPawnValue", ()->parseFixedColouredPawnValue(card));
-        commands.put("malusActionValue", ()->parseMalusActionValue(card));
-        commands.put("malusColouredPawns", ()->parseMalusColouredPawns(card));
-        commands.put("noBonusGoodsOnTower", ()->parseNoBonusGoodsOnTower(card));
-        commands.put("noMarketPlacement", ()->parseNoMarketPlacement(card));
-        commands.put("noMilitaryForTerritories", ()->parseNoMilitaryForTerritories(card));
-        commands.put("noOccupiedTowerCost", ()->parseNoOccupiedTowerCost(card));
+        int bonusPawnValueIndex=0, fixedPawnValueIndex=0;
+        Map<String, Callable<RequirementsModifier>> commands = constructRequirementsMap(card);
         for (int index=0, bonusIndex=0; index<modifiers.size(); index++) {
-            key = modifiers.get(index);
+            String key = modifiers.get(index);
             if ("bonusOnCardCost".equals(key)) {
                 modifierList.add(parseBonusOnCardCost(card, bonusIndex));
                 bonusIndex++;
+            }
+            else if("bonusPawnValue".equals(key)){
+                modifierList.add(parseBonusPawnValue(card, bonusPawnValueIndex));
+                bonusPawnValueIndex++;
+            }
+            else if("fixedColouredPawnValue".equals(key)){
+                modifierList.add(parseFixedColouredPawnValue(card, fixedPawnValueIndex));
+                fixedPawnValueIndex++;
             }
             else
                 modifierList.add(commands.get(key).call());
@@ -51,20 +42,20 @@ public class ParserModifiers {
         return modifierList;
     }
 
-    public List<RewardsModifier> parseListRewardsModifier(List<String> modifiers, JsonObject card) throws Exception {
-        List<RewardsModifier> modifierList = new ArrayList<>();
+
+    public RewardsModifier parseListRewardsModifier(List<String> modifiers, JsonObject card) throws Exception {
         Map<String, Callable<RewardsModifier>> commands = new HashMap<>();
         commands.put("bonusRewards", ()->parseBonusRewards(card));
         commands.put("doubleRewards", ()->parseDoubleRewards(card));
         commands.put("malusRewards", ()->parseMalusRewards(card));
         commands.put("noTowerBonusRewards", ()->parseNoTowerBonusRewards(card));
-        for (String t : modifiers) {
-            modifierList.add(commands.get(t).call());
-        }
-        return modifierList;
+        RewardsModifier object = commands.get(modifiers.get(0)).call();
+
+        return object;
     }
 
     //PRIVATE METHODS
+
 
     private RequirementsModifier parseBonusActionValue(JsonObject card) {
         int bonusValue = card.get("bonusValue").getAsInt();
@@ -79,7 +70,6 @@ public class ParserModifiers {
         JsonObject bonus = card.get("bonus").getAsJsonArray().get(bonusIndex).getAsJsonObject();
         Goods parsedBonus = gson.fromJson(bonus, Goods.class);
         RequirementsModifier object = new BonusOnCardCost(new AvailableActions(availableActions), parsedBonus);
-        bonusIndex++;
         return object;
     }
 
@@ -92,9 +82,10 @@ public class ParserModifiers {
         return object;
     }
 
-    private RequirementsModifier parseBonusPawnValue(JsonObject card) {
+    private RequirementsModifier parseBonusPawnValue(JsonObject card, int bonusPawnValueIndex) {
         List<ActionType> availableActions = parseListActionType(card);
-        PawnColor pawnColor = parsePawnColor(card.get("pawnColor").getAsJsonArray().get(0).getAsString());
+        PawnColor pawnColor = parsePawnColor(card.get("pawnColor").getAsJsonArray().
+                                                get(bonusPawnValueIndex).getAsString());
         int bonusActionValue = card.get("actionValueSurplus").getAsInt();
         RequirementsModifier object = new BonusPawnValue(new AvailableActions(availableActions),
                                                             pawnColor, bonusActionValue);
@@ -122,9 +113,9 @@ public class ParserModifiers {
         return object;
     }
 
-    private RequirementsModifier parseFixedColouredPawnValue(JsonObject card) {
+    private RequirementsModifier parseFixedColouredPawnValue(JsonObject card, int fixedPawnValueIndex) {
         List<ActionType> availableActions = parseListActionType(card);
-        PawnColor pawnColor = parsePawnColor(card.get("pawnColor").getAsJsonArray().get(0).getAsString());
+        PawnColor pawnColor = parsePawnColor(card.get("pawnColor").getAsJsonArray().get(fixedPawnValueIndex).getAsString());
         int pawnValue = card.get("pawnValue").getAsInt();
         RequirementsModifier object = new FixedColouredPawnValue(new AvailableActions(availableActions),
                                                                     pawnColor, pawnValue);
@@ -133,7 +124,7 @@ public class ParserModifiers {
 
     private RequirementsModifier parseMalusActionValue(JsonObject card) {
         List<ActionType> availableActions = parseListActionType(card);
-        int malusValue = card.get("actionMalusValue").getAsInt();
+        int malusValue = card.get("malusActionValue").getAsInt();
         RequirementsModifier object = new MalusActionValue(new AvailableActions(availableActions), malusValue);
         return object;
     }
@@ -141,7 +132,7 @@ public class ParserModifiers {
     private RequirementsModifier parseMalusColouredPawns(JsonObject card) {
         List<ActionType> availableActions = parseListActionType(card);
         List<PawnColor> pawnColors = parseListPawnColor(card);
-        int malusValue = card.get("actionMalusValue").getAsInt();
+        int malusValue = card.get("malusActionValue").getAsInt();
         RequirementsModifier object = new MalusColouredPawns(new AvailableActions(availableActions),
                                                                 pawnColors, malusValue);
         return object;
@@ -179,12 +170,14 @@ public class ParserModifiers {
      * @return
      */
     private RewardsModifier parseBonusRewards(JsonObject card) {
-        Goods bonus;
-        return null;
+        Gson gson = new Gson();
+        List<ActionType> availableActions = parseListActionType(card);
+        Goods bonus = gson.fromJson(card.get("bonus").getAsJsonArray().get(0).getAsJsonObject(), Goods.class);
+        RewardsModifier object = new BonusRewards(new AvailableActions(availableActions), bonus);
+        return object;
     }
 
     private RewardsModifier parseDoubleRewards(JsonObject card) {
-        Gson gson = new Gson();
         List<ActionType> availableActions = parseListActionType(card);
         RewardsModifier object = new DoubleRewards(new AvailableActions(availableActions));
         return object;
@@ -210,11 +203,6 @@ public class ParserModifiers {
         return object;
     }
 
-    private EndGameRewardsModifier parseLessVictoryBasedOnBuildingsCosts() {
-        EndGameRewardsModifier object = new LessVictoryBasedOnBuildingsCosts();
-        return object;
-    }
-
     private List<ActionType> parseListActionType(JsonObject card) {
         Gson gson = new Gson();
         List<ActionType> parsedActionTypes = new ArrayList<>();
@@ -228,12 +216,14 @@ public class ParserModifiers {
 
     private ActionType parseActionType(String actionType) {
         Map<String, ActionType> valuesToReturn = new HashMap<>();
-        valuesToReturn.put ("GREEN_TOWER", ActionType.GREEN_TOWER);
+        valuesToReturn.put("GREEN_TOWER", ActionType.GREEN_TOWER);
         valuesToReturn.put("YELLOW_TOWER", ActionType.YELLOW_TOWER);
         valuesToReturn.put("BLUE_TOWER", ActionType.BLUE_TOWER);
         valuesToReturn.put("PURPLE_TOWER",ActionType.PURPLE_TOWER);
         valuesToReturn.put("PRODUCTION",ActionType.PRODUCTION);
         valuesToReturn.put("HARVEST",ActionType.HARVEST);
+        valuesToReturn.put("COUNCIL_PALACE", ActionType.COUNCIL_PALACE);
+        valuesToReturn.put("MARKET", ActionType.MARKET);
         return valuesToReturn.get(actionType);
     }
 
@@ -255,6 +245,22 @@ public class ParserModifiers {
         valuesToReturn.put("black", PawnColor.BLACK);
         valuesToReturn.put("neutral", PawnColor.NEUTRAL);
         return valuesToReturn.get(str);
+    }
+
+    private Map<String, Callable<RequirementsModifier>> constructRequirementsMap(JsonObject card) {
+        Map<String, Callable<RequirementsModifier>> commands = new HashMap<>();
+        commands.put("bonusActionValue", ()->parseBonusActionValue(card));
+        commands.put("bonusPawnsValue", ()->parseBonusPawnsValue(card));
+        commands.put("canPlaceOnOccupiedSpace", ()->parseCanPlaceOnOccupiedSpace(card));
+        commands.put("doubleServants", ()->parseDoubleServants(card));
+        commands.put("fixedColouredPawnsValue", ()->parseFixedColouredPawnsValue(card));
+        commands.put("malusActionValue", ()->parseMalusActionValue(card));
+        commands.put("malusColouredPawns", ()->parseMalusColouredPawns(card));
+        commands.put("noBonusGoodsOnTower", ()->parseNoBonusGoodsOnTower(card));
+        commands.put("noMarketPlacement", ()->parseNoMarketPlacement(card));
+        commands.put("noMilitaryForTerritories", ()->parseNoMilitaryForTerritories(card));
+        commands.put("noOccupiedTowerCost", ()->parseNoOccupiedTowerCost(card));
+        return commands;
     }
 
 }

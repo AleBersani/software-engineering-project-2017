@@ -23,16 +23,16 @@
             }],
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashAction"]
-            },
-            "additionalInfoPermanent": {
-                "onChoice": [],
                 "notChoosable": []
             },
-            "actionType": ["harvest"],
+            "additionalInfoPermanent": {
+                "onChoice": ["cardFlashAction"],
+                "notChoosable": []
+            },
+            "actionType": ["HARVEST"],
             "abilityType": "consumable",
             "actionValue": "1",
-            "discount": {
+            "discount": [{
                 "resources": {
                     "woods": "0",
                     "stones": "0",
@@ -44,7 +44,7 @@
                     "military": "0",
                     "faith": "0"
                 }
-            }
+            }]
         },
         {
             "name": "Ludovico Ariosto",
@@ -73,11 +73,11 @@
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCards"]
+                "notChoosable": ["requirementsOnCard"]
             },
-            "decoratorIdentifier": "canPlaceOnOccupiedSpace",
+            "modifiers": ["canPlaceOnOccupiedSpace"],
             "abilityType": "permanent",
-            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower", "councilPalace", "production", "harvest", "market"]
+            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
 
         },
         {
@@ -108,11 +108,11 @@
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCards"]
+                "notChoosable": ["requirementsOnCard"]
             },
             "abilityType": "permanent",
-            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower"],
-            "decoratorIdentifier": "NoOccupiedTowerCost"
+            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER"],
+            "modifiers": ["noOccupiedTowerCost"]
         },
         {
             "name": "Sigismondo Malatesta",
@@ -141,12 +141,13 @@
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCards"]
+                "notChoosable": ["requirementsOnCard"]
             },
-            "decoratorIdentifier": "bonusPawnValue",
+            "modifiers": ["bonusPawnValue"],
             "actionValueSurplus": "3",
             "pawnColor": ["neutral"],
-            "abilityType": "permanent"
+            "abilityType": "permanent",
+            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
         },
         {
             "name": "Girolamo Savonarola",
@@ -169,7 +170,7 @@
                     "faith": "0"
                 }
             }],
-            "consumableGoods": [{
+            "instantEffect": [{
                 "resources": {
                     "woods": "0",
                     "stones": "0",
@@ -181,15 +182,15 @@
                     "military": "0",
                     "faith": "1"
                 },
-                "councilPriviledge": "0"
+                "councilePrivilege": "0"
             }],
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
 
@@ -215,7 +216,7 @@
                     "faith": "0"
                 }
             }],
-            "consumableGoods": [{
+            "instantEffect": [{
                 "resources": {
                     "woods": "0",
                     "stones": "0",
@@ -227,15 +228,15 @@
                     "military": "0",
                     "faith": "0"
                 },
-                "councilPriviledge": "0"
+                "councilePrivilege": "0"
             }],
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -260,7 +261,7 @@
                     "faith": "0"
                 }
             }],
-            "consumableGoods": [{
+            "instantEffect": [{
                 "resources": {
                     "woods": "1",
                     "stones": "1",
@@ -272,15 +273,15 @@
                     "military": "0",
                     "faith": "0"
                 },
-                "councilPriviledge": "0"
+                "councilePrivilege": "0"
             }],
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -306,17 +307,17 @@
                 }
             }],
             "actionValue": "0",
-            "actionType": ["production"],
+            "actionType": ["PRODUCTION"],
             "abilityType": "consumable",
             "additionalInfoFlash": {
-                "onChoice": ["cardFlashAction"],
-                "notChoosable": []
-            },
-            "additionalInfoPermanent": {
                 "onChoice": [],
                 "notChoosable": []
             },
-            "discount": {
+            "additionalInfoPermanent": {
+                "onChoice": ["cardFlashAction"],
+                "notChoosable": []
+            },
+            "discount": [{
                 "resources": {
                     "woods": "0",
                     "stones": "0",
@@ -328,7 +329,7 @@
                     "military": "0",
                     "faith": "0"
                 }
-            }
+            }]
         },
         {
             "name": "Sandro Botticelli",
@@ -351,7 +352,7 @@
                     "faith": "0"
                 }
             }],
-            "consumableGoods": [{
+            "instantEffect": [{
                 "resources": {
                     "woods": "0",
                     "stones": "0",
@@ -363,15 +364,15 @@
                     "military": "2",
                     "faith": "0"
                 },
-                "councilPriviledge": "0"
+                "councilePrivilege": "0"
             }],
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -402,14 +403,14 @@
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCards"]
+                "notChoosable": ["requirementsOnCard"]
             },
-            "decoratorIdentifier": "fixedColouredPawnsValue",
+            "modifiers": ["fixedColouredPawnsValue"],
             "actionValueSurplus": "",
             "pawnColor": ["orange", "white", "black"],
             "pawnsValue": "5",
             "abilityType": "permanent",
-            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower", "councilPalace", "production", "harvest", "market"]
+            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
         },
         {
             "name": "Lucrezia Borgia",
@@ -491,7 +492,7 @@
                     }
                 }
             ],
-            "decoratorIdentifier": "bonusPawnsValue",
+            "modifiers": ["bonusPawnsValue"],
             "actionValueSurplus": "2",
             "pawnColor": ["orange", "white", "black"],
             "abilityType": "permanent",
@@ -501,9 +502,9 @@
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCards"]
+                "notChoosable": ["requirementsOnCard"]
             },
-            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower", "councilPalace", "production", "harvest", "market"]
+            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
 
         },
         {
@@ -527,19 +528,19 @@
                     "faith": "0"
                 }
             },
-            "actionValue": "6",
+            "pawnValue": "6",
             "additionalInfoFlash": {
                 "onChoice": [],
                 "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": ["requirementsOnCards"],
+                "onChoice": ["requirementsOnCard"],
                 "notChoosable": []
             },
-            "decoratorIdentifier": ["bonusPawnValue", "bonusPawnValue", "bonusPawnValue"],
+            "modifiers": ["fixedColouredPawnValue", "fixedColouredPawnValue", "fixedColouredPawnValue"],
             "pawnColor": ["orange", "white", "black"],
             "abilityType": "consumable",
-            "actionType": ["greenTower", "yellowTower", "blueTower", "purpleTower"]
+            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER"]
 
         },
         {
@@ -563,7 +564,15 @@
                     "faith": "0"
                 }
             }],
-            "abilityType": "permanent"
+            "abilityType": "permanent",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "notChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
         },
         {
             "name": "Sisto IV",
@@ -586,7 +595,15 @@
                     "faith": "0"
                 }
             }],
-            "state": "givePointForSupportChurch"
+            "state": "givePointForSupportChurch",
+            "additionalInfoFlash": {
+                "onChoice": [],
+                "notChoosable": []
+            },
+            "additionalInfoPermanent": {
+                "onChoice": [],
+                "notChoosable": []
+            }
         },
         {
             "name": "Cesare Borgia",
@@ -609,8 +626,8 @@
                     "faith": "2"
                 }
             }],
-            "decoratorIdentifier": "NoMilitaryForTerritories",
-            "actionValue": ["greenTower"],
+            "modifiers": ["noMilitaryForTerritories"],
+            "actionType": ["GREEN_TOWER"],
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
@@ -618,7 +635,7 @@
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCards"]
+                "notChoosable": ["requirementsOnCard"]
             }
         },
         {
@@ -642,7 +659,7 @@
                     "faith": "8"
                 }
             }],
-            "decoratorIdentifier": "doubleRewards",
+            "modifiers": ["doubleRewards"],
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
@@ -650,9 +667,9 @@
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["rewardsOnCards"]
+                "notChoosable": ["rewardsOnCard"]
             },
-            "actionType": ["greenTower", "yellowTower", "purpleTower", "blueTower"]
+            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "PURPLE_TOWER", "BLUE_TOWER"]
         },
         {
             "name": "Cosimo de' Medici",
@@ -675,7 +692,7 @@
                     "faith": "0"
                 }
             }],
-            "consumableGoods": [{
+            "instantEffect": [{
                 "resources": {
                     "woods": "0",
                     "stones": "0",
@@ -687,15 +704,15 @@
                     "military": "0",
                     "faith": "0"
                 },
-                "councilPriviledge": "0"
+                "councilePrivilege": "0"
             }],
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -720,7 +737,7 @@
                     "faith": "0"
                 }
             }],
-            "consumableGoods": [{
+            "instantEffect": [{
                 "resources": {
                     "woods": "0",
                     "stones": "0",
@@ -732,15 +749,15 @@
                     "military": "0",
                     "faith": "0"
                 },
-                "councilPriviledge": "0"
+                "councilePrivilege": "0"
             }],
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -765,7 +782,7 @@
                     "faith": "0"
                 }
             }],
-            "consumableGoods": [{
+            "instantEffect": [{
                 "resources": {
                     "woods": "0",
                     "stones": "0",
@@ -777,15 +794,15 @@
                     "military": "0",
                     "faith": "0"
                 },
-                "councilPriviledge": "1"
+                "councilePrivilege": "1"
             }],
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -810,8 +827,8 @@
                     "faith": "0"
                 }
             }],
-            "decoratorIdentifier": "bonusOnCardCost",
-            "bonus": {
+            "modifiers": ["bonusOnCardCost"],
+            "bonus": [{
                 "resources": {
                     "woods": "0",
                     "stones": "0",
@@ -823,7 +840,7 @@
                     "military": "0",
                     "faith": "0"
                 }
-            },
+            }],
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
@@ -831,9 +848,9 @@
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCards"]
+                "notChoosable": ["requirementsOnCard"]
             },
-            "actionType": ["greenTower", "yellowTower", "purpleTower", "blueTower"]
+            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "PURPLE_TOWER", "BLUE_TOWER"]
         }
     ]
 }

@@ -24,8 +24,8 @@ import java.util.Map;
 public class ParserCards {
     private ParserSettings settings;
 
-    public ParserCards(ParserSettings settings) {
-        this.settings = settings;
+    public ParserCards() {
+        settings = new ParserSettings();
     }
 
     /**
@@ -95,11 +95,10 @@ public class ParserCards {
      */
     public List<LeaderCard> completeParseLeaderCards() throws IOException {
         JsonObject object = settings.extractJsonObject("LeaderCards.json");
-        JsonArray leaders = object.get("leaderCards").getAsJsonArray();
+        JsonArray leaders = object.get("LeaderCards").getAsJsonArray();
         List<LeaderCard> parsedLeaderCards = parseLeaderCards(leaders);
         return parsedLeaderCards;
     }
-
 
     /**PRIVATE METHODS**/
 
@@ -113,15 +112,9 @@ public class ParserCards {
         for(int index = 0; index<cards.size(); index++){
             JsonObject card = cards.get(index).getAsJsonObject();
             BasicDevelopmentCard developmentCard = parseDevelopmentCard(card);
-
-            /*CardInformation cardInfo = parseCardInformation(card);
-            List<Goods> costs = parseListGoods(card);
-            ExchangingGoods instantExchangingGoods = parseExchangingGoods(card);*/
-
             int harvestActionValueRequired = card.get("harvestActionValueRequired").getAsInt();
             ExchangingGoods harvestResult = parseExchangingGoods(card, "harvestResult");
             territories.add(new Territory(developmentCard, harvestActionValueRequired, harvestResult));
-
         }
         return territories;
     }
@@ -192,22 +185,6 @@ public class ParserCards {
         return new BasicDevelopmentCard(cardInfo, costs);
     }
 
-    /*
-     * Private method that parses cost in a List of Goods Objects, from a JsonArray.
-     * @param costs JsonArray from which method gets JsonObject to parse.
-     * @return List of Goods containing one or more costs set in Json file.
-
-    private List<Goods> parseListGoods(JsonArray costs) {
-        Gson gson = new Gson();
-        List<Goods> parsedCosts = new ArrayList<>();
-        for(int index = 0; index<costs.size(); index++) {
-            JsonObject goodObject = costs.get(index).getAsJsonObject();
-            Goods cost = gson.fromJson(goodObject, Goods.class);
-            parsedCosts.add(cost);
-        }
-        return parsedCosts;
-    }*/
-
     /**
      * Private method that parses instantEffect in an ExchangingGoods Object, from Json.
      * @param card JsonObject from which method gets a specific field.
@@ -277,7 +254,7 @@ public class ParserCards {
      */
     private Goods parseEndGameRewards(JsonObject card) {
         Gson gson = new Gson();
-        JsonArray costs = card.get("endGamePoints").getAsJsonArray();
+        JsonObject costs = card.get("endGamePoints").getAsJsonArray().get(0).getAsJsonObject();
         Points endGamePoints = gson.fromJson(costs, Points.class);
         return new Goods(new Resources(), endGamePoints);
     }
@@ -291,7 +268,6 @@ public class ParserCards {
      */
     private List<ExcommunicationTile> parseExcommunicationTiles(JsonArray cards) {
         List<ExcommunicationTile> excommunicationTiles = new ArrayList<>();
-        Gson gson = new Gson();
         JsonObject card;
         JsonObject excommunicationTile;
         for(int index=0; index<cards.size(); index++){
@@ -321,10 +297,13 @@ public class ParserCards {
      */
     private List<LeaderCard> parseLeaderCards(JsonArray leaders) {
         List<LeaderCard> parsedLeaderCards = new ArrayList<>();
+        LeaderInformation cardInfo;
+        JsonArray leaderCosts;
+        List<LeaderCost> parsedLeaderCostList;
         for(int index=0; index<leaders.size(); index++){
-            LeaderInformation cardInfo = parseLeaderInformation(leaders.get(index).getAsJsonObject());
-            JsonArray leaderCosts = leaders.get(index).getAsJsonObject().get("requirements").getAsJsonArray();
-            List<LeaderCost> parsedLeaderCostList = parseLeaderCosts(leaderCosts);
+            cardInfo = parseLeaderInformation(leaders.get(index).getAsJsonObject());
+            leaderCosts = leaders.get(index).getAsJsonObject().get("requirements").getAsJsonArray();
+            parsedLeaderCostList = parseLeaderCosts(leaderCosts);
             parsedLeaderCards.add(new LeaderCard(cardInfo, parsedLeaderCostList));
         }
         return parsedLeaderCards;
@@ -361,7 +340,7 @@ public class ParserCards {
     private List<LeaderCost> parseLeaderCosts(JsonArray leaderCosts) {
         List<LeaderCost> parsedLeaderCosts = new ArrayList<>();
         JsonObject cardCost;
-        List<CardsRequired> parsedCardsRequired = new ArrayList<>();
+        List<CardsRequired> parsedCardsRequired;
         Goods requiredGoods;
         for(int index =0; index<leaderCosts.size(); index++){
             cardCost = leaderCosts.get(index).getAsJsonObject();
