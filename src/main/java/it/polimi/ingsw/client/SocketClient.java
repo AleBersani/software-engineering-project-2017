@@ -1,9 +1,10 @@
 package it.polimi.ingsw.client;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -35,31 +36,15 @@ public class SocketClient {
         socket = new Socket(ip, port);
         LOGGER.info("Connection established");
         socketInput = new Scanner(socket.getInputStream());
+        Thread socketReader = new Thread(new SocketReader(socketInput));
+        socketReader.start();
         socketOutput = new PrintWriter(socket.getOutputStream());
-        try {
-            readSocket();
-        } catch(NoSuchElementException e) {
-            LOGGER.info("Connection closed");
-        } finally {
-            closeConnection();
-        }
-    }
-
-    private void readSocket() {
-        while (true) {
-            String socketLine = socketInput.nextLine();
-            System.out.println(socketLine);
-        }
     }
 
     private void closeConnection() {
-        socketInput.close();
-        socketOutput.close();
-        try {
-            socket.close();
-        } catch (IOException e) {
-            LOGGER.info("Error while closing connection");
-        }
+        /*
+        TODO
+         */
     }
 
     public void writeSocket(String message) {

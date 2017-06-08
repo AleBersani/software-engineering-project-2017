@@ -27,8 +27,8 @@ public class ClientHandler implements Runnable {
                 if (line.equals("quit")) {
                     break;
                 } else {
-                    output.println("Received: " + line);
-                    output.flush();
+                    ReceiverHandler receiverHandler = new ReceiverHandler(line);
+                    receiverHandler.run();
                 }
             }
             output.close();

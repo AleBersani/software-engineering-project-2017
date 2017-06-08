@@ -133,7 +133,7 @@
         <Tab text="Leaders">
             <BorderPane prefHeight="400.0" prefWidth="600.0" >
                 <center>
-                    
+
                         <ImageView fx:id="led1" preserveRatio="true" fitHeight="200" fitWidth="108">
                             <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
                         </ImageView>

@@ -26,7 +26,6 @@ public class Server {
         ServerSocket serverSocket;
         try {
             serverSocket = new ServerSocket(port);
-
         } catch (IOException e) {
             LOGGER.info(e.getMessage());
             return;
