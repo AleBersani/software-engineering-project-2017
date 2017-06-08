@@ -37,7 +37,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "1",
@@ -54,7 +54,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
@@ -103,7 +103,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "2",
@@ -120,12 +120,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -169,7 +169,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "3",
@@ -186,7 +186,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
@@ -235,7 +235,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "4",
@@ -252,12 +252,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -301,7 +301,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "5",
@@ -318,12 +318,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -367,7 +367,7 @@
 							"military": "2",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "6",
@@ -384,12 +384,12 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -433,7 +433,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "5",
@@ -450,7 +450,7 @@
 							"military": "2",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
@@ -499,7 +499,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "6",
@@ -516,11 +516,11 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
                 "additionalInfoFlash": {
-                    "onChoice": [],
+                    "onChoice": ["cardFlashExchangingGoods"],
                     "notChoosable": []
                 },
                 "additionalInfoPermanent": {
@@ -565,7 +565,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "1",
@@ -582,12 +582,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -631,7 +631,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "3",
@@ -648,11 +648,11 @@
 							"military": "1",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
-                    "onChoice": [],
+                    "onChoice": ["cardFlashExchangingGoods"],
                     "notChoosable": []
                 },
                 "additionalInfoPermanent": {
@@ -697,7 +697,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "4",
@@ -714,12 +714,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -763,7 +763,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "3",
@@ -780,12 +780,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -829,7 +829,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "4",
@@ -846,12 +846,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -895,7 +895,7 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "2",
@@ -912,12 +912,12 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -961,7 +961,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "5",
@@ -978,12 +978,12 @@
 							"military": "2",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1027,7 +1027,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "6",
@@ -1044,12 +1044,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1093,7 +1093,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "1",
@@ -1110,12 +1110,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1159,7 +1159,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "3",
@@ -1176,12 +1176,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1225,7 +1225,7 @@
 							"military": "2",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "5",
@@ -1242,12 +1242,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1291,7 +1291,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "2",
@@ -1308,12 +1308,12 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1357,7 +1357,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
 				"harvestActionValueRequired": "6",
@@ -1374,11 +1374,11 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
-                    "onChoice": [],
+                    "onChoice": ["cardFlashExchangingGoods"],
                     "notChoosable": []
                 },
                 "additionalInfoPermanent": {
@@ -1423,7 +1423,7 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "1",
@@ -1440,12 +1440,12 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1489,7 +1489,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"harvestActionValueRequired": "4",
@@ -1506,12 +1506,12 @@
 							"military": "3",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1577,7 +1577,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1623,7 +1623,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "5",
@@ -1640,7 +1640,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -1661,7 +1661,7 @@
 				"cardRequiredForProductionExchange": "yellow",
 				"additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1722,7 +1722,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "5",
@@ -1739,7 +1739,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -1763,7 +1763,7 @@
                     "notChoosable": []
                 },
                 "additionalInfoPermanent": {
-                    "onChoice": [],
+                    "onChoice": ["cardFlashExchangingGoods"],
                     "notChoosable": ["goodsBasedOnPossessions"]
                 },
 				"rewardsForPossessions": [
@@ -1821,7 +1821,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "6",
@@ -1838,7 +1838,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -1859,7 +1859,7 @@
 				"cardRequiredForProductionExchange": "purple",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1920,7 +1920,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "6",
@@ -1937,7 +1937,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -1958,7 +1958,7 @@
 				"cardRequiredForProductionExchange": "blue",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -2019,7 +2019,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "4",
@@ -2036,7 +2036,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					},
 					{
 						"resources": {
@@ -2050,7 +2050,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -2084,7 +2084,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -2132,7 +2132,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -2146,7 +2146,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -2187,7 +2187,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "3",
@@ -2204,7 +2204,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					},
 					{
 						"resources": {
@@ -2218,7 +2218,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -2252,7 +2252,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -2299,7 +2299,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -2313,7 +2313,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -2354,7 +2354,7 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "2",
@@ -2371,7 +2371,7 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -2392,7 +2392,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                   "onChoice": [],
-                  "notChoosable": []
+                  "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                   "onChoice": ["multipleProduction"],
@@ -2439,7 +2439,7 @@
                             "military": "0",
                             "faith": "1"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -2453,7 +2453,7 @@
                             "military": "0",
                             "faith": "1"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -2494,7 +2494,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "1",
@@ -2511,7 +2511,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -2532,7 +2532,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -2579,7 +2579,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "1"
+                        "councilePrivilege": "1"
                     },
                     {
                         "resources": {
@@ -2593,7 +2593,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "1"
+                        "councilePrivilege": "1"
                     }
                 ]
 			},
@@ -2634,7 +2634,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "3",
@@ -2651,7 +2651,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -2672,7 +2672,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -2719,7 +2719,7 @@
                                 "military": "0",
                                 "faith": "0"
                             },
-                            "councilPrivilege": "0"
+                            "councilePrivilege": "0"
                         },
                         {
                             "resources": {
@@ -2733,7 +2733,7 @@
                                 "military": "0",
                                 "faith": "0"
                             },
-                            "councilPrivilege": "0"
+                            "councilePrivilege": "0"
                         }
                   ]
 			},
@@ -2774,7 +2774,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "3",
@@ -2791,7 +2791,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					},
 					{
 						"resources": {
@@ -2805,7 +2805,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -2839,7 +2839,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -2886,7 +2886,7 @@
                                 "military": "0",
                                 "faith": "0"
                             },
-                            "councilPrivilege": "0"
+                            "councilePrivilege": "0"
                         },
                         {
                             "resources": {
@@ -2900,7 +2900,7 @@
                                 "military": "0",
                                 "faith": "0"
                             },
-                            "councilPrivilege": "0"
+                            "councilePrivilege": "0"
                         }
                 ]
 			},
@@ -2941,7 +2941,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "4",
@@ -2958,7 +2958,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					},
 					{
 						"resources": {
@@ -2972,7 +2972,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -3006,7 +3006,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3053,7 +3053,7 @@
                                 "military": "0",
                                 "faith": "0"
                             },
-                            "councilPrivilege": "0"
+                            "councilePrivilege": "0"
                         },
                         {
                             "resources": {
@@ -3067,7 +3067,7 @@
                                 "military": "0",
                                 "faith": "0"
                             },
-                            "councilPrivilege": "0"
+                            "councilePrivilege": "0"
                         }
                 ]
 			},
@@ -3108,7 +3108,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "5",
@@ -3125,7 +3125,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					},
 					{
 						"resources": {
@@ -3139,7 +3139,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -3173,7 +3173,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3220,7 +3220,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -3234,7 +3234,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -3275,7 +3275,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "4",
@@ -3292,7 +3292,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -3313,7 +3313,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3360,7 +3360,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -3374,7 +3374,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -3415,7 +3415,7 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "2",
@@ -3432,7 +3432,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -3453,7 +3453,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3500,7 +3500,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -3514,7 +3514,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -3555,7 +3555,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "1",
@@ -3572,7 +3572,7 @@
 							"military": "3",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -3593,7 +3593,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3640,7 +3640,7 @@
                             "military": "3",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -3654,7 +3654,7 @@
                             "military": "3",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -3695,7 +3695,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "6",
@@ -3712,7 +3712,7 @@
 							"military": "2",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -3733,7 +3733,7 @@
 				"cardRequiredForProductionExchange": "",
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -3777,7 +3777,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "2",
@@ -3794,7 +3794,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -3815,7 +3815,7 @@
 				"cardRequiredForProductionExchange": "",
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -3859,7 +3859,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "4",
@@ -3876,7 +3876,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -3897,7 +3897,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -3944,7 +3944,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -3958,7 +3958,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -3999,7 +3999,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "1",
@@ -4016,7 +4016,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -4037,7 +4037,7 @@
 				"cardRequiredForProductionExchange": "",
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -4081,7 +4081,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "5",
@@ -4098,13 +4098,13 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -4164,7 +4164,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "6",
@@ -4181,7 +4181,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -4202,7 +4202,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                   "onChoice": [],
-                  "notChoosable": []
+                  "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                   "onChoice": ["multipleProduction"],
@@ -4249,7 +4249,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -4263,7 +4263,7 @@
                             "military": "0",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -4304,7 +4304,7 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "1",
@@ -4321,7 +4321,7 @@
 							"military": "0",
 							"faith": "2"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					},
 					{
 						"resources": {
@@ -4335,7 +4335,7 @@
 							"military": "0",
 							"faith": "2"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -4369,7 +4369,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": ["multipleProduction"],
@@ -4416,7 +4416,7 @@
                             "military": "0",
                             "faith": "2"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -4430,7 +4430,7 @@
                             "military": "0",
                             "faith": "2"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -4471,7 +4471,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "3",
@@ -4488,7 +4488,7 @@
 							"military": "3",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -4509,7 +4509,7 @@
 				"cardRequiredForProductionExchange": "",
                 "additionalInfoFlash": {
                   "onChoice": [],
-                  "notChoosable": []
+                  "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                   "onChoice": ["multipleProduction"],
@@ -4556,7 +4556,7 @@
                             "military": "3",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     },
                     {
                         "resources": {
@@ -4570,7 +4570,7 @@
                             "military": "3",
                             "faith": "0"
                         },
-                        "councilPrivilege": "0"
+                        "councilePrivilege": "0"
                     }
                 ]
 			},
@@ -4611,7 +4611,7 @@
 							"military": "0",
 							"faith": "3"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"productionActionValueRequired": "2",
@@ -4628,7 +4628,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -4649,7 +4649,7 @@
 				"cardRequiredForProductionExchange": "",
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -4695,14 +4695,14 @@
 							"military": "3",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": ["bonusActionValue"],
+				"modifiers": ["bonusActionValue"],
 				"discountOnAction" : [{
 					"resources": {
 						"woods": "0",
@@ -4718,11 +4718,11 @@
 				}],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"bonusValue":"2",
 				"actionType": ["GREEN_TOWER"]
@@ -4764,14 +4764,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": ["bonusActionValue", "BonusOnCardCost", "BonusOnCardCost"],
+				"modifiers": ["bonusActionValue", "bonusOnCardCost", "bonusOnCardCost"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -4806,7 +4806,7 @@
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"bonusValue":"2",
 				"actionType": ["YELLOW_TOWER"],
@@ -4876,14 +4876,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": ["bonusOnActionValue","bonusOnCardCost"],
+				"modifiers": ["bonusActionValue","bonusOnCardCost"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -4905,7 +4905,7 @@
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"bonusValue":"2",
 				"actionType": ["BLUE_TOWER"],
@@ -4962,14 +4962,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": ["bonusActionValue"],
+				"modifiers": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -4986,12 +4986,12 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
+					"onChoice": ["cardFlashExchangingGoods"],
 					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"bonusValue":"2",
 				"actionType": ["PURPLE_TOWER"]
@@ -5033,14 +5033,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": ["bonusActionValue"],
+				"modifiers": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5062,7 +5062,7 @@
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCost"]
 				},
 				"bonusValue":"2",
 				"actionType": ["HARVEST"]
@@ -5104,15 +5104,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "2",
-				"decorator": ["bonusActionValue"],
-				"actionSpaceIdentifier" : ["PRODUCTION_1", "PRODUCTION_2"],
+				"modifiers": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5134,7 +5133,7 @@
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"bonusValue":"2",
 				"actionType": ["PRODUCTION"]
@@ -5176,14 +5175,14 @@
 							"military": "0",
 							"faith": "4"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "",
-				"decorator": ["noBonusGoodsOnTower"],
+				"modifiers": ["noBonusGoodsOnTower"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5249,14 +5248,14 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "4",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": [],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5274,14 +5273,28 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
-					"notChoosable": []
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
 					"notChoosable": []
 				},
 				"actionType": ["YELLOW_TOWER", "BLUE_TOWER", "GREEN_TOWER", "PURPLE_TOWER"],
-				"discount": ""
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
 			},
 			{
 				"cardInformations": [
@@ -5320,14 +5333,14 @@
 							"military": "2",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "6",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": [],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5345,14 +5358,28 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": ["cardFlashAction"],
-					"notChoosable": []
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
 					"notChoosable": []
 				},
 				"actionType": ["GREEN_TOWER"],
-				"discount": ""
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
 			},
 			{
 				"cardInformations": [
@@ -5391,14 +5418,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "6",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": [],
 				"actionSpaceIdentifier" : "",
 				"discountOnAction" : [
 					{
@@ -5424,7 +5451,21 @@
 					"notChoosable": []
 				},
 				"actionType": ["YELLOW_TOWER"],
-				"discount": "",
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"bonus": [
 					{
 						"resources": {
@@ -5478,14 +5519,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "6",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": [],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5510,7 +5551,21 @@
 					"notChoosable": []
 				},
 				"actionType": ["BLUE_TOWER"],
-				"discount": "",
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				],
 				"bonus": [
 					{
 						"resources": {
@@ -5564,14 +5619,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "6",
 				"actionValueSurplus": "",
-				"decorator": ["bonusActionValue"],
+				"modifiers": [],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5588,7 +5643,7 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashAction"],
+					"onChoice": ["cardFlashAction", "cardFlashExchangingGoods"],
 					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
@@ -5596,7 +5651,21 @@
 					"notChoosable": []
 				},
 				"actionType": ["PURPLE_TOWER"],
-				"discount": ""
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
 			},
 			{
 				"cardInformations": [
@@ -5635,14 +5704,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "3",
-				"decorator": ["bonusActionValue"],
+				"modifiers": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5664,7 +5733,7 @@
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"bonusValue":"3",
 				"actionType": ["HARVEST"]
@@ -5707,14 +5776,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "3",
-				"decorator": ["bonusActionValue"],
+				"modifiers": ["bonusActionValue"],
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -5736,7 +5805,7 @@
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"bonusValue":"3",
 				"actionType": ["PRODUCTION"]
@@ -5778,14 +5847,14 @@
 							"military": "0",
 							"faith": "3"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"actionSpaceIdentifier" : "",
 				"discountOnAction" : [
 					{
@@ -5804,7 +5873,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5848,14 +5917,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "3"
+						"councilePrivilege": "3"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"actionSpaceIdentifier" : "",
 				"discountOnAction" : [
 					{
@@ -5873,7 +5942,7 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
+					"onChoice": ["cardFlashExchangingGoods"],
 					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
@@ -5918,14 +5987,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "green",
 				"actionValue": "",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"actionSpaceIdentifier" : "",
 				"discountOnAction" : [
 					{
@@ -5944,11 +6013,11 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["goodsBasedOnPossessions"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["goodsBasedOnPossessions"]
+					"notChoosable": []
 				},
 				"rewardsForPossessions": [
 					{
@@ -6005,14 +6074,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "yellow",
 				"actionValue": "",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"actionSpaceIdentifier" : "",
 				"discountOnAction" : [
 					{
@@ -6031,11 +6100,11 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["goodsBasedOnPossessions"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["goodsBasedOnPossessions"]
+					"notChoosable": []
 				},
 				"rewardsForPossessions": [
 					{
@@ -6092,14 +6161,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "blue",
 				"actionValue": "",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"actionSpaceIdentifier" : "",
 				"discountOnAction" : [
 					{
@@ -6118,11 +6187,11 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["goodsBasedOnPossessions"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["goodsBasedOnPossessions"]
+					"notChoosable": []
 				},
 				"rewardsForPossessions": [
 					{
@@ -6179,14 +6248,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "purple",
 				"actionValue": "",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"actionSpaceIdentifier" : "",
 				"discountOnAction" : [
 					{
@@ -6205,11 +6274,11 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["goodsBasedOnPossessions"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["goodsBasedOnPossessions"]
+					"notChoosable": []
 				},
 				"rewardsForPossessions": [
 					{
@@ -6266,14 +6335,14 @@
 							"military": "0",
 							"faith": "2"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "4",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"actionSpaceIdentifier" : "harvest",
 				"discountOnAction" : [
 					{
@@ -6292,14 +6361,28 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": ["cardFlashAction"]
+					"notChoosable": ["cardFlashAction", "cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
 					"notChoosable": []
 				},
 				"actionType": ["HARVEST"],
-				"discount": ""
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
 			},
 			{
 				"cardInformations": [
@@ -6338,14 +6421,14 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "4",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"actionSpaceIdentifier" : "production",
 				"discountOnAction" : [
 					{
@@ -6364,14 +6447,28 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": ["cardFlashAction"]
+					"notChoosable": ["cardFlashAction", "cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
 					"notChoosable": []
 				},
 				"actionType": ["PRODUCTION"],
-				"discount": ""
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
 			},
 			{
 				"cardInformations": [
@@ -6410,14 +6507,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "military",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"actionSpaceIdentifier" : "",
 				"discountOnAction" : [
 					{
@@ -6436,11 +6533,11 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["goodsBasedOnPossessions"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["goodsBasedOnPossessions"]
+					"notChoosable": []
 				},
 				"rewardsForPossessions": [
 					{
@@ -6497,14 +6594,14 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
 				"pointsRequiredForInstantExchangeEffect": "",
 				"cardRequiredForInstantExchangeEffect": "",
 				"actionValue": "7",
 				"actionValueSurplus": "",
-				"decorator": "",
+				"modifiers": "",
 				"discountOnAction" : [
 					{
 						"resources": {
@@ -6521,7 +6618,7 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
+					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashExchangingGoods"],
 					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
@@ -6529,7 +6626,21 @@
 					"notChoosable": []
 				},
 				"actionType": ["YELLOW_TOWER", "BLUE_TOWER", "GREEN_TOWER", "PURPLE_TOWER"],
-				"discount": ""
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
 			}
 		],
 	"venture": [
@@ -6556,35 +6667,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -6622,7 +6706,7 @@
 							"military": "5",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -6654,21 +6738,6 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
-
 				],
 				"requirementsOnCost": [
 					{
@@ -6679,19 +6748,6 @@
 							"coins": "0"
 						},
 						"points": {
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
 							"victory": "0",
 							"military": "0",
 							"faith": "0"
@@ -6721,7 +6777,7 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -6753,21 +6809,6 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
-
 				],
 				"requirementsOnCost": [
 					{
@@ -6782,24 +6823,11 @@
 							"military": "0",
 							"faith": "0"
 						}
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
-					"notChoosable": ["cardFlashExchangingGoods"]
+					"onChoice": ["cardFlashExchangingGoods"],
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6820,7 +6848,7 @@
 							"military": "2",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
 				"endGamePoints": [{
@@ -6852,35 +6880,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -6896,8 +6897,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
-					"notChoosable": ["cardFlashExchangingGoods"]
+					"onChoice": ["cardFlashExchangingGoods"],
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6918,7 +6919,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "2"
+						"councilePrivilege": "2"
 					}
 				],
 				"endGamePoints": [{
@@ -6946,39 +6947,12 @@
 								},
 								"points": {
 									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
 									"military": "2",
 									"faith": "0"
 								}
 							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -7016,7 +6990,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -7048,20 +7022,6 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
 					{
@@ -7072,19 +7032,6 @@
 							"coins": "0"
 						},
 						"points": {
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
 							"victory": "0",
 							"military": "0",
 							"faith": "0"
@@ -7114,14 +7061,9 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
-				"requirementsOnCost": [{
-				"victory": "0",
-				"military": "0",
-				"faith": "0"
-			}],
 				"endGamePoints": [{
 					"victory": "4",
 					"military": "0",
@@ -7147,39 +7089,12 @@
 								},
 								"points": {
 									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
 									"military": "3",
 									"faith": "0"
 								}
 							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -7216,7 +7131,7 @@
 							"military": "0",
 							"faith": "2"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -7314,7 +7229,7 @@
 							"military": "0",
 							"faith": "3"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -7346,35 +7261,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -7412,7 +7300,7 @@
 							"military": "6",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -7444,35 +7332,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -7510,7 +7371,7 @@
 							"military": "0",
 							"faith": "2"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -7542,35 +7403,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -7586,8 +7420,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
-					"notChoosable": ["cardFlashExchangingGoods"]
+					"onChoice": ["cardFlashExchangingGoods"],
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7608,7 +7442,7 @@
 							"military": "3",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
 				"endGamePoints": [{
@@ -7636,20 +7470,6 @@
 								},
 								"points": {
 									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
 									"military": "3",
 									"faith": "0"
 								}
@@ -7665,27 +7485,14 @@
 						},
 						"points":{
 							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
 							"military": "6",
 							"faith": "0"
 						}
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
-					"notChoosable": ["cardFlashExchangingGoods"]
+					"onChoice": ["cardFlashExchangingGoods"],
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7706,7 +7513,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
 				"endGamePoints": [{
@@ -7737,35 +7544,9 @@
 									"military": "0",
 									"faith": "0"
 								}
-							},
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
 							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -7790,7 +7571,8 @@
 				},
 				"actionValue": "4",
 				"actionType": ["HARVEST"],
-				"discount": {
+				"discount": [
+					{
 					"resources": {
 						"woods": "0",
 						"stones": "0",
@@ -7802,7 +7584,8 @@
 						"military": "0",
 						"faith": "0"
 					}
-				},
+				}
+					],
 				"instantEffect": [
 					{
 						"resources": {
@@ -7816,7 +7599,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -7848,35 +7631,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -7914,7 +7670,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -7942,39 +7698,12 @@
 								},
 								"points": {
 									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
 									"military": "4",
 									"faith": "0"
 								}
 							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -8012,7 +7741,7 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -8110,7 +7839,7 @@
 							"military": "0",
 							"faith": "3"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -8142,35 +7871,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -8208,7 +7910,7 @@
 							"military": "7",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -8240,35 +7942,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -8306,14 +7981,29 @@
 							"military": "0",
 							"faith": "1"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
 					"victory": "5",
 					"military": "0",
 					"faith": "0"
-				}]
+				}],
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
 			},
 			{
 				"cardInformations": [
@@ -8338,35 +8028,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -8382,8 +8045,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
-					"notChoosable": ["cardFlashExchangingGoods"]
+					"onChoice": ["cardFlashExchangingGoods"],
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8404,7 +8067,7 @@
 							"military": "4",
 							"faith": "0"
 						},
-						"councilPrivilege": "1"
+						"councilePrivilege": "1"
 					}
 				],
 				"endGamePoints": [{
@@ -8436,35 +8099,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -8502,7 +8138,7 @@
 							"military": "0",
 							"faith": "3"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -8530,20 +8166,6 @@
 								},
 								"points": {
 									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
 									"military": "6",
 									"faith": "0"
 								}
@@ -8559,20 +8181,7 @@
 						},
 						"points":{
 							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
+							"military": "12",
 							"faith": "0"
 						}
 					}
@@ -8600,7 +8209,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -8632,35 +8241,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -8698,14 +8280,29 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
 					"victory": "5",
 					"military": "0",
 					"faith": "0"
-				}]
+				}],
+				"discount": [
+					{
+						"resources": {
+							"woods": "0",
+							"stones": "0",
+							"servants": "0",
+							"coins": "0"
+						},
+						"points": {
+							"victory": "0",
+							"military": "0",
+							"faith": "0"
+						}
+					}
+				]
 			},
 			{
 				"cardInformations": [
@@ -8730,35 +8327,8 @@
 									"faith": "0"
 								}
 							}
-						,
-							{
-								"resources": {
-									"woods": "0",
-									"stones": "0",
-									"servants": "0",
-									"coins": "0"
-								},
-								"points": {
-									"victory": "0",
-									"military": "0",
-									"faith": "0"
-								}
-							}
 				],
 				"requirementsOnCost": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points":{
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					},
 					{
 						"resources": {
 							"woods": "0",
@@ -8796,7 +8366,7 @@
 							"military": "0",
 							"faith": "4"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{
@@ -8894,7 +8464,7 @@
 							"military": "0",
 							"faith": "2"
 						},
-						"councilPrivilege": "0"
+						"councilePrivilege": "0"
 					}
 				],
 				"endGamePoints": [{

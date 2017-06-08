@@ -10,6 +10,9 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.*;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.*;
+import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
+import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -71,10 +74,10 @@ public class ParserAdditionalInfo {
         }
     }
 
-    private void parseCategoryOthers(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
+    public void parseCategoryOthers(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
                                 Map<String, List<AdditionalCardInfo>> parsedAddNotChoosable,
                                 String additionalInfoCategory) throws Exception {
-        String[] jsonKeys = {"ExcommunicationTiles", "LeaderCards"};
+        String[] jsonKeys = {"LeaderCards", "ExcommunicationTiles"};
         String jsonName;
         JsonObject openJson, card;
         JsonArray cards;
@@ -96,6 +99,35 @@ public class ParserAdditionalInfo {
         }
     }
 
+    public Map<String, EndGameRewardsModifier> parseThirdPeriodExcommunicationsMap() throws Exception {
+        String name, jsonName = "ExcommunicationTiles.json";
+        JsonObject card;
+        Map<String, EndGameRewardsModifier> thirdPeriodExcommunication = new HashMap<>();
+
+        JsonObject obj = settings.extractJsonObject("ExcommunicationTiles.json");
+        JsonArray cards = obj.get("ExcommunicationTilesThirdPeriod").getAsJsonArray();
+        for (int index=0; index<cards.size(); index++) {
+            card = cards.get(index).getAsJsonObject();
+            name = getName(card, jsonName);
+            thirdPeriodExcommunication.put(name, parseEndGameRewardsModifier(card));
+        }
+        return thirdPeriodExcommunication;
+    }
+
+    private EndGameRewardsModifier parseEndGameRewardsModifier(JsonObject card) throws Exception {
+        Gson gson = new Gson();
+        Map<String, Callable<EndGameRewardsModifier>> commands = new HashMap<>();
+        commands.put("lessVictoryBasedOnBuildingsCosts", () ->new LessVictoryBasedOnBuildingsCosts());
+        commands.put("lessVictoryBasedOnMilitary", () ->new LessVictoryBasedOnMilitary());
+        commands.put("lessVictoryBasedOnVictory", () ->new LessVictoryBasedOnVictory());
+        commands.put("lessVictoryForResources", () ->new LessVictoryForResources());
+        commands.put("noCharacterCardsEndRewards", () ->new NoCharacterCardsEndRewards());
+        commands.put("noTerritoryCardsEndRewards", () ->new NoTerritoryCardsEndRewards());
+        commands.put("noVentureCardsEndRewards", () ->new NoVentureCardsEndRewards());
+        List<String> modifiers = gson.fromJson(card.get("modifiers").getAsJsonArray(), new TypeToken<ArrayList<String>>(){}.getType());
+        EndGameRewardsModifier obj = commands.get(modifiers.get(0)).call();
+        return obj;
+    }
 
 
     private List<AdditionalCardInfo> parseSingleListAddInfo(String addInfoCategory, String addInfoType,
@@ -116,7 +148,8 @@ public class ParserAdditionalInfo {
                 case "multipleProduction": parsedAddInfo.add(parseMultipleProduction(card, name)); break;
                 case "requirementsOnCard": parsedAddInfo.add(parseRequirementsOnCard(card, name)); break;
                 case "rewardsOnCard": parsedAddInfo.add(parseRewardsOnCard(card, name)); break;
-                default: parsedAddInfo.add(parseCardFlashExchangingGoods(card, name)); break;
+                case "goodsBasedOnPossessions": parsedAddInfo.add(parseGoodsBasedOnPossessions(card, name));
+                case "cardFlashExchangingGoods": parsedAddInfo.add(parseCardFlashExchangingGoods(card, name)); break;
             }
         }
         return parsedAddInfo;
@@ -135,7 +168,7 @@ public class ParserAdditionalInfo {
     private AdditionalCardInfo parseCardFlashAction(JsonObject card,
                                                     String name, int actionTypeIndex) {
         Gson gson = new Gson();
-        JsonObject actionType = card.get("actionType").getAsJsonArray().get(actionTypeIndex).getAsJsonObject();
+        String actionType = card.get("actionType").getAsJsonArray().get(actionTypeIndex).getAsString();
         ActionType parsedActionType = parseActionType(actionType);
         int actionValue = card.get("actionValue").getAsInt();
         Goods discount = gson.fromJson(card.get("discount").getAsJsonArray().get(0).getAsJsonObject(), Goods.class);
@@ -151,6 +184,22 @@ public class ParserAdditionalInfo {
     private AdditionalCardInfo parseConditionalProduction(JsonObject card, String name) {
         GeneralColor cardColor = parseGeneralColorEnum(card.get("cardColor").getAsString());
         AdditionalCardInfo object = new ConditionalProduction(name, cardColor);
+        return object;
+    }
+
+    /**
+     * TODO javadoc
+     * @param card
+     * @param name
+     * @return
+     */
+    private AdditionalCardInfo parseGoodsBasedOnPossessions(JsonObject card, String name) {
+        Gson gson = new Gson();
+        Goods rewardsForPossessions = gson.fromJson(card.get("rewardsForPossessions").getAsJsonArray().get(0).getAsJsonObject(),
+                                                    Goods.class);
+        String typeOfObjectRequired = card.get("typeOfObjectRequired").getAsString().toUpperCase();
+        int numberOfObjectRequired = card.get("numberOfObjectRequired").getAsInt();
+        AdditionalCardInfo object = new GoodsBasedOnPossessions(name, rewardsForPossessions, typeOfObjectRequired, numberOfObjectRequired);
         return object;
     }
 
@@ -175,9 +224,14 @@ public class ParserAdditionalInfo {
      * @param card
      * @param name
      */
-    private AdditionalCardInfo parseRequirementsOnCard(JsonObject card, String name) {
-
-        return null;
+    private AdditionalCardInfo parseRequirementsOnCard(JsonObject card, String name) throws Exception {
+        Gson gson = new Gson();
+        ParserModifiers parserModifiers = new ParserModifiers();
+        List<String> modifiers = gson.fromJson(card.get("modifiers").getAsJsonArray(),
+                                                new TypeToken<ArrayList<String>>(){}.getType());
+        List<RequirementsModifier> parsedModifiers = parserModifiers.parseListRequirementsModifier(modifiers, card);
+        AdditionalCardInfo object = new RequirementsOnCard(name, parsedModifiers);
+        return object;
     }
 
     /**
@@ -185,9 +239,14 @@ public class ParserAdditionalInfo {
      * @param card
      * @param name
      */
-    private AdditionalCardInfo parseRewardsOnCard(JsonObject card, String name) {
-
-        return null;
+    private AdditionalCardInfo parseRewardsOnCard(JsonObject card, String name) throws Exception {
+        Gson gson = new Gson();
+        ParserModifiers parserModifiers = new ParserModifiers();
+        List<String> modifiers = gson.fromJson(card.get("modifiers").getAsJsonArray(),
+                                                new TypeToken<ArrayList<String>>(){}.getType());
+        RewardsModifier parsedModifier = parserModifiers.parseListRewardsModifier(modifiers, card);
+        AdditionalCardInfo object = new RewardsOnCard(name, parsedModifier);
+        return object;
     }
 
     /**
@@ -198,22 +257,24 @@ public class ParserAdditionalInfo {
      */
     private AdditionalCardInfo parseCardFlashExchangingGoods(JsonObject card, String name) {
         Gson gson = new Gson();
-        JsonObject exchGoods = card.get("instantGoods").getAsJsonArray().get(0).getAsJsonObject();
+        JsonObject exchGoods = card.get("instantEffect").getAsJsonArray().get(0).getAsJsonObject();
         ExchangingGoods parsedExchangingGoods = gson.fromJson(exchGoods, ExchangingGoods.class);
         AdditionalCardInfo object = new CardFlashExchangingGoods(name, parsedExchangingGoods);
         return object;
     }
 
-    private ActionType parseActionType(JsonElement actionType) {
-        String actionTypeToParse = actionType.getAsString();
+    private ActionType parseActionType(String actionType) {
         Map<String, ActionType> valuesToReturn = new HashMap<>();
-        valuesToReturn.put ("greenTower", ActionType.GREEN_TOWER);
-        valuesToReturn.put("yellowTower", ActionType.YELLOW_TOWER);
-        valuesToReturn.put("blueTower", ActionType.BLUE_TOWER);
-        valuesToReturn.put("purpleTower",ActionType.PURPLE_TOWER);
-        valuesToReturn.put("production",ActionType.PRODUCTION);
-        valuesToReturn.put("harvest",ActionType.HARVEST);
-        return valuesToReturn.get(actionTypeToParse);
+        valuesToReturn.put ("GREEN_TOWER", ActionType.GREEN_TOWER);
+        valuesToReturn.put("YELLOW_TOWER", ActionType.YELLOW_TOWER);
+        valuesToReturn.put("BLUE_TOWER", ActionType.BLUE_TOWER);
+        valuesToReturn.put("HARVEST",ActionType.HARVEST);
+        valuesToReturn.put("PRODUCTION",ActionType.PRODUCTION);
+        valuesToReturn.put("PURPLE_TOWER",ActionType.PURPLE_TOWER);
+        valuesToReturn.put("COUNCIL_PALACE", ActionType.COUNCIL_PALACE);
+        valuesToReturn.put("MARKET", ActionType.MARKET);
+
+        return valuesToReturn.get(actionType);
     }
 
     /**
@@ -271,7 +332,7 @@ public class ParserAdditionalInfo {
      * @return
      */
     private String getExcommunicationName(JsonObject card) {
-        String name = card.get("ExcommunicationDetails").getAsJsonObject().get("ExcommunicationTileName").getAsString();
+        String name = card.get("excommunicationTileDetails").getAsJsonObject().get("ExcommunicationTileName").getAsString();
         return name;
     }
 
