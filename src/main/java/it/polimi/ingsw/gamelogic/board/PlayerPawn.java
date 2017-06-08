@@ -20,6 +20,10 @@ public class PlayerPawn {
         this.pawnColor = pawnColor;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @return
+     */
     public boolean isEmpty() {
         return playerDetails.isEmpty() &&
                 pawnColor == PawnColor.UNCOLORED;

@@ -25,6 +25,10 @@ public class BasicEndGameRewards {
         onePointLessForEveryResource = new Points();
     }
 
+    /**
+     * TODO: JavaDoc
+     * @return
+     */
     public Points calculateFinalEndGameRewards() {
         Points finalPoints = new Points();
         finalPoints.add(pointsForCharacterCards);

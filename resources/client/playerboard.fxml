@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.shape.Rectangle?>
+<TabPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         fx:controller="it.polimi.ingsw.client.PlayerboardController" prefHeight="350.0" prefWidth="550.0"
+            tabClosingPolicy="UNAVAILABLE">
+    <tabs>
+        <Tab text="Territory_Building" >
+            <content>
+            <BorderPane fx:id="pane"  prefHeight="400.0" prefWidth="600.0" stylesheets="/client/playerboard.css">
+
+                <center>
+                    <TilePane hgap="7" minHeight="200" minWidth="600.0" prefColumns="6" prefRows="2" vgap="8">
+                        <padding>
+                            <Insets left="30" top="8" />
+                        </padding>
+
+                        <StackPane fx:id="rec2" prefHeight="200" prefWidth="108">
+                            <Rectangle height="160" width="108" />
+                            <ImageView fx:id="card1" fitHeight="200" fitWidth="108" preserveRatio="true">
+                                <Image preserveRatio="true" url="/client/devcards/Avamposto Commerciale.png" />
+                            </ImageView>
+                        </StackPane>
+
+
+                    </TilePane>
+                </center>
+
+                <bottom>
+                    <GridPane alignment="CENTER" gridLinesVisible="true" hgap="20" prefHeight="106.0"
+                              prefWidth="747.0" stylesheets="/client/playerboard.css" vgap="10">
+                        <padding>
+                            <Insets left="20" />
+                        </padding>
+                        <Label fx:id="woods" alignment="CENTER" prefHeight="20.0" prefWidth="105.0" text="WOODS"
+                               GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label fx:id="stones" alignment="CENTER" prefHeight="20.0" prefWidth="102.0" text="STONES"
+                               GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Label fx:id="coins" alignment="CENTER" prefHeight="20.0" prefWidth="105.0" text="COINS"
+                               GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                        <Label fx:id="servants" alignment="CENTER" prefHeight="20.0" prefWidth="108.0"
+                               text="SERVANTS" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="108.0" GridPane.columnIndex="4"
+                               GridPane.rowIndex="0" />
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="108.0" GridPane.columnIndex="5"
+                               GridPane.rowIndex="0" />
+
+                        <columnConstraints>
+                            <ColumnConstraints maxWidth="102.3484115600586" minWidth="98.37102508544922"
+                                               prefWidth="98.37102508544922" />
+                            <ColumnConstraints maxWidth="108.62897491455078" minWidth="95.09733581542969"
+                                               prefWidth="105.02261352539062" />
+                            <ColumnConstraints maxWidth="111.90266418457031" minWidth="94.64602661132812"
+                                               prefWidth="96.37100219726562" />
+                            <ColumnConstraints maxWidth="118.35397338867188" minWidth="99.04522705078125"
+                                               prefWidth="99.04522705078125" />
+                            <ColumnConstraints maxWidth="131.95477294921875" minWidth="114.90267944335938"
+                                               prefWidth="131.95477294921875" />
+                        </columnConstraints>
+                    </GridPane>
+                </bottom>
+            </BorderPane>
+        </content>
+        </Tab>
+        <Tab text="Ventures_Characters">
+            <content>
+                <BorderPane fx:id="pane"  prefHeight="400.0" prefWidth="600.0" stylesheets="/client/playerboard.css">
+
+                    <center>
+                        <TilePane hgap="7" minHeight="200" minWidth="600.0" prefColumns="6" prefRows="2" vgap="8">
+                            <padding>
+                                <Insets left="30" top="8" />
+                            </padding>
+
+                            <StackPane fx:id="rec2" prefHeight="200" prefWidth="108">
+                                <Rectangle height="160" width="108" />
+                                <ImageView fx:id="card1" fitHeight="200" fitWidth="108" preserveRatio="true">
+                                    <Image preserveRatio="true" url="/client/devcards/Avamposto Commerciale.png" />
+                                </ImageView>
+                            </StackPane>
+
+
+
+                        </TilePane>
+                    </center>
+
+                    <bottom>
+                        <GridPane alignment="CENTER" gridLinesVisible="true" hgap="20" prefHeight="106.0"
+                                  prefWidth="747.0" stylesheets="/client/playerboard.css" vgap="10">
+                            <padding>
+                                <Insets left="20" />
+                            </padding>
+                            <Label fx:id="woods" alignment="CENTER" prefHeight="20.0" prefWidth="105.0" text="WOODS"
+                                   GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <Label fx:id="stones" alignment="CENTER" prefHeight="20.0" prefWidth="102.0" text="STONES"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <Label fx:id="coins" alignment="CENTER" prefHeight="20.0" prefWidth="105.0" text="COINS"
+                                   GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                            <Label fx:id="servants" alignment="CENTER" prefHeight="20.0" prefWidth="108.0"
+                                   text="SERVANTS" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                            <Label alignment="CENTER" prefHeight="17.0" prefWidth="108.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="0" />
+                            <Label alignment="CENTER" prefHeight="17.0" prefWidth="108.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="0" />
+
+                            <columnConstraints>
+                                <ColumnConstraints maxWidth="102.3484115600586" minWidth="98.37102508544922"
+                                                   prefWidth="98.37102508544922" />
+                                <ColumnConstraints maxWidth="108.62897491455078" minWidth="95.09733581542969"
+                                                   prefWidth="105.02261352539062" />
+                                <ColumnConstraints maxWidth="111.90266418457031" minWidth="94.64602661132812"
+                                                   prefWidth="96.37100219726562" />
+                                <ColumnConstraints maxWidth="118.35397338867188" minWidth="99.04522705078125"
+                                                   prefWidth="99.04522705078125" />
+                                <ColumnConstraints maxWidth="131.95477294921875" minWidth="114.90267944335938"
+                                                   prefWidth="131.95477294921875" />
+                            </columnConstraints>
+                        </GridPane>
+                    </bottom>
+                </BorderPane>
+            </content>
+
+        </Tab>
+        <Tab text="Leaders">
+            <BorderPane prefHeight="400.0" prefWidth="600.0" >
+                <center>
+
+                        <ImageView fx:id="led1" preserveRatio="true" fitHeight="200" fitWidth="108">
+                            <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
+                        </ImageView>
+
+                </center>
+            </BorderPane>
+
+
+        </Tab>
+    </tabs>
+
+</TabPane>

@@ -10,12 +10,21 @@ public class Points {
     private int military;
     private int faith;
 
+    /**
+     * TODO: JavaDoc
+     */
     public Points() {
         victory = 0;
         military = 0;
         faith = 0;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param victory
+     * @param military
+     * @param faith
+     */
     public Points(int victory, int military, int faith) {
         this.victory = victory;
         this.military = military;

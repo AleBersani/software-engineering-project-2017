@@ -28,14 +28,18 @@ public class LeaderRequirements implements Requirements {
      */
     @Override
     public boolean hasRequirements(Player player) {
+        if (actionType != ActionType.LEADER_PLACEMENT)
+            return true;
+
         if (!player.hasLeader(leaderName))
             return false;
 
         if (!leaderCost.getRequiredGoods().isLessThan(player.getPlayerGoods()))
             return false;
 
-        boolean hasRequiredCards = false;
+        boolean hasRequiredCards = true;
         if (!leaderCost.getCardsRequiredList().isEmpty()) {
+            hasRequiredCards = false;
             List<CardsRequired> cardsRequiredList = leaderCost.getCardsRequiredList();
             for (CardsRequired cardsRequired : cardsRequiredList) {
                 if (player.countGivenIdentifier(cardsRequired.toString()) >= cardsRequired.getNumberOfCardsRequired())

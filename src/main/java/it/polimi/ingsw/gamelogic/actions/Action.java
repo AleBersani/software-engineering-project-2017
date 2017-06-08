@@ -17,6 +17,12 @@ public class Action implements ActionVisitor {
     private Requirements requiredRequirements;
     private List<BasicRewards> basicRewardsList;
 
+    public Action(ActionDescription actionDescription, Requirements requiredRequirements, List<BasicRewards> basicRewardsList) {
+        this.actionDescription = actionDescription;
+        this.requiredRequirements = requiredRequirements;
+        this.basicRewardsList = basicRewardsList;
+    }
+
     @Override
     public void visitActionDescription(BoardAction boardAction) {
         System.out.println("Board Action");

@@ -19,8 +19,8 @@ class BoardActionRequirementsTest {
     @BeforeEach
     void setUp() {
         boardActionRequirements = new BoardActionRequirements(new SpaceActionRequirements(
-                ActionType.BLUE_TOWER, PawnColor.BLACK,
-                3, 2, 1, false));
+                ActionType.MARKET, PawnColor.BLACK,
+                4, 3, 1, false));
 
         player = new Player(new PlayerDetails(),
                 new PlayerBoard(new BonusTiles(new Goods(), new Goods()), new Goods()));

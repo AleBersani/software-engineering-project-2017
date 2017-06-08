@@ -11,6 +11,9 @@ public class Resources {
     private int servants;
     private int coins;
 
+    /**
+     * TODO: JavaDoc
+     */
     public Resources() {
         woods = 0;
         stones = 0;
@@ -18,6 +21,13 @@ public class Resources {
         coins = 0;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param woods
+     * @param stones
+     * @param servants
+     * @param coins
+     */
     public Resources(int woods, int stones, int servants, int coins) {
         this.woods = woods;
         this.stones = stones;

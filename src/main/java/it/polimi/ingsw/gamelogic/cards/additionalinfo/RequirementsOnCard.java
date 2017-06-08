@@ -27,10 +27,6 @@ public class RequirementsOnCard extends AdditionalCardInfo {
         this.requirementsModifiers = requirementsModifiers;
     }
 
-    /**
-     * Visitor method
-     * @param cardVisitor concrete visitor
-     */
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
         cardVisitor.visitAdditionalCardInfo(this);

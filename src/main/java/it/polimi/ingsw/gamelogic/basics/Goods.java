@@ -9,6 +9,9 @@ public class Goods {
     private Resources resources;
     private Points points;
 
+    /**
+     * TODO: JavaDoc
+     */
     public Goods() {
         resources = new Resources();
         points = new Points();
@@ -32,6 +35,11 @@ public class Goods {
         this.points = points;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param resources
+     * @param points
+     */
     public Goods(Resources resources, Points points) {
         this.resources = resources;
         this.points = points;
@@ -129,6 +137,11 @@ public class Goods {
         points.subtract(pointsToSubtract);
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param goodsToConfront
+     * @return
+     */
     public boolean isLessThan(Goods goodsToConfront) {
         return resources.isLessThan(goodsToConfront.getResources()) &&
                 points.isLessThan(goodsToConfront.getPoints());

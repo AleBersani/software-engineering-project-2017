@@ -48,6 +48,11 @@ public class PlayerBoard {
         return deck.getNumberOfVentures();
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param pawnColor
+     * @return
+     */
     public int getPawnValueGivenColor(PawnColor pawnColor) {
         Optional<Pawn> pawn = getPawnGivenColor(pawnColor);
         if (pawn.isPresent())
@@ -56,6 +61,11 @@ public class PlayerBoard {
             throw new IllegalStateException("No pawn found");
     }
 
+    /**
+     * TODO: JavaDoc
+     * @param pawnColor
+     * @return
+     */
     public Optional<Pawn> getPawnGivenColor(PawnColor pawnColor) {
         return pawns.stream()
                 .filter(predicate -> predicate.getPawnColor() == pawnColor)

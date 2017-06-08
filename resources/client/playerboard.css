@@ -1,0 +1,22 @@
+#pane {
+    -fx-background-image: url("/client/punchboard.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+    -fx-background-size: contain;
+}
+
+#coins {
+    -fx-background-color: yellow;
+}
+
+#woods {
+    -fx-background-color: chocolate;
+}
+
+#stones {
+    -fx-background-color: darkgray;
+}
+
+#servants {
+    -fx-background-color: blueviolet;
+}

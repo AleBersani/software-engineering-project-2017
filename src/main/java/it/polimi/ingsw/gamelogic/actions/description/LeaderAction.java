@@ -18,10 +18,6 @@ public class LeaderAction implements ActionDescription {
         this.leaderName = leaderName;
     }
 
-    /**
-     * Visitor method
-     * @param actionVisitor concrete visitor
-     */
     @Override
     public void acceptActionVisitor(ActionVisitor actionVisitor) {
         actionVisitor.visitActionDescription(this);

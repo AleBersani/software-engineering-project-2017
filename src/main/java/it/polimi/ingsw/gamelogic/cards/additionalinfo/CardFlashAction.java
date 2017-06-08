@@ -27,10 +27,6 @@ public class CardFlashAction extends AdditionalCardInfo {
         this.discount = discount;
     }
 
-    /**
-     * Visitor method
-     * @param cardVisitor concrete visitor
-     */
     @Override
     public void acceptCardVisitor(CardVisitor cardVisitor) {
         cardVisitor.visitAdditionalCardInfo(this);
