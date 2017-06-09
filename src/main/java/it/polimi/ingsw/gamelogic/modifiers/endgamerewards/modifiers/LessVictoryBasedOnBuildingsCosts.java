@@ -6,6 +6,7 @@ import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Describes th effect of an Excommunication Tile that reduces the Player's Victory points basing on the costs
@@ -16,6 +17,21 @@ public class LessVictoryBasedOnBuildingsCosts implements EndGameRewardsModifier 
 
     public LessVictoryBasedOnBuildingsCosts() {
         buildings = new ArrayList<>();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        LessVictoryBasedOnBuildingsCosts that = (LessVictoryBasedOnBuildingsCosts) o;
+        return Objects.equals(buildings, that.buildings);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(buildings);
     }
 
     @Override

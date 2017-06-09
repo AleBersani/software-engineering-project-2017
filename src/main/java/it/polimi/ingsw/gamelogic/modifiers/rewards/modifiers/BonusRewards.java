@@ -4,6 +4,8 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
 
+import java.util.Objects;
+
 /**
  * Class that describes the Bonus on a certain Action
  */
@@ -13,6 +15,23 @@ public class BonusRewards extends RewardsModifier {
     public BonusRewards(AvailableActions availableActions, Goods bonus) {
         super(availableActions);
         this.bonus = bonus;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        if (!super.equals(o))
+            return false;
+        BonusRewards that = (BonusRewards) o;
+        return Objects.equals(bonus, that.bonus);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), bonus);
     }
 
     @Override

@@ -5,6 +5,8 @@ import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import it.polimi.ingsw.gamelogic.player.Player;
 
+import java.util.Objects;
+
 /**
  * Class that describes the requirements of a Tower Action
  */
@@ -88,6 +90,29 @@ public class TowerActionRequirements implements Requirements {
         this.occupiedByMyColouredPawn = occupiedByMyColouredPawn;
         this.discount = discount;
         this.playerHasEnoughMilitaryPoints = playerHasEnoughMilitaryPoints;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        TowerActionRequirements that = (TowerActionRequirements) o;
+        return isOccupiedTower() == that.isOccupiedTower() &&
+                isOccupiedByMyColouredPawn() == that.isOccupiedByMyColouredPawn() &&
+                isPlayerHasEnoughMilitaryPoints() == that.isPlayerHasEnoughMilitaryPoints() &&
+                Objects.equals(getSpaceActionRequirements(), that.getSpaceActionRequirements()) &&
+                Objects.equals(getRequiredGoods(), that.getRequiredGoods()) &&
+                Objects.equals(getBonusGoods(), that.getBonusGoods()) &&
+                Objects.equals(getOccupiedTowerCost(), that.getOccupiedTowerCost()) &&
+                Objects.equals(getDiscount(), that.getDiscount());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSpaceActionRequirements(), getRequiredGoods(), getBonusGoods(), getOccupiedTowerCost(),
+                isOccupiedTower(), isOccupiedByMyColouredPawn(), getDiscount(), isPlayerHasEnoughMilitaryPoints());
     }
 
     /**

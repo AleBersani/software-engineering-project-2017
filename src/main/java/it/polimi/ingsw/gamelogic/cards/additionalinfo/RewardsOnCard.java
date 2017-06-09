@@ -3,6 +3,8 @@ package it.polimi.ingsw.gamelogic.cards.additionalinfo;
 import it.polimi.ingsw.gamelogic.cards.CardVisitor;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 
+import java.util.Objects;
+
 /**
  * Class that describes the rewards modifiers of a card
  */
@@ -12,6 +14,23 @@ public class RewardsOnCard extends AdditionalCardInfo {
     public RewardsOnCard(String name, RewardsModifier rewardsModifier) {
         super(name);
         this.rewardsModifier = rewardsModifier;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        if (!super.equals(o))
+            return false;
+        RewardsOnCard that = (RewardsOnCard) o;
+        return Objects.equals(getRewardsModifier(), that.getRewardsModifier());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getRewardsModifier());
     }
 
     @Override

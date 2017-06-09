@@ -6,6 +6,8 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
+import java.util.Objects;
+
 /**
  * Class that represents the effect of a card that fixes the value of one of the player's pawn
  */
@@ -17,6 +19,24 @@ public class FixedColouredPawnValue extends RequirementsModifier {
         super(availableActions);
         this.pawnColor = pawnColor;
         this.pawnValue = pawnValue;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        if (!super.equals(o))
+            return false;
+        FixedColouredPawnValue that = (FixedColouredPawnValue) o;
+        return pawnValue == that.pawnValue &&
+                pawnColor == that.pawnColor;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), pawnColor, pawnValue);
     }
 
     @Override

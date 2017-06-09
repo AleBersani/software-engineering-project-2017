@@ -3,6 +3,7 @@ package it.polimi.ingsw.gamelogic.cards.development;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that describes the Venture cards
@@ -15,6 +16,24 @@ public class Venture extends DevelopmentCard {
         super(basicDevelopmentCard);
         this.endGameReward = endGameReward;
         this.minCostRequirements = minCostRequirements;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        if (!super.equals(o))
+            return false;
+        Venture venture = (Venture) o;
+        return Objects.equals(getEndGameReward(), venture.getEndGameReward()) &&
+                Objects.equals(getMinCostRequirements(), venture.getMinCostRequirements());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getEndGameReward(), getMinCostRequirements());
     }
 
     public Goods getEndGameReward() {

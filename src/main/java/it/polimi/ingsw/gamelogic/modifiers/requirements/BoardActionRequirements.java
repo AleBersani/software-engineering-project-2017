@@ -3,6 +3,8 @@ package it.polimi.ingsw.gamelogic.modifiers.requirements;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.player.Player;
 
+import java.util.Objects;
+
 /**
  * Class that describes the requirements of a BoardAction
  */
@@ -22,6 +24,23 @@ public class BoardActionRequirements implements Requirements {
         this.spaceActionRequirements = spaceActionRequirements;
         this.malusValue = malusValue;
         canPlace = true;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        BoardActionRequirements that = (BoardActionRequirements) o;
+        return getMalusValue() == that.getMalusValue() &&
+                isCanPlace() == that.isCanPlace() &&
+                Objects.equals(getSpaceActionRequirements(), that.getSpaceActionRequirements());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSpaceActionRequirements(), getMalusValue(), isCanPlace());
     }
 
     /**

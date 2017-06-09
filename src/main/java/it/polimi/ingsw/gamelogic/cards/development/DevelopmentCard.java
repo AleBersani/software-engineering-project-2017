@@ -3,6 +3,7 @@ package it.polimi.ingsw.gamelogic.cards.development;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * This Class allows to declare all the different kinds of Development Cards as the same type
@@ -14,6 +15,21 @@ public abstract class DevelopmentCard {
 
     public DevelopmentCard(BasicDevelopmentCard basicDevelopmentCard) {
         this.basicDevelopmentCard = basicDevelopmentCard;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        DevelopmentCard that = (DevelopmentCard) o;
+        return Objects.equals(getBasicDevelopmentCard(), that.getBasicDevelopmentCard());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBasicDevelopmentCard());
     }
 
     public CardInformation getCardInformation() {

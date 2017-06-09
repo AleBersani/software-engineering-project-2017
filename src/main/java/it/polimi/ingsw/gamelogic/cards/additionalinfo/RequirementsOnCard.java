@@ -5,6 +5,7 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.RequirementsMo
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
 <<<<<<< HEAD
@@ -25,6 +26,23 @@ public class RequirementsOnCard extends AdditionalCardInfo {
     public RequirementsOnCard(String name, List<RequirementsModifier> requirementsModifiers) {
         super(name);
         this.requirementsModifiers = requirementsModifiers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        if (!super.equals(o))
+            return false;
+        RequirementsOnCard that = (RequirementsOnCard) o;
+        return Objects.equals(getRequirementsModifiers(), that.getRequirementsModifiers());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getRequirementsModifiers());
     }
 
     @Override

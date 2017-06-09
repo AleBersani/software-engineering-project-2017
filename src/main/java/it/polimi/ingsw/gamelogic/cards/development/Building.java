@@ -3,6 +3,7 @@ package it.polimi.ingsw.gamelogic.cards.development;
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.AdditionalCardInfo;
 
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -53,6 +54,25 @@ public class Building extends DevelopmentCard {
         this.productionActionValueRequired = productionActionValueRequired;
         this.productionResult = productionResult;
         this.additionalCardInfo = additionalCardInfo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        if (!super.equals(o))
+            return false;
+        Building building = (Building) o;
+        return getProductionActionValueRequired() == building.getProductionActionValueRequired() &&
+                Objects.equals(getProductionResult(), building.getProductionResult()) &&
+                Objects.equals(getAdditionalCardInfo(), building.getAdditionalCardInfo());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getProductionActionValueRequired(), getProductionResult(), getAdditionalCardInfo());
     }
 
     public int getProductionActionValueRequired() {

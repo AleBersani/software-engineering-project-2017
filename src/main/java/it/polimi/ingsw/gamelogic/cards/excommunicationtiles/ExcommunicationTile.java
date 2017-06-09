@@ -2,6 +2,8 @@ package it.polimi.ingsw.gamelogic.cards.excommunicationtiles;
 
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
+import java.util.Objects;
+
 /**
  * Class that describes the basic information of the Excommunication Tiles
  */
@@ -12,6 +14,22 @@ public class ExcommunicationTile {
     public ExcommunicationTile(String excommunicationTileName, PeriodNumber period) {
         this.excommunicationTileName = excommunicationTileName;
         this.period = period;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        ExcommunicationTile that = (ExcommunicationTile) o;
+        return Objects.equals(getExcommunicationTileName(), that.getExcommunicationTileName()) &&
+                getPeriod() == that.getPeriod();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getExcommunicationTileName(), getPeriod());
     }
 
     public String getExcommunicationTileName() {

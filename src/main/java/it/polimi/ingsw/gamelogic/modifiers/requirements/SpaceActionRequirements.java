@@ -5,6 +5,7 @@ import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import it.polimi.ingsw.gamelogic.player.Pawn;
 import it.polimi.ingsw.gamelogic.player.Player;
 
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -31,6 +32,29 @@ public class SpaceActionRequirements implements Requirements {
         this.occupied = occupied;
         initialActionValue = actionValue;
         actionValueModifier = 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        SpaceActionRequirements that = (SpaceActionRequirements) o;
+        return getRequiredValue() == that.getRequiredValue() &&
+                getActionValue() == that.getActionValue() &&
+                getNumberOfServants() == that.getNumberOfServants() &&
+                isOccupied() == that.isOccupied() &&
+                getInitialActionValue() == that.getInitialActionValue() &&
+                getActionValueModifier() == that.getActionValueModifier() &&
+                getActionType() == that.getActionType() &&
+                getPawnColor() == that.getPawnColor();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getActionType(), getPawnColor(), getRequiredValue(), getActionValue(),
+                getNumberOfServants(), isOccupied(), getInitialActionValue(), getActionValueModifier());
     }
 
     /**

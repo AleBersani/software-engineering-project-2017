@@ -6,6 +6,7 @@ import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.player.Player;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that describes the requirements of a Leader Action
@@ -19,6 +20,23 @@ public class LeaderRequirements implements Requirements {
         this.actionType = actionType;
         this.leaderName = leaderName;
         this.leaderCost = leaderCost;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        LeaderRequirements that = (LeaderRequirements) o;
+        return getActionType() == that.getActionType() &&
+                Objects.equals(getLeaderName(), that.getLeaderName()) &&
+                Objects.equals(getLeaderCost(), that.getLeaderCost());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getActionType(), getLeaderName(), getLeaderCost());
     }
 
     /**

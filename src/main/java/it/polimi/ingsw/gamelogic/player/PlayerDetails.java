@@ -2,6 +2,8 @@ package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 
+import java.util.Objects;
+
 /**
  * Class that describes the Player's basic information
  */
@@ -24,22 +26,19 @@ public class PlayerDetails {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PlayerDetails)) return false;
-
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         PlayerDetails that = (PlayerDetails) o;
-
-        if (!getPlayerIdentifier().equals(that.getPlayerIdentifier())) return false;
-        if (!getPlayerName().equals(that.getPlayerName())) return false;
-        return getPlayerColor() == that.getPlayerColor();
+        return Objects.equals(getPlayerIdentifier(), that.getPlayerIdentifier()) &&
+                Objects.equals(getPlayerName(), that.getPlayerName()) &&
+                getPlayerColor() == that.getPlayerColor();
     }
 
     @Override
     public int hashCode() {
-        int result = getPlayerIdentifier().hashCode();
-        result = 31 * result + getPlayerName().hashCode();
-        result = 31 * result + getPlayerColor().hashCode();
-        return result;
+        return Objects.hash(getPlayerIdentifier(), getPlayerName(), getPlayerColor());
     }
 
     /**

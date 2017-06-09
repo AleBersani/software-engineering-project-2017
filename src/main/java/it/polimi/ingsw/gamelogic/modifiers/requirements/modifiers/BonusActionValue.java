@@ -5,6 +5,8 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
+import java.util.Objects;
+
 /**
  * Class that describes when it's given a Bonus value to perform an action
  */
@@ -14,6 +16,23 @@ public class BonusActionValue extends RequirementsModifier {
     public BonusActionValue(AvailableActions availableActions, int bonusValue) {
         super(availableActions);
         this.bonusValue = bonusValue;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        if (!super.equals(o))
+            return false;
+        BonusActionValue that = (BonusActionValue) o;
+        return bonusValue == that.bonusValue;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), bonusValue);
     }
 
     @Override

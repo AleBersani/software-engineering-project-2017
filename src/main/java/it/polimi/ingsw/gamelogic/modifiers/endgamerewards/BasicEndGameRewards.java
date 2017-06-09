@@ -2,6 +2,8 @@ package it.polimi.ingsw.gamelogic.modifiers.endgamerewards;
 
 import it.polimi.ingsw.gamelogic.basics.Points;
 
+import java.util.Objects;
+
 /**
  * Describes the ways the Points are calculated at the end of the game
  */
@@ -23,6 +25,32 @@ public class BasicEndGameRewards {
         onePointLessForEveryMilitaryPoints = new Points();
         onePointLessForEveryWoodAndStoneOnBuilding = new Points();
         onePointLessForEveryResource = new Points();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        BasicEndGameRewards that = (BasicEndGameRewards) o;
+        return Objects.equals(getPointsForCharacterCards(), that.getPointsForCharacterCards()) &&
+                Objects.equals(getPointsForVentureCards(), that.getPointsForVentureCards()) &&
+                Objects.equals(getPointsForTerritoryCards(), that.getPointsForTerritoryCards()) &&
+                Objects.equals(getOnePointLessForEveryFiveVictoryPoints(),
+                        that.getOnePointLessForEveryFiveVictoryPoints()) &&
+                Objects.equals(getOnePointLessForEveryMilitaryPoints(),
+                        that.getOnePointLessForEveryMilitaryPoints()) &&
+                Objects.equals(getOnePointLessForEveryWoodAndStoneOnBuilding(),
+                        that.getOnePointLessForEveryWoodAndStoneOnBuilding()) &&
+                Objects.equals(getOnePointLessForEveryResource(), that.getOnePointLessForEveryResource());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPointsForCharacterCards(), getPointsForVentureCards(), getPointsForTerritoryCards(),
+                getOnePointLessForEveryFiveVictoryPoints(), getOnePointLessForEveryMilitaryPoints(),
+                getOnePointLessForEveryWoodAndStoneOnBuilding(), getOnePointLessForEveryResource());
     }
 
     /**
