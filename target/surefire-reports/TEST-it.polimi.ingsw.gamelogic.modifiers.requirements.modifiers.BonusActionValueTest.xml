@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+  <testcase name="testModifyRequirementsOfTowerActionWithoutBonus" classname="it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusActionValueTest" time="0"/>
+  <testcase name="testModifyRequirementsOfBoardActionWithBonus" classname="it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusActionValueTest" time="0"/>
   <testcase name="testModifyRequirementsOfBoardAction" classname="it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusActionValueTest" time="0"/>
   <testcase name="testModifyRequirementsOfTowerAction" classname="it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusActionValueTest" time="0"/>
-  <testcase name="testModifyRequirementsOfBoardActionWithBonus" classname="it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusActionValueTest" time="0"/>
-  <testcase name="testModifyRequirementsOfTowerActionWithoutBonus" classname="it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusActionValueTest" time="0"/>
 </testsuite>

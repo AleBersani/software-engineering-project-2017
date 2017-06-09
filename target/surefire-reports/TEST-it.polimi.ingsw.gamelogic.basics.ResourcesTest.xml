@@ -61,14 +61,14 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testFalseIsLessThan" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
-  <testcase name="testSubtractGeneralValue" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
-  <testcase name="testSubtractWithNegativeResult" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
-  <testcase name="testSubtractFixedValue" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
-  <testcase name="testTrueIsLessThan" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
-  <testcase name="testTrueIsEmpty" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
-  <testcase name="testFalseIsEmpty" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0.001"/>
+  <testcase name="testAddFixedValue" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
   <testcase name="testEquals" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
-  <testcase name="testAddFixedValue" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0.001"/>
+  <testcase name="testFalseIsEmpty" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
+  <testcase name="testTrueIsEmpty" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
+  <testcase name="testSubtractWithNegativeResult" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
+  <testcase name="testFalseIsLessThan" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
+  <testcase name="testTrueIsLessThan" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
+  <testcase name="testSubtractGeneralValue" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
   <testcase name="testAddGeneralValue" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
+  <testcase name="testSubtractFixedValue" classname="it.polimi.ingsw.gamelogic.basics.ResourcesTest" time="0"/>
 </testsuite>

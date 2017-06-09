@@ -4,51 +4,7 @@
     <list default="true" id="3565f9e9-2953-4477-96c2-c965b7d6ccb1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/jacoco.exec" afterPath="$PROJECT_DIR$/target/jacoco.exec" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/ExchangingGoods.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/ExchangingGoods.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/AdditionalCardInfo.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/AdditionalCardInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/CardFlashAction.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/CardFlashAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/CardFlashExchangingGoods.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/CardFlashExchangingGoods.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/ConditionalProduction.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/ConditionalProduction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/GoodsBasedOnPossessions.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/GoodsBasedOnPossessions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/MultipleProduction.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/MultipleProduction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/RequirementsOnCard.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/RequirementsOnCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/RewardsOnCard.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/RewardsOnCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/BasicDevelopmentCard.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/BasicDevelopmentCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Building.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Building.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/CardInformation.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/CardInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/DevelopmentCard.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/DevelopmentCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Territory.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Territory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Venture.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Venture.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/excommunicationtiles/ExcommunicationTile.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/excommunicationtiles/ExcommunicationTile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCard.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCost.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCost.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderInformation.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/AvailableActions.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/AvailableActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/BasicEndGameRewards.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/BasicEndGameRewards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryBasedOnBuildingsCosts.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryBasedOnBuildingsCosts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryBasedOnMilitary.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryBasedOnMilitary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryBasedOnVictory.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryBasedOnVictory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryForResources.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryForResources.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/NoTerritoryCardsEndRewards.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/NoTerritoryCardsEndRewards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/BoardActionRequirements.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/BoardActionRequirements.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/LeaderRequirements.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/LeaderRequirements.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/SpaceActionRequirements.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/SpaceActionRequirements.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/TowerActionRequirements.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/TowerActionRequirements.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusActionValue.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusActionValue.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusPawnValue.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusPawnValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusPawnsValue.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusPawnsValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/FixedColouredPawnValue.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/FixedColouredPawnValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/FixedColouredPawnsValue.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/FixedColouredPawnsValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/MalusActionValue.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/MalusActionValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/MalusColouredPawns.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/MalusColouredPawns.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/RequirementsModifier.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/RequirementsModifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/rewards/BasicRewards.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/rewards/BasicRewards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/rewards/modifiers/BonusRewards.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/rewards/modifiers/BonusRewards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/rewards/modifiers/MalusRewards.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/rewards/modifiers/MalusRewards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/rewards/modifiers/RewardsModifier.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/rewards/modifiers/RewardsModifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/Pawn.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/Pawn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/PlayerDetails.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/PlayerDetails.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sonar/report-task.txt" afterPath="$PROJECT_DIR$/target/sonar/report-task.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.basics.ExchangingGoodsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.basics.ExchangingGoodsTest.xml" />
@@ -59,7 +15,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.cards.development.BuildingTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.cards.development.BuildingTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewardsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewardsTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCostsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCostsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnMilitaryTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnMilitaryTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnVictoryTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnVictoryTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryForResourcesTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryForResourcesTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoCharacterCardsEndRewardsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoCharacterCardsEndRewardsTest.xml" />
@@ -72,7 +27,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusOnCardCostTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusOnCardCostTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnValueTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnsValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnsValueTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.CanPlaceOnOccupiedSpaceTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.CanPlaceOnOccupiedSpaceTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServantsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServantsTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnValueTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnsValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnsValueTest.xml" />
@@ -80,20 +34,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusColouredPawnsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusColouredPawnsTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTowerTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTowerTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMarketPlacementTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMarketPlacementTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMilitaryForTerritoriesTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMilitaryForTerritoriesTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoOccupiedTowerCostTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoOccupiedTowerCostTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.rewards.RewardsModifierTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.rewards.RewardsModifierTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.player.PlayerBoardTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.player.PlayerBoardTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.parser.ParserCardsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.parser.ParserCardsTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.ExchangingGoodsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.ExchangingGoodsTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.PointsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.PointsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.ResourcesTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.ResourcesTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.board.BoardTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.board.BoardTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.board.CouncilPalaceTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.board.CouncilPalaceTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.cards.development.BuildingTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.cards.development.BuildingTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewardsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewardsTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCostsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCostsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnMilitaryTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnMilitaryTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnVictoryTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnVictoryTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryForResourcesTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryForResourcesTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoCharacterCardsEndRewardsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoCharacterCardsEndRewardsTest.txt" />
@@ -105,7 +55,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusOnCardCostTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusOnCardCostTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnValueTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnValueTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnsValueTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnsValueTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.CanPlaceOnOccupiedSpaceTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.CanPlaceOnOccupiedSpaceTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServantsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServantsTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnValueTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnValueTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnsValueTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnsValueTest.txt" />
@@ -113,8 +62,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusColouredPawnsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusColouredPawnsTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTowerTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTowerTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMarketPlacementTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMarketPlacementTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMilitaryForTerritoriesTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMilitaryForTerritoriesTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoOccupiedTowerCostTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoOccupiedTowerCostTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.rewards.RewardsModifierTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.rewards.RewardsModifierTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.player.PlayerBoardTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.player.PlayerBoardTest.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.parser.ParserCardsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.parser.ParserCardsTest.txt" />
@@ -254,17 +201,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="67" column="83" lean-forward="true" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LeaderCost.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCost.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="67" column="83" lean-forward="false" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -310,11 +247,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CouncilePrivilege.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CouncilePrivilege.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CouncilePrivilege.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" column="47" lean-forward="false" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BonusOnCardCost.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -406,7 +353,6 @@
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryForResources.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/BasicEndGameRewards.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusActionValue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusPawnsValue.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusPawnValue.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/FixedColouredPawnsValue.java" />
@@ -437,6 +383,7 @@
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CouncilPrivilege.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/parser/ParserConfigurations.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CouncilePrivilege.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java" />
       </list>
     </option>
   </component>
@@ -586,37 +533,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
+              <option name="myItemId" value="gamelogic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -647,120 +564,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="player" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rewards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rewards" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -845,446 +648,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="modifiers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="endgamerewards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="endgamerewards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="enums" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excommunicationtiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="development" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="additionalinfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="board" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="basics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LM02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LolloTheMagnificent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ingsw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamelogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="description" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2029,7 +1392,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318858000" />
+    <option name="totallyTimeSpent" value="319213000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2042,7 +1405,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2062,7 +1424,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23784356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23784356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25885418" sideWeight="0.5104022" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23697917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -2329,14 +1691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -2608,7 +1962,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="67" column="83" lean-forward="true" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
+          <caret line="67" column="83" lean-forward="false" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
           <folding />
         </state>
       </provider>
@@ -2633,6 +1987,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="47" lean-forward="false" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
