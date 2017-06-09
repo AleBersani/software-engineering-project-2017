@@ -13,12 +13,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class containing methods that set game configuration information, parsing from Json files.
+ */
 public class ParserConfigurations {
     private ParserSettings settings;
 
     public ParserConfigurations() {
         settings = new ParserSettings();
     }
+
+    /**
+     * Method that sets GameConfiguration attributes, parsing from Json file.
+     * @return A GameConfiguration object.
+     * @throws IOException
+     */
     public GameConfiguration parseGameConfiguration() throws IOException {
         JsonObject gameConf = settings.extractJsonObject("GameConfiguration.json");
         GameConfiguration game = new GameConfiguration();
@@ -28,6 +37,12 @@ public class ParserConfigurations {
         game.setNumberOfPeriods(gameConf.get("numberOfPeriods").getAsInt());
         return game;
     }
+
+    /**
+     * Method that sets BoardConfiguration attributes, parsing from Json.
+     * @return A BoardConfiguration object.
+     * @throws IOException
+     */
     public BoardConfiguration parseBoardConfiguration() throws IOException {
         JsonObject boardConf = settings.extractJsonObject("GameConfiguration.json");
         BoardConfiguration boardConfiguration = new BoardConfiguration();
@@ -39,6 +54,11 @@ public class ParserConfigurations {
         return boardConfiguration;
     }
 
+    /**
+     * Method that sets CouncilePrivilege attributes, parsing from Json.
+     * @return
+     * @throws IOException
+     */
     public CouncilePrivilege parseCouncilePrivilege() throws IOException {
         JsonObject councileConf = settings.extractJsonObject("GameConfiguration.json");
         Gson gson = new Gson();

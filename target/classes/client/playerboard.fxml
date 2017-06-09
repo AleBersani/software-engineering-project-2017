@@ -129,19 +129,7 @@
         </Tab>
 
         <Tab text="Leaders">
-<<<<<<< HEAD
             <HBox prefHeight="400.0" prefWidth="600.0" spacing="20" alignment="CENTER">
-
-
-                        <ImageView fx:id="led1" preserveRatio="true" fitHeight="250" fitWidth="158" >
-=======
-            <BorderPane prefHeight="400.0" prefWidth="600.0" >
-                <center>
-
-                        <ImageView fx:id="led1" preserveRatio="true" fitHeight="200" fitWidth="108">
->>>>>>> origin/master
-                            <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
-                        </ImageView>
                 <ImageView fx:id="led1" preserveRatio="true" fitHeight="250" fitWidth="158" >
                     <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
                 </ImageView>
@@ -151,12 +139,12 @@
                 <ImageView fx:id="led1" preserveRatio="true" fitHeight="250" fitWidth="158" >
                     <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
                 </ImageView>
-
-
+                <ImageView fx:id="led1" preserveRatio="true" fitHeight="250" fitWidth="158" >
+                    <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg"/>
+                </ImageView>
             </HBox>
-
-
         </Tab>
     </tabs>
+
 
 </TabPane>
