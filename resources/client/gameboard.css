@@ -1,0 +1,7 @@
+.prova {
+    -fx-border-color: aliceblue;
+}
+
+.prova:hover {
+    -fx-border-color: blueviolet;
+}

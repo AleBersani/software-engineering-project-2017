@@ -1,0 +1,417 @@
+{
+	"ExcommunicationTiles" : [
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.1",
+					"period": "1"
+				},
+			"name": "1.1",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["rewardsOnCard"]
+			},
+			"modifiers": ["malusRewards"],
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "1",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.2",
+					"period": "1"
+				},
+			"name": "1.2",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["rewardsOnCard"]
+			},
+			"modifiers": ["malusRewards"],
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "0",
+						"coins": "1"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.3",
+					"period": "1"
+				},
+			"name": "1.3",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["rewardsOnCard"]
+			},
+			"modifiers": ["malusRewards"],
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "0",
+						"servants": "1",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.4",
+					"period": "1"
+				},
+			"name": "1.4",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["rewardsOnCard"]
+			},
+			"modifiers": ["malusRewards", "malusRewards"],
+			"rewardsMalus": [
+				{
+					"resources": {
+						"woods": "1",
+						"stones": "0",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				},
+				{
+					"resources": {
+						"woods": "0",
+						"stones": "1",
+						"servants": "0",
+						"coins": "0"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			],
+			"actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.5",
+					"period": "1"
+				},
+			"name": "1.5",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": ["malusActionValue"],
+			"actionType": ["HARVEST"],
+			"malusActionValue": "3"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.6",
+					"period": "1"
+				},
+			"name": "1.6",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": ["malusActionValue"],
+			"actionType": ["PRODUCTION"],
+			"malusActionValue": "3"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "1.7",
+					"period": "1"
+				},
+			"name": "1.7",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": ["malusColouredPawns"],
+			"pawnColor": ["orange", "white", "black"],
+			"actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"],
+			"malusActionValue": "1"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.1",
+					"period": "2"
+				},
+			"name": "2.1",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": ["malusActionValue"],
+			"actionType": ["GREEN_TOWER"],
+			"malusActionValue": "4"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.2",
+					"period": "2"
+				},
+			"name": "2.2",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": ["malusActionValue"],
+			"actionType": ["YELLOW_TOWER"],
+			"malusActionValue": "4"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.3",
+					"period": "2"
+				},
+			"name": "2.3",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": ["malusActionValue"],
+			"actionType": ["BLUE_TOWER"],
+			"malusActionValue": "4"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.4",
+					"period": "2"
+				},
+			"name": "2.4",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": ["malusActionValue"],
+			"actionType": ["PURPLE_TOWER"],
+			"malusActionValue": "4"
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.5",
+					"period": "2"
+				},
+			"name": "2.5",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": ["noMarketPlacement"],
+			"actionType": ["MARKET"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.6",
+					"period": "2"
+				},
+			"name": "2.6",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": ["doubleServants"],
+			"actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "2.7",
+					"period": "2"
+				},
+			"name": "2.7",
+			"additionalInfoFlash": {
+				"onChoice": [],
+				"notChoosable": []
+			},
+			"additionalInfoPermanent": {
+				"onChoice": [],
+				"notChoosable": ["requirementsOnCard"]
+			},
+			"modifiers": []
+		}
+	],
+	"ExcommunicationTilesThirdPeriod": [
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.1",
+					"period": "3"
+				},
+			"name": "3.1",
+			"modifiers": ["noCharacterCardsEndRewards"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.2",
+					"period": "3"
+				},
+			"name": "3.2",
+			"modifiers": ["noVentureCardsEndRewards"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.3",
+					"period": "3"
+				},
+			"name": "3.3",
+			"modifiers": ["noTerritoryCardsEndRewards"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.4",
+					"period": "3"
+				},
+			"name": "3.4",
+			"modifiers": ["lessVictoryBasedOnVictory"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.5",
+					"period": "3"
+				},
+			"name": "3.5",
+			"modifiers": ["lessVictoryBasedOnMilitary"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.6",
+					"period": "3"
+				},
+			"name": "3.6",
+			"modifiers": ["lessVictoryBasedOnBuildingsCosts"]
+		},
+		{
+			"excommunicationTileDetails":
+				{
+					"ExcommunicationTileName": "3.7",
+					"period": "3"
+				},
+			"name": "3.7",
+			"modifiers": ["lessVictoryForResources"],
+			"noEndGameVictoryPointsCard": "",
+			"endGameGoodsForMinusVictoryPoint": [
+				{
+					"resources": {
+						"woods": "1",
+						"stones": "1",
+						"servants": "1",
+						"coins": "1"
+					},
+					"points": {
+						"victory": "0",
+						"military": "0",
+						"faith": "0"
+					}
+				}
+			]
+		}
+	]
+}
