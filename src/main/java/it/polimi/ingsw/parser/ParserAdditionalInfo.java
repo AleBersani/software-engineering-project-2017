@@ -2,7 +2,6 @@ package it.polimi.ingsw.parser;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
@@ -14,7 +13,6 @@ import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.*;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -131,7 +129,7 @@ public class ParserAdditionalInfo {
         JsonObject card;
         Map<String, EndGameRewardsModifier> thirdPeriodExcommunication = new HashMap<>();
 
-        JsonObject obj = settings.extractJsonObject("ExcommunicationTiles.json");
+        JsonObject obj = settings.extractJsonObject(jsonName);
         JsonArray cards = obj.get("ExcommunicationTilesThirdPeriod").getAsJsonArray();
         for (int index=0; index<cards.size(); index++) {
             card = cards.get(index).getAsJsonObject();
@@ -194,8 +192,9 @@ public class ParserAdditionalInfo {
                 case "multipleProduction": parsedAddInfo.add(parseMultipleProduction(card, name)); break;
                 case "requirementsOnCard": parsedAddInfo.add(parseRequirementsOnCard(card, name)); break;
                 case "rewardsOnCard": parsedAddInfo.add(parseRewardsOnCard(card, name)); break;
-                case "goodsBasedOnPossessions": parsedAddInfo.add(parseGoodsBasedOnPossessions(card, name));
+                case "goodsBasedOnPossessions": parsedAddInfo.add(parseGoodsBasedOnPossessions(card, name)); break;
                 case "cardFlashExchangingGoods": parsedAddInfo.add(parseCardFlashExchangingGoods(card, name)); break;
+                default: break;
             }
         }
         return parsedAddInfo;

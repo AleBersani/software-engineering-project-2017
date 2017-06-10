@@ -15,7 +15,6 @@ import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,7 +50,6 @@ public class ParserCards {
         JsonObject devCards = settings.extractJsonObject("DevelopmentCards.json");
         JsonArray cards = devCards.get("building").getAsJsonArray();
         List<Building> buildings = parseBuildings(cards);
-        //buildings.forEach((Building s) -> System.out.println(s.toString() + "\n"));
         return buildings;
     }
 

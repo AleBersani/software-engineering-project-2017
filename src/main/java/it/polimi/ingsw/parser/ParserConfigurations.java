@@ -5,7 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import it.polimi.ingsw.gamelogic.basics.BoardConfiguration;
-import it.polimi.ingsw.gamelogic.basics.CouncilePrivilege;
+import it.polimi.ingsw.gamelogic.basics.CouncilPrivilege;
 import it.polimi.ingsw.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 
@@ -28,14 +28,12 @@ public class ParserConfigurations {
      * @return A GameConfiguration object.
      * @throws IOException
      */
-    public GameConfiguration parseGameConfiguration() throws IOException {
+    public void parseGameConfiguration() throws IOException {
         JsonObject gameConf = settings.extractJsonObject("GameConfiguration.json");
-        GameConfiguration game = new GameConfiguration();
-        game.setMaxNumberOfPlayer(gameConf.get("maxNumberOfPlayer").getAsInt());
-        game.setMoveTimeout(gameConf.get("moveTimeout").getAsInt());
-        game.setStartingGameTimeout(gameConf.get("startingGameTimeout").getAsInt());
-        game.setNumberOfPeriods(gameConf.get("numberOfPeriods").getAsInt());
-        return game;
+        GameConfiguration.setMaxNumberOfPlayer(gameConf.get("maxNumberOfPlayer").getAsInt());
+        GameConfiguration.setMoveTimeout(gameConf.get("moveTimeout").getAsInt());
+        GameConfiguration.setStartingGameTimeout(gameConf.get("startingGameTimeout").getAsInt());
+        GameConfiguration.setNumberOfPeriods(gameConf.get("numberOfPeriods").getAsInt());
     }
 
     /**
@@ -43,15 +41,13 @@ public class ParserConfigurations {
      * @return A BoardConfiguration object.
      * @throws IOException
      */
-    public BoardConfiguration parseBoardConfiguration() throws IOException {
+    public void parseBoardConfiguration() throws IOException {
         JsonObject boardConf = settings.extractJsonObject("GameConfiguration.json");
-        BoardConfiguration boardConfiguration = new BoardConfiguration();
-        boardConfiguration.setMaxFaithPoints(boardConf.get("maxFaithPoints").getAsInt());
-        boardConfiguration.setMaxMilitaryPoints(boardConf.get("maxMilitaryPoints").getAsInt());
-        boardConfiguration.setNumberOfDices(boardConf.get("numberOfDices").getAsInt());
-        boardConfiguration.setNumberOfSlotsForTowers(boardConf.get("numberOfSlotsForTowers").getAsInt());
-        boardConfiguration.setNumberOfTowers(boardConf.get("numberOfTowers").getAsInt());
-        return boardConfiguration;
+        BoardConfiguration.setMaxFaithPoints(boardConf.get("maxFaithPoints").getAsInt());
+        BoardConfiguration.setMaxMilitaryPoints(boardConf.get("maxMilitaryPoints").getAsInt());
+        BoardConfiguration.setNumberOfDices(boardConf.get("numberOfDices").getAsInt());
+        BoardConfiguration.setNumberOfSlotsForTowers(boardConf.get("numberOfSlotsForTowers").getAsInt());
+        BoardConfiguration.setNumberOfTowers(boardConf.get("numberOfTowers").getAsInt());
     }
 
     /**
@@ -59,13 +55,11 @@ public class ParserConfigurations {
      * @return
      * @throws IOException
      */
-    public CouncilePrivilege parseCouncilePrivilege() throws IOException {
+    public void parseCouncilePrivilege() throws IOException {
         JsonObject councileConf = settings.extractJsonObject("GameConfiguration.json");
         Gson gson = new Gson();
-        CouncilePrivilege councilePrivilege = new CouncilePrivilege();
         JsonArray choices = councileConf.get("possibleChoices").getAsJsonArray();
         List<Goods> possibleChoices = gson.fromJson(choices, new TypeToken<ArrayList<Goods>>(){}.getType());
-        councilePrivilege.setPossibleChoices(possibleChoices);
-        return councilePrivilege;
+        CouncilPrivilege.setPossibleChoices(possibleChoices);
     }
 }
