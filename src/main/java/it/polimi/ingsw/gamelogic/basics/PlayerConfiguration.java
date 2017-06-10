@@ -13,6 +13,10 @@ public final class PlayerConfiguration {
     private static int numberOfPawns;
     private static Map<Integer, Points> requiredPointsForTerritories;
 
+    private PlayerConfiguration() {
+        throw new IllegalAccessError("Utility class");
+    }
+
     public static int getNumberOfLeaders() {
         return numberOfLeaders;
     }

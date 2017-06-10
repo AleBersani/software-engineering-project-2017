@@ -3,6 +3,8 @@ package it.polimi.ingsw.gamelogic.modifiers.rewards;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 
+import java.util.Objects;
+
 /**
  * Class that describes the basic type of rewards
  */
@@ -28,6 +30,26 @@ public class BasicRewards {
         this.additionalRewards = additionalRewards;
         rewardsCopy = rewards;
         bonusAndMalus = new Goods();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        BasicRewards that = (BasicRewards) o;
+        return getActionType() == that.getActionType() &&
+                Objects.equals(getRewards(), that.getRewards()) &&
+                Objects.equals(getAdditionalRewards(), that.getAdditionalRewards()) &&
+                Objects.equals(getRewardsCopy(), that.getRewardsCopy()) &&
+                Objects.equals(getBonusAndMalus(), that.getBonusAndMalus());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getActionType(), getRewards(), getAdditionalRewards(),
+                getRewardsCopy(), getBonusAndMalus());
     }
 
     /**

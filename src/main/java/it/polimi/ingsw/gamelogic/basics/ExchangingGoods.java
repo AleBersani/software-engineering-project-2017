@@ -1,6 +1,7 @@
 package it.polimi.ingsw.gamelogic.basics;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Composition with Class Goods, it contains the number of Council's privileges.
@@ -81,19 +82,14 @@ public class ExchangingGoods {
             return true;
         if (o == null || getClass() != o.getClass())
             return false;
-
         ExchangingGoods that = (ExchangingGoods) o;
-
-        if (getNumberOfCouncilPrivilege() != that.getNumberOfCouncilPrivilege())
-            return false;
-        return getGoods().equals(that.getGoods());
+        return getNumberOfCouncilPrivilege() == that.getNumberOfCouncilPrivilege() &&
+                Objects.equals(getGoods(), that.getGoods());
     }
 
     @Override
     public int hashCode() {
-        int result = getGoods().hashCode();
-        result = 31 * result + getNumberOfCouncilPrivilege();
-        return result;
+        return Objects.hash(getGoods(), getNumberOfCouncilPrivilege());
     }
 
     /**
@@ -101,7 +97,7 @@ public class ExchangingGoods {
      * @param chosenGoods list of Goods converted, length must be equals to numberOfCouncilPrivileges
      * @return converted Goods object
      */
-    public Goods exchangeCouncilsPrivileges(List<Goods> chosenGoods) throws IllegalArgumentException {
+    public Goods exchangeCouncilsPrivileges(List<Goods> chosenGoods) {
         if (chosenGoods.size() != numberOfCouncilPrivilege)
             throw new IllegalArgumentException("List size different from number of Council's Privileges");
         Goods convertedGoods = new Goods(goods.getResources(), goods.getPoints());

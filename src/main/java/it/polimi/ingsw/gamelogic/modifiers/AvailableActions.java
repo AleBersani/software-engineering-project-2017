@@ -4,6 +4,7 @@ import it.polimi.ingsw.gamelogic.enums.ActionType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that describes the available actions in a given situation
@@ -22,6 +23,21 @@ public class AvailableActions {
 
     public AvailableActions(List<ActionType> actionTypes) {
         this.actionTypes = actionTypes;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        AvailableActions that = (AvailableActions) o;
+        return Objects.equals(getActionTypes(), that.getActionTypes());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getActionTypes());
     }
 
     /**

@@ -7,6 +7,8 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
 
+import java.util.Objects;
+
 /**
  * Class that represents an additional value for just one of the player's pawn
  */
@@ -18,6 +20,24 @@ public class BonusPawnValue extends RequirementsModifier {
         super(availableActions);
         this.pawnColor = pawnColor;
         this.bonusPawnValue = bonusPawnValue;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        if (!super.equals(o))
+            return false;
+        BonusPawnValue that = (BonusPawnValue) o;
+        return bonusPawnValue == that.bonusPawnValue &&
+                pawnColor == that.pawnColor;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), pawnColor, bonusPawnValue);
     }
 
     @Override

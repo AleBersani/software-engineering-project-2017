@@ -2,6 +2,8 @@ package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.enums.PawnColor;
 
+import java.util.Objects;
+
 /**
  * Class that describes each player's pawn
  */
@@ -21,21 +23,17 @@ public class Pawn {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (!(o instanceof Pawn))
+        if (o == null || getClass() != o.getClass())
             return false;
-
         Pawn pawn = (Pawn) o;
-
-        if (getValue() != pawn.getValue())
-            return false;
-        return getPawnColor() == pawn.getPawnColor();
+        return getValue() == pawn.getValue() &&
+                isPlacedOnBoard() == pawn.isPlacedOnBoard() &&
+                getPawnColor() == pawn.getPawnColor();
     }
 
     @Override
     public int hashCode() {
-        int result = getValue();
-        result = 31 * result + getPawnColor().hashCode();
-        return result;
+        return Objects.hash(getValue(), getPawnColor(), isPlacedOnBoard());
     }
 
     public int getValue() {

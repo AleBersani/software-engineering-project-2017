@@ -4,6 +4,8 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
 
+import java.util.Objects;
+
 /**
  * CLass that describes an effect that reduces the Player's Goods
  */
@@ -13,6 +15,23 @@ public class MalusRewards extends RewardsModifier {
     public MalusRewards(AvailableActions availableActions, Goods malus) {
         super(availableActions);
         this.malus = malus;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        if (!super.equals(o))
+            return false;
+        MalusRewards that = (MalusRewards) o;
+        return Objects.equals(malus, that.malus);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), malus);
     }
 
     @Override

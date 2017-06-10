@@ -10,6 +10,10 @@ public final class GameConfiguration {
     private static int moveTimeout;
     private static int numberOfPeriods;
 
+    private GameConfiguration() {
+        throw new IllegalAccessError("Utility class");
+    }
+
     public static int getMaxNumberOfPlayer() {
         return maxNumberOfPlayer;
     }

@@ -2,7 +2,6 @@ package it.polimi.ingsw.parser;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
@@ -14,14 +13,15 @@ import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.*;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-
+/**
+ * Class that contains methods necessary to parse additional info of cards useful to Server Controller.
+ */
 public class ParserAdditionalInfo {
     private ParserSettings settings;
 
@@ -29,6 +29,16 @@ public class ParserAdditionalInfo {
         settings = new ParserSettings();
     }
 
+    /**
+     * This method modifies four maps passed as parameters parsing from Json files. Each map has as keys
+     * a String (name of a card) and as value a List of AdditionalCardInfo.
+     * and
+     * @param flashOnChoice
+     * @param flashNotChoosable
+     * @param permanentOnChoice
+     * @param permanentNotChoosable
+     * @throws Exception
+     */
     public void parseMapsAdditionalInfo(Map<String, List<AdditionalCardInfo>> flashOnChoice,
                                         Map<String, List<AdditionalCardInfo>> flashNotChoosable,
                                         Map<String, List<AdditionalCardInfo>> permanentOnChoice,
@@ -43,11 +53,12 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO JAVADOC
+     * This method is called in order to modify two maps related to a certain category of AdditionalCardInfo, parsing
+     * from Development Cards Json file.
      * @param parsedAddOnChoice
      * @param parsedAddNotChoosable
-     * @param additionalInfoCategory
-     * @throws IOException
+     * @param additionalInfoCategory A String that indicates the category of AdditionalCardInfo to parse from Json file.
+     * @throws Exception Can be thrown by settings.extractJsonObject method and parseSingleListAddInfo method.
      */
     public void parseCategoryDevCards(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
                                        Map<String, List<AdditionalCardInfo>> parsedAddNotChoosable,
@@ -74,6 +85,14 @@ public class ParserAdditionalInfo {
         }
     }
 
+    /**
+     * This method is called in order to modify two maps related to a certain category of AdditionalCardInfo, parsing
+     * from LeaderCards and ExcommunicationTiles Json files.
+     * @param parsedAddOnChoice
+     * @param parsedAddNotChoosable
+     * @param additionalInfoCategory A String that indicates the category of AdditionalCardInfo to parse from Json file.
+     * @throws Exception Can be thrown by settings.extractJsonObject method and parseSingleListAddInfo method.
+     */
     public void parseCategoryOthers(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
                                 Map<String, List<AdditionalCardInfo>> parsedAddNotChoosable,
                                 String additionalInfoCategory) throws Exception {
@@ -99,12 +118,18 @@ public class ParserAdditionalInfo {
         }
     }
 
+    /**
+     * This method parses from ExcommunicationTiles Json file a map describing the Excommunication Tiles of third
+     * period (managed in a different way than other cards).
+     * @return Map that couples a String (name of the card) and its related EndGameRewardsModifier.
+     * @throws Exception Can be thrown by settings.extractJsonObject, getName or parseEndGameRewardsModifier methods.
+     */
     public Map<String, EndGameRewardsModifier> parseThirdPeriodExcommunicationsMap() throws Exception {
         String name, jsonName = "ExcommunicationTiles.json";
         JsonObject card;
         Map<String, EndGameRewardsModifier> thirdPeriodExcommunication = new HashMap<>();
 
-        JsonObject obj = settings.extractJsonObject("ExcommunicationTiles.json");
+        JsonObject obj = settings.extractJsonObject(jsonName);
         JsonArray cards = obj.get("ExcommunicationTilesThirdPeriod").getAsJsonArray();
         for (int index=0; index<cards.size(); index++) {
             card = cards.get(index).getAsJsonObject();
@@ -114,9 +139,17 @@ public class ParserAdditionalInfo {
         return thirdPeriodExcommunication;
     }
 
+    /**
+     * This method parses from ExcommunicationTile Json file a String that is compared to the key of a map
+     * that return a new instantiated object (depending on the String).
+     * @param card
+     * @return An EndGameRewardsModifier object.
+     * @throws Exception Can be thrown by the use of Callable's call method.
+     */
     private EndGameRewardsModifier parseEndGameRewardsModifier(JsonObject card) throws Exception {
         Gson gson = new Gson();
         Map<String, Callable<EndGameRewardsModifier>> commands = new HashMap<>();
+
         commands.put("lessVictoryBasedOnBuildingsCosts", () ->new LessVictoryBasedOnBuildingsCosts());
         commands.put("lessVictoryBasedOnMilitary", () ->new LessVictoryBasedOnMilitary());
         commands.put("lessVictoryBasedOnVictory", () ->new LessVictoryBasedOnVictory());
@@ -124,12 +157,23 @@ public class ParserAdditionalInfo {
         commands.put("noCharacterCardsEndRewards", () ->new NoCharacterCardsEndRewards());
         commands.put("noTerritoryCardsEndRewards", () ->new NoTerritoryCardsEndRewards());
         commands.put("noVentureCardsEndRewards", () ->new NoVentureCardsEndRewards());
-        List<String> modifiers = gson.fromJson(card.get("modifiers").getAsJsonArray(), new TypeToken<ArrayList<String>>(){}.getType());
+        List<String> modifiers = gson.fromJson(card.get("modifiers").getAsJsonArray(),
+                                                new TypeToken<ArrayList<String>>(){}.getType());
         EndGameRewardsModifier obj = commands.get(modifiers.get(0)).call();
         return obj;
     }
 
-
+    /**
+     * This method parses from a generic Json file a List of AdditionalCardInfo (related to a certain card)
+     * by comparing a List of String from Json with the keys of a map that return a new instantiated
+     * object (depending on the String).
+     * @param addInfoCategory
+     * @param addInfoType
+     * @param card
+     * @param jsonName
+     * @return A List of AdditionalCardInfo.
+     * @throws Exception
+     */
     private List<AdditionalCardInfo> parseSingleListAddInfo(String addInfoCategory, String addInfoType,
                                                             JsonObject card, String jsonName) throws Exception {
         int actionTypeIndex=0;
@@ -148,26 +192,26 @@ public class ParserAdditionalInfo {
                 case "multipleProduction": parsedAddInfo.add(parseMultipleProduction(card, name)); break;
                 case "requirementsOnCard": parsedAddInfo.add(parseRequirementsOnCard(card, name)); break;
                 case "rewardsOnCard": parsedAddInfo.add(parseRewardsOnCard(card, name)); break;
-                case "goodsBasedOnPossessions": parsedAddInfo.add(parseGoodsBasedOnPossessions(card, name));
+                case "goodsBasedOnPossessions": parsedAddInfo.add(parseGoodsBasedOnPossessions(card, name)); break;
                 case "cardFlashExchangingGoods": parsedAddInfo.add(parseCardFlashExchangingGoods(card, name)); break;
+                default: break;
             }
         }
         return parsedAddInfo;
-
     }
 
-
-
-
     /**
-     * TODO all
+     * This method returns a new instantiated CardFlashAction object, retrieving necessary elements from Json file
+     * for the instantiation.
      * @param card
      * @param name
      * @param actionTypeIndex
+     * @return An AdditionalCardInfo object (Dynamic type CardFlashAction)
      */
     private AdditionalCardInfo parseCardFlashAction(JsonObject card,
                                                     String name, int actionTypeIndex) {
         Gson gson = new Gson();
+
         String actionType = card.get("actionType").getAsJsonArray().get(actionTypeIndex).getAsString();
         ActionType parsedActionType = parseActionType(actionType);
         int actionValue = card.get("actionValue").getAsInt();
@@ -177,9 +221,11 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO all
+     * This method returns a new instantiated ConditionalProduction object, retrieving necessary elements from Json file
+     * for the instantiation.
      * @param card
      * @param name
+     * @return An AdditionalCardInfo object (Dynamic type ConditionalProduction)
      */
     private AdditionalCardInfo parseConditionalProduction(JsonObject card, String name) {
         GeneralColor cardColor = parseGeneralColorEnum(card.get("cardColor").getAsString());
@@ -188,10 +234,11 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO javadoc
+     * This method returns a new instantiated GoodsBasedOnPossessions object, retrieving necessary elements from Json file
+     * for the instantiation.
      * @param card
      * @param name
-     * @return
+     * @return An AdditionalCardInfo object (Dynamic type GoodsBasedOnPossessions)
      */
     private AdditionalCardInfo parseGoodsBasedOnPossessions(JsonObject card, String name) {
         Gson gson = new Gson();
@@ -204,9 +251,11 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO all
+     * This method returns a new instantiated MultipleProduction object, retrieving necessary elements from Json file
+     * for the instantiation.
      * @param card
      * @param name
+     * @return An AdditionalCardInfo object (Dynamic type MultipleProduction)
      */
     private AdditionalCardInfo parseMultipleProduction(JsonObject card, String name) {
         Gson gson = new Gson();
@@ -220,9 +269,11 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO all
+     * This method returns a new instantiated RequirementsOnCard object, retrieving necessary elements from Json file
+     * for the instantiation.
      * @param card
      * @param name
+     * @return An AdditionalCardInfo object (Dynamic type RequirementsOnCard)
      */
     private AdditionalCardInfo parseRequirementsOnCard(JsonObject card, String name) throws Exception {
         Gson gson = new Gson();
@@ -235,9 +286,11 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO all
+     * This method returns a new instantiated RewardsOnCard object, retrieving necessary elements from Json file
+     * for the instantiation.
      * @param card
      * @param name
+     * @return An AdditionalCardInfo object (Dynamic type RewardsOnCard)
      */
     private AdditionalCardInfo parseRewardsOnCard(JsonObject card, String name) throws Exception {
         Gson gson = new Gson();
@@ -250,10 +303,11 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO CHANGE INSTANTGOODS NAME FROM JSON AND IN THE REMAINING PARSING METHODS IN CONSUMABLEGOODS
-     * TODO CARDINFORMATIONS IN OTHER JSON?
+     * This method returns a new instantiated CardFlashExchangingGoods object, retrieving necessary elements from Json file
+     * for the instantiation.
      * @param card
      * @param name
+     * @return An AdditionalCardInfo object (Dynamic type CardFlashExchangingGoods)
      */
     private AdditionalCardInfo parseCardFlashExchangingGoods(JsonObject card, String name) {
         Gson gson = new Gson();
@@ -263,6 +317,11 @@ public class ParserAdditionalInfo {
         return object;
     }
 
+    /**
+     * Auxiliary method that receives a String as parameter and returns a particular ActionType enum property.
+     * @param actionType
+     * @return ActionType enum property
+     */
     private ActionType parseActionType(String actionType) {
         Map<String, ActionType> valuesToReturn = new HashMap<>();
         valuesToReturn.put ("GREEN_TOWER", ActionType.GREEN_TOWER);
@@ -278,7 +337,7 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * Private method that sets during parsing, GeneralColor Enum attributes.
+     * Auxiliary method that receives a String as parameter and returns a particular GeneralColor enum property.
      * @param cardColor
      * @return
      */
@@ -293,11 +352,11 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO JAVADOC
+     * Auxiliary method that depending on Json file type that is currently parsing, returns the String name of a card.
      * @param card
      * @param jsonName
-     * @return
-     * @throws Exception
+     * @return A String that describe a card's name.
+     * @throws Exception Can be thrown by the call Callable's method.
      */
     private String getName(JsonObject card, String jsonName) throws Exception {
         Map<String, Callable<String>> commands = new HashMap<>();
@@ -306,8 +365,9 @@ public class ParserAdditionalInfo {
         commands.put("ExcommunicationTiles.json", ()->getExcommunicationName(card));
         return commands.get(jsonName).call();
     }
+
     /**
-     * TODO JAVADOC
+     * This method returns a String name of a DevelopmentCard.
      * @param card
      * @return
      */
@@ -317,7 +377,7 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     *TODO JAVADOC
+     * This method returns a String name of a LeaderCard.
      * @param card
      * @return
      */
@@ -327,7 +387,7 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO JAVADOC
+     * This method returns a String name of a ExcommunicationTile.
      * @param card
      * @return
      */
@@ -337,7 +397,7 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO JAVADOC
+     * This method parses a List of Strings describing the type of AdditionalCardInfo associated to a certain field.
      * @param addInfoList
      * @param field
      * @return
@@ -353,44 +413,16 @@ public class ParserAdditionalInfo {
     }
 
     /**
-     * TODO JAVADOC
+     * This method is used to add a new Key-Value association on a map, verifying that a certain parsed List of
+     * AdditionalCardInfo is empty before adding.
      * @param name
      * @param parsedAddInfo
      * @param mapToModify
      */
     private void addToMap(String name, List<AdditionalCardInfo> parsedAddInfo,
                           Map<String, List<AdditionalCardInfo>> mapToModify) {
-        if(parsedAddInfo.size()>0)
+        if(!parsedAddInfo.isEmpty())
             mapToModify.put(name, parsedAddInfo);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*private void parseTerritoryAddInfo(Map<String, List<AdditionalCardInfo>> parsedAdditionalInfoMap, JsonArray territory) {
-        JsonObject card;
-        String name;
-        for(int index=0; index<territory.size(); index++){
-            card = territory.get(index).getAsJsonObject();
-            name = card.get("cardInformations").getAsJsonArray().get(0).getAsJsonObject().get("name").getAsString();
-            List<AdditionalCardInfo> addInfoList = new ArrayList<>();
-            parseListAddInfo(addInfoList, card, "", name);
-        }
-    }*/
 }

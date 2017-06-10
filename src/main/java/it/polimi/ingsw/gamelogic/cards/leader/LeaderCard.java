@@ -3,6 +3,7 @@ package it.polimi.ingsw.gamelogic.cards.leader;
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that describes the Leader cards in general, with basic information, a cost defined as Leader Cost,
@@ -19,6 +20,24 @@ public class LeaderCard {
         this.leaderCosts = leaderCosts;
         placedOnBoard = false;
         playable = true;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        LeaderCard that = (LeaderCard) o;
+        return isPlacedOnBoard() == that.isPlacedOnBoard() &&
+                isPlayable() == that.isPlayable() &&
+                Objects.equals(getLeaderInformation(), that.getLeaderInformation()) &&
+                Objects.equals(getLeaderCosts(), that.getLeaderCosts());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getLeaderInformation(), getLeaderCosts(), isPlacedOnBoard(), isPlayable());
     }
 
     public String getLeaderName() {

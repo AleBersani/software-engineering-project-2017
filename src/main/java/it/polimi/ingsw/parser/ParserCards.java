@@ -21,6 +21,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Class that contains methods for parsing every type of Cards.
+ */
 public class ParserCards {
     private ParserSettings settings;
 
@@ -29,33 +32,30 @@ public class ParserCards {
     }
 
     /**
-     * Method that parses Territory Development Cards from Json.
-     * @throws IOException
+     * Method that invokes an auxiliary method that parses Territory Development Cards from Json.
+     * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<Territory> completeParseTerritory() throws IOException {
         JsonObject devCards = settings.extractJsonObject("DevelopmentCards.json");
         JsonArray cards = devCards.get("territory").getAsJsonArray();
-
         List<Territory> territories = parseTerritories(cards);
-        //territories.forEach((Territory s) -> System.out.print(s.toString() + "\n"));
         return territories;
     }
 
     /**
-     * Method that parses Building Development Cards from Json
-     * @throws IOException
+     * Method that invokes an auxiliary method that parses Building Development Cards from Json.
+     * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<Building> completeParseBuilding() throws IOException {
         JsonObject devCards = settings.extractJsonObject("DevelopmentCards.json");
         JsonArray cards = devCards.get("building").getAsJsonArray();
         List<Building> buildings = parseBuildings(cards);
-        //buildings.forEach((Building s) -> System.out.println(s.toString() + "\n"));
         return buildings;
     }
 
     /**
-     * Method that parses Character Development Cards from Json
-     * @throws IOException
+     * Method that invokes an auxiliary method that parses Character Development Cards from Json.
+     * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<Character> completeParseCharacter() throws IOException {
         JsonObject devCards = settings.extractJsonObject("DevelopmentCards.json");
@@ -65,8 +65,8 @@ public class ParserCards {
     }
 
     /**
-     * Method that parses Venture Development Cards from Json
-     * @throws IOException
+     * Method that parses Venture Development Cards from Json.
+     * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<Venture> completeParseVenture() throws IOException {
         JsonObject devCards = settings.extractJsonObject("DevelopmentCards.json");
@@ -76,9 +76,9 @@ public class ParserCards {
     }
 
     /**
-     * TODO: Javadoc
+     * Method that invokes an auxiliary method that parses Excommunication Tile from Json.
      * @return
-     * @throws IOException
+     * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<ExcommunicationTile> completeParseExcommunicationTiles() throws IOException {
 
@@ -89,9 +89,9 @@ public class ParserCards {
     }
 
     /**
-     * TODO Javadoc
+     * Method that invokes an auxiliary method that parses Leader Cards from Json.
      * @return
-     * @throws IOException
+     * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<LeaderCard> completeParseLeaderCards() throws IOException {
         JsonObject object = settings.extractJsonObject("LeaderCards.json");
@@ -100,12 +100,10 @@ public class ParserCards {
         return parsedLeaderCards;
     }
 
-    /**PRIVATE METHODS**/
-
     /**
-     * TODO JAVADOC
-     * @param cards
-     * @return
+     * Auxiliary method that parses Territory Development Cards and returns a list of Territory cards.
+     * @param cards JsonArray containing all cards to parse
+     * @return A List of Territory Cards.
      */
     private List<Territory> parseTerritories(JsonArray cards) {
         List<Territory> territories = new ArrayList<>();
@@ -120,9 +118,9 @@ public class ParserCards {
     }
 
     /**
-     * TODO JAVADOC
-     * @param cards
-     * @return
+     * Auxiliary method that parses Building Development Cards and returns a list of Building cards.
+     * @param cards JsonArray containing all cards to parse
+     * @return A List of Building Cards.
      */
     private List<Building> parseBuildings(JsonArray cards) {
         List<Building> buildings = new ArrayList<>();
@@ -137,9 +135,9 @@ public class ParserCards {
     }
 
     /**
-     * TODO JAVADOC
-     * @param cards
-     * @return
+     * Auxiliary method that parses Character Development Cards and returns a list of Character cards.
+     * @param cards JsonArray containing all cards to parse
+     * @return A List of Character Cards.
      */
     private List<Character> parseCharacters(JsonArray cards) {
         List<Character> characters = new ArrayList<>();
@@ -152,9 +150,9 @@ public class ParserCards {
     }
 
     /**
-     * TODO JAVADOC
-     * @param cards
-     * @return
+     * Auxiliary method that parses Venture Development Cards and returns a list of Venture cards.
+     * @param cards JsonArray containing all cards to parse
+     * @return A List of Venture Cards.
      */
     private List<Venture> parseVentures(JsonArray cards) {
         List<Venture> ventures = new ArrayList<>();
@@ -172,7 +170,7 @@ public class ParserCards {
 
     /**
      * Private method used for Development Cards parsing,
-     * that parses a DevelopmentCard Object from a JsonObject
+     * that parses a BasicDevelopmentCard Object from a JsonObject.
      * @param card JsonObject from which method gets a specific value.
      * @return DevelopmentCard Object containing cardInformation, cost and instantEffect set in Json file.
      */
@@ -181,7 +179,6 @@ public class ParserCards {
         CardInformation cardInfo = parseCardInformation(card);
         JsonArray cost = card.get("cost").getAsJsonArray();
         List<Goods> costs = gson.fromJson(cost, new TypeToken<ArrayList<Goods>>(){}.getType());
-
         return new BasicDevelopmentCard(cardInfo, costs);
     }
 
@@ -192,10 +189,11 @@ public class ParserCards {
      */
     private ExchangingGoods parseExchangingGoods(JsonObject card, String fieldName) {
         Gson gson = new Gson();
-        JsonArray exchangingGoods = card.get(fieldName).getAsJsonArray();
-        ExchangingGoods parsedExchangingGoods = gson.fromJson(exchangingGoods.get(0).getAsJsonObject(),
-                ExchangingGoods.class);
-
+        JsonObject exchangingGoods = card.get(fieldName).getAsJsonArray().get(0).getAsJsonObject();
+        Resources resources = gson.fromJson(exchangingGoods.get("resources").getAsJsonObject(), Resources.class);
+        Points points = gson.fromJson(exchangingGoods.get("points").getAsJsonObject(), Points.class);
+        int councilPrivilege = exchangingGoods.get("councilePrivilege").getAsInt();
+        ExchangingGoods parsedExchangingGoods = new ExchangingGoods(resources, points, councilPrivilege);
         return parsedExchangingGoods;
     }
 
@@ -212,9 +210,7 @@ public class ParserCards {
         int number = cardInfo.get("number").getAsInt();
         int period = cardInfo.get("period").getAsInt();
         String cardColor = cardInfo.get("cardColor").getAsString();
-        PeriodNumber periodNumber = decidePeriodEnum(period);
-        GeneralColor cardColorEnum = decideGeneralColorEnum(cardColor);
-        return new CardInformation(number, name, periodNumber, cardColorEnum);
+        return new CardInformation(number, name, decidePeriodEnum(period), decideGeneralColorEnum(cardColor));
     }
 
     /**
@@ -259,10 +255,8 @@ public class ParserCards {
         return new Goods(new Resources(), endGamePoints);
     }
 
-
-
     /**
-     * TODO JAVADOC
+     * Auxiliary method that parses Excommunication Tiles and returns a list of Excommunication Tiles.
      * @param cards
      * @return
      */
@@ -272,7 +266,7 @@ public class ParserCards {
         JsonObject excommunicationTile;
         for(int index=0; index<cards.size(); index++){
             card = cards.get(index).getAsJsonObject();
-            excommunicationTile = card.get("excommunicationDetails").getAsJsonObject();
+            excommunicationTile = card.get("excommunicationTileDetails").getAsJsonObject();
             ExcommunicationTile parsedExcommunicationTile = parseSingleExcommunicationTile(excommunicationTile);
             excommunicationTiles.add(parsedExcommunicationTile);
         }
@@ -280,20 +274,20 @@ public class ParserCards {
     }
 
     /**
-     * TODO JAVADOC
-     * @param excommunicationTile
-     * @return
+     * Auxiliary method used by the previous one that parses a single Excommunication Tile.
+     * @param excommunicationTileDetails JsonObject representing a single Excommunication Tile's information.
+     * @return A single ExcommunicationTile object.
      */
-    private ExcommunicationTile parseSingleExcommunicationTile(JsonObject excommunicationTile) {
-        String name = excommunicationTile.get("ExcommunicationTileName").getAsString();
-        PeriodNumber period = decidePeriodEnum(excommunicationTile.get("period").getAsInt());
+    private ExcommunicationTile parseSingleExcommunicationTile(JsonObject excommunicationTileDetails) {
+        String name = excommunicationTileDetails.get("ExcommunicationTileName").getAsString();
+        PeriodNumber period = decidePeriodEnum(excommunicationTileDetails.get("period").getAsInt());
         return new ExcommunicationTile(name, period);
     }
 
     /**
-     * TODO JAVADOC
-     * @param leaders
-     * @return
+     * Auxiliary method that parses Leader Cards and returns a list of Leader Cards.
+     * @param leaders JsonArray containing all LeaderCards' information.
+     * @return A List of LeaderCards
      */
     private List<LeaderCard> parseLeaderCards(JsonArray leaders) {
         List<LeaderCard> parsedLeaderCards = new ArrayList<>();
@@ -310,8 +304,9 @@ public class ParserCards {
     }
 
     /**
-     * TODO Javadoc
-     * @return
+     * Auxiliary method that parses a Leader Information object necessary to the instantiation of
+     * a LeaderCard Object.
+     * @return A LeaderInformation object.
      * @throws IOException
      */
     private LeaderInformation parseLeaderInformation(JsonObject card) {
@@ -320,7 +315,8 @@ public class ParserCards {
     }
 
     /**
-     * TODO Javadoc
+     * Auxiliary method that parses a Leader Category enum property necessary to the instantiation
+     * of a LeaderCard Object.
      * @return
      * @throws IOException
      * @param category
@@ -333,8 +329,8 @@ public class ParserCards {
     }
 
     /**
-     * TODO Javadoc
-     * @return
+     * Auxiliary method that parses a List of LeaderCost necessary to the instantiation of a LeaderCard Object.
+     * @return A List of LeaderCost.
      * @throws IOException
      */
     private List<LeaderCost> parseLeaderCosts(JsonArray leaderCosts) {
@@ -353,27 +349,27 @@ public class ParserCards {
     }
 
     /**
-     * TODO Javadoc
-     * @return
+     * Auxiliary method that parses a List of CardsRequired necessary to the instantiation of a LeaderCost Object.
+     * @return A List of CardsRequired
      * @throws IOException
      */
     private List<CardsRequired> parseCardsRequiredList(JsonObject cardsRequired) {
         List<CardsRequired> parsedCardsRequired = new ArrayList<>();
         if (cardsRequired.get("territories").getAsInt() != 0)
             parsedCardsRequired.add(new CardsRequired(cardsRequired.get("territories").getAsInt(), GeneralColor.GREEN));
-        else if (cardsRequired.get("characters").getAsInt() != 0)
-            parsedCardsRequired.add(new CardsRequired(cardsRequired.get("characters").getAsInt(), GeneralColor.BLUE));
-        else if (cardsRequired.get("buildings").getAsInt() != 0)
+        if (cardsRequired.get("buildings").getAsInt() != 0)
             parsedCardsRequired.add(new CardsRequired(cardsRequired.get("buildings").getAsInt(), GeneralColor.YELLOW));
-        else if (cardsRequired.get("ventures").getAsInt() != 0)
+        if (cardsRequired.get("characters").getAsInt() != 0)
+            parsedCardsRequired.add(new CardsRequired(cardsRequired.get("characters").getAsInt(), GeneralColor.BLUE));
+        if (cardsRequired.get("ventures").getAsInt() != 0)
             parsedCardsRequired.add(new CardsRequired(cardsRequired.get("ventures").getAsInt(), GeneralColor.PURPLE));
 
         return parsedCardsRequired;
     }
 
     /**
-     * TODO Javadoc
-     * @return
+     * Auxiliary method that parses a Goods object.
+     * @return A Goods object.
      * @throws IOException
      */
     private Goods parseGoods(JsonObject leaderCost) {

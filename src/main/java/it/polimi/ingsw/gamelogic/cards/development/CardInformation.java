@@ -3,6 +3,8 @@ package it.polimi.ingsw.gamelogic.cards.development;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
+import java.util.Objects;
+
 /**
  * Class that describes the basic information of each Development card
  */
@@ -17,6 +19,24 @@ public class CardInformation {
         this.name = name;
         this.period = period;
         this.cardColor = cardColor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        CardInformation that = (CardInformation) o;
+        return getNumber() == that.getNumber() &&
+                Objects.equals(getName(), that.getName()) &&
+                getPeriod() == that.getPeriod() &&
+                getCardColor() == that.getCardColor();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNumber(), getName(), getPeriod(), getCardColor());
     }
 
     public int getNumber() {
