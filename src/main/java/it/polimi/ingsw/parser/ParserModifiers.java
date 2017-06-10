@@ -261,5 +261,4 @@ public class ParserModifiers {
         commands.put("noOccupiedTowerCost", ()->parseNoOccupiedTowerCost(card));
         return commands;
     }
-
 }

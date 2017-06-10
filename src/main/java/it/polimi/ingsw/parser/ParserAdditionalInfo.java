@@ -6,6 +6,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.gamelogic.basics.Goods;
+import it.polimi.ingsw.gamelogic.basics.Points;
+import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.*;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
@@ -262,8 +264,7 @@ public class ParserAdditionalInfo {
         JsonArray costs = card.get("costs").getAsJsonArray();
         JsonArray result = card.get("result").getAsJsonArray();
         List<Goods> parsedCosts = gson.fromJson(costs, new TypeToken<ArrayList<Goods>>(){}.getType());
-        List<ExchangingGoods> parsedResults = gson.fromJson(result,
-                                                new TypeToken<ArrayList<ExchangingGoods>>(){}.getType());
+        List<ExchangingGoods> parsedResults = parseExchangingGoodsList(result);
         AdditionalCardInfo object = new MultipleProduction(name, parsedCosts, parsedResults);
         return object;
     }
@@ -312,7 +313,10 @@ public class ParserAdditionalInfo {
     private AdditionalCardInfo parseCardFlashExchangingGoods(JsonObject card, String name) {
         Gson gson = new Gson();
         JsonObject exchGoods = card.get("instantEffect").getAsJsonArray().get(0).getAsJsonObject();
-        ExchangingGoods parsedExchangingGoods = gson.fromJson(exchGoods, ExchangingGoods.class);
+        Resources resources = gson.fromJson(exchGoods.get("resources").getAsJsonObject(), Resources.class);
+        Points points = gson.fromJson(exchGoods.get("points").getAsJsonObject(), Points.class);
+        int councilPrivilege = exchGoods.get("councilePrivilege").getAsInt();
+        ExchangingGoods parsedExchangingGoods = new ExchangingGoods(resources, points, councilPrivilege);
         AdditionalCardInfo object = new CardFlashExchangingGoods(name, parsedExchangingGoods);
         return object;
     }
@@ -409,7 +413,25 @@ public class ParserAdditionalInfo {
             addInfoToInstantiate.add(fieldArray.get(index).getAsString());
         }
         return addInfoToInstantiate;
+    }
 
+    /**
+     * Auxiliary method that receives a JsonArray of JsonObjects and parses it in a List of Exchanging Goods.
+     * @param arrayOfExchangingGoods JsonArray of Exchanging Goods
+     * @return A list of ExchangingGoods
+     */
+    private List<ExchangingGoods> parseExchangingGoodsList(JsonArray arrayOfExchangingGoods) {
+        Gson gson = new Gson();
+        JsonObject object;
+        List<ExchangingGoods> exchangingGoodsList = new ArrayList<>();
+        for (int i=0; i < arrayOfExchangingGoods.size(); i++) {
+            object = arrayOfExchangingGoods.get(i).getAsJsonObject();
+            Resources resources = gson.fromJson(object.get("resources").getAsJsonObject(), Resources.class);
+            Points points = gson.fromJson(object.get("points").getAsJsonObject(), Points.class);
+            int councilPrivilege = object.get("councilePrivilege").getAsInt();
+            exchangingGoodsList.add(new ExchangingGoods(resources, points, councilPrivilege));
+        }
+        return exchangingGoodsList;
     }
 
     /**
@@ -424,5 +446,4 @@ public class ParserAdditionalInfo {
         if(!parsedAddInfo.isEmpty())
             mapToModify.put(name, parsedAddInfo);
     }
-
 }

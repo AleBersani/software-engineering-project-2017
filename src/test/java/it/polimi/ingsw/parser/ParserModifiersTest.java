@@ -29,6 +29,84 @@ class ParserModifiersTest {
     }
 
     @Test
+    void testParseBonusActionValue() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseBonusActionValue";
+        Class targetClass = parserModifiers.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
+        method.setAccessible(true);
+        String json = "{ \"actionType\": [\"GREEN_TOWER\", \"PURPLE_TOWER\", \"YELLOW_TOWER\"]," +
+                        "\"bonusValue\": \"2\"}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        List<ActionType> availableActions = new ArrayList<ActionType>(){{add(ActionType.GREEN_TOWER);
+                                                                        add(ActionType.PURPLE_TOWER);
+                                                                        add(ActionType.YELLOW_TOWER);}};
+        RequirementsModifier resultExpected = new BonusActionValue(new AvailableActions(availableActions),2);
+        RequirementsModifier result = (RequirementsModifier) method.invoke(parserModifiers, obj);
+        assertTrue(resultExpected.equals(result));
+    }
+
+    @Test
+    void testParseBonusOnCardCost() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseBonusOnCardCost";
+        Class targetClass = parserModifiers.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, int.class);
+        method.setAccessible(true);
+        String json = "{ \"actionType\": [\"GREEN_TOWER\", \"PURPLE_TOWER\", \"YELLOW_TOWER\"], " +
+                        "\"bonus\": [{\"resources\": {\"woods\":\"0\",\"stones\":\"0\",\"servants\":\"0\",\"coins\":\"1\"}," +
+                        "\"points\": { \"victory\": \"2\", \"military\": \"0\", \"faith\": \"0\"}}]}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        List<ActionType> availableActions = new ArrayList<ActionType>(){{add(ActionType.GREEN_TOWER);
+                                                                        add(ActionType.PURPLE_TOWER);
+                                                                        add(ActionType.YELLOW_TOWER);}};
+        Goods bonus = new Goods(new Resources(0,0,0,1),
+                                        new Points(2,0,0));
+        RequirementsModifier resultExpected = new BonusOnCardCost(new AvailableActions(availableActions), bonus);
+        RequirementsModifier result = (RequirementsModifier) method.invoke(parserModifiers, obj, 0);
+        assertTrue(resultExpected.equals(result));
+    }
+
+    @Test
+    void testParseBonusPawnsValue() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseBonusPawnsValue";
+        Class targetClass = parserModifiers.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
+        method.setAccessible(true);
+        String json = "{ \"actionType\": [\"GREEN_TOWER\", \"PURPLE_TOWER\", \"YELLOW_TOWER\"]," +
+                        "\"pawnColor\": [\"orange\", \"black\", \"neutral\"]," +
+                        "\"actionValueSurplus\": \"2\"}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        List<ActionType> availableActions = new ArrayList<ActionType>(){{add(ActionType.GREEN_TOWER);
+                                                                        add(ActionType.PURPLE_TOWER);
+                                                                        add(ActionType.YELLOW_TOWER);}};
+        List<PawnColor> pawnColors = new ArrayList<PawnColor>(){{add(PawnColor.ORANGE);
+                                                                add(PawnColor.BLACK);
+                                                                add(PawnColor.NEUTRAL);}};
+        RequirementsModifier resultExpected = new BonusPawnsValue(new AvailableActions(availableActions),
+                pawnColors, 2);
+        RequirementsModifier result = (RequirementsModifier) method.invoke(parserModifiers, obj);
+        assertTrue(resultExpected.equals(result));
+    }
+
+    @Test
+    void testParseBonusPawnValue() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseBonusPawnValue";
+        Class targetClass = parserModifiers.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, int.class);
+        method.setAccessible(true);
+        String json = "{ \"actionType\": [\"GREEN_TOWER\", \"PURPLE_TOWER\", \"YELLOW_TOWER\"]," +
+                        "\"pawnColor\": [\"orange\", \"black\"]," +
+                        "\"actionValueSurplus\": \"2\"}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        List<ActionType> availableActions = new ArrayList<ActionType>(){{add(ActionType.GREEN_TOWER);
+                                                                        add(ActionType.PURPLE_TOWER);
+                                                                        add(ActionType.YELLOW_TOWER);}};
+        RequirementsModifier resultExpected = new BonusPawnValue(new AvailableActions(availableActions),
+                                                                        PawnColor.BLACK, 2);
+        RequirementsModifier result = (RequirementsModifier) method.invoke(parserModifiers, obj, 1);
+        assertTrue(resultExpected.equals(result));
+    }
+
+    @Test
     void testParseCanPlaceOnOccupiedSpace() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseCanPlaceOnOccupiedSpace";
         Class targetClass = parserModifiers.getClass();
@@ -78,6 +156,25 @@ class ParserModifiersTest {
         RequirementsModifier resultExpected = new FixedColouredPawnsValue(new AvailableActions(availableActions),
                                                                                 pawnColors, 2);
         RequirementsModifier result = (RequirementsModifier) method.invoke(parserModifiers, obj);
+        assertTrue(resultExpected.equals(result));
+    }
+
+    @Test
+    void testParseFixedColouredPawnValue() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseFixedColouredPawnValue";
+        Class targetClass = parserModifiers.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, int.class);
+        method.setAccessible(true);
+        String json = "{ \"actionType\": [\"GREEN_TOWER\", \"PURPLE_TOWER\", \"YELLOW_TOWER\"]," +
+                "\"pawnColor\": [\"orange\"]," +
+                "\"pawnValue\": \"2\"}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        List<ActionType> availableActions = new ArrayList<ActionType>(){{add(ActionType.GREEN_TOWER);
+                                                                        add(ActionType.PURPLE_TOWER);
+                                                                        add(ActionType.YELLOW_TOWER);}};
+        RequirementsModifier resultExpected = new FixedColouredPawnValue(new AvailableActions(availableActions),
+                                                                            PawnColor.ORANGE, 2);
+        RequirementsModifier result = (RequirementsModifier) method.invoke(parserModifiers, obj, 0);
         assertTrue(resultExpected.equals(result));
     }
 
