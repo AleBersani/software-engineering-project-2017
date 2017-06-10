@@ -20,9 +20,9 @@ public class ParserModifiers {
 
     public List<RequirementsModifier> parseListRequirementsModifier(List<String> modifiers, JsonObject card) throws Exception {
         List<RequirementsModifier> modifierList = new ArrayList<>();
-        int bonusPawnValueIndex=0, fixedPawnValueIndex=0;
+        int bonusPawnValueIndex=0, fixedPawnValueIndex=0, bonusIndex=0;
         Map<String, Callable<RequirementsModifier>> commands = constructRequirementsMap(card);
-        for (int index=0, bonusIndex=0; index<modifiers.size(); index++) {
+        for (int index=0; index<modifiers.size(); index++) {
             String key = modifiers.get(index);
             if ("bonusOnCardCost".equals(key)) {
                 modifierList.add(parseBonusOnCardCost(card, bonusIndex));
@@ -184,7 +184,6 @@ public class ParserModifiers {
     }
 
     /**
-     * MODIFICARE AGGIUNGENDO ACTIONTYPE ANCHE A QUESTI(PRIMA NON C ERANO)
      * @param card
      * @return
      */
