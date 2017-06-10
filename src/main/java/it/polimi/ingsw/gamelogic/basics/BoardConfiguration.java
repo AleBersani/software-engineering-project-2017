@@ -10,6 +10,10 @@ public final class BoardConfiguration {
     private static int maxMilitaryPoints;
     private static int maxFaithPoints;
 
+    private BoardConfiguration() {
+        throw new IllegalAccessError("Utility class");
+    }
+
     public static int getNumberOfTowers() {
         return numberOfTowers;
     }
