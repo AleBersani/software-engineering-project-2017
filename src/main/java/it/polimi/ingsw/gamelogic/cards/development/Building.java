@@ -12,7 +12,6 @@ import java.util.Optional;
 public class Building extends DevelopmentCard {
     private int productionActionValueRequired;
     private ExchangingGoods productionResult;
-    private AdditionalCardInfo additionalCardInfo;
 
     /**
      * Constructor with production that set the required value for the production as default (0) and the
@@ -23,7 +22,6 @@ public class Building extends DevelopmentCard {
         super(basicDevelopmentCard);
         productionActionValueRequired = 0;
         productionResult = new ExchangingGoods();
-        additionalCardInfo = null;
     }
 
     /**
@@ -38,22 +36,6 @@ public class Building extends DevelopmentCard {
         super(basicDevelopmentCard);
         this.productionActionValueRequired = productionActionValueRequired;
         this.productionResult = productionResult;
-        additionalCardInfo = null;
-    }
-
-    /**
-     * Constructor with all the attributes
-     * @param basicDevelopmentCard card
-     * @param productionActionValueRequired value requested to perform the production
-     * @param productionResult result of the production
-     * @param additionalCardInfo other card information
-     */
-    public Building(BasicDevelopmentCard basicDevelopmentCard, int productionActionValueRequired,
-                    ExchangingGoods productionResult, AdditionalCardInfo additionalCardInfo) {
-        super(basicDevelopmentCard);
-        this.productionActionValueRequired = productionActionValueRequired;
-        this.productionResult = productionResult;
-        this.additionalCardInfo = additionalCardInfo;
     }
 
     @Override
@@ -66,13 +48,12 @@ public class Building extends DevelopmentCard {
             return false;
         Building building = (Building) o;
         return getProductionActionValueRequired() == building.getProductionActionValueRequired() &&
-                Objects.equals(getProductionResult(), building.getProductionResult()) &&
-                Objects.equals(getAdditionalCardInfo(), building.getAdditionalCardInfo());
+                Objects.equals(getProductionResult(), building.getProductionResult());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getProductionActionValueRequired(), getProductionResult(), getAdditionalCardInfo());
+        return Objects.hash(super.hashCode(), getProductionActionValueRequired(), getProductionResult());
     }
 
     public int getProductionActionValueRequired() {
@@ -89,19 +70,5 @@ public class Building extends DevelopmentCard {
 
     public void setProductionResult(ExchangingGoods productionResult) {
         this.productionResult = productionResult;
-    }
-
-    /**
-     * Optional getter for AdditionalCardInfo
-     * @return Optional.empty() if the attribute is null
-     */
-    public Optional<AdditionalCardInfo> getAdditionalCardInfo() {
-        if (additionalCardInfo == null)
-            return Optional.empty();
-        return Optional.of(additionalCardInfo);
-    }
-
-    public void setAdditionalCardInfo(AdditionalCardInfo additionalCardInfo) {
-        this.additionalCardInfo = additionalCardInfo;
     }
 }
