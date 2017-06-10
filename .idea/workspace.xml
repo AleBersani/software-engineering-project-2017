@@ -2,69 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3565f9e9-2953-4477-96c2-c965b7d6ccb1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/jacoco.exec" afterPath="$PROJECT_DIR$/target/jacoco.exec" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/development/CharacterTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/development/VentureTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCostTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sonar/report-task.txt" afterPath="$PROJECT_DIR$/target/sonar/report-task.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.basics.ExchangingGoodsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.basics.ExchangingGoodsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.basics.PointsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.basics.PointsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.basics.ResourcesTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.basics.ResourcesTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.board.BoardTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.board.BoardTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.board.CouncilPalaceTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.board.CouncilPalaceTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.cards.development.BuildingTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.cards.development.BuildingTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewardsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewardsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCostsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCostsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnVictoryTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnVictoryTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryForResourcesTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryForResourcesTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoCharacterCardsEndRewardsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoCharacterCardsEndRewardsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoTerritoryCardsEndRewardsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoTerritoryCardsEndRewardsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoVentureCardsEndRewardsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoVentureCardsEndRewardsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirementsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirementsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.LeaderRequirementsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.LeaderRequirementsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirementsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirementsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusActionValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusActionValueTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusOnCardCostTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusOnCardCostTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnValueTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnsValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnsValueTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServantsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServantsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnValueTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnsValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnsValueTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusActionValueTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusActionValueTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusColouredPawnsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusColouredPawnsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTowerTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTowerTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMarketPlacementTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMarketPlacementTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.rewards.RewardsModifierTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.modifiers.rewards.RewardsModifierTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.player.PlayerBoardTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.gamelogic.player.PlayerBoardTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.parser.ParserCardsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-it.polimi.ingsw.parser.ParserCardsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.ExchangingGoodsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.ExchangingGoodsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.PointsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.basics.PointsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.board.BoardTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.board.BoardTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.board.CouncilPalaceTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.board.CouncilPalaceTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.cards.development.BuildingTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.cards.development.BuildingTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewardsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.BasicEndGameRewardsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCostsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCostsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnVictoryTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnVictoryTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryForResourcesTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryForResourcesTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoCharacterCardsEndRewardsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoCharacterCardsEndRewardsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoTerritoryCardsEndRewardsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoTerritoryCardsEndRewardsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoVentureCardsEndRewardsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.NoVentureCardsEndRewardsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirementsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirementsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.LeaderRequirementsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.LeaderRequirementsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirementsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirementsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusOnCardCostTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusOnCardCostTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnValueTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnValueTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnsValueTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.BonusPawnsValueTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServantsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServantsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnValueTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnValueTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnsValueTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.FixedColouredPawnsValueTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusActionValueTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusActionValueTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusColouredPawnsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.MalusColouredPawnsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTowerTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTowerTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMarketPlacementTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.NoMarketPlacementTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.rewards.RewardsModifierTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.modifiers.rewards.RewardsModifierTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.player.PlayerBoardTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.gamelogic.player.PlayerBoardTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.parser.ParserCardsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/it.polimi.ingsw.parser.ParserCardsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CardsRequired.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CardsRequired.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -197,104 +139,104 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/Player.java">
+      <file leaf-file-name="Venture.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Venture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="67" column="83" lean-forward="false" selection-start-line="67" selection-start-column="83" selection-end-line="67" selection-end-column="83" />
+            <state relative-caret-position="68">
+              <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoCharacterCardsEndRewards.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/NoCharacterCardsEndRewards.java">
+      <file leaf-file-name="VentureTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/development/VentureTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="75" lean-forward="false" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
+            <state relative-caret-position="85">
+              <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoTerritoryCardsEndRewards.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/NoTerritoryCardsEndRewards.java">
+      <file leaf-file-name="Character.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            <state relative-caret-position="85">
+              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoVentureCardsEndRewards.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/NoVentureCardsEndRewards.java">
+      <file leaf-file-name="CharacterTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/development/CharacterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CouncilePrivilege.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CouncilePrivilege.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="47" lean-forward="false" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BonusOnCardCost.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParserConfigurations.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/parser/ParserConfigurations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-299">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActionDescription.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/actions/description/ActionDescription.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExchangingGoods.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/ExchangingGoods.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="99" column="68" lean-forward="false" selection-start-line="99" selection-start-column="68" selection-end-line="99" selection-end-column="68" />
+            <state relative-caret-position="510">
+              <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeaderCost.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCost.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeaderCostTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCostTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneralColor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/enums/GeneralColor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicDevelopmentCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/BasicDevelopmentCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardInformation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/CardInformation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DevelopmentCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/DevelopmentCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -307,8 +249,8 @@
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -333,10 +275,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/CardFlashAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/CardFlashExchangingGoods.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/ConditionalProduction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/GoodsBasedOnPossessions.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/RequirementsOnCard.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/RewardsOnCard.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/BasicDevelopmentCard.java" />
@@ -384,6 +322,10 @@
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/parser/ParserConfigurations.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CouncilePrivilege.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusOnCardCost.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CardsRequired.java" />
+        <option value="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/development/VentureTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/development/CharacterTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCostTest.java" />
       </list>
     </option>
   </component>
@@ -567,7 +509,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
+              <option name="myItemId" value="cards" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -601,11 +543,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
+              <option name="myItemId" value="cards" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="requirements" />
+              <option name="myItemId" value="leader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -639,15 +581,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
+              <option name="myItemId" value="cards" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="requirements" />
+              <option name="myItemId" value="development" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modifiers" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gamelogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -665,14 +637,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="it.polimi.ingsw.gamelogic.cards.leader" />
+      <recent name="it.polimi.ingsw.gamelogic.cards.development" />
       <recent name="it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers" />
       <recent name="it.polimi.ingsw.gamelogic.modifiers.requirements" />
       <recent name="it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers" />
-      <recent name="it.polimi.ingsw.gamelogic.modifiers.endgamerewards" />
-      <recent name="it.polimi.ingsw.gamelogic.player" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\resources\client" />
@@ -706,7 +679,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All Tests">
+  <component name="RunManager" selected="JUnit.LeaderCostTest">
     <configuration default="false" name="LoginMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -727,84 +700,108 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="PlayerboardMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="VentureTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.client.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.gamelogic.cards.development.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.client.PlayerboardMain" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <module name="LolloTheMagnificent" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.gamelogic.cards.development" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.gamelogic.cards.development.VentureTest" />
+      <option name="METHOD_NAME" value="testEquals" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LolloTheMagnificent" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="VentureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.server.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.gamelogic.cards.development.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.server.Server" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <module name="LolloTheMagnificent" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.gamelogic.cards.development" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.gamelogic.cards.development.VentureTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LolloTheMagnificent" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SocketClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="CharacterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.client.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.gamelogic.cards.development.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.client.SocketClient" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <module name="LolloTheMagnificent" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.gamelogic.cards.development" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.gamelogic.cards.development.CharacterTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LolloTheMagnificent" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="DBHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="LeaderCostTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="it.polimi.ingsw.server.database.*" />
+          <option name="PATTERN" value="it.polimi.ingsw.gamelogic.cards.leader.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.server.database.DBHandler" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <module name="LolloTheMagnificent" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="it.polimi.ingsw.gamelogic.cards.leader" />
+      <option name="MAIN_CLASS_NAME" value="it.polimi.ingsw.gamelogic.cards.leader.LeaderCostTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LolloTheMagnificent" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1245,18 +1242,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All Tests" />
       <item index="1" class="java.lang.String" itemvalue="Application.LoginMain" />
-      <item index="2" class="java.lang.String" itemvalue="Application.PlayerboardMain" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Server" />
-      <item index="4" class="java.lang.String" itemvalue="Application.SocketClient" />
-      <item index="5" class="java.lang.String" itemvalue="Application.DBHandler" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.VentureTest.testEquals" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.VentureTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CharacterTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.LeaderCostTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.LoginMain" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Server" />
-        <item index="2" class="java.lang.String" itemvalue="Application.SocketClient" />
-        <item index="3" class="java.lang.String" itemvalue="Application.DBHandler" />
-        <item index="4" class="java.lang.String" itemvalue="Application.PlayerboardMain" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.LeaderCostTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CharacterTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.VentureTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.VentureTest.testEquals" />
+        <item index="4" class="java.lang.String" itemvalue="Application.LoginMain" />
       </list>
     </recent_temporary>
   </component>
@@ -1375,24 +1372,24 @@
     <history-entry file="All_Tests - 2017.06.10 at 00h 29m 54s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NoMilitaryForTerritoriesTest_testModifyRequirements - 2017.06.07 at 18h 47m 30s.xml">
-      <configuration name="NoMilitaryForTerritoriesTest.testModifyRequirements" configurationId="JUnit" />
+    <history-entry file="CharacterTest - 2017.06.10 at 11h 38m 44s.xml">
+      <configuration name="CharacterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NoMilitaryForTerritoriesTest_testModifyRequirementsWithoutModifierActivation - 2017.06.07 at 18h 48m 07s.xml">
-      <configuration name="NoMilitaryForTerritoriesTest.testModifyRequirementsWithoutModifierActivation" configurationId="JUnit" />
+    <history-entry file="LeaderCostTest - 2017.06.10 at 11h 44m 12s.xml">
+      <configuration name="LeaderCostTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NoOccupiedTowerCostTest - 2017.06.07 at 18h 50m 59s.xml">
-      <configuration name="NoOccupiedTowerCostTest" configurationId="JUnit" />
+    <history-entry file="VentureTest - 2017.06.10 at 11h 37m 32s.xml">
+      <configuration name="VentureTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NoOccupiedTowerCostTest_testModifyRequirements - 2017.06.07 at 18h 50m 19s.xml">
-      <configuration name="NoOccupiedTowerCostTest.testModifyRequirements" configurationId="JUnit" />
+    <history-entry file="VentureTest_testEquals - 2017.06.10 at 11h 33m 30s.xml">
+      <configuration name="VentureTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NoOccupiedTowerCostTest_testModifyRequirementsWithoutModifierActivation - 2017.06.07 at 18h 50m 46s.xml">
-      <configuration name="NoOccupiedTowerCostTest.testModifyRequirementsWithoutModifierActivation" configurationId="JUnit" />
+    <history-entry file="VentureTest_testEquals - 2017.06.10 at 11h 36m 28s.xml">
+      <configuration name="VentureTest.testEquals" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319213000" />
+    <option name="totallyTimeSpent" value="321342000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1405,6 +1402,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1577,106 +1575,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Building.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/CardInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/DevelopmentCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Venture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/excommunicationtiles/ExcommunicationTile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryBasedOnBuildingsCosts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryBasedOnMilitary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryBasedOnVictory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/LessVictoryForResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/BasicEndGameRewards.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1909,14 +1807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/modifiers/endgamerewards/modifiers/NoCharacterCardsEndRewards.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1995,6 +1885,116 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/CardsRequired.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1209#1210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/GameConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/Goods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Venture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/CardInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/DevelopmentCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/BasicDevelopmentCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/development/VentureTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/development/CharacterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/enums/GeneralColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/cards/leader/LeaderCostTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
           <folding />
         </state>
       </provider>
