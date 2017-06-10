@@ -5,6 +5,14 @@
     -fx-background-size: contain;
 }
 
+#pane2 {
+    -fx-background-image: url("/client/punchboard2.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+    -fx-background-size: contain;
+}
+
+
 #coins {
     -fx-background-color: yellow;
 }
