@@ -47,7 +47,7 @@ public class AvailableActions {
      */
     public boolean hasAvailableActions(List<ActionType> actionTypes) {
         return actionTypes.stream()
-                .allMatch(availableAction -> hasAvailableAction(availableAction));
+                .allMatch(this::hasAvailableAction);
     }
 
     /**

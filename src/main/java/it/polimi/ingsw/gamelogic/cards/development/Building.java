@@ -1,10 +1,8 @@
 package it.polimi.ingsw.gamelogic.cards.development;
 
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
-import it.polimi.ingsw.gamelogic.cards.additionalinfo.AdditionalCardInfo;
 
 import java.util.Objects;
-import java.util.Optional;
 
 /**
  * Class that describes the Building cards

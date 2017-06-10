@@ -1,5 +1,5 @@
 projectKey=it.polimi.ingsw:LM02
 serverUrl=http://localhost:9000
 dashboardUrl=http://localhost:9000/dashboard/index/it.polimi.ingsw:LM02
-ceTaskId=AVySg9GtTYlHsljO8CC1
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AVySg9GtTYlHsljO8CC1
+ceTaskId=AVySlu7xTYlHsljO8CC3
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVySlu7xTYlHsljO8CC3
