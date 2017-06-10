@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0.008" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.1.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,13 +62,13 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase name="testAddFixedValue" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
-  <testcase name="testEquals" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
   <testcase name="testFalseIsEmpty" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
   <testcase name="testTrueIsEmpty" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
+  <testcase name="testEquals" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
   <testcase name="testSubtract" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
-  <testcase name="testSubtractWithNegativeResult" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
-  <testcase name="testReflectiveAddition" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
   <testcase name="testFalseIsLessThan" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
-  <testcase name="testTrueIsLessThan" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
   <testcase name="testAddGeneralValue" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
+  <testcase name="testSubtractWithNegativeResult" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
+  <testcase name="testTrueIsLessThan" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
+  <testcase name="testReflectiveAddition" classname="it.polimi.ingsw.gamelogic.basics.PointsTest" time="0"/>
 </testsuite>

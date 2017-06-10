@@ -21,6 +21,7 @@ it\polimi\ingsw\gamelogic\cards\development\DevelopmentCard.class
 it\polimi\ingsw\gamelogic\modifiers\requirements\modifiers\BonusPawnValue.class
 it\polimi\ingsw\gamelogic\modifiers\requirements\modifiers\NoMarketPlacement.class
 it\polimi\ingsw\gamelogic\enums\LeaderCategory.class
+it\polimi\ingsw\gamelogic\basics\CouncilPrivilege.class
 it\polimi\ingsw\gamelogic\cards\additionalinfo\AdditionalCardInfo.class
 it\polimi\ingsw\parser\ParserSettings.class
 it\polimi\ingsw\gamelogic\actions\ActionVisitor.class
@@ -74,7 +75,6 @@ it\polimi\ingsw\gamelogic\modifiers\AvailableActions.class
 it\polimi\ingsw\gamelogic\basics\EndGameRewards.class
 it\polimi\ingsw\parser\ParserAdditionalInfo$1.class
 it\polimi\ingsw\server\Server.class
-it\polimi\ingsw\gamelogic\basics\CouncilePrivilege.class
 it\polimi\ingsw\gamelogic\modifiers\requirements\BoardActionRequirements.class
 it\polimi\ingsw\gamelogic\player\BonusTiles.class
 it\polimi\ingsw\gamelogic\basics\PlayerConfiguration.class

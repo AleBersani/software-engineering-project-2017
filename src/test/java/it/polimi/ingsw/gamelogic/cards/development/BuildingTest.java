@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BuildingTest {
     private Building building;
@@ -16,13 +17,14 @@ class BuildingTest {
     void setUp() {
         building = new Building(
                 new BasicDevelopmentCard(new CardInformation(1,
-                        "Name",
-                        PeriodNumber.FIRST,
-                        GeneralColor.YELLOW), new ArrayList<>()));
+                        "Name", PeriodNumber.FIRST, GeneralColor.YELLOW), new ArrayList<>()));
     }
 
     @Test
-    public void testOptionalReturn() {
-        assertFalse(building.getAdditionalCardInfo().isPresent());
+    public void testEqual() {
+        Building buildingToConfront = new Building(
+                new BasicDevelopmentCard(new CardInformation(1,
+                        "Name", PeriodNumber.FIRST, GeneralColor.YELLOW), new ArrayList<>()));
+        assertTrue(building.equals(buildingToConfront));
     }
 }

@@ -12,6 +12,7 @@ C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\board\MarketSpace.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\cards\additionalinfo\ConditionalProduction.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\modifiers\endgamerewards\modifiers\LessVictoryForResources.java
+C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\basics\CouncilPrivilege.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\enums\PeriodNumber.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\enums\ActionType.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\modifiers\endgamerewards\modifiers\LessVictoryBasedOnMilitary.java
@@ -42,7 +43,6 @@ C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\modifiers\requirements\modifiers\MalusColouredPawns.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\player\Player.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\modifiers\requirements\Requirements.java
-C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\basics\CouncilePrivilege.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamecontroller\Period.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\board\Tower.java
 C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\gamelogic\modifiers\requirements\modifiers\MalusActionValue.java
