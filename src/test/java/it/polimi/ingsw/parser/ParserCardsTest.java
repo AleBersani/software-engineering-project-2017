@@ -1,21 +1,30 @@
 package it.polimi.ingsw.parser;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import it.polimi.ingsw.gamelogic.basics.CardsRequired;
-import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.basics.Points;
-import it.polimi.ingsw.gamelogic.basics.Resources;
+import it.polimi.ingsw.gamelogic.basics.*;
+import it.polimi.ingsw.gamelogic.cards.development.BasicDevelopmentCard;
+import it.polimi.ingsw.gamelogic.cards.development.CardInformation;
+import it.polimi.ingsw.gamelogic.cards.development.Venture;
+import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
+import it.polimi.ingsw.gamelogic.cards.leader.LeaderCard;
+import it.polimi.ingsw.gamelogic.cards.leader.LeaderCost;
+import it.polimi.ingsw.gamelogic.cards.leader.LeaderInformation;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
+import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import javax.smartcardio.Card;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 
 class ParserCardsTest {
     private ParserCards parserCards;
@@ -25,25 +34,7 @@ class ParserCardsTest {
         parserCards = new ParserCards();
     }
 
-    @Test
-    void testParseCardsRequiredList() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        String methodName = "parseCardsRequiredList";
-        Class targetClass = parserCards.getClass();
-        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
-        method.setAccessible(true);
-        String json = "{\"territories\": \"3\",\"buildings\": \"4\",\"characters\": \"0\",\"ventures\": \"5\"}";
-        JsonObject obj = (JsonObject) new JsonParser().parse(json);
-        List<CardsRequired> resultExpected = new ArrayList<>();
-        resultExpected.add(new CardsRequired(3, GeneralColor.GREEN));
-        resultExpected.add(new CardsRequired(4, GeneralColor.YELLOW));
-        resultExpected.add(new CardsRequired(5, GeneralColor.PURPLE));
-        List<CardsRequired> result = (List<CardsRequired>) method.invoke(parserCards, obj);
-        for (int index = 0; index<resultExpected.size(); index++) {
-            assertTrue((resultExpected.get(index).getNumberOfCardsRequired()==result.get(index).
-                                    getNumberOfCardsRequired())
-            && (resultExpected.get(index).getCardColorRequired().equals(result.get(index).getCardColorRequired())));
-        }
-    }
+
 
     @Test
     void testParseGoods() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {

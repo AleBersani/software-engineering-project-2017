@@ -15,6 +15,7 @@ import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -180,7 +181,6 @@ public class ParserCards {
         CardInformation cardInfo = parseCardInformation(card);
         JsonArray cost = card.get("cost").getAsJsonArray();
         List<Goods> costs = gson.fromJson(cost, new TypeToken<ArrayList<Goods>>(){}.getType());
-
         return new BasicDevelopmentCard(cardInfo, costs);
     }
 
@@ -191,10 +191,11 @@ public class ParserCards {
      */
     private ExchangingGoods parseExchangingGoods(JsonObject card, String fieldName) {
         Gson gson = new Gson();
-        JsonArray exchangingGoods = card.get(fieldName).getAsJsonArray();
-        ExchangingGoods parsedExchangingGoods = gson.fromJson(exchangingGoods.get(0).getAsJsonObject(),
-                ExchangingGoods.class);
-
+        JsonObject exchangingGoods = card.get(fieldName).getAsJsonArray().get(0).getAsJsonObject();
+        Resources resources = gson.fromJson(exchangingGoods.get("resources").getAsJsonObject(), Resources.class);
+        Points points = gson.fromJson(exchangingGoods.get("points").getAsJsonObject(), Points.class);
+        int councilPrivilege = exchangingGoods.get("councilePrivilege").getAsInt();
+        ExchangingGoods parsedExchangingGoods = new ExchangingGoods(resources, points, councilPrivilege);
         return parsedExchangingGoods;
     }
 
@@ -269,7 +270,7 @@ public class ParserCards {
         JsonObject excommunicationTile;
         for(int index=0; index<cards.size(); index++){
             card = cards.get(index).getAsJsonObject();
-            excommunicationTile = card.get("excommunicationDetails").getAsJsonObject();
+            excommunicationTile = card.get("excommunicationTileDetails").getAsJsonObject();
             ExcommunicationTile parsedExcommunicationTile = parseSingleExcommunicationTile(excommunicationTile);
             excommunicationTiles.add(parsedExcommunicationTile);
         }
@@ -278,12 +279,12 @@ public class ParserCards {
 
     /**
      * Auxiliary method used by the previous one that parses a single Excommunication Tile.
-     * @param excommunicationTile JsonObject representing a single Excommunication Tile's information.
+     * @param excommunicationTileDetails JsonObject representing a single Excommunication Tile's information.
      * @return A single ExcommunicationTile object.
      */
-    private ExcommunicationTile parseSingleExcommunicationTile(JsonObject excommunicationTile) {
-        String name = excommunicationTile.get("ExcommunicationTileName").getAsString();
-        PeriodNumber period = decidePeriodEnum(excommunicationTile.get("period").getAsInt());
+    private ExcommunicationTile parseSingleExcommunicationTile(JsonObject excommunicationTileDetails) {
+        String name = excommunicationTileDetails.get("ExcommunicationTileName").getAsString();
+        PeriodNumber period = decidePeriodEnum(excommunicationTileDetails.get("period").getAsInt());
         return new ExcommunicationTile(name, period);
     }
 
