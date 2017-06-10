@@ -212,9 +212,7 @@ public class ParserCards {
         int number = cardInfo.get("number").getAsInt();
         int period = cardInfo.get("period").getAsInt();
         String cardColor = cardInfo.get("cardColor").getAsString();
-        PeriodNumber periodNumber = decidePeriodEnum(period);
-        GeneralColor cardColorEnum = decideGeneralColorEnum(cardColor);
-        return new CardInformation(number, name, periodNumber, cardColorEnum);
+        return new CardInformation(number, name, decidePeriodEnum(period), decideGeneralColorEnum(cardColor));
     }
 
     /**
