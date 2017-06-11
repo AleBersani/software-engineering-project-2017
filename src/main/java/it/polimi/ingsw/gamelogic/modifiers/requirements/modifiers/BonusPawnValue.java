@@ -14,12 +14,12 @@ import java.util.Objects;
  */
 public class BonusPawnValue extends RequirementsModifier {
     private PawnColor pawnColor;
-    private int bonusPawnValue;
+    private int addedPawnValue;
 
-    public BonusPawnValue(AvailableActions availableActions, PawnColor pawnColor, int bonusPawnValue) {
+    public BonusPawnValue(AvailableActions availableActions, PawnColor pawnColor, int addedPawnValue) {
         super(availableActions);
         this.pawnColor = pawnColor;
-        this.bonusPawnValue = bonusPawnValue;
+        this.addedPawnValue = addedPawnValue;
     }
 
     @Override
@@ -31,13 +31,13 @@ public class BonusPawnValue extends RequirementsModifier {
         if (!super.equals(o))
             return false;
         BonusPawnValue that = (BonusPawnValue) o;
-        return bonusPawnValue == that.bonusPawnValue &&
+        return addedPawnValue == that.addedPawnValue &&
                 pawnColor == that.pawnColor;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), pawnColor, bonusPawnValue);
+        return Objects.hash(super.hashCode(), pawnColor, addedPawnValue);
     }
 
     @Override
@@ -63,7 +63,7 @@ public class BonusPawnValue extends RequirementsModifier {
     private void bonusValueIfSameColorPawn(SpaceActionRequirements spaceActionRequirements) {
         if (pawnColor == spaceActionRequirements.getPawnColor()) {
             int actualBonusPawnValue = spaceActionRequirements.getActionValueModifier();
-            spaceActionRequirements.setActionValueModifier(bonusPawnValue + actualBonusPawnValue);
+            spaceActionRequirements.setActionValueModifier(addedPawnValue + actualBonusPawnValue);
         }
     }
 }

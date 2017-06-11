@@ -10,6 +10,7 @@
 
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.RadioButton?>
+
 <GridPane fx:controller="it.polimi.ingsw.client.LoginController"
           stylesheets="/client/login.css"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
@@ -19,7 +20,7 @@
             <Image preserveRatio="true" url="/client/lollo-thug-life.png">
             </Image>
         </ImageView>
-        <ImageView fx:id="lollo" fitHeight="200" fitWidth="100" preserveRatio="true">
+        <ImageView fitHeight="200" fitWidth="100" preserveRatio="true">
             <Image preserveRatio="true" url="/client/lollo.png">
             </Image>
         </ImageView>
@@ -44,5 +45,4 @@
     <RadioButton GridPane.rowIndex="5" GridPane.columnIndex="1" text="Socket" toggleGroup="$connectionToggleGroup"/>
 
     <Button text="Connect" GridPane.rowIndex="6" GridPane.columnIndex="1" onAction="#onConnect"/>
-
 </GridPane>

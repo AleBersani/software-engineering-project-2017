@@ -1,7 +1,8 @@
 package it.polimi.ingsw.client;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -17,7 +18,6 @@ public class LoginController {
     private final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
     private ScheduledFuture futureScheduled;
-    private MediaPlayer introSong;
 
     @FXML
     private ImageView littleLolloJunior;
@@ -33,7 +33,7 @@ public class LoginController {
                 (this::rotateImage, 0, 45, TimeUnit.MILLISECONDS);
 
         Media song = new Media(new File("resources/client/intro-song.mp3").toURI().toString());
-        introSong = new MediaPlayer(song);
+        MediaPlayer introSong = new MediaPlayer(song);
         introSong.play();
     }
 

@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.actions;
 
-import it.polimi.ingsw.gamelogic.actions.description.*;
+import it.polimi.ingsw.gamelogic.actions.description.ActionDescription;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.Requirements;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.BasicRewards;
 

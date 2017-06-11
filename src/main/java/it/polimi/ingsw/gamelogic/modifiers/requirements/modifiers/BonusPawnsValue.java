@@ -14,12 +14,12 @@ import java.util.Objects;
  */
 public class BonusPawnsValue extends RequirementsModifier {
     private List<PawnColor> pawnColors;
-    private int bonusPawnsValue;
+    private int addedPawnsValue;
 
-    public BonusPawnsValue(AvailableActions availableActions, List<PawnColor> pawnColors, int bonusPawnsValue) {
+    public BonusPawnsValue(AvailableActions availableActions, List<PawnColor> pawnColors, int addedPawnsValue) {
         super(availableActions);
         this.pawnColors = pawnColors;
-        this.bonusPawnsValue = bonusPawnsValue;
+        this.addedPawnsValue = addedPawnsValue;
     }
 
     @Override
@@ -31,13 +31,13 @@ public class BonusPawnsValue extends RequirementsModifier {
         if (!super.equals(o))
             return false;
         BonusPawnsValue that = (BonusPawnsValue) o;
-        return bonusPawnsValue == that.bonusPawnsValue &&
+        return addedPawnsValue == that.addedPawnsValue &&
                 Objects.equals(pawnColors, that.pawnColors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), pawnColors, bonusPawnsValue);
+        return Objects.hash(super.hashCode(), pawnColors, addedPawnsValue);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class BonusPawnsValue extends RequirementsModifier {
         if (pawnColors.stream()
                 .anyMatch(predicate -> predicate == spaceActionRequirements.getPawnColor())) {
             int actualBonusPawnsValue = spaceActionRequirements.getActionValueModifier();
-            spaceActionRequirements.setActionValueModifier(bonusPawnsValue + actualBonusPawnsValue);
+            spaceActionRequirements.setActionValueModifier(addedPawnsValue + actualBonusPawnsValue);
         }
     }
 }

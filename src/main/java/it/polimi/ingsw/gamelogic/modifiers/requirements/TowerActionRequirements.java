@@ -67,31 +67,6 @@ public class TowerActionRequirements implements Requirements {
         playerHasEnoughMilitaryPoints = true;
     }
 
-    /**
-     * Constructor with all the attributes
-     * @param spaceActionRequirements requirements of the Action Space
-     * @param requiredGoods Goods required to perform the Action
-     * @param bonusGoods Goods as bonus from the Tower Slot
-     * @param occupiedTowerCost Added cost if the tower is occupied
-     * @param occupiedTower if the Tower is occupied
-     * @param occupiedByMyColouredPawn if the Player has one of his coloured Pawns in this Tower
-     * @param discount discount as the effect of some card
-     * @param playerHasEnoughMilitaryPoints if the player has enough Military Points to collect a Territory Card
-     */
-    public TowerActionRequirements(SpaceActionRequirements spaceActionRequirements, Goods requiredGoods,
-                                   Goods bonusGoods, Goods occupiedTowerCost,
-                                   boolean occupiedTower, boolean occupiedByMyColouredPawn,
-                                   Goods discount, boolean playerHasEnoughMilitaryPoints) {
-        this.spaceActionRequirements = spaceActionRequirements;
-        this.requiredGoods = requiredGoods;
-        this.bonusGoods = bonusGoods;
-        this.occupiedTowerCost = occupiedTowerCost;
-        this.occupiedTower = occupiedTower;
-        this.occupiedByMyColouredPawn = occupiedByMyColouredPawn;
-        this.discount = discount;
-        this.playerHasEnoughMilitaryPoints = playerHasEnoughMilitaryPoints;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -138,8 +113,7 @@ public class TowerActionRequirements implements Requirements {
         if (!actualRequiredGoods.isLessThan(player.getPlayerGoods()))
             return false;
 
-        if (occupiedByMyColouredPawn)
-            if (spaceActionRequirements.getPawnColor() != PawnColor.NEUTRAL)
+        if (occupiedByMyColouredPawn && spaceActionRequirements.getPawnColor() != PawnColor.NEUTRAL)
                 return false;
 
         return true;

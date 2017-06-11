@@ -14,7 +14,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class NoMilitaryForTerritoriesTest {
     private TowerActionRequirements towerActionRequirements;
@@ -31,7 +32,8 @@ class NoMilitaryForTerritoriesTest {
 
         towerActionRequirements = new TowerActionRequirements(spaceActionRequirements, requiredGoods,
                 new Goods(new Resources(1,1,0,0)), new Goods(),
-                false, false, new Goods(), false);
+                false, false, new Goods());
+        towerActionRequirements.setPlayerHasEnoughMilitaryPoints(false);
 
         player = new Player(new PlayerDetails(), new PlayerBoard(new BonusTiles(new Goods(), new Goods()),
                 new Goods(new Resources(5,5,5,5))));

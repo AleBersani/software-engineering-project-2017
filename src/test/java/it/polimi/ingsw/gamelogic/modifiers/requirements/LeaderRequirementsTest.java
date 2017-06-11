@@ -2,21 +2,23 @@ package it.polimi.ingsw.gamelogic.modifiers.requirements;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.basics.Points;
-import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderInformation;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
-import it.polimi.ingsw.gamelogic.player.*;
+import it.polimi.ingsw.gamelogic.player.BonusTiles;
+import it.polimi.ingsw.gamelogic.player.Player;
+import it.polimi.ingsw.gamelogic.player.PlayerBoard;
+import it.polimi.ingsw.gamelogic.player.PlayerDetails;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class LeaderRequirementsTest {
     private LeaderRequirements leaderRequirements;
