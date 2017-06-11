@@ -298,5 +298,294 @@
     "instantEffectDescription": "You receive 7 Victory points and 3 Faith points",
     "permanentEffectDescription": ["You get 1 Victory point as production result with cost of 2"],
     "cost": ["4 Woods, 4 Stones"]
+  },
+  {
+  	"name": "Warlord",
+  	"instantEffectDescription": "You get 3 Military points",
+  	"permanentEffectDescription": ["You get an extra value of 2 on picking Territory cards"],
+  	"cost": ["2 Coins"]
+  },
+  {
+  	"name": "Stonemason",
+  	"instantEffectDescription": "None",
+  	"permanentEffectDescription": ["You get an extra value of 2 on picking Building cards with a discount of 1 Wood",
+  		"You get an extra value of 2 on picking Building cards with a discount of 1 Stone"],
+  	"cost": ["4 Coins"]
+  },
+  {
+  	"name": "Dame",
+  	"instantEffectDescription": "None",
+  	"permanentEffectDescription": ["You get an extra value of 2 on picking Character cards with a discount of 1 Coin"],
+  	"cost": ["4 Coins"]
+  },
+  {
+  	"name": "Knight",
+  	"instantEffectDescription": "You get 1 Council's Privilege",
+  	"permanentEffectDescription": ["You get an extra value of 2 on picking Venture cards"],
+  	"cost": ["2 Coins"]
+  },
+  {
+  	"name": "Farmer",
+  	"instantEffectDescription": "None",
+  	"permanentEffectDescription": ["You get an extra value of 2 on doing an harvest"],
+  	"cost": ["3 Coins"]
+  },
+  {
+  	"name": "Artisan",
+  	"instantEffectDescription": "None",
+  	"permanentEffectDescription": ["You get an extra value of 2 on doing a production"],
+  	"cost": ["3 Coins"]
+  },
+  {
+  	"name": "Preacher",
+  	"instantEffectDescription": "You get 4 Faith points",
+  	"permanentEffectDescription": ["You can't collect Goods from the Towers"],
+  	"cost": ["2 Coins"]
+  },
+  {
+  	"name": "Abbess",
+  	"instantEffectDescription": "You get 1 Faith point and you can get another card of value 4",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["3 Coins"]
+  },
+  {
+  	"name": "Captain",
+  	"instantEffectDescription": "You get 2 Military point and you can get a Territory card of value 6",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["4 Coins"]
+  },
+  {
+  	"name": "Architect",
+  	"instantEffectDescription": "You can get a Building card of value 6 with a discount of 1 Stone and 1 Wood",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["4 Coins"]
+  },
+  {
+  	"name": "Patron",
+  	"instantEffectDescription": "You can get a Character card of value 6 with a discount of 2 Coins",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["3 Coins"]
+  },
+  {
+  	"name": "Hero",
+  	"instantEffectDescription": "You can get a Venture card of value 6 and 1 Council's Privilege",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["4 Coins"]
+  },
+  {
+  	"name": "Peasant",
+  	"instantEffectDescription": "None",
+  	"permanentEffectDescription": ["You get an extra value of 3 on doing an harvest"],
+  	"cost": ["4 Coins"]
+  },
+  {
+  	"name": "Scholar",
+  	"instantEffectDescription": "None",
+  	"permanentEffectDescription": ["You get an extra value of 3 on doing an production"],
+  	"cost": ["4 Coins"]
+  },
+  {
+  	"name": "Papal messenger",
+  	"instantEffectDescription": "You get 3 Faith points",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["5 Coins"]
+  },
+  {
+  	"name": "Royal messenger",
+  	"instantEffectDescription": "You get 3 Council's Privileges",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["5 Coins"]
+  },
+  {
+  	"name": "Noble",
+  	"instantEffectDescription": "You get 2 Victory points for each Territory card you have",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["6 Coins"]
+  },
+  {
+  	"name": "Governor",
+  	"instantEffectDescription": "You get 2 Victory points for each Building card you have",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["6 Coins"]
+  },
+  {
+  	"name": "Paramour",
+  	"instantEffectDescription": "You get 2 Victory points for each Character card you have",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["7 Coins"]
+  },
+  {
+  	"name": "Herald",
+  	"instantEffectDescription": "You get 2 Victory points for each Venture card you have",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["6 Coins"]
+  },
+  {
+  	"name": "Cardinal",
+  	"instantEffectDescription": "You get 2 Faith points and you can do an harvest of value 4",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["4 Coins"]
+  },
+  {
+  	"name": "Bishop",
+  	"instantEffectDescription": "You get 1 Faith point and you can do a production of value 4",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["5 Coins"]
+  },
+  {
+  	"name": "General",
+  	"instantEffectDescription": "You get 1 Victory point for every 2 Military points",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["5 Coins"]
+  },
+  {
+  	"name": "Ambassador",
+  	"instantEffectDescription": "You can get another card of value 7 and 1 Council's Privilege",
+  	"permanentEffectDescription": ["None"],
+  	"cost": ["6 Coins"]
+  },
+  {
+  	"name": "Hiring Recruits",
+  	"instantEffectDescription": "You get 5 Military points",
+  	"permanentEffectDescription": ["You get 4 Victory points at the end of the game"],
+  	"cost": ["4 Coins"]
+  },
+  {
+  	"name": "Repairing the Church",
+  	"instantEffectDescription": "You get 1 Faith point",
+  	"permanentEffectDescription": ["You get 5 Victory points at the end of the game"],
+  	"cost": ["1 Coin, 1 Wood, 1 Stone"]
+  },
+  {
+  	"name": "Building the Walls",
+  	"instantEffectDescription": "You get 2 Military points and 1 Council's Privilege",
+  	"permanentEffectDescription": ["You get 3 Victory points at the end of the game"],
+  	"cost": ["3 Stones"]
+  },
+  {
+  	"name": "Raising a statue",
+  	"instantEffectDescription": "You get 2 Council's Privileges",
+  	"permanentEffectDescription": ["You get 4 Victory points at the end of the game"],
+  	"cost": ["2 Woods, 2 Stones"]
+  },
+  {
+  	"name": "Military campaign",
+  	"instantEffectDescription": "You get 3 Coins",
+  	"permanentEffectDescription": ["You get 5 Victory points at the end of the game"],
+  	"cost": ["2 Military points if you have at least 3 Military points"]
+  },
+  {
+  	"name": "Hosting panhandlers",
+  	"instantEffectDescription": "You get 4 Servants",
+  	"permanentEffectDescription": ["You get 4 Victory points at the end of the game"],
+  	"cost": ["3 Woods"]
+  },
+  {
+  	"name": "Fighting Heresies",
+  	"instantEffectDescription": "You get 2 Faith points",
+  	"permanentEffectDescription": ["You get 5 Victory points at the end of the game"],
+  	"cost": ["3 Military points if you have at least 5 Military points"]
+  },
+  {
+  	"name": "Support to the bishop",
+  	"instantEffectDescription": "You get 3 Faith points",
+  	"permanentEffectDescription": ["You get 1 Victory points at the end of the game"],
+  	"cost": ["2 Military points if have at least 4 Military points", "1 Woods, 1 Stones, 2 Coins"]
+  },
+  {
+  	"name": "Hiring soldiers",
+  	"instantEffectDescription": "You get 6 Military points",
+  	"permanentEffectDescription": ["You get 5 Victory points at the end of the game"],
+  	"cost": ["6 Coins"]
+  },
+  {
+  	"name": "Repairing the abbey",
+  	"instantEffectDescription": "You get 2 Faith points",
+  	"permanentEffectDescription": ["You get 6 Victory points at the end of the game"],
+  	"cost": ["2 Coins, 2 Woods, 2 Stones"]
+  },
+  {
+  	"name": "Building the bastions",
+  	"instantEffectDescription": "You get 3 Military points and 1 Council's Privilege",
+  	"permanentEffectDescription": ["You get 2 Victory points at the end of the game"],
+  	"cost": ["4 Stones"]
+  },
+  {
+  	"name": "Support to the king",
+  	"instantEffectDescription": "You get 5 Coins and 1 Council's Privilege",
+  	"permanentEffectDescription": ["You get 3 Victory points at the end of the game"],
+  	"cost": ["3 Military points if you have at least 6 Military points"]
+  },
+  {
+  	"name": "Improving the canals",
+  	"instantEffectDescription": "You can do an harvest of value 4",
+  	"permanentEffectDescription": ["You get 5 Victory points at the end of the game"],
+  	"cost": ["2 Servants, 3 Coins"]
+  },
+  {
+  	"name": "Hosting foreigners",
+  	"instantEffectDescription": "You get 5 Servants",
+  	"permanentEffectDescription": ["You get 4 Victory points at the end of the game"],
+  	"cost": ["4 Woods"]
+  },
+  {
+  	"name": "Crusade",
+  	"instantEffectDescription": "You get 5 Coins and 1 Faith point",
+  	"permanentEffectDescription": ["You get 5 Victory points at the end of the game"],
+  	"cost": ["4 Military points if you at least 8 Military points"]
+  },
+  {
+  	"name": "Support to the cardinal",
+  	"instantEffectDescription": "You get 3 Faith points",
+  	"permanentEffectDescription": ["You get 4 Victory points at the end of the game"],
+  	"cost": ["4 Military points if you have at least 7 Military points", "2 Woods, 2 Stones, 3 Coins"]
+  },
+  {
+  	"name": "Hiring mercenaries",
+  	"instantEffectDescription": "You get 7 Military points",
+  	"permanentEffectDescription": ["You get 6 Victory points at the end of the game"],
+  	"cost": ["8 Coins"]
+  },
+  {
+  	"name": "Repairing the cathedral",
+  	"instantEffectDescription": "You can get another card of value 7 and you can get 1 Faith point",
+  	"permanentEffectDescription": ["You 5 get Victory points at the end of the game"],
+  	"cost": ["3 Coins, 3 Woods, 3 Stones"]
+  },
+  {
+  	"name": "Building the towers",
+  	"instantEffectDescription": "You get 4 Military points and 1 Council's Privilege",
+  	"permanentEffectDescription": ["You get 4 Victory points at the end of the game"],
+  	"cost": ["6 Stones"]
+  },
+  {
+  	"name": "Promoting sacred art",
+  	"instantEffectDescription": "You get 3 Faith points",
+  	"permanentEffectDescription": ["You get 3 Victory points at the end of the game"],
+  	"cost": ["6 Woods"]
+  },
+  {
+  	"name": "Military conquest",
+  	"instantEffectDescription": "You get 3 Woods, 3 Stones and 3 Coins",
+  	"permanentEffectDescription": ["You get 7 Victory points at the end of the game"],
+  	"cost": ["6 Military points if you have at least 12 Military points"]
+  },
+  {
+  	"name": "Improving the roads",
+  	"instantEffectDescription": "You can do a production of value 3",
+  	"permanentEffectDescription": ["You get 3 Victory points at the end of the game"],
+  	"cost": ["3 Servants, 4 Coins"]
+  },
+  {
+  	"name": "Sacred war",
+  	"instantEffectDescription": "You get 4 Faith points",
+  	"permanentEffectDescription": ["You get 8 Victory points at the end of the game"],
+  	"cost": ["8 Military points if you have at least 15 Military points"]
+  },
+  {
+  	"name": "Support to the pope",
+  	"instantEffectDescription": "You get 2 Faith points",
+  	"permanentEffectDescription": ["You get 10 Victory points at the end of the game"],
+  	"cost": ["5 Military points if you have at least 10 Military points", "3 oods, 3 Stones, 4 Coins"]
   }
 ]
