@@ -9,6 +9,13 @@ import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.*;
 import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
+import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.EndGameRewardsModifier;
+import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCosts;
+import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.CanPlaceOnOccupiedSpace;
+import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServants;
+import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
+import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.BonusRewards;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -25,6 +32,36 @@ class ParserAdditionalInfoTest {
     @BeforeEach
     void setUp() {
         parserAdditionalInfo = new ParserAdditionalInfo();
+    }
+
+    @Test
+    void testParseEndGameRewardsModifier() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseEndGameRewardsModifier";
+        Class targetClass = parserAdditionalInfo.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
+        method.setAccessible(true);
+        String json = "{\"modifiers\": [\"lessVictoryBasedOnBuildingsCosts\"]}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        EndGameRewardsModifier resultExpected = new LessVictoryBasedOnBuildingsCosts();
+        EndGameRewardsModifier result = (EndGameRewardsModifier) method.invoke(parserAdditionalInfo, obj);
+        assertTrue(resultExpected.equals(result));
+    }
+
+    @Test
+    void testParseCardFlashAction() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseCardFlashAction";
+        Class targetClass = parserAdditionalInfo.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, String.class, int.class);
+        method.setAccessible(true);
+        String json = "{\"actionType\": [\"GREEN_TOWER\", \"PRODUCTION\", \"HARVEST\", \"MARKET\"]," +
+                        "\"actionValue\": \"3\"," +
+                        "\"discount\":[{\"resources\":{\"woods\":\"0\",\"stones\":\"0\",\"servants\":\"0\",\"coins\":\"3\"},"+
+                                        "\"points\": { \"victory\": \"0\", \"military\": \"0\", \"faith\": \"0\"}}]}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        AdditionalCardInfo resultExpected = new CardFlashAction("Test6", ActionType.PRODUCTION, 3,
+                new Goods(new Resources(0,0,0,3)));
+        AdditionalCardInfo result = (AdditionalCardInfo) method.invoke(parserAdditionalInfo, obj, "Test6", 1);
+        assertTrue(resultExpected.equals(result));
     }
 
     @Test
@@ -84,30 +121,59 @@ class ParserAdditionalInfoTest {
                                                     add(new Goods(new Resources(5, 0, 0, 0),
                                                                     new Points(0, 2, 0)));}};
         List<ExchangingGoods> resultProduction=new ArrayList<ExchangingGoods>(){{
-                                        add(new ExchangingGoods(new Resources(),
-                                                    new Points(3, 0, 0),0));
                                                     add(new ExchangingGoods(new Resources(),
-                                                    new Points(6, 0, 0), 0));}};
+                                                                            new Points(3, 0, 0),
+                                                                            0));
+                                                    add(new ExchangingGoods(new Resources(),
+                                                                            new Points(6, 0, 0),
+                                                                            0));}};
         JsonObject obj = (JsonObject) new JsonParser().parse(json);
         AdditionalCardInfo resultExpected = new MultipleProduction("Test2",costProduction, resultProduction);
         AdditionalCardInfo result = (AdditionalCardInfo) method.invoke(parserAdditionalInfo, obj, "Test2");
         assertTrue(resultExpected.equals(result));
     }
 
-    /*da finire, COME QUELLO PER I REQUIREMENTS MODIFIER*/
     @Test
-    void testParseRewardsOnCard() throws NoSuchMethodException { //BONUS REW, DoubleRewards
-        String methodName = "parseCardFlashExchangingGoods";
+    void testParseRequirementsOnCard() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseRequirementsOnCard";
+        Class targetClass = parserAdditionalInfo.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, String.class);
+        method.setAccessible(true);
+        String json = "{\"actionType\": [\"GREEN_TOWER\", \"PRODUCTION\", \"HARVEST\", \"MARKET\"]," +
+                        "\"modifiers\": [\"doubleServants\", \"canPlaceOnOccupiedSpace\"]}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        List<ActionType> availableAction = new ArrayList<ActionType>(){{add(ActionType.GREEN_TOWER);
+                                                                        add(ActionType.PRODUCTION);
+                                                                        add(ActionType.HARVEST);
+                                                                        add(ActionType.MARKET);}};
+        List<RequirementsModifier> requirementsModifiers = new ArrayList<RequirementsModifier>(){{
+                                            add(new DoubleServants(new AvailableActions(availableAction)));
+                                            add(new CanPlaceOnOccupiedSpace(new AvailableActions(availableAction)));}};
+        AdditionalCardInfo resultExpected = new RequirementsOnCard("Test5",requirementsModifiers);
+        AdditionalCardInfo result = (AdditionalCardInfo)method.invoke(parserAdditionalInfo, obj, "Test5");
+        assertTrue(resultExpected.equals(result));
+    }
+
+    @Test
+    void testParseRewardsOnCard() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseRewardsOnCard";
         Class targetClass = parserAdditionalInfo.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, String.class);
         method.setAccessible(true);
         String json = "{ \"actionType\": [\"GREEN_TOWER\", \"PURPLE_TOWER\", \"YELLOW_TOWER\"], " +
                         "\"bonus\":[{\"resources\":{\"woods\":\"0\",\"stones\":\"0\",\"servants\":\"0\",\"coins\":\"1\"},"+
-                "\"points\": { \"victory\": \"2\", \"military\": \"0\", \"faith\": \"0\"}}]}";
+                        "\"points\": { \"victory\": \"2\", \"military\": \"0\", \"faith\": \"0\"}}]," +
+                        "\"modifiers\":[\"bonusRewards\"] }";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
         List<ActionType> availableActions = new ArrayList<ActionType>(){{add(ActionType.GREEN_TOWER);
-                                                                        add(ActionType.PURPLE_TOWER);
-                                                                        add(ActionType.YELLOW_TOWER);}};
-
+            add(ActionType.PURPLE_TOWER);
+            add(ActionType.YELLOW_TOWER);}};
+        AdditionalCardInfo resultExpected = new RewardsOnCard("Test1", new BonusRewards(
+                                                            new AvailableActions(availableActions),
+                                                            new Goods(new Resources(0,0,0,1),
+                                                                        new Points(2,0,0))));
+        AdditionalCardInfo result = (AdditionalCardInfo) method.invoke(parserAdditionalInfo, obj, "Test1");
+        assertTrue(resultExpected.equals(result));
     }
 
     @Test

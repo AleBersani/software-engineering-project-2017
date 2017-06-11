@@ -43,7 +43,7 @@ public class ParserModifiers {
         return modifierList;
     }
 
-    public RewardsModifier parseListRewardsModifier(List<String> modifiers, JsonObject card) throws Exception {
+    public RewardsModifier parseRewardsModifier(List<String> modifiers, JsonObject card) throws Exception {
         Map<String, Callable<RewardsModifier>> commands = new HashMap<>();
         commands.put("bonusRewards", ()->parseBonusRewards(card));
         commands.put("doubleRewards", ()->parseDoubleRewards(card));

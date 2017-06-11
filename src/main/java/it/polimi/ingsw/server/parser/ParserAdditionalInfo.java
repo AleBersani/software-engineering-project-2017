@@ -317,7 +317,7 @@ public class ParserAdditionalInfo {
         ParserModifiers parserModifiers = new ParserModifiers();
         List<String> modifiers = gson.fromJson(card.get(MODIFIER).getAsJsonArray(),
                                                 new TypeToken<ArrayList<String>>(){}.getType());
-        RewardsModifier parsedModifier = parserModifiers.parseListRewardsModifier(modifiers, card);
+        RewardsModifier parsedModifier = parserModifiers.parseRewardsModifier(modifiers, card);
         return  new RewardsOnCard(name, parsedModifier);
     }
 
