@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class PlayerLight {
+    private String name;
     private Map<GoodsLight, Integer> myGoods;
     private List<LeaderCard> myLeaders;
     private Map<GoodsLight, Integer> myBonusTile;
@@ -16,10 +17,12 @@ public class PlayerLight {
     private List<DevelopmentCardLight> myCharacters;
     private List<DevelopmentCardLight> myVentures;
 
-    public PlayerLight(Map<GoodsLight, Integer> myGoods,
+    public PlayerLight(String name,
+                       Map<GoodsLight, Integer> myGoods,
                        List<LeaderCard> myLeaders,
                        Map<GoodsLight, Integer> myBonusTile,
                        Map<PawnColorLight, Integer> myPawns) {
+        this.name = name;
         this.myGoods = myGoods;
         this.myLeaders = myLeaders;
         this.myBonusTile = myBonusTile;
@@ -28,6 +31,14 @@ public class PlayerLight {
         myBuildings = new ArrayList<>();
         myCharacters = new ArrayList<>();
         myVentures = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Map<GoodsLight, Integer> getMyGoods() {
