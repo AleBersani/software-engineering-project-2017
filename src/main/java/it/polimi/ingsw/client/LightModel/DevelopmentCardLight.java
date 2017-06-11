@@ -1,15 +1,15 @@
-package it.polimi.ingsw.client.LightModel;
+package it.polimi.ingsw.client.lightmodel;
 
 import java.util.List;
 
 public class DevelopmentCardLight {
-    private List<String> cardCosts;
     private String name;
+    private List<String> cardCosts;
     private String instantEffectDescription;
     private List<String> permanentEffectDescription;
 
-    public DevelopmentCardLight(List<String> cardCosts,
-                                String name,
+    public DevelopmentCardLight(String name,
+                                List<String> cardCosts,
                                 String instantEffectDescription,
                                 List<String> permanentEffectDescription) {
         this.cardCosts = cardCosts;

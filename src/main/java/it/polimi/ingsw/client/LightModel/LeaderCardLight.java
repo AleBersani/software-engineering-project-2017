@@ -1,13 +1,15 @@
-package it.polimi.ingsw.client.LightModel;
+package it.polimi.ingsw.client.lightmodel;
+
+import java.util.List;
 
 public class LeaderCardLight {
     private String name;
-    private String effectDescritption;
-    private String requirements;
+    private String effectDescription;
+    private List<String> requirements;
 
-    public LeaderCardLight(String name, String effectDescritption, String requirements) {
+    public LeaderCardLight(String name, String effectDescription, List<String> requirements) {
         this.name = name;
-        this.effectDescritption = effectDescritption;
+        this.effectDescription = effectDescription;
         this.requirements = requirements;
     }
 
@@ -19,19 +21,19 @@ public class LeaderCardLight {
         this.name = name;
     }
 
-    public String getEffectDescritption() {
-        return effectDescritption;
+    public String getEffectDescription() {
+        return effectDescription;
     }
 
-    public void setEffectDescritption(String effectDescritption) {
-        this.effectDescritption = effectDescritption;
+    public void setEffectDescription(String effectDescription) {
+        this.effectDescription = effectDescription;
     }
 
-    public String getRequirements() {
+    public List<String> getRequirements() {
         return requirements;
     }
 
-    public void setRequirements(String requirements) {
+    public void setRequirements(List<String> requirements) {
         this.requirements = requirements;
     }
 }

@@ -1,4 +1,4 @@
-package it.polimi.ingsw.client.LightModel;
+package it.polimi.ingsw.client.lightmodel;
 
 public enum GoodsLight {
     WOODS,
