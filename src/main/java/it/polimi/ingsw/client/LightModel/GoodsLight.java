@@ -7,5 +7,6 @@ public enum GoodsLight {
     COINS,
     VICTORY_POINTS,
     MILITARY_POINTS,
-    FAITH_POINTS
+    FAITH_POINTS,
+    COUNCIL_PRIVILEGE
 }
