@@ -1,7 +1,11 @@
-.prova {
+.prova, .prova2{
     -fx-border-color: aliceblue;
 }
 
 .prova:hover {
     -fx-border-color: blueviolet;
+}
+
+.prova2:hover {
+    -fx-border-color: deeppink;
 }
