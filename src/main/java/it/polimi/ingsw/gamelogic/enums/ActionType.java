@@ -1,9 +1,11 @@
 package it.polimi.ingsw.gamelogic.enums;
 
+import java.io.Serializable;
+
 /**
  * Enum that describes the types of action th eplayer can perform
  */
-public enum ActionType {
+public enum ActionType implements Serializable {
     GREEN_TOWER,
     YELLOW_TOWER,
     BLUE_TOWER,

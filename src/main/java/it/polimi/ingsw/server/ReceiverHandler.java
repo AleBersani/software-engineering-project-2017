@@ -1,19 +1,17 @@
 package it.polimi.ingsw.server;
 
-import it.polimi.ingsw.server.database.DBHandler;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import it.polimi.ingsw.shared.requests.clientserver.PawnPlacement;
 
 public class ReceiverHandler {
-    private String message;
+    private Object object;
 
-    public ReceiverHandler(String message) {
-        this.message = message;
+    public ReceiverHandler(Object object) {
+        this.object = object;
     }
 
     public void run() {
-        System.out.println(message);
+        System.out.println(object.toString());
+        /*
         String[] messageSplit = message.split("_");
         DBHandler.connect();
         try {
@@ -26,6 +24,6 @@ public class ReceiverHandler {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

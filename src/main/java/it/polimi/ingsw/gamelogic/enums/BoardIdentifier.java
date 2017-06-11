@@ -1,9 +1,11 @@
 package it.polimi.ingsw.gamelogic.enums;
 
+import java.io.Serializable;
+
 /**
  * Enum that describes the identifiers of the spaces on the board
  */
-public enum BoardIdentifier {
+public enum BoardIdentifier implements Serializable {
     T_G_1, T_G_2, T_G_3, T_G_4,
     T_B_1, T_B_2, T_B_3, T_B_4,
     T_Y_1, T_Y_2, T_Y_3, T_Y_4,

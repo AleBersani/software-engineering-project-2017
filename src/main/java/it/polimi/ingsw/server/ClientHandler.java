@@ -1,9 +1,11 @@
 package it.polimi.ingsw.server;
 
+import it.polimi.ingsw.shared.requests.clientserver.PawnPlacement;
+
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class ClientHandler implements Runnable {
@@ -11,8 +13,8 @@ public class ClientHandler implements Runnable {
 
     private Socket socket;
 
-    private Scanner input;
-    private PrintWriter output;
+    private ObjectInputStream objectInputStream;
+    private ObjectOutputStream objectOutputStream;
 
     public ClientHandler(Socket socket) {
         this.socket = socket;
@@ -20,22 +22,19 @@ public class ClientHandler implements Runnable {
 
     public void run() {
         try {
-            input = new Scanner(socket.getInputStream());
-            output = new PrintWriter(socket.getOutputStream());
+            objectInputStream = new ObjectInputStream(socket.getInputStream());
+            objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             while (true) {
-                String line = input.nextLine();
-                if (line.equals("quit")) {
-                    break;
-                } else {
-                    ReceiverHandler receiverHandler = new ReceiverHandler(line);
-                    receiverHandler.run();
-                }
-            }
-            output.close();
-            input.close();
-            socket.close();
-        } catch (IOException e) {
-            LOGGER.info(e.getMessage());
+                PawnPlacement actionDetails = (PawnPlacement)objectInputStream.readObject();
+                ReceiverHandler receiverHandler = new ReceiverHandler(actionDetails);
+                receiverHandler.run();
+
+            }/*
+            objectOutputStream.close();
+            objectInputStream.close();
+            socket.close();*/
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
