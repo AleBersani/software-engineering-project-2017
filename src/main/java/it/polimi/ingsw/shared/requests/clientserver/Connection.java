@@ -1,8 +1,10 @@
 package it.polimi.ingsw.shared.requests.clientserver;
 
+import it.polimi.ingsw.server.exectutionmiddleware.ClientServerRequestVisitor;
+
 import java.io.Serializable;
 
-public class Connection implements Serializable {
+public class Connection implements Serializable, ClientServerRequest {
     private String name;
     private String password;
 
@@ -17,6 +19,11 @@ public class Connection implements Serializable {
                 "name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    @Override
+    public void acceptClientServerRequestVisitor(ClientServerRequestVisitor clientServerRequestVisitor) {
+        clientServerRequestVisitor.visitClientServerRequest(this);
     }
 
     public String getName() {

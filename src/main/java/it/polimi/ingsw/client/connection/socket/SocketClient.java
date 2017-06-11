@@ -1,8 +1,11 @@
-package it.polimi.ingsw.client.connection;
+package it.polimi.ingsw.client.connection.socket;
+
+import it.polimi.ingsw.shared.requests.clientserver.Connection;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SocketClient {
@@ -19,7 +22,18 @@ public class SocketClient {
         try {
             socketClient.startSocketClient();
         } catch (IOException e) {
-            LOGGER.info("Socket Connection Error");
+            LOGGER.log(Level.SEVERE, "An exception was thrown: Socket Connection Error", e);
+        }
+
+        try {
+            socketClient.writeSocket(new Connection("Dennis", "password"));
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
+        }
+        try {
+            socketClient.writeSocket(new Connection("Dennis", "password"));
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
         }
     }
 
