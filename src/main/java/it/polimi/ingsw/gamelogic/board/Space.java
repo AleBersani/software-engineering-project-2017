@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.board;
 
-import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;
+import it.polimi.ingsw.shared.model.BoardIdentifier;
 
 /**
  * Class that describes the basic information of a Space on the Board

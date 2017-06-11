@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.actions.description;
 
 import it.polimi.ingsw.gamelogic.actions.ActionVisitor;
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
+import it.polimi.ingsw.shared.model.PawnColor;
 
 /**
  * This Class describes an action concerning the activation of an Action Space on the Board.

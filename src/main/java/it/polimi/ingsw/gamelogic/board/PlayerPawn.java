@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.board;
 
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import it.polimi.ingsw.gamelogic.player.PlayerDetails;
+import it.polimi.ingsw.shared.model.PawnColor;
 
 /**
  * Class that describes the Player's Pawns

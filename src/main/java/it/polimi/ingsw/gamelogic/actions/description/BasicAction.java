@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.actions.description;
 
-import it.polimi.ingsw.gamelogic.enums.ActionType;
-import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;
+import it.polimi.ingsw.shared.model.ActionType;
+import it.polimi.ingsw.shared.model.BoardIdentifier;
 
 /**
  * Class representing the basic information of an action

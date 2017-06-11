@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.modifiers;
 
-import it.polimi.ingsw.gamelogic.enums.ActionType;
+import it.polimi.ingsw.shared.model.ActionType;
 
 import java.util.ArrayList;
 import java.util.List;

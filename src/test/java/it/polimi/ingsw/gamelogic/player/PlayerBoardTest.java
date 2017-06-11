@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.player;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
+import it.polimi.ingsw.shared.model.PawnColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

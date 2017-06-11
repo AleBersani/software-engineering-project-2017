@@ -1,6 +1,6 @@
 package it.polimi.ingsw.gamelogic.player;
 
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
+import it.polimi.ingsw.shared.model.PawnColor;
 
 import java.util.Objects;
 

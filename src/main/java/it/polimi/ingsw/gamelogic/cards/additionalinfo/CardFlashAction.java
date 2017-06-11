@@ -2,7 +2,7 @@ package it.polimi.ingsw.gamelogic.cards.additionalinfo;
 
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.cards.CardVisitor;
-import it.polimi.ingsw.gamelogic.enums.ActionType;
+import it.polimi.ingsw.shared.model.ActionType;
 
 import java.util.Objects;
 

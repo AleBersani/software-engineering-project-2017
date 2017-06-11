@@ -1,4 +1,4 @@
-package it.polimi.ingsw.gamelogic.enums;
+package it.polimi.ingsw.shared.model;
 
 import java.io.Serializable;
 

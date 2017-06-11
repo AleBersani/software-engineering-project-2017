@@ -5,11 +5,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.enums.ActionType;
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.*;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.*;
+import it.polimi.ingsw.shared.model.ActionType;
+import it.polimi.ingsw.shared.model.PawnColor;
 
 import java.util.ArrayList;
 import java.util.HashMap;

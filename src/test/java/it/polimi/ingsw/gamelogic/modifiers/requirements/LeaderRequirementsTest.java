@@ -5,12 +5,12 @@ import it.polimi.ingsw.gamelogic.basics.Points;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderInformation;
-import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.LeaderCategory;
 import it.polimi.ingsw.gamelogic.player.BonusTiles;
 import it.polimi.ingsw.gamelogic.player.Player;
 import it.polimi.ingsw.gamelogic.player.PlayerBoard;
 import it.polimi.ingsw.gamelogic.player.PlayerDetails;
+import it.polimi.ingsw.shared.model.ActionType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

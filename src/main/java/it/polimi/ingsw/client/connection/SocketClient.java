@@ -1,9 +1,5 @@
 package it.polimi.ingsw.client.connection;
 
-import it.polimi.ingsw.gamelogic.enums.ActionType;
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
-import it.polimi.ingsw.shared.requests.clientserver.PawnPlacement;
-
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;

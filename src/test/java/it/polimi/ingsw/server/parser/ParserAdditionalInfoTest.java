@@ -7,7 +7,6 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.basics.Points;
 import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.*;
-import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.EndGameRewardsModifier;
@@ -16,6 +15,7 @@ import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.CanPlaceOnOccu
 import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.DoubleServants;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.BonusRewards;
+import it.polimi.ingsw.shared.model.ActionType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

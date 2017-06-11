@@ -1,7 +1,5 @@
 package it.polimi.ingsw.server;
 
-import it.polimi.ingsw.shared.requests.clientserver.PawnPlacement;
-
 public class ReceiverHandler {
     private Object object;
 

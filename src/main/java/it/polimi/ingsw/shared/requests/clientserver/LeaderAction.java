@@ -1,6 +1,6 @@
 package it.polimi.ingsw.shared.requests.clientserver;
 
-import it.polimi.ingsw.gamelogic.enums.ActionType;
+import it.polimi.ingsw.shared.model.ActionType;
 
 import java.io.Serializable;
 

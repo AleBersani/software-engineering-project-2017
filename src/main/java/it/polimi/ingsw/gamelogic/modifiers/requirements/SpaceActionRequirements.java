@@ -1,9 +1,9 @@
 package it.polimi.ingsw.gamelogic.modifiers.requirements;
 
-import it.polimi.ingsw.gamelogic.enums.ActionType;
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import it.polimi.ingsw.gamelogic.player.Pawn;
 import it.polimi.ingsw.gamelogic.player.Player;
+import it.polimi.ingsw.shared.model.ActionType;
+import it.polimi.ingsw.shared.model.PawnColor;
 
 import java.util.Objects;
 import java.util.Optional;

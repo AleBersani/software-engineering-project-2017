@@ -1,10 +1,10 @@
 package it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers;
 
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
 import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.TowerActionRequirements;
+import it.polimi.ingsw.shared.model.PawnColor;
 
 import java.util.List;
 import java.util.Objects;

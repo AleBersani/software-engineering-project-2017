@@ -1,8 +1,8 @@
 package it.polimi.ingsw.shared.requests.clientserver;
 
-import it.polimi.ingsw.gamelogic.enums.ActionType;
-import it.polimi.ingsw.gamelogic.enums.BoardIdentifier;
-import it.polimi.ingsw.gamelogic.enums.PawnColor;
+import it.polimi.ingsw.shared.model.ActionType;
+import it.polimi.ingsw.shared.model.BoardIdentifier;
+import it.polimi.ingsw.shared.model.PawnColor;
 
 import java.io.Serializable;
 

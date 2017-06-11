@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.actions.description;
 
 import it.polimi.ingsw.gamelogic.actions.ActionVisitor;
-import it.polimi.ingsw.gamelogic.enums.ActionType;
+import it.polimi.ingsw.shared.model.ActionType;
 
 /**
  * Class that represents every action related to a Leader Card, in particular:

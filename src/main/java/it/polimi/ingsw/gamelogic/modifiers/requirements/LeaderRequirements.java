@@ -2,8 +2,8 @@ package it.polimi.ingsw.gamelogic.modifiers.requirements;
 
 import it.polimi.ingsw.gamelogic.basics.CardsRequired;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCost;
-import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.player.Player;
+import it.polimi.ingsw.shared.model.ActionType;
 
 import java.util.List;
 import java.util.Objects;

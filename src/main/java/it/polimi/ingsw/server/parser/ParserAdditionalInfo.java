@@ -9,11 +9,11 @@ import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.basics.Points;
 import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.cards.additionalinfo.*;
-import it.polimi.ingsw.gamelogic.enums.ActionType;
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 import it.polimi.ingsw.gamelogic.modifiers.endgamerewards.modifiers.*;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
+import it.polimi.ingsw.shared.model.ActionType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
