@@ -586,6 +586,6 @@
   	"name": "Support to the pope",
   	"instantEffectDescription": "You get 2 Faith points",
   	"permanentEffectDescription": ["You get 10 Victory points at the end of the game"],
-  	"cost": ["5 Military points if you have at least 10 Military points", "3 oods, 3 Stones, 4 Coins"]
+  	"cost": ["5 Military points if you have at least 10 Military points", "3 Woods, 3 Stones, 4 Coins"]
   }
 ]
