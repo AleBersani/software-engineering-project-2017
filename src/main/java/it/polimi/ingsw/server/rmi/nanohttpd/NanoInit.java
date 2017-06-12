@@ -1,7 +1,5 @@
 package it.polimi.ingsw.server.rmi.nanohttpd;
 
-import it.polimi.ingsw.server.rmi.RMIServer;
-
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

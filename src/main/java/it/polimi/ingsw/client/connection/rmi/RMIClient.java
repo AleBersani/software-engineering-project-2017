@@ -1,7 +1,6 @@
 package it.polimi.ingsw.client.connection.rmi;
 
 import it.polimi.ingsw.server.rmi.RMIReceiver;
-import it.polimi.ingsw.server.rmi.nanohttpd.NanoInit;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;

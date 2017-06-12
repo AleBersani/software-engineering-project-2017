@@ -3,7 +3,6 @@ package it.polimi.ingsw.server.rmi;
 import it.polimi.ingsw.server.exectutionmiddleware.RequestHandler;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
 
-import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Objects;
