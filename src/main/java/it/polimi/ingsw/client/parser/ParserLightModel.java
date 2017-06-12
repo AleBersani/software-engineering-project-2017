@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import it.polimi.ingsw.client.lightmodel.DevelopmentCardLight;
+import it.polimi.ingsw.client.lightmodel.ExcommunicationTileLight;
 import it.polimi.ingsw.client.lightmodel.LeaderCardLight;
 
 import java.io.IOException;
@@ -57,6 +58,22 @@ public class ParserLightModel {
             parsedCards.add(new LeaderCardLight(card.get("name").getAsString(),
                     card.get("effectDescription").getAsString(),
                     parsedRequirements));
+        }
+        return parsedCards;
+    }
+
+    public List<ExcommunicationTileLight> parseExcommunicationTileClient() throws IOException {
+        Gson gson = new Gson();
+        JsonArray json;
+        JsonObject card;
+        List<ExcommunicationTileLight> parsedCards = new ArrayList<>();
+        json = parserSettingsClient.extractJsonArray("ExcommunicationTileLight.json");
+        for (int i = 0; i < json.size(); i++) {
+            card = json.get(i)
+                        .getAsJsonObject();
+            parsedCards.add(new ExcommunicationTileLight(
+                                                        card.get("name").getAsString(),
+                                                        card.get("effectDescription").getAsString()));
         }
         return parsedCards;
     }
