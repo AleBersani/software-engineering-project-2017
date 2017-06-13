@@ -2,13 +2,13 @@
   {
     "name": "Commercial Hub",
     "instantEffectDescription": "None",
-    "permanentEffectDescription": ["You get a Coin as harvest result with cost of 1"],
+    "permanentEffectDescription": ["You get 1 Coin as harvest result with cost of 1"],
     "cost": ["None"]
   },
   {
     "name": "Woods",
     "instantEffectDescription": "You receive 1 Wood",
-    "permanentEffectDescription": ["You get a Wood as harvest result with cost of 2"],
+    "permanentEffectDescription": ["You get 1 Wood as harvest result with cost of 2"],
     "cost": ["None"]
   },
   {

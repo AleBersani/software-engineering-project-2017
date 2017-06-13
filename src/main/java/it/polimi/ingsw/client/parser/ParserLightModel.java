@@ -20,14 +20,18 @@ public class ParserLightModel {
     }
 
     public List<DevelopmentCardLight> parseDevelopmentCardsClient() throws IOException {
-        Gson gson = new Gson();
         JsonArray json;
+        json = parserSettingsClient.extractJsonArray("DevelopmentCardsLight.json");
+        return parseListDevelopmentCardLight(json);
+    }
+
+    private List<DevelopmentCardLight> parseListDevelopmentCardLight(JsonArray cards) {
+        Gson gson = new Gson();
         JsonObject card;
         List<String> parsedCosts, parsedPermanentEffectDescription;
         List<DevelopmentCardLight> parsedCards = new ArrayList<>();
-        json = parserSettingsClient.extractJsonArray("DevelopmentCardsLight.json");
-        for (int i=0; i < json.size(); i++) {
-            card = json.get(i)
+        for (int i=0; i < cards.size(); i++) {
+            card = cards.get(i)
                         .getAsJsonObject();
             parsedCosts = gson.fromJson(card.get("cost").getAsJsonArray(), new TypeToken<ArrayList<String>>(){}.getType());
             parsedPermanentEffectDescription = gson.fromJson(card
@@ -35,45 +39,53 @@ public class ParserLightModel {
                                                                 .getAsJsonArray(),
                                                             new TypeToken<ArrayList<String>>(){}.getType());
             parsedCards.add(new DevelopmentCardLight(   card.get("name").getAsString(),
-                                                        parsedCosts,
-                                                        card.get("instantEffectDescription").getAsString(),
-                                                        parsedPermanentEffectDescription));
+                    parsedCosts,
+                    card.get("instantEffectDescription").getAsString(),
+                    parsedPermanentEffectDescription));
         }
         return parsedCards;
     }
 
     public List<LeaderCardLight> parseLeaderCardClient() throws IOException {
-        Gson gson = new Gson();
         JsonArray json;
+        json = parserSettingsClient.extractJsonArray("LeaderCardLight.json");
+        return parseListLeaderCardLight(json);
+    }
+
+    private List<LeaderCardLight> parseListLeaderCardLight(JsonArray cards) {
+        Gson gson = new Gson();
         JsonObject card;
         List<String> parsedRequirements;
         List<LeaderCardLight> parsedCards = new ArrayList<>();
-        json = parserSettingsClient.extractJsonArray("LeaderCardLight.json");
-        for (int i = 0; i < json.size(); i++) {
-            card = json.get(i)
-                    .getAsJsonObject();
-            parsedRequirements = gson.fromJson(card.get("requirements").getAsJsonArray(),
-                    new TypeToken<ArrayList<String>>() {
-                    }.getType());
+        for (int i = 0; i < cards.size(); i++) {
+            card = cards.get(i)
+                        .getAsJsonObject();
+            parsedRequirements = gson.fromJson(card
+                                                    .get("requirements")
+                                                    .getAsJsonArray(),
+                                                new TypeToken<ArrayList<String>>() {}.getType());
             parsedCards.add(new LeaderCardLight(card.get("name").getAsString(),
-                    card.get("effectDescription").getAsString(),
-                    parsedRequirements));
+                                                card.get("effectDescription").getAsString(),
+                                                parsedRequirements));
         }
         return parsedCards;
     }
 
     public List<ExcommunicationTileLight> parseExcommunicationTileClient() throws IOException {
-        Gson gson = new Gson();
         JsonArray json;
+        json = parserSettingsClient.extractJsonArray("ExcommunicationTileLight.json");
+        return parseListExcommunicationTileLight(json);
+    }
+
+    private List<ExcommunicationTileLight> parseListExcommunicationTileLight(JsonArray json) {
         JsonObject card;
         List<ExcommunicationTileLight> parsedCards = new ArrayList<>();
-        json = parserSettingsClient.extractJsonArray("ExcommunicationTileLight.json");
         for (int i = 0; i < json.size(); i++) {
             card = json.get(i)
-                        .getAsJsonObject();
+                    .getAsJsonObject();
             parsedCards.add(new ExcommunicationTileLight(
-                                                        card.get("name").getAsString(),
-                                                        card.get("effectDescription").getAsString()));
+                    card.get("name").getAsString(),
+                    card.get("effectDescription").getAsString()));
         }
         return parsedCards;
     }

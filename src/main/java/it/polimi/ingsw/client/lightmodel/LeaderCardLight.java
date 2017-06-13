@@ -1,6 +1,7 @@
 package it.polimi.ingsw.client.lightmodel;
 
 import java.util.List;
+import java.util.Objects;
 
 public class LeaderCardLight {
     private String name;
@@ -11,6 +12,23 @@ public class LeaderCardLight {
         this.name = name;
         this.effectDescription = effectDescription;
         this.requirements = requirements;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        LeaderCardLight that = (LeaderCardLight) o;
+        return Objects.equals(getName(), that.getName()) &&
+                Objects.equals(getEffectDescription(), that.getEffectDescription()) &&
+                Objects.equals(getRequirements(), that.getRequirements());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getEffectDescription(), getRequirements());
     }
 
     public String getName() {
