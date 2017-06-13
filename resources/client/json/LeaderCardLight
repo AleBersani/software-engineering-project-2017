@@ -1,6 +1,6 @@
 [
   {
-    "name": "Sigismondo Malatesta",
+    "name": "Francesco Sforza",
     "effectDescription": "Perform a harvest action at value 1",
     "requirements": ["5 Venture cards"]
   },
@@ -8,6 +8,11 @@
     "name": "Ludovico Ariosto",
     "effectDescription": "You can place your pawn in an occupied action space",
     "requirements": ["5 Character cards"]
+  },
+  {
+    "name": "Filippo Brunelleschi",
+    "effectDescription": "You don’t have to spend 3 Coins when you place your pawns in a Tower that is already occupied",
+    "requirements": ["5 Building cards"]
   },
   {
     "name": "Sigismondo Malatesta",
@@ -18,11 +23,6 @@
     "name": "Girolamo Savonarola",
     "effectDescription": "You get 1 Faith point",
     "requirements": ["18 Coins"]
-  },
-  {
-    "name": "Michelangelo Buonarroti",
-    "effectDescription": "You get 3 Coins",
-    "requirements": ["10 Stones"]
   },
   {
     "name": "Michelangelo Buonarroti",
@@ -81,6 +81,11 @@
   },
   {
     "name": "Cosimo de’ Medici",
+    "effectDescription": "You get 3 Servants and 1 Victory point",
+    "requirements": ["2 Character cards and 4 Building cards"]
+  },
+  {
+    "name": "Bartolomeo Colleoni",
     "effectDescription": "You get 4 Victory points",
     "requirements": ["2 Venture cards and 4 Territory cards"]
   },
