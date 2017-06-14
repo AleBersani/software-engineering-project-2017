@@ -1,31 +1,32 @@
-#pane {
-    -fx-background-image: url("/client/punchboard.jpg");
-    -fx-background-repeat: stretch;
-    -fx-background-position: right;
-    -fx-background-size: contain;
-
+.try {
+    -fx-border-color: aliceblue;
 }
 
-#pane2 {
-    -fx-background-image: url("/client/punchboard2.jpg");
-    -fx-background-repeat: stretch;
-    -fx-background-position: center;
-    -fx-background-size: contain;
+.try:hover {
+    -fx-border-color: blueviolet;
+}
+
+#pane4 {
+    -fx-background-color: #D3A627;
 }
 
 
 #coins {
     -fx-background-color: yellow;
+    -fx-alignment: center;
 }
 
 #woods {
     -fx-background-color: chocolate;
+    -fx-alignment: center;
 }
 
 #stones {
     -fx-background-color: darkgray;
+    -fx-alignment: center;
 }
 
 #servants {
     -fx-background-color: blueviolet;
+    -fx-alignment: center;
 }
