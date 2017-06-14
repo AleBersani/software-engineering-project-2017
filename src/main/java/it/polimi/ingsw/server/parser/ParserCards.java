@@ -25,7 +25,7 @@ import java.util.Map;
  * Class that contains methods for parsing every type of Cards.
  */
 public class ParserCards {
-    private static final String DEVELOPMENTCARDSJSON = "DevelopmentCards.json";
+    private static final String DEVELOPMENT_CARDS_JSON = "DevelopmentCards.json";
 
     private ParserSettings settings;
 
@@ -38,7 +38,7 @@ public class ParserCards {
      * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<Territory> completeParseTerritory() throws IOException {
-        JsonObject devCards = settings.extractJsonObject(DEVELOPMENTCARDSJSON);
+        JsonObject devCards = settings.extractJsonObject(DEVELOPMENT_CARDS_JSON);
         JsonArray cards = devCards.get("territory").getAsJsonArray();
         return parseTerritories(cards);
     }
@@ -48,7 +48,7 @@ public class ParserCards {
      * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<Building> completeParseBuilding() throws IOException {
-        JsonObject devCards = settings.extractJsonObject(DEVELOPMENTCARDSJSON);
+        JsonObject devCards = settings.extractJsonObject(DEVELOPMENT_CARDS_JSON);
         JsonArray cards = devCards.get("building").getAsJsonArray();
         return parseBuildings(cards);
     }
@@ -58,7 +58,7 @@ public class ParserCards {
      * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<Character> completeParseCharacter() throws IOException {
-        JsonObject devCards = settings.extractJsonObject(DEVELOPMENTCARDSJSON);
+        JsonObject devCards = settings.extractJsonObject(DEVELOPMENT_CARDS_JSON);
         JsonArray cards = devCards.get("character").getAsJsonArray();
         return parseCharacters(cards);
     }
@@ -68,7 +68,7 @@ public class ParserCards {
      * @throws IOException Can be thrown by settings.extractJsonObject method.
      */
     public List<Venture> completeParseVenture() throws IOException {
-        JsonObject devCards = settings.extractJsonObject(DEVELOPMENTCARDSJSON);
+        JsonObject devCards = settings.extractJsonObject(DEVELOPMENT_CARDS_JSON);
         JsonArray cards = devCards.get("venture").getAsJsonArray();
         return parseVentures(cards);
     }

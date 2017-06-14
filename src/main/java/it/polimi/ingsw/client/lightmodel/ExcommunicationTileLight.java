@@ -19,7 +19,6 @@ public class ExcommunicationTileLight {
             return false;
         ExcommunicationTileLight that = (ExcommunicationTileLight) o;
         return Objects.equals(getName(), that.getName()) &&
-                Objects.equals(getName(), that.getName()) &&
                 Objects.equals(getEffectDescription(), that.getEffectDescription());
     }
 

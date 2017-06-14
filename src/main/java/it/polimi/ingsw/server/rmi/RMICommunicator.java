@@ -1,6 +1,5 @@
 package it.polimi.ingsw.server.rmi;
 
-import it.polimi.ingsw.shared.Client;
 import it.polimi.ingsw.shared.Registrable;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
 

@@ -1,10 +1,6 @@
 package it.polimi.ingsw.server.exectutionmiddleware;
 
-import it.polimi.ingsw.server.rmi.Communicator;
-import it.polimi.ingsw.shared.Client;
 import it.polimi.ingsw.shared.requests.clientserver.*;
-
-import java.rmi.RemoteException;
 
 public class RequestHandler implements ClientServerRequestVisitor {
     @Override
@@ -29,6 +25,7 @@ public class RequestHandler implements ClientServerRequestVisitor {
 
     @Override
     public void visitClientServerRequest(PlayerLogin playerLogin) {
+        /*
         System.out.println("PlayerLogin");
         // Verify data
         System.out.println(playerLogin.getPlayerDetails().getPlayerName());
@@ -36,6 +33,6 @@ public class RequestHandler implements ClientServerRequestVisitor {
             Communicator.doCallbacks("Ciao!");
         } catch (RemoteException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

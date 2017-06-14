@@ -1,13 +1,13 @@
 package it.polimi.ingsw.server.rmi;
 
-import it.polimi.ingsw.server.GamesConnections;
-import it.polimi.ingsw.shared.Registrable;
 import it.polimi.ingsw.server.exectutionmiddleware.RequestHandler;
+import it.polimi.ingsw.shared.Registrable;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Objects;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Communicator extends UnicastRemoteObject implements RMICommunicator {
@@ -60,9 +60,9 @@ public class Communicator extends UnicastRemoteObject implements RMICommunicator
     }
 
     public static void doCallback(String identifier, String msg) throws RemoteException{
-        LOGGER.info("Sending callback to: " + identifier);
+        LOGGER.log(Level.INFO, () -> "Sending callback to: " + identifier);
         //GamesConnections.getClients().get(identifier).update(msg);
-        System.out.println("Callbacks complete.");
+        LOGGER.log(Level.INFO, "Callback complete");
     }
 
     public static void doCallbacks(String msg) throws RemoteException{/*

@@ -6,18 +6,18 @@ import java.io.Serializable;
 
 public class Connection implements Serializable, ClientServerRequest {
     private String name;
-    private String password;
+    private String psw;
 
     public Connection(String name, String password) {
         this.name = name;
-        this.password = password;
+        this.psw = password;
     }
 
     @Override
     public String toString() {
         return "Connection{" +
                 "name='" + name + '\'' +
-                ", password='" + password + '\'' +
+                ", psw='" + psw + '\'' +
                 '}';
     }
 
@@ -34,11 +34,11 @@ public class Connection implements Serializable, ClientServerRequest {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPsw() {
+        return psw;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPsw(String password) {
+        this.psw = password;
     }
 }

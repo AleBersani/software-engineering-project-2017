@@ -1,6 +1,5 @@
 package it.polimi.ingsw.server.exectutionmiddleware;
 
-import it.polimi.ingsw.shared.Client;
 import it.polimi.ingsw.shared.requests.clientserver.*;
 
 public interface ClientServerRequestVisitor {

@@ -14,7 +14,7 @@ public class Building extends DevelopmentCard {
     /**
      * Constructor with production that set the required value for the production as default (0) and the
      * addtional card information to null
-     * @param basicDevelopmentCard
+     * @param basicDevelopmentCard card
      */
     public Building(BasicDevelopmentCard basicDevelopmentCard) {
         super(basicDevelopmentCard);

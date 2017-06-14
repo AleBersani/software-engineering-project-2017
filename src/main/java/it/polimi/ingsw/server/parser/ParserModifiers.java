@@ -18,8 +18,8 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 
 public class ParserModifiers {
-    private static final String PAWNCOLOR = "pawnColor";
-    private static final String MALUSACTIONVALUE= "malusActionValue";
+    private static final String PAWN_COLOR = "pawnColor";
+    private static final String MALUS_ACTION_VALUE = "malusActionValue";
 
     public List<RequirementsModifier> parseListRequirementsModifier(List<String> modifiers, JsonObject card) throws Exception {
         List<RequirementsModifier> modifierList = new ArrayList<>();
@@ -77,7 +77,7 @@ public class ParserModifiers {
 
     private RequirementsModifier parseBonusPawnValue(JsonObject card, int bonusPawnValueIndex) {
         List<ActionType> availableActions = parseListActionType(card);
-        PawnColor pawnColor = parsePawnColor(card.get(PAWNCOLOR).getAsJsonArray().
+        PawnColor pawnColor = parsePawnColor(card.get(PAWN_COLOR).getAsJsonArray().
                                                 get(bonusPawnValueIndex).getAsString());
         int bonusActionValue = card.get("actionValueSurplus").getAsInt();
         return new BonusPawnValue(new AvailableActions(availableActions),
@@ -104,7 +104,7 @@ public class ParserModifiers {
 
     private RequirementsModifier parseFixedColouredPawnValue(JsonObject card, int fixedPawnValueIndex) {
         List<ActionType> availableActions = parseListActionType(card);
-        PawnColor pawnColor = parsePawnColor(card.get(PAWNCOLOR).getAsJsonArray().get(fixedPawnValueIndex).getAsString());
+        PawnColor pawnColor = parsePawnColor(card.get(PAWN_COLOR).getAsJsonArray().get(fixedPawnValueIndex).getAsString());
         int pawnValue = card.get("pawnValue").getAsInt();
         return new FixedColouredPawnValue(new AvailableActions(availableActions),
                                                                     pawnColor, pawnValue);
@@ -112,14 +112,14 @@ public class ParserModifiers {
 
     private RequirementsModifier parseMalusActionValue(JsonObject card) {
         List<ActionType> availableActions = parseListActionType(card);
-        int malusValue = card.get(MALUSACTIONVALUE).getAsInt();
+        int malusValue = card.get(MALUS_ACTION_VALUE).getAsInt();
         return new MalusActionValue(new AvailableActions(availableActions), malusValue);
     }
 
     private RequirementsModifier parseMalusColouredPawns(JsonObject card) {
         List<ActionType> availableActions = parseListActionType(card);
         List<PawnColor> pawnColors = parseListPawnColor(card);
-        int malusValue = card.get(MALUSACTIONVALUE).getAsInt();
+        int malusValue = card.get(MALUS_ACTION_VALUE).getAsInt();
         return new MalusColouredPawns(new AvailableActions(availableActions),
                                                                 pawnColors, malusValue);
     }
@@ -205,7 +205,7 @@ public class ParserModifiers {
     private List<PawnColor> parseListPawnColor(JsonObject card) {
         Gson gson = new Gson();
         List<PawnColor> parsedPawnColors = new ArrayList<>();
-        JsonArray pawnColorsArray = card.get(PAWNCOLOR).getAsJsonArray();
+        JsonArray pawnColorsArray = card.get(PAWN_COLOR).getAsJsonArray();
         List<String> pawnColor = gson.fromJson(pawnColorsArray, new TypeToken<ArrayList<String>>(){}.getType());
         for (String str : pawnColor) {
             parsedPawnColors.add(parsePawnColor(str));
@@ -229,7 +229,7 @@ public class ParserModifiers {
         commands.put("canPlaceOnOccupiedSpace", () -> parseCanPlaceOnOccupiedSpace(card));
         commands.put("doubleServants", () -> parseDoubleServants(card));
         commands.put("fixedColouredPawnsValue", () -> parseFixedColouredPawnsValue(card));
-        commands.put(MALUSACTIONVALUE, () -> parseMalusActionValue(card));
+        commands.put(MALUS_ACTION_VALUE, () -> parseMalusActionValue(card));
         commands.put("malusColouredPawns", () -> parseMalusColouredPawns(card));
         commands.put("noBonusGoodsOnTower", () -> parseNoBonusGoodsOnTower(card));
         commands.put("noMarketPlacement", () -> parseNoMarketPlacement(card));

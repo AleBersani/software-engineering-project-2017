@@ -1,9 +1,9 @@
 package it.polimi.ingsw.client.connection.rmi;
 
-import it.polimi.ingsw.shared.model.PlayerDetails;
 import it.polimi.ingsw.server.rmi.RMICommunicator;
 import it.polimi.ingsw.shared.Client;
 import it.polimi.ingsw.shared.Registrable;
+import it.polimi.ingsw.shared.model.PlayerDetails;
 import it.polimi.ingsw.shared.requests.clientserver.PlayerLogin;
 
 import java.rmi.NotBoundException;
@@ -14,11 +14,11 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class RMIClient extends UnicastRemoteObject {
+public final class RMIClient extends UnicastRemoteObject {
     private final static Logger LOGGER = Logger.getLogger(RMIClient.class.getName());
-    private static final String URL = "communicator";
+    private final static String URL = "communicator";
 
-    private Registry registry;
+    private static Registry registry;
 
     public static void main(String argv[]) {
         try {
@@ -36,6 +36,8 @@ public class RMIClient extends UnicastRemoteObject {
             LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
         }
     }
+
+
 
     public RMIClient() throws RemoteException {
         registry = LocateRegistry.getRegistry();

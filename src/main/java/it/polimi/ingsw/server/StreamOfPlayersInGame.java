@@ -5,11 +5,11 @@ import java.util.Map;
 import java.util.Optional;
 
 public class StreamOfPlayersInGame<Value> {
-    private final int GAMEID;
+    private final int GAME_ID;
     private final Map<String, Value> PLAYERS;
 
-    public StreamOfPlayersInGame(int GAMEID) {
-        this.GAMEID = GAMEID;
+    public StreamOfPlayersInGame(int GAME_ID) {
+        this.GAME_ID = GAME_ID;
         PLAYERS = new HashMap<>();
     }
 
@@ -30,8 +30,8 @@ public class StreamOfPlayersInGame<Value> {
         return PLAYERS.containsKey(playerName);
     }
 
-    public int getGAMEID() {
-        return GAMEID;
+    public int getGAME_ID() {
+        return GAME_ID;
     }
 
     public Map<String, Value> getPLAYERS() {

@@ -17,7 +17,7 @@ import java.util.List;
  * Class containing methods that set game configuration information, parsing from Json files.
  */
 public class ParserConfigurations {
-    private static final String GAMECONFIGURATIONJSON =  "GameConfiguration.json";
+    private static final String GAME_CONFIGURATION_JSON =  "GameConfiguration.json";
 
     private ParserSettings settings;
 
@@ -31,7 +31,7 @@ public class ParserConfigurations {
      * @throws IOException //
      */
     public void parseGameConfiguration() throws IOException {
-        JsonObject gameConf = settings.extractJsonObject(GAMECONFIGURATIONJSON);
+        JsonObject gameConf = settings.extractJsonObject(GAME_CONFIGURATION_JSON);
         GameConfiguration.setMaxNumberOfPlayer(gameConf.get("maxNumberOfPlayer").getAsInt());
         GameConfiguration.setMoveTimeout(gameConf.get("moveTimeout").getAsInt());
         GameConfiguration.setStartingGameTimeout(gameConf.get("startingGameTimeout").getAsInt());
@@ -44,7 +44,7 @@ public class ParserConfigurations {
      * @throws IOException //
      */
     public void parseBoardConfiguration() throws IOException {
-        JsonObject boardConf = settings.extractJsonObject(GAMECONFIGURATIONJSON);
+        JsonObject boardConf = settings.extractJsonObject(GAME_CONFIGURATION_JSON);
         BoardConfiguration.setMaxFaithPoints(boardConf.get("maxFaithPoints").getAsInt());
         BoardConfiguration.setMaxMilitaryPoints(boardConf.get("maxMilitaryPoints").getAsInt());
         BoardConfiguration.setNumberOfDices(boardConf.get("numberOfDices").getAsInt());
@@ -58,7 +58,7 @@ public class ParserConfigurations {
      * @throws IOException //
      */
     public void parseCouncilePrivilege() throws IOException {
-        JsonObject councileConf = settings.extractJsonObject(GAMECONFIGURATIONJSON);
+        JsonObject councileConf = settings.extractJsonObject(GAME_CONFIGURATION_JSON);
         Gson gson = new Gson();
         JsonArray choices = councileConf.get("possibleChoices").getAsJsonArray();
         List<Goods> possibleChoices = gson.fromJson(choices, new TypeToken<ArrayList<Goods>>(){}.getType());

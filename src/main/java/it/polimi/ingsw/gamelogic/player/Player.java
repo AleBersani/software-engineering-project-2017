@@ -4,8 +4,8 @@ import it.polimi.ingsw.gamelogic.actions.description.ActionDescription;
 import it.polimi.ingsw.gamelogic.basics.Goods;
 import it.polimi.ingsw.gamelogic.basics.Resources;
 import it.polimi.ingsw.gamelogic.cards.leader.LeaderCard;
-import it.polimi.ingsw.shared.model.PlayerDetails;
 import it.polimi.ingsw.shared.model.PawnColor;
+import it.polimi.ingsw.shared.model.PlayerDetails;
 
 import java.util.*;
 import java.util.function.IntSupplier;

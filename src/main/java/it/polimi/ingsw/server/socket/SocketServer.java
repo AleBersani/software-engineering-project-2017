@@ -30,7 +30,7 @@ public class SocketServer {
     private void initServer() {
         try {
             serverSocket = new ServerSocket(port);
-            LOGGER.info("Server socket ready on port: " + port);
+            LOGGER.log(Level.INFO, () -> "Server socket ready on port: " + port);
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: Cannot open socket server", e);
         }

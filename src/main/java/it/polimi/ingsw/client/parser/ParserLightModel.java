@@ -43,7 +43,8 @@ public class ParserLightModel {
         for (int i=0; i < cards.size(); i++) {
             card = cards.get(i)
                         .getAsJsonObject();
-            parsedCosts = gson.fromJson(card.get("cost").getAsJsonArray(), new TypeToken<ArrayList<String>>(){}.getType());
+            parsedCosts = gson.fromJson(card.get("cost").getAsJsonArray(),
+                    new TypeToken<ArrayList<String>>(){}.getType());
             parsedPermanentEffectDescription = gson.fromJson(card
                                                                 .get("permanentEffectDescription")
                                                                 .getAsJsonArray(),

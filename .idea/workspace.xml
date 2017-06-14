@@ -2,39 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3565f9e9-2953-4477-96c2-c965b7d6ccb1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/server/lollolm02.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_18_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/GamesConnections.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/StreamOfPlayersInGame.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/PlayerTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/QueryHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Registrable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PlayerLogin.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_6_0_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ConnectionMap.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/PlayerDetails.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/model/PlayerDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/DBHandler.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/DBConnector.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIReceiver.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMICommunicator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/Receiver.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/Communicator.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/nanohttpd/NanoInit.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/GameboardController.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/GameBoardController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LolloTheMagnificent.iml" afterPath="$PROJECT_DIR$/LolloTheMagnificent.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/LoginController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIClient.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/SocketReader.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/SocketReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/CouncilPalace.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/CouncilPalace.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/SocketClient.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/SocketClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/lightmodel/ExcommunicationTileLight.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/lightmodel/ExcommunicationTileLight.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/parser/ParserLightModel.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/parser/ParserLightModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/PlayerPawn.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/board/PlayerPawn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/RequirementsOnCard.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/RequirementsOnCard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Building.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Building.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/Player.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/GamesConnections.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/GamesConnections.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ServerMain.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ServerMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/StreamOfPlayersInGame.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/StreamOfPlayersInGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/DBConnector.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/DBConnector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/QueryHandler.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/QueryHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/ClientServerRequestVisitor.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/ClientServerRequestVisitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/RequestHandler.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/RequestHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/Round.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/Round.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIServer.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/nanohttpd/NanoInit.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/nanohttpd/NanoInit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserCards.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserCards.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserConfigurations.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserConfigurations.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserModifiers.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserModifiers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/Communicator.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/Communicator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMICommunicator.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMICommunicator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/socket/SocketServer.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/socket/SocketServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/board/CouncilPalaceTest.java" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/board/CouncilPalaceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Connection.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Connection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PlayerLogin.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PlayerLogin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/client/parser/ParserLightModelTest.java" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/client/parser/ParserLightModelTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/BoardActionRequirementsTest.java" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/BoardActionRequirementsTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/LeaderRequirementsTest.java" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/LeaderRequirementsTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/TowerActionRequirementsTest.java" afterPath="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/TowerActionRequirementsTest.java" />
@@ -190,8 +186,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+            <state relative-caret-position="187">
+              <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -232,34 +228,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ClientHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/UpdateTowers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/UpdateActionSpaces.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/ActionRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/clientserver/LeaderAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/serverclient/clientserver/LeaderAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/serverclient/UpdateTowers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ReceiverHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PawnPlacement.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/LeaderAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Connection.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Choices.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/SocketClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/SocketReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIReceiver.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIComunicator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ServerMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/model/PlayerLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PlayerLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/ClientServerRequestVisitor.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Registrable.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/RequestHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/SocketReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/socket/SocketServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/nanohttpd/NanoInit.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMICommunicator.java" />
@@ -268,11 +251,8 @@
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/model/PlayerDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/MultiMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/PlayersInGame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/StreamOfPlayersInGame.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ConnectionMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/GamesConnections.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/Communicator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIClient.java" />
         <option value="$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/board/CouncilPalaceTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$USER_HOME$/Downloads/sqlite-jdbc-3.18.0.jar!/org/sqlite/jdbc3/JDBC3Statement.class" />
@@ -280,8 +260,24 @@
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/GameTabel.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/PlayerTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/PlayerTableColumnNames.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/GameBoardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/additionalinfo/RequirementsOnCard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/cards/development/Building.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserCards.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserConfigurations.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserModifiers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/StreamOfPlayersInGame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ServerMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/lightmodel/ExcommunicationTileLight.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/parser/ParserLightModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/Communicator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/socket/SocketServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/DBConnector.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/QueryHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Connection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/SocketClient.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -327,6 +323,9 @@
       </PATH>
     </treeState>
   </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -351,7 +350,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -364,18 +363,650 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="requests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="requests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exectutionmiddleware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gamelogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gamelogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modifiers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gamelogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lightmodel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="connection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ingsw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="connection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LM02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LolloTheMagnificent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/sqlite-jdbc-3.18.0.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../nanoHTTPD" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -406,6 +1037,9 @@
       <recent name="C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\resources\client" />
       <recent name="$PROJECT_DIR$/resources/client" />
       <recent name="C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\client" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\R39\Desktop\Università\Ingegneria del Software\LolloTheMagnificent\src\main\java\it\polimi\ingsw\server\rmi\nanohttpd" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="it.polimi.ingsw.gamelogic" />
@@ -969,9 +1603,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.DBConnector" />
+        <item index="0" class="java.lang.String" itemvalue="Application.RMIClient" />
         <item index="1" class="java.lang.String" itemvalue="Application.ServerMain" />
-        <item index="2" class="java.lang.String" itemvalue="Application.RMIClient" />
+        <item index="2" class="java.lang.String" itemvalue="Application.DBConnector" />
         <item index="3" class="java.lang.String" itemvalue="Application.RequestHandler" />
         <item index="4" class="java.lang.String" itemvalue="Application.LoginMain" />
       </list>
@@ -1079,24 +1713,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2017.06.11 at 02h 10m 57s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2017.06.11 at 02h 24m 11s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2017.06.11 at 03h 00m 16s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2017.06.11 at 17h 19m 50s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2017.06.13 at 15h 45m 28s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2017.06.14 at 18h 07m 04s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_Tests - 2017.06.14 at 23h 13m 18s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
@@ -1106,12 +1722,30 @@
     <history-entry file="All_Tests - 2017.06.14 at 23h 19m 37s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_Tests - 2017.06.14 at 23h 50m 38s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2017.06.15 at 00h 24m 51s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2017.06.15 at 00h 40m 36s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2017.06.15 at 01h 03m 07s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2017.06.15 at 01h 20m 43s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2017.06.15 at 01h 24m 31s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="ParserAdditionalInfoTest - 2017.06.11 at 00h 33m 18s.xml">
       <configuration name="ParserAdditionalInfoTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376786000" />
+    <option name="totallyTimeSpent" value="382292000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1133,15 +1767,16 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25885418" sideWeight="0.48959777" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25885418" sideWeight="0.48959777" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23784356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23697917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23697917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1149,12 +1784,34 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25885418" sideWeight="0.48959777" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25885418" sideWeight="0.5104022" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23784356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23697917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1211,56 +1868,44 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/FixedColouredPawnsValueTest.java</url>
-          <line>70</line>
-          <properties />
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/FixedColouredPawnsValueTest.java</url>
-          <line>69</line>
-          <properties />
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusPawnsValueTest.java</url>
-          <line>67</line>
+          <line>70</line>
           <properties />
           <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/BonusPawnsValueTest.java</url>
-          <line>68</line>
+          <line>71</line>
           <properties />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/TowerActionRequirementsTest.java</url>
-          <line>61</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/TowerActionRequirementsTest.java</url>
-          <line>62</line>
+          <line>65</line>
           <properties />
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/TowerActionRequirementsTest.java</url>
-          <line>64</line>
+          <line>67</line>
           <properties />
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/TowerActionRequirementsTest.java</url>
-          <line>65</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/TowerActionRequirementsTest.java</url>
-          <line>66</line>
+          <line>69</line>
           <properties />
           <option name="timeStamp" value="142" />
         </line-breakpoint>
@@ -1277,180 +1922,99 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ClientHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ReceiverHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/SocketReader.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/SocketClient.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/enums/BoardIdentifier.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/enums/ActionType.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIWriter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/GameBoardMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/player/PlayerBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/LoginMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="68" column="11" lean-forward="false" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+        <state relative-caret-position="119">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/ClientServerRequestVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+        <state relative-caret-position="68">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Choices.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PlayerLogin.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/Period.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="64" lean-forward="false" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+        <state relative-caret-position="119">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Connection.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/Round.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/LeaderAction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/SemiPeriod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Registrable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserAdditionalInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="119">
+          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/ClientServerRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="59" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/RequestHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="68" lean-forward="false" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PawnPlacement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/SocketReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserCards.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/nanohttpd/NanoInit.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserConfigurations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        <state relative-caret-position="136">
+          <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ServerMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserSettings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="68">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserModifiers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/socket/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-328">
+        <state relative-caret-position="68">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/model/PlayerDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/StreamOfPlayersInGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/GamesConnections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="45" lean-forward="false" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="17" lean-forward="false" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/board/CouncilPalaceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="57" lean-forward="false" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/GameTable.java" />
-    <entry file="jar://$USER_HOME$/Downloads/sqlite-jdbc-3.18.0.jar!/org/sqlite/jdbc3/JDBC3Statement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/Communicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1458,77 +2022,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/socket/SocketServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMICommunicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="89" lean-forward="false" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIInit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/PlayerTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/PlayerTableColumnNames.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/DBConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="72" lean-forward="false" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/QueryHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/model/PawnColor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/model/BoardIdentifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1536,48 +2030,320 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/enums/DiceColor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/enums/EndTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/enums/GeneralColor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/model/BoardIdentifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/enums/LeaderCategory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/model/PawnColor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="119">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/enums/PeriodNumber.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/model/PlayerDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PawnPlacement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PlayerLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/LeaderAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/ClientServerRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Choices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/serverclient/UpdateActionSpaces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/serverclient/UpdateTowers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Registrable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/nanohttpd/NanoInit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/gamelogic/basics/Goods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/it/polimi/ingsw/gamelogic/modifiers/requirements/modifiers/FixedColouredPawnsValueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/lightmodel/ExcommunicationTileLight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          <folding>
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/lightmodel/GoodsLight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/lightmodel/DevelopmentCardLight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/lightmodel/SlotLight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/parser/ParserLightModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="193" column="55" lean-forward="false" selection-start-line="193" selection-start-column="48" selection-end-line="193" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/PlayerTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/ServerMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/StreamOfPlayersInGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/GamesConnections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMICommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIInit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#116#117#0" expanded="false" />
+            <element signature="e#157#158#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/RMIServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="86" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="23" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/rmi/Communicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="64" column="49" lean-forward="false" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/socket/SocketServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="34" column="90" lean-forward="false" selection-start-line="34" selection-start-column="89" selection-end-line="34" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/exectutionmiddleware/RequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/DBConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/database/QueryHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <marker date="1497482287125" expanded="true" signature="769:896" ph="INSERT INTO player... " />
+            <marker date="1497482287125" expanded="true" signature="1368:1509" ph="SELECT COUNT... player" />
+            <marker date="1497482287125" expanded="true" signature="2240:2304" ph="SELECT * FRO... player" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/SocketClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="35" column="2" lean-forward="false" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        <state relative-caret-position="187">
+          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1673,8 +2439,8 @@
   </component>
   <component name="mavenExecuteGoalHistory">
     <option value="$PROJECT_DIR$" />
-    <option value="clean:clean" />
     <option value="clean:clean package sonar:sonar" />
+    <option value="clean:clean" />
     <option value="package" />
     <option value="clean:clean compiler:compile sonar:sonar" />
     <option value="clean:clean compiler:compile" />

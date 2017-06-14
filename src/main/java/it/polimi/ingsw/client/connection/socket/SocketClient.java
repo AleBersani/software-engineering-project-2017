@@ -1,11 +1,8 @@
 package it.polimi.ingsw.client.connection.socket;
 
-import it.polimi.ingsw.shared.requests.clientserver.Connection;
-
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SocketClient {
@@ -16,7 +13,7 @@ public class SocketClient {
 
     private Socket socket;
     private ObjectOutputStream objectOutputStream;
-
+/*
     public static void main(String argv[]) {
         SocketClient socketClient = new SocketClient("127.0.0.1", 6677);
         try {
@@ -36,7 +33,7 @@ public class SocketClient {
             LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
         }
     }
-
+*/
     public SocketClient(String ip, int port) {
         this.ip = ip;
         this.port = port;

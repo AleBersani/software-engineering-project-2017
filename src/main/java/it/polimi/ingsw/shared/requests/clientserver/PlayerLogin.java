@@ -1,7 +1,7 @@
 package it.polimi.ingsw.shared.requests.clientserver;
 
-import it.polimi.ingsw.shared.model.PlayerDetails;
 import it.polimi.ingsw.server.exectutionmiddleware.ClientServerRequestVisitor;
+import it.polimi.ingsw.shared.model.PlayerDetails;
 
 import java.io.Serializable;
 
