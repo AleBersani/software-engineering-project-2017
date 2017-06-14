@@ -1,0 +1,354 @@
+{
+  "greenTower": [
+    {
+      "bonus": {
+        "woods": "2",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "7",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "1",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "5",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "3",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "0"
+    }
+  ],
+  "yellowTower": [
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "2",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "7",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "1",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "5",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "3",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "0"
+    }
+  ],
+  "blueTower": [
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "2"
+      },
+      "cost": "7",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "1"
+      },
+      "cost": "5",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0"
+      },
+      "cost": "3",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0"
+      },
+      "cost": "1",
+      "malus": "0"
+    }
+  ],
+  "purpleTower": [
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "2",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "7",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "1",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "5",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "3",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "0"
+    }
+  ],
+  "market": [
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "5",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "5",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "3",
+        "coins": "2",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "2"
+      },
+      "cost": "1",
+      "malus": "0"
+    }
+  ],
+  "harvest": [
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "3"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "3"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "3"
+    }
+  ],
+  "production": [
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "0"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "3"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "3"
+    },
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "0",
+        "servants": "0",
+        "councilPrivilege": "0"
+      },
+      "cost": "1",
+      "malus": "3"
+    }
+  ],
+  "councilPalace": [
+    {
+      "bonus": {
+        "woods": "0",
+        "stones": "0",
+        "military": "0",
+        "coins": "1",
+        "servants": "0",
+        "councilPrivilege": "1"
+      },
+      "cost": "1",
+      "malus": "0"
+    }
+  ]
+}

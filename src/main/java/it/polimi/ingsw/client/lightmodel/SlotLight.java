@@ -1,6 +1,8 @@
 package it.polimi.ingsw.client.lightmodel;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class SlotLight {
     private Map<GoodsLight, Integer> bonus;
@@ -25,6 +27,33 @@ public class SlotLight {
         this.developmentCard = developmentCard;
         this.presentPawn = presentPawn;
         malus = 0;
+    }
+
+    public SlotLight(Map<GoodsLight, Integer> bonus, int cost, int malus) {
+        this.bonus = bonus;
+        this.cost = cost;
+        this.malus = malus;
+        presentPawn = new HashMap<>();
+        developmentCard = new DevelopmentCardLight();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        SlotLight that = (SlotLight) o;
+        return  Objects.equals(getBonus(), that.getBonus()) &&
+                Objects.equals(getCost(), that.getCost()) &&
+                Objects.equals(getDevelopmentCard(), that.getDevelopmentCard()) &&
+                Objects.equals(getPresentPawn(), that.getPresentPawn()) &&
+                Objects.equals(getMalus(), that.getMalus());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBonus(), getCost(), getDevelopmentCard(), getPresentPawn(), getMalus());
     }
 
     public Map<GoodsLight, Integer> getBonus() {

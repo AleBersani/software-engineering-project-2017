@@ -1,6 +1,7 @@
 package it.polimi.ingsw.client.parser;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import java.io.BufferedReader;
@@ -18,6 +19,15 @@ public class ParserSettingsClient {
         String path = PATH + jsonName;
         open(path);
         JsonArray object = parser.parse(br).getAsJsonArray();
+        close();
+        return object;
+    }
+
+    public JsonObject extractJsonObject(String jsonName) throws IOException {
+        JsonParser parser = new JsonParser();
+        String path = PATH + jsonName;
+        open(path);
+        JsonObject object = parser.parse(br).getAsJsonObject();
         close();
         return object;
     }

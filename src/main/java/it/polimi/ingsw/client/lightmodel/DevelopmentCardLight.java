@@ -9,6 +9,9 @@ public class DevelopmentCardLight {
     private String instantEffectDescription;
     private List<String> permanentEffectDescription;
 
+    public DevelopmentCardLight() {
+    }
+
     public DevelopmentCardLight(String name,
                                 List<String> cardCosts,
                                 String instantEffectDescription,

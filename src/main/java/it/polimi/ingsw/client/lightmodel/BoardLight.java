@@ -1,6 +1,7 @@
 package it.polimi.ingsw.client.lightmodel;
 
 import java.util.List;
+import java.util.Objects;
 
 public class BoardLight {
     private List<SlotLight> greenTower;
@@ -23,6 +24,29 @@ public class BoardLight {
         this.harvest = harvest;
         this.production = production;
         this.councilPalace = councilPalace;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        BoardLight that = (BoardLight) o;
+        return  Objects.equals(getGreenTower(), that.getGreenTower()) &&
+                Objects.equals(getYellowTower(), that.getYellowTower()) &&
+                Objects.equals(getBlueTower(), that.getBlueTower()) &&
+                Objects.equals(getPurpleTower(), that.getPurpleTower()) &&
+                Objects.equals(getMarket(), that.getMarket()) &&
+                Objects.equals(getHarvest(), that.getHarvest()) &&
+                Objects.equals(getProduction(), that.getProduction()) &&
+                Objects.equals(getCouncilPalace(), that.getCouncilPalace());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getGreenTower(), getYellowTower(), getBlueTower(), getPurpleTower(),
+                                getMarket(), getHarvest(), getProduction(), getCouncilPalace());
     }
 
     public List<SlotLight> getGreenTower() {
