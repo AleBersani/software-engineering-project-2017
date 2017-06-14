@@ -1,7 +1,7 @@
 package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
-import it.polimi.ingsw.gamelogic.player.PlayerDetails;
+import it.polimi.ingsw.shared.model.PlayerDetails;
 
 import java.util.ArrayList;
 import java.util.List;

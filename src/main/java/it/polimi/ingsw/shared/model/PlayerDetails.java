@@ -1,25 +1,23 @@
-package it.polimi.ingsw.gamelogic.player;
+package it.polimi.ingsw.shared.model;
 
 import it.polimi.ingsw.gamelogic.enums.GeneralColor;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Class that describes the Player's basic information
  */
-public class PlayerDetails {
-    private String playerIdentifier;
+public class PlayerDetails implements Serializable {
     private String playerName;
     private GeneralColor playerColor;
 
     public PlayerDetails() {
-        playerIdentifier = "";
         playerName = "";
         playerColor = GeneralColor.UNDEFINED;
     }
 
-    public PlayerDetails(String playerIdentifier, String playerName, GeneralColor playerColor) {
-        this.playerIdentifier = playerIdentifier;
+    public PlayerDetails(String playerName, GeneralColor playerColor) {
         this.playerName = playerName;
         this.playerColor = playerColor;
     }
@@ -31,14 +29,13 @@ public class PlayerDetails {
         if (o == null || getClass() != o.getClass())
             return false;
         PlayerDetails that = (PlayerDetails) o;
-        return Objects.equals(getPlayerIdentifier(), that.getPlayerIdentifier()) &&
-                Objects.equals(getPlayerName(), that.getPlayerName()) &&
+        return Objects.equals(getPlayerName(), that.getPlayerName()) &&
                 getPlayerColor() == that.getPlayerColor();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPlayerIdentifier(), getPlayerName(), getPlayerColor());
+        return Objects.hash(getPlayerName(), getPlayerColor());
     }
 
     /**
@@ -46,17 +43,8 @@ public class PlayerDetails {
      * @return true if instance is empty
      */
     public boolean isEmpty() {
-        return "".equals(playerIdentifier) &&
-                "".equals(playerName) &&
+        return "".equals(playerName) &&
                 playerColor == GeneralColor.UNDEFINED;
-    }
-
-    public String getPlayerIdentifier() {
-        return playerIdentifier;
-    }
-
-    public void setPlayerIdentifier(String playerIdentifier) {
-        this.playerIdentifier = playerIdentifier;
     }
 
     public String getPlayerName() {

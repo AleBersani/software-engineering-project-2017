@@ -12,10 +12,10 @@ public final class RMIServer {
 
     public static void initRMIServer() {
         try {
-            Receiver receiver = new Receiver();
+            Communicator communicator = new Communicator();
             try {
                 Registry registry = LocateRegistry.createRegistry(1099);
-                registry.bind("receiver", receiver);
+                registry.bind("communicator", communicator);
                 LOGGER.info("Waiting for RMI clients");
             } catch (RemoteException | AlreadyBoundException e) {
                 LOGGER.log(Level.SEVERE, "An exception was thrown: RMI setup error", e);

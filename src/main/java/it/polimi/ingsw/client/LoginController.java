@@ -12,9 +12,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 public class LoginController {
-    private final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+    private final static Logger LOGGER = Logger.getLogger(LoginController.class.getName());
+
+    private final ScheduledExecutorService EXECUTORSERVICE = Executors.newSingleThreadScheduledExecutor();
 
     private ScheduledFuture futureScheduled;
 
@@ -28,7 +31,7 @@ public class LoginController {
     private PasswordField passwordField;
 
     public void initialize() {
-        futureScheduled = executorService.scheduleAtFixedRate
+        futureScheduled = EXECUTORSERVICE.scheduleAtFixedRate
                 (this::rotateImage, 0, 45, TimeUnit.MILLISECONDS);
 
         Media song = new Media(new File("resources/client/intro-song.mp3").toURI().toString());
@@ -47,6 +50,14 @@ public class LoginController {
 
     @FXML
     public void onConnect() {
-        // TODO
+        /*try {
+            PlayerDetails playerDetails = new PlayerDetails();
+            playerDetails.setPlayerName(usernameField.getText());
+            Client client = new Client(playerDetails, passwordField.getText());
+            RMIClient rmiClient = new RMIClient();
+            rmiClient.getReceiver().recordClient(client);
+        } catch (RemoteException | NotBoundException e) {
+            LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
+        }*/
     }
 }

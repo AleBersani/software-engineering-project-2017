@@ -2,7 +2,7 @@ package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.gamelogic.actions.description.ActionDescription;
 import it.polimi.ingsw.gamelogic.player.Player;
-import it.polimi.ingsw.gamelogic.player.PlayerDetails;
+import it.polimi.ingsw.shared.model.PlayerDetails;
 
 import java.util.HashMap;
 import java.util.List;

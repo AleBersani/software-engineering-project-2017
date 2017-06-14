@@ -6,6 +6,8 @@ import it.polimi.ingsw.server.socket.SocketInit;
 
 public class ServerMain {
     public static void main(String argv[]) {
+        GamesConnections.init();
+
         Thread socketServer = new Thread(new SocketInit());
         socketServer.start();
 

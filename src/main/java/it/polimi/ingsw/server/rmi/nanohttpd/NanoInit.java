@@ -11,6 +11,7 @@ public class NanoInit implements Runnable {
     public void run() {
         try {
             Runtime.getRuntime().exec("java -jar nanoHTTPD.jar");
+            LOGGER.info("Starting nanoHTTPD...");
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: Can't run nanoHTTPD.jar", e);
         }

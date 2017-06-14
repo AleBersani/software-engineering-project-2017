@@ -6,6 +6,7 @@ import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.gamelogic.player.*;
+import it.polimi.ingsw.shared.model.PlayerDetails;
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.PawnColor;
 import org.junit.jupiter.api.BeforeEach;

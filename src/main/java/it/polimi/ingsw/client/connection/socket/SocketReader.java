@@ -10,7 +10,7 @@ public class SocketReader implements Runnable {
     private final static Logger LOGGER = Logger.getLogger(SocketReader.class.getName());
 
     private Socket socket;
-    ObjectInputStream inputStream;
+    private ObjectInputStream inputStream;
 
     public SocketReader(Socket socket) throws IOException {
         this.socket = socket;
