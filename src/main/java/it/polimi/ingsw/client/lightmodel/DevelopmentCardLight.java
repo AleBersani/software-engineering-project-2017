@@ -1,6 +1,7 @@
 package it.polimi.ingsw.client.lightmodel;
 
 import java.util.List;
+import java.util.Objects;
 
 public class DevelopmentCardLight {
     private String name;
@@ -16,6 +17,24 @@ public class DevelopmentCardLight {
         this.name = name;
         this.instantEffectDescription = instantEffectDescription;
         this.permanentEffectDescription = permanentEffectDescription;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        DevelopmentCardLight that = (DevelopmentCardLight) o;
+        return Objects.equals(getName(), that.getName()) &&
+                Objects.equals(getCardCosts(), that.getCardCosts()) &&
+                Objects.equals(getInstantEffectDescription(), that.getInstantEffectDescription()) &&
+                Objects.equals(getPermanentEffectDescription(), that.getPermanentEffectDescription());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getCardCosts(), getInstantEffectDescription(), getPermanentEffectDescription());
     }
 
     public List<String> getCardCosts() {

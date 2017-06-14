@@ -1,0 +1,86 @@
+[
+  {
+    "name": "1.1",
+    "effectDescription": "Each time you gain Military points (from action spaces or from your cards), gain 1 fewer Military point. (If you have more cards that give you Military points, consider each card a single source, so you gain -1 Military point for each card.)"
+  },
+  {
+    "name": "1.2",
+    "effectDescription": "Each time you receive coins (from action spaces or from your Cards), you receive 1 fewer coin. (If you have more Cards that give you coins, consider each Card a single source, so you receive -1 coin for each card.)"
+  },
+  {
+    "name": "1.3",
+    "effectDescription": "Each time you receive servants (from action spaces or from your Cards), you receive 1 fewer servant. (If you have more Cards that give you servants, consider each Card a single source, so you receive -1 servant for each card.)"
+  },
+  {
+    "name": "1.4",
+    "effectDescription": "Each time you receive wood or stone (from action spaces or from your Cards), you receive 1 fewer wood or stone. (If you have more Cards that give you wood and stone, consider each Card a single source, so you receive -1 wood/stone for each card.)"
+  },
+  {
+    "name": "1.5",
+    "effectDescription": "Each time you perform a Harvest action (through the action space or as a Card effect), decrease its value by 3. You may still spend servants to increase the action value and you must apply your Card’s effects. (If you place in the second action space, your action value is decreased by 6.)"
+  },
+  {
+    "name": "1.6",
+    "effectDescription": "Each time you perform a Production action (through the action space or as a Card effect), decrease its value by 3. You may still spend servants to increase the action value and you must apply your Card’s effects. (If you place in the large action space, your action value is decreased by 6.)"
+  },
+  {
+    "name": "1.7",
+    "effectDescription": "All your colored Family Members receive a -1 reduction of their value each time you place them. (For example, if you roll a 5 on the black die, your Family Member with the black die symbol has a value of 4.) You may still spend servants to increase their value and you must apply your Card’s effects."
+  },
+  {
+    "name": "2.1",
+    "effectDescription": "Each time you take a Territory Card (through the action space or as a Card effect), your action receives a -4 reduction of its value. You may still spend servants to increase the action value and you must apply your Card’s effects."
+  },
+  {
+    "name": "2.2",
+    "effectDescription": "Each time you take a Building Card (through the action space or as a Card effect), your action receives a reduction of -4 of its value. You may still spend servants to increase the action value and you must apply your Card’s effects."
+  },
+  {
+    "name": "2.3",
+    "effectDescription": "Each time you take a Character Card (through the action space or as a Card effect), your action receives a -4 reduction of its value. You may still spend servants to increase the action value,and you must apply your Card’s effects."
+  },
+  {
+    "name": "2.4",
+    "effectDescription": "Each time you take a Venture Card (through the action space or as a Card effect), your action receives a -4 reduction of its value. You may still spend servants to increase the action value and you must apply your Card’s effects."
+  },
+  {
+    "name": "2.5",
+    "effectDescription": "You can’t place your Family Members in the Market action spaces."
+  },
+  {
+    "name": "2.6",
+    "effectDescription": "You have to spend 2 servants to increase your action value by 1 (and 4 servants to increase it by 2, and so on...)."
+  },
+  {
+    "name": "2.7",
+    "effectDescription": "Each round, you skip your  rst turn. (When you have to place your first Family Member, you have to pass.) You start taking actions from the second turn (in the appropriate turn order.) When all players have taken all their turns, you may still place your last Family Member."
+  },
+  {
+    "name": "3.1",
+    "effectDescription": "At the end of the game, you don’t score points for any of your In uenced Characters."
+  },
+  {
+    "name": "3.2",
+    "effectDescription": "At the end of the game, you don’t score points for any of your Encouraged Ventures."
+  },
+  {
+    "name": "3.3",
+    "effectDescription": "At the end of the game, you don’t score points for any of your Conquered Territories."
+  },
+  {
+    "name": "3.4",
+    "effectDescription": "At the end of the game, before the Final Scoring, you lose 1 Victory Point for every 5 Victory Points you have. (For example, if you have 26 Victory Points before the Final Scoring, you lose 5 Victory Points.)"
+  },
+  {
+    "name": "3.5",
+    "effectDescription": "At the end of the game, you lose 1 Victory Point for every Military Point you have. (For example, if you end the game with 12 Military Points, you lose 12 Victory Points.)"
+  },
+  {
+    "name": "3.6",
+    "effectDescription": "At the end of the game, you lose 1 Victory Point for every wood and stone on your Building Cards’ costs. (For example, if all your Building Cards cost 7 wood and 6 stone, you lose 13 Victory Points.)"
+  },
+  {
+    "name": "3.7",
+    "effectDescription": "At the end of the game, you lose 1 Victory Point for every resource (wood, stone, coin, servant) in your supply on your Personal Board. (For example, if you end the game with 3 wood, 1 stone, 4 coins, and 2 servants, you lose 10 Victory Points.)"
+  }
+]
