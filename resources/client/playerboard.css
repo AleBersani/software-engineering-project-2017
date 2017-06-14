@@ -1,8 +1,9 @@
 #pane {
     -fx-background-image: url("/client/punchboard.jpg");
     -fx-background-repeat: stretch;
-    -fx-background-position: center;
+    -fx-background-position: right;
     -fx-background-size: contain;
+
 }
 
 #pane2 {

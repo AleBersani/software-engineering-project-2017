@@ -16,7 +16,7 @@ public class GameBoardMain extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/client/gameboard.fxml"));
         primaryStage.setTitle("Lorenzo il Magnifico - Gameboard");
-        primaryStage.setScene(new Scene(root, 1132, 685));
+        primaryStage.setScene(new Scene(root, 1254, 630));
         primaryStage.show();
     }
 
