@@ -1,7 +1,5 @@
 package it.polimi.ingsw.client.lightmodel;
 
-import it.polimi.ingsw.gamelogic.cards.leader.LeaderCard;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +7,7 @@ import java.util.Map;
 public class PlayerLight {
     private String name;
     private Map<GoodsLight, Integer> myGoods;
-    private List<LeaderCard> myLeaders;
+    private List<LeaderCardLight> myLeaders;
     private Map<GoodsLight, Integer> myBonusTile;
     private Map<PawnColorLight, Integer> myPawns;
     private List<DevelopmentCardLight> myTerritories;
@@ -19,7 +17,7 @@ public class PlayerLight {
 
     public PlayerLight(String name,
                        Map<GoodsLight, Integer> myGoods,
-                       List<LeaderCard> myLeaders,
+                       List<LeaderCardLight> myLeaders,
                        Map<GoodsLight, Integer> myBonusTile,
                        Map<PawnColorLight, Integer> myPawns) {
         this.name = name;
@@ -49,11 +47,11 @@ public class PlayerLight {
         this.myGoods = myGoods;
     }
 
-    public List<LeaderCard> getMyLeaders() {
+    public List<LeaderCardLight> getMyLeaders() {
         return myLeaders;
     }
 
-    public void setMyLeaders(List<LeaderCard> myLeaders) {
+    public void setMyLeaders(List<LeaderCardLight> myLeaders) {
         this.myLeaders = myLeaders;
     }
 
