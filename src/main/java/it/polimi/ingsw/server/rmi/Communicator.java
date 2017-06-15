@@ -1,7 +1,7 @@
 package it.polimi.ingsw.server.rmi;
 
-import it.polimi.ingsw.server.exectutionmiddleware.RequestHandler;
-import it.polimi.ingsw.shared.Registrable;
+import it.polimi.ingsw.server.middleware.ServerReceiver;
+import it.polimi.ingsw.server.middleware.ServerReceiverHandler;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
 
 import java.rmi.RemoteException;
@@ -38,26 +38,16 @@ public class Communicator extends UnicastRemoteObject implements RMICommunicator
 
     @Override
     public void run(ClientServerRequest clientServerRequest) throws RemoteException {
-        RequestHandler requestHandler = new RequestHandler();
-        clientServerRequest.acceptClientServerRequestVisitor(requestHandler);
+        ServerReceiver clientServerRequestHandler = new ServerReceiverHandler();
+        clientServerRequest.acceptClientServerRequestVisitor(clientServerRequestHandler);
     }
-
+/*
     @Override
-    public synchronized void recordClient(String identifier, Registrable registrable) throws RemoteException {
-        /*if (!GamesConnections.getClients().containsKey(identifier)) {
-            GamesConnections.addClient(identifier, registrable);
-        }*/
-    }
-
-    @Override
-    public synchronized void deleteClient(String identifier, Registrable client) throws RemoteException {
-        /*
-        if (ConnectionMap.removeClient((client)) {
-            LOGGER.info("RMI client deleted");
-        } else {
-            LOGGER.info("RMI client to delete not found");
-        }*/
-    }
+    public void recordClient(PlayerLoginRMI playerLoginRMI) throws RemoteException {
+        if (!GamesConnections.playerAlreadyRegistered(playerName)) {
+            GamesConnections.addClient(playerName, registrable);
+        }
+    }*/
 
     public static void doCallback(String identifier, String msg) throws RemoteException{
         LOGGER.log(Level.INFO, () -> "Sending callback to: " + identifier);

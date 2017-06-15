@@ -1,6 +1,6 @@
 package it.polimi.ingsw.server.socket;
 
-import it.polimi.ingsw.server.exectutionmiddleware.RequestHandler;
+import it.polimi.ingsw.server.middleware.ServerReceiverHandler;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
 
 import java.io.IOException;
@@ -43,8 +43,8 @@ public class ClientHandler implements Runnable {
         while (clientAlive) {
             try {
                 ClientServerRequest clientServerRequest = (ClientServerRequest)objectInputStream.readObject();
-                RequestHandler requestHandler = new RequestHandler();
-                clientServerRequest.acceptClientServerRequestVisitor(requestHandler);
+                ServerReceiverHandler clientServerRequestHandler = new ServerReceiverHandler();
+                clientServerRequest.acceptClientServerRequestVisitor(clientServerRequestHandler);
             } catch (IOException | ClassNotFoundException e) {
                 LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
             }

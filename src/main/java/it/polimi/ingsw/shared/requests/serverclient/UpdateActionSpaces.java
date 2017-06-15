@@ -1,4 +1,12 @@
 package it.polimi.ingsw.shared.requests.serverclient;
 
-public class UpdateActionSpaces {
+import it.polimi.ingsw.client.connection.middleware.ClientReceiver;
+
+import java.io.Serializable;
+
+public class UpdateActionSpaces implements ServerClientRequest, Serializable {
+    @Override
+    public void acceptServerClientRequestVisitor(ClientReceiver clientReceiver) {
+        clientReceiver.visitServerClientRequest(this);
+    }
 }

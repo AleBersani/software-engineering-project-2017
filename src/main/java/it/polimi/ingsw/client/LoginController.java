@@ -1,5 +1,9 @@
 package it.polimi.ingsw.client;
 
+import it.polimi.ingsw.client.connection.middleware.ClientSender;
+import it.polimi.ingsw.client.connection.middleware.ClientSenderHandler;
+import it.polimi.ingsw.client.connection.rmi.RMIClient;
+import it.polimi.ingsw.client.connection.socket.SocketClient;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -8,16 +12,19 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
+import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LoginController {
     private final static Logger LOGGER = Logger.getLogger(LoginController.class.getName());
 
-    private final ScheduledExecutorService EXECUTORSERVICE = Executors.newSingleThreadScheduledExecutor();
+    private final ScheduledExecutorService EXECUTOR_SERVICE = Executors.newSingleThreadScheduledExecutor();
 
     private ScheduledFuture futureScheduled;
 
@@ -31,7 +38,7 @@ public class LoginController {
     private PasswordField passwordField;
 
     public void initialize() {
-        futureScheduled = EXECUTORSERVICE.scheduleAtFixedRate
+        futureScheduled = EXECUTOR_SERVICE.scheduleAtFixedRate
                 (this::rotateImage, 0, 45, TimeUnit.MILLISECONDS);
 
         Media song = new Media(new File("resources/client/intro-song.mp3").toURI().toString());
@@ -50,14 +57,20 @@ public class LoginController {
 
     @FXML
     public void onConnect() {
-        /*try {
-            PlayerDetails playerDetails = new PlayerDetails();
-            playerDetails.setPlayerName(usernameField.getText());
-            Client client = new Client(playerDetails, passwordField.getText());
-            RMIClient rmiClient = new RMIClient();
-            rmiClient.getReceiver().recordClient(client);
-        } catch (RemoteException | NotBoundException e) {
-            LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
-        }*/
+        ClientSender clientSender = new ClientSenderHandler();
+        try {
+            SocketClient.startSocketClient("127.0.0.1");
+            clientSender.login(usernameField.getText(), passwordField.getText());
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "An exception was thrown: cannot connect via socket", e);
+        }
+
+        ClientSenderHandler.setSocket(false);
+        try {
+            RMIClient.startRMIClient();
+            clientSender.login(usernameField.getText(), passwordField.getText());
+        } catch (RemoteException e) {
+            LOGGER.log(Level.SEVERE, "An exception was thrown: cannot connect via RMI", e);
+        }
     }
 }

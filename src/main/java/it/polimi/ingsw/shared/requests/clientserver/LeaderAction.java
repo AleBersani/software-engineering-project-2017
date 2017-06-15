@@ -1,6 +1,6 @@
 package it.polimi.ingsw.shared.requests.clientserver;
 
-import it.polimi.ingsw.server.exectutionmiddleware.ClientServerRequestVisitor;
+import it.polimi.ingsw.server.middleware.ServerReceiver;
 import it.polimi.ingsw.shared.model.ActionType;
 
 import java.io.Serializable;
@@ -23,8 +23,8 @@ public class LeaderAction implements Serializable, ClientServerRequest {
     }
 
     @Override
-    public void acceptClientServerRequestVisitor(ClientServerRequestVisitor clientServerRequestVisitor) {
-        clientServerRequestVisitor.visitClientServerRequest(this);
+    public void acceptClientServerRequestVisitor(ServerReceiver serverReceiver) {
+        serverReceiver.visitClientServerRequest(this);
     }
 
     public ActionType getActionType() {

@@ -1,5 +1,7 @@
 package it.polimi.ingsw.client.connection.socket;
 
+import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
+
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -7,12 +9,11 @@ import java.util.logging.Logger;
 
 public class SocketClient {
     private final static Logger LOGGER = Logger.getLogger(SocketClient.class.getName());
+    private final static int PORT = 6677;
 
-    private String ip;
-    private int port;
+    private static Socket socket;
+    private static ObjectOutputStream objectOutputStream;
 
-    private Socket socket;
-    private ObjectOutputStream objectOutputStream;
 /*
     public static void main(String argv[]) {
         SocketClient socketClient = new SocketClient("127.0.0.1", 6677);
@@ -34,13 +35,9 @@ public class SocketClient {
         }
     }
 */
-    public SocketClient(String ip, int port) {
-        this.ip = ip;
-        this.port = port;
-    }
 
-    public void startSocketClient() throws IOException {
-        socket = new Socket(ip, port);
+    public static void startSocketClient(String ip) throws IOException {
+        socket = new Socket(ip, PORT);
         LOGGER.info("Connection established");
         objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         Thread thread = new Thread(new SocketReader(socket));
@@ -53,8 +50,8 @@ public class SocketClient {
          */
     }
 
-    public void writeSocket(Object o) throws IOException {
-        objectOutputStream.writeObject(o);
+    public static void writeSocket(ClientServerRequest clientServerRequest) throws IOException {
+        objectOutputStream.writeObject(clientServerRequest);
         objectOutputStream.flush();
     }
 }
