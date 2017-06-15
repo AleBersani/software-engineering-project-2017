@@ -45,4 +45,5 @@
     <RadioButton GridPane.rowIndex="5" GridPane.columnIndex="1" text="Socket" toggleGroup="$connectionToggleGroup"/>
 
     <Button text="Connect" GridPane.rowIndex="6" GridPane.columnIndex="1" onAction="#onConnect"/>
+    <Button text="Register" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.halignment="RIGHT"/>
 </GridPane>
