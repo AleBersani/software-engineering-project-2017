@@ -13,66 +13,101 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.shape.Rectangle?>
 
-<TabPane prefHeight="550.0" prefWidth="770.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.PlayerboardController">
+<TabPane prefHeight="550.0" prefWidth="791.0" stylesheets="@playerboard.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.PlayerboardController">
     <tabs>
         <Tab text="Territory_Building">
          <content>
-            <StackPane fx:id="pane" prefHeight="550.0" prefWidth="770.0" stylesheets="@playerboard.css">
-               <children>
-                  <ImageView fitHeight="515.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
-                     <image>
-                        <Image url="@personalbonustile_1.png" />
-                     </image>
-                  </ImageView>
-               </children></StackPane>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+
+                <ImageView fitHeight="515.0" fitWidth="733.0" layoutX="58.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@punchboard.jpg" />
+                </ImageView>
+                <ImageView fitHeight="514.0" fitWidth="68.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@personalbonustile_1.png" />
+                </ImageView>
+
+                <Label fx:id="coins" layoutX="106.0" layoutY="448.0" prefHeight="35.0" prefWidth="47.0" styleClass="try" text="Coins" />
+                <Label fx:id="woods" layoutX="213.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0" styleClass="try" text="Woods" />
+                <Label fx:id="stones" layoutX="333.0" layoutY="446.0" prefHeight="35.0" prefWidth="57.0" styleClass="try" text="Stones" />
+                <Label fx:id="servants" layoutX="440.0" layoutY="463.0" prefHeight="35.0" prefWidth="63.0" styleClass="try" text="Servants" />
+                <StackPane layoutX="73.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="191.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="305.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="420.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="532.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="648.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="80.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="191.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="305.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="420.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="532.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                <StackPane layoutX="648.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+
+            </Pane>
          </content>
         </Tab>
 
         <Tab text="Ventures_Characters">
-         <content>
-            <StackPane prefHeight="150.0" prefWidth="200.0" />
-         </content>
+            <content>
+                <Pane prefHeight="200.0" prefWidth="200.0">
+
+                    <ImageView fitHeight="518.0" fitWidth="734.0" layoutX="58.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@punchboard2.jpg" />
+                    </ImageView>
+                    <ImageView fitHeight="515.0" fitWidth="64.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@personalbonustile_1.png" />
+                    </ImageView>
+
+                    <StackPane layoutX="75.0" layoutY="35.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="193.0" layoutY="34.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="305.0" layoutY="34.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="421.0" layoutY="35.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="533.0" layoutY="35.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="648.0" layoutY="35.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="77.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="193.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="305.0" layoutY="241.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="420.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="533.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+                    <StackPane layoutX="648.0" layoutY="241.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+
+                    <Label fx:id="coins" layoutX="102.0" layoutY="447.0" prefHeight="35.0" prefWidth="47.0" styleClass="try" text="Coins" />
+                    <Label fx:id="woods" layoutX="216.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0" styleClass="try" text="Woods" />
+                    <Label fx:id="stones" layoutX="329.0" layoutY="445.0" prefHeight="35.0" prefWidth="57.0" styleClass="try" text="Stones" />
+                    <Label fx:id="servants" layoutX="438.0" layoutY="461.0" prefHeight="35.0" prefWidth="63.0" styleClass="try" text="Servants" />
+
+                </Pane>
+            </content>
         </Tab>
 
         <Tab text="Leaders">
-   <content>
-               <StackPane fx:id="pane4" prefHeight="800" prefWidth="1000">
-                  <children>
-                      <ImageView fx:id="pane3" fitHeight="515" fitWidth="750" preserveRatio="true">
-                         <image>
-                             <Image preserveRatio="true" url="/client/punchboardback.jpg" />
-                         </image>
-                      </ImageView>
-                      <HBox fx:id="pane5" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20">
-                         <children>
-                             <ImageView fx:id="led1" fitHeight="250" fitWidth="158" preserveRatio="true">
-                                <image>
-                                    <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg" />
-                                </image>
-                             </ImageView>
-                             <ImageView fx:id="led2" fitHeight="250" fitWidth="158" preserveRatio="true">
-                                <image>
-                                    <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg" />
-                                </image>
-                             </ImageView>
-                             <ImageView fx:id="led3" fitHeight="250" fitWidth="158" preserveRatio="true">
-                                <image>
-                                    <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg" />
-                                </image>
-                             </ImageView>
-                             <ImageView fx:id="led4" fitHeight="250" fitWidth="158" preserveRatio="true">
-                                <image>
-                                    <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg" />
-                                </image>
-                             </ImageView>
-                         </children>
-                      </HBox>
-                  </children>
-               </StackPane>
-   </content>
+            <content>
+                <StackPane fx:id="pane4" prefHeight="800" prefWidth="1000">
 
+                    <ImageView fx:id="pane3" fitHeight="515" fitWidth="750" preserveRatio="true" styleClass="try">
+                        <Image preserveRatio="true" url="/client/punchboardback.jpg" />
+                    </ImageView>
+
+                    <HBox fx:id="pane5" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20">
+
+                        <ImageView fx:id="led1" fitHeight="250" fitWidth="158" preserveRatio="true" styleClass="try">
+                            <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg" />
+                        </ImageView>
+                        <ImageView fx:id="led2" fitHeight="250" fitWidth="158" preserveRatio="true" styleClass="try">
+                            <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg" />
+                        </ImageView>
+                        <ImageView fx:id="led3" fitHeight="250" fitWidth="158" preserveRatio="true" styleClass="try">
+                            <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg" />
+                        </ImageView>
+                        <ImageView fx:id="led4" fitHeight="250" fitWidth="158" preserveRatio="true" styleClass="try">
+                            <Image preserveRatio="true" url="/client/leader/Lorenzo de' Medici.jpg" />
+                        </ImageView>
+
+                    </HBox>
+
+                </StackPane>
+            </content>
         </Tab>
     </tabs>
-
 
 </TabPane>
