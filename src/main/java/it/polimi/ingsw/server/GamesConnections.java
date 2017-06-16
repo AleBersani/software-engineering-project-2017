@@ -3,6 +3,7 @@ package it.polimi.ingsw.server;
 import it.polimi.ingsw.server.database.QueryHandler;
 import it.polimi.ingsw.shared.Registrable;
 
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +19,11 @@ public final class GamesConnections {
         gameConnectionsList = new ArrayList<>();
     }
 
-    public static void addClient(String playerName, Socket socket) {
+    public static void addClient(String playerName, ObjectOutputStream objectOutputStream) {
         if (newGameConnectionsNeeded()) {
             createNewGameConnections();
         }
-        gameConnectionsList.get(gameConnectionsList.size() - 1).addPlayer(playerName, socket);
+        gameConnectionsList.get(gameConnectionsList.size() - 1).addPlayer(playerName, objectOutputStream);
     }
 
     public static void addClient(String playerName, Registrable registrable) {

@@ -2,36 +2,37 @@ package it.polimi.ingsw.server;
 
 import it.polimi.ingsw.shared.Registrable;
 
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Optional;
 
 public class ConnectionStream {
-    private Socket socket;
+    private ObjectOutputStream objectOutputStream;
     private Registrable registrable;
 
     public ConnectionStream() {
-        socket = null;
+        objectOutputStream = null;
         registrable = null;
     }
 
-    public ConnectionStream(Socket socket) {
-        this.socket = socket;
+    public ConnectionStream(ObjectOutputStream objectOutputStream) {
+        this.objectOutputStream = objectOutputStream;
         registrable = null;
     }
 
     public ConnectionStream(Registrable registrable) {
         this.registrable = registrable;
-        socket = null;
+        objectOutputStream = null;
     }
 
-    public Optional<Socket> getSocket() {
-        if (socket == null)
+    public Optional<ObjectOutputStream> getObjectOutputStream() {
+        if (objectOutputStream == null)
             return Optional.empty();
-        return Optional.of(socket);
+        return Optional.of(objectOutputStream);
     }
 
-    public void setSocket(Socket socket) {
-        this.socket = socket;
+    public void setObjectOutputStream(ObjectOutputStream objectOutputStream) {
+        this.objectOutputStream = objectOutputStream;
     }
 
     public Optional<Registrable> getRegistrable() {

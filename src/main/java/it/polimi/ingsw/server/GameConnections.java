@@ -3,6 +3,8 @@ package it.polimi.ingsw.server;
 import it.polimi.ingsw.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.shared.Registrable;
 
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +12,7 @@ import java.util.Map;
 public class GameConnections {
     private final int ID_GAME;
     private final int MAX_PLAYERS;
-    private final Map<String, Socket> PLAYER_SOCKET_MAP;
+    private final Map<String, ObjectOutputStream> PLAYER_OUTPUT_STREAM_MAP;
     private final Map<String, Registrable> PLAYER_RMI_MAP;
 
     private boolean startedGame;
@@ -18,16 +20,17 @@ public class GameConnections {
 
     public GameConnections(int ID_GAME) {
         this.ID_GAME = ID_GAME;
-        MAX_PLAYERS = GameConfiguration.getMaxNumberOfPlayer();
-        PLAYER_SOCKET_MAP = new HashMap<>();
+        //TODO: MAX_PLAYERS = GameConfiguration.getMaxNumberOfPlayer();
+        MAX_PLAYERS = 4;
+        PLAYER_OUTPUT_STREAM_MAP = new HashMap<>();
         PLAYER_RMI_MAP = new HashMap<>();
         startedGame = false;
         numberOfPlayer = 0;
     }
 
-    public void addPlayer(String playerName, Socket socket) {
+    public void addPlayer(String playerName, ObjectOutputStream objectOutputStream) {
         if (numberOfPlayer < MAX_PLAYERS) {
-            PLAYER_SOCKET_MAP.put(playerName, socket);
+            PLAYER_OUTPUT_STREAM_MAP.put(playerName, objectOutputStream);
             numberOfPlayer++;
         }
     }
@@ -41,14 +44,14 @@ public class GameConnections {
 
     public ConnectionStream getConnectionStream(String playerName) {
         ConnectionStream connectionStream = new ConnectionStream();
-        connectionStream.setSocket(getSocketStream(playerName));
+        connectionStream.setObjectOutputStream(getObjectOutputStream(playerName));
         connectionStream.setRegistrable(getRMIStream(playerName));
         return connectionStream;
     }
 
-    private Socket getSocketStream(String playerName) {
-        if (PLAYER_SOCKET_MAP.containsKey(playerName)) {
-            return PLAYER_SOCKET_MAP.get(playerName);
+    private ObjectOutputStream getObjectOutputStream(String playerName) {
+        if (PLAYER_OUTPUT_STREAM_MAP.containsKey(playerName)) {
+            return PLAYER_OUTPUT_STREAM_MAP.get(playerName);
         } else {
             return null;
         }
@@ -63,7 +66,7 @@ public class GameConnections {
     }
 
     public boolean hasPlayer(String playerName) {
-        return PLAYER_SOCKET_MAP.containsKey(playerName) ||
+        return PLAYER_OUTPUT_STREAM_MAP.containsKey(playerName) ||
                 PLAYER_RMI_MAP.containsKey(playerName);
     }
 
@@ -71,8 +74,8 @@ public class GameConnections {
         return ID_GAME;
     }
 
-    public Map<String, Socket> getPLAYER_SOCKET_MAP() {
-        return PLAYER_SOCKET_MAP;
+    public Map<String, ObjectOutputStream> getPLAYER_OUTPUT_STREAM_MAP() {
+        return PLAYER_OUTPUT_STREAM_MAP;
     }
 
     public Map<String, Registrable> getPLAYER_RMI_MAP() {

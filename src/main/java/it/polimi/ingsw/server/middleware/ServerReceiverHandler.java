@@ -1,10 +1,13 @@
 package it.polimi.ingsw.server.middleware;
 
+import it.polimi.ingsw.server.GamesConnections;
 import it.polimi.ingsw.server.database.QueryHandler;
+import it.polimi.ingsw.server.socket.SocketOutputMemory;
 import it.polimi.ingsw.shared.requests.clientserver.*;
+import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
 
-import java.rmi.RemoteException;
-import java.util.logging.Level;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.util.logging.Logger;
 
 public class ServerReceiverHandler implements ServerReceiver {
@@ -34,7 +37,11 @@ public class ServerReceiverHandler implements ServerReceiver {
     public void visitClientServerRequest(PlayerLogin playerLogin) {
         LOGGER.info("Player Login");
         if (QueryHandler.authenticate(playerLogin.getPlayerName(), playerLogin.getPassword())) {
-            LOGGER.info("Login successful");
+            LOGGER.info("Socket login successful");
+            ObjectOutputStream currentOutputStream = SocketOutputMemory.getOutputStream(Thread.currentThread().getId());
+            GamesConnections.addClient(playerLogin.getPlayerName(), currentOutputStream);
+            LOGGER.info("Socket client registered");
+            sendSuccessfullyConnectedMessage(playerLogin.getPlayerName());
         } else {
             LOGGER.info("Login unsuccessful");
         }
@@ -44,14 +51,17 @@ public class ServerReceiverHandler implements ServerReceiver {
     public void visitClientServerRequest(PlayerLoginRMI playerLoginRMI) {
         LOGGER.info("Player Login");
         if (QueryHandler.authenticate(playerLoginRMI.getPlayerName(), playerLoginRMI.getPassword())) {
-            LOGGER.info("Login successful");
-            try {
-                playerLoginRMI.getRegistrable().update("Connected!");
-            } catch (RemoteException e) {
-                LOGGER.log(Level.SEVERE, "An exception was thrown: RMI callback error", e);
-            }
+            LOGGER.info("RMI login successful");
+            GamesConnections.addClient(playerLoginRMI.getPlayerName(), playerLoginRMI.getRegistrable());
+            LOGGER.info("RMI client registered");
+            sendSuccessfullyConnectedMessage(playerLoginRMI.getPlayerName());
         } else {
             LOGGER.info("Login unsuccessful");
         }
+    }
+
+    private void sendSuccessfullyConnectedMessage(String playerName) {
+        ServerSender serverSender = new ServerSenderHandler();
+        serverSender.sendToClient(playerName, new SimpleMessage("Connected!"));
     }
 }

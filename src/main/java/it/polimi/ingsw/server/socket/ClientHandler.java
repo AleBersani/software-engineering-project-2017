@@ -1,10 +1,6 @@
 package it.polimi.ingsw.server.socket;
 
-import it.polimi.ingsw.server.middleware.ServerReceiverHandler;
-import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
-
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.logging.Level;
@@ -16,8 +12,6 @@ public class ClientHandler implements Runnable {
     private static boolean clientAlive = true;
 
     private Socket socket;
-
-    private ObjectInputStream objectInputStream;
     private ObjectOutputStream objectOutputStream;
 
     public ClientHandler(Socket socket) {
@@ -25,36 +19,18 @@ public class ClientHandler implements Runnable {
     }
 
     public void run() {
-        streamsInit();
-        keepReading();
-        close();
-    }
-
-    private void streamsInit() {
         try {
-            objectInputStream = new ObjectInputStream(socket.getInputStream());
             objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+            Thread thread = new Thread(new Reader(socket, objectOutputStream));
+            thread.start();
         } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
-        }
-    }
-
-    private void keepReading() {
-        while (clientAlive) {
-            try {
-                ClientServerRequest clientServerRequest = (ClientServerRequest)objectInputStream.readObject();
-                ServerReceiverHandler clientServerRequestHandler = new ServerReceiverHandler();
-                clientServerRequest.acceptClientServerRequestVisitor(clientServerRequestHandler);
-            } catch (IOException | ClassNotFoundException e) {
-                LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
-            }
+            LOGGER.log(Level.SEVERE, "An exception was thrown: streams init", e);
         }
     }
 
     private void close() {
         try {
             objectOutputStream.close();
-            objectInputStream.close();
             socket.close();
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);

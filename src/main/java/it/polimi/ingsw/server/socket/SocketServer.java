@@ -41,7 +41,6 @@ public class SocketServer {
             try {
                 Socket socket = serverSocket.accept();
                 executorService.submit(new ClientHandler(socket));
-                //handleGameSessions(socket);
             } catch (IOException e) {
                 LOGGER.log(Level.SEVERE, "An exception was thrown: Server socket closed", e);
                 break;

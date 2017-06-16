@@ -5,6 +5,7 @@ public class SocketInit implements Runnable {
 
     @Override
     public void run() {
+        SocketOutputMemory.init();
         SocketServer socketServer = new SocketServer(PORT);
         socketServer.startServer();
     }

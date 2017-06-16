@@ -14,33 +14,11 @@ public class SocketClient {
     private static Socket socket;
     private static ObjectOutputStream objectOutputStream;
 
-/*
-    public static void main(String argv[]) {
-        SocketClient socketClient = new SocketClient("127.0.0.1", 6677);
-        try {
-            socketClient.startSocketClient();
-        } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "An exception was thrown: Socket Connection Error", e);
-        }
-
-        try {
-            socketClient.writeSocket(new Connection("Dennis", "password"));
-        } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
-        }
-        try {
-            socketClient.writeSocket(new Connection("Dennis", "password"));
-        } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "An exception was thrown: ", e);
-        }
-    }
-*/
-
     public static void startSocketClient(String ip) throws IOException {
         socket = new Socket(ip, PORT);
         LOGGER.info("Connection established");
         objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
-        Thread thread = new Thread(new SocketReader(socket));
+        Thread thread = new Thread(new Reader(socket));
         thread.start();
     }
 

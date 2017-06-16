@@ -5,7 +5,7 @@ import it.polimi.ingsw.shared.requests.serverclient.UpdateActionSpaces;
 import it.polimi.ingsw.shared.requests.serverclient.UpdateTowers;
 
 public interface ClientReceiver {
-    void visitServerClientRequest(SimpleMessage SimpleMessage);
+    void visitServerClientRequest(SimpleMessage simpleMessage);
     void visitServerClientRequest(UpdateActionSpaces updateActionSpaces);
     void visitServerClientRequest(UpdateTowers updateTowers);
 }

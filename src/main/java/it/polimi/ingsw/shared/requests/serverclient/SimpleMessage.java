@@ -2,7 +2,9 @@ package it.polimi.ingsw.shared.requests.serverclient;
 
 import it.polimi.ingsw.client.connection.middleware.ClientReceiver;
 
-public class SimpleMessage implements ServerClientRequest {
+import java.io.Serializable;
+
+public class SimpleMessage implements ServerClientRequest, Serializable {
     private String message;
 
     public SimpleMessage(String message) {
