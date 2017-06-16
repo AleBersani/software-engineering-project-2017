@@ -6,7 +6,9 @@ import it.polimi.ingsw.client.connection.rmi.RMIClient;
 import it.polimi.ingsw.client.connection.socket.SocketClient;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -36,6 +38,8 @@ public class LoginController {
     private TextField usernameField;
     @FXML
     private PasswordField passwordField;
+    @FXML
+    private ToggleGroup connectionToggleGroup;
 
     public void initialize() {
         futureScheduled = EXECUTOR_SERVICE.scheduleAtFixedRate
@@ -57,20 +61,24 @@ public class LoginController {
 
     @FXML
     public void onConnect() {
+        RadioButton selectedRadioButton = (RadioButton)connectionToggleGroup.getSelectedToggle();
+        String selected = selectedRadioButton.getText();
         ClientSender clientSender = new ClientSenderHandler();
-        try {
-            SocketClient.startSocketClient("127.0.0.1");
-            clientSender.login(usernameField.getText(), passwordField.getText());
-        } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "An exception was thrown: cannot connect via socket", e);
-        }
-
-        ClientSenderHandler.setSocket(false);
-        try {
-            RMIClient.startRMIClient();
-            clientSender.login(usernameField.getText(), passwordField.getText());
-        } catch (RemoteException e) {
-            LOGGER.log(Level.SEVERE, "An exception was thrown: cannot connect via RMI", e);
+        if ("Socket".equals(selected)) {
+            try {
+                SocketClient.startSocketClient("127.0.0.1");
+                clientSender.login(usernameField.getText(), passwordField.getText());
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot connect via socket", e);
+            }
+        } else if ("RMI".equals(selected)) {
+            ClientSenderHandler.setSocket(false);
+            try {
+                RMIClient.startRMIClient();
+                clientSender.login(usernameField.getText(), passwordField.getText());
+            } catch (RemoteException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot connect via RMI", e);
+            }
         }
     }
 }

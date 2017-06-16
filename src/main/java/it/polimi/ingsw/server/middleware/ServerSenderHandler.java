@@ -23,7 +23,7 @@ public class ServerSenderHandler implements ServerSender {
         } else if (connectionStream.getRegistrable().isPresent()) {
             Registrable registrable = connectionStream.getRegistrable().get();
             try {
-                registrable.update("ciao");
+                registrable.update(serverClientRequest);
             } catch (RemoteException e) {
                 LOGGER.log(Level.SEVERE,"An exception was thrown: RMI callback", e);
             }
