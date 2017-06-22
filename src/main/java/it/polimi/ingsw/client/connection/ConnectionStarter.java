@@ -1,6 +1,5 @@
 package it.polimi.ingsw.client.connection;
 
-import it.polimi.ingsw.client.LoginController;
 import it.polimi.ingsw.client.connection.middleware.ClientSender;
 import it.polimi.ingsw.client.connection.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.connection.rmi.RMIClient;

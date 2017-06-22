@@ -3,7 +3,6 @@ package it.polimi.ingsw.server.connection;
 import it.polimi.ingsw.shared.Registrable;
 
 import java.io.ObjectOutputStream;
-import java.net.Socket;
 import java.util.Optional;
 
 public class ConnectionStream {

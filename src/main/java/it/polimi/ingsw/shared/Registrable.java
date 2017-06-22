@@ -1,7 +1,6 @@
 package it.polimi.ingsw.shared;
 
 import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
-import org.apache.maven.settings.Server;
 
 import java.io.Serializable;
 import java.rmi.Remote;

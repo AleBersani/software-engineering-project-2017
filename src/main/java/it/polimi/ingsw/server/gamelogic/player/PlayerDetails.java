@@ -1,6 +1,6 @@
-package it.polimi.ingsw.shared.model;
+package it.polimi.ingsw.server.gamelogic.player;
 
-import it.polimi.ingsw.server.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.io.Serializable;
 import java.util.Objects;

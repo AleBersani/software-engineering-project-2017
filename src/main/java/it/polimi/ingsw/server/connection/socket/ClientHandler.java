@@ -3,7 +3,6 @@ package it.polimi.ingsw.server.connection.socket;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.Observable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

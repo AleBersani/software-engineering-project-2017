@@ -7,6 +7,7 @@ import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.rmi.RemoteException;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,12 +16,12 @@ public class ServerSenderHandler implements ServerSender {
 
     @Override
     public void sendToClient(ConnectionStream connectionStream, ServerClientRequest serverClientRequest) {
-        if (connectionStream.getObjectOutputStream().isPresent()) {
-            ObjectOutputStream objectOutputStream = connectionStream.getObjectOutputStream().get();
-            sendToClient(objectOutputStream, serverClientRequest);
-        } else if (connectionStream.getRegistrable().isPresent()) {
-            Registrable registrable = connectionStream.getRegistrable().get();
-            sendToClient(registrable, serverClientRequest);
+        Optional<ObjectOutputStream> objectOutputStream = connectionStream.getObjectOutputStream();
+        Optional<Registrable> registrable = connectionStream.getRegistrable();
+        if (objectOutputStream.isPresent()) {
+            sendToClient(objectOutputStream.get(), serverClientRequest);
+        } else if (registrable.isPresent()) {
+            sendToClient(registrable.get(), serverClientRequest);
         }
     }
 

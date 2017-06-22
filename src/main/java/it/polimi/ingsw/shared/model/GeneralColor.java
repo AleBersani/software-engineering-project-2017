@@ -1,4 +1,4 @@
-package it.polimi.ingsw.server.gamelogic.enums;
+package it.polimi.ingsw.shared.model;
 
 /**
  * Represents colors for Players, Towers and Development Cards

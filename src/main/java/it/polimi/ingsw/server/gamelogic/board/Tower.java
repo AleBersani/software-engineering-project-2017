@@ -1,6 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
-import it.polimi.ingsw.server.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.util.List;
 

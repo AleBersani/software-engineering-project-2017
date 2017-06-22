@@ -6,7 +6,7 @@ import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.development.BasicDevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.development.Building;
 import it.polimi.ingsw.server.gamelogic.cards.development.CardInformation;
-import it.polimi.ingsw.server.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
 import org.junit.jupiter.api.BeforeEach;

@@ -7,8 +7,10 @@ import it.polimi.ingsw.server.middleware.ServerSender;
 import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
 
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.logging.Logger;
 
 public class NewGamesHandler implements Observer {

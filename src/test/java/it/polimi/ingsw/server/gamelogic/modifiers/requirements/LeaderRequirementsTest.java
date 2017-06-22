@@ -10,7 +10,7 @@ import it.polimi.ingsw.server.gamelogic.player.BonusTiles;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerBoard;
 import it.polimi.ingsw.shared.model.ActionType;
-import it.polimi.ingsw.shared.model.PlayerDetails;
+import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

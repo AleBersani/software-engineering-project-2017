@@ -7,7 +7,7 @@ import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.*;
-import it.polimi.ingsw.server.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.modifiers.EndGameRewardsModifier;
 import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCosts;

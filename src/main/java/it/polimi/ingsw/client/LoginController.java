@@ -1,10 +1,6 @@
 package it.polimi.ingsw.client;
 
 import it.polimi.ingsw.client.connection.ConnectionStarter;
-import it.polimi.ingsw.client.connection.middleware.ClientSender;
-import it.polimi.ingsw.client.connection.middleware.ClientSenderHandler;
-import it.polimi.ingsw.client.connection.rmi.RMIClient;
-import it.polimi.ingsw.client.connection.socket.SocketClient;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -15,13 +11,10 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
-import java.io.IOException;
-import java.rmi.RemoteException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LoginController {

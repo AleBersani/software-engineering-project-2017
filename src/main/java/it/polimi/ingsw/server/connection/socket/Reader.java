@@ -1,7 +1,6 @@
 package it.polimi.ingsw.server.connection.socket;
 
 import it.polimi.ingsw.server.NewGamesHandler;
-import it.polimi.ingsw.server.middleware.ServerReceiver;
 import it.polimi.ingsw.server.middleware.ServerReceiverHandler;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
 
@@ -9,7 +8,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.SocketException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

@@ -1,6 +1,5 @@
 package it.polimi.ingsw.client.connection.socket;
 
-import it.polimi.ingsw.server.connection.socket.SocketServer;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
 
 import java.io.IOException;

@@ -8,8 +8,6 @@ import it.polimi.ingsw.shared.requests.clientserver.PlayerLoginRMI;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.Objects;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Communicator extends UnicastRemoteObject implements RMICommunicator {

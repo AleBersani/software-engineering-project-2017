@@ -11,7 +11,7 @@ import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.Excommunicati
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderInformation;
-import it.polimi.ingsw.server.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.enums.LeaderCategory;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 

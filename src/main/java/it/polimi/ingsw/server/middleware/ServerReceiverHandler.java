@@ -2,11 +2,9 @@ package it.polimi.ingsw.server.middleware;
 
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.connection.ConnectionStream;
-import it.polimi.ingsw.server.database.DBConnector;
 import it.polimi.ingsw.server.database.QueryHandler;
 import it.polimi.ingsw.shared.requests.clientserver.*;
 import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
-import javafx.beans.InvalidationListener;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;

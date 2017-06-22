@@ -1,6 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.cards.development;
 
-import it.polimi.ingsw.server.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 
 import java.util.Objects;

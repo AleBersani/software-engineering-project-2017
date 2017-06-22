@@ -9,7 +9,7 @@ import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.*;
-import it.polimi.ingsw.server.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.modifiers.*;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModifier;

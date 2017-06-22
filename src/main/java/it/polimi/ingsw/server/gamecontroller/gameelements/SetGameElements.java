@@ -1,13 +1,18 @@
 package it.polimi.ingsw.server.gamecontroller.gameelements;
 
+import it.polimi.ingsw.server.middleware.ServerReceiverHandler;
 import it.polimi.ingsw.server.parser.ParserAdditionalInfo;
 import it.polimi.ingsw.server.parser.ParserBoardInformation;
 import it.polimi.ingsw.server.parser.ParserCards;
 import it.polimi.ingsw.server.parser.ParserConfigurations;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SetGameElements implements Runnable {
+    private final static Logger LOGGER = Logger.getLogger(SetGameElements.class.getName());
+
     private ParserCards parserCards;
     private ParserAdditionalInfo parserAdditionalInfo;
     private ParserConfigurations parserConfigurations;
@@ -25,7 +30,7 @@ public class SetGameElements implements Runnable {
         try {
             setupElements();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "An exception was thrown: cannot run set game elements thread", e);
         }
     }
 

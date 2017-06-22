@@ -1,7 +1,7 @@
 package it.polimi.ingsw.server.gamelogic.cards.additionalinfo;
 
 import it.polimi.ingsw.server.gamelogic.cards.CardVisitor;
-import it.polimi.ingsw.server.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.util.Objects;
 

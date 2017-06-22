@@ -3,7 +3,7 @@ package it.polimi.ingsw.server.gamelogic.cards.leader;
 import it.polimi.ingsw.server.gamelogic.basics.CardsRequired;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
-import it.polimi.ingsw.server.gamelogic.enums.GeneralColor;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
