@@ -33,13 +33,13 @@ class ParserLightModelTest {
         Method method = targetClass.getDeclaredMethod(methodName, JsonArray.class);
         method.setAccessible(true);
         String json = "[{" +
-                        "\"number\": \"32\""+
+                        "\"number\": \"32\","+
                         "\"name\": \"Commercial Hub\","+
                         "\"instantEffectDescription\": \"None\","+
                         "\"permanentEffectDescription\": [\"You get 1 Coin as harvest result with cost of 1\"],"+
                         "\"cost\": [\"None\"]},"+
                         "{" +
-                        "\"number\": \"35\""+
+                        "\"number\": \"35\","+
                         "\"name\": \"Woods\","+
                         "\"instantEffectDescription\": \"None\","+
                         "\"permanentEffectDescription\": [\"You get 1 Wood as harvest result with cost of 2\"],"+
