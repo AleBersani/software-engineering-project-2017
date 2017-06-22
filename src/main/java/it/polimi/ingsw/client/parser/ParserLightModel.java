@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import it.polimi.ingsw.client.lightmodel.*;
+import it.polimi.ingsw.shared.model.BoardIdentifier;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class ParserLightModel {
                                                                 .get("permanentEffectDescription")
                                                                 .getAsJsonArray(),
                                                             new TypeToken<ArrayList<String>>(){}.getType());
-            parsedCards.add(new DevelopmentCardLight(   card.get("name").getAsString(),
+            parsedCards.add(new DevelopmentCardLight(card.get("number").getAsInt(),  card.get("name").getAsString(),
                     parsedCosts,
                     card.get("instantEffectDescription").getAsString(),
                     parsedPermanentEffectDescription));
@@ -181,7 +182,8 @@ public class ParserLightModel {
      */
     private SlotLight parseSingleSlotLight(JsonObject singleSpace) {
         Map<GoodsLight, Integer> bonus = parseBonusMap(singleSpace.get("bonus").getAsJsonObject());
-        return new SlotLight(bonus, singleSpace.get("cost").getAsInt(), singleSpace.get("malus").getAsInt());
+        return new SlotLight(BoardIdentifier.valueOf(singleSpace.get("boardIdentifier").getAsString()), bonus,
+                            singleSpace.get("cost").getAsInt(), singleSpace.get("malus").getAsInt());
     }
 
     /**

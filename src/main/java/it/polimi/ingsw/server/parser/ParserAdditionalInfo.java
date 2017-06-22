@@ -457,7 +457,9 @@ public class ParserAdditionalInfo {
      */
     private void addToMap(String name, List<AdditionalCardInfo> parsedAddInfo,
                           Map<String, List<AdditionalCardInfo>> mapToModify) {
-        if (!parsedAddInfo.isEmpty())
+        if (!parsedAddInfo.isEmpty()) {
             mapToModify.put(name, parsedAddInfo);
+
+        }
     }
 }
