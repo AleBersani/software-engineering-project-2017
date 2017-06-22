@@ -10,7 +10,8 @@
         "councilPrivilege": "0"
       },
       "cost": "7",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_G_4"
     },
     {
       "bonus": {
@@ -22,7 +23,8 @@
         "councilPrivilege": "0"
       },
       "cost": "5",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_G_3"
     },
     {
       "bonus": {
@@ -34,7 +36,8 @@
         "councilPrivilege": "0"
       },
       "cost": "3",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_G_2"
     },
     {
       "bonus": {
@@ -46,7 +49,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_G_1"
     }
   ],
   "yellowTower": [
@@ -60,7 +64,8 @@
         "councilPrivilege": "0"
       },
       "cost": "7",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_Y_4"
     },
     {
       "bonus": {
@@ -72,7 +77,8 @@
         "councilPrivilege": "0"
       },
       "cost": "5",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_Y_3"
     },
     {
       "bonus": {
@@ -84,7 +90,8 @@
         "councilPrivilege": "0"
       },
       "cost": "3",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_Y_2"
     },
     {
       "bonus": {
@@ -96,7 +103,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_Y_1"
     }
   ],
   "blueTower": [
@@ -107,7 +115,8 @@
         "military": "2"
       },
       "cost": "7",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_B_4"
     },
     {
       "bonus": {
@@ -116,7 +125,8 @@
         "military": "1"
       },
       "cost": "5",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_B_3"
     },
     {
       "bonus": {
@@ -125,7 +135,8 @@
         "military": "0"
       },
       "cost": "3",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_B_2"
     },
     {
       "bonus": {
@@ -134,7 +145,8 @@
         "military": "0"
       },
       "cost": "1",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_B_1"
     }
   ],
   "purpleTower": [
@@ -148,7 +160,8 @@
         "councilPrivilege": "0"
       },
       "cost": "7",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_P_4"
     },
     {
       "bonus": {
@@ -160,7 +173,8 @@
         "councilPrivilege": "0"
       },
       "cost": "5",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_P_3"
     },
     {
       "bonus": {
@@ -172,7 +186,8 @@
         "councilPrivilege": "0"
       },
       "cost": "3",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_P_2"
     },
     {
       "bonus": {
@@ -184,7 +199,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "T_P_1"
     }
   ],
   "market": [
@@ -198,7 +214,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "M_1"
     },
     {
       "bonus": {
@@ -210,7 +227,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "M_2"
     },
     {
       "bonus": {
@@ -222,7 +240,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "M_2"
     },
     {
       "bonus": {
@@ -234,7 +253,8 @@
         "councilPrivilege": "2"
       },
       "cost": "1",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "M_2"
     }
   ],
   "harvest": [
@@ -248,7 +268,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "0"
+      "malus": "0",
+      "boardIdentifier": "H_1"
     },
     {
       "bonus": {
@@ -260,7 +281,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "3"
+      "malus": "3",
+      "boardIdentifier": "H_2"
     },
     {
       "bonus": {
@@ -272,7 +294,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "3"
+      "malus": "3",
+      "boardIdentifier": "H_2"
     },
     {
       "bonus": {
@@ -284,7 +307,8 @@
         "councilPrivilege": "0"
       },
       "cost": "1",
-      "malus": "3"
+      "malus": "3",
+      "boardIdentifier": "H_2"
     }
   ],
   "production": [

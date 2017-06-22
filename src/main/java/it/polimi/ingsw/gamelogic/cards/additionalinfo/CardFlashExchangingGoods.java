@@ -19,6 +19,13 @@ public class CardFlashExchangingGoods extends AdditionalCardInfo {
     }
 
     @Override
+    public String toString() {
+        return "CardFlashExchangingGoods{" +
+                "exchangingGoods=" + exchangingGoods +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;

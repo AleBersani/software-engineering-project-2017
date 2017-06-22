@@ -13,5 +13,5 @@ public enum BoardIdentifier implements Serializable {
     COUNCIL_PALACE,
     PRODUCTION_1, PRODUCTION_2,
     HARVEST_1, HARVEST_2,
-    M_1, M2, M3, M4
+    M_1, M_2, M_3, M_4
 }

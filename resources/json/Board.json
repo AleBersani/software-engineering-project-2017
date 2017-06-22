@@ -1,0 +1,533 @@
+{
+  "towers": {
+      "greenTower": [
+      {
+        "space": {
+          "requestedValue": "7",
+          "boardIdentifier": "T_G_1"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "2",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "5",
+          "boardIdentifier": "T_G_2"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "1",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "3",
+          "boardIdentifier": "T_G_3"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "1"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "1",
+          "boardIdentifier": "T_G_4"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      }
+    ],
+      "yellowTower": [
+      {
+        "space": {
+          "requestedValue": "7",
+          "boardIdentifier": "T_Y_1"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "2",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "5",
+          "boardIdentifier": "T_Y_2"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "1",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "3",
+          "boardIdentifier": "T_Y_3"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "1",
+          "boardIdentifier": "T_Y_4"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      }
+    ],
+      "blueTower": [
+      {
+        "space": {
+          "requestedValue": "7",
+          "boardIdentifier": "T_B_1"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "2",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "5",
+          "boardIdentifier": "T_B_2"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "1",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "3",
+          "boardIdentifier": "T_B_3"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "1",
+          "boardIdentifier": "T_B_4"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      }
+    ],
+      "purpleTower": [
+      {
+        "space": {
+          "requestedValue": "7",
+          "boardIdentifier": "T_P_1"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "2"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "5",
+          "boardIdentifier": "T_P_2"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "1"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "3",
+          "boardIdentifier": "T_P_3"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      },
+      {
+        "space": {
+          "requestedValue": "1",
+          "boardIdentifier": "T_P_4"
+        },
+        "instantGoods": {
+          "resources": {
+            "woods": "0",
+            "stones": "0",
+            "servants": "0",
+            "coins": "0"
+          },
+          "points": {
+            "victory": "0",
+            "military": "0",
+            "faith": "0"
+          }
+        }
+      }
+    ]
+  },
+  "councilPalace": {
+      "instantGoods": {
+        "resources": {
+          "woods": "0",
+          "stones": "0",
+          "servants": "0",
+          "coins": "1"
+        },
+        "points": {
+          "victory": "0",
+          "military": "0",
+          "faith": "0"
+        },
+        "councilPrivilege": "1"
+      },
+      "requestedValue": "1"
+  },
+  "boardActionSpaces": {
+      "productionArea": [
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "PRODUCTION_1"
+          },
+          "malusValue": "0"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "PRODUCTION_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "PRODUCTION_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "PRODUCTION_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "PRODUCTION_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "PRODUCTION_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "PRODUCTION_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "PRODUCTION_2"
+          },
+          "malusValue": "3"
+        }
+      ],
+      "harvestArea": [
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "HARVEST_1"
+          },
+          "malusValue": "0"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "HARVEST_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "HARVEST_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "HARVEST_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "HARVEST_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "HARVEST_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "HARVEST_2"
+          },
+          "malusValue": "3"
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "HARVEST_2"
+          },
+          "malusValue": "3"
+        }
+      ],
+      "marketArea": [
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "M_1"
+          },
+          "instantGoods": {
+            "resources": {
+              "woods": "0",
+              "stones": "0",
+              "servants": "0",
+              "coins": "5"
+            },
+            "points": {
+              "victory": "0",
+              "military": "0",
+              "faith": "0"
+            },
+            "councilPrivilege": "0"
+          }
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "M_2"
+          },
+          "instantGoods": {
+            "resources": {
+              "woods": "0",
+              "stones": "0",
+              "servants": "5",
+              "coins": "0"
+            },
+            "points": {
+              "victory": "0",
+              "military": "0",
+              "faith": "0"
+            },
+            "councilPrivilege": "0"
+          }
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "M_3"
+          },
+          "instantGoods": {
+            "resources": {
+              "woods": "0",
+              "stones": "0",
+              "servants": "0",
+              "coins": "2"
+            },
+            "points": {
+              "victory": "0",
+              "military": "3",
+              "faith": "0"
+            },
+            "councilPrivilege": "0"
+          }
+        },
+        {
+          "space": {
+            "requestedValue": "1",
+            "boardIdentifier": "M_4"
+          },
+          "instantGoods": {
+            "resources": {
+              "woods": "0",
+              "stones": "0",
+              "servants": "0",
+              "coins": "0"
+            },
+            "points": {
+              "victory": "0",
+              "military": "0",
+              "faith": "0"
+            },
+            "councilPrivilege": "2"
+          }
+        }
+      ]
+  }
+}

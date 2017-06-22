@@ -509,7 +509,7 @@
         },
         {
             "name": "Federico da Montefeltro",
-            "requirements": {
+            "requirements": [{
                 "developmentCards": {
                     "territories": "5",
                     "buildings": "0",
@@ -527,7 +527,7 @@
                     "military": "0",
                     "faith": "0"
                 }
-            },
+            }],
             "pawnValue": "6",
             "additionalInfoFlash": {
                 "onChoice": [],
@@ -595,6 +595,7 @@
                     "faith": "0"
                 }
             }],
+            "abilityType": "permanent",
             "state": "givePointForSupportChurch",
             "additionalInfoFlash": {
                 "onChoice": [],

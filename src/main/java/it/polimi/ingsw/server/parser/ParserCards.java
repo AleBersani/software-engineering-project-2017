@@ -80,7 +80,7 @@ public class ParserCards {
      */
     public List<ExcommunicationTile> completeParseExcommunicationTiles() throws IOException {
         JsonObject excommunications = settings.extractJsonObject("ExcommunicationTiles.json");
-        JsonArray cards = excommunications.get("excommunicationTiles").getAsJsonArray();
+        JsonArray cards = excommunications.get("ExcommunicationTiles").getAsJsonArray();
         return parseExcommunicationTiles(cards);
     }
 

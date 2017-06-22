@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import it.polimi.ingsw.client.lightmodel.*;
+import it.polimi.ingsw.shared.model.BoardIdentifier;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -31,12 +32,14 @@ class ParserLightModelTest {
         Class targetClass = parserLightModel.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonArray.class);
         method.setAccessible(true);
-        String json = "[{"+
+        String json = "[{" +
+                        "\"number\": \"32\""+
                         "\"name\": \"Commercial Hub\","+
                         "\"instantEffectDescription\": \"None\","+
                         "\"permanentEffectDescription\": [\"You get 1 Coin as harvest result with cost of 1\"],"+
                         "\"cost\": [\"None\"]},"+
-                        "{"+
+                        "{" +
+                        "\"number\": \"35\""+
                         "\"name\": \"Woods\","+
                         "\"instantEffectDescription\": \"None\","+
                         "\"permanentEffectDescription\": [\"You get 1 Wood as harvest result with cost of 2\"],"+
@@ -46,11 +49,11 @@ class ParserLightModelTest {
         List<String> permanentEffect1 = new ArrayList<String>(){{add("You get 1 Coin as harvest result with cost of 1");}};
         List<String> permanentEffect2 = new ArrayList<String>(){{add("You get 1 Wood as harvest result with cost of 2");}};
         List<DevelopmentCardLight> resultExpected = new ArrayList<DevelopmentCardLight>(){{
-                        add(new DevelopmentCardLight("Commercial Hub",
+                        add(new DevelopmentCardLight(32, "Commercial Hub",
                                                             cost1,
                                         "None",
                                                             permanentEffect1));
-                        add(new DevelopmentCardLight("Woods",
+                        add(new DevelopmentCardLight(35,"Woods",
                                                             cost1,
                                         "None",
                                                             permanentEffect2));}};
@@ -145,35 +148,35 @@ class ParserLightModelTest {
         String json = "{\"greenTower\": [" +
                             "{\"bonus\": {\"woods\": \"2\",\"stones\": \"0\",\"military\": \"0\"," +
                                         "\"coins\": \"0\",\"servants\": \"0\",\"councilPrivilege\": \"0\"}," +
-                            "\"cost\": \"7\",\"malus\": \"0\"}],"+
+                            "\"cost\": \"7\",\"malus\": \"0\", \"boardIdentifier\":\"T_G_2\"}],"+
                         "\"yellowTower\": [" +
                             "{\"bonus\": {\"woods\": \"2\",\"stones\": \"0\",\"military\": \"0\"," +
                                         "\"coins\": \"0\",\"servants\": \"0\",\"councilPrivilege\": \"0\"}," +
-                            "\"cost\": \"7\",\"malus\": \"0\"}],"+
+                            "\"cost\": \"7\",\"malus\": \"0\", \"boardIdentifier\":\"T_G_2\"}],"+
                         "\"blueTower\": [" +
                             "{\"bonus\": {\"woods\": \"2\",\"stones\": \"0\",\"military\": \"0\"," +
                                         "\"coins\": \"0\",\"servants\": \"0\",\"councilPrivilege\": \"0\"}," +
-                            "\"cost\": \"7\",\"malus\": \"0\"}],"+
+                            "\"cost\": \"7\",\"malus\": \"0\", \"boardIdentifier\":\"T_G_2\"}],"+
                         "\"purpleTower\": [" +
                             "{\"bonus\": {\"woods\": \"2\",\"stones\": \"0\",\"military\": \"0\"," +
                                         "\"coins\": \"0\",\"servants\": \"0\",\"councilPrivilege\": \"0\"}," +
-                            "\"cost\": \"7\",\"malus\": \"0\"}],"+
+                            "\"cost\": \"7\",\"malus\": \"0\", \"boardIdentifier\":\"T_G_2\"}],"+
                         "\"market\": [" +
                             "{\"bonus\": {\"woods\": \"2\",\"stones\": \"0\",\"military\": \"0\"," +
                                         "\"coins\": \"0\",\"servants\": \"0\",\"councilPrivilege\": \"0\"}," +
-                            "\"cost\": \"7\",\"malus\": \"0\"}],"+
+                            "\"cost\": \"7\",\"malus\": \"0\", \"boardIdentifier\":\"T_G_2\"}],"+
                         "\"harvest\": [" +
                             "{\"bonus\": {\"woods\": \"2\",\"stones\": \"0\",\"military\": \"0\"," +
                                         "\"coins\": \"0\",\"servants\": \"0\",\"councilPrivilege\": \"0\"}," +
-                            "\"cost\": \"7\",\"malus\": \"0\"}],"+
+                            "\"cost\": \"7\",\"malus\": \"0\", \"boardIdentifier\":\"T_G_2\"}],"+
                         "\"production\": [" +
                             "{\"bonus\": {\"woods\": \"2\",\"stones\": \"0\",\"military\": \"0\"," +
                                         "\"coins\": \"0\",\"servants\": \"0\",\"councilPrivilege\": \"0\"}," +
-                            "\"cost\": \"7\",\"malus\": \"0\"}],"+
+                            "\"cost\": \"7\",\"malus\": \"0\", \"boardIdentifier\":\"T_G_2\"}],"+
                         "\"councilPalace\": [" +
                             "{\"bonus\": {\"woods\": \"2\",\"stones\": \"0\",\"military\": \"0\"," +
                                         "\"coins\": \"0\",\"servants\": \"0\",\"councilPrivilege\": \"0\"}," +
-                            "\"cost\": \"7\",\"malus\": \"0\"}]" +
+                            "\"cost\": \"7\",\"malus\": \"0\", \"boardIdentifier\":\"T_G_2\"}]" +
                         "}";
         JsonObject obj = (JsonObject) new JsonParser().parse(json);
         Map<GoodsLight, Integer> bonusMap = new HashMap<>();
@@ -183,7 +186,8 @@ class ParserLightModelTest {
         bonusMap.put(GoodsLight.COINS, 0);
         bonusMap.put(GoodsLight.SERVANTS, 0);
         bonusMap.put(GoodsLight.COUNCIL_PRIVILEGE, 0);
-        List<SlotLight> place = new ArrayList<SlotLight>(){{add(new SlotLight(bonusMap, 7, 0));}};
+        List<SlotLight> place = new ArrayList<SlotLight>(){{add(new SlotLight(BoardIdentifier.T_G_2, bonusMap,
+                                                                                7, 0));}};
         BoardLight resultExpected = new BoardLight(place, place, place, place, place, place, place, place);
         BoardLight result = (BoardLight) method.invoke(parserLightModel, obj);
         assertTrue(resultExpected.equals(result));
@@ -198,7 +202,7 @@ class ParserLightModelTest {
         String json =  "[" +
                         "{\"bonus\": {\"woods\": \"5\",\"stones\": \"0\",\"military\": \"0\"," +
                                      "\"coins\": \"0\",\"servants\": \"6\",\"councilPrivilege\": \"0\"}," +
-                        "\"cost\": \"0\",\"malus\": \"1\"}" +
+                        "\"cost\": \"0\",\"malus\": \"1\", \"boardIdentifier\":\"T_G_2\"}" +
                         "]";
         JsonArray obj = (JsonArray) new JsonParser().parse(json);
         Map<GoodsLight, Integer> bonusMap = new HashMap<>();
@@ -208,7 +212,8 @@ class ParserLightModelTest {
         bonusMap.put(GoodsLight.COINS, 0);
         bonusMap.put(GoodsLight.SERVANTS, 6);
         bonusMap.put(GoodsLight.COUNCIL_PRIVILEGE, 0);
-        List<SlotLight> resultExpected = new ArrayList<SlotLight>(){{add(new SlotLight(bonusMap, 0, 1));}};
+        List<SlotLight> resultExpected = new ArrayList<SlotLight>(){{add(new SlotLight(BoardIdentifier.T_G_2, bonusMap,
+                                                                                        0, 1));}};
         List<SlotLight> result = (List<SlotLight>) method.invoke(parserLightModel, obj);
         for (int i=0; i < result.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
@@ -226,7 +231,7 @@ class ParserLightModelTest {
         String json =  "{" +
                             "\"bonus\": {\"woods\": \"5\",\"stones\": \"0\",\"military\": \"0\"," +
                                         "\"coins\": \"0\",\"servants\": \"6\",\"councilPrivilege\": \"0\"}," +
-                            "\"cost\": \"0\",\"malus\": \"1\"" +
+                            "\"cost\": \"0\",\"malus\": \"1\", \"boardIdentifier\":\"T_G_1\"" +
                         "}";
         JsonObject obj = (JsonObject) new JsonParser().parse(json);
         Map<GoodsLight, Integer> bonusMap = new HashMap<>();
@@ -236,7 +241,7 @@ class ParserLightModelTest {
         bonusMap.put(GoodsLight.COINS, 0);
         bonusMap.put(GoodsLight.SERVANTS, 6);
         bonusMap.put(GoodsLight.COUNCIL_PRIVILEGE, 0);
-        SlotLight resultExpected = new SlotLight(bonusMap, 0, 1);
+        SlotLight resultExpected = new SlotLight(BoardIdentifier.T_G_1, bonusMap, 0, 1);
         SlotLight result = (SlotLight) method.invoke(parserLightModel, obj);
         assertTrue(resultExpected.equals(result));
     }
