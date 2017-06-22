@@ -1,10 +1,10 @@
 package it.polimi.ingsw.server.gamecontroller.gameelements;
 
-import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.board.CouncilPalace;
-import it.polimi.ingsw.gamelogic.board.MarketSpace;
-import it.polimi.ingsw.gamelogic.board.ProductionHarvestSpace;
-import it.polimi.ingsw.gamelogic.board.Space;
+import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.board.CouncilPalace;
+import it.polimi.ingsw.server.gamelogic.board.MarketSpace;
+import it.polimi.ingsw.server.gamelogic.board.ProductionHarvestSpace;
+import it.polimi.ingsw.server.gamelogic.board.Space;
 
 import java.util.ArrayList;
 import java.util.HashMap;

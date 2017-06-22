@@ -4,10 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import it.polimi.ingsw.gamelogic.basics.BoardConfiguration;
-import it.polimi.ingsw.gamelogic.basics.CouncilPrivilege;
-import it.polimi.ingsw.gamelogic.basics.GameConfiguration;
-import it.polimi.ingsw.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.basics.BoardConfiguration;
+import it.polimi.ingsw.server.gamelogic.basics.CouncilPrivilege;
+import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
+import it.polimi.ingsw.server.gamelogic.basics.Goods;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -3,9 +3,9 @@ package it.polimi.ingsw.server.parser;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import it.polimi.ingsw.gamelogic.basics.ExchangingGoods;
-import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.board.*;
+import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
+import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamecontroller.gameelements.BoardInformation;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 

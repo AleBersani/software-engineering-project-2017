@@ -1,8 +1,8 @@
 package it.polimi.ingsw.server.gamecontroller;
 
-import it.polimi.ingsw.gamelogic.cards.development.DevelopmentCard;
-import it.polimi.ingsw.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
-import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
+import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
+import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
+import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 
 import java.util.ArrayList;
 import java.util.List;

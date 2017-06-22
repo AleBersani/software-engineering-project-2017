@@ -1,8 +1,8 @@
 package it.polimi.ingsw.server.gamecontroller;
 
-import it.polimi.ingsw.gamelogic.board.Board;
-import it.polimi.ingsw.gamelogic.cards.development.DevelopmentCard;
-import it.polimi.ingsw.gamelogic.player.Player;
+import it.polimi.ingsw.server.gamelogic.board.Board;
+import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
+import it.polimi.ingsw.server.gamelogic.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;

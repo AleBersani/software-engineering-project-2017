@@ -4,10 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
-import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.*;
-import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.*;
+import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.modifiers.AvailableActions;
+import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.*;
+import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.*;
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.PawnColor;
 

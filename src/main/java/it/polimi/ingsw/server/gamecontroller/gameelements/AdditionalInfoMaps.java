@@ -1,6 +1,6 @@
 package it.polimi.ingsw.server.gamecontroller.gameelements;
 
-import it.polimi.ingsw.gamelogic.cards.additionalinfo.AdditionalCardInfo;
+import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.AdditionalCardInfo;
 
 import java.util.HashMap;
 import java.util.List;

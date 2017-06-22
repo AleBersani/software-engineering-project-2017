@@ -2,12 +2,12 @@ package it.polimi.ingsw.server.parser;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import it.polimi.ingsw.gamelogic.basics.Goods;
-import it.polimi.ingsw.gamelogic.basics.Points;
-import it.polimi.ingsw.gamelogic.basics.Resources;
-import it.polimi.ingsw.gamelogic.modifiers.AvailableActions;
-import it.polimi.ingsw.gamelogic.modifiers.requirements.modifiers.*;
-import it.polimi.ingsw.gamelogic.modifiers.rewards.modifiers.*;
+import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.basics.Points;
+import it.polimi.ingsw.server.gamelogic.basics.Resources;
+import it.polimi.ingsw.server.gamelogic.modifiers.AvailableActions;
+import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.*;
+import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.*;
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.PawnColor;
 import org.junit.jupiter.api.BeforeEach;
