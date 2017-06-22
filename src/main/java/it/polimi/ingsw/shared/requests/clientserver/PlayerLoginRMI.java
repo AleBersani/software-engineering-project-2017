@@ -15,7 +15,7 @@ public class PlayerLoginRMI implements ClientServerRequest, Serializable {
     }
 
     @Override
-    public void acceptClientServerRequestVisitor(ServerReceiver serverReceiver) {
+    public void acceptServerReceiver(ServerReceiver serverReceiver) {
         serverReceiver.visitClientServerRequest(this);
     }
 

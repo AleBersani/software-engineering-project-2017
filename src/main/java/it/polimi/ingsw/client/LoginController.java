@@ -1,5 +1,6 @@
 package it.polimi.ingsw.client;
 
+import it.polimi.ingsw.client.connection.ConnectionStarter;
 import it.polimi.ingsw.client.connection.middleware.ClientSender;
 import it.polimi.ingsw.client.connection.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.connection.rmi.RMIClient;
@@ -63,22 +64,9 @@ public class LoginController {
     public void onConnect() {
         RadioButton selectedRadioButton = (RadioButton)connectionToggleGroup.getSelectedToggle();
         String selected = selectedRadioButton.getText();
-        ClientSender clientSender = new ClientSenderHandler();
-        if ("Socket".equals(selected)) {
-            try {
-                SocketClient.startSocketClient("127.0.0.1");
-                clientSender.login(usernameField.getText(), passwordField.getText());
-            } catch (IOException e) {
-                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot connect via socket", e);
-            }
-        } else if ("RMI".equals(selected)) {
-            ClientSenderHandler.setSocket(false);
-            try {
-                RMIClient.startRMIClient();
-                clientSender.login(usernameField.getText(), passwordField.getText());
-            } catch (RemoteException e) {
-                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot connect via RMI", e);
-            }
-        }
+        ConnectionStarter connectionStarter = new ConnectionStarter(selected);
+        connectionStarter.startConnection(usernameField.getText(), passwordField.getText());
     }
+
+
 }

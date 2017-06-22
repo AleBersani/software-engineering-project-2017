@@ -1,4 +1,4 @@
-package it.polimi.ingsw.server.socket;
+package it.polimi.ingsw.server.connection.socket;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -10,15 +10,21 @@ import java.util.logging.Logger;
 
 public class SocketServer {
     private final static Logger LOGGER = Logger.getLogger(SocketServer.class.getName());
-
-    private int port;
+    private final static int PORT = 6677;
 
     private ServerSocket serverSocket;
     private ExecutorService executorService;
 
-    public SocketServer(int port) {
-        this.port = port;
+    private SocketServer() {
         executorService = Executors.newCachedThreadPool();
+    }
+
+    private static class SocketServerHolder {
+        private static final SocketServer INSTANCE = new SocketServer();
+    }
+
+    public static SocketServer getSocketServer() {
+        return SocketServerHolder.INSTANCE;
     }
 
     public void startServer() {
@@ -29,21 +35,23 @@ public class SocketServer {
 
     private void initServer() {
         try {
-            serverSocket = new ServerSocket(port);
-            LOGGER.log(Level.INFO, () -> "Server socket ready on port: " + port);
+            serverSocket = new ServerSocket(PORT);
+            LOGGER.log(Level.INFO, () -> "Server socket ready on port: " + PORT);
         } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "An exception was thrown: Cannot open socket server", e);
+            LOGGER.log(Level.SEVERE, "An exception was thrown: cannot open socket server", e);
         }
     }
 
     private void handleConnections() {
-        while (true) {
+        boolean keepAlive = true;
+        while (keepAlive) {
             try {
                 Socket socket = serverSocket.accept();
+                socket.setKeepAlive(true);
                 executorService.submit(new ClientHandler(socket));
             } catch (IOException e) {
-                LOGGER.log(Level.SEVERE, "An exception was thrown: Server socket closed", e);
-                break;
+                keepAlive = false;
+                LOGGER.log(Level.SEVERE, "An exception was thrown: server socket closed", e);
             }
         }
     }

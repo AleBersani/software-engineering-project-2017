@@ -1,17 +1,32 @@
 package it.polimi.ingsw.server.middleware;
 
-import it.polimi.ingsw.server.GamesConnections;
+import it.polimi.ingsw.server.connection.ConnectedClient;
+import it.polimi.ingsw.server.connection.ConnectionStream;
+import it.polimi.ingsw.server.database.DBConnector;
 import it.polimi.ingsw.server.database.QueryHandler;
-import it.polimi.ingsw.server.socket.SocketOutputMemory;
 import it.polimi.ingsw.shared.requests.clientserver.*;
 import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
+import javafx.beans.InvalidationListener;
 
+import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.net.Socket;
+import java.rmi.RemoteException;
+import java.util.Observable;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ServerReceiverHandler implements ServerReceiver {
+public class ServerReceiverHandler extends Observable implements ServerReceiver {
     private final static Logger LOGGER = Logger.getLogger(ServerReceiverHandler.class.getName());
+
+    private ObjectOutputStream objectOutputStream;
+
+    public ServerReceiverHandler() {
+        objectOutputStream = null;
+    }
+
+    public ServerReceiverHandler(ObjectOutputStream objectOutputStream) {
+        this.objectOutputStream = objectOutputStream;
+    }
 
     @Override
     public void visitClientServerRequest(Choices choices) {
@@ -35,33 +50,43 @@ public class ServerReceiverHandler implements ServerReceiver {
 
     @Override
     public void visitClientServerRequest(PlayerLogin playerLogin) {
-        LOGGER.info("Player Login");
-        if (QueryHandler.authenticate(playerLogin.getPlayerName(), playerLogin.getPassword())) {
+        LOGGER.info("Player login Socket");
+        String playerName = playerLogin.getPlayerName();
+        if (authenticate(playerName, playerLogin.getPassword())) {
             LOGGER.info("Socket login successful");
-            ObjectOutputStream currentOutputStream = SocketOutputMemory.getOutputStream(Thread.currentThread().getId());
-            GamesConnections.addClient(playerLogin.getPlayerName(), currentOutputStream);
-            LOGGER.info("Socket client registered");
-            sendSuccessfullyConnectedMessage(playerLogin.getPlayerName());
+            setChanged();
+            notifyObservers(new ConnectedClient(playerName, new ConnectionStream(objectOutputStream)));
         } else {
             LOGGER.info("Login unsuccessful");
+            try {
+                objectOutputStream.writeObject(new SimpleMessage("Login unsuccessful"));
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot write on socket", e);
+            }
+
         }
     }
 
     @Override
     public void visitClientServerRequest(PlayerLoginRMI playerLoginRMI) {
-        LOGGER.info("Player Login");
-        if (QueryHandler.authenticate(playerLoginRMI.getPlayerName(), playerLoginRMI.getPassword())) {
+        LOGGER.info("Player login RMI");
+        String playerName = playerLoginRMI.getPlayerName();
+        if (authenticate(playerName, playerLoginRMI.getPassword())) {
             LOGGER.info("RMI login successful");
-            GamesConnections.addClient(playerLoginRMI.getPlayerName(), playerLoginRMI.getRegistrable());
-            LOGGER.info("RMI client registered");
-            sendSuccessfullyConnectedMessage(playerLoginRMI.getPlayerName());
+            setChanged();
+            notifyObservers(new ConnectedClient(playerName, new ConnectionStream(playerLoginRMI.getRegistrable())));
         } else {
             LOGGER.info("Login unsuccessful");
+            try {
+                playerLoginRMI.getRegistrable().update(new SimpleMessage("Login unsuccessful"));
+            } catch (RemoteException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot send RMI callback", e);
+            }
         }
     }
 
-    private void sendSuccessfullyConnectedMessage(String playerName) {
-        ServerSender serverSender = new ServerSenderHandler();
-        serverSender.sendToClient(playerName, new SimpleMessage("Connected!"));
+    private boolean authenticate(String playerName, String psw) {
+        QueryHandler queryHandler = new QueryHandler();
+        return queryHandler.authenticate(playerName, psw);
     }
 }

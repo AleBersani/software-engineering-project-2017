@@ -1,5 +1,7 @@
 package it.polimi.ingsw.gamelogic.board;
 
+import java.util.Objects;
+
 /**
  * Class that describes the spaces where the player can perform the Harvest or the Production Actions
  */
@@ -15,6 +17,22 @@ public class ProductionHarvestSpace {
     public ProductionHarvestSpace(Space space, int malusValue) {
         this.space = space;
         this.malusValue = malusValue;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        ProductionHarvestSpace that = (ProductionHarvestSpace) o;
+        return getMalusValue() == that.getMalusValue() &&
+                Objects.equals(getSpace(), that.getSpace());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSpace(), getMalusValue());
     }
 
     public Space getSpace() {

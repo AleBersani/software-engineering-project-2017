@@ -6,14 +6,14 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DBConnector {
+public final class DBConnector {
     private final static Logger LOGGER = Logger.getLogger(DBConnector.class.getName());
     private final static String URL = "jdbc:sqlite:./resources/server/lollolm02.db";
     private final static String USERNAME = "root";
 
-    private static Connection connection;
+    private Connection connection;
 
-    public static void connect() {
+    public void connect() {
         try {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(URL, USERNAME, "");
@@ -22,7 +22,7 @@ public class DBConnector {
         }
     }
 
-    public static void closeConnection() {
+    public void closeConnection() {
         try {
             connection.close();
         } catch (SQLException e) {
@@ -30,7 +30,7 @@ public class DBConnector {
         }
     }
 
-    public static Connection getConnection() {
+    public Connection getConnection() {
         return connection;
     }
 }

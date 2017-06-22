@@ -22,7 +22,7 @@ public class Choices implements Serializable, ClientServerRequest {
     }
 
     @Override
-    public void acceptClientServerRequestVisitor(ServerReceiver serverReceiver) {
+    public void acceptServerReceiver(ServerReceiver serverReceiver) {
         serverReceiver.visitClientServerRequest(this);
     }
 

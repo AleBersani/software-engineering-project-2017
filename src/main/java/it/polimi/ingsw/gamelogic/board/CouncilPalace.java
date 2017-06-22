@@ -5,6 +5,7 @@ import it.polimi.ingsw.shared.model.PlayerDetails;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that describes the Council Palace space, where if the player puts his/her pawn he/she gets a Council's
@@ -20,6 +21,23 @@ public class CouncilPalace {
         this.instantGoods = instantGoods;
         this.requiredValue = requiredValue;
         playerOrder = new ArrayList<>();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        CouncilPalace that = (CouncilPalace) o;
+        return getRequiredValue() == that.getRequiredValue() &&
+                Objects.equals(getInstantGoods(), that.getInstantGoods()) &&
+                Objects.equals(getPlayerOrder(), that.getPlayerOrder());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getInstantGoods(), getRequiredValue(), getPlayerOrder());
     }
 
     /**

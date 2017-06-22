@@ -1,8 +1,10 @@
-package it.polimi.ingsw.server.rmi;
+package it.polimi.ingsw.server.connection.rmi;
 
+import it.polimi.ingsw.server.NewGamesHandler;
 import it.polimi.ingsw.server.middleware.ServerReceiver;
 import it.polimi.ingsw.server.middleware.ServerReceiverHandler;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
+import it.polimi.ingsw.shared.requests.clientserver.PlayerLoginRMI;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -13,42 +15,22 @@ import java.util.logging.Logger;
 public class Communicator extends UnicastRemoteObject implements RMICommunicator {
     private final static Logger LOGGER = Logger.getLogger(Communicator.class.getName());
 
-    private ClientServerRequest clientServerRequest;
-
-    public Communicator() throws RemoteException {
-        clientServerRequest = null;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        if (!super.equals(o))
-            return false;
-        Communicator receiver = (Communicator) o;
-        return Objects.equals(clientServerRequest, receiver.clientServerRequest);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), clientServerRequest);
-    }
+    public Communicator() throws RemoteException {}
 
     @Override
     public void run(ClientServerRequest clientServerRequest) throws RemoteException {
         ServerReceiver clientServerRequestHandler = new ServerReceiverHandler();
-        clientServerRequest.acceptClientServerRequestVisitor(clientServerRequestHandler);
+        clientServerRequest.acceptServerReceiver(clientServerRequestHandler);
     }
-/*
-    @Override
-    public void recordClient(PlayerLoginRMI playerLoginRMI) throws RemoteException {
-        if (!GamesConnections.playerAlreadyRegistered(playerName)) {
-            GamesConnections.addClient(playerName, registrable);
-        }
-    }*/
 
+    @Override
+    public void login(PlayerLoginRMI playerLoginRMI) throws RemoteException {
+        ServerReceiverHandler serverReceiverHandler = new ServerReceiverHandler();
+        serverReceiverHandler.addObserver(NewGamesHandler.getInstance());
+        playerLoginRMI.acceptServerReceiver(serverReceiverHandler);
+    }
+
+    /*
     public static void doCallback(String identifier, String msg) throws RemoteException{
         LOGGER.log(Level.INFO, () -> "Sending callback to: " + identifier);
         //GamesConnections.getClients().get(identifier).update(msg);
@@ -63,6 +45,6 @@ public class Communicator extends UnicastRemoteObject implements RMICommunicator
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
-        });*/
-    }
+        });
+    }*/
 }

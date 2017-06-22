@@ -1,6 +1,6 @@
 package it.polimi.ingsw.server.database;
 
-public class PlayerTable {
+public final class PlayerTable {
     private String playerName;
     private int score;
     private int victoriesNumber;

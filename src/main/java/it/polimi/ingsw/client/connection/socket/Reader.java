@@ -23,14 +23,25 @@ public class Reader implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
+        boolean keepAlive = true;
+        while (keepAlive) {
             try {
                 ServerClientRequest serverClientRequest = (ServerClientRequest)objectInputStream.readObject();
                 ClientReceiver serverClientReceiverHandler = new ClientReceiverHandler();
                 serverClientRequest.acceptServerClientRequestVisitor(serverClientReceiverHandler);
             } catch (IOException | ClassNotFoundException e) {
+                keepAlive = false;
                 LOGGER.log(Level.SEVERE, "An exception was thrown: cannot read on socket", e);
             }
+        }
+        closeInput();
+    }
+
+    private void closeInput() {
+        try {
+            objectInputStream.close();
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "An exception was thrown: cannot close client input stream", e);
         }
     }
 }

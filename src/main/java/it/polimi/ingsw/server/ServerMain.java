@@ -1,16 +1,14 @@
 package it.polimi.ingsw.server;
 
-import it.polimi.ingsw.server.rmi.RMIInit;
-import it.polimi.ingsw.server.socket.SocketInit;
+import it.polimi.ingsw.server.connection.rmi.RMIServerStarter;
+import it.polimi.ingsw.server.connection.socket.SocketServerStarter;
 
 public class ServerMain {
     public static void main(String argv[]) {
-        GamesConnections.init();
+        Thread socketServerStarted = new Thread(new SocketServerStarter());
+        socketServerStarted.start();
 
-        Thread socketServer = new Thread(new SocketInit());
-        socketServer.start();
-
-        Thread rmiServer = new Thread(new RMIInit());
-        rmiServer.start();
+        Thread rmiServerStarter = new Thread(new RMIServerStarter());
+        rmiServerStarter.start();
     }
 }

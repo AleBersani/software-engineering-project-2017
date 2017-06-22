@@ -19,6 +19,10 @@ public class ClientSenderHandler implements ClientSender {
 
     private static boolean socket = true;
 
+    public ClientSenderHandler(boolean socket) {
+        this.socket = socket;
+    }
+
     @Override
     public void login(String playerName, String psw) {
         PlayerLogin playerLogin = new PlayerLogin(playerName, psw);
@@ -41,7 +45,7 @@ public class ClientSenderHandler implements ClientSender {
         Registrable client;
         try {
             client = new Client();
-            RMIClient.getReceiver().run(new PlayerLoginRMI(playerLogin, client));
+            RMIClient.remoteLogin(new PlayerLoginRMI(playerLogin, client));
         } catch (RemoteException | NotBoundException e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: Login RMI", e);
         }
@@ -50,13 +54,5 @@ public class ClientSenderHandler implements ClientSender {
     @Override
     public void sendToServer(ClientServerRequest clientServerRequest) {
 
-    }
-
-    public static boolean isSocket() {
-        return socket;
-    }
-
-    public static void setSocket(boolean socket) {
-        ClientSenderHandler.socket = socket;
     }
 }

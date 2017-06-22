@@ -2,6 +2,8 @@ package it.polimi.ingsw.gamelogic.board;
 
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
+import java.util.Objects;
+
 /**
  * Class that describes the basic information of a Space on the Board
  */
@@ -24,6 +26,24 @@ public class Space {
         this.playerPawn = playerPawn;
         this.requestedValue = requestedValue;
         alreadyTaken = false;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Space space = (Space) o;
+        return getRequestedValue() == space.getRequestedValue() &&
+                isAlreadyTaken() == space.isAlreadyTaken() &&
+                getBoardIdentifier() == space.getBoardIdentifier() &&
+                Objects.equals(getPlayerPawn(), space.getPlayerPawn());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBoardIdentifier(), getRequestedValue(), getPlayerPawn(), isAlreadyTaken());
     }
 
     public BoardIdentifier getBoardIdentifier() {

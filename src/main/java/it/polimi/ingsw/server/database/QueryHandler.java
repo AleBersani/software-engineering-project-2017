@@ -19,13 +19,19 @@ public final class QueryHandler {
     private final static String DEFEATS_NUMBER = "defeatsNumber";
     private final static String PLAY_TIME = "playTime";
 
-    public synchronized static boolean authenticate(String playerName, String psw) {
+    private DBConnector dbConnector;
+
+    public QueryHandler() {
+        dbConnector = new DBConnector();
+    }
+
+    public boolean authenticate(String playerName, String psw) {
         boolean isAuthenticated = false;
         String query = "SELECT COUNT(playerName) AS players " +
                 "FROM player " +
                 "WHERE " + PLAYER_NAME + " = '" + playerName + "' AND " + PSW + "= '" + psw + "';";
-        DBConnector.connect();
-        try (Statement statement = DBConnector.getConnection().createStatement()) {
+        dbConnector.connect();
+        try (Statement statement = dbConnector.getConnection().createStatement()) {
             try (ResultSet resultSet = statement.executeQuery(query)) {
                 if (resultSet.next()) {
                     if (resultSet.getInt("players") == 1) {
@@ -38,28 +44,44 @@ public final class QueryHandler {
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "Cannot authenticate player", e);
         }
-        DBConnector.closeConnection();
+        dbConnector.closeConnection();
         return isAuthenticated;
     }
 
-    public synchronized static void addPlayer(String newPlayerName, String newPassword) {
+    public boolean addPlayer(String newPlayerName, String newPassword) {
         String query = "INSERT INTO player (" + PLAYER_NAME + "," + PSW + ") " +
                 "VALUES('" + newPlayerName + "', '" + newPassword +"')";
-        DBConnector.connect();
-        try (Statement statement = DBConnector.getConnection().createStatement()) {
+        dbConnector.connect();
+        try (Statement statement = dbConnector.getConnection().createStatement()) {
             statement.execute(query);
             statement.close();
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "Cannot add player", e);
+            return false;
         }
-        DBConnector.closeConnection();
+        dbConnector.closeConnection();
+        return true;
     }
 
-    public synchronized static int getLastGameID() {
+    public boolean addGame() {
+        String query = "INSERT INTO game DEFAULT VALUES;";
+        dbConnector.connect();
+        try (Statement statement = dbConnector.getConnection().createStatement()) {
+            statement.execute(query);
+            statement.close();
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Cannot add game", e);
+            return false;
+        }
+        dbConnector.closeConnection();
+        return true;
+    }
+
+    public int getLastGameID() {
         int idGame = 0;
         String query = "SELECT * FROM game ORDER BY " + ID_GAME + " DESC LIMIT 1";
-        DBConnector.connect();
-        try (Statement statement = DBConnector.getConnection().createStatement()) {
+        dbConnector.connect();
+        try (Statement statement = dbConnector.getConnection().createStatement()) {
             try (ResultSet resultSet = statement.executeQuery(query)) {
                 if (resultSet.next()) {
                     idGame = resultSet.getInt(ID_GAME);
@@ -70,15 +92,29 @@ public final class QueryHandler {
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "Cannot get last game ID", e);
         }
-        DBConnector.closeConnection();
+        dbConnector.closeConnection();
         return idGame;
     }
 
-    public synchronized static PlayerTable getPlayerByName(String playerToSearch) {
+    public boolean addPlayerToGame(String playerName, int gameId) {
+        String query = "INSERT INTO game_player (gameID, playerID) VALUES('" + gameId + "', '" + playerName + "');";
+        dbConnector.connect();
+        try (Statement statement = dbConnector.getConnection().createStatement()) {
+            statement.execute(query);
+            statement.close();
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Cannot add player to game", e);
+            return false;
+        }
+        dbConnector.closeConnection();
+        return true;
+    }
+
+    public PlayerTable getPlayerByName(String playerToSearch) {
         PlayerTable playerTable = new PlayerTable();
         String query = "SELECT * FROM player WHERE " + PLAYER_NAME + " = '" + playerToSearch + "';";
-        DBConnector.connect();
-        try (Statement statement = DBConnector.getConnection().createStatement()) {
+        dbConnector.connect();
+        try (Statement statement = dbConnector.getConnection().createStatement()) {
             try (ResultSet resultSet = statement.executeQuery(query)) {
                 if (resultSet.next()) {
                     playerTable.setPlayerName(resultSet.getString(PLAYER_NAME));
@@ -93,7 +129,7 @@ public final class QueryHandler {
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "Cannot get player", e);
         }
-        DBConnector.closeConnection();
+        dbConnector.closeConnection();
         return playerTable;
     }
 }

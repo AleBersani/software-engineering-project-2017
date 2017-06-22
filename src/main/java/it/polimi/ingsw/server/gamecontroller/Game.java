@@ -4,6 +4,7 @@ import it.polimi.ingsw.gamelogic.board.Board;
 import it.polimi.ingsw.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.gamelogic.player.Player;
+import it.polimi.ingsw.server.connection.ConnectedClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,20 +14,27 @@ import java.util.Observer;
 /**
  * //
  */
-public class Game implements Observer {
-    private List<Player> players;
+public class Game implements Runnable, Observer {
+    private final int gameId;
+    private List<ConnectedClient> connectedClients;
 
+    private List<Player> players;
     private List<Period> periods;
     private List<DevelopmentCard> developmentCards;
     private Board board;
 
-    public Game(List<Player> players) {
-        this.players = players;
+    public Game(int gameId, List<ConnectedClient> connectedClients) {
+        this.gameId = gameId;
+        this.connectedClients = connectedClients;
+        players = new ArrayList<>();
         periods = new ArrayList<>();
         developmentCards = new ArrayList<>();
-        /*
-        costruzione board base
-         */
+        //board = new Board();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Ci sono");
     }
 
     @Override
