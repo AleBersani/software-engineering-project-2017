@@ -570,7 +570,7 @@
   	"number": "80",
   	"instantEffectDescription": "You get 3 Faith points",
   	"permanentEffectDescription": ["You get 1 Victory points at the end of the game"],
-  	"cost": ["2/4 Mp | 1W, 1S, 2C"]
+  	"cost": ["2/4 Mp", "1W, 1S, 2C"]
   },
   {
   	"name": "Hiring soldiers",
@@ -626,7 +626,7 @@
   	"number": "88",
   	"instantEffectDescription": "You get 3 Faith points",
   	"permanentEffectDescription": ["You get 4 Victory points at the end of the game"],
-  	"cost": ["4/7 Mp | 2W, 2S, 3C"]
+  	"cost": ["4/7 Mp", "2W, 2S, 3C"]
   },
   {
   	"name": "Hiring mercenaries",
@@ -682,6 +682,6 @@
   	"number": "96",
   	"instantEffectDescription": "You get 2 Faith points",
   	"permanentEffectDescription": ["You get 10 Victory points at the end of the game"],
-  	"cost": ["5/10 Mp | 3W, 3S, 4C"]
+  	"cost": ["5/10 Mp", "3W, 3S, 4C"]
   }
 ]
