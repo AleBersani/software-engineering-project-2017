@@ -42,6 +42,7 @@ public class NewGamesHandler implements Observer {
             ServerSender serverSender = new ServerSenderHandler();
             serverSender.sendToClient(connectedClient.getConnectionStream(), new SimpleMessage("Connected!"));
             LOGGER.info("Client registered");
+            connectedClientList.add(connectedClient);
             playersCounter++;
             if (playersCounter == MAX_PLAYERS_FOR_GAME) {
                 QueryHandler queryHandler = new QueryHandler();
@@ -50,9 +51,9 @@ public class NewGamesHandler implements Observer {
                 for (ConnectedClient client: connectedClientList)
                     queryHandler.addPlayerToGame(client.getPlayerName(), lastGameId);
                 Game game = new Game(lastGameId, connectedClientList);
-                connectedClientList.clear();
                 Thread newGame = new Thread(game);
                 newGame.start();
+                connectedClientList.clear();
                 playersCounter = 0;
             }
         }
