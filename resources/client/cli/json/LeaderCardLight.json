@@ -52,7 +52,7 @@
   {
     "name": "Lucrezia Borgia",
     "effectDescription": "Your colored pawns have a extra value of 2",
-    "requirements": ["6 Territory cards", "6 Character cards", "6 Building cards", "6 Venture cards"]
+    "requirements": ["6 Territory cards | 6 Character cards | 6 Building cards | 6 Venture cards"]
   },
   {
     "name": "Federico da Montefeltro",
