@@ -27,7 +27,7 @@ class ParserBoardInformationTest {
     void setUp() {
         parserBoardInformation = new ParserBoardInformation();
     }
-/*
+
     @Test
     void testParseSingleTowerMap() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseSingleTowerMap";
@@ -140,6 +140,11 @@ class ParserBoardInformationTest {
                                                                                     0)));}};
         List<MarketSpace> result = new ArrayList<>();
         method.invoke(parserBoardInformation, result, obj);
-        assertEquals(resultExpected, result);
-    }*/
+        for(int i=0; i<resultExpected.size(); i++) {
+            assertTrue(resultExpected.get(i).equals(result.get(i)));
+        }
+        for(int i=0; i<result.size(); i++) {
+            assertTrue(resultExpected.get(i).equals(result.get(i)));
+        }
+    }
 }

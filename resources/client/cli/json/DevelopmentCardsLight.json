@@ -22,7 +22,7 @@
   },
   {
     "name": "Gravel Pit",
-    "number": "4"
+    "number": "4",
     "instantEffectDescription": "You receive 2 Stones",
     "permanentEffectDescription": ["You get 2 Stones as harvest result with cost of 4"],
     "cost": ["None"]
@@ -64,7 +64,7 @@
   },
   {
     "name": "Mountain Town",
-    "number": "10"
+    "number": "10",
     "instantEffectDescription": "You receive 1 Servant",
     "permanentEffectDescription": ["You get 1 Military point and 2 Woods as harvest result with cost of 3"],
     "cost": ["None"]
@@ -169,7 +169,7 @@
   },
   {
     "name": "Mint",
-    "number": "25"
+    "number": "25",
     "instantEffectDescription": "You receive 5 Victory points",
     "permanentEffectDescription": ["You get 1 Coin for each Building card as production result with cost of 5"],
     "cost": ["1W, 3S"]
@@ -183,7 +183,7 @@
   },
   {
     "name": "Triumphal Arch",
-    "number": "27"
+    "number": "27",
     "instantEffectDescription": "You receive 6 Victory points",
     "permanentEffectDescription": ["You get 1 Coin for each Venture card as production result with cost of 6"],
     "cost": ["2C, 2S"]
@@ -199,16 +199,14 @@
     "name": "Carpenter's Shop",
     "number": "29",
     "instantEffectDescription": "You receive 3 Victory points",
-    "permanentEffectDescription": ["You can exchange 1 Wood for 3 Coins as production result with cost of 4",
-                                    "You can exchange 2 Woods for 5 Coins as production result with cost of 4"],
+    "permanentEffectDescription": ["You can exchange 1 Wood for 3 Coins as production result with cost of 4 | You can exchange 2 Woods for 5 Coins as production result with cost of 4"],
     "cost": ["1C, 2W"]
   },
   {
     "name": "Stonemason's Shop",
     "number": "30",
     "instantEffectDescription": "You receive 2 Victory points",
-    "permanentEffectDescription": ["You can exchange 1 Stone for 3 Coins as production result with cost of 3",
-                                    "You can exchange 2 Stones for 5 Coins as production result with cost of 3"],
+    "permanentEffectDescription": ["You can exchange 1 Stone for 3 Coins as production result with cost of 3 | You can exchange 2 Stones for 5 Coins as production result with cost of 3"],
     "cost": ["1C, 2S"]
   },
   {
@@ -236,24 +234,21 @@
     "name": "Treasury",
     "number": "34",
     "instantEffectDescription": "You receive 4 Victory points",
-    "permanentEffectDescription": ["You can exchange 1 Coin for 3 Victory points as production result with cost of 3",
-                                  "You can exchange 2 Coins for 5 Victory points as production result with cost of 3"],
+    "permanentEffectDescription": ["You can exchange 1 Coin for 3 Victory points as production result with cost of 3 | You can exchange 2 Coins for 5 Victory points as production result with cost of 3"],
     "cost": ["3W"]
   },
   {
     "name": "Painters' Guild",
     "number": "35",
     "instantEffectDescription": "You receive 5 Victory points",
-    "permanentEffectDescription": ["You can exchange 1 Wood for 3 Victory points as production result with cost of 4",
-                                    "You can exchange 3 Woods for 7 Victory points as production result with cost of 4"],
+    "permanentEffectDescription": ["You can exchange 1 Wood for 3 Victory points as production result with cost of 4 | You can exchange 3 Woods for 7 Victory points as production result with cost of 4"],
     "cost": ["4W"]
   },
   {
     "name": "Sculptors' Guild",
     "number": "36",
     "instantEffectDescription": "You receive 6 Victory points",
-    "permanentEffectDescription": ["You can exchange 1 Stone for 3 Victory points as production result with cost of 5",
-                                  "You can exchange 2 Stones for 7 Victory points as production result with cost of 5"],
+    "permanentEffectDescription": ["You can exchange 1 Stone for 3 Victory points as production result with cost of 5 | You can exchange 2 Stones for 7 Victory points as production result with cost of 5"],
     "cost": ["4S"]
   },
   {
@@ -328,8 +323,7 @@
     "number": "46",
     "instantEffectDescription": "You receive 5 Victory points and 1 Faith point",
     "permanentEffectDescription": [
-                    "You can exchange 1 Wood for 2 Faith points as production result with cost of 1",
-                    "You can exchange 1 Stone for 2 Faith points as production result with cost of 1"],
+                    "You can exchange 1 Wood for 2 Faith points as production result with cost of 1 | You can exchange 1 Stone for 2 Faith points as production result with cost of 1"],
     "cost": ["1W, 4S"]
   },
   {
@@ -358,8 +352,7 @@
   	"name": "Stonemason",
   	"number": "50",
   	"instantEffectDescription": "None",
-  	"permanentEffectDescription": ["You get an extra value of 2 on picking Building cards with a discount of 1 Wood",
-  		"You get an extra value of 2 on picking Building cards with a discount of 1 Stone"],
+  	"permanentEffectDescription": ["You get an extra value of 2 on picking Building cards with a discount of 1 Wood | You get an extra value of 2 on picking Building cards with a discount of 1 Stone"],
   	"cost": ["4C"]
   },
   {
@@ -570,7 +563,7 @@
   	"number": "80",
   	"instantEffectDescription": "You get 3 Faith points",
   	"permanentEffectDescription": ["You get 1 Victory points at the end of the game"],
-  	"cost": ["2/4 Mp", "1W, 1S, 2C"]
+  	"cost": ["2/4 Mp | 1W, 1S, 2C"]
   },
   {
   	"name": "Hiring soldiers",
@@ -626,7 +619,7 @@
   	"number": "88",
   	"instantEffectDescription": "You get 3 Faith points",
   	"permanentEffectDescription": ["You get 4 Victory points at the end of the game"],
-  	"cost": ["4/7 Mp", "2W, 2S, 3C"]
+  	"cost": ["4/7 Mp | 2W, 2S, 3C"]
   },
   {
   	"name": "Hiring mercenaries",
@@ -682,6 +675,6 @@
   	"number": "96",
   	"instantEffectDescription": "You get 2 Faith points",
   	"permanentEffectDescription": ["You get 10 Victory points at the end of the game"],
-  	"cost": ["5/10 Mp", "3W, 3S, 4C"]
+  	"cost": ["5/10 Mp | 3W, 3S, 4C"]
   }
 ]

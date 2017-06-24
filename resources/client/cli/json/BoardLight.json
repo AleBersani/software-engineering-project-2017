@@ -1,378 +1,172 @@
 {
-  "greenTower": [
+  "boardInformation":[
     {
-      "bonus": {
-        "woods": "2",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "2W",
       "cost": "7",
       "malus": "0",
       "boardIdentifier": "T_G_4"
     },
     {
-      "bonus": {
-        "woods": "1",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "1W",
       "cost": "5",
       "malus": "0",
       "boardIdentifier": "T_G_3"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "3",
       "malus": "0",
       "boardIdentifier": "T_G_2"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "1",
       "malus": "0",
       "boardIdentifier": "T_G_1"
-    }
-  ],
-  "yellowTower": [
+    },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "2",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "2S",
       "cost": "7",
       "malus": "0",
       "boardIdentifier": "T_Y_4"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "1",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "1S",
       "cost": "5",
       "malus": "0",
       "boardIdentifier": "T_Y_3"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "3",
       "malus": "0",
       "boardIdentifier": "T_Y_2"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "1",
       "malus": "0",
       "boardIdentifier": "T_Y_1"
-    }
-  ],
-  "blueTower": [
+    },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "2"
-      },
+      "bonus": "2Mp",
       "cost": "7",
       "malus": "0",
       "boardIdentifier": "T_B_4"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "1"
-      },
+      "bonus": "1Mp",
       "cost": "5",
       "malus": "0",
       "boardIdentifier": "T_B_3"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0"
-      },
+      "bonus": "None",
       "cost": "3",
       "malus": "0",
       "boardIdentifier": "T_B_2"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0"
-      },
+      "bonus": "None",
       "cost": "1",
       "malus": "0",
       "boardIdentifier": "T_B_1"
-    }
-  ],
-  "purpleTower": [
+    },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "2",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "2C",
       "cost": "7",
       "malus": "0",
       "boardIdentifier": "T_P_4"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "1",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "1C",
       "cost": "5",
       "malus": "0",
       "boardIdentifier": "T_P_3"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "3",
       "malus": "0",
       "boardIdentifier": "T_P_2"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "1",
       "malus": "0",
       "boardIdentifier": "T_P_1"
-    }
-  ],
-  "market": [
+    },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "5",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "5C",
       "cost": "1",
       "malus": "0",
       "boardIdentifier": "M_1"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "5",
-        "councilPrivilege": "0"
-      },
+      "bonus": "5Se",
       "cost": "1",
       "malus": "0",
       "boardIdentifier": "M_2"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "3",
-        "coins": "2",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "3Mp, 2C",
       "cost": "1",
       "malus": "0",
-      "boardIdentifier": "M_2"
+      "boardIdentifier": "M_3"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "2"
-      },
+      "bonus": "2Cp",
       "cost": "1",
       "malus": "0",
-      "boardIdentifier": "M_2"
-    }
-  ],
-  "harvest": [
+      "boardIdentifier": "M_4"
+    },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "1",
       "malus": "0",
-      "boardIdentifier": "H_1"
+      "boardIdentifier": "HARVEST_1"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "1",
       "malus": "3",
-      "boardIdentifier": "H_2"
+      "boardIdentifier": "HARVEST_2"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "1",
-      "malus": "3",
-      "boardIdentifier": "H_2"
+      "malus": "0",
+      "boardIdentifier": "PRODUCTION_1"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
+      "bonus": "None",
       "cost": "1",
       "malus": "3",
-      "boardIdentifier": "H_2"
+      "boardIdentifier": "PRODUCTION_2"
+    },
+    {
+      "bonus": "1C, 1Cp",
+      "cost": "1",
+      "malus": "0",
+      "boardIdentifier": "COUNCIL_PALACE"
     }
   ],
-  "production": [
+  "bonusTiles": [
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
-      "cost": "1",
-      "malus": "0"
+      "name": "B_TILE_1",
+      "description": "Production: {2Se, 1C} Harvest: {1W, 1S, 1Mp}"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
-      "cost": "1",
-      "malus": "3"
+      "name": "B_TILE_2",
+      "description": "Production: {2Mp, 1C} Harvest: {1W, 1S, 1Se}"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
-      "cost": "1",
-      "malus": "3"
+      "name": "B_TILE_3",
+      "description": "Production: {1Se, 2C} Harvest: {1W, 1S, 1Mp}"
     },
     {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "0",
-        "servants": "0",
-        "councilPrivilege": "0"
-      },
-      "cost": "1",
-      "malus": "3"
-    }
-  ],
-  "councilPalace": [
-    {
-      "bonus": {
-        "woods": "0",
-        "stones": "0",
-        "military": "0",
-        "coins": "1",
-        "servants": "0",
-        "councilPrivilege": "1"
-      },
-      "cost": "1",
-      "malus": "0"
+      "name": "B_TILE_4",
+      "description": "Production: {1Se, 2Mp} Harvest: {1W, 1S, 1C}"
     }
   ]
 }

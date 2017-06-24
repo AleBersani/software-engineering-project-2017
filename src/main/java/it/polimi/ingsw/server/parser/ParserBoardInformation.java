@@ -5,6 +5,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.basics.Points;
+import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamecontroller.gameelements.BoardInformation;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
@@ -76,8 +78,15 @@ public class ParserBoardInformation {
     private CouncilPalace getParsedCouncilPalace(JsonObject councilPalace) {
         Gson gson = new Gson();
         ExchangingGoods bonusCouncil;
+        Resources resources;
+        Points points;
         int requestedValue;
-        bonusCouncil = gson.fromJson(councilPalace.get("instantGoods").getAsJsonObject(), ExchangingGoods.class);
+        resources = gson.fromJson(councilPalace.get("instantGoods").getAsJsonObject()
+                                    .get("resources").getAsJsonObject(), Resources.class);
+        points = gson.fromJson(councilPalace.get("instantGoods").getAsJsonObject()
+                                .get("points").getAsJsonObject(), Points.class);
+        bonusCouncil = new ExchangingGoods(resources, points, councilPalace.get("instantGoods").getAsJsonObject()
+                                                                .get("councilPrivilege").getAsInt() );
         requestedValue = councilPalace.get("requestedValue").getAsInt();
         return new CouncilPalace(bonusCouncil, requestedValue);
     }
@@ -109,10 +118,17 @@ public class ParserBoardInformation {
         JsonObject object;
         Space space;
         ExchangingGoods exchangingGoods;
+        Resources resources;
+        Points points;
         for (int index=0; index < market.size(); index++) {
             object = market.get(index).getAsJsonObject();
             space = parseSpace(object.get("space").getAsJsonObject());
-            exchangingGoods = gson.fromJson(object.get("instantGoods").getAsJsonObject(), ExchangingGoods.class);
+            resources = gson.fromJson(object.get("instantGoods").getAsJsonObject().get("resources").getAsJsonObject(),
+                                                                    Resources.class);
+            points = gson.fromJson(object.get("instantGoods").getAsJsonObject().get("points").getAsJsonObject(),
+                                                                            Points.class);
+            exchangingGoods = new ExchangingGoods(resources, points, object.get("instantGoods").
+                                                    getAsJsonObject().get("councilPrivilege").getAsInt());
             marketArea.add(new MarketSpace(space, exchangingGoods));
         }
     }

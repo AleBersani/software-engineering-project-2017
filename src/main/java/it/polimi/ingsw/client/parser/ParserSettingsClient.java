@@ -9,7 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ParserSettingsClient {
-    private static final String PATH = System.getProperty("user.dir") + "/resources/client/json";
+    private static final String PATH = System.getProperty("user.dir") + "/resources/client/cli/json/";
 
     private BufferedReader br = null;
     private FileReader fr = null;

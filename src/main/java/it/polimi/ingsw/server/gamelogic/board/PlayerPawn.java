@@ -3,6 +3,8 @@ package it.polimi.ingsw.server.gamelogic.board;
 import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 
+import java.util.Objects;
+
 /**
  * Class that describes the Player's Pawns
  */
@@ -18,6 +20,22 @@ public class PlayerPawn {
     public PlayerPawn(PlayerDetails playerDetails, PawnColor pawnColor) {
         this.playerDetails = playerDetails;
         this.pawnColor = pawnColor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        PlayerPawn that = (PlayerPawn) o;
+        return Objects.equals(getPlayerDetails(), that.getPlayerDetails()) &&
+                getPawnColor() == that.getPawnColor();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPlayerDetails(), getPawnColor());
     }
 
     /**

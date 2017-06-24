@@ -1,6 +1,9 @@
 package it.polimi.ingsw.client.cli.model;
 
+import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
+
+import java.util.Objects;
 
 public class BoardSpaceDescriptionLight {
     private BoardIdentifier boardIdentifier;
@@ -13,6 +16,24 @@ public class BoardSpaceDescriptionLight {
         this.bonus = bonus;
         this.actionValue = actionValue;
         this.malus = malus;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        BoardSpaceDescriptionLight that = (BoardSpaceDescriptionLight) o;
+        return Objects.equals(getBoardIdentifier(), that.getBoardIdentifier()) &&
+               Objects.equals(getBonus(), that.getBonus()) &&
+               getActionValue() == that.getActionValue() &&
+               getMalus() == that.getMalus();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBoardIdentifier(), getBonus(), getActionValue(), getMalus());
     }
 
     public BoardIdentifier getBoardIdentifier() {
