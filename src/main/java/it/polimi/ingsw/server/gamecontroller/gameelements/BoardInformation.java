@@ -1,5 +1,6 @@
 package it.polimi.ingsw.server.gamecontroller.gameelements;
 
+import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.board.CouncilPalace;
 import it.polimi.ingsw.server.gamelogic.board.MarketSpace;
@@ -20,6 +21,7 @@ public class BoardInformation {
     public static List<ProductionHarvestSpace> harvestArea;
     public static List<ProductionHarvestSpace> productionArea;
     public static List<MarketSpace> marketArea;
+    public static Map<String, List<ExchangingGoods>> bonusTiles;
 
     public static void initializeBoardInformationMaps() {
         greenTower = new HashMap<>();
@@ -29,5 +31,6 @@ public class BoardInformation {
         harvestArea = new ArrayList<>();
         productionArea = new ArrayList<>();
         marketArea = new ArrayList<>();
+        bonusTiles = new HashMap<>();
     }
 }

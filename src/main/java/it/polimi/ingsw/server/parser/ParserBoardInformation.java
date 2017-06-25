@@ -12,6 +12,7 @@ import it.polimi.ingsw.server.gamecontroller.gameelements.BoardInformation;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -131,5 +132,39 @@ public class ParserBoardInformation {
                                                     getAsJsonObject().get("councilPrivilege").getAsInt());
             marketArea.add(new MarketSpace(space, exchangingGoods));
         }
+    }
+
+    public  void parseBonusTiles() throws IOException {
+        JsonObject boardInformation;
+        JsonArray bonusTiles;
+        boardInformation = parserSettings.extractJsonObject("Board.json");
+        bonusTiles = boardInformation.get("bonusTiles").getAsJsonArray();
+        getParsedBonusTiles(BoardInformation.bonusTiles, bonusTiles);
+    }
+
+    private void getParsedBonusTiles(Map<String, List<ExchangingGoods>> parsedBonusTiles, JsonArray bonusTiles) {
+        JsonObject object;
+        String name;
+        ExchangingGoods production, harvest;
+        List<ExchangingGoods> exchangingGoods;
+        for (int i=0; i < bonusTiles.size(); i++) {
+            object = bonusTiles.get(i).getAsJsonObject();
+            name = object.get("name").getAsString();
+            production = parseExchangingGoods(object.get("bonusProduction").getAsJsonObject());
+            harvest = parseExchangingGoods(object.get("bonusHarvest").getAsJsonObject());
+            exchangingGoods = new ArrayList<>();
+            exchangingGoods.add(production);
+            exchangingGoods.add(harvest);
+            parsedBonusTiles.put(name, exchangingGoods);
+        }
+    }
+
+    private ExchangingGoods parseExchangingGoods(JsonObject instantGoods) {
+        Gson gson = new Gson();
+        Resources resources;
+        Points points;
+        resources = gson.fromJson(instantGoods.get("resources").getAsJsonObject(), Resources.class);
+        points = gson.fromJson(instantGoods.get("points").getAsJsonObject(), Points.class);
+        return new ExchangingGoods(resources, points, instantGoods.get("councilPrivilege").getAsInt());
     }
 }

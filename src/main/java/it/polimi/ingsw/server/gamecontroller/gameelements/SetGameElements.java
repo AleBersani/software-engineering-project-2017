@@ -74,6 +74,7 @@ public class SetGameElements implements Runnable {
         parserBoardInformation.parseTowerMaps();
         BoardInformation.councilPalace = parserBoardInformation.parseCouncilPalace();
         parserBoardInformation.parseBoardActionAreas();
+        parserBoardInformation.parseBonusTiles();
     }
 
 
