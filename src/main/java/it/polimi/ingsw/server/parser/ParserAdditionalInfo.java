@@ -9,11 +9,11 @@ import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.*;
-import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.modifiers.*;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 import it.polimi.ingsw.shared.model.ActionType;
+import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,8 +67,8 @@ public class ParserAdditionalInfo {
      * @throws Exception Can be thrown by settings.extractJsonObject method and parseSingleListAddInfo method.
      */
     public void parseCategoryDevCards(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
-                                       Map<String, List<AdditionalCardInfo>> parsedAddNotSelectable,
-                                       String additionalInfoCategory) throws Exception {
+                                      Map<String, List<AdditionalCardInfo>> parsedAddNotSelectable,
+                                      String additionalInfoCategory) throws Exception {
         JsonArray cards;
         JsonObject card;
         String name;
@@ -101,8 +101,8 @@ public class ParserAdditionalInfo {
      * @throws Exception Can be thrown by settings.extractJsonObject method and parseSingleListAddInfo method.
      */
     public void parseCategoryOthers(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
-                                Map<String, List<AdditionalCardInfo>> parsedAddNotSelectable,
-                                String additionalInfoCategory) throws Exception {
+                                    Map<String, List<AdditionalCardInfo>> parsedAddNotSelectable,
+                                    String additionalInfoCategory) throws Exception {
         String[] jsonKeys = {"LeaderCards", "ExcommunicationTiles"};
         String jsonName;
         JsonObject openJson;

@@ -6,11 +6,12 @@ import it.polimi.ingsw.client.cli.model.LeaderCardLight;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class CardsInformation {
-    public static List<DevelopmentCardsLight> developmentCardsLights;
-    public static List<ExcommunicationTileLight> excommunicationTileLights;
-    public static List<LeaderCardLight> leaderCardsLights;
+    private static List<DevelopmentCardsLight> developmentCardsLights;
+    private static List<ExcommunicationTileLight> excommunicationTileLights;
+    private static List<LeaderCardLight> leaderCardsLights;
 
     public static void initLists() {
         developmentCardsLights = new ArrayList<>();
@@ -24,11 +25,10 @@ public class CardsInformation {
      * @param cardName Card identifier
      * @return The DevelopmentCardLight object to be printed.
      */
-    public static DevelopmentCardsLight searchForDevelopmentCardLight(String cardName) {
+    public static Optional<DevelopmentCardsLight> searchForDevelopmentCardLight(String cardName) {
         return developmentCardsLights.stream()
                                      .filter(T ->  cardName.equals(T.getName()))
-                                     .findFirst()
-                                     .get();
+                                     .findFirst();
     }
 
     /**
@@ -37,11 +37,10 @@ public class CardsInformation {
      * @param cardName Card identifier
      * @return The ExcommunicationTileLight object to be printed.
      */
-    public static ExcommunicationTileLight searchForExcommunicationTileLight(String cardName) {
+    public static Optional<ExcommunicationTileLight> searchForExcommunicationTileLight(String cardName) {
         return excommunicationTileLights.stream()
                                         .filter(T ->  cardName.equals(T.getName()))
-                                        .findFirst()
-                                        .get();
+                                        .findFirst();
     }
 
     /**
@@ -50,11 +49,33 @@ public class CardsInformation {
      * @param cardName Card identifier
      * @return The LeaderCardLight object to be printed.
      */
-    public static LeaderCardLight searchForLeaderCardLight(String cardName) {
+    public static Optional<LeaderCardLight> searchForLeaderCardLight(String cardName) {
         return leaderCardsLights.stream()
                                 .filter(T ->  cardName.equals(T.getName()))
-                                .findFirst()
-                                .get();
+                                .findFirst();
     }
 
+    public static List<DevelopmentCardsLight> getDevelopmentCardsLights() {
+        return developmentCardsLights;
+    }
+
+    public static void setDevelopmentCardsLights(List<DevelopmentCardsLight> developmentCardsLights) {
+        CardsInformation.developmentCardsLights = developmentCardsLights;
+    }
+
+    public static List<ExcommunicationTileLight> getExcommunicationTileLights() {
+        return excommunicationTileLights;
+    }
+
+    public static void setExcommunicationTileLights(List<ExcommunicationTileLight> excommunicationTileLights) {
+        CardsInformation.excommunicationTileLights = excommunicationTileLights;
+    }
+
+    public static List<LeaderCardLight> getLeaderCardsLights() {
+        return leaderCardsLights;
+    }
+
+    public static void setLeaderCardsLights(List<LeaderCardLight> leaderCardsLights) {
+        CardsInformation.leaderCardsLights = leaderCardsLights;
+    }
 }

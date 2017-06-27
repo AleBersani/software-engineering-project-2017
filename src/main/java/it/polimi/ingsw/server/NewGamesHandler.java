@@ -6,23 +6,24 @@ import it.polimi.ingsw.server.gamecontroller.Game;
 import it.polimi.ingsw.server.middleware.ServerSender;
 import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
+import it.polimi.ingsw.shared.support.GameStartType;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
+import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Logger;
 
 public class NewGamesHandler implements Observer {
     private final static Logger LOGGER = Logger.getLogger(NewGamesHandler.class.getName());
+    private final static int MIN_PLAYERS = 2;
 
-    private final List<ConnectedClient> connectedClientList;
+    private final Queue<ConnectedClient> connectedClientList;
     private final int MAX_PLAYERS_FOR_GAME;
 
     private int playersCounter;
+    private Timer timer;
 
     private NewGamesHandler() {
-        connectedClientList = new ArrayList<>();
+        connectedClientList = new ConcurrentLinkedQueue<>();
         MAX_PLAYERS_FOR_GAME = 3;
         playersCounter = 0;
     }
@@ -37,25 +38,58 @@ public class NewGamesHandler implements Observer {
 
     @Override
     public synchronized void update(Observable o, Object arg) {
+        GameStartType gameStartType = ((NewGameInformation)arg).getGameStartType();
+        ConnectedClient connectedClient = ((NewGameInformation)arg).getConnectedClient();
+        if (gameStartType == GameStartType.NEW) {
+            handleNewPlayersInNewGame(connectedClient);
+        } else if (gameStartType == GameStartType.RESUME) {
+            //
+        }
+    }
+
+    private void handleNewPlayersInNewGame(ConnectedClient connectedClient) {
         if (playersCounter < MAX_PLAYERS_FOR_GAME) {
-            ConnectedClient connectedClient = (ConnectedClient)arg;
-            ServerSender serverSender = new ServerSenderHandler();
-            serverSender.sendToClient(connectedClient.getConnectionStream(), new SimpleMessage("Connected!"));
-            LOGGER.info("Client registered");
-            connectedClientList.add(connectedClient);
-            playersCounter++;
+            addNewPlayer(connectedClient);
+            if (playersCounter == MIN_PLAYERS) {
+                startTimer();
+            }
             if (playersCounter == MAX_PLAYERS_FOR_GAME) {
-                QueryHandler queryHandler = new QueryHandler();
-                queryHandler.addGame();
-                int lastGameId = queryHandler.getLastGameID();
-                for (ConnectedClient client: connectedClientList)
-                    queryHandler.addPlayerToGame(client.getPlayerName(), lastGameId);
-                Game game = new Game(lastGameId, connectedClientList);
-                Thread newGame = new Thread(game);
-                newGame.start();
-                connectedClientList.clear();
-                playersCounter = 0;
+                createNewGame();
+                timer.cancel();
             }
         }
+    }
+
+    private void addNewPlayer(ConnectedClient connectedClient) {
+        ServerSender serverSender = new ServerSenderHandler();
+        serverSender.sendToClient(connectedClient.getConnectionStream(), new SimpleMessage("Connected!"));
+        connectedClientList.add(connectedClient);
+        playersCounter++;
+        LOGGER.info("Client registered");
+    }
+
+    private void startTimer() {
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                createNewGame();
+                LOGGER.info("Time expired!");
+            }
+        }, 1000*60);
+    }
+
+    private void createNewGame() {
+        QueryHandler queryHandler = new QueryHandler();
+        queryHandler.addGame();
+        int lastGameId = queryHandler.getLastGameID();
+        for (ConnectedClient client: connectedClientList)
+            queryHandler.addPlayerToGame(client.getPlayerName(), lastGameId);
+        Game game = new Game(lastGameId, connectedClientList);
+        Thread newGame = new Thread(game);
+        newGame.start();
+        connectedClientList.clear();
+        playersCounter = 0;
+        LOGGER.info("New game started!");
     }
 }

@@ -6,10 +6,11 @@ import it.polimi.ingsw.shared.model.BoardIdentifier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class BoardOwnerInformation {
-    public static List<BoardSpaceDescriptionLight> boardSpaceDescriptionLights;
-    public static List<BonusTileDescriptionLight> possibleBonusTiles;
+    private static List<BoardSpaceDescriptionLight> boardSpaceDescriptionLights;
+    private static List<BonusTileDescriptionLight> possibleBonusTiles;
 
     public static void initLists() {
         boardSpaceDescriptionLights = new ArrayList<>();
@@ -22,11 +23,10 @@ public class BoardOwnerInformation {
      * @param boardIdentifier Space identifier
      * @return The BoardSpaceDescriptionLight object to be printed.
      */
-    public static BoardSpaceDescriptionLight searchForBoardSpaceLight(BoardIdentifier boardIdentifier) {
+    public static Optional<BoardSpaceDescriptionLight> searchForBoardSpaceLight(BoardIdentifier boardIdentifier) {
         return boardSpaceDescriptionLights.stream()
                                           .filter(T -> boardIdentifier.equals(T.getBoardIdentifier()))
-                                          .findFirst()
-                                          .get();
+                                          .findFirst();
     }
 
     /**
@@ -35,10 +35,25 @@ public class BoardOwnerInformation {
      * @param bonusTileIdentifier Bonus Tile identifier
      * @return The BonusTileDescriptionLight object to be printed.
      */
-    public static BonusTileDescriptionLight searchForBonusTileLight(String bonusTileIdentifier) {
+    public static Optional<BonusTileDescriptionLight> searchForBonusTileLight(String bonusTileIdentifier) {
         return possibleBonusTiles.stream()
                                  .filter(T ->  bonusTileIdentifier.equals(T.getBonusTileIdentifier()))
-                                 .findFirst()
-                                 .get();
+                                 .findFirst();
+    }
+
+    public static List<BoardSpaceDescriptionLight> getBoardSpaceDescriptionLights() {
+        return boardSpaceDescriptionLights;
+    }
+
+    public static void setBoardSpaceDescriptionLights(List<BoardSpaceDescriptionLight> boardSpaceDescriptionLights) {
+        BoardOwnerInformation.boardSpaceDescriptionLights = boardSpaceDescriptionLights;
+    }
+
+    public static List<BonusTileDescriptionLight> getPossibleBonusTiles() {
+        return possibleBonusTiles;
+    }
+
+    public static void setPossibleBonusTiles(List<BonusTileDescriptionLight> possibleBonusTiles) {
+        BoardOwnerInformation.possibleBonusTiles = possibleBonusTiles;
     }
 }

@@ -5,13 +5,16 @@ import com.google.gson.JsonObject;
 import it.polimi.ingsw.client.cli.gameinformation.BoardOwnerInformation;
 import it.polimi.ingsw.client.cli.gameinformation.CardsInformation;
 import it.polimi.ingsw.client.cli.model.*;
-import it.polimi.ingsw.server.gamecontroller.gameelements.BoardInformation;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ParserLightModel implements Runnable {
+    private final static Logger LOGGER = Logger.getLogger(ParserLightModel.class.getName());
+
     private ParserSettingsClient parserSettingsClient;
 
     public ParserLightModel() {
@@ -23,7 +26,7 @@ public class ParserLightModel implements Runnable {
         try {
             completeParseCLI();
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "An exception was thrown: cannot run thread parser light model", e);
         }
     }
 
@@ -37,9 +40,9 @@ public class ParserLightModel implements Runnable {
         boardOwnerInformation = parserSettingsClient.extractJsonObject("BoardLight.json");
         BoardOwnerInformation.initLists();
         parseBoardInformation(boardOwnerInformation.get("boardInformation").getAsJsonArray(),
-                              BoardOwnerInformation.boardSpaceDescriptionLights);
+                              BoardOwnerInformation.getBoardSpaceDescriptionLights());
         parseBonusTilesInformation(boardOwnerInformation.get("bonusTiles").getAsJsonArray(),
-                                   BoardOwnerInformation.possibleBonusTiles);
+                                   BoardOwnerInformation.getPossibleBonusTiles());
     }
 
     private void parseBoardInformation(JsonArray boardInformation, List<BoardSpaceDescriptionLight> boardSpaces) {
@@ -62,7 +65,7 @@ public class ParserLightModel implements Runnable {
     private void parseBonusTilesInformation(JsonArray bonusTiles, List<BonusTileDescriptionLight> possibleBonusTiles) {
         JsonObject bonusTile;
         BonusTileDescriptionLight parsedBonusTile;
-        for (int i=0; i < bonusTiles.size(); i++) {
+        for (int i = 0; i < bonusTiles.size(); i++) {
             bonusTile = bonusTiles.get(i).getAsJsonObject();
             parsedBonusTile = parseSingleBonusTile(bonusTile);
             possibleBonusTiles.add(parsedBonusTile);
@@ -80,16 +83,16 @@ public class ParserLightModel implements Runnable {
         excommunicationTilesLight = parserSettingsClient.extractJsonArray("ExcommunicationTileLight.json");
         leaderCardsLight = parserSettingsClient.extractJsonArray("LeaderCardLight.json");
         CardsInformation.initLists();
-        parseDevelopmentCardsLight(developmentCardsLight, CardsInformation.developmentCardsLights);
-        parseExcommunicationTilesLight(excommunicationTilesLight, CardsInformation.excommunicationTileLights);
-        parseLeaderCardsLight(leaderCardsLight, CardsInformation.leaderCardsLights);
+        parseDevelopmentCardsLight(developmentCardsLight, CardsInformation.getDevelopmentCardsLights());
+        parseExcommunicationTilesLight(excommunicationTilesLight, CardsInformation.getExcommunicationTileLights());
+        parseLeaderCardsLight(leaderCardsLight, CardsInformation.getLeaderCardsLights());
     }
 
     private void parseDevelopmentCardsLight(JsonArray developmentCardsLight,
                                             List<DevelopmentCardsLight> developmentCardsLights) {
         JsonObject devCard;
         DevelopmentCardsLight parsedDevCard;
-        for (int i=0; i < developmentCardsLight.size(); i++) {
+        for (int i = 0; i < developmentCardsLight.size(); i++) {
             devCard = developmentCardsLight.get(i).getAsJsonObject();
             parsedDevCard = parseSingleDevCard(devCard);
             developmentCardsLights.add(parsedDevCard);
@@ -107,7 +110,7 @@ public class ParserLightModel implements Runnable {
                                                 List<ExcommunicationTileLight> excommunicationTileLights) {
         JsonObject excommTile;
         ExcommunicationTileLight parsedExcommTile;
-        for (int i=0; i < excommunicationTilesLight.size(); i++) {
+        for (int i =0; i < excommunicationTilesLight.size(); i++) {
             excommTile = excommunicationTilesLight.get(i).getAsJsonObject();
             parsedExcommTile = parseSingleExcommunicationTile(excommTile);
             excommunicationTileLights.add(parsedExcommTile);

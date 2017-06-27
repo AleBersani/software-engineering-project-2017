@@ -2,7 +2,10 @@ package it.polimi.ingsw.client.connection.rmi;
 
 import it.polimi.ingsw.server.connection.rmi.RMICommunicator;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
+import it.polimi.ingsw.shared.requests.clientserver.GameStartChoiceRMI;
 import it.polimi.ingsw.shared.requests.clientserver.PlayerLoginRMI;
+import it.polimi.ingsw.shared.support.Client;
+import it.polimi.ingsw.shared.support.Registrable;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -19,9 +22,11 @@ public class RMIClient extends UnicastRemoteObject {
     private static volatile RMIClient instance;
 
     private static Registry registry;
+    private static Registrable client;
 
     private RMIClient() throws RemoteException {
         registry = LocateRegistry.getRegistry();
+        client = new Client();
     }
 
     public static RMIClient getInstance() {
@@ -48,8 +53,17 @@ public class RMIClient extends UnicastRemoteObject {
         rmiCommunicator.login(playerLoginRMI);
     }
 
+    public static void choseGameType(GameStartChoiceRMI gameStartChoiceRMI) throws RemoteException, NotBoundException {
+        RMICommunicator rmiCommunicator = (RMICommunicator)registry.lookup(URL);
+        rmiCommunicator.startGame(gameStartChoiceRMI);
+    }
+
     public static void callMethod(ClientServerRequest clientServerRequest) throws RemoteException, NotBoundException {
         RMICommunicator rmiCommunicator = (RMICommunicator)registry.lookup(URL);
         rmiCommunicator.run(clientServerRequest);
+    }
+
+    public static Registrable getClient() {
+        return client;
     }
 }

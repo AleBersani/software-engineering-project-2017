@@ -4,6 +4,7 @@ import it.polimi.ingsw.server.NewGamesHandler;
 import it.polimi.ingsw.server.middleware.ServerReceiver;
 import it.polimi.ingsw.server.middleware.ServerReceiverHandler;
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
+import it.polimi.ingsw.shared.requests.clientserver.GameStartChoiceRMI;
 import it.polimi.ingsw.shared.requests.clientserver.PlayerLoginRMI;
 
 import java.rmi.RemoteException;
@@ -16,16 +17,24 @@ public class Communicator extends UnicastRemoteObject implements RMICommunicator
     public Communicator() throws RemoteException {}
 
     @Override
-    public void run(ClientServerRequest clientServerRequest) throws RemoteException {
-        ServerReceiver clientServerRequestHandler = new ServerReceiverHandler();
-        clientServerRequest.acceptServerReceiver(clientServerRequestHandler);
+    public void login(PlayerLoginRMI playerLoginRMI) throws RemoteException {
+        ServerReceiverHandler serverReceiverHandler = new ServerReceiverHandler();
+        playerLoginRMI.acceptServerReceiver(serverReceiverHandler);
+        //serverReceiverHandler.addObserver(NewGamesHandler.getInstance());
+        //playerLoginRMI.acceptServerReceiver(serverReceiverHandler);
     }
 
     @Override
-    public void login(PlayerLoginRMI playerLoginRMI) throws RemoteException {
+    public void startGame(GameStartChoiceRMI gameStartChoiceRMI) throws RemoteException {
         ServerReceiverHandler serverReceiverHandler = new ServerReceiverHandler();
         serverReceiverHandler.addObserver(NewGamesHandler.getInstance());
-        playerLoginRMI.acceptServerReceiver(serverReceiverHandler);
+        gameStartChoiceRMI.acceptServerReceiver(serverReceiverHandler);
+    }
+
+    @Override
+    public void run(ClientServerRequest clientServerRequest) throws RemoteException {
+        ServerReceiver clientServerRequestHandler = new ServerReceiverHandler();
+        clientServerRequest.acceptServerReceiver(clientServerRequestHandler);
     }
 
     /*

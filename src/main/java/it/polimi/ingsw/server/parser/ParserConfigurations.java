@@ -57,10 +57,10 @@ public class ParserConfigurations {
      * @return //
      * @throws IOException //
      */
-    public void parseCouncilePrivilege() throws IOException {
-        JsonObject councileConf = settings.extractJsonObject(GAME_CONFIGURATION_JSON);
+    public void parseCouncilPrivilege() throws IOException {
+        JsonObject councilConf = settings.extractJsonObject(GAME_CONFIGURATION_JSON);
         Gson gson = new Gson();
-        JsonArray choices = councileConf.get("possibleChoices").getAsJsonArray();
+        JsonArray choices = councilConf.get("possibleChoices").getAsJsonArray();
         List<Goods> possibleChoices = gson.fromJson(choices, new TypeToken<ArrayList<Goods>>(){}.getType());
         CouncilPrivilege.setPossibleChoices(possibleChoices);
     }

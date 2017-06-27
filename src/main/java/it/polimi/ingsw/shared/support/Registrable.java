@@ -1,4 +1,4 @@
-package it.polimi.ingsw.shared;
+package it.polimi.ingsw.shared.support;
 
 import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
 

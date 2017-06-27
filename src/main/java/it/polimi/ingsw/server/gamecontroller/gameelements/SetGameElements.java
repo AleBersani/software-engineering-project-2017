@@ -1,6 +1,5 @@
 package it.polimi.ingsw.server.gamecontroller.gameelements;
 
-import it.polimi.ingsw.server.middleware.ServerReceiverHandler;
 import it.polimi.ingsw.server.parser.ParserAdditionalInfo;
 import it.polimi.ingsw.server.parser.ParserBoardInformation;
 import it.polimi.ingsw.server.parser.ParserCards;
@@ -47,32 +46,32 @@ public class SetGameElements implements Runnable {
 
 
     private void setupCards() throws IOException {
-        Cards.territories = parserCards.completeParseTerritory();
-        Cards.buildings = parserCards.completeParseBuilding();
-        Cards.characters = parserCards.completeParseCharacter();
-        Cards.ventures = parserCards.completeParseVenture();
-        Cards.excommunicationTiles = parserCards.completeParseExcommunicationTiles();
-        Cards.leaderCards = parserCards.completeParseLeaderCards();
+        Cards.setTerritories(parserCards.completeParseTerritory());
+        Cards.setBuildings(parserCards.completeParseBuilding());
+        Cards.setCharacters(parserCards.completeParseCharacter());
+        Cards.setVentures(parserCards.completeParseVenture());
+        Cards.setExcommunicationTiles(parserCards.completeParseExcommunicationTiles());
+        Cards.setLeaderCards(parserCards.completeParseLeaderCards());
     }
 
     private void setupAdditionalInfoMaps() throws Exception {
         AdditionalInfoMaps.initializeMaps();
-        parserAdditionalInfo.parseMapsAdditionalInfo(AdditionalInfoMaps.flashEffectsOnChoice,
-                                                     AdditionalInfoMaps.flashEffectsNotSelectable,
-                                                     AdditionalInfoMaps.permanentEffectsOnChoice,
-                                                     AdditionalInfoMaps.permanentEffectsNotSelectable);
+        parserAdditionalInfo.parseMapsAdditionalInfo(AdditionalInfoMaps.getFlashEffectsOnChoice(),
+                                                     AdditionalInfoMaps.getFlashEffectsNotSelectable(),
+                                                     AdditionalInfoMaps.getPermanentEffectsOnChoice(),
+                                                     AdditionalInfoMaps.getPermanentEffectsNotSelectable());
     }
 
     private void setupBasicConfigurations() throws IOException {
         parserConfigurations.parseBoardConfiguration();
         parserConfigurations.parseGameConfiguration();
-        parserConfigurations.parseCouncilePrivilege();
+        parserConfigurations.parseCouncilPrivilege();
     }
 
     private void setupBoardConfiguration() throws IOException {
         BoardInformation.initializeBoardInformationMaps();
         parserBoardInformation.parseTowerMaps();
-        BoardInformation.councilPalace = parserBoardInformation.parseCouncilPalace();
+        BoardInformation.setCouncilPalace(parserBoardInformation.parseCouncilPalace());
         parserBoardInformation.parseBoardActionAreas();
     }
 

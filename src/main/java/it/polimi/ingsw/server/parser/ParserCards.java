@@ -11,9 +11,9 @@ import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.Excommunicati
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderInformation;
-import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.enums.LeaderCategory;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
+import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -136,7 +136,7 @@ public class ParserCards {
      */
     private List<Character> parseCharacters(JsonArray cards) {
         List<Character> characters = new ArrayList<>();
-        for(int index = 0; index < cards.size(); index++) {
+        for (int index = 0; index < cards.size(); index++) {
             JsonObject card = cards.get(index).getAsJsonObject();
             BasicDevelopmentCard developmentCard = parseDevelopmentCard(card);
             characters.add(new Character(developmentCard));

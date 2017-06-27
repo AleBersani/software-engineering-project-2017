@@ -15,10 +15,12 @@ public class Reader implements Runnable {
 
     private Socket socket;
     private ObjectInputStream objectInputStream;
+    private ClientReceiver serverClientReceiverHandler;
 
     public Reader(Socket socket) throws IOException {
         this.socket = socket;
         objectInputStream = new ObjectInputStream(socket.getInputStream());
+        serverClientReceiverHandler  = new ClientReceiverHandler();
     }
 
     @Override
@@ -27,7 +29,6 @@ public class Reader implements Runnable {
         while (keepAlive) {
             try {
                 ServerClientRequest serverClientRequest = (ServerClientRequest)objectInputStream.readObject();
-                ClientReceiver serverClientReceiverHandler = new ClientReceiverHandler();
                 serverClientRequest.acceptServerClientRequestVisitor(serverClientReceiverHandler);
             } catch (IOException | ClassNotFoundException e) {
                 keepAlive = false;

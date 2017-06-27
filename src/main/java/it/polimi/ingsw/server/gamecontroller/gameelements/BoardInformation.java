@@ -12,14 +12,14 @@ import java.util.List;
 import java.util.Map;
 
 public class BoardInformation {
-    public static Map<Space, Goods> greenTower;
-    public static Map<Space, Goods> yellowTower;
-    public static Map<Space, Goods> blueTower;
-    public static Map<Space, Goods> purpleTower;
-    public static CouncilPalace councilPalace;
-    public static List<ProductionHarvestSpace> harvestArea;
-    public static List<ProductionHarvestSpace> productionArea;
-    public static List<MarketSpace> marketArea;
+    private static Map<Space, Goods> greenTower;
+    private static Map<Space, Goods> yellowTower;
+    private static Map<Space, Goods> blueTower;
+    private static Map<Space, Goods> purpleTower;
+    private static CouncilPalace councilPalace;
+    private static List<ProductionHarvestSpace> harvestArea;
+    private static List<ProductionHarvestSpace> productionArea;
+    private static List<MarketSpace> marketArea;
 
     public static void initializeBoardInformationMaps() {
         greenTower = new HashMap<>();
@@ -29,5 +29,69 @@ public class BoardInformation {
         harvestArea = new ArrayList<>();
         productionArea = new ArrayList<>();
         marketArea = new ArrayList<>();
+    }
+
+    public static Map<Space, Goods> getGreenTower() {
+        return greenTower;
+    }
+
+    public static void setGreenTower(Map<Space, Goods> greenTower) {
+        BoardInformation.greenTower = greenTower;
+    }
+
+    public static Map<Space, Goods> getYellowTower() {
+        return yellowTower;
+    }
+
+    public static void setYellowTower(Map<Space, Goods> yellowTower) {
+        BoardInformation.yellowTower = yellowTower;
+    }
+
+    public static Map<Space, Goods> getBlueTower() {
+        return blueTower;
+    }
+
+    public static void setBlueTower(Map<Space, Goods> blueTower) {
+        BoardInformation.blueTower = blueTower;
+    }
+
+    public static Map<Space, Goods> getPurpleTower() {
+        return purpleTower;
+    }
+
+    public static void setPurpleTower(Map<Space, Goods> purpleTower) {
+        BoardInformation.purpleTower = purpleTower;
+    }
+
+    public static CouncilPalace getCouncilPalace() {
+        return councilPalace;
+    }
+
+    public static void setCouncilPalace(CouncilPalace councilPalace) {
+        BoardInformation.councilPalace = councilPalace;
+    }
+
+    public static List<ProductionHarvestSpace> getHarvestArea() {
+        return harvestArea;
+    }
+
+    public static void setHarvestArea(List<ProductionHarvestSpace> harvestArea) {
+        BoardInformation.harvestArea = harvestArea;
+    }
+
+    public static List<ProductionHarvestSpace> getProductionArea() {
+        return productionArea;
+    }
+
+    public static void setProductionArea(List<ProductionHarvestSpace> productionArea) {
+        BoardInformation.productionArea = productionArea;
+    }
+
+    public static List<MarketSpace> getMarketArea() {
+        return marketArea;
+    }
+
+    public static void setMarketArea(List<MarketSpace> marketArea) {
+        BoardInformation.marketArea = marketArea;
     }
 }

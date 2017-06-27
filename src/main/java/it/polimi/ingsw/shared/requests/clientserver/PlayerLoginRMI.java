@@ -1,7 +1,7 @@
 package it.polimi.ingsw.shared.requests.clientserver;
 
 import it.polimi.ingsw.server.middleware.ServerReceiver;
-import it.polimi.ingsw.shared.Registrable;
+import it.polimi.ingsw.shared.support.Registrable;
 
 import java.io.Serializable;
 

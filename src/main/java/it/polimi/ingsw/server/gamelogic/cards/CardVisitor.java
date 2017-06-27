@@ -13,4 +13,5 @@ public interface CardVisitor {
     void visitAdditionalCardInfo(MultipleProduction multipleProduction);
     void visitAdditionalCardInfo(RequirementsOnCard requirementsOnCard);
     void visitAdditionalCardInfo(RewardsOnCard rewardsOnCard);
+    void visitAdditionalCardInfo(PlayerOrderWeight playerOrderWeight);
 }

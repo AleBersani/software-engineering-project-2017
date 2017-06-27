@@ -145,7 +145,7 @@ public class ParserModifiers {
     }
 
     /**
-     * TODO DA RIVEDERE
+     * //
      * @param card //
      * @return //
      */

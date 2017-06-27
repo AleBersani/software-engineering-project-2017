@@ -6,24 +6,21 @@ import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
+import java.util.*;
 
 /**
  * //
  */
 public class Game implements Runnable, Observer {
     private final int gameId;
-    private List<ConnectedClient> connectedClients;
+    private Queue<ConnectedClient> connectedClients;
 
     private List<Player> players;
     private List<Period> periods;
     private List<DevelopmentCard> developmentCards;
     private Board board;
 
-    public Game(int gameId, List<ConnectedClient> connectedClients) {
+    public Game(int gameId, Queue<ConnectedClient> connectedClients) {
         this.gameId = gameId;
         this.connectedClients = connectedClients;
         players = new ArrayList<>();
@@ -34,7 +31,7 @@ public class Game implements Runnable, Observer {
 
     @Override
     public void run() {
-        System.out.println("Ci sono");
+        System.out.println("Game!");
     }
 
     @Override

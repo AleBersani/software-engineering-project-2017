@@ -3,7 +3,10 @@ package it.polimi.ingsw.server.gamelogic.player;
 import it.polimi.ingsw.server.gamelogic.actions.description.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
+import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.CardFlashAction;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
+import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
+import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 import it.polimi.ingsw.shared.model.PawnColor;
 
 import java.util.*;
@@ -17,15 +20,15 @@ public class Player {
     private PlayerBoard playerBoard;
 
     private List<LeaderCard> leaderCards;
-    private ActionDescription actualAction;
     private List<ActionDescription> possibleActionsForTurn;
+    private PlayerCardsEffects playerCardsEffects;
 
     public Player(PlayerDetails playerDetails, PlayerBoard playerBoard) {
         this.playerDetails = playerDetails;
         this.playerBoard = playerBoard;
         leaderCards = new ArrayList<>();
-        actualAction = null;
         possibleActionsForTurn = new ArrayList<>();
+        playerCardsEffects = new PlayerCardsEffects();
     }
 
     public void setPlayerGoods(Goods goods) {
@@ -89,6 +92,30 @@ public class Player {
         possibleActionsForTurn.clear();
     }
 
+    public void addRequirementsModifier(RequirementsModifier requirementsModifier) {
+        playerCardsEffects.addRequirementsModifier(requirementsModifier);
+    }
+
+    public void addRewardsModifier(RewardsModifier rewardsModifier) {
+        playerCardsEffects.addRewardsModifier(rewardsModifier);
+    }
+
+    public Optional<CardFlashAction> getCardFlashActions() {
+        return playerCardsEffects.getCardFlashAction();
+    }
+
+    public int getPlayerOrderWeight() {
+        return playerCardsEffects.getPlayerOrderWeight();
+    }
+
+    public List<RequirementsModifier> getRequirementsModifiers() {
+        return playerCardsEffects.getRequirementsModifiers();
+    }
+
+    public List<RewardsModifier> getRewardsModifiers() {
+        return playerCardsEffects.getRewardsModifiers();
+    }
+
     public PlayerDetails getPlayerDetails() {
         return playerDetails;
     }
@@ -113,25 +140,19 @@ public class Player {
         this.leaderCards = leaderCards;
     }
 
-    /**
-     * Optional getter for actualAction
-     * @return Optional.empty() if the attribute is null
-     */
-    public Optional<ActionDescription> getActualAction() {
-        if (actualAction == null)
-            return Optional.empty();
-        return Optional.of(actualAction);
-    }
-
-    public void setActualAction(ActionDescription actualAction) {
-        this.actualAction = actualAction;
-    }
-
     public List<ActionDescription> getPossibleActionsForTurn() {
         return possibleActionsForTurn;
     }
 
     public void setPossibleActionsForTurn(List<ActionDescription> possibleActionsForTurn) {
         this.possibleActionsForTurn = possibleActionsForTurn;
+    }
+
+    public PlayerCardsEffects getPlayerCardsEffects() {
+        return playerCardsEffects;
+    }
+
+    public void setPlayerCardsEffects(PlayerCardsEffects playerCardsEffects) {
+        this.playerCardsEffects = playerCardsEffects;
     }
 }

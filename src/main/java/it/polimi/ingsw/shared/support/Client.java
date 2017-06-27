@@ -1,4 +1,4 @@
-package it.polimi.ingsw.shared;
+package it.polimi.ingsw.shared.support;
 
 import it.polimi.ingsw.client.connection.middleware.ClientReceiver;
 import it.polimi.ingsw.client.connection.middleware.ClientReceiverHandler;
@@ -9,8 +9,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class Client extends UnicastRemoteObject implements Registrable, Serializable {
-    public Client() throws RemoteException {
-    }
+    public Client() throws RemoteException {}
 
     @Override
     public void update(ServerClientRequest serverClientRequest) throws RemoteException {
