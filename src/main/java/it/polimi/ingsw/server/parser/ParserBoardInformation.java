@@ -141,7 +141,7 @@ public class ParserBoardInformation {
         JsonArray bonusTiles;
         boardInformation = parserSettings.extractJsonObject("Board.json");
         bonusTiles = boardInformation.get("bonusTiles").getAsJsonArray();
-        //getParsedBonusTiles(BoardInformation.bonusTiles, bonusTiles);
+        getParsedBonusTiles(BoardInformation.getBonusTiles(), bonusTiles);
     }
 
     private void getParsedBonusTiles(Map<String, List<ExchangingGoods>> parsedBonusTiles, JsonArray bonusTiles) {
