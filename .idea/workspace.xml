@@ -1,56 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3565f9e9-2953-4477-96c2-c965b7d6ccb1" name="Default" comment="Fix">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/NewGameInformation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamelogic/cards/additionalinfo/PlayerOrderWeight.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamelogic/player/PlayerCardsEffects.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/GameStartChoice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/GameStartChoiceRMI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/serverclient/SuccessfulLogin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/support/GameStartType.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/Connection.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/GameBoardController.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/gui/GameBoardController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/GameBoardMain.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/gui/GameBoardMain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/gui/LoginController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/LoginMain.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/gui/LoginMain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/PlayerBoardMain.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/gui/PlayerBoardMain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/PlayerboardController.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/gui/PlayerboardController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Client.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/support/Client.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/Registrable.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/support/Registrable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/server/lollolm02.db" afterPath="$PROJECT_DIR$/resources/server/lollolm02.db" />
+    <list default="true" id="3565f9e9-2953-4477-96c2-c965b7d6ccb1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/client/login.fxml" afterPath="$PROJECT_DIR$/resources/client/login.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/client/playerboard.fxml" afterPath="$PROJECT_DIR$/resources/client/playerboard.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/cli/gameinformation/BoardOwnerInformation.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/cli/gameinformation/BoardOwnerInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/cli/gameinformation/CardsInformation.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/cli/gameinformation/CardsInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/middleware/ClientReceiver.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/middleware/ClientReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/middleware/ClientReceiverHandler.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/middleware/ClientReceiverHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/middleware/ClientSender.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/middleware/ClientSender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/middleware/ClientSenderHandler.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/middleware/ClientSenderHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIClient.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/rmi/RMIClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/Reader.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/connection/socket/Reader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/parser/ParserLightModel.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/parser/ParserLightModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/NewGamesHandler.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/NewGamesHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/connection/ConnectionStream.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/connection/ConnectionStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/connection/rmi/Communicator.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/connection/rmi/Communicator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/connection/rmi/RMICommunicator.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/connection/rmi/RMICommunicator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/Game.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/AdditionalInfoMaps.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/AdditionalInfoMaps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/BoardInformation.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/BoardInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/Cards.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/Cards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/SetGameElements.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/SetGameElements.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamelogic/cards/CardVisitor.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamelogic/cards/CardVisitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamelogic/player/Player.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamelogic/player/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/middleware/ServerReceiver.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/middleware/ServerReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/middleware/ServerReceiverHandler.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/middleware/ServerReceiverHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/middleware/ServerSenderHandler.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/middleware/ServerSenderHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserAdditionalInfo.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserAdditionalInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserBoardInformation.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserBoardInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserCards.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserCards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserConfigurations.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserConfigurations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserModifiers.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserModifiers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PlayerLoginRMI.java" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/shared/requests/clientserver/PlayerLoginRMI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -189,11 +142,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ParserLightModel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ParserLightModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/parser/ParserLightModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="89" column="87" lean-forward="false" selection-start-line="89" selection-start-column="87" selection-end-line="89" selection-end-column="87" />
+              <caret line="87" column="87" lean-forward="false" selection-start-line="87" selection-start-column="87" selection-end-line="87" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -258,9 +211,12 @@
       <file leaf-file-name="ParserBoardInformation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserBoardInformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="99" column="52" lean-forward="false" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="300">
+              <caret line="143" column="10" lean-forward="false" selection-start-line="143" selection-start-column="10" selection-end-line="143" selection-end-column="10" />
+              <folding>
+                <element signature="e#988#989#0" expanded="true" />
+                <element signature="e#1046#1047#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -306,12 +262,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoardInformation.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BoardInformation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/BoardInformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+            <state relative-caret-position="178">
+              <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
               <folding>
+                <element signature="e#1306#1307#0" expanded="true" />
                 <element signature="e#1339#1340#0" expanded="true" />
                 <element signature="e#1409#1410#0" expanded="true" />
                 <element signature="e#1465#1466#0" expanded="true" />
@@ -436,13 +393,13 @@
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/gui/GameBoardMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamelogic/cards/additionalinfo/PlayerOrderWeight.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/Cards.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/BoardInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/AdditionalInfoMaps.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/SetGameElements.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserBoardInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/cli/gameinformation/BoardOwnerInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/cli/gameinformation/CardsInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/parser/ParserLightModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserBoardInformation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/BoardInformation.java" />
       </list>
     </option>
   </component>
@@ -1464,6 +1421,119 @@
       <recent name="it.polimi.ingsw.gamelogic" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/json/Board.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/SetGameElements.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserBoardInformation.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/it/polimi/ingsw/server/parser/ParserBoardInformationTest.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -2075,7 +2145,7 @@
       <workItem from="1498034377911" duration="10347000" />
       <workItem from="1498117967156" duration="34749000" />
       <workItem from="1498313668877" duration="1245000" />
-      <workItem from="1498569964818" duration="20128000" />
+      <workItem from="1498569964818" duration="20490000" />
     </task>
     <task id="LOCAL-00001" summary="Upload default project">
       <created>1494538976217</created>
@@ -2154,13 +2224,17 @@
       <option name="project" value="LOCAL" />
       <updated>1498162573571</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Networking changes + minor fixes and refactoring">
+      <created>1498606605256</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1498606605256</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2017.06.22 at 22h 11m 40s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_Tests - 2017.06.22 at 22h 15m 02s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
@@ -2185,12 +2259,15 @@
     <history-entry file="All_Tests - 2017.06.28 at 01h 31m 17s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_Tests - 2017.06.28 at 01h 40m 45s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="ParserLightModelTest_testParseListDevelopmentCardLight - 2017.06.22 at 22h 08m 08s.xml">
       <configuration name="ParserLightModelTest.testParseListDevelopmentCardLight" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="488215000" />
+    <option name="totallyTimeSpent" value="488577000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2203,6 +2280,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2213,7 +2291,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16875" sideWeight="0.48520085" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23361522" sideWeight="0.49166667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -2286,7 +2364,9 @@
     <MESSAGE value="Update game logic" />
     <MESSAGE value="Fix test" />
     <MESSAGE value="Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
+    <MESSAGE value="Networking changes + minor fixes and refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Networking changes + minor fixes and refactoring" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2624,8 +2704,8 @@
         <state relative-caret-position="221">
           <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
+            <element signature="e#684#685#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2682,42 +2762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/BoardInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-          <folding>
-            <element signature="e#1339#1340#0" expanded="true" />
-            <element signature="e#1409#1410#0" expanded="true" />
-            <element signature="e#1465#1466#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1685#1686#0" expanded="true" />
-            <element signature="e#1739#1740#0" expanded="true" />
-            <element signature="e#1771#1772#0" expanded="true" />
-            <element signature="e#1839#1840#0" expanded="true" />
-            <element signature="e#1893#1894#0" expanded="true" />
-            <element signature="e#1949#1950#0" expanded="true" />
-            <element signature="e#1983#1984#0" expanded="true" />
-            <element signature="e#2055#2056#0" expanded="true" />
-            <element signature="e#2113#2114#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2203#2204#0" expanded="true" />
-            <element signature="e#2275#2276#0" expanded="true" />
-            <element signature="e#2337#2338#0" expanded="true" />
-            <element signature="e#2404#2405#0" expanded="true" />
-            <element signature="e#2438#2439#0" expanded="true" />
-            <element signature="e#2649#2650#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#2894#2895#0" expanded="true" />
-            <element signature="e#2927#2928#0" expanded="true" />
-            <element signature="e#2997#2998#0" expanded="true" />
-            <element signature="e#3053#3054#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/Cards.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -2766,14 +2810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserBoardInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="99" column="52" lean-forward="false" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/cli/gameinformation/BoardOwnerInformation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -2802,8 +2838,56 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/client/parser/ParserLightModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="89" column="87" lean-forward="false" selection-start-line="89" selection-start-column="87" selection-end-line="89" selection-end-column="87" />
+          <caret line="87" column="87" lean-forward="false" selection-start-line="87" selection-start-column="87" selection-end-line="87" selection-end-column="87" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/parser/ParserBoardInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="143" column="10" lean-forward="false" selection-start-line="143" selection-start-column="10" selection-end-line="143" selection-end-column="10" />
+          <folding>
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1046#1047#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/polimi/ingsw/server/gamecontroller/gameelements/BoardInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+          <folding>
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1339#1340#0" expanded="true" />
+            <element signature="e#1409#1410#0" expanded="true" />
+            <element signature="e#1465#1466#0" expanded="true" />
+            <element signature="e#1521#1522#0" expanded="true" />
+            <element signature="e#1555#1556#0" expanded="true" />
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1739#1740#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
+            <element signature="e#1839#1840#0" expanded="true" />
+            <element signature="e#1893#1894#0" expanded="true" />
+            <element signature="e#1949#1950#0" expanded="true" />
+            <element signature="e#1983#1984#0" expanded="true" />
+            <element signature="e#2055#2056#0" expanded="true" />
+            <element signature="e#2113#2114#0" expanded="true" />
+            <element signature="e#2167#2168#0" expanded="true" />
+            <element signature="e#2203#2204#0" expanded="true" />
+            <element signature="e#2275#2276#0" expanded="true" />
+            <element signature="e#2337#2338#0" expanded="true" />
+            <element signature="e#2404#2405#0" expanded="true" />
+            <element signature="e#2438#2439#0" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
+            <element signature="e#2686#2687#0" expanded="true" />
+            <element signature="e#2894#2895#0" expanded="true" />
+            <element signature="e#2927#2928#0" expanded="true" />
+            <element signature="e#2997#2998#0" expanded="true" />
+            <element signature="e#3053#3054#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

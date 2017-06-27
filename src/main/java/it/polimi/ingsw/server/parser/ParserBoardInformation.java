@@ -136,12 +136,12 @@ public class ParserBoardInformation {
         }
     }
 
-    public  void parseBonusTiles() throws IOException {
+    public void parseBonusTiles() throws IOException {
         JsonObject boardInformation;
         JsonArray bonusTiles;
         boardInformation = parserSettings.extractJsonObject("Board.json");
         bonusTiles = boardInformation.get("bonusTiles").getAsJsonArray();
-        getParsedBonusTiles(BoardInformation.bonusTiles, bonusTiles);
+        //getParsedBonusTiles(BoardInformation.bonusTiles, bonusTiles);
     }
 
     private void getParsedBonusTiles(Map<String, List<ExchangingGoods>> parsedBonusTiles, JsonArray bonusTiles) {
