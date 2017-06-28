@@ -1,6 +1,7 @@
 package it.polimi.ingsw.server.gamelogic.player;
 
 import it.polimi.ingsw.server.gamelogic.cards.development.Building;
+import it.polimi.ingsw.server.gamelogic.cards.development.Character;
 import it.polimi.ingsw.server.gamelogic.cards.development.Territory;
 import it.polimi.ingsw.server.gamelogic.cards.development.Venture;
 

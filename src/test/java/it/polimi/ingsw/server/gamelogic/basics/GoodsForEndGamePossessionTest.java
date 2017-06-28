@@ -9,7 +9,7 @@ class GoodsForEndGamePossessionTest {
     private GoodsForEndGamePossession goodsForEndGamePossession;
 
     @BeforeEach
-    void setGoodsForEndGamePossession() {
+    void setUp() {
         goodsForEndGamePossession = new GoodsForEndGamePossession(4,
                 new Goods(new Resources(1,0,1,0),
                         new Points(1,0,0)));

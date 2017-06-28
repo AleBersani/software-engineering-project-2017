@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class VentureTest {
@@ -34,6 +35,22 @@ class VentureTest {
     void testEquals() {
         Venture ventureToConfront = new Venture(basicDevelopmentCard, endGameRewards, new ArrayList<>());
         assertTrue(venture.equals(ventureToConfront));
+    }
+
+    @Test
+    void testGetEndGameReward() {
+        Goods endGameRewardsToConfront = new Goods(new Resources(1,2,3,4));
+        venture.setEndGameReward(endGameRewardsToConfront);
+        assertEquals(endGameRewardsToConfront, venture.getEndGameReward());
+    }
+
+    @Test
+    void testGetMinCostRequirements() {
+        List<Goods> goodsToConfront = new ArrayList<Goods>(){{
+            add(new Goods(new Resources(1,2,3,0)));
+            add(new Goods(new Points(1,2,3)));}};
+        venture.setMinCostRequirements(goodsToConfront);
+        assertEquals(goodsToConfront, venture.getMinCostRequirements());
     }
 
 }

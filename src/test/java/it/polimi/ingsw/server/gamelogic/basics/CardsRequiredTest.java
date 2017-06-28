@@ -11,7 +11,7 @@ class CardsRequiredTest {
     private CardsRequired cardsRequired;
 
     @BeforeEach
-    void setCardsRequired() {
+    void setUp() {
         cardsRequired = new CardsRequired(4, GeneralColor.GREEN);
     }
 
