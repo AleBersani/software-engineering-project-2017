@@ -1,3 +1,6 @@
 .root {
-    -fx-background-color: chocolate;
+    -fx-background-color: sandybrown;
+}
+.button {
+    -fx-border-color: chocolate;
 }

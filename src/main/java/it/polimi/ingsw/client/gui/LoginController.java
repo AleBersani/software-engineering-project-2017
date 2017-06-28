@@ -2,11 +2,9 @@ package it.polimi.ingsw.client.gui;
 
 import it.polimi.ingsw.client.connection.ConnectionStarter;
 import javafx.fxml.FXML;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -34,6 +32,10 @@ public class LoginController {
     private PasswordField passwordField;
     @FXML
     private ToggleGroup connectionToggleGroup;
+    @FXML
+    private Label IP;
+    @FXML
+    private TextField address;
 
     public void initialize() {
         futureScheduled = EXECUTOR_SERVICE.scheduleAtFixedRate
@@ -61,5 +63,19 @@ public class LoginController {
         connectionStarter.startConnection(usernameField.getText(), passwordField.getText());
     }
 
+
+    public void showIP(MouseEvent event) {
+        IP.setDisable(false);
+        address.setDisable(false);
+    }
+
+    public void hideIP(MouseEvent event) {
+        IP.setDisable(true);
+        address.setDisable(true);
+    }
+
+    public void changeColors() {
+
+    }
 
 }

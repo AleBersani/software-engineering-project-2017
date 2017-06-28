@@ -71,6 +71,6 @@
     <orderEntry type="library" name="Maven: org.jacoco:org.jacoco.report:0.7.9" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.18.0" level="project" />
-    <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:1.4.0" level="project" />
+    <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:1.5.0" level="project" />
   </component>
 </module>
