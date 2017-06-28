@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class LeaderActionTest {
     private LeaderAction leaderAction;
@@ -12,6 +13,12 @@ class LeaderActionTest {
     @BeforeEach
     void setUp() {
         leaderAction = new LeaderAction(ActionType.LEADER_ACTIVATION, "");
+    }
+
+    @Test
+    void testEquals() {
+        LeaderAction leaderActionToConfront = new LeaderAction(ActionType.LEADER_ACTIVATION, "");
+        assertTrue(leaderAction.equals(leaderActionToConfront));
     }
 
     @Test

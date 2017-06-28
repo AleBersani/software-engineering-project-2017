@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BoardTest {
     private Board board;
@@ -19,6 +20,13 @@ class BoardTest {
     void setUp() {
         board = new Board(new ArrayList<>(), new CouncilPalace(new ExchangingGoods(), 1),
                 new BoardActionSpaces(new ArrayList<>(), new ArrayList<>(), new ArrayList<>()));
+    }
+
+    @Test
+    void testEquals() {
+        Board boardToConfront = new Board(new ArrayList<>(), new CouncilPalace(new ExchangingGoods(), 1),
+                new BoardActionSpaces(new ArrayList<>(), new ArrayList<>(), new ArrayList<>()));
+        assertTrue(board.equals(boardToConfront));
     }
 
     @Test

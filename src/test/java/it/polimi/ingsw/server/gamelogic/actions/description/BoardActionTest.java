@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BoardActionTest {
     private BoardAction boardAction;
@@ -14,6 +15,13 @@ class BoardActionTest {
     @BeforeEach
     void setUp() {
         boardAction = new BoardAction(new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1, 1));
+    }
+
+    @Test
+    void equals() {
+        BoardAction boardActionToConfront = new BoardAction(new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1,
+                1));
+        assertTrue(boardAction.equals(boardActionToConfront));
     }
 
     @Test

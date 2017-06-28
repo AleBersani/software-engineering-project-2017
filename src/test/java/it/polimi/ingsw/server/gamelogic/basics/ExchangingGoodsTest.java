@@ -8,6 +8,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ExchangingGoodsTest {
     private ExchangingGoods exchangingGoods;
@@ -15,6 +16,12 @@ class ExchangingGoodsTest {
     @BeforeEach
     void setUp() {
         exchangingGoods = new ExchangingGoods(2);
+    }
+
+    @Test
+    void testEquals() {
+        ExchangingGoods exchangingGoodsToConfront = new ExchangingGoods(2);
+        assertTrue(exchangingGoods.equals(exchangingGoodsToConfront));
     }
 
     @Test
