@@ -25,15 +25,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ActionTest {
     private Action action;
-    private List<BasicRewards> basicRewards = new ArrayList<BasicRewards>(){{add(new BasicRewards(
-            ActionType.LEADER_ACTIVATION,
-            new Goods(new Resources(1,2,3,0))));}};
+    private List<BasicRewards> basicRewards;
+
     @BeforeEach
     void setUp() {
+        basicRewards = new ArrayList<BasicRewards>(){{add(new BasicRewards(ActionType.LEADER_ACTIVATION, new Goods(
+                new Resources(1,2,3,0))));}};
         action = new Action(new LeaderAction(ActionType.LEADER_ACTIVATION, ""),
                 new LeaderRequirements(ActionType.LEADER_ACTIVATION, "", new LeaderCost(new Goods
                         (new Resources(1, 2, 3, 0)))), basicRewards);
-
     }
 
     @Test
@@ -43,5 +43,4 @@ class ActionTest {
                         (new Resources(1, 2, 3, 0)))), basicRewards);
         assertTrue(action.equals(actionToConfront));
     }
-
 }

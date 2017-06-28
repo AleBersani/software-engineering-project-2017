@@ -15,9 +15,8 @@ class GoodsForEndGamePossessionTest {
                         new Points(1,0,0)));
     }
 
-
     @Test
-    void equals() {
+    void testEquals() {
         GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
                 new Goods(new Resources(1,0,1,0),
                         new Points(1,0,0)));
@@ -25,31 +24,30 @@ class GoodsForEndGamePossessionTest {
     }
 
     @Test
-    void getNumberOfObjectsRequired() {
+    void testGetNumberOfObjectsRequired() {
         int result = 4;
         assertTrue(result == goodsForEndGamePossession.getNumberOfObjectsRequired());
     }
 
     @Test
-    void setNumberOfObjectsRequired() {
+    void testSetNumberOfObjectsRequired() {
         int previous = goodsForEndGamePossession.getNumberOfObjectsRequired();
         goodsForEndGamePossession.setNumberOfObjectsRequired(3);
         assertFalse(previous == goodsForEndGamePossession.getNumberOfObjectsRequired());
     }
 
     @Test
-    void getRewards() {
+    void testGetRewards() {
         Goods rewards = new Goods(new Resources(1,0,1,0),
                 new Points(1,0,0));
         assertEquals(rewards, goodsForEndGamePossession.getRewards());
     }
 
     @Test
-    void setRewards() {
+    void testSetRewards() {
         Goods previous = goodsForEndGamePossession.getRewards();
         goodsForEndGamePossession.setRewards(new Goods(new Resources(0,0,1,0),
                 new Points(1,2,0)));
         assertFalse(previous.equals(goodsForEndGamePossession.getRewards()));
     }
-
 }

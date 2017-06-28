@@ -20,9 +20,8 @@ class MarketSpaceTest {
 
     @Test
     void testEquals() {
-        MarketSpace marketSpaceToCOnfront = new MarketSpace(new Space(BoardIdentifier.M_1, 1), new ExchangingGoods(
-                new Goods(new Resources(1,1,0,0))));
+        MarketSpace marketSpaceToCOnfront = new MarketSpace(new Space(BoardIdentifier.M_1, 1),
+                new ExchangingGoods(new Goods(new Resources(1,1,0,0))));
         assertTrue(marketSpace.equals(marketSpaceToCOnfront));
     }
-
 }

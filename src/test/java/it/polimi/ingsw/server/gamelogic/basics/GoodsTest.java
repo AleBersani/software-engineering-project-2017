@@ -69,6 +69,7 @@ class GoodsTest {
     }
 
     @Test
-    void testFalseIsEmpty() { goods.isEmpty(); }
-
+    void testFalseIsEmpty() {
+        assertFalse(goods.isEmpty());
+    }
 }

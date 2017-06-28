@@ -21,5 +21,4 @@ class DiceTest {
         Dice diceToConfront = new Dice(DiceColor.BLACK, 3);
         assertTrue(dice.equals(diceToConfront));
     }
-
 }

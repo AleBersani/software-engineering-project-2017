@@ -77,6 +77,6 @@ class PointsTest {
 
     @Test
     void testFalseIsEmpty() {
-        points.isEmpty();
+        assertFalse(points.isEmpty());
     }
 }

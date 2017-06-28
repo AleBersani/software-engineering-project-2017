@@ -12,7 +12,8 @@ class ActionSpaceTest {
 
     @BeforeEach
     void setUp() {
-        actionSpace = new ActionSpace(new Space(BoardIdentifier.HARVEST_1, 1), 2);
+        actionSpace = new ActionSpace(new Space(BoardIdentifier.HARVEST_1, 1),
+                2);
     }
 
     @Test
@@ -21,5 +22,4 @@ class ActionSpaceTest {
                 1), 2);
         assertTrue(actionSpace.equals(actionSpaceToConfront));
     }
-
 }

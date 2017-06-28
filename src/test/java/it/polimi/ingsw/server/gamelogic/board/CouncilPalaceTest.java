@@ -40,5 +40,4 @@ class CouncilPalaceTest {
         councilPalace.addToPlayerOrder(new PlayerDetails("Dennis", GeneralColor.BLUE));
         assertEquals(2, councilPalace.getPlayerOrder().stream().count());
     }
-
 }

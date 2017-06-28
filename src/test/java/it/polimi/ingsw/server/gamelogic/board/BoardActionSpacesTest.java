@@ -22,5 +22,4 @@ class BoardActionSpacesTest {
                 new ArrayList<>(), new ArrayList<>());
         assertTrue(boardActionSpaces.equals(boardActionSpacesToConfront));
     }
-
 }

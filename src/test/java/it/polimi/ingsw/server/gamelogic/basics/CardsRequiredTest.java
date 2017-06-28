@@ -46,5 +46,4 @@ class CardsRequiredTest {
         cardsRequired.setCardColorRequired(GeneralColor.BLUE);
         assertFalse(previous.equals(cardsRequired.getCardColorRequired()));
     }
-
 }
