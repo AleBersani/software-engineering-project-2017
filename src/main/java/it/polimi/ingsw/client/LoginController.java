@@ -1,8 +1,12 @@
-package it.polimi.ingsw.client.gui;
+package it.polimi.ingsw.client;
 
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.JFXToggleButton;
 import it.polimi.ingsw.client.connection.ConnectionStarter;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
@@ -27,15 +31,15 @@ public class LoginController {
     @FXML
     private ImageView littleLolloSenior;
     @FXML
-    private TextField usernameField;
+    private JFXTextField usernameField;
     @FXML
-    private PasswordField passwordField;
+    private JFXPasswordField passwordField;
     @FXML
     private ToggleGroup connectionToggleGroup;
     @FXML
     private Label IP;
     @FXML
-    private TextField address;
+    private JFXTextField address;
 
     public void initialize() {
         futureScheduled = EXECUTOR_SERVICE.scheduleAtFixedRate
@@ -57,8 +61,11 @@ public class LoginController {
 
     @FXML
     public void onConnect() {
-        RadioButton selectedRadioButton = (RadioButton)connectionToggleGroup.getSelectedToggle();
+        JFXToggleButton selectedRadioButton = (JFXToggleButton)connectionToggleGroup.getSelectedToggle();
         String selected = selectedRadioButton.getText();
+        if ("Socket".equals(selected)) {
+            selected = selected.concat("_").concat(address.getText());
+        }
         ConnectionStarter connectionStarter = new ConnectionStarter(selected);
         connectionStarter.startConnection(usernameField.getText(), passwordField.getText());
     }
@@ -77,5 +84,4 @@ public class LoginController {
     public void changeColors() {
 
     }
-
 }

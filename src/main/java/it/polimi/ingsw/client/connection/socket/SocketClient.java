@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 
 public class SocketClient {
     private final static Logger LOGGER = Logger.getLogger(SocketClient.class.getName());
-    private final static String ADDRESS = "127.0.0.1";
     private final static int PORT = 6677;
 
     private static Socket socket;
@@ -26,9 +25,8 @@ public class SocketClient {
         return SocketClientHolder.INSTANCE;
     }
 
-    public void startSocketClient() throws IOException {
-        socket = new Socket(ADDRESS, PORT);
-        LOGGER.info("Connection established");
+    public void startSocketClient(String address) throws IOException {
+        socket = new Socket(address, PORT);
         objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         Thread thread = new Thread(new Reader(socket));
         thread.start();/*

@@ -27,15 +27,16 @@ public class ConnectionStarter {
             clientSender = new ClientSenderHandler(false);
             startRMIClient();
         } else {
-            startSocketClient();
+            String[] parts = connectionType.split("_");
+            startSocketClient(parts[1]);
         }
         clientSender.login(playerName, psw);
     }
 
-    private void startSocketClient() {
+    private void startSocketClient(String ipAddress) {
         try {
             SocketClient socketClient = SocketClient.getInstance();
-            socketClient.startSocketClient();
+            socketClient.startSocketClient(ipAddress);
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: cannot connect via socket", e);
         }

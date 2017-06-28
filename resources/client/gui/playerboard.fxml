@@ -75,7 +75,7 @@
                 <StackPane fx:id="pane4" prefHeight="800" prefWidth="1000">
 
                     <ImageView fx:id="pane3" fitHeight="515" fitWidth="750" preserveRatio="true" styleClass="try">
-                        <Image preserveRatio="true" url="/client/punchboardback.jpg" />
+                        <Image preserveRatio="true" url="/client/gui/punchboardback.jpg" />
                     </ImageView>
 
                     <HBox fx:id="pane5" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20">

@@ -46,9 +46,10 @@ public class SemiPeriod extends Observable implements Observer {
     }
 
     private List<Dice> extractDices() {
-        List<DiceColor> colors = new ArrayList<DiceColor>(){{add(DiceColor.BLACK);
-            add(DiceColor.ORANGE);
-            add(DiceColor.WHITE);}};
+        List<DiceColor> colors = new ArrayList<>();
+        colors.add(DiceColor.BLACK);
+        colors.add(DiceColor.ORANGE);
+        colors.add(DiceColor.WHITE);
         Random random = new Random();
         List<Dice> dices = new ArrayList<>();
         for (DiceColor diceColor : colors)
@@ -81,21 +82,23 @@ public class SemiPeriod extends Observable implements Observer {
     }
 
     private void setTowerCards(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
-        Tower towerToFill;
-        int i=0;
-        towerToFill = board.getTowers().stream()
+        Optional<Tower> optionalTowerToFill = board.getTowers().stream()
                 .filter(tower -> color.equals(tower.getColor()))
-                .findFirst()
-                .get();
-        for (TowerSlot towerSlot : towerToFill.getTowerSlots()) {
-            if(color.equals(GeneralColor.GREEN))
-                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
-            else if(color.equals(GeneralColor.BLUE))
-                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
-            else if(color.equals(GeneralColor.YELLOW))
-                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
-            else if(color.equals(GeneralColor.PURPLE))
-                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+                .findFirst();
+        if (optionalTowerToFill.isPresent()) {
+            Tower towerToFill = optionalTowerToFill.get();
+            int i=0;
+            for (TowerSlot towerSlot : towerToFill.getTowerSlots()) {
+                if (color.equals(GeneralColor.GREEN)) {
+                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+                } else if (color.equals(GeneralColor.BLUE)) {
+                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+                } else if (color.equals(GeneralColor.YELLOW)) {
+                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+                } else if(color.equals(GeneralColor.PURPLE)) {
+                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+                }
+            }
         }
     }
 
