@@ -1,13 +1,16 @@
 package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.gamelogic.board.Board;
+import it.polimi.ingsw.server.gamelogic.board.Dice;
+import it.polimi.ingsw.server.gamelogic.board.Tower;
+import it.polimi.ingsw.server.gamelogic.board.TowerSlot;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
+import it.polimi.ingsw.server.gamelogic.enums.DiceColor;
 import it.polimi.ingsw.server.gamelogic.player.Player;
+import it.polimi.ingsw.shared.model.GeneralColor;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * //
@@ -36,12 +39,69 @@ public class SemiPeriod extends Observable implements Observer {
     }
 
     public void setupBoard() {
+        List<Dice> newDices;
+        newDices = extractDices();
+        board.setDices(newDices);
+        setBoardCards();
+    }
 
+    private List<Dice> extractDices() {
+        List<DiceColor> colors = new ArrayList<DiceColor>(){{add(DiceColor.BLACK);
+            add(DiceColor.ORANGE);
+            add(DiceColor.WHITE);}};
+        Random random = new Random();
+        List<Dice> dices = new ArrayList<>();
+        for (DiceColor diceColor : colors)
+            dices.add( new Dice(diceColor, random.nextInt(5) + 1) );
+        return dices;
+    }
+
+    private void setBoardCards() {
+        List<DevelopmentCard> territories, buildings, characters, ventures;
+        territories = developmentCards.stream()
+                .filter(card -> GeneralColor.GREEN.equals(card.getCardInformation()
+                        .getCardColor()))
+                .collect(Collectors.toList());
+        buildings = developmentCards.stream()
+                .filter(card -> GeneralColor.YELLOW.equals(card.getCardInformation()
+                        .getCardColor()))
+                .collect(Collectors.toList());
+        characters = developmentCards.stream()
+                .filter(card -> GeneralColor.BLUE.equals(card.getCardInformation()
+                        .getCardColor()))
+                .collect(Collectors.toList());
+        ventures = developmentCards.stream()
+                .filter(card -> GeneralColor.PURPLE.equals(card.getCardInformation()
+                        .getCardColor()))
+                .collect(Collectors.toList());
+        setTowerCards(territories, GeneralColor.GREEN);
+        setTowerCards(buildings, GeneralColor.YELLOW);
+        setTowerCards(characters, GeneralColor.BLUE);
+        setTowerCards(ventures, GeneralColor.PURPLE);
+    }
+
+    private void setTowerCards(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
+        Tower towerToFill;
+        int i=0;
+        towerToFill = board.getTowers().stream()
+                .filter(tower -> color.equals(tower.getColor()))
+                .findFirst()
+                .get();
+        for (TowerSlot towerSlot : towerToFill.getTowerSlots()) {
+            if(color.equals(GeneralColor.GREEN))
+                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+            else if(color.equals(GeneralColor.BLUE))
+                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+            else if(color.equals(GeneralColor.YELLOW))
+                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+            else if(color.equals(GeneralColor.PURPLE))
+                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+        }
     }
 
     public void setupRound() {
-        /*
 
+        /*
          */
     }
 
@@ -53,8 +113,11 @@ public class SemiPeriod extends Observable implements Observer {
 
     public void endSemiPeriod() {
         /*
-        calcola turno giocatori
          */
+    }
+
+    public void calculateTotalPlayer(){
+        //Calcola turno giocatori
     }
 
     public List<DevelopmentCard> getDevelopmentCards() {

@@ -8,6 +8,7 @@ import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.board.*;
+import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -242,6 +243,47 @@ class ParserBoardInformationTest {
         ExchangingGoods resultExpected = new ExchangingGoods(new Resources(1,1,1,0),
                                                              0);
         ExchangingGoods result = (ExchangingGoods) method.invoke(parserBoardInformation, obj);
+        assertEquals(resultExpected, result);
+    }
+
+    @Test
+    void testGetFaithToVictoryPointsMap() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "getFaithToVictoryPointsMap";
+        Class targetClass = parserBoardInformation.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, Map.class, JsonObject.class);
+        method.setAccessible(true);
+        String json = "{" +
+                "\"0\": \"0\"," +
+                "\"1\": \"1\"," +
+                "\"2\": \"2\"" +
+
+                "}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        Map<Integer, Integer> resultExpected = new HashMap<Integer, Integer>(){{put(0, 0);
+            put(1, 1);
+            put(2, 2);}};
+        Map<Integer, Integer> result = new HashMap<>();
+        method.invoke(parserBoardInformation, result, obj);
+        assertEquals(resultExpected, result);
+    }
+
+    @Test
+    void testGetFaithPointsForExcommunication() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "getFaithPointsForExcommunication";
+        Class targetClass = parserBoardInformation.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, Map.class, JsonObject.class);
+        method.setAccessible(true);
+        String json = "{" +
+                "\"FIRST\": \"4\"," +
+                "\"SECOND\": \"5\"," +
+                "\"THIRD\": \"6\"" +
+                "}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        Map<PeriodNumber, Integer> resultExpected = new HashMap<PeriodNumber, Integer>(){{put(PeriodNumber.FIRST, 4);
+            put(PeriodNumber.SECOND,5);
+            put(PeriodNumber.THIRD, 6);}};
+        Map<PeriodNumber, Integer> result = new HashMap<>();
+        method.invoke(parserBoardInformation, result, obj);
         assertEquals(resultExpected, result);
     }
 }
