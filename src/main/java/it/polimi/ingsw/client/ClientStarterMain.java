@@ -6,10 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class LoginMain extends Application {
+public class ClientStarterMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/client/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/client/clientstarter.fxml"));
         primaryStage.setTitle("Lorenzo il Magnifico");
         primaryStage.setScene(new Scene(root, 400, 500));
         primaryStage.show();

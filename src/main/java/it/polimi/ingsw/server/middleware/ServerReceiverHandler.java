@@ -64,10 +64,27 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
 
     @Override
     public void visitClientServerRequest(PlayerLogin playerLogin) {
-        LOGGER.info("Player login Socket");
-        String playerName = playerLogin.getPlayerName();
-        LOGGER.info("Player login Socket");
-        if (authenticate(playerName, playerLogin.getPassword())) {
+        if (playerLogin.isNewPlayer()) {
+            registerNewPlayer(playerLogin);
+        } else {
+            authenticatePlayer(playerLogin);
+        }
+    }
+
+    private void registerNewPlayer(PlayerLogin playerLogin) {
+        LOGGER.info("Player registration socket");
+        if (registerNewPlayerQuery(playerLogin.getPlayerName(), playerLogin.getPassword())) {
+            LOGGER.info("Socket registration and login successful");
+            sendSocketSimpleMessage("Registration and login successful");
+        } else {
+            LOGGER.info("Cannot register client");
+            sendSocketSimpleMessage("Cannot register client");
+        }
+    }
+
+    private void authenticatePlayer(PlayerLogin playerLogin) {
+        LOGGER.info("Player login socket");
+        if (authenticateQuery(playerLogin.getPlayerName(), playerLogin.getPassword())) {
             LOGGER.info("Socket login successful");
             sendSocketSimpleMessage("Login successful");
         } else {
@@ -86,18 +103,32 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
 
     @Override
     public void visitClientServerRequest(PlayerLoginRMI playerLoginRMI) {
+        if (playerLoginRMI.isNewPlayer()) {
+            registerNewPlayerRMI(playerLoginRMI);
+        } else {
+            authenticatePlayerRMI(playerLoginRMI);
+        }
+    }
+
+    private void registerNewPlayerRMI(PlayerLoginRMI playerLoginRMI) {
+        LOGGER.info("Player registration RMI");
+        if (registerNewPlayerQuery(playerLoginRMI.getPlayerName(), playerLoginRMI.getPassword())) {
+            LOGGER.info("RMI registration and login successful");
+            sendRMISimpleMessage(playerLoginRMI.getRegistrable(),"Registration and login successful");
+        } else {
+            LOGGER.info("Cannot register client");
+            sendRMISimpleMessage(playerLoginRMI.getRegistrable(),"Cannot register client");
+        }
+    }
+
+    private void authenticatePlayerRMI(PlayerLoginRMI playerLoginRMI) {
         LOGGER.info("Player login RMI");
-        String playerName = playerLoginRMI.getPlayerName();
-        if (authenticate(playerName, playerLoginRMI.getPassword())) {
+        if (authenticateQuery(playerLoginRMI.getPlayerName(), playerLoginRMI.getPassword())) {
             LOGGER.info("RMI login successful");
             sendRMISimpleMessage(playerLoginRMI.getRegistrable(),"Login successful");
         } else {
             LOGGER.info("Login unsuccessful");
-            try {
-                playerLoginRMI.getRegistrable().update(new SimpleMessage("Login unsuccessful"));
-            } catch (RemoteException e) {
-                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot send RMI callback", e);
-            }
+            sendRMISimpleMessage(playerLoginRMI.getRegistrable(),"Login unsuccessful");
         }
     }
 
@@ -109,8 +140,13 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
         }
     }
 
-    private boolean authenticate(String playerName, String psw) {
+    private boolean authenticateQuery(String playerName, String psw) {
         QueryHandler queryHandler = new QueryHandler();
         return queryHandler.authenticate(playerName, psw);
+    }
+
+    private boolean registerNewPlayerQuery(String playerName, String psw) {
+        QueryHandler queryHandler = new QueryHandler();
+        return queryHandler.addPlayer(playerName, psw);
     }
 }

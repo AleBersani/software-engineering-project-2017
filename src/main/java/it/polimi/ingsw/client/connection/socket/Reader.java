@@ -20,7 +20,7 @@ public class Reader implements Runnable {
     public Reader(Socket socket) throws IOException {
         this.socket = socket;
         objectInputStream = new ObjectInputStream(socket.getInputStream());
-        serverClientReceiverHandler  = new ClientReceiverHandler();
+        serverClientReceiverHandler  = ClientReceiverHandler.getInstance();
     }
 
     @Override

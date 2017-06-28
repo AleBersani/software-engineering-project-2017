@@ -49,6 +49,9 @@ public final class QueryHandler {
     }
 
     public boolean addPlayer(String newPlayerName, String newPassword) {
+        if (!isPlayerNameAlreadyTaken(newPlayerName)) {
+            return false;
+        }
         String query = "INSERT INTO player (" + PLAYER_NAME + "," + PSW + ") " +
                 "VALUES('" + newPlayerName + "', '" + newPassword +"')";
         dbConnector.connect();
@@ -61,6 +64,28 @@ public final class QueryHandler {
         }
         dbConnector.closeConnection();
         return true;
+    }
+
+    private boolean isPlayerNameAlreadyTaken(String playerNameToCheck) {
+        boolean isFree = true;
+        String query = "SELECT COUNT(1) AS 'Check' FROM player WHERE " +
+                PLAYER_NAME + " = '" + playerNameToCheck + "';";
+        dbConnector.connect();
+        try (Statement statement = dbConnector.getConnection().createStatement()) {
+            try (ResultSet resultSet = statement.executeQuery(query)) {
+                if (resultSet.next()) {
+                    if (resultSet.getInt("Check") == 1) {
+                        isFree = false;
+                    }
+                }
+                resultSet.close();
+                statement.close();
+            }
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Cannot check if player exist", e);
+        }
+        dbConnector.closeConnection();
+        return isFree;
     }
 
     public boolean addGame() {

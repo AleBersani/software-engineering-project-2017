@@ -27,6 +27,10 @@ public class PlayerLoginRMI implements ClientServerRequest, Serializable {
         return playerLogin.getPassword();
     }
 
+    public boolean isNewPlayer() {
+        return playerLogin.isNewPlayer();
+    }
+
     public PlayerLogin getPlayerLogin() {
         return playerLogin;
     }

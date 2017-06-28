@@ -13,7 +13,7 @@ public class Client extends UnicastRemoteObject implements Registrable, Serializ
 
     @Override
     public void update(ServerClientRequest serverClientRequest) throws RemoteException {
-        ClientReceiver serverClientReceiverHandler = new ClientReceiverHandler();
+        ClientReceiver serverClientReceiverHandler = ClientReceiverHandler.getInstance();
         serverClientRequest.acceptServerClientRequestVisitor(serverClientReceiverHandler);
     }
 }

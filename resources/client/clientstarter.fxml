@@ -3,8 +3,8 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<AnchorPane fx:controller="it.polimi.ingsw.client.LoginController"
-            stylesheets="/client/login.css"
+<AnchorPane fx:controller="it.polimi.ingsw.client.ClientStarterController"
+            stylesheets="/client/clientstarter.css"
             xmlns:fx="http://javafx.com/fxml" prefHeight="420.0" prefWidth="374.0">
 
     <HBox alignment="CENTER" spacing="15" layoutX="75" layoutY="10">
@@ -32,15 +32,16 @@
         <JFXTextField fx:id="address" layoutX="176.0" layoutY="358.0" prefHeight="25.0" prefWidth="146.0" disable="true"
                       text="127.0.0.1" focusColor="chocolate"/>
         <Label fx:id="IP" layoutX="94.0" layoutY="362.0" text="IP address:" disable="true"/>
-        <JFXButton buttonType="RAISED" layoutX="66.0" layoutY="417.0" text="Register" styleClass="button"/>
+        <JFXButton buttonType="RAISED" layoutX="66.0" layoutY="417.0" text="Register" styleClass="button"
+                   onAction="#onRegister"/>
         <JFXButton buttonType="RAISED" layoutX="214.0" layoutY="417.0" text="Connect" styleClass="button"
                    onAction="#onConnect"/>
         <fx:define>
             <ToggleGroup fx:id="connectionToggleGroup"/>
         </fx:define>
-        <JFXToggleButton layoutX="53.0" layoutY="300.0" text="RMI" toggleGroup="$connectionToggleGroup"
-                         onMouseClicked="#hideIP" toggleColor="chocolate" unToggleColor="saddlebrown"/>
-        <JFXToggleButton fx:id="socket" layoutX="193.0" layoutY="300.0" text="Socket" toggleGroup="$connectionToggleGroup"
+        <JFXToggleButton fx:id="rmiRadio" layoutX="53.0" layoutY="300.0" text="RMI" toggleGroup="$connectionToggleGroup"
+                         onMouseClicked="#hideIP" toggleColor="chocolate" unToggleColor="saddlebrown" selected="true"/>
+        <JFXToggleButton fx:id="socketRadio" layoutX="193.0" layoutY="300.0" text="Socket" toggleGroup="$connectionToggleGroup"
                          onMouseClicked="#showIP" toggleColor="chocolate" unToggleColor="saddlebrown"/>
     </children>
 </AnchorPane>

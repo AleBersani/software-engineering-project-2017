@@ -22,7 +22,7 @@ public class ConnectionStarter {
         clientSender = new ClientSenderHandler(true);
     }
 
-    public void startConnection(String playerName, String psw) {
+    public void startConnection() {
         if ("RMI".equals(connectionType)) {
             clientSender = new ClientSenderHandler(false);
             startRMIClient();
@@ -30,7 +30,14 @@ public class ConnectionStarter {
             String[] parts = connectionType.split("_");
             startSocketClient(parts[1]);
         }
-        clientSender.login(playerName, psw);
+    }
+
+    public void authenticate(String playerName, String psw, boolean newPlayer) {
+        if (newPlayer) {
+            clientSender.register(playerName, psw);
+        } else {
+            clientSender.login(playerName, psw);
+        }
     }
 
     private void startSocketClient(String ipAddress) {

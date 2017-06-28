@@ -22,6 +22,16 @@ public class ClientSenderHandler implements ClientSender {
     }
 
     @Override
+    public void register(String playerName, String psw) {
+        PlayerLogin playerLogin = new PlayerLogin(playerName, psw, true);
+        if (socket) {
+            socketLogin(playerLogin);
+        } else {
+            RMILogin(playerLogin);
+        }
+    }
+
+    @Override
     public void login(String playerName, String psw) {
         PlayerLogin playerLogin = new PlayerLogin(playerName, psw);
         if (socket) {
