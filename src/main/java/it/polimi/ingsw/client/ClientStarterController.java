@@ -5,14 +5,20 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
 import it.polimi.ingsw.client.connection.ConnectionStarter;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -26,6 +32,7 @@ public class ClientStarterController {
 
     private ScheduledFuture futureScheduled;
     private ConnectionStarter connectionStarter;
+    private Stage gameChoice;
 
     @FXML
     private ImageView littleLolloJunior;
@@ -112,7 +119,13 @@ public class ClientStarterController {
         address.setDisable(true);
     }
 
-    public void changeColors() {
-
+    public void showGameChoice() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("gamechoice.fxml"));
+        Parent gameChoice_parent = (Parent) loader.load();
+        gameChoice = new Stage();
+        gameChoice.setScene(new Scene(gameChoice_parent));
+        gameChoice.show();
+        gameChoice.toFront();
+        gameChoice.setResizable(false);
     }
 }
