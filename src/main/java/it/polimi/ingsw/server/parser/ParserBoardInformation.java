@@ -12,6 +12,7 @@ import it.polimi.ingsw.server.gamelogic.board.CouncilPalace;
 import it.polimi.ingsw.server.gamelogic.board.MarketSpace;
 import it.polimi.ingsw.server.gamelogic.board.ProductionHarvestSpace;
 import it.polimi.ingsw.server.gamelogic.board.Space;
+import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
 import java.io.IOException;
@@ -168,5 +169,36 @@ public class ParserBoardInformation {
         resources = gson.fromJson(instantGoods.get("resources").getAsJsonObject(), Resources.class);
         points = gson.fromJson(instantGoods.get("points").getAsJsonObject(), Points.class);
         return new ExchangingGoods(resources, points, instantGoods.get("councilPrivilege").getAsInt());
+    }
+
+    public void parseFaithToVictoryPointsMap(Map<Integer, Integer> faithToVictoryPointsMap) throws IOException {
+        JsonObject board, faithToVictoryPoints;
+        board = parserSettings.extractJsonObject("Board.json");
+        faithToVictoryPoints = board.get("faithPointsToVictoryPoints").getAsJsonObject();
+        getFaithToVictoryPointsMap(faithToVictoryPointsMap, faithToVictoryPoints);
+    }
+
+    private void getFaithToVictoryPointsMap(Map<Integer, Integer> faithToVictoryPointsMap,
+                                            JsonObject faithToVictoryPoints) {
+        int num;
+        for (Integer i = 0; i < faithToVictoryPoints.size(); i++) {
+            num = faithToVictoryPoints.get(i.toString()).getAsInt();
+            faithToVictoryPointsMap.put(i, num);
+        }
+    }
+
+    public void parseFaithPointsToAvoidExcommunicationMap(Map<PeriodNumber, Integer> faithPointsToAvoidExcommunication)
+            throws IOException {
+        JsonObject board, faithPointsForExcomm;
+        board = parserSettings.extractJsonObject("Board.json");
+        faithPointsForExcomm = board.get("faithToAvoidExcommunication").getAsJsonObject();
+        getFaithPointsForExcommunication(faithPointsToAvoidExcommunication, faithPointsForExcomm);
+    }
+
+    private void getFaithPointsForExcommunication(Map<PeriodNumber, Integer> faithPointsToAvoidExcommunication,
+                                                  JsonObject faithPointsForExcomm) {
+        faithPointsToAvoidExcommunication.put(PeriodNumber.FIRST, faithPointsForExcomm.get("FIRST").getAsInt());
+        faithPointsToAvoidExcommunication.put(PeriodNumber.SECOND, faithPointsForExcomm.get("SECOND").getAsInt());
+        faithPointsToAvoidExcommunication.put(PeriodNumber.THIRD, faithPointsForExcomm.get("THIRD").getAsInt());
     }
 }

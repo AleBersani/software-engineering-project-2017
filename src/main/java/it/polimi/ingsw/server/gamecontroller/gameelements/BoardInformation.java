@@ -6,6 +6,7 @@ import it.polimi.ingsw.server.gamelogic.board.CouncilPalace;
 import it.polimi.ingsw.server.gamelogic.board.MarketSpace;
 import it.polimi.ingsw.server.gamelogic.board.ProductionHarvestSpace;
 import it.polimi.ingsw.server.gamelogic.board.Space;
+import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +19,8 @@ public class BoardInformation {
     private static Map<Space, Goods> blueTower;
     private static Map<Space, Goods> purpleTower;
     private static CouncilPalace councilPalace;
+    private static Map<Integer, Integer> faithToVictoryPoints;
+    private static Map<PeriodNumber, Integer> faithPointsToAvoidExcommunication;
     private static List<ProductionHarvestSpace> harvestArea;
     private static List<ProductionHarvestSpace> productionArea;
     private static List<MarketSpace> marketArea;
@@ -28,9 +31,12 @@ public class BoardInformation {
         yellowTower = new HashMap<>();
         blueTower = new HashMap<>();
         purpleTower = new HashMap<>();
+        faithToVictoryPoints = new HashMap<>();
+        faithPointsToAvoidExcommunication = new HashMap<>();
         harvestArea = new ArrayList<>();
         productionArea = new ArrayList<>();
         marketArea = new ArrayList<>();
+        bonusTiles = new HashMap<>();
     }
 
     public static Map<Space, Goods> getGreenTower() {
@@ -71,6 +77,22 @@ public class BoardInformation {
 
     public static void setCouncilPalace(CouncilPalace councilPalace) {
         BoardInformation.councilPalace = councilPalace;
+    }
+
+    public static Map<Integer, Integer> getFaithToVictoryPoints() {
+        return faithToVictoryPoints;
+    }
+
+    public static void setFaithToVictoryPoints(Map<Integer, Integer> faithToVictoryPoints) {
+        BoardInformation.faithToVictoryPoints = faithToVictoryPoints;
+    }
+
+    public static Map<PeriodNumber, Integer> getFaithPointsToAvoidExcommunication() {
+        return faithPointsToAvoidExcommunication;
+    }
+
+    public static void setFaithPointsToAvoidExcommunication(Map<PeriodNumber, Integer> faithPointsToAvoidExcommunication) {
+        BoardInformation.faithPointsToAvoidExcommunication = faithPointsToAvoidExcommunication;
     }
 
     public static List<ProductionHarvestSpace> getHarvestArea() {

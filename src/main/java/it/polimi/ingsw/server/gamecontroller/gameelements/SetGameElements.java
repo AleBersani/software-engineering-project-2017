@@ -72,6 +72,9 @@ public class SetGameElements implements Runnable {
         BoardInformation.initializeBoardInformationMaps();
         parserBoardInformation.parseTowerMaps();
         BoardInformation.setCouncilPalace(parserBoardInformation.parseCouncilPalace());
+        parserBoardInformation.parseFaithPointsToAvoidExcommunicationMap(
+                BoardInformation.getFaithPointsToAvoidExcommunication());
+        parserBoardInformation.parseFaithToVictoryPointsMap(BoardInformation.getFaithToVictoryPoints());
         parserBoardInformation.parseBoardActionAreas();
         parserBoardInformation.parseBonusTiles();
     }
