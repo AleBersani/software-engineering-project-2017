@@ -3,6 +3,8 @@ package it.polimi.ingsw.server.gamelogic.actions.description;
 import it.polimi.ingsw.server.gamelogic.actions.ActionVisitor;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 
+import java.util.Objects;
+
 /**
  * Class that describes actions related to collecting a card from the Towers.
  * This action can eventually have a "bonus" (called discount) that represents a discount on the action's cost.
@@ -35,6 +37,23 @@ public class CardAction implements ActionDescription {
         this.basicAction = basicAction;
         this.numberOfServants = numberOfServants;
         this.discount = discount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        CardAction that = (CardAction) o;
+        return getNumberOfServants() == that.getNumberOfServants() &&
+                Objects.equals(getBasicAction(), that.getBasicAction()) &&
+                Objects.equals(getDiscount(), that.getDiscount());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBasicAction(), getNumberOfServants(), getDiscount());
     }
 
     @Override

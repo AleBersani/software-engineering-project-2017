@@ -77,7 +77,8 @@ class ParserLightModelTest {
     }
 
     @Test
-    void testParseBonusTilesInformation() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseBonusTilesInformation()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseBonusTilesInformation";
         Class targetClass = parserLightModel.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonArray.class, List.class);
@@ -125,7 +126,8 @@ class ParserLightModelTest {
     }
 
     @Test
-    void testParseDevelopmentCardsLight() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseDevelopmentCardsLight()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseDevelopmentCardsLight";
         Class targetClass = parserLightModel.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonArray.class, List.class);
@@ -184,14 +186,16 @@ class ParserLightModelTest {
     }
 
     @Test
-    void testParseExcommunicationTilesLight() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseExcommunicationTilesLight()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseExcommunicationTilesLight";
         Class targetClass = parserLightModel.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonArray.class, List.class);
         method.setAccessible(true);
         String json = "[{\"name\": \"1.1\"," +
                 "\"effectDescription\": \"Each time you gain Military points (from action spaces or from your cards), " +
-                "gain 1 fewer Military point. (If you have more cards that give you Military points, consider each card a single source, " +
+                "gain 1 fewer Military point. (If you have more cards that give you Military points," +
+                " consider each card a single source, " +
                 "so you gain -1 Military point for each card.)\"" +
                 "},{" +
                 "\"name\": \"1.2\"," +
@@ -218,7 +222,8 @@ class ParserLightModelTest {
     }
 
     @Test
-    void testParseSingleExcommunicationTile() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseSingleExcommunicationTile()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseSingleExcommunicationTile";
         Class targetClass = parserLightModel.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
@@ -269,7 +274,8 @@ class ParserLightModelTest {
     }
 
     @Test
-    void testParseSingleLeaderCardLight() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseSingleLeaderCardLight()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseSingleLeaderCardLight";
         Class targetClass = parserLightModel.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);

@@ -6,6 +6,7 @@ import it.polimi.ingsw.server.gamelogic.cards.development.Venture;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that describes the deck as a set of lists of Development Cards
@@ -21,6 +22,24 @@ public class Deck {
         buildings = new ArrayList<>();
         characters = new ArrayList<>();
         ventures = new ArrayList<>();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Deck deck = (Deck) o;
+        return Objects.equals(getTerritories(), deck.getTerritories()) &&
+                Objects.equals(getBuildings(), deck.getBuildings()) &&
+                Objects.equals(getCharacters(), deck.getCharacters()) &&
+                Objects.equals(getVentures(), deck.getVentures());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTerritories(), getBuildings(), getCharacters(), getVentures());
     }
 
     public int getNumberOfTerritories() {

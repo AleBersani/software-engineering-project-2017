@@ -6,6 +6,7 @@ import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModif
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -22,6 +23,24 @@ public class PlayerCardsEffects {
         playerOrderWeight = 0;
         requirementsModifiers = new ArrayList<>();
         rewardsModifiers = new ArrayList<>();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        PlayerCardsEffects that = (PlayerCardsEffects) o;
+        return getPlayerOrderWeight() == that.getPlayerOrderWeight() &&
+                Objects.equals(getCardFlashAction(), that.getCardFlashAction()) &&
+                Objects.equals(getRequirementsModifiers(), that.getRequirementsModifiers()) &&
+                Objects.equals(getRewardsModifiers(), that.getRewardsModifiers());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCardFlashAction(), getPlayerOrderWeight(), getRequirementsModifiers(), getRewardsModifiers());
     }
 
     public void addRequirementsModifier(RequirementsModifier requirementsModifier) {

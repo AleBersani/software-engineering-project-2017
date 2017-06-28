@@ -31,6 +31,25 @@ public class Player {
         playerCardsEffects = new PlayerCardsEffects();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Player player = (Player) o;
+        return Objects.equals(getPlayerDetails(), player.getPlayerDetails()) &&
+                Objects.equals(getPlayerBoard(), player.getPlayerBoard()) &&
+                Objects.equals(getLeaderCards(), player.getLeaderCards()) &&
+                Objects.equals(getPossibleActionsForTurn(), player.getPossibleActionsForTurn()) &&
+                Objects.equals(getPlayerCardsEffects(), player.getPlayerCardsEffects());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPlayerDetails(), getPlayerBoard(), getLeaderCards(), getPossibleActionsForTurn(), getPlayerCardsEffects());
+    }
+
     public void setPlayerGoods(Goods goods) {
         playerBoard.setGoods(goods);
     }

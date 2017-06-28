@@ -5,6 +5,7 @@ import it.polimi.ingsw.shared.model.PawnColor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -22,6 +23,24 @@ public class PlayerBoard {
         this.goods = goods;
         deck = new Deck();
         pawns = new ArrayList<>();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        PlayerBoard that = (PlayerBoard) o;
+        return Objects.equals(getBonusTiles(), that.getBonusTiles()) &&
+                Objects.equals(getGoods(), that.getGoods()) &&
+                Objects.equals(getDeck(), that.getDeck()) &&
+                Objects.equals(getPawns(), that.getPawns());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBonusTiles(), getGoods(), getDeck(), getPawns());
     }
 
     public Goods getProductionBonus() {

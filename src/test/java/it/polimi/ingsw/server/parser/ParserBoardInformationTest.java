@@ -7,7 +7,10 @@ import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
-import it.polimi.ingsw.server.gamelogic.board.*;
+import it.polimi.ingsw.server.gamelogic.board.CouncilPalace;
+import it.polimi.ingsw.server.gamelogic.board.MarketSpace;
+import it.polimi.ingsw.server.gamelogic.board.ProductionHarvestSpace;
+import it.polimi.ingsw.server.gamelogic.board.Space;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +23,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ParserBoardInformationTest {
     private ParserBoardInformation parserBoardInformation;
@@ -96,7 +100,8 @@ class ParserBoardInformationTest {
     }
 
     @Test
-    void testParseProductionHarvestLists() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseProductionHarvestLists()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseProductionHarvestLists";
         Class targetClass = parserBoardInformation.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, List.class, JsonArray.class);

@@ -5,6 +5,7 @@ import it.polimi.ingsw.server.gamelogic.modifiers.requirements.Requirements;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.BasicRewards;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that implements the Visitor interface (ActionVisitor). Given the type of Action, set by the Action
@@ -20,6 +21,23 @@ public class Action {
         this.actionDescription = actionDescription;
         this.requiredRequirements = requiredRequirements;
         this.basicRewardsList = basicRewardsList;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Action action = (Action) o;
+        return Objects.equals(getActionDescription(), action.getActionDescription()) &&
+                Objects.equals(getRequiredRequirements(), action.getRequiredRequirements()) &&
+                Objects.equals(getBasicRewardsList(), action.getBasicRewardsList());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getActionDescription(), getRequiredRequirements(), getBasicRewardsList());
     }
 
     public ActionDescription getActionDescription() {

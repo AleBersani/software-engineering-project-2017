@@ -107,7 +107,8 @@ class ParserModifiersTest {
     }
 
     @Test
-    void testParseCanPlaceOnOccupiedSpace() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseCanPlaceOnOccupiedSpace()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseCanPlaceOnOccupiedSpace";
         Class targetClass = parserModifiers.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
@@ -139,7 +140,8 @@ class ParserModifiersTest {
     }
 
     @Test
-    void testParseFixedColouredPawnsValue() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseFixedColouredPawnsValue()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseFixedColouredPawnsValue";
         Class targetClass = parserModifiers.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
@@ -160,7 +162,8 @@ class ParserModifiersTest {
     }
 
     @Test
-    void testParseFixedColouredPawnValue() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseFixedColouredPawnValue()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseFixedColouredPawnValue";
         Class targetClass = parserModifiers.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, int.class);
@@ -210,13 +213,15 @@ class ParserModifiersTest {
             add(ActionType.YELLOW_TOWER);}};
         List<PawnColor> pawnColors = new ArrayList<PawnColor>(){{add(PawnColor.ORANGE); add(PawnColor.BLACK);
             add(PawnColor.NEUTRAL);}};
-        RequirementsModifier resultExpected = new MalusColouredPawns(new AvailableActions(availableActions), pawnColors, 2);
+        RequirementsModifier resultExpected = new MalusColouredPawns(
+                new AvailableActions(availableActions), pawnColors, 2);
         RequirementsModifier result = (RequirementsModifier) method.invoke(parserModifiers, obj);
         assertTrue(resultExpected.equals(result));
     }
 
     @Test
-    void testParseNoBonusGoodsOnTower() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseNoBonusGoodsOnTower()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseNoBonusGoodsOnTower";
         Class targetClass = parserModifiers.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
@@ -248,7 +253,8 @@ class ParserModifiersTest {
     }
 
     @Test
-    void testParseNoMilitaryForTerritories() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseNoMilitaryForTerritories()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseNoMilitaryForTerritories";
         Class targetClass = parserModifiers.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
@@ -264,7 +270,8 @@ class ParserModifiersTest {
     }
 
     @Test
-    void testParseNoOccupiedTowerCost() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseNoOccupiedTowerCost()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseNoOccupiedTowerCost";
         Class targetClass = parserModifiers.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
@@ -336,7 +343,8 @@ class ParserModifiersTest {
     }
 
     @Test
-    void testParseNoTowerBonusRewards() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseNoTowerBonusRewards()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseNoTowerBonusRewards";
         Class targetClass = parserModifiers.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);

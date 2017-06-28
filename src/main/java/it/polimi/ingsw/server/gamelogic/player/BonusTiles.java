@@ -2,6 +2,8 @@ package it.polimi.ingsw.server.gamelogic.player;
 
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 
+import java.util.Objects;
+
 /**
  * Class that describes a Bonus Tile
  */
@@ -12,6 +14,22 @@ public class BonusTiles {
     public BonusTiles(Goods productionBonus, Goods harvestBonus) {
         this.productionBonus = productionBonus;
         this.harvestBonus = harvestBonus;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        BonusTiles that = (BonusTiles) o;
+        return Objects.equals(getProductionBonus(), that.getProductionBonus()) &&
+                Objects.equals(getHarvestBonus(), that.getHarvestBonus());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getProductionBonus(), getHarvestBonus());
     }
 
     public Goods getProductionBonus() {

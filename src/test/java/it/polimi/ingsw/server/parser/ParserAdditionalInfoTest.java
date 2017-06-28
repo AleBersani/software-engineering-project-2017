@@ -7,7 +7,6 @@ import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.*;
-import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.modifiers.EndGameRewardsModifier;
 import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.modifiers.LessVictoryBasedOnBuildingsCosts;
@@ -16,6 +15,7 @@ import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.DoubleS
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.BonusRewards;
 import it.polimi.ingsw.shared.model.ActionType;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +35,8 @@ class ParserAdditionalInfoTest {
     }
 
     @Test
-    void testParseEndGameRewardsModifier() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseEndGameRewardsModifier()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseEndGameRewardsModifier";
         Class targetClass = parserAdditionalInfo.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
@@ -65,7 +66,8 @@ class ParserAdditionalInfoTest {
     }
 
     @Test
-    void testParseConditionalProduction() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseConditionalProduction()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseConditionalProduction";
         Class targetClass = parserAdditionalInfo.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, String.class);
@@ -78,7 +80,8 @@ class ParserAdditionalInfoTest {
     }
 
     @Test
-    void testParseGoodsBasedOnPossessions() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseGoodsBasedOnPossessions()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseGoodsBasedOnPossessions";
         Class targetClass = parserAdditionalInfo.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, String.class);
@@ -186,11 +189,11 @@ class ParserAdditionalInfoTest {
                         "\"points\": { \"victory\": \"2\", \"military\": \"0\", \"faith\": \"3\"}," +
                 "       \"councilePrivilege\": \"1\"}]}";
         JsonObject obj = (JsonObject) new JsonParser().parse(json);
-        ExchangingGoods exchangingGoods = new ExchangingGoods(new Goods(new Resources(0,0,3,1),
-                                                                        new Points(2,0,3)), 1);
+        ExchangingGoods exchangingGoods = new ExchangingGoods(
+                new Goods(new Resources(0,0,3,1),
+                        new Points(2,0,3)), 1);
         AdditionalCardInfo resultExpected = new CardFlashExchangingGoods("Test1", exchangingGoods);
         AdditionalCardInfo result = (AdditionalCardInfo) method.invoke(parserAdditionalInfo, obj, "Test1");
         assertTrue(resultExpected.equals(result));
     }
-
 }

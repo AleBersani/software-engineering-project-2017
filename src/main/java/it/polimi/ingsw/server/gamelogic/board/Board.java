@@ -7,6 +7,7 @@ import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -28,6 +29,26 @@ public class Board {
         excommunicationTiles = new ArrayList<>();
         dices = new ArrayList<>();
         leaderInformationList = new ArrayList<>();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Board board = (Board) o;
+        return Objects.equals(getTowers(), board.getTowers()) &&
+                Objects.equals(getCouncilPalace(), board.getCouncilPalace()) &&
+                Objects.equals(getBoardActionSpaces(), board.getBoardActionSpaces()) &&
+                Objects.equals(getExcommunicationTiles(), board.getExcommunicationTiles()) &&
+                Objects.equals(getDices(), board.getDices()) &&
+                Objects.equals(getLeaderInformationList(), board.getLeaderInformationList());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTowers(), getCouncilPalace(), getBoardActionSpaces(), getExcommunicationTiles(), getDices(), getLeaderInformationList());
     }
 
     /**

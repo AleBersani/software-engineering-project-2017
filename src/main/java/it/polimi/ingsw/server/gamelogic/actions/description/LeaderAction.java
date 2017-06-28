@@ -3,6 +3,8 @@ package it.polimi.ingsw.server.gamelogic.actions.description;
 import it.polimi.ingsw.server.gamelogic.actions.ActionVisitor;
 import it.polimi.ingsw.shared.model.ActionType;
 
+import java.util.Objects;
+
 /**
  * Class that represents every action related to a Leader Card, in particular:
  *      - placement of a Leader
@@ -16,6 +18,22 @@ public class LeaderAction implements ActionDescription {
     public LeaderAction(ActionType actionType, String leaderName) {
         this.actionType = actionType;
         this.leaderName = leaderName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        LeaderAction that = (LeaderAction) o;
+        return getActionType() == that.getActionType() &&
+                Objects.equals(getLeaderName(), that.getLeaderName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getActionType(), getLeaderName());
     }
 
     @Override

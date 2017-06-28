@@ -10,9 +10,9 @@ import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.Excommunicati
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderInformation;
-import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.enums.LeaderCategory;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -59,14 +59,16 @@ class ParserCardsTest {
                 "\"councilePrivilege\": \"0\"}]}]";
         JsonArray obj = (JsonArray) new JsonParser().parse(json);
         List<Territory> resultExpected = new ArrayList<>();
-        List<Goods> costCard1 = new ArrayList<Goods>(){{add(new Goods(new Resources(0, 0, 0, 4),
+        List<Goods> costCard1 = new ArrayList<Goods>(){{add(new Goods(
+                new Resources(0, 0, 0, 4),
                 new Points(2, 0, 0)));}};
         BasicDevelopmentCard card1 = new BasicDevelopmentCard(new CardInformation(25, "Zecca",
                 PeriodNumber.FIRST, GeneralColor.GREEN), costCard1);
         resultExpected.add(new Territory(card1,5
                 ,new ExchangingGoods(new Goods(new Resources(0,0,0,1),
                 new Points(2,0,0)),3)));
-        List<Goods> costCard2 = new ArrayList<Goods>(){{add(new Goods(new Resources(0, 0, 0, 4),
+        List<Goods> costCard2 = new ArrayList<Goods>(){{add(new Goods(
+                new Resources(0, 0, 0, 4),
                 new Points(0, 0, 1)));}};
         BasicDevelopmentCard card2 = new BasicDevelopmentCard(new CardInformation(28, "Teatro",
                 PeriodNumber.FIRST, GeneralColor.GREEN), costCard2);
@@ -108,14 +110,16 @@ class ParserCardsTest {
                 "\"councilePrivilege\": \"0\"}]}]";
         JsonArray obj = (JsonArray) new JsonParser().parse(json);
         List<Building> resultExpected = new ArrayList<>();
-        List<Goods> costCard1 = new ArrayList<Goods>(){{add(new Goods(new Resources(0, 0, 0, 4),
+        List<Goods> costCard1 = new ArrayList<Goods>(){{add(new Goods(
+                new Resources(0, 0, 0, 4),
                 new Points(2, 0, 0)));}};
         BasicDevelopmentCard card1 = new BasicDevelopmentCard(new CardInformation(25, "Zecca",
                 PeriodNumber.FIRST, GeneralColor.YELLOW), costCard1);
         resultExpected.add(new Building(card1,5
                 ,new ExchangingGoods(new Goods(new Resources(0,0,0,1),
                 new Points(2,0,0)),3)));
-        List<Goods> costCard2 = new ArrayList<Goods>(){{add(new Goods(new Resources(0, 0, 0, 4),
+        List<Goods> costCard2 = new ArrayList<Goods>(){{add(new Goods(
+                new Resources(0, 0, 0, 4),
                 new Points(0, 0, 1)));}};
         BasicDevelopmentCard card2 = new BasicDevelopmentCard(new CardInformation(28, "Teatro",
                 PeriodNumber.FIRST, GeneralColor.YELLOW), costCard2);
@@ -188,17 +192,21 @@ class ParserCardsTest {
                 "\"endGamePoints\": [{\"victory\": \"25\",\"military\": \"0\",\"faith\": \"0\"}]}]";
         JsonArray obj = (JsonArray) new JsonParser().parse(json);
         List<Venture> resultExpected = new ArrayList<>();
-        List<Goods> costCard1 = new ArrayList<Goods>(){{add(new Goods(new Resources(0, 0, 0, 4),
+        List<Goods> costCard1 = new ArrayList<Goods>(){{add(new Goods(
+                new Resources(0, 0, 0, 4),
                 new Points(0, 0, 0)));}};
-        BasicDevelopmentCard card1 = new BasicDevelopmentCard(new CardInformation(73, "Ingaggiare reclute",
-                PeriodNumber.FIRST, GeneralColor.PURPLE), costCard1);
+        BasicDevelopmentCard card1 = new BasicDevelopmentCard(
+                new CardInformation(73, "Ingaggiare reclute",
+                        PeriodNumber.FIRST, GeneralColor.PURPLE), costCard1);
         Goods endGameCard1 = new Goods(new Resources(), new Points(4,0,0));
         List<Goods> reqCard1 = new ArrayList<Goods>(){{add(new Goods(new Resources(), new Points()));}};
         resultExpected.add(new Venture(card1, endGameCard1, reqCard1));
-        List<Goods> costCard2 = new ArrayList<Goods>(){{add(new Goods(new Resources(3,0,1,4),
+        List<Goods> costCard2 = new ArrayList<Goods>(){{add(new Goods(
+                new Resources(3,0,1,4),
                 new Points(1,1,0)));}};
-        BasicDevelopmentCard card2 = new BasicDevelopmentCard(new CardInformation(76, "Riparare la Chiesa",
-                PeriodNumber.THIRD, GeneralColor.PURPLE), costCard2);
+        BasicDevelopmentCard card2 = new BasicDevelopmentCard(
+                new CardInformation(76, "Riparare la Chiesa",
+                        PeriodNumber.THIRD, GeneralColor.PURPLE), costCard2);
         Goods endGameCard2 = new Goods(new Resources(), new Points(25,0,0));
         List<Goods> reqCard2 = new ArrayList<Goods>(){{add(new Goods(new Resources(), new Points()));}};
         resultExpected.add(new Venture(card2, endGameCard2, reqCard2));
@@ -241,7 +249,8 @@ class ParserCardsTest {
                 "\"points\": {\"victory\": \"0\",\"military\": \"3\",\"faith\": \"0\"}," +
                 "\"councilePrivilege\": \"3\"}]}";
         JsonObject obj = (JsonObject) new JsonParser().parse(json);
-        ExchangingGoods resultExpected = new ExchangingGoods(new Goods(new Resources(0,0,0,1),
+        ExchangingGoods resultExpected = new ExchangingGoods(new Goods(
+                new Resources(0,0,0,1),
                 new Points(0, 3, 0)), 3);
         ExchangingGoods result = (ExchangingGoods) method.invoke(parserCards, obj, fieldName);
         assertTrue(resultExpected.equals(result));
@@ -276,7 +285,8 @@ class ParserCardsTest {
     }
 
     @Test
-    void testParseExcommunicationTiles() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseExcommunicationTiles()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseExcommunicationTiles";
         Class targetClass = parserCards.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonArray.class);
@@ -297,7 +307,8 @@ class ParserCardsTest {
     }
 
     @Test
-    void testParseSingleExcommunicationTile() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testParseSingleExcommunicationTile()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseSingleExcommunicationTile";
         Class targetClass = parserCards.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
@@ -329,14 +340,18 @@ class ParserCardsTest {
         List<LeaderCard> resultExpected = new ArrayList<>();
         List<CardsRequired> cardsRequired1 = new ArrayList<CardsRequired>(){{add(
                 new CardsRequired(5, GeneralColor.PURPLE));}};
-        List<LeaderCost> cost1 = new ArrayList<LeaderCost>(){{add(new LeaderCost(new Goods(new Resources(0, 0, 0, 0),
+        List<LeaderCost> cost1 = new ArrayList<LeaderCost>(){{add(new LeaderCost(new Goods(
+                new Resources(0, 0, 0, 0),
                 new Points(0,0,0)), cardsRequired1));}};
-        resultExpected.add(new LeaderCard(new LeaderInformation("Francesco Sforza", LeaderCategory.CONSUMABLE), cost1));
+        resultExpected.add(new LeaderCard(new LeaderInformation(
+                "Francesco Sforza", LeaderCategory.CONSUMABLE), cost1));
         List<CardsRequired> cardsRequired2 = new ArrayList<CardsRequired>(){{add(
                 new CardsRequired(5, GeneralColor.GREEN));}};
-        List<LeaderCost> cost2 = new ArrayList<LeaderCost>(){{add(new LeaderCost(new Goods(new Resources(0, 0, 5, 0),
+        List<LeaderCost> cost2 = new ArrayList<LeaderCost>(){{add(new LeaderCost(
+                new Goods(new Resources(0, 0, 5, 0),
                 new Points(0,0,1)), cardsRequired2));}};
-        resultExpected.add(new LeaderCard(new LeaderInformation("Ludovico Ariosto", LeaderCategory.PERMANENT), cost2));
+        resultExpected.add(new LeaderCard(new LeaderInformation("Ludovico Ariosto", LeaderCategory.PERMANENT),
+                cost2));
         List<LeaderCard> result = (List<LeaderCard>) method.invoke(parserCards, obj);
         for(int i=0; i<resultExpected.size(); i++){
             assertTrue(resultExpected.get(i).equals(result.get(i)));
@@ -382,10 +397,12 @@ class ParserCardsTest {
                 "\"resources\": {\"woods\": \"0\",\"stones\": \"2\",\"servants\": \"0\",\"coins\": \"0\"}," +
                 "\"points\": {\"victory\": \"0\",\"military\": \"0\",\"faith\": \"0\"}}]";
         JsonArray obj = (JsonArray) new JsonParser().parse(json);
-        LeaderCost cost1 = new LeaderCost(new Goods(new Resources(1, 0, 0, 0), new Points(0,0,0)),
+        LeaderCost cost1 = new LeaderCost(new Goods(new Resources(1, 0, 0, 0),
+                new Points(0,0,0)),
                 new ArrayList<CardsRequired>(){{add(new CardsRequired(2, GeneralColor.GREEN));
                     add(new CardsRequired(5, GeneralColor.YELLOW));}});
-        LeaderCost cost2 = new LeaderCost(new Goods(new Resources(0, 2, 0, 0), new Points(0,0,0)),
+        LeaderCost cost2 = new LeaderCost(new Goods(new Resources(0, 2, 0, 0),
+                new Points(0,0,0)),
                 new ArrayList<CardsRequired>(){{add(new CardsRequired(6, GeneralColor.YELLOW));}});
         List<LeaderCost> resultExpected = new ArrayList<LeaderCost>(){{add(cost1); add(cost2);}};
         CardsRequired card1, card2;

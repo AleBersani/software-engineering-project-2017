@@ -1,6 +1,7 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that describes the areas of the board where if the player puts one of his/her pawns he/she can
@@ -18,6 +19,23 @@ public class BoardActionSpaces {
         this.productionArea = productionArea;
         this.harvestArea = harvestArea;
         this.marketArea = marketArea;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        BoardActionSpaces that = (BoardActionSpaces) o;
+        return Objects.equals(getProductionArea(), that.getProductionArea()) &&
+                Objects.equals(getHarvestArea(), that.getHarvestArea()) &&
+                Objects.equals(getMarketArea(), that.getMarketArea());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getProductionArea(), getHarvestArea(), getMarketArea());
     }
 
     /**
