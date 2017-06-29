@@ -1,6 +1,5 @@
 package it.polimi.ingsw.client.cli.model;
 
-import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
 import java.util.Objects;

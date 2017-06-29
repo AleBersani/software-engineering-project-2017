@@ -2,13 +2,9 @@ package it.polimi.ingsw.server.gamelogic.modifiers.requirements;
 
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
-import it.polimi.ingsw.server.gamelogic.player.BonusTiles;
-import it.polimi.ingsw.server.gamelogic.player.Pawn;
-import it.polimi.ingsw.server.gamelogic.player.Player;
-import it.polimi.ingsw.server.gamelogic.player.PlayerBoard;
+import it.polimi.ingsw.server.gamelogic.player.*;
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.PawnColor;
-import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -41,6 +37,43 @@ class TowerActionRequirementsTest {
         pawns.add(new Pawn(3, PawnColor.BLACK));
         pawns.add(new Pawn(1, PawnColor.NEUTRAL));
         player.getPlayerBoard().setPawns(pawns);
+    }
+
+    @Test
+    void testEqualsTrue() {
+        SpaceActionRequirements spaceActionRequirements = new SpaceActionRequirements(
+                ActionType.BLUE_TOWER, PawnColor.BLACK,
+                4, 3, 1, false);
+        Goods requiredGoods = new Goods(new Resources(5,4,3,2));
+        Goods occupiedTowerCost = new Goods();
+        Goods bonusGoods = new Goods();
+
+        TowerActionRequirements towerActionRequirementsToConfront = new TowerActionRequirements(spaceActionRequirements,
+                requiredGoods, bonusGoods,
+                occupiedTowerCost, false, false);
+        assertTrue(towerActionRequirementsToConfront.equals(towerActionRequirements));
+    }
+
+    @Test
+    void testEqualsFalse() {
+        SpaceActionRequirements spaceActionRequirements = new SpaceActionRequirements(
+                ActionType.BLUE_TOWER, PawnColor.ORANGE,
+                2, 5, 1, false);
+        Goods requiredGoods = new Goods(new Resources(5,4,3,2));
+        Goods bonusGoods = new Goods();
+        Goods occupiedTowerCost = new Goods();
+
+        TowerActionRequirements towerActionRequirementsToConfront = new TowerActionRequirements(spaceActionRequirements,
+                requiredGoods, bonusGoods,
+                occupiedTowerCost, false, false);
+        assertFalse(towerActionRequirementsToConfront.equals(towerActionRequirements));
+
+    }
+
+    @Test
+    void testEqualsDifferent() {
+        String obj = "";
+        assertFalse(towerActionRequirements.equals(obj));
     }
 
     @Test
