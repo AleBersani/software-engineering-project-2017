@@ -17,9 +17,29 @@ class BoardActionSpacesTest {
     }
 
     @Test
-    void testEquals() {
+    void testEqualsTrue() {
         BoardActionSpaces boardActionSpacesToConfront = new BoardActionSpaces(new ArrayList<>(),
                 new ArrayList<>(), new ArrayList<>());
         assertTrue(boardActionSpaces.equals(boardActionSpacesToConfront));
+    }
+
+    @Test
+    void testHashCodeTrue() {
+        BoardActionSpaces boardActionSpacesToConfront = new BoardActionSpaces(new ArrayList<>(),
+                new ArrayList<>(), new ArrayList<>());
+        assertTrue(boardActionSpaces.hashCode() == boardActionSpacesToConfront.hashCode());
+    }
+
+    @Test
+    void testGetProductionArea() {
+        ArrayList<ProductionHarvestSpace> productionHarvestSpaces = new ArrayList<>();
+        assertEquals(productionHarvestSpaces, boardActionSpaces.getProductionArea());
+        assertEquals(productionHarvestSpaces, boardActionSpaces.getHarvestArea());
+    }
+
+    @Test
+    void testGetMarketArea() {
+        ArrayList<MarketSpace> marketSpaces = new ArrayList<>();
+        assertEquals(marketSpaces, boardActionSpaces.getMarketArea());
     }
 }

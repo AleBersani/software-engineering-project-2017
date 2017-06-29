@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BoardActionTest {
@@ -18,10 +19,37 @@ class BoardActionTest {
     }
 
     @Test
-    void equals() {
+    void testEqualsTrue() {
         BoardAction boardActionToConfront = new BoardAction(new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1,
                 1));
         assertTrue(boardAction.equals(boardActionToConfront));
+    }
+
+    @Test
+    void testEqualsFalse() {
+        BoardAction boardActionToConfront = new BoardAction(new BasicAction(ActionType.GREEN_TOWER, BoardIdentifier.T_B_1,
+                2));
+        assertFalse(boardAction.equals(boardActionToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent() {
+        String different = "";
+        assertFalse(boardAction.equals(different));
+    }
+
+    @Test
+    void testHashCodeTrue() {
+        BoardAction boardActionToConfront = new BoardAction(new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1,
+                1));
+        assertTrue(boardAction.hashCode() == boardActionToConfront.hashCode());
+    }
+
+    @Test
+    void testHashCodeFalse() {
+        BoardAction boardActionToConfront = new BoardAction(new BasicAction(ActionType.GREEN_TOWER, BoardIdentifier.T_B_1,
+                2));
+        assertFalse(boardAction.hashCode() == boardActionToConfront.hashCode());
     }
 
     @Test
