@@ -1,7 +1,8 @@
-package it.polimi.ingsw.client.connection.middleware;
+package it.polimi.ingsw.client.middleware;
 
+import it.polimi.ingsw.client.gui.notify.PlayerLoginNotifier;
+import it.polimi.ingsw.shared.requests.serverclient.LoginResponse;
 import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
-import it.polimi.ingsw.shared.requests.serverclient.SuccessfulLogin;
 import it.polimi.ingsw.shared.requests.serverclient.UpdateActionSpaces;
 import it.polimi.ingsw.shared.requests.serverclient.UpdateTowers;
 
@@ -22,8 +23,14 @@ public class ClientReceiverHandler implements ClientReceiver {
     }
 
     @Override
-    public void visitServerClientRequest(SuccessfulLogin successfulLogin) {
-        System.out.println("Login successful");
+    public void visitServerClientRequest(LoginResponse loginResponse) {
+        if (loginResponse.isSuccessful()) {
+            System.out.println("Login successful");
+        } else {
+            System.out.println("Login unsuccessful");
+        }
+        PlayerLoginNotifier guiNotifier = PlayerLoginNotifier.getInstance();
+        guiNotifier.updateGui(loginResponse.isSuccessful());
     }
 
     @Override
