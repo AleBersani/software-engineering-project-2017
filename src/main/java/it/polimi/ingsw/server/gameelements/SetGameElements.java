@@ -1,4 +1,4 @@
-package it.polimi.ingsw.server.gamecontroller.gameelements;
+package it.polimi.ingsw.server.gameelements;
 
 import it.polimi.ingsw.server.parser.ParserAdditionalInfo;
 import it.polimi.ingsw.server.parser.ParserBoardInformation;
@@ -28,6 +28,7 @@ public class SetGameElements implements Runnable {
     public void run() {
         try {
             setupElements();
+            LOGGER.info("Game elements loaded");
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: cannot run set game elements thread", e);
         }

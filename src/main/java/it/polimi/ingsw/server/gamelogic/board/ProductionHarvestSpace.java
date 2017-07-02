@@ -8,15 +8,18 @@ import java.util.Objects;
 public class ProductionHarvestSpace {
     private Space space;
     private int malusValue;
-
-    public ProductionHarvestSpace(Space space) {
-        this.space = space;
-        malusValue = 0;
-    }
+    private int numberOfRequiredPlayers;
 
     public ProductionHarvestSpace(Space space, int malusValue) {
         this.space = space;
         this.malusValue = malusValue;
+        int numberOfRequiredPlayers = 0;
+    }
+
+    public ProductionHarvestSpace(Space space, int malusValue, int numberOfRequiredPlayers) {
+        this.space = space;
+        this.malusValue = malusValue;
+        this.numberOfRequiredPlayers = numberOfRequiredPlayers;
     }
 
     @Override
@@ -27,12 +30,13 @@ public class ProductionHarvestSpace {
             return false;
         ProductionHarvestSpace that = (ProductionHarvestSpace) o;
         return getMalusValue() == that.getMalusValue() &&
+                getNumberOfRequiredPlayers() == that.getNumberOfRequiredPlayers() &&
                 Objects.equals(getSpace(), that.getSpace());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getSpace(), getMalusValue());
+        return Objects.hash(getSpace(), getMalusValue(), getNumberOfRequiredPlayers());
     }
 
     public Space getSpace() {
@@ -49,5 +53,13 @@ public class ProductionHarvestSpace {
 
     public void setMalusValue(int malusValue) {
         this.malusValue = malusValue;
+    }
+
+    public int getNumberOfRequiredPlayers() {
+        return numberOfRequiredPlayers;
+    }
+
+    public void setNumberOfRequiredPlayers(int numberOfRequiredPlayers) {
+        this.numberOfRequiredPlayers = numberOfRequiredPlayers;
     }
 }

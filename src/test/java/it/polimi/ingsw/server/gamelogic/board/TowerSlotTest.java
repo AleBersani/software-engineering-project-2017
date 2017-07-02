@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TowerSlotTest {
-    private TowerSlot<Character> towerSlot;
+    private TowerSlot towerSlot;
 
     @BeforeEach
     void setUp() {
@@ -27,7 +27,7 @@ class TowerSlotTest {
 
     @Test
     void testEqualsTrue() {
-        TowerSlot<Character> towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_1, 1),
+        TowerSlot towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_1, 1),
                 new Goods(), new Character( new BasicDevelopmentCard(
                 new CardInformation(1,"", PeriodNumber.FIRST , GeneralColor.BLUE),
                 new ArrayList<>())));
@@ -36,7 +36,7 @@ class TowerSlotTest {
 
     @Test
     void testEqualsFalse() {
-        TowerSlot<Character> towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_2, 4),
+        TowerSlot towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_2, 4),
                 new Goods(), new Character( new BasicDevelopmentCard(
                 new CardInformation(1,"", PeriodNumber.SECOND , GeneralColor.BLUE),
                 new ArrayList<>())));
@@ -51,7 +51,7 @@ class TowerSlotTest {
 
     @Test
     void testHashCodeTrue() {
-        TowerSlot<Character> towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_1, 1),
+        TowerSlot towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_1, 1),
                 new Goods(), new Character( new BasicDevelopmentCard(
                 new CardInformation(1,"", PeriodNumber.FIRST , GeneralColor.BLUE),
                 new ArrayList<>())));
@@ -60,7 +60,7 @@ class TowerSlotTest {
 
     @Test
     void testHashCodeFalse() {
-        TowerSlot<Character> towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_2, 4),
+        TowerSlot towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_2, 4),
                 new Goods(), new Character( new BasicDevelopmentCard(
                 new CardInformation(1,"", PeriodNumber.SECOND , GeneralColor.BLUE),
                 new ArrayList<>())));

@@ -1,5 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,6 +13,12 @@ public class BoardActionSpaces {
     private List<ProductionHarvestSpace> productionArea;
     private List<ProductionHarvestSpace> harvestArea;
     private List<MarketSpace> marketArea;
+
+    public BoardActionSpaces() {
+        productionArea = new ArrayList<>();
+        harvestArea = new ArrayList<>();
+        marketArea = new ArrayList<>();
+    }
 
     public BoardActionSpaces(List<ProductionHarvestSpace> productionArea,
                              List<ProductionHarvestSpace> harvestArea,

@@ -22,6 +22,15 @@ public class Board {
     private List<Dice> dices;
     private List<LeaderInformation> leaderInformationList;
 
+    public Board() {
+        towers = new ArrayList<>();
+        councilPalace = new CouncilPalace();
+        boardActionSpaces = new BoardActionSpaces();
+        excommunicationTiles = new ArrayList<>();
+        dices = new ArrayList<>();
+        leaderInformationList = new ArrayList<>();
+    }
+
     public Board(List<Tower> towers, CouncilPalace councilPalace, BoardActionSpaces boardActionSpaces) {
         this.towers = towers;
         this.councilPalace = councilPalace;

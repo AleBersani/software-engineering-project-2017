@@ -10,10 +10,18 @@ import java.util.Objects;
 public class MarketSpace {
     private Space space;
     private ExchangingGoods exchangingGoods;
+    private int numberOfRequiredPlayers;
 
     public MarketSpace(Space space, ExchangingGoods exchangingGoods) {
         this.space = space;
         this.exchangingGoods = exchangingGoods;
+        numberOfRequiredPlayers = 0;
+    }
+
+    public MarketSpace(Space space, ExchangingGoods exchangingGoods, int numberOfRequiredPlayers) {
+        this.space = space;
+        this.exchangingGoods = exchangingGoods;
+        this.numberOfRequiredPlayers = numberOfRequiredPlayers;
     }
 
     @Override
@@ -23,13 +31,14 @@ public class MarketSpace {
         if (o == null || getClass() != o.getClass())
             return false;
         MarketSpace that = (MarketSpace) o;
-        return Objects.equals(getSpace(), that.getSpace()) &&
+        return numberOfRequiredPlayers == that.numberOfRequiredPlayers &&
+                Objects.equals(getSpace(), that.getSpace()) &&
                 Objects.equals(getExchangingGoods(), that.getExchangingGoods());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getSpace(), getExchangingGoods());
+        return Objects.hash(getSpace(), getExchangingGoods(), numberOfRequiredPlayers);
     }
 
     public Space getSpace() {
@@ -46,5 +55,13 @@ public class MarketSpace {
 
     public void setExchangingGoods(ExchangingGoods exchangingGoods) {
         this.exchangingGoods = exchangingGoods;
+    }
+
+    public int getNumberOfRequiredPlayers() {
+        return numberOfRequiredPlayers;
+    }
+
+    public void setNumberOfRequiredPlayers(int numberOfRequiredPlayers) {
+        this.numberOfRequiredPlayers = numberOfRequiredPlayers;
     }
 }

@@ -1,18 +1,26 @@
 package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.connection.ConnectedClient;
+import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gamelogic.board.Board;
+import it.polimi.ingsw.server.gamelogic.board.Space;
+import it.polimi.ingsw.server.gamelogic.board.Tower;
+import it.polimi.ingsw.server.gamelogic.board.TowerSlot;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.server.gamelogic.player.Player;
+import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * //
  */
 public class Game implements Runnable, Observer {
-    private final int gameId;
+    private final static Logger LOGGER = Logger.getLogger(Game.class.getName());
+
+    private int gameId;
     private Queue<ConnectedClient> connectedClients;
 
     private List<Player> players;
@@ -26,12 +34,62 @@ public class Game implements Runnable, Observer {
         players = new ArrayList<>();
         periods = new ArrayList<>();
         developmentCards = new ArrayList<>();
-        //board = new Board();
+        board = new Board();
     }
 
     @Override
     public void run() {
-        System.out.println("Game!");
+        LOGGER.info("New game started! ID: " + gameId);
+        
+    }
+
+    private void setupBoard(int numberOfPlayer) {
+        setupTowers();
+        setupCouncilPalace();
+        setupActionSpaces();
+    }
+
+    private void setupTowers() {
+        List<TowerSlot> greenTowerSlot = new ArrayList<>();
+        for (Space space : BoardInformation.getGreenTower().keySet()) {
+            greenTowerSlot.add(new TowerSlot(space, BoardInformation.getGreenTower().get(space)));
+        }
+        Tower greenTower = new Tower(GeneralColor.GREEN, greenTowerSlot);
+
+        List<TowerSlot> blueTowerSlot = new ArrayList<>();
+        for (Space space : BoardInformation.getBlueTower().keySet()) {
+            greenTowerSlot.add(new TowerSlot(space, BoardInformation.getBlueTower().get(space)));
+        }
+        Tower blueTower = new Tower(GeneralColor.BLUE, blueTowerSlot);
+
+        List<TowerSlot> yellowTowerSlot = new ArrayList<>();
+        for (Space space : BoardInformation.getYellowTower().keySet()) {
+            greenTowerSlot.add(new TowerSlot(space, BoardInformation.getYellowTower().get(space)));
+        }
+        Tower buildingTower = new Tower(GeneralColor.YELLOW, yellowTowerSlot);
+
+        List<TowerSlot> purpleTowerSlot = new ArrayList<>();
+        for (Space space : BoardInformation.getPurpleTower().keySet()) {
+            greenTowerSlot.add(new TowerSlot(space, BoardInformation.getPurpleTower().get(space)));
+        }
+        Tower purpleTower = new Tower(GeneralColor.PURPLE, purpleTowerSlot);
+
+        List<Tower> towers = new ArrayList<>();
+        towers.add(greenTower);
+        towers.add(blueTower);
+        towers.add(buildingTower);
+        towers.add(purpleTower);
+        board.setTowers(towers);
+    }
+
+    private void setupCouncilPalace() {
+        board.setCouncilPalace(BoardInformation.getCouncilPalace());
+    }
+
+    private void setupActionSpaces() {
+        board.getBoardActionSpaces().setProductionArea(BoardInformation.getProductionArea());
+        board.getBoardActionSpaces().setHarvestArea(BoardInformation.getHarvestArea());
+        board.getBoardActionSpaces().setMarketArea(BoardInformation.getMarketArea());
     }
 
     @Override

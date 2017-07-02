@@ -3,7 +3,7 @@ package it.polimi.ingsw.server.parser;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import it.polimi.ingsw.server.gamecontroller.gameelements.BoardInformation;
+import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
