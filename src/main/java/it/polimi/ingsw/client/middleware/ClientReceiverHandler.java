@@ -1,10 +1,7 @@
 package it.polimi.ingsw.client.middleware;
 
 import it.polimi.ingsw.client.gui.notify.PlayerLoginNotifier;
-import it.polimi.ingsw.shared.requests.serverclient.LoginResponse;
-import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
-import it.polimi.ingsw.shared.requests.serverclient.UpdateActionSpaces;
-import it.polimi.ingsw.shared.requests.serverclient.UpdateTowers;
+import it.polimi.ingsw.shared.requests.serverclient.*;
 
 public class ClientReceiverHandler implements ClientReceiver {
     private ClientReceiverHandler() {}
@@ -18,8 +15,8 @@ public class ClientReceiverHandler implements ClientReceiver {
     }
 
     @Override
-    public void visitServerClientRequest(SimpleMessage simpleMessage) {
-        System.out.println(simpleMessage.getMessage());
+    public void visitServerClientRequest(LeadersChoice leadersChoice) {
+
     }
 
     @Override
@@ -31,6 +28,11 @@ public class ClientReceiverHandler implements ClientReceiver {
         }
         PlayerLoginNotifier guiNotifier = PlayerLoginNotifier.getInstance();
         guiNotifier.updateGui(loginResponse.isSuccessful());
+    }
+
+    @Override
+    public void visitServerClientRequest(SimpleMessage simpleMessage) {
+        System.out.println(simpleMessage.getMessage());
     }
 
     @Override

@@ -1,9 +1,11 @@
 package it.polimi.ingsw.server.middleware;
 
+import it.polimi.ingsw.server.ActiveGames;
 import it.polimi.ingsw.server.NewGameInformation;
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.connection.ConnectionStream;
 import it.polimi.ingsw.server.database.QueryHandler;
+import it.polimi.ingsw.server.gamecontroller.Game;
 import it.polimi.ingsw.shared.requests.clientserver.*;
 import it.polimi.ingsw.shared.requests.serverclient.LoginResponse;
 import it.polimi.ingsw.shared.support.Registrable;
@@ -12,6 +14,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.rmi.RemoteException;
 import java.util.Observable;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,6 +34,16 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
     @Override
     public void visitClientServerRequest(Choices choices) {
         System.out.println("Choice");
+    }
+
+    @Override
+    public void visitClientServerRequest(ChosenLeader chosenLeader) {
+        ActiveGames activeGames = ActiveGames.getInstance();
+        Optional<Game> optionalGame = activeGames.getGameById(chosenLeader.getGameId());
+        if (optionalGame.isPresent()) {
+            Game game = optionalGame.get();
+
+        }
     }
 
     @Override
