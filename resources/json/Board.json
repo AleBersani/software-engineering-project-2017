@@ -337,56 +337,64 @@
             "requestedValue": "1",
             "boardIdentifier": "PRODUCTION_1"
           },
-          "malusValue": "0"
+          "malusValue": "0",
+          "numberOfRequiredPlayers": "2"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "PRODUCTION_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "PRODUCTION_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "PRODUCTION_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "PRODUCTION_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "PRODUCTION_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "PRODUCTION_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "PRODUCTION_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         }
       ],
       "harvestArea": [
@@ -395,56 +403,64 @@
             "requestedValue": "1",
             "boardIdentifier": "HARVEST_1"
           },
-          "malusValue": "0"
+          "malusValue": "0",
+          "numberOfRequiredPlayers": "2"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "HARVEST_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "HARVEST_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "HARVEST_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "HARVEST_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "HARVEST_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "HARVEST_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {
             "requestedValue": "1",
             "boardIdentifier": "HARVEST_2"
           },
-          "malusValue": "3"
+          "malusValue": "3",
+          "numberOfRequiredPlayers": "3"
         }
       ],
       "marketArea": [
@@ -466,7 +482,8 @@
               "faith": "0"
             },
             "councilPrivilege": "0"
-          }
+          },
+          "numberOfRequiredPlayers": "2"
         },
         {
           "space": {
@@ -486,7 +503,8 @@
               "faith": "0"
             },
             "councilPrivilege": "0"
-          }
+          },
+          "numberOfRequiredPlayers": "3"
         },
         {
           "space": {

@@ -113,11 +113,12 @@ public class ParserBoardInformation {
             object = area.get(index).getAsJsonObject();
             space = parseSpace(object.get("space").getAsJsonObject());
             malusValue = object.get("malusValue").getAsInt();
-            productionHarvestArea.add(new ProductionHarvestSpace(space, malusValue));
+            productionHarvestArea.add(new ProductionHarvestSpace(space, malusValue, object
+                    .get("numberOfRequiredPlayers").getAsInt()));
         }
     }
 
-    public void parseMarket(List<MarketSpace> marketArea, JsonArray market) {
+    private void parseMarket(List<MarketSpace> marketArea, JsonArray market) {
         Gson gson = new Gson();
         JsonObject object;
         Space space;
@@ -133,7 +134,7 @@ public class ParserBoardInformation {
                                                                             Points.class);
             exchangingGoods = new ExchangingGoods(resources, points, object.get("instantGoods").
                                                     getAsJsonObject().get("councilPrivilege").getAsInt());
-            marketArea.add(new MarketSpace(space, exchangingGoods));
+            marketArea.add(new MarketSpace(space, exchangingGoods, object.get("numberOfRequiredPlayers").getAsInt()));
         }
     }
 

@@ -1,0 +1,93 @@
+{
+  "numberOfLeaders": "4",
+  "maxNumberOfDevCardsForCategory": "6",
+  "numberOfPawns": "4",
+  "startingGoods": [
+    {
+      "resources": {
+        "woods": "2",
+        "stones": "2",
+        "servants": "2",
+        "coins": "5"
+      },
+      "points": {
+        "victory": "0",
+        "military": "0",
+        "faith": "0"
+      }
+    },
+    {
+      "resources": {
+        "woods": "2",
+        "stones": "2",
+        "servants": "2",
+        "coins": "6"
+      },
+      "points": {
+        "victory": "0",
+        "military": "0",
+        "faith": "0"
+      }
+    },
+    {
+      "resources": {
+        "woods": "2",
+        "stones": "2",
+        "servants": "2",
+        "coins": "7"
+      },
+      "points": {
+        "victory": "0",
+        "military": "0",
+        "faith": "0"
+      }
+    },
+    {
+      "resources": {
+        "woods": "2",
+        "stones": "2",
+        "servants": "2",
+        "coins": "8"
+      },
+      "points": {
+        "victory": "0",
+        "military": "0",
+        "faith": "0"
+      }
+    }
+  ],
+  "requiredPointsForTerritories": [
+    {
+      "numberOfTerritories": "3",
+      "points": {
+        "victory": "0",
+        "military": "3",
+        "faith": "0"
+      }
+    },
+    {
+      "numberOfTerritories": "4",
+      "points": {
+        "victory": "0",
+        "military": "7",
+        "faith": "0"
+      }
+    },
+    {
+      "numberOfTerritories": "5",
+      "points": {
+        "victory": "0",
+        "military": "12",
+        "faith": "0"
+      }
+    },
+    {
+      "numberOfTerritories": "6",
+      "points": {
+        "victory": "0",
+        "military": "18",
+        "faith": "0"
+      }
+    }
+  ]
+}
