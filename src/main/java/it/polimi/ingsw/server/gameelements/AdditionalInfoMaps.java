@@ -1,4 +1,4 @@
-package it.polimi.ingsw.server.gamecontroller.gameelements;
+package it.polimi.ingsw.server.gameelements;
 
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.AdditionalCardInfo;
 

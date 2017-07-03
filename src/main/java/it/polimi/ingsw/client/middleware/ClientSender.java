@@ -1,4 +1,4 @@
-package it.polimi.ingsw.client.connection.middleware;
+package it.polimi.ingsw.client.middleware;
 
 import it.polimi.ingsw.shared.requests.clientserver.ClientServerRequest;
 import it.polimi.ingsw.shared.support.GameStartType;

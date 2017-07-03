@@ -1,10 +1,9 @@
 package it.polimi.ingsw.server.gamecontroller;
 
-import it.polimi.ingsw.server.gamecontroller.gameelements.BoardInformation;
+import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
-import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.shared.model.GeneralColor;

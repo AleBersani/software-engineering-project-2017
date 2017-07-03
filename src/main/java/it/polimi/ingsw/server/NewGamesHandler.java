@@ -3,6 +3,7 @@ package it.polimi.ingsw.server;
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.database.QueryHandler;
 import it.polimi.ingsw.server.gamecontroller.Game;
+import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.server.middleware.ServerSender;
 import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
@@ -24,7 +25,7 @@ public class NewGamesHandler implements Observer {
 
     private NewGamesHandler() {
         connectedClientList = new ConcurrentLinkedQueue<>();
-        MAX_PLAYERS_FOR_GAME = 3;
+        MAX_PLAYERS_FOR_GAME = GameConfiguration.getMaxNumberOfPlayer();
         playersCounter = 0;
     }
 

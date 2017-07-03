@@ -4,35 +4,39 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
 import it.polimi.ingsw.client.connection.ConnectionStarter;
+import it.polimi.ingsw.client.gui.notify.PlayerLoginNotifier;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ClientStarterController {
+public class ClientStarterController implements Observer {
     private final static Logger LOGGER = Logger.getLogger(ClientStarterController.class.getName());
 
-    private final ScheduledExecutorService EXECUTOR_SERVICE = Executors.newSingleThreadScheduledExecutor();
+    private final ScheduledExecutorService EXECUTOR_SERVICE = Executors.newScheduledThreadPool(1);
 
     private ScheduledFuture futureScheduled;
+    private MediaPlayer introSong;
     private ConnectionStarter connectionStarter;
-    private Stage gameChoice;
 
     @FXML
     private ImageView littleLolloJunior;
@@ -60,31 +64,58 @@ public class ClientStarterController {
         connectionStarter = null;
 
         Media song = new Media(new File("resources/client/intro-song.mp3").toURI().toString());
-        MediaPlayer introSong = new MediaPlayer(song);
+        introSong = new MediaPlayer(song);
         introSong.play();
+
+        PlayerLoginNotifier.getInstance().addObserver(this);
     }
 
-    public void rotateImage() {
+    private void rotateImage() {
         littleLolloJunior.setRotate(littleLolloJunior.getRotate() + 5);
         littleLolloSenior.setRotate(littleLolloSenior.getRotate() - 5);
     }
 
-    public void stopRotate() {
-        futureScheduled.cancel(true);
-    }
-
-    public void createConnection() {
-        if (connectionStarter == null) {
-            String selected = selectedConnection();
-            connectionStarter = new ConnectionStarter(selected);
-            connectionStarter.startConnection();
-            disableRadioButton();
+    @Override
+    public void update(Observable o, Object arg) {
+        boolean successful = (boolean)arg;
+        if (successful) {
+            showGameChoice();
+        } else {
+            inputError();
         }
     }
 
-    private void disableRadioButton() {
-        rmiRadio.setDisable(true);
-        socketRadio.setDisable(true);
+    private void showGameChoice() {
+        Platform.runLater(() ->  {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/gamechoice.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+                closeScene();
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch game choice", e);
+            }
+        });
+    }
+
+    public void closeScene() {
+        stopRotate();
+        introSong.stop();
+        introSong.dispose();
+        PlayerLoginNotifier.getInstance().deleteObserver(this);
+        ClientStarterMain.getStage().close();
+    }
+
+    private void stopRotate() {
+        futureScheduled.cancel(true);
+        EXECUTOR_SERVICE.shutdownNow();
+    }
+
+    private void inputError() {
+        usernameField.setUnFocusColor(new Color(1.0, 0,0,1));
+        passwordField.setUnFocusColor(new Color(1.0, 0,0,1));
     }
 
     @FXML
@@ -100,6 +131,20 @@ public class ClientStarterController {
         connectionStarter.authenticate(usernameField.getText(), passwordField.getText(), true);
     }
 
+    private void createConnection() {
+        if (connectionStarter == null) {
+            String selected = selectedConnection();
+            connectionStarter = new ConnectionStarter(selected);
+            connectionStarter.startConnection();
+            disableRadioButton();
+        }
+    }
+
+    private void disableRadioButton() {
+        rmiRadio.setDisable(true);
+        socketRadio.setDisable(true);
+    }
+
     private String selectedConnection() {
         JFXToggleButton selectedRadioButton = (JFXToggleButton)connectionToggleGroup.getSelectedToggle();
         String selected = selectedRadioButton.getText();
@@ -109,23 +154,15 @@ public class ClientStarterController {
         return selected;
     }
 
-    public void showIP(MouseEvent event) {
+    @FXML
+    public void showIP() {
         IP.setDisable(false);
         address.setDisable(false);
     }
 
-    public void hideIP(MouseEvent event) {
+    @FXML
+    public void hideIP() {
         IP.setDisable(true);
         address.setDisable(true);
-    }
-
-    public void showGameChoice() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("gamechoice.fxml"));
-        Parent gameChoice_parent = (Parent) loader.load();
-        gameChoice = new Stage();
-        gameChoice.setScene(new Scene(gameChoice_parent));
-        gameChoice.show();
-        gameChoice.toFront();
-        gameChoice.setResizable(false);
     }
 }

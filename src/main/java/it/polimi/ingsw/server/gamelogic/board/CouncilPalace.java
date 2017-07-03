@@ -17,6 +17,12 @@ public class CouncilPalace {
 
     private List<PlayerDetails> playerOrder;
 
+    public CouncilPalace() {
+        instantGoods = new ExchangingGoods();
+        requiredValue = 0;
+        playerOrder = new ArrayList<>();
+    }
+
     public CouncilPalace(ExchangingGoods instantGoods, int requiredValue) {
         this.instantGoods = instantGoods;
         this.requiredValue = requiredValue;

@@ -1,17 +1,20 @@
 package it.polimi.ingsw.server.middleware;
 
+import it.polimi.ingsw.server.ActiveGames;
 import it.polimi.ingsw.server.NewGameInformation;
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.connection.ConnectionStream;
 import it.polimi.ingsw.server.database.QueryHandler;
+import it.polimi.ingsw.server.gamecontroller.Game;
 import it.polimi.ingsw.shared.requests.clientserver.*;
-import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
+import it.polimi.ingsw.shared.requests.serverclient.LoginResponse;
 import it.polimi.ingsw.shared.support.Registrable;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.rmi.RemoteException;
 import java.util.Observable;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,6 +34,16 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
     @Override
     public void visitClientServerRequest(Choices choices) {
         System.out.println("Choice");
+    }
+
+    @Override
+    public void visitClientServerRequest(ChosenLeader chosenLeader) {
+        ActiveGames activeGames = ActiveGames.getInstance();
+        Optional<Game> optionalGame = activeGames.getGameById(chosenLeader.getGameId());
+        if (optionalGame.isPresent()) {
+            Game game = optionalGame.get();
+
+        }
     }
 
     @Override
@@ -75,10 +88,10 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
         LOGGER.info("Player registration socket");
         if (registerNewPlayerQuery(playerLogin.getPlayerName(), playerLogin.getPassword())) {
             LOGGER.info("Socket registration and login successful");
-            sendSocketSimpleMessage("Registration and login successful");
+            sendSocketLoginResponse(true);
         } else {
             LOGGER.info("Cannot register client");
-            sendSocketSimpleMessage("Cannot register client");
+            sendSocketLoginResponse(false);
         }
     }
 
@@ -86,16 +99,16 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
         LOGGER.info("Player login socket");
         if (authenticateQuery(playerLogin.getPlayerName(), playerLogin.getPassword())) {
             LOGGER.info("Socket login successful");
-            sendSocketSimpleMessage("Login successful");
+            sendSocketLoginResponse(true);
         } else {
             LOGGER.info("Login unsuccessful");
-            sendSocketSimpleMessage("Login unsuccessful");
+            sendSocketLoginResponse(false);
         }
     }
 
-    private void sendSocketSimpleMessage(String message) {
+    private void sendSocketLoginResponse(boolean successful) {
         try {
-            objectOutputStream.writeObject(new SimpleMessage(message));
+            objectOutputStream.writeObject(new LoginResponse(successful));
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: cannot write on socket", e);
         }
@@ -114,10 +127,10 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
         LOGGER.info("Player registration RMI");
         if (registerNewPlayerQuery(playerLoginRMI.getPlayerName(), playerLoginRMI.getPassword())) {
             LOGGER.info("RMI registration and login successful");
-            sendRMISimpleMessage(playerLoginRMI.getRegistrable(),"Registration and login successful");
+            sendRMILoginResponse(playerLoginRMI.getRegistrable(), true);
         } else {
             LOGGER.info("Cannot register client");
-            sendRMISimpleMessage(playerLoginRMI.getRegistrable(),"Cannot register client");
+            sendRMILoginResponse(playerLoginRMI.getRegistrable(), false);
         }
     }
 
@@ -125,16 +138,16 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
         LOGGER.info("Player login RMI");
         if (authenticateQuery(playerLoginRMI.getPlayerName(), playerLoginRMI.getPassword())) {
             LOGGER.info("RMI login successful");
-            sendRMISimpleMessage(playerLoginRMI.getRegistrable(),"Login successful");
+            sendRMILoginResponse(playerLoginRMI.getRegistrable(), true);
         } else {
             LOGGER.info("Login unsuccessful");
-            sendRMISimpleMessage(playerLoginRMI.getRegistrable(),"Login unsuccessful");
+            sendRMILoginResponse(playerLoginRMI.getRegistrable(), false);
         }
     }
 
-    private void sendRMISimpleMessage(Registrable registrable, String message) {
+    private void sendRMILoginResponse(Registrable registrable, boolean successful) {
         try {
-            registrable.update(new SimpleMessage(message));
+            registrable.update(new LoginResponse(successful));
         } catch (RemoteException e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: cannot write on registrable", e);
         }

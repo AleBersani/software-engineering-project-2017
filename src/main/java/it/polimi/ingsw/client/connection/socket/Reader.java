@@ -1,7 +1,7 @@
 package it.polimi.ingsw.client.connection.socket;
 
-import it.polimi.ingsw.client.connection.middleware.ClientReceiver;
-import it.polimi.ingsw.client.connection.middleware.ClientReceiverHandler;
+import it.polimi.ingsw.client.middleware.ClientReceiver;
+import it.polimi.ingsw.client.middleware.ClientReceiverHandler;
 import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
 
 import java.io.IOException;

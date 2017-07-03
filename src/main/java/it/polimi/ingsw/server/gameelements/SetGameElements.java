@@ -1,4 +1,4 @@
-package it.polimi.ingsw.server.gamecontroller.gameelements;
+package it.polimi.ingsw.server.gameelements;
 
 import it.polimi.ingsw.server.parser.ParserAdditionalInfo;
 import it.polimi.ingsw.server.parser.ParserBoardInformation;
@@ -28,6 +28,7 @@ public class SetGameElements implements Runnable {
     public void run() {
         try {
             setupElements();
+            LOGGER.info("Game elements loaded");
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: cannot run set game elements thread", e);
         }
@@ -37,7 +38,7 @@ public class SetGameElements implements Runnable {
      * Public method used to set static attributes of game elements' classes, through Parser classes.
      * @throws Exception Can be thrown from dependent methods invoked for parsing elements.
      */
-    public void setupElements() throws Exception {
+    private void setupElements() throws Exception {
         setupCards();
         setupAdditionalInfoMaps();
         setupBasicConfigurations();
@@ -66,6 +67,7 @@ public class SetGameElements implements Runnable {
         parserConfigurations.parseBoardConfiguration();
         parserConfigurations.parseGameConfiguration();
         parserConfigurations.parseCouncilPrivilege();
+        parserConfigurations.parsePlayerConfiguration();
     }
 
     private void setupBoardConfiguration() throws IOException {

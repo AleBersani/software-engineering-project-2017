@@ -110,13 +110,14 @@ class ParserBoardInformationTest {
                         "{\"space\": {"+
                             "\"requestedValue\": \"1\","+
                             "\"boardIdentifier\": \"PRODUCTION_2\"}," +
-                        "\"malusValue\": 3 }" +
+                        "\"malusValue\": \"3\"," +
+                        "\"numberOfRequiredPlayers\": \"4\" }" +
                         "]";
         JsonArray obj = (JsonArray) new JsonParser().parse(json);
         List<ProductionHarvestSpace> resultExpected = new ArrayList<ProductionHarvestSpace>(){{
                                                         add(new ProductionHarvestSpace(
                                                             new Space(BoardIdentifier.PRODUCTION_2, 1),
-                                                            3));}};
+                                                            3, 4));}};
         List<ProductionHarvestSpace> result = new ArrayList<>();
         method.invoke(parserBoardInformation, result, obj);
         assertEquals(resultExpected, result);
@@ -136,7 +137,8 @@ class ParserBoardInformationTest {
                                     "\"woods\": \"0\", \"stones\": \"0\", \"servants\": \"0\", \"coins\": \"1\"},"+
                             "\"points\": {"+
                                     "\"victory\": \"0\", \"military\": \"0\", \"faith\": \"0\"}," +
-                            "\"councilPrivilege\": \"0\"}" +
+                            "\"councilPrivilege\": \"0\"}," +
+                        "\"numberOfRequiredPlayers\": \"4\"" +
                         "}]";
         JsonArray obj = (JsonArray) new JsonParser().parse(json);
         List<MarketSpace> resultExpected = new ArrayList<MarketSpace>(){{
@@ -144,7 +146,8 @@ class ParserBoardInformationTest {
                                                             new Space(BoardIdentifier.M_2, 3),
                                                             new ExchangingGoods(new Resources(0,0,
                                                                                             0,1),
-                                                                                    0)));}};
+                                                                                    0),
+                                                            4));}};
         List<MarketSpace> result = new ArrayList<>();
         method.invoke(parserBoardInformation, result, obj);
         for(int i=0; i<resultExpected.size(); i++) {

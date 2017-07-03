@@ -9,10 +9,28 @@ import java.util.Objects;
  * Class that describes a single Tower Slot, it has a space identifier, it can have an instant Good and has a
  * Development card of the same color as the tower
  */
-public class TowerSlot<T extends DevelopmentCard> {
+public class TowerSlot {
     private Space space;
     private Goods instantGoods;
-    private T developmentCard;
+    private DevelopmentCard developmentCard;
+
+    public TowerSlot(Space space, Goods instantGoods) {
+        this.space = space;
+        this.instantGoods = instantGoods;
+        developmentCard = null;
+    }
+
+    public TowerSlot(Space space, DevelopmentCard developmentCard) {
+        this.space = space;
+        this.developmentCard = developmentCard;
+        instantGoods = new Goods();
+    }
+
+    public TowerSlot(Space space, Goods instantGoods, DevelopmentCard developmentCard) {
+        this.space = space;
+        this.instantGoods = instantGoods;
+        this.developmentCard = developmentCard;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -20,7 +38,7 @@ public class TowerSlot<T extends DevelopmentCard> {
             return true;
         if (o == null || getClass() != o.getClass())
             return false;
-        TowerSlot<?> towerSlot = (TowerSlot<?>) o;
+        TowerSlot towerSlot = (TowerSlot) o;
         return Objects.equals(getSpace(), towerSlot.getSpace()) &&
                 Objects.equals(getInstantGoods(), towerSlot.getInstantGoods()) &&
                 Objects.equals(getDevelopmentCard(), towerSlot.getDevelopmentCard());
@@ -29,18 +47,6 @@ public class TowerSlot<T extends DevelopmentCard> {
     @Override
     public int hashCode() {
         return Objects.hash(getSpace(), getInstantGoods(), getDevelopmentCard());
-    }
-
-    public TowerSlot(Space space, T developmentCard) {
-        this.space = space;
-        this.developmentCard = developmentCard;
-        instantGoods = new Goods();
-    }
-
-    public TowerSlot(Space space, Goods instantGoods, T developmentCard) {
-        this.space = space;
-        this.instantGoods = instantGoods;
-        this.developmentCard = developmentCard;
     }
 
     public Space getSpace() {
@@ -59,11 +65,11 @@ public class TowerSlot<T extends DevelopmentCard> {
         this.instantGoods = instantGoods;
     }
 
-    public T getDevelopmentCard() {
+    public DevelopmentCard getDevelopmentCard() {
         return developmentCard;
     }
 
-    public void setDevelopmentCard(T developmentCard) {
+    public void setDevelopmentCard(DevelopmentCard developmentCard) {
         this.developmentCard = developmentCard;
     }
 }
