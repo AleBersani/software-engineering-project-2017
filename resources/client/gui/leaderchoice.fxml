@@ -11,17 +11,17 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="it.polimi.ingsw.client.gui.LeaderChoiceController"
-            prefHeight="555.0" prefWidth="800.0" stylesheets="/client/gui/leaderChoice.css">
+            prefHeight="555.0" prefWidth="800.0" stylesheets="/client/gui/leaderchoice.css">
     <StackPane fx:id="pane4" prefHeight="555" prefWidth="800">
 
 
         <HBox fx:id="pane5" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20">
 
-            <ImageView fx:id="led1" fitHeight="250" fitWidth="158" preserveRatio="true"  onMouseClicked="#selectLeader1">
+            <ImageView fx:id="led1" fitHeight="250" fitWidth="158" preserveRatio="true" onMouseClicked="#selectLeader1">
             </ImageView>
-            <ImageView fx:id="led2" fitHeight="250" fitWidth="158" preserveRatio="true"  onMouseClicked="#selectLeader2">
+            <ImageView fx:id="led2" fitHeight="250" fitWidth="158" preserveRatio="true" onMouseClicked="#selectLeader2">
             </ImageView>
-            <ImageView fx:id="led3" fitHeight="250" fitWidth="158" preserveRatio="true"  onMouseClicked="#selectLeader3">
+            <ImageView fx:id="led3" fitHeight="250" fitWidth="158" preserveRatio="true" onMouseClicked="#selectLeader3">
             </ImageView>
             <ImageView fx:id="led4" fitHeight="250" fitWidth="158" preserveRatio="true" onMouseClicked="#selectLeader4">
             </ImageView>

@@ -63,7 +63,7 @@ public class TileChoiceController implements Initializable {
     @FXML
     public String selectTile4() {
         String selectedTile4 = tile4.getImage().toString();
-        return selectTile4();
+        return selectedTile4;
     }
 
     public String saveTile1() {

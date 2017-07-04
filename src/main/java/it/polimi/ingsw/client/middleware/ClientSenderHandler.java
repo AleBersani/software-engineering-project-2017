@@ -1,5 +1,6 @@
 package it.polimi.ingsw.client.middleware;
 
+import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.connection.rmi.RMIClient;
 import it.polimi.ingsw.client.connection.socket.SocketClient;
 import it.polimi.ingsw.shared.requests.clientserver.*;
@@ -16,6 +17,8 @@ public class ClientSenderHandler implements ClientSender {
 
     private static String playerName;
     private static boolean socket = true;
+
+    public ClientSenderHandler() {}
 
     public ClientSenderHandler(boolean socket) {
         this.socket = socket;
@@ -59,7 +62,7 @@ public class ClientSenderHandler implements ClientSender {
 
     @Override
     public void choseGameType(GameStartType gameStartType) {
-        GameStartChoice gameStartChoice = new GameStartChoice("", gameStartType);
+        GameStartChoice gameStartChoice = new GameStartChoice(ClientInformation.getPlayerName(), gameStartType);
         if (socket) {
             choseGameTypeSocket(gameStartChoice);
         } else {
@@ -86,7 +89,19 @@ public class ClientSenderHandler implements ClientSender {
 
     @Override
     public void sendToServer(ClientServerRequest clientServerRequest) {
-
+        if (socket) {
+            try {
+                SocketClient.writeSocket(clientServerRequest);
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot send client server request on socket", e);
+            }
+        } else {
+            try {
+                RMIClient.callMethod(clientServerRequest);
+            } catch (RemoteException | NotBoundException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot send client server request on RMI", e);
+            }
+        }
     }
 
     public static String getPlayerName() {

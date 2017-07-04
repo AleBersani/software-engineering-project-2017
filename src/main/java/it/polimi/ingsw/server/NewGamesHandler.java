@@ -63,10 +63,10 @@ public class NewGamesHandler implements Observer {
 
     private void addNewPlayer(ConnectedClient connectedClient) {
         ServerSender serverSender = new ServerSenderHandler();
-        serverSender.sendToClient(connectedClient.getConnectionStream(), new SimpleMessage("Connected!"));
+        serverSender.sendToClient(connectedClient.getConnectionStream(), new SimpleMessage("Registered to a game!"));
         connectedClientList.add(connectedClient);
         playersCounter++;
-        LOGGER.info("Client registered");
+        LOGGER.info("Player registered: " + connectedClient.getPlayerName());
     }
 
     private void startTimer() {
@@ -77,7 +77,7 @@ public class NewGamesHandler implements Observer {
                 createNewGame();
                 LOGGER.info("Time expired!");
             }
-        }, 1000*60);
+        }, GameConfiguration.getStartingGameTimeout() * 1000);
     }
 
     private void createNewGame() {
@@ -87,6 +87,7 @@ public class NewGamesHandler implements Observer {
         for (ConnectedClient client: connectedClientList)
             queryHandler.addPlayerToGame(client.getPlayerName(), lastGameId);
         Game game = new Game(lastGameId, connectedClientList);
+        ActiveGames.getInstance().addGame(game);
         Thread newGame = new Thread(game);
         newGame.start();
         connectedClientList.clear();

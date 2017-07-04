@@ -20,8 +20,6 @@ public class Communicator extends UnicastRemoteObject implements RMICommunicator
     public void login(PlayerLoginRMI playerLoginRMI) throws RemoteException {
         ServerReceiverHandler serverReceiverHandler = new ServerReceiverHandler();
         playerLoginRMI.acceptServerReceiver(serverReceiverHandler);
-        //serverReceiverHandler.addObserver(NewGamesHandler.getInstance());
-        //playerLoginRMI.acceptServerReceiver(serverReceiverHandler);
     }
 
     @Override
@@ -36,22 +34,4 @@ public class Communicator extends UnicastRemoteObject implements RMICommunicator
         ServerReceiver clientServerRequestHandler = new ServerReceiverHandler();
         clientServerRequest.acceptServerReceiver(clientServerRequestHandler);
     }
-
-    /*
-    public static void doCallback(String identifier, String msg) throws RemoteException{
-        LOGGER.log(Level.INFO, () -> "Sending callback to: " + identifier);
-        //GamesConnections.getClients().get(identifier).update(msg);
-        LOGGER.log(Level.INFO, "Callback complete");
-    }
-
-    public static void doCallbacks(String msg) throws RemoteException{/*
-        GamesConnections.getClients().forEach((k, v) -> {
-            try {
-                v.update(msg);
-                System.out.println("Callback");
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        });
-    }*/
 }

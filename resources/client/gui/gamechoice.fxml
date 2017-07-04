@@ -11,7 +11,7 @@
 
 
 <AnchorPane prefHeight="321.0" prefWidth="273.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="it.polimi.ingsw.client.gui.GameChoiceMain" stylesheets="/client/gui/gamechoice.css">
+            fx:controller="it.polimi.ingsw.client.gui.GameChoiceController" stylesheets="/client/gui/gamechoice.css">
    <children>
       <Label layoutX="94.0" layoutY="63.0" text="Welcome!">
          <font>
@@ -19,7 +19,9 @@
          </font>
       </Label>
       <Label layoutX="60.0" layoutY="108.0" text="What do you want to do?" />
-      <JFXButton fx:id="newGame" buttonType="RAISED" layoutX="79.0" layoutY="161.0" text="Start new game" styleClass="button"/>
-      <JFXButton buttonType="RAISED" layoutX="84.0" layoutY="206.0" text="Resume game" styleClass="button"/>
+      <JFXButton fx:id="newGame" buttonType="RAISED" layoutX="79.0" layoutY="161.0" text="Start new game"
+                 styleClass="button" onAction="#startNewGame"/>
+      <JFXButton fx:id="resumeGame" buttonType="RAISED" layoutX="84.0" layoutY="206.0" text="Resume game"
+                 styleClass="button" onAction="#resumeGame"/>
    </children>
 </AnchorPane>

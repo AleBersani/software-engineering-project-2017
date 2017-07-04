@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
 import it.polimi.ingsw.client.connection.ConnectionStarter;
+import it.polimi.ingsw.client.gui.GameChoiceController;
+import it.polimi.ingsw.client.gui.GameChoiceMain;
 import it.polimi.ingsw.client.gui.notify.PlayerLoginNotifier;
 import javafx.application.Platform;
 import javafx.fxml.FXML;

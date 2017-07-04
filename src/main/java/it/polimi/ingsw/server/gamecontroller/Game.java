@@ -1,12 +1,10 @@
 package it.polimi.ingsw.server.gamecontroller;
 
-import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gameelements.Cards;
-import it.polimi.ingsw.server.gamelogic.basics.BoardConfiguration;
+import it.polimi.ingsw.server.gameelements.SetGameElements;
 import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
-import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.PlayerConfiguration;
 import it.polimi.ingsw.server.gamelogic.board.Board;
 import it.polimi.ingsw.server.gamelogic.board.Space;
@@ -22,10 +20,13 @@ import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.server.middleware.ServerSender;
 import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.requests.serverclient.ChosenGameResponse;
 import it.polimi.ingsw.shared.requests.serverclient.LeadersChoice;
 import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
+import it.polimi.ingsw.shared.requests.serverclient.UpdateGameId;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Logger;
 
 /**
@@ -35,7 +36,7 @@ public class Game implements Runnable, Observer {
     private final static Logger LOGGER = Logger.getLogger(Game.class.getName());
 
     private int gameId;
-    private Queue<ConnectedClient> connectedClients;
+    private List<ConnectedClient> connectedClients;
 
     private List<Player> players;
     private List<Period> periods;
@@ -45,13 +46,9 @@ public class Game implements Runnable, Observer {
     private LeaderCardChoiceHandler leaderCardChoiceHandler;
     private List<BonusTiles> bonusTiles;
 
-    public static void main(String argv[]) {
-        System.out.println(GeneralColor.values()[1]);
-    }
-
     public Game(int gameId, Queue<ConnectedClient> connectedClients) {
         this.gameId = gameId;
-        this.connectedClients = connectedClients;
+        this.connectedClients = new ArrayList<>(connectedClients);
         players = new ArrayList<>();
         periods = new ArrayList<>();
         developmentCards = new ArrayList<>();
@@ -67,14 +64,26 @@ public class Game implements Runnable, Observer {
     }
 
     private void setupBoard() {
+        sendGameInitToPlayers();
+        sendGameIdToPlayers();
         setupTowers();
         setupCouncilPalace();
         setupActionSpaces();
         basicSetupPlayers();
-        leaderCardsExtraction();
+    }
+
+    private void sendGameInitToPlayers() {
+        LOGGER.info("Sending game init to players");
+        sendToAll(new ChosenGameResponse(true));
+    }
+
+    private void sendGameIdToPlayers() {
+        LOGGER.info("Sending game ID to players in game: " + gameId);
+        sendToAll(new UpdateGameId(gameId));
     }
 
     private void setupTowers() {
+        LOGGER.info("Setup towers");
         List<TowerSlot> greenTowerSlot = new ArrayList<>();
         for (Space space : BoardInformation.getGreenTower().keySet()) {
             greenTowerSlot.add(new TowerSlot(space, BoardInformation.getGreenTower().get(space)));
@@ -108,16 +117,19 @@ public class Game implements Runnable, Observer {
     }
 
     private void setupCouncilPalace() {
+        LOGGER.info("Setup council palace");
         board.setCouncilPalace(BoardInformation.getCouncilPalace());
     }
 
     private void setupActionSpaces() {
+        LOGGER.info("Setup action spaces");
         board.getBoardActionSpaces().setProductionArea(BoardInformation.getProductionArea());
         board.getBoardActionSpaces().setHarvestArea(BoardInformation.getHarvestArea());
         board.getBoardActionSpaces().setMarketArea(BoardInformation.getMarketArea());
     }
 
     private void basicSetupPlayers() {
+        LOGGER.info("Setup players");
         int playerCounter = 0;
         for (ConnectedClient connectedClient : connectedClients) {
             players.add(new Player(
@@ -127,36 +139,56 @@ public class Game implements Runnable, Observer {
         }
     }
 
-    private void leaderCardsExtraction() {
+    private void bonusTilesSetup() {}
+
+    @Override
+    public void update(Observable o, Object arg) {}
+
+    public void checkAndStartLeaderChoice() {
+        int numberOfPlayersReady = leaderCardChoiceHandler.getNumberOfPlayersReady().incrementAndGet();
+        if (numberOfPlayersReady == connectedClients.size()) {
+            LOGGER.info("Players are ready, starting leader choice!");
+            startLeaderChoice();
+        }
+    }
+
+    private void startLeaderChoice() {
+        List<String> playersName = new ArrayList<>();
+        for (ConnectedClient connectedClient : connectedClients) {
+            playersName.add(connectedClient.getPlayerName());
+        }
+
+        leaderCardChoiceHandler.setup(leaderCardsExtraction(), playersName);
+        sendLeaderChoiceToPlayers();
+    }
+
+    private List<LeaderCard> leaderCardsExtraction() {
+        LOGGER.info("Starting leader cards choice");
         List<LeaderCard> leaderCards = new ArrayList<>();
         UniqueRandomGenerator uniqueRandomGenerator = new UniqueRandomGenerator(Cards.getLeaderCards().size());
         List<Integer> leadersPositions = uniqueRandomGenerator.generateRandoms(
                 players.size() * PlayerConfiguration.getNumberOfLeaders());
         leadersPositions.forEach((Integer integer) -> leaderCards.add(Cards.getLeaderCards().get(integer)));
-        List<String> playersName = new ArrayList<>();
-        for (ConnectedClient connectedClient : connectedClients) {
-            playersName.add(connectedClient.getPlayerName());
-        }
-        Map<String, List<LeaderCard>> initialLeadersForPlayer = leaderCardChoiceHandler.setup(leaderCards, playersName);
-        for (Map.Entry<String, List<LeaderCard>> entry : initialLeadersForPlayer.entrySet()) {
+
+        return leaderCards;
+    }
+
+    private void sendLeaderChoiceToPlayers() {
+        for (Map.Entry<String, List<LeaderCard>> entry :
+                leaderCardChoiceHandler.getInitialLeaderCardsForPlayers().entrySet()) {
             List<String> leaderNames = new ArrayList<>();
-            for (LeaderCard leaderCard : entry.getValue()) {
-                leaderNames.add(leaderCard.getLeaderName());
-            }
+            entry.getValue().forEach(leaderCard -> leaderNames.add(leaderCard.getLeaderName()));
             sendTo(entry.getKey(), new LeadersChoice(leaderNames));
+            System.out.println("Send to: " + entry.getKey());
+            leaderNames.forEach(System.out::println);
         }
     }
 
-    private void bonusTilesSetup() {
-        Map<String, List<ExchangingGoods>> bonusTilesDetails = BoardInformation.getBonusTiles();
-        bonusTilesDetails.forEach((string, exchangingGoods) -> bonusTiles.add(new BonusTiles()));
-    }
-
-    @Override
-    public void update(Observable o, Object arg) {
-        /*
-        avvia e setuppa altro periodo, se non è fine game
-         */
+    public void addChosenLeaderToPlayer(String playerName, String leaderName) {
+        boolean needToResend = leaderCardChoiceHandler.addChosenLeaderToPlayer(playerName, leaderName);
+        if (needToResend) {
+            sendLeaderChoiceToPlayers();
+        }
     }
 
     private void sendToAll(ServerClientRequest serverClientRequest) {
@@ -173,10 +205,6 @@ public class Game implements Runnable, Observer {
                 serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
             }
         }
-    }
-
-    public void addChosenLeaderToPlayer(String leaderName) {
-
     }
 
     public void setupGame() {
@@ -212,11 +240,11 @@ public class Game implements Runnable, Observer {
         this.gameId = gameId;
     }
 
-    public Queue<ConnectedClient> getConnectedClients() {
+    public List<ConnectedClient> getConnectedClients() {
         return connectedClients;
     }
 
-    public void setConnectedClients(Queue<ConnectedClient> connectedClients) {
+    public void setConnectedClients(List<ConnectedClient> connectedClients) {
         this.connectedClients = connectedClients;
     }
 
@@ -250,5 +278,13 @@ public class Game implements Runnable, Observer {
 
     public void setBoard(Board board) {
         this.board = board;
+    }
+
+    public LeaderCardChoiceHandler getLeaderCardChoiceHandler() {
+        return leaderCardChoiceHandler;
+    }
+
+    public void setLeaderCardChoiceHandler(LeaderCardChoiceHandler leaderCardChoiceHandler) {
+        this.leaderCardChoiceHandler = leaderCardChoiceHandler;
     }
 }

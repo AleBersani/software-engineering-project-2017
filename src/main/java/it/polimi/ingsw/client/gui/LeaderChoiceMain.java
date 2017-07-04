@@ -6,10 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class LeaderChoiceMain extends Application{
+public class LeaderChoiceMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/client/gui/leaderChoice.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/client/gui/leaderchoice.fxml"));
         primaryStage.setTitle("LeaderChoice");
         primaryStage.setScene(new Scene(root, 800, 555));
         primaryStage.show();
