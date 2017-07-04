@@ -20,8 +20,8 @@
       </Label>
       <Label layoutX="60.0" layoutY="108.0" text="What do you want to do?" />
       <JFXButton fx:id="newGame" buttonType="RAISED" layoutX="79.0" layoutY="161.0" text="Start new game"
-                 styleClass="button" onAction="#startNewGame"/>
+                 styleClass="button" onAction="#startNewGame" focusTraversable="false"/>
       <JFXButton fx:id="resumeGame" buttonType="RAISED" layoutX="84.0" layoutY="206.0" text="Resume game"
-                 styleClass="button" onAction="#resumeGame"/>
+                 styleClass="button" onAction="#resumeGame" focusTraversable="false"/>
    </children>
 </AnchorPane>

@@ -1,9 +1,17 @@
 package it.polimi.ingsw.client.gui;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 
-public class PlayerboardController {
+import java.util.Observable;
+import java.util.Observer;
+
+public class PlayerboardController implements Observer {
     @FXML
     public ImageView card1;
+
+    @Override
+    public void update(Observable o, Object arg) {
+    }
 }

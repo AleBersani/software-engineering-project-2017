@@ -9,3 +9,6 @@
 .prova2:hover {
     -fx-border-color: deeppink;
 }
+#show {
+    -fx-effect: inherit;
+}
