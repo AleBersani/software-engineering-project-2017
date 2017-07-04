@@ -6,9 +6,15 @@ import java.io.Serializable;
 
 public class LoginResponse implements ServerClientRequest, Serializable {
     private boolean successful;
+    private String playerName;
 
     public LoginResponse(boolean successful) {
         this.successful = successful;
+    }
+
+    public LoginResponse(boolean successful, String playerName) {
+        this.successful = successful;
+        this.playerName = playerName;
     }
 
     @Override
@@ -22,5 +28,13 @@ public class LoginResponse implements ServerClientRequest, Serializable {
 
     public void setSuccessful(boolean successful) {
         this.successful = successful;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 }

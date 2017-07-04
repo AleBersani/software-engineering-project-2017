@@ -1,13 +1,13 @@
 package it.polimi.ingsw.client.middleware;
 
-import it.polimi.ingsw.shared.requests.serverclient.LoginResponse;
-import it.polimi.ingsw.shared.requests.serverclient.SimpleMessage;
-import it.polimi.ingsw.shared.requests.serverclient.UpdateActionSpaces;
-import it.polimi.ingsw.shared.requests.serverclient.UpdateTowers;
+import it.polimi.ingsw.shared.requests.serverclient.*;
 
 public interface ClientReceiver {
-    void visitServerClientRequest(SimpleMessage simpleMessage);
+    void visitServerClientRequest(ChosenGameResponse chosenGameResponse);
+    void visitServerClientRequest(LeadersChoice leadersChoice);
     void visitServerClientRequest(LoginResponse loginResponse);
+    void visitServerClientRequest(SimpleMessage simpleMessage);
     void visitServerClientRequest(UpdateActionSpaces updateActionSpaces);
+    void visitServerClientRequest(UpdateGameId updateGameId);
     void visitServerClientRequest(UpdateTowers updateTowers);
 }

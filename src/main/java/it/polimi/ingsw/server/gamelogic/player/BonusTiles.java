@@ -11,6 +11,11 @@ public class BonusTiles {
     private Goods productionBonus;
     private Goods harvestBonus;
 
+    public BonusTiles() {
+        productionBonus = new Goods();
+        harvestBonus = new Goods();
+    }
+
     public BonusTiles(Goods productionBonus, Goods harvestBonus) {
         this.productionBonus = productionBonus;
         this.harvestBonus = harvestBonus;

@@ -4,7 +4,12 @@ import it.polimi.ingsw.server.connection.rmi.RMIServerStarter;
 import it.polimi.ingsw.server.connection.socket.SocketServerStarter;
 import it.polimi.ingsw.server.gameelements.SetGameElements;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class ServerMain {
+    private final static Logger LOGGER = Logger.getLogger(NewGamesHandler.class.getName());
+
     public static void main(String argv[]) {
         Thread socketServerStarted = new Thread(new SocketServerStarter());
         socketServerStarted.start();
@@ -14,5 +19,11 @@ public class ServerMain {
 
         Thread gameElementsLoader = new Thread(new SetGameElements());
         gameElementsLoader.start();
+        try {
+            gameElementsLoader.join();
+        } catch (InterruptedException e) {
+            LOGGER.log(Level.SEVERE, "An exception was thrown: join game elements");
+        }
+        LOGGER.info("Game elements loading ended");
     }
 }

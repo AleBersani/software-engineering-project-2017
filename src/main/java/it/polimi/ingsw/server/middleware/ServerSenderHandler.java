@@ -20,9 +20,7 @@ public class ServerSenderHandler implements ServerSender {
         Optional<Registrable> registrable = connectionStream.getRegistrable();
         if (objectOutputStream.isPresent()) {
             sendToClient(objectOutputStream.get(), serverClientRequest);
-        } else if (registrable.isPresent()) {
-            sendToClient(registrable.get(), serverClientRequest);
-        }
+        } else registrable.ifPresent(r -> sendToClient(r, serverClientRequest));
     }
 
     private void sendToClient(ObjectOutputStream objectOutputStream,

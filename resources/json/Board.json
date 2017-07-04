@@ -524,7 +524,8 @@
               "faith": "0"
             },
             "councilPrivilege": "0"
-          }
+          },
+          "numberOfRequiredPlayers": "4"
         },
         {
           "space": {
@@ -544,7 +545,8 @@
               "faith": "0"
             },
             "councilPrivilege": "2"
-          }
+          },
+          "numberOfRequiredPlayers": "4"
         }
       ]
   },

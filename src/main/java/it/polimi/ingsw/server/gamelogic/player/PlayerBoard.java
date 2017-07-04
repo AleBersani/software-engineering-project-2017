@@ -12,15 +12,22 @@ import java.util.Optional;
  * Class that describes the Player's personal Board
  */
 public class PlayerBoard {
-    private BonusTiles bonusTiles;
     private Goods goods;
 
+    private BonusTiles bonusTiles;
     private Deck deck;
     private List<Pawn> pawns;
 
-    public PlayerBoard(BonusTiles bonusTiles, Goods goods) {
-        this.bonusTiles = bonusTiles;
+    public PlayerBoard(Goods goods) {
         this.goods = goods;
+        bonusTiles = new BonusTiles();
+        deck = new Deck();
+        pawns = new ArrayList<>();
+    }
+
+    public PlayerBoard(BonusTiles bonusTiles, Goods goods) {
+        this.goods = goods;
+        this.bonusTiles = bonusTiles;
         deck = new Deck();
         pawns = new ArrayList<>();
     }
