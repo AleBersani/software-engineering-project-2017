@@ -103,9 +103,9 @@ public class SemiPeriod extends Observable implements Observer {
     }
 
     public void setupRound() {
-
-        /*
-         */
+        List<Player> orderedPlayerForRound = new ArrayList<>(); //COME CALCOLARLI PER TURNO?
+        rounds.add(new Round(orderedPlayerForRound));
+        initRound();
     }
 
     public void initRound() {

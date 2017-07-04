@@ -39,12 +39,13 @@ public class Period extends Observable implements Observer {
      */
     public void setupSemiPeriod() {
         List<Player> previousOrderPlayers = semiPeriods.get(semiPeriods.size()-1).getPlayers();
-        Board board = semiPeriods.get(semiPeriods.size()-1).getBoard();
+        Board oldBoard = semiPeriods.get(semiPeriods.size()-1).getBoard();
+        Board newBoard = new Board(oldBoard);
         List<DevelopmentCard> developmentCardsForSemiPeriod = getDevelopmentCardsForSemiPeriod();
-        List<Player> playersForSemiPeriod = calculatePlayerOrder(previousOrderPlayers, board);
+        List<Player> playersForSemiPeriod = calculatePlayerOrder(previousOrderPlayers, newBoard);
         semiPeriods.add(new SemiPeriod(developmentCardsForSemiPeriod,
                 playersForSemiPeriod,
-                cleanBoard(board)));
+                cleanBoard(newBoard)));
         initSemiPeriod(semiPeriods.get(semiPeriods.size() - 1));
         /*calcolo ordine di gioco (pattern su scomunica)*/
     }

@@ -76,6 +76,18 @@ public class ExchangingGoods {
         this.numberOfCouncilPrivilege = numberOfCouncilPrivilege;
     }
 
+    public ExchangingGoods(ExchangingGoods exchangingGoods) {
+        Resources resources = new Resources(exchangingGoods.getResources().getWoods(),
+                                            exchangingGoods.getResources().getStones(),
+                                            exchangingGoods.getResources().getServants(),
+                                            exchangingGoods.getResources().getCoins());
+        Points points = new Points(exchangingGoods.getPoints().getVictory(),
+                                    exchangingGoods.getPoints().getMilitary(),
+                                    exchangingGoods.getPoints().getFaith());
+        goods = new Goods(resources, points);
+        numberOfCouncilPrivilege = exchangingGoods.getNumberOfCouncilPrivilege();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)

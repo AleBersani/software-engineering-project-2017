@@ -1,5 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
+import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderInformation;
 import it.polimi.ingsw.server.gamelogic.enums.DiceColor;
@@ -38,6 +39,20 @@ public class Board {
         excommunicationTiles = new ArrayList<>();
         dices = new ArrayList<>();
         leaderInformationList = new ArrayList<>();
+    }
+
+    public Board(Board oldBoard) {
+        towers = new ArrayList<>(oldBoard.getTowers());
+        councilPalace = new CouncilPalace(new ExchangingGoods(oldBoard.getCouncilPalace().getInstantGoods()),
+                oldBoard.getCouncilPalace().getRequiredValue());
+        councilPalace.setPlayerOrder(new ArrayList(oldBoard.getCouncilPalace().getPlayerOrder()));
+
+        boardActionSpaces = new BoardActionSpaces(new ArrayList(oldBoard.getBoardActionSpaces().getProductionArea()),
+                                                    new ArrayList(oldBoard.getBoardActionSpaces().getHarvestArea()),
+                                                    new ArrayList(oldBoard.getBoardActionSpaces().getMarketArea()));
+        excommunicationTiles = new ArrayList(oldBoard.getExcommunicationTiles());
+        dices = new ArrayList(oldBoard.getDices());
+        leaderInformationList = new ArrayList(oldBoard.getLeaderInformationList());
     }
 
     @Override
