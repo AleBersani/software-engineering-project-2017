@@ -7,17 +7,27 @@ import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenLeader;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LeaderChoiceController implements Observer {
+    private final static Logger LOGGER = Logger.getLogger(LeaderChoiceController.class.getName());
+
     private int gameId;
     private String playerName;
     private List<ImageView> leaderCards;
@@ -52,8 +62,35 @@ public class LeaderChoiceController implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
+        if (arg == null) {
+            startPlayerTileChoice();
+        } else {
+            runUpdateLeaders((List<Card>)arg);
+        }
+    }
+
+    private void startPlayerTileChoice() {
+        Platform.runLater(() ->  {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/tilechoice.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+                closeStage();
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch player tiles board", e);
+            }
+        });
+    }
+
+    private void closeStage() {
+        Stage stage = (Stage)led1.getScene().getWindow();
+        stage.close();
+    }
+
+    private void runUpdateLeaders(List<Card> leaderCards) {
         clearLeaderList();
-        List<Card> leaderCards = (List<Card>)arg;
         List<String> leaderNames = new ArrayList<>();
         for (Card card : leaderCards) {
             leaderNames.add(card.getName());

@@ -14,47 +14,47 @@
    <children>
    
        <ImageView fitHeight="667.0" fitWidth="684.0" pickOnBounds="true" preserveRatio="true">
-           <Image url="@gameBoard_taglioNewTorri.jpg" />
+              <Image url="@gameBoard_taglioNewTorri.jpg" />
        </ImageView>
        <ImageView fitHeight="428.0" fitWidth="571.0" layoutX="683.0" pickOnBounds="true" preserveRatio="true">
-           <Image url="@gameBoard_taglioNew2.jpg" />
+              <Image url="@gameBoard_taglioNew2.jpg" />
        </ImageView>
    
-       <ImageView fx:id="T_G_1" fitHeight="138.0" fitWidth="89.0" layoutX="12.0" layoutY="485.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_G_2" fitHeight="137.0" fitWidth="85.0" layoutX="14.0" layoutY="331.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_G_3" fitHeight="142.0" fitWidth="84.0" layoutX="14.0" layoutY="175.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_G_4" fitHeight="139.0" fitWidth="87.0" layoutX="13.0" layoutY="22.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
+       <ImageView fx:id="T_G_1" fitHeight="138.0" fitWidth="89.0" layoutX="12.0" layoutY="485.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_G_2" fitHeight="137.0" fitWidth="85.0" layoutX="14.0" layoutY="331.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_G_3" fitHeight="142.0" fitWidth="84.0" layoutX="14.0" layoutY="175.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_G_4" fitHeight="139.0" fitWidth="87.0" layoutX="13.0" layoutY="22.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
    
-       <ImageView fx:id="T_B_1" fitHeight="142.0" fitWidth="84.0" layoutX="180.0" layoutY="483.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_B_2" fitHeight="139.0" fitWidth="87.0" layoutX="178.0" layoutY="330.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_B_3" fitHeight="139.0" fitWidth="84.0" layoutX="180.0" layoutY="176.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_B_4" fitHeight="139.0" fitWidth="87.0" layoutX="178.0" layoutY="23.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
+       <ImageView fx:id="T_B_1" fitHeight="142.0" fitWidth="84.0" layoutX="180.0" layoutY="483.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_B_2" fitHeight="139.0" fitWidth="87.0" layoutX="178.0" layoutY="330.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_B_3" fitHeight="139.0" fitWidth="84.0" layoutX="180.0" layoutY="176.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_B_4" fitHeight="139.0" fitWidth="87.0" layoutX="178.0" layoutY="23.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
    
-       <ImageView fx:id="T_Y_1" fitHeight="139.0" fitWidth="81.0" layoutX="347.0" layoutY="484.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_Y_2" fitHeight="133.0" fitWidth="87.0" layoutX="344.0" layoutY="342.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_Y_3" fitHeight="133.0" fitWidth="84.0" layoutX="345.0" layoutY="179.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_Y_4" fitHeight="136.0" fitWidth="90.0" layoutX="342.0" layoutY="24.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
+       <ImageView fx:id="T_Y_1" fitHeight="139.0" fitWidth="81.0" layoutX="347.0" layoutY="484.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_Y_2" fitHeight="133.0" fitWidth="87.0" layoutX="344.0" layoutY="342.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_Y_3" fitHeight="133.0" fitWidth="84.0" layoutX="345.0" layoutY="179.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_Y_4" fitHeight="136.0" fitWidth="90.0" layoutX="342.0" layoutY="24.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
    
-       <ImageView fx:id="T_P_1" fitHeight="139.0" fitWidth="84.0" layoutX="513.0" layoutY="484.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_P_2" fitHeight="139.0" fitWidth="84.0" layoutX="512.0" layoutY="330.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_P_3" fitHeight="139.0" fitWidth="87.0" layoutX="511.0" layoutY="176.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
-       <ImageView fx:id="T_P_4" fitHeight="133.0" fitWidth="84.0" layoutX="512.0" layoutY="25.0" pickOnBounds="true"
-                  preserveRatio="true" onMouseClicked="#hideCard"/>
+       <ImageView fx:id="T_P_1" fitHeight="139.0" fitWidth="84.0" layoutX="513.0" layoutY="484.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_P_2" fitHeight="139.0" fitWidth="84.0" layoutX="512.0" layoutY="330.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_P_3" fitHeight="139.0" fitWidth="87.0" layoutX="511.0" layoutY="176.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
+       <ImageView fx:id="T_P_4" fitHeight="133.0" fitWidth="84.0" layoutX="512.0" layoutY="25.0"
+                  onMouseClicked="#hideCard" pickOnBounds="true" preserveRatio="true" />
    
        <StackPane fx:id="G4" layoutX="113.0" layoutY="69.0" prefHeight="40.0" prefWidth="43.0" styleClass="prova" />
        <StackPane fx:id="G3" layoutX="113.0" layoutY="225.0" prefHeight="40.0" prefWidth="43.0" styleClass="prova" />
@@ -78,14 +78,10 @@
        <StackPane layoutX="1195.0" layoutY="65.0" prefHeight="26.0" prefWidth="31.0" styleClass="prova" />
        <StackPane layoutX="1195.0" layoutY="96.0" prefHeight="26.0" prefWidth="31.0" styleClass="prova" />
    
-       <StackPane fx:id="PRODUCTION_2" layoutX="772.0" layoutY="275.0" prefHeight="39.0" prefWidth="128.0"
-                  styleClass="prova" />
-       <StackPane fx:id="HARVEST_2" layoutX="772.0" layoutY="360.0" prefHeight="39.0" prefWidth="128.0"
-                  styleClass="prova" />
-       <StackPane fx:id="PRODUCTION_1" layoutX="695.0" layoutY="276.0" prefHeight="36.0" prefWidth="42.0"
-                  styleClass="prova" />
-       <StackPane fx:id="HARVEST_1" layoutX="695.0" layoutY="361.0" prefHeight="36.0" prefWidth="42.0"
-                  styleClass="prova" />
+       <StackPane fx:id="PRODUCTION_2" layoutX="772.0" layoutY="275.0" prefHeight="39.0" prefWidth="128.0" styleClass="prova" />
+       <StackPane fx:id="HARVEST_2" layoutX="772.0" layoutY="360.0" prefHeight="39.0" prefWidth="128.0" styleClass="prova" />
+       <StackPane fx:id="PRODUCTION_1" layoutX="695.0" layoutY="276.0" prefHeight="36.0" prefWidth="42.0" styleClass="prova" />
+       <StackPane fx:id="HARVEST_1" layoutX="695.0" layoutY="361.0" prefHeight="36.0" prefWidth="42.0" styleClass="prova" />
        <StackPane fx:id="M1" layoutX="1035.0" layoutY="262.0" prefHeight="29.0" prefWidth="35.0" styleClass="prova" />
        <StackPane fx:id="M2" layoutX="1100.0" layoutY="262.0" prefHeight="29.0" prefWidth="35.0" styleClass="prova" />
        <StackPane fx:id="M3" layoutX="1162.0" layoutY="280.0" prefHeight="29.0" prefWidth="35.0" styleClass="prova" />
@@ -95,13 +91,13 @@
        </StackPane>
 
        <Circle fx:id="whitePawn" fill="WHITE" layoutX="780.0" layoutY="459.0" radius="15.0" stroke="BLACK"
-               strokeType="INSIDE" strokeWidth="3.0" />
+               strokeType="INSIDE" strokeWidth="4.0" />
        <Circle fx:id="orangePawn" fill="#ff8706" layoutX="721.0" layoutY="459.0" radius="15.0" stroke="BLACK"
-               strokeType="INSIDE" strokeWidth="3.0" />
+               strokeType="INSIDE" strokeWidth="4.0" />
        <Circle fx:id="blackPawn" layoutX="721.0" layoutY="501.0" radius="15.0" stroke="BLACK" strokeType="INSIDE"
-               strokeWidth="3.0" />
+               strokeWidth="4.0" />
        <Circle fx:id="neutralPawn" fill="#c99463" layoutX="780.0" layoutY="501.0" radius="15.0" stroke="BLACK"
-               strokeType="INSIDE" strokeWidth="3.0" />
+               strokeType="INSIDE" strokeWidth="4.0" />
 
        <ImageView fx:id="excom1" fitHeight="106.0" fitWidth="49.0" layoutX="780.0" layoutY="56.0" pickOnBounds="true"
                   preserveRatio="true" />
@@ -117,24 +113,24 @@
        <ImageView fx:id="orangeDice" fitHeight="47.0" fitWidth="43.0" layoutX="1149.0" layoutY="365.0"
                   pickOnBounds="true" preserveRatio="true" />
 
-       <StackPane fx:id="faithPath" layoutX="686.0" layoutY="185.0" prefHeight="32.0" prefWidth="565.0">
-            <Circle fx:id="player1" fill="#d00000" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0"
-                    translateX="7.0" StackPane.alignment="CENTER_LEFT" />
-            <Circle fx:id="player3" fill="#fff200" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0"
-                    StackPane.alignment="BOTTOM_LEFT" />
-            <Circle fx:id="player2" fill="#1300cf" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0"
-                    StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="player4" fill="#09dd02" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0"
-                    StackPane.alignment="CENTER_LEFT" />
+       <StackPane fx:id="faithPath" layoutX="686.0" layoutY="185.0" prefHeight="32.0" prefWidth="565.0" styleClass="prova">
+               <Circle fx:id="player1" fill="#d00000" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5"
+                       translateX="7.0" StackPane.alignment="CENTER_LEFT" />
+               <Circle fx:id="player3" fill="#fff200" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5"
+                       StackPane.alignment="BOTTOM_LEFT" />
+               <Circle fx:id="player2" fill="#1300cf" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5"
+                       StackPane.alignment="TOP_LEFT" />
+               <Circle fx:id="player4" fill="#09dd02" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5"
+                       StackPane.alignment="CENTER_LEFT" />
        </StackPane>
 
        <JFXButton fx:id="show" buttonType="RAISED" focusTraversable="false" layoutX="692.0" layoutY="534.0"
-                  onMouseClicked="#showPlayerBoard" ripplerFill="darksalmon" text="Show PlayerBoard" />
+                  onMouseClicked="#showPlayerBoard" ripplerFill="darksalmon" text="Show PlayerBoard"/>
        <JFXButton fx:id="hide" buttonType="RAISED" focusTraversable="false" layoutX="694.0" layoutY="574.0"
-                  onMouseClicked="#hidePlayerBoard" ripplerFill="darksalmon" text="Hide PlayerBoard" />
+                  onMouseClicked="#hidePlayerBoard" ripplerFill="darksalmon" text="Hide PlayerBoard"/>
 
-       <GridPane fx:id="otherPlayers" layoutX="839.0" layoutY="477.0" prefHeight="112.0" prefWidth="393.0"
-                 alignment="CENTER" gridLinesVisible="true">
+       <GridPane fx:id="otherPlayers" alignment="CENTER" gridLinesVisible="true" layoutX="839.0" layoutY="492.0"
+                 prefHeight="112.0" prefWidth="393.0">
            <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -143,9 +139,11 @@
            <rowConstraints>
              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
            </rowConstraints>
-            <Label fx:id="infoplayer1" textAlignment="CENTER"/>
-            <Label fx:id="infoplayer2" GridPane.columnIndex="1" textAlignment="CENTER"/>
-            <Label fx:id="infoplayer3" GridPane.columnIndex="2" textAlignment="CENTER"/>
+               <Label fx:id="infoplayer1" textAlignment="CENTER" />
+               <Label fx:id="infoplayer2" textAlignment="CENTER" GridPane.columnIndex="1" />
+               <Label fx:id="infoplayer3" textAlignment="CENTER" GridPane.columnIndex="2" />
        </GridPane>
+
+       <Label fx:id="playerName" layoutX="1004.0" layoutY="451.0"/>
    </children>
 </Pane>

@@ -54,7 +54,7 @@ public class LeaderCardChoiceHandler {
         else return false;
     }
 
-    public boolean checkStatus(int valueToCheck) {
+    private boolean checkStatus(int valueToCheck) {
         boolean status = true;
         for (MutableInt mutableInt : counterForPlayer.values()) {
             if (mutableInt.toInteger() < valueToCheck) {
@@ -74,18 +74,15 @@ public class LeaderCardChoiceHandler {
                 i = 0;
             }
         }
-        System.out.println("Swapped");
-        for (Map.Entry<String, List<LeaderCard>> entry : initialLeaderCardsForPlayers.entrySet()) {
-            System.out.println(entry.getKey());
-            entry.getValue().forEach(l -> System.out.println(l.getLeaderName()));
-        }
+    }
+
+    public boolean phaseEnded() {
+        return checkStatus(PlayerConfiguration.getNumberOfLeaders());
     }
 
     public boolean checkFinalStatus() {
         return checkStatus(PlayerConfiguration.getNumberOfLeaders());
     }
-
-
 
     public Map<String, List<LeaderCard>> getInitialLeaderCardsForPlayers() {
         return initialLeaderCardsForPlayers;

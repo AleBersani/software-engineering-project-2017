@@ -20,10 +20,7 @@ import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.server.middleware.ServerSender;
 import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
-import it.polimi.ingsw.shared.requests.serverclient.ChosenGameResponse;
-import it.polimi.ingsw.shared.requests.serverclient.LeadersChoice;
-import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
-import it.polimi.ingsw.shared.requests.serverclient.UpdateGameId;
+import it.polimi.ingsw.shared.requests.serverclient.*;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -139,8 +136,6 @@ public class Game implements Runnable, Observer {
         }
     }
 
-    private void bonusTilesSetup() {}
-
     @Override
     public void update(Observable o, Object arg) {}
 
@@ -187,6 +182,14 @@ public class Game implements Runnable, Observer {
         if (needToResend) {
             sendLeaderChoiceToPlayers();
         }
+        if (leaderCardChoiceHandler.phaseEnded()) {
+            LOGGER.info("Players have chosen leaders!");
+            sendToAll(new EndLeadersChoicePhase());
+        }
+    }
+
+    public void bonusTilesSetup() {
+        LOGGER.info("Starting tiles choice");
     }
 
     private void sendToAll(ServerClientRequest serverClientRequest) {

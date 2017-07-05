@@ -9,6 +9,11 @@
 .prova2:hover {
     -fx-border-color: deeppink;
 }
-#show {
-    -fx-effect: inherit;
+
+.root {
+    -fx-background-color: sandybrown;
+}
+
+#show, #hide {
+    -fx-background-color: coral;
 }
