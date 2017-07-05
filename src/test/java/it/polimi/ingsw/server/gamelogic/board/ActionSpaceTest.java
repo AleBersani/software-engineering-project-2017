@@ -68,5 +68,4 @@ class ActionSpaceTest {
         actionSpace.setRequiredPlayersNumber(numberToConfront);
         assertEquals(numberToConfront, actionSpace.getRequiredPlayersNumber());
     }
-
 }
