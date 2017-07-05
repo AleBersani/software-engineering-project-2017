@@ -1,19 +1,31 @@
 package it.polimi.ingsw.client.gui;
 
 import com.jfoenix.controls.JFXSpinner;
+import com.sun.javafx.css.Size;
+import it.polimi.ingsw.client.ClientInformation;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.paint.*;
+import javafx.scene.paint.Color;
 
+import java.awt.*;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.List;
 
-public class TileChoiceController implements Initializable {
-    private ArrayList<ImageView> tileList;
-    private ArrayList<String> ultimateTiles;
+public class TileChoiceController {
+    private static final String BACKGROUND_URL = "/client/backgrounds/";
+    private List<ImageView> tileList;
+    private List<String> ultimateTiles;
+    private Map<GeneralColor, String> backgrounds;
 
     @FXML
     private ImageView tile1;
@@ -30,14 +42,34 @@ public class TileChoiceController implements Initializable {
     @FXML
     private Label waiting;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    private AnchorPane anchorPane;
+
+    public void initialize() {
         tileList = new ArrayList<>();
         ultimateTiles = new ArrayList<>();
+        initEnumMap();
+        setBackground();
         setTileList();
     }
 
-    public void setTileList() {
+    private void initEnumMap() {
+        backgrounds = new EnumMap<>(GeneralColor.class);
+        backgrounds.put(GeneralColor.GREEN, BACKGROUND_URL + "green.jpg");
+        backgrounds.put(GeneralColor.BLUE, BACKGROUND_URL + "blue.jpg");
+        backgrounds.put(GeneralColor.YELLOW, BACKGROUND_URL + "yellow.jpg");
+        backgrounds.put(GeneralColor.PURPLE, BACKGROUND_URL + "red.jpg");
+    }
+
+    public void setBackground() {
+        anchorPane.setBackground(new Background(new BackgroundImage(
+                new Image(backgrounds.get(ClientInformation.getPlayerColor())),
+                null,null, null, new BackgroundSize(
+                        BackgroundSize.AUTO, BackgroundSize.AUTO,
+                false, false, true, true))));
+    }
+
+    private void setTileList() {
         tileList.add(tile1);
         tileList.add(tile2);
         tileList.add(tile3);
@@ -53,26 +85,36 @@ public class TileChoiceController implements Initializable {
         }
     }
 
-    public void clearTileList() { tileList.clear(); }
-
     @FXML
     public String selectTile1() {
-        return tile1.getImage().toString();
+        tile2.setDisable(true);
+        tile3.setDisable(true);
+        tile4.setDisable(true);
+        return saveTile1();
     }
 
     @FXML
     public String selectTile2() {
-        return tile2.getImage().toString();
+        tile1.setDisable(true);
+        tile3.setDisable(true);
+        tile4.setDisable(true);
+        return saveTile2();
     }
 
     @FXML
     public String selectTile3() {
-        return tile3.getImage().toString();
+        tile1.setDisable(true);
+        tile2.setDisable(true);
+        tile4.setDisable(true);
+        return saveTile3();
     }
 
     @FXML
     public String selectTile4() {
-        return tile4.getImage().toString();
+        tile1.setDisable(true);
+        tile2.setDisable(true);
+        tile3.setDisable(true);
+        return saveTile4();
     }
 
     public String saveTile1() {

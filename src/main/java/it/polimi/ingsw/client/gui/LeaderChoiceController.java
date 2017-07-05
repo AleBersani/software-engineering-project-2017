@@ -5,6 +5,7 @@ import it.polimi.ingsw.client.gui.notify.LeaderChoiceNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.Card;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenLeader;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.application.Platform;
@@ -14,23 +15,26 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundSize;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LeaderChoiceController implements Observer {
     private final static Logger LOGGER = Logger.getLogger(LeaderChoiceController.class.getName());
 
+    private static final String BACKGROUND_URL = "/client/backgrounds/";
     private int gameId;
     private String playerName;
     private List<ImageView> leaderCards;
     private List<String> ultimateLeaders;
+    private Map<GeneralColor, String> leaderBackgrounds;
 
     @FXML
     private ImageView led1;
@@ -41,6 +45,9 @@ public class LeaderChoiceController implements Observer {
     @FXML
     private ImageView led4;
 
+    @FXML
+    private AnchorPane root;
+
     public void initialize() {
         LeaderChoiceNotifier.getInstance().addObserver(this);
         gameId = ClientInformation.getCurrentGameId();
@@ -50,6 +57,8 @@ public class LeaderChoiceController implements Observer {
         setLeaderList();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "leaderChoice"));
+        initEnumMap();
+        setBackground();
     }
 
     private void setLeaderList() {
@@ -81,6 +90,22 @@ public class LeaderChoiceController implements Observer {
                 LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch player tiles board", e);
             }
         });
+    }
+
+    private void initEnumMap() {
+        leaderBackgrounds = new EnumMap<>(GeneralColor.class);
+        leaderBackgrounds.put(GeneralColor.BLUE, BACKGROUND_URL + "blue.jpg");
+        leaderBackgrounds.put(GeneralColor.GREEN, BACKGROUND_URL + "green.jpg");
+        leaderBackgrounds.put(GeneralColor.YELLOW, BACKGROUND_URL + "yellow.jpg");
+        leaderBackgrounds.put(GeneralColor.PURPLE, BACKGROUND_URL + "red.jpg");
+    }
+
+    public void setBackground() {
+        root.setBackground(new Background(new BackgroundImage(
+                new Image(leaderBackgrounds.get(ClientInformation.getPlayerColor())),
+                null,null, null, new BackgroundSize(
+                BackgroundSize.AUTO, BackgroundSize.AUTO,
+                false, false, true, true))));
     }
 
     private void closeStage() {
