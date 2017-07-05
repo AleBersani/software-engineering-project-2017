@@ -328,9 +328,10 @@
 			},
 			"additionalInfoPermanent": {
 				"onChoice": [],
-				"notChoosable": ["requirementsOnCard"]
+				"notChoosable": ["playerOrderWeight"]
 			},
-			"modifiers": []
+			"modifiers": [],
+			"weight": "20"
 		}
 	],
 	"ExcommunicationTilesThirdPeriod": [

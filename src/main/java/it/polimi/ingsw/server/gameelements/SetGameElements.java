@@ -61,6 +61,8 @@ public class SetGameElements implements Runnable {
                                                      AdditionalInfoMaps.getFlashEffectsNotSelectable(),
                                                      AdditionalInfoMaps.getPermanentEffectsOnChoice(),
                                                      AdditionalInfoMaps.getPermanentEffectsNotSelectable());
+        AdditionalInfoMaps.setThirdPeriodExcommunicationModifiers(
+                                                parserAdditionalInfo.parseThirdPeriodExcommunicationsMap());
     }
 
     private void setupBasicConfigurations() throws IOException {

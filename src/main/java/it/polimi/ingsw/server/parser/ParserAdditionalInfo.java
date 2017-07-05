@@ -66,7 +66,7 @@ public class ParserAdditionalInfo {
      * @param additionalInfoCategory A String that indicates the category of AdditionalCardInfo to parse from Json file.
      * @throws Exception Can be thrown by settings.extractJsonObject method and parseSingleListAddInfo method.
      */
-    public void parseCategoryDevCards(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
+    private void parseCategoryDevCards(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
                                       Map<String, List<AdditionalCardInfo>> parsedAddNotSelectable,
                                       String additionalInfoCategory) throws Exception {
         JsonArray cards;
@@ -100,7 +100,7 @@ public class ParserAdditionalInfo {
      * @param additionalInfoCategory A String that indicates the category of AdditionalCardInfo to parse from Json file.
      * @throws Exception Can be thrown by settings.extractJsonObject method and parseSingleListAddInfo method.
      */
-    public void parseCategoryOthers(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
+    private void parseCategoryOthers(Map<String, List<AdditionalCardInfo>> parsedAddOnChoice,
                                     Map<String, List<AdditionalCardInfo>> parsedAddNotSelectable,
                                     String additionalInfoCategory) throws Exception {
         String[] jsonKeys = {"LeaderCards", "ExcommunicationTiles"};
@@ -214,6 +214,9 @@ public class ParserAdditionalInfo {
                     break;
                 case "cardFlashExchangingGoods":
                     parsedAddInfo.add(parseCardFlashExchangingGoods(card, name));
+                    break;
+                case "playerOrderWeight":
+                    parsedAddInfo.add(parsePlayerOrderWeight(card, name));
                     break;
                 default:
                     break;
@@ -336,6 +339,10 @@ public class ParserAdditionalInfo {
         int councilPrivilege = exchGoods.get("councilePrivilege").getAsInt();
         ExchangingGoods parsedExchangingGoods = new ExchangingGoods(resources, points, councilPrivilege);
         return new CardFlashExchangingGoods(name, parsedExchangingGoods);
+    }
+
+    private AdditionalCardInfo parsePlayerOrderWeight(JsonObject card, String name) {
+        return new PlayerOrderWeight(name, card.get("weight").getAsInt());
     }
 
     /**
