@@ -21,4 +21,9 @@ public class LeaderChoiceNotifier extends Observable {
         setChanged();
         notifyObservers(leaders);
     }
+
+    public void updateGui() {
+        setChanged();
+        notifyObservers();
+    }
 }

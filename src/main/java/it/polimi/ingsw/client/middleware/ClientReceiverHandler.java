@@ -36,6 +36,13 @@ public class ClientReceiverHandler implements ClientReceiver {
     }
 
     @Override
+    public void visitServerClientRequest(EndLeadersChoicePhase endLeadersChoicePhase) {
+        System.out.println("Leader choice phase ended!");
+        LeaderChoiceNotifier guiNotifier = LeaderChoiceNotifier.getInstance();
+        guiNotifier.updateGui();
+    }
+
+    @Override
     public void visitServerClientRequest(LeadersChoice leadersChoice) {
         List<Card> leaders = new ArrayList<>();
         for (String leaderName : leadersChoice.getLeaders()) {

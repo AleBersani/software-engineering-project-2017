@@ -53,7 +53,7 @@ public class GameChoiceController implements Observer {
                 stage.show();
                 closeStage();
             } catch (IOException e) {
-                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch game board", e);
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch leader choice board", e);
             }
         });
     }
