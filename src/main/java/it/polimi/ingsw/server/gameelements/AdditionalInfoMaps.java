@@ -1,6 +1,7 @@
 package it.polimi.ingsw.server.gameelements;
 
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.AdditionalCardInfo;
+import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.modifiers.EndGameRewardsModifier;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,12 +12,14 @@ public class AdditionalInfoMaps {
     private static Map<String, List<AdditionalCardInfo>> flashEffectsNotSelectable;
     private static Map<String, List<AdditionalCardInfo>> permanentEffectsOnChoice;
     private static Map<String, List<AdditionalCardInfo>> permanentEffectsNotSelectable;
+    private static Map<String, EndGameRewardsModifier> thirdPeriodExcommunicationModifiers;
 
     public static void initializeMaps() {
         flashEffectsOnChoice = new HashMap<>();
         flashEffectsNotSelectable = new HashMap<>();
         permanentEffectsOnChoice = new HashMap<>();
         permanentEffectsNotSelectable = new HashMap<>();
+        thirdPeriodExcommunicationModifiers = new HashMap<>();
     }
 
     public static Map<String, List<AdditionalCardInfo>> getFlashEffectsOnChoice() {
@@ -49,5 +52,13 @@ public class AdditionalInfoMaps {
 
     public static void setPermanentEffectsNotSelectable(Map<String, List<AdditionalCardInfo>> permanentEffectsNotSelectable) {
         AdditionalInfoMaps.permanentEffectsNotSelectable = permanentEffectsNotSelectable;
+    }
+
+    public static Map<String, EndGameRewardsModifier> getThirdPeriodExcommunicationModifiers() {
+        return thirdPeriodExcommunicationModifiers;
+    }
+
+    public static void setThirdPeriodExcommunicationModifiers(Map<String, EndGameRewardsModifier> thirdPeriodExcommunicationModifiers) {
+        AdditionalInfoMaps.thirdPeriodExcommunicationModifiers = thirdPeriodExcommunicationModifiers;
     }
 }
