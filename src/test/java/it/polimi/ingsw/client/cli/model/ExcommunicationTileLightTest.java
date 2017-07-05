@@ -17,20 +17,26 @@ class ExcommunicationTileLightTest {
     void testEqualsTrue() {
         ExcommunicationTileLight excommunicationTileLightToConfront = new ExcommunicationTileLight("1.2",
                 "4C, 3S");
+        ExcommunicationTileLight excommunicationTileLightToConfront2 = excommunicationTileLight;
         assertTrue(excommunicationTileLightToConfront.equals(excommunicationTileLight));
+        assertTrue(excommunicationTileLight.equals(excommunicationTileLightToConfront2));
     }
 
     @Test
     void testEqualsFalse() {
         ExcommunicationTileLight excommunicationTileLightToConfront = new ExcommunicationTileLight("1.5",
-                "4C, 3S");
+                "3Fp, 3Mp");
+        ExcommunicationTileLight excommunicationTileLightToConfront2 = new ExcommunicationTileLight("1.2",
+                "3Mp");
         assertFalse(excommunicationTileLightToConfront.equals(excommunicationTileLight));
+        assertFalse(excommunicationTileLightToConfront2.equals(excommunicationTileLight));
     }
 
     @Test
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(excommunicationTileLight.equals(obj));
+        assertFalse(excommunicationTileLight.equals(null));
     }
 
     @Test

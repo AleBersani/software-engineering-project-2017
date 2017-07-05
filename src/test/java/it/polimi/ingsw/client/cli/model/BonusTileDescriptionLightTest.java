@@ -17,6 +17,8 @@ class BonusTileDescriptionLightTest {
     void testEqualsTrue() {
         BonusTileDescriptionLight bonusTileDescriptionLightToConfront = new BonusTileDescriptionLight(
                 "B_TILE_2", "3C, 2Se");
+        BonusTileDescriptionLight bonusTileDescriptionLightToConfront2 = bonusTileDescriptionLight;
+        assertTrue(bonusTileDescriptionLight.equals(bonusTileDescriptionLightToConfront2));
         assertTrue(bonusTileDescriptionLightToConfront.equals(bonusTileDescriptionLight));
     }
 
@@ -24,6 +26,9 @@ class BonusTileDescriptionLightTest {
     void testEqualsFalse() {
         BonusTileDescriptionLight bonusTileDescriptionLightToConfront =  new BonusTileDescriptionLight(
                 "B_TILE_1", "3C, 2Se");
+        BonusTileDescriptionLight bonusTileDescriptionLightToConfront2 = new BonusTileDescriptionLight(
+                "B_TILE_2", "3Mp");
+        assertFalse(bonusTileDescriptionLight.equals(bonusTileDescriptionLightToConfront2));
         assertFalse(bonusTileDescriptionLightToConfront.equals(bonusTileDescriptionLight));
     }
 
@@ -31,6 +36,7 @@ class BonusTileDescriptionLightTest {
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(bonusTileDescriptionLight.equals(obj));
+        assertFalse(bonusTileDescriptionLight.equals(null));
     }
 
     @Test

@@ -29,6 +29,42 @@ class ParserModifiersTest {
     }
 
     @Test
+    void testParseListRequirementsModifier() throws Exception {
+        String json = "{ \"actionType\": [\"GREEN_TOWER\"], " +
+                "\"bonus\": [{\"resources\": {\"woods\":\"0\",\"stones\":\"0\",\"servants\":\"0\",\"coins\":\"1\"}," +
+                "\"points\": { \"victory\": \"2\", \"military\": \"0\", \"faith\": \"0\"}}]," +
+                "\"pawnColor\": [\"orange\"]," +
+                "\"actionValueSurplus\": \"2\"," +
+                "\"pawnColor\": [\"orange\"]," +
+                "\"pawnValue\": \"2\"}";
+        List<String> modifiers = new ArrayList<>();
+        modifiers.add("bonusOnCardCost");
+        modifiers.add("bonusPawnValue");
+        modifiers.add("fixedColouredPawnValue");
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        List<RequirementsModifier> resultExpected = new ArrayList<>();
+        Goods bonus = new Goods(new Resources(0,0,0,1),
+                                new Points(2,0,0));
+        resultExpected.add(new BonusOnCardCost(new AvailableActions(ActionType.GREEN_TOWER), bonus));
+        resultExpected.add(new BonusPawnValue(new AvailableActions(ActionType.GREEN_TOWER),
+                PawnColor.ORANGE, 2));
+        resultExpected.add(new FixedColouredPawnValue(new AvailableActions(ActionType.GREEN_TOWER),
+                PawnColor.ORANGE, 2));
+        List<RequirementsModifier> result = parserModifiers.parseListRequirementsModifier(modifiers, obj);
+        for(int i=0; i<resultExpected.size(); i++) {
+            assertTrue(resultExpected.get(i).equals(result.get(i)));
+        }
+        for(int i=0; i<result.size(); i++) {
+            assertTrue(resultExpected.get(i).equals(result.get(i)));
+        }
+    }
+
+    @Test
+    void testParseRewardsModifier() {
+
+    }
+
+    @Test
     void testParseBonusActionValue() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "parseBonusActionValue";
         Class targetClass = parserModifiers.getClass();

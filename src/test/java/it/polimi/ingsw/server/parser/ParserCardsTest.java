@@ -422,11 +422,12 @@ class ParserCardsTest {
         Class targetClass = parserCards.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class);
         method.setAccessible(true);
-        String json = "{\"territories\": \"3\",\"buildings\": \"4\",\"characters\": \"0\",\"ventures\": \"5\"}";
+        String json = "{\"territories\": \"3\",\"buildings\": \"4\",\"characters\": \"4\",\"ventures\": \"5\"}";
         JsonObject obj = (JsonObject) new JsonParser().parse(json);
         List<CardsRequired> resultExpected = new ArrayList<>();
         resultExpected.add(new CardsRequired(3, GeneralColor.GREEN));
         resultExpected.add(new CardsRequired(4, GeneralColor.YELLOW));
+        resultExpected.add(new CardsRequired(4, GeneralColor.BLUE));
         resultExpected.add(new CardsRequired(5, GeneralColor.PURPLE));
         List<CardsRequired> result = (List<CardsRequired>) method.invoke(parserCards, obj);
         for (int index = 0; index<resultExpected.size(); index++) {

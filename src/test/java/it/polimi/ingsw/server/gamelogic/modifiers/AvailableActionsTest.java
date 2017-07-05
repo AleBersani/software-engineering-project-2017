@@ -26,7 +26,9 @@ class AvailableActionsTest {
         actionTypes.add(ActionType.BLUE_TOWER);
         actionTypes.add(ActionType.COUNCIL_PALACE);
         AvailableActions availableActionsToConfront = new AvailableActions(actionTypes);
+        AvailableActions availableActionsToConfront2 = availableActions;
         assertTrue(availableActionsToConfront.equals(availableActions));
+        assertTrue(availableActions.equals(availableActionsToConfront2));
     }
 
     @Test
@@ -39,6 +41,7 @@ class AvailableActionsTest {
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(availableActions.equals(obj));
+        assertFalse(availableActions.equals(null));
     }
 
     @Test

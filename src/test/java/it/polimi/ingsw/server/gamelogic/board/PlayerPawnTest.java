@@ -20,20 +20,26 @@ class PlayerPawnTest {
     void testEqualsTrue() {
         PlayerPawn playerPawnToConfront = new PlayerPawn(new PlayerDetails("", GeneralColor.BLUE),
                 PawnColor.BLACK);
+        PlayerPawn playerPawnToConfront2 = playerPawn;
         assertTrue(playerPawn.equals(playerPawnToConfront));
+        assertTrue(playerPawn.equals(playerPawnToConfront2));
     }
 
     @Test
     void testEqualsFalse() {
         PlayerPawn playerPawnToConfront = new PlayerPawn(new PlayerDetails("", GeneralColor.GREEN),
                 PawnColor.WHITE);
+        PlayerPawn playerPawnToConfront2 = new PlayerPawn(new PlayerDetails("", GeneralColor.BLUE),
+                PawnColor.ORANGE);
         assertFalse(playerPawn.equals(playerPawnToConfront));
+        assertFalse(playerPawn.equals(playerPawnToConfront2));
     }
 
     @Test
     void testEqualsDifferent() {
         String different = "";
         assertFalse(playerPawn.equals(different));
+        assertFalse(playerPawn.equals(null));
     }
 
     @Test
@@ -55,6 +61,10 @@ class PlayerPawnTest {
         playerPawn.setPawnColor(PawnColor.UNCOLORED);
         playerPawn.setPlayerDetails(new PlayerDetails());
         assertTrue(playerPawn.isEmpty());
+        playerPawn.setPlayerDetails(new PlayerDetails("Lorenzo", GeneralColor.BLUE));
+        assertFalse(playerPawn.isEmpty());
+        playerPawn.setPawnColor(PawnColor.ORANGE);
+        assertFalse(playerPawn.isEmpty());
     }
 
     @Test

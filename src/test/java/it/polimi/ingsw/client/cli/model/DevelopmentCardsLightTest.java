@@ -19,14 +19,16 @@ class DevelopmentCardsLightTest {
         DevelopmentCardsLight developmentCardsLightToConfront = new DevelopmentCardsLight(
                                         "Bosco", "4C",
                                         "2S","5C");
+        DevelopmentCardsLight developmentCardsLightToConfront2 = developmentCardsLight;
+        assertTrue(developmentCardsLight.equals(developmentCardsLightToConfront2));
         assertTrue(developmentCardsLight.equals(developmentCardsLightToConfront));
     }
 
     @Test
     void testEqualsFalse() {
         DevelopmentCardsLight developmentCardsLightToConfront = new DevelopmentCardsLight(
-                "Bosco", "4C",
-                "2S","3C");
+                "Miniera", "4S",
+                "2Se","3C");
         assertFalse(developmentCardsLightToConfront.equals(developmentCardsLight));
     }
 
@@ -34,6 +36,7 @@ class DevelopmentCardsLightTest {
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(developmentCardsLight.equals(obj));
+        assertFalse(developmentCardsLight.equals(null));
     }
 
     @Test
