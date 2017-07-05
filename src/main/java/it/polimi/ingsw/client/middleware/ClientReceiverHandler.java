@@ -38,12 +38,9 @@ public class ClientReceiverHandler implements ClientReceiver {
     @Override
     public void visitServerClientRequest(LeadersChoice leadersChoice) {
         List<Card> leaders = new ArrayList<>();
-        System.out.println("LEADERS");
         for (String leaderName : leadersChoice.getLeaders()) {
             leaders.add(new Card(leaderName));
-            System.out.println(leaderName);
         }
-        System.out.println("\n\n");
         LeaderChoiceNotifier guiNotifier = LeaderChoiceNotifier.getInstance();
         guiNotifier.updateGui(leaders);
     }

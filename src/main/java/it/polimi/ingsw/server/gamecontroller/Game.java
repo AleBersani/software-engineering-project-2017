@@ -64,12 +64,12 @@ public class Game implements Runnable, Observer {
     }
 
     private void setupBoard() {
-        sendGameInitToPlayers();
         sendGameIdToPlayers();
         setupTowers();
         setupCouncilPalace();
         setupActionSpaces();
         basicSetupPlayers();
+        sendGameInitToPlayers();
     }
 
     private void sendGameInitToPlayers() {
@@ -179,8 +179,6 @@ public class Game implements Runnable, Observer {
             List<String> leaderNames = new ArrayList<>();
             entry.getValue().forEach(leaderCard -> leaderNames.add(leaderCard.getLeaderName()));
             sendTo(entry.getKey(), new LeadersChoice(leaderNames));
-            System.out.println("Send to: " + entry.getKey());
-            leaderNames.forEach(System.out::println);
         }
     }
 
