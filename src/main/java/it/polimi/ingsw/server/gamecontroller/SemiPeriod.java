@@ -59,26 +59,20 @@ public class SemiPeriod extends Observable implements Observer {
 
     private void setBoardCards() {
         List<DevelopmentCard> territories, buildings, characters, ventures;
-        territories = developmentCards.stream()
-                .filter(card -> GeneralColor.GREEN.equals(card.getCardInformation()
-                        .getCardColor()))
-                .collect(Collectors.toList());
-        buildings = developmentCards.stream()
-                .filter(card -> GeneralColor.YELLOW.equals(card.getCardInformation()
-                        .getCardColor()))
-                .collect(Collectors.toList());
-        characters = developmentCards.stream()
-                .filter(card -> GeneralColor.BLUE.equals(card.getCardInformation()
-                        .getCardColor()))
-                .collect(Collectors.toList());
-        ventures = developmentCards.stream()
-                .filter(card -> GeneralColor.PURPLE.equals(card.getCardInformation()
-                        .getCardColor()))
-                .collect(Collectors.toList());
+        territories = getParticularCardsList(GeneralColor.GREEN);
+        buildings = getParticularCardsList(GeneralColor.YELLOW);
+        characters = getParticularCardsList(GeneralColor.BLUE);
+        ventures = getParticularCardsList(GeneralColor.PURPLE);
         setTowerCards(territories, GeneralColor.GREEN);
         setTowerCards(buildings, GeneralColor.YELLOW);
         setTowerCards(characters, GeneralColor.BLUE);
         setTowerCards(ventures, GeneralColor.PURPLE);
+    }
+
+    private List<DevelopmentCard> getParticularCardsList(GeneralColor color) {
+        return developmentCards.stream()
+                               .filter(card -> color.equals(card.getCardInformation().getCardColor()))
+                               .collect(Collectors.toList());
     }
 
     private void setTowerCards(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
@@ -89,15 +83,7 @@ public class SemiPeriod extends Observable implements Observer {
             Tower towerToFill = optionalTowerToFill.get();
             int i=0;
             for (TowerSlot towerSlot : towerToFill.getTowerSlots()) {
-                if (color.equals(GeneralColor.GREEN)) {
-                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
-                } else if (color.equals(GeneralColor.BLUE)) {
-                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
-                } else if (color.equals(GeneralColor.YELLOW)) {
-                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
-                } else if(color.equals(GeneralColor.PURPLE)) {
-                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
-                }
+                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
             }
         }
     }
