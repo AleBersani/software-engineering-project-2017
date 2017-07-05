@@ -1,7 +1,9 @@
 package it.polimi.ingsw.client.gui;
 
+import com.jfoenix.controls.JFXSpinner;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -16,6 +18,10 @@ public class TileChoiceController implements Initializable {
 
     @FXML
     private ImageView tile1, tile2, tile3, tile4;
+    @FXML
+    private JFXSpinner spinner;
+    @FXML
+    private Label waiting;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -80,5 +86,10 @@ public class TileChoiceController implements Initializable {
 
     public String saveTile4() {
         return ultimateTiles.get(3);
+    }
+
+    public void hideWaiting() {
+        waiting.setVisible(false);
+        spinner.setVisible(false);
     }
 }

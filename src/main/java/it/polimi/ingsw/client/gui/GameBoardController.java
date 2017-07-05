@@ -1,6 +1,7 @@
 package it.polimi.ingsw.client.gui;
 
 
+import it.polimi.ingsw.client.ClientInformation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +33,11 @@ public class GameBoardController extends Observable implements Initializable{
     private List<ImageView> purpleTower;
     private double startX, startY, originX, originY;
     private Stage playerBoard;
+    private static final int FAITH_OFFSET = 35;
+    private static final int ADDED_OFFSET = 15;
+    private static final int CRITICAL_FAITH_1 = 3;
+    private static final int CRITICAL_FAITH_2 = 4;
+    private static final int CRITICAL_FAITH_3 = 5;
 
     @FXML
     private Circle whitePawn, orangePawn, blackPawn, neutralPawn, player1, player2, player3, player4;
@@ -39,13 +45,12 @@ public class GameBoardController extends Observable implements Initializable{
     private StackPane G4, G3, G2, G1, B4, B3, B2, B1, Y4, Y3, Y2, Y1, P1, P2, P3, P4, M1, M2, M3, PRODUCTION_1, HARVEST_1;
     @FXML
     private StackPane PRODUCTION_2, COUNCIL_PALACE, HARVEST_2, faithPath;
+
     @FXML
     private ImageView T_G_4, T_G_3, T_G_2, T_G_1, T_Y_4, T_Y_3, T_Y_2, T_Y_1, T_B_4, T_B_3, T_B_2, T_B_1,
             T_P_4, T_P_3, T_P_2, T_P_1;
     @FXML
-    private GridPane otherPlayers;
-    @FXML
-    private Label infoplayer1, infoplayer2, infoplayer3;
+    private Label infoplayer1, infoplayer2, infoplayer3, playerName;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -108,7 +113,7 @@ public class GameBoardController extends Observable implements Initializable{
         }
     }
 
-    public void setStackPaneList() {
+    private void setStackPaneList() {
         stackPaneList = new ArrayList<>();
         stackPaneList.add(Y1);
         stackPaneList.add(Y2);
@@ -187,17 +192,17 @@ public class GameBoardController extends Observable implements Initializable{
                     if ((circle.getBoundsInParent().intersects(COUNCIL_PALACE.getBoundsInParent()))) {
                         COUNCIL_PALACE.getChildren().add(circle);
                         COUNCIL_PALACE.setAlignment(circle, Pos.CENTER_LEFT);
-                        circle.setTranslateX(6.5*(COUNCIL_PALACE.getChildren().size()-1));
+                        circle.setTranslateX(7.5*(COUNCIL_PALACE.getChildren().size()-1));
                     }
                     if ((circle.getBoundsInParent().intersects(PRODUCTION_2.getBoundsInParent()))) {
                         PRODUCTION_2.getChildren().add(circle);
                         PRODUCTION_2.setAlignment(circle, Pos.CENTER_LEFT);
-                        circle.setTranslateX(6.0*(PRODUCTION_2.getChildren().size()-1));
+                        circle.setTranslateX(7.0*(PRODUCTION_2.getChildren().size()-1));
                     }
                     if ((circle.getBoundsInParent().intersects(HARVEST_2.getBoundsInParent()))) {
                         HARVEST_2.getChildren().add(circle);
                         HARVEST_2.setAlignment(circle, Pos.CENTER_LEFT);
-                        circle.setTranslateX(6.0*(HARVEST_2.getChildren().size()-1));
+                        circle.setTranslateX(7.0*(HARVEST_2.getChildren().size()-1));
                     }
                 });
             });
@@ -213,15 +218,17 @@ public class GameBoardController extends Observable implements Initializable{
         double newLayoutX;
         for (int i = 0; i < faithPath.getChildren().size(); i++) {
             if (faithPath.getChildren().get(i).getId() == player) {
-                faithPath.getChildren().get(i).setTranslateX(35*faithPoints);
+                faithPath.getChildren().get(i).setTranslateX(FAITH_OFFSET*faithPoints);
                 newLayoutX = faithPath.getChildren().get(i).getLayoutX();
-                if (faithPoints == 3 || faithPoints == 4 || faithPoints == 5){
-                    faithPath.getChildren().get(i).setTranslateX(newLayoutX + 15);
+                if (faithPoints == CRITICAL_FAITH_1 || faithPoints == CRITICAL_FAITH_2 ||
+                        faithPoints == CRITICAL_FAITH_3){
+                    faithPath.getChildren().get(i).setTranslateX(newLayoutX + ADDED_OFFSET);
                 }
             }
         }
     }
 
+    @FXML
     public void showPlayerBoard() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/gui/playerboard.fxml"));
         Parent playerBoard_parent = (Parent) loader.load();
@@ -233,6 +240,7 @@ public class GameBoardController extends Observable implements Initializable{
         this.addObserver((Observer) loader.getController());
     }
 
+    @FXML
     public void hidePlayerBoard() {
         if (playerBoard.getScene().getWindow().isShowing()) {
             playerBoard.hide();
@@ -245,6 +253,7 @@ public class GameBoardController extends Observable implements Initializable{
         infoplayer3.setText("teso");
     }
 
+    @FXML
     public void hideCard(MouseEvent event) {
         ImageView imageView = (ImageView) event.getSource();
         Image img = imageView.getImage();
@@ -252,5 +261,9 @@ public class GameBoardController extends Observable implements Initializable{
         setChanged();
         notifyObservers(img);
         imageView.setImage(null);
+    }
+
+    public void setPlayerName() {
+        playerName.setText(ClientInformation.getPlayerName());
     }
 }
