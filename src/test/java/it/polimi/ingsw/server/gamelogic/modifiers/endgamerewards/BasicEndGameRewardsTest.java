@@ -19,13 +19,15 @@ class BasicEndGameRewardsTest {
     void testEqualsTrue() {
         BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(5,0,0),
                 new Points(10,0,0), new Points(15,0,0));
+        BasicEndGameRewards basicEndGameRewardsToConfront2 = basicEndGameRewards;
+        assertTrue(basicEndGameRewards.equals(basicEndGameRewardsToConfront2));
         assertTrue(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
     }
 
     @Test
     void testEqualsFalse() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(0,0,0),
-                new Points(0,0,0), new Points(0,0,0));
+        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(0,3,4),
+                new Points(0,2,2), new Points(0,3,4));
         assertFalse(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
     }
 
@@ -33,6 +35,7 @@ class BasicEndGameRewardsTest {
     void testEqualsDifferent() {
         String different = "";
         assertFalse(basicEndGameRewards.equals(different));
+        assertFalse(basicEndGameRewards.equals(null));
     }
 
     @Test

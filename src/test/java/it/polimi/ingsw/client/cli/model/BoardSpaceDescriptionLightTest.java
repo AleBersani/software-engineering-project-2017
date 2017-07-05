@@ -18,16 +18,16 @@ class BoardSpaceDescriptionLightTest {
     @Test
     void testEqualsTrue() {
         BoardSpaceDescriptionLight boardSpaceDescriptionLightToConfront = new BoardSpaceDescriptionLight(
-                BoardIdentifier.T_G_4, "4C",
-                2,2);
+                BoardIdentifier.T_G_4, "4C", 2,2);
+        BoardSpaceDescriptionLight boardSpaceDescriptionLightToConfront2 = boardSpaceDescriptionLight;
         assertTrue(boardSpaceDescriptionLightToConfront.equals(boardSpaceDescriptionLight));
+        assertTrue(boardSpaceDescriptionLight.equals(boardSpaceDescriptionLightToConfront2));
     }
 
     @Test
     void testEqualsFalse() {
         BoardSpaceDescriptionLight boardSpaceDescriptionLightToConfront = new BoardSpaceDescriptionLight(
-                BoardIdentifier.T_G_3, "3C",
-                2,2);
+                BoardIdentifier.T_G_3, "3C", 2,2);
         assertFalse(boardSpaceDescriptionLightToConfront.equals(boardSpaceDescriptionLight));
     }
 

@@ -17,6 +17,9 @@ public class BoardOwnerInformation {
         possibleBonusTiles = new ArrayList<>();
     }
 
+    private BoardOwnerInformation() {
+    }
+
     /**
      * Method that searches for a Board Space Description Light in a static List through stream, filtering by
      * board identifier. The first result with same identifier as "boardIdentifier", is returned.

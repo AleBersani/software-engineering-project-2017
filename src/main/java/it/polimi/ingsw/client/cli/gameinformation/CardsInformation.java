@@ -13,6 +13,9 @@ public class CardsInformation {
     private static List<ExcommunicationTileLight> excommunicationTileLights;
     private static List<LeaderCardLight> leaderCardsLights;
 
+    private CardsInformation() {
+    }
+
     public static void initLists() {
         developmentCardsLights = new ArrayList<>();
         excommunicationTileLights = new ArrayList<>();

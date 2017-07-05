@@ -17,20 +17,29 @@ class LeaderCardLightTest {
     void testEqualsTrue() {
         LeaderCardLight leaderCardLightToConfront = new LeaderCardLight("Lorenzo Il Magnifico",
                 "4C", "4Fp");
+        LeaderCardLight leaderCardLightToConfront2 = leaderCardLight;
         assertTrue(leaderCardLightToConfront.equals(leaderCardLight));
+        assertTrue(leaderCardLight.equals(leaderCardLightToConfront2));
     }
 
     @Test
     void testEqualsFalse() {
-        LeaderCardLight leaderCardLightToConfront = new LeaderCardLight("Lorenzo Il Magnifico",
+        LeaderCardLight leaderCardLightToConfront = new LeaderCardLight("Santa Rita",
+                "4Vp", "4Mp");
+        LeaderCardLight leaderCardLightToConfront2 = new LeaderCardLight("Lorenzo Il Magnifico",
+                "4Vp", "4Mp");
+        LeaderCardLight leaderCardLightToConfront3 = new LeaderCardLight("Lorenzo Il Magnifico",
                 "4C", "4Mp");
-        assertFalse(leaderCardLightToConfront.equals(leaderCardLight));
+        assertFalse(leaderCardLight.equals(leaderCardLightToConfront));
+        assertFalse(leaderCardLight.equals(leaderCardLightToConfront2));
+        assertFalse(leaderCardLight.equals(leaderCardLightToConfront3));
     }
 
     @Test
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(leaderCardLight.equals(obj));
+        assertFalse(leaderCardLight.equals(null));
     }
 
     @Test
