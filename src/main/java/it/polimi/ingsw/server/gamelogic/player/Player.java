@@ -92,7 +92,7 @@ public class Player {
         counters.put("YELLOW", () -> playerBoard.getNumberOfBuildings());
         counters.put("BLUE", () -> playerBoard.getNumberOfCharacters());
         counters.put("PURPLE", () -> playerBoard.getNumberOfVentures());
-        counters.put("GOODS", () -> sumOfAllResources());
+        counters.put("GOODS", this::sumOfAllResources);
         return counters;
     }
 
