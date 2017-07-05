@@ -55,10 +55,10 @@ public class LeaderChoiceController implements Observer {
         leaderCards = new ArrayList<>();
         ultimateLeaders = new ArrayList<>();
         setLeaderList();
-        ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "leaderChoice"));
         initEnumMap();
         setBackground();
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "leaderChoice"));
     }
 
     private void setLeaderList() {
@@ -140,39 +140,35 @@ public class LeaderChoiceController implements Observer {
     public void selectLeader1(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(0)));
+        led2.setDisable(true);
+        led3.setDisable(true);
+        led4.setDisable(true);
     }
 
     @FXML
     public void selectLeader2(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(1)));
+        led1.setDisable(true);
+        led3.setDisable(true);
+        led4.setDisable(true);
     }
 
     @FXML
     public void selectLeader3(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(2)));
+        led1.setDisable(true);
+        led2.setDisable(true);
+        led4.setDisable(true);
     }
 
     @FXML
     public void selectLeader4(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(3)));
-    }
-
-    public String saveLeader1() {
-        return ultimateLeaders.get(0);
-    }
-
-    public String saveLeader2() {
-        return ultimateLeaders.get(1);
-    }
-
-    public String saveLeader3() {
-        return ultimateLeaders.get(2);
-    }
-
-    public String saveLeader4() {
-        return ultimateLeaders.get(3);
+        led1.setDisable(true);
+        led2.setDisable(true);
+        led3.setDisable(true);
     }
 }
