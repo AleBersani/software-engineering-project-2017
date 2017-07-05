@@ -8,6 +8,7 @@ import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.*;
 public interface CardVisitor {
     void visitAdditionalCardInfo(CardFlashAction cardFlashAction);
     void visitAdditionalCardInfo(CardFlashExchangingGoods cardFlashExchangingGoods);
+    void visitAdditionalCardInfo(ChurchSustainBonus churchSustainBonus);
     void visitAdditionalCardInfo(ConditionalProduction conditionalProduction);
     void visitAdditionalCardInfo(GoodsBasedOnPossessions goodsBasedOnPossessions);
     void visitAdditionalCardInfo(MultipleProduction multipleProduction);
