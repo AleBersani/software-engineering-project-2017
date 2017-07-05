@@ -5,8 +5,7 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class CardInformationTest {
     private CardInformation cardInformation;
@@ -20,7 +19,13 @@ class CardInformationTest {
     void testEquals() {
         CardInformation cardInformationToConfront = new CardInformation(3, "Zecca",
                 PeriodNumber.FIRST, GeneralColor.GREEN);
+        CardInformation cardInformationToConfront2 = cardInformation;
         assertTrue(cardInformationToConfront.equals(cardInformation));
+        assertTrue(cardInformation.equals(cardInformationToConfront2));
+        cardInformationToConfront.setCardColor(GeneralColor.YELLOW);
+        assertFalse(cardInformation.equals(cardInformationToConfront));
+        assertFalse(cardInformation.equals(" "));
+        assertFalse(cardInformation.equals(null));
     }
 
     @Test

@@ -4,7 +4,7 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerDetailsTest {
     private PlayerDetails playerDetails;
@@ -17,7 +17,13 @@ class PlayerDetailsTest {
     @Test
     void testEquals() {
         PlayerDetails playerDetailsToConfront = new PlayerDetails("", GeneralColor.BLUE);
-        assertEquals(playerDetailsToConfront, playerDetails);
+        PlayerDetails playerDetailsToConfront2 = new PlayerDetails("Lorenzo", GeneralColor.BLUE);
+        PlayerDetails playerDetailsToConfront3 = playerDetails;
+        assertTrue(playerDetailsToConfront.equals(playerDetails));
+        assertTrue(playerDetails.equals(playerDetailsToConfront3));
+        assertFalse(playerDetails.equals(playerDetailsToConfront2));
+        assertFalse(playerDetails.equals(" "));
+        assertFalse(playerDetails.equals(null));
     }
 
     @Test
@@ -30,5 +36,12 @@ class PlayerDetailsTest {
     void testGetPlayerColor() {
         playerDetails.setPlayerColor(GeneralColor.BLUE);
         assertEquals(GeneralColor.BLUE, playerDetails.getPlayerColor());
+    }
+
+    @Test
+    void testIsEmpty() {
+        assertFalse(playerDetails.isEmpty());
+        playerDetails.setPlayerColor(GeneralColor.UNDEFINED);
+        assertTrue(playerDetails.isEmpty());
     }
 }

@@ -36,6 +36,13 @@ class PlayerBoardTest {
     }
 
     @Test
+    void testFirstConstructor() {
+        PlayerBoard playerBoard1 = new PlayerBoard(new Goods(new Points(1,2,3)));
+        PlayerBoard playerBoard2 = new PlayerBoard(new Goods(new Points(1,2,3)));
+        assertEquals(playerBoard1, playerBoard2);
+    }
+
+    @Test
     void testEquals() {
         PlayerBoard playerBoardToConfront;
         playerBoardToConfront = new PlayerBoard(new BonusTiles(new Goods(), new Goods()), new Goods());

@@ -4,8 +4,7 @@ import it.polimi.ingsw.server.gamelogic.enums.LeaderCategory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class LeaderInformationTest {
     private LeaderInformation leaderInformation;
@@ -16,10 +15,28 @@ class LeaderInformationTest {
     }
 
     @Test
-    void testEquals() {
+    void testEqualsTrue() {
         LeaderInformation expectedLeaderInformation = new LeaderInformation("Lorenzo Il Magnifico",
                                                                                 LeaderCategory.CONSUMABLE);
+        LeaderInformation leaderInformationToConfront2 = leaderInformation;
         assertTrue(expectedLeaderInformation.equals(leaderInformation));
+        assertTrue(leaderInformation.equals(leaderInformationToConfront2));
+    }
+
+    @Test
+    void testEqualsFalse() {
+        LeaderInformation leaderInformationToConfront = new LeaderInformation("Lorenzo Il Magnifico",
+                LeaderCategory.PERMANENT);
+        LeaderInformation leaderInformationToConfront2 = new LeaderInformation("Santa Rita",
+                LeaderCategory.CONSUMABLE);
+        assertFalse(leaderInformation.equals(leaderInformationToConfront));
+        assertFalse(leaderInformation.equals(leaderInformationToConfront2));
+    }
+
+    @Test
+    void testEqualsDifferent() {
+        assertFalse(leaderInformation.equals(" "));
+        assertFalse(leaderInformation.equals(null));
     }
 
     @Test

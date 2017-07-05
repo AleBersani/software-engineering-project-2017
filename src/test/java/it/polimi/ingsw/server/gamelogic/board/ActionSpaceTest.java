@@ -19,13 +19,18 @@ class ActionSpaceTest {
     void testEqualsTrue() {
         ActionSpace actionSpaceToConfront = new ActionSpace(new Space(BoardIdentifier.HARVEST_1,
                 1), 2);
+        ActionSpace actionSpaceToConfront2 = actionSpace;
         assertTrue(actionSpace.equals(actionSpaceToConfront));
+        assertTrue(actionSpace.equals(actionSpaceToConfront2));
     }
 
     @Test
     void testEqualsFalse() {
         ActionSpace actionSpaceToConfront = new ActionSpace(new Space(BoardIdentifier.HARVEST_1,
                 2), 2);
+        ActionSpace actionSpaceToConfront2 = new ActionSpace(new Space(BoardIdentifier.HARVEST_1,
+                1), 3);
+        assertFalse(actionSpace.equals(actionSpaceToConfront2));
         assertFalse(actionSpace.equals(actionSpaceToConfront));
     }
 
@@ -33,6 +38,7 @@ class ActionSpaceTest {
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(actionSpace.equals(obj));
+        assertFalse(actionSpace.equals(null));
     }
 
     @Test

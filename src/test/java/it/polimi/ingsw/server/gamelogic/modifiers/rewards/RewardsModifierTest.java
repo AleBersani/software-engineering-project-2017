@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class RewardsModifierTest {
     private BasicRewards basicRewards;
@@ -55,5 +56,10 @@ class RewardsModifierTest {
                 new Points(9,9,9));
 
         assertEquals(expected, basicRewards.calculateFinalRewards());
+    }
+
+    @Test
+    void testEquals() {
+        assertFalse(rewardsModifiers.get(0).equals(null));
     }
 }

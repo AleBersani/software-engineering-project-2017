@@ -51,7 +51,9 @@ class TowerActionRequirementsTest {
         TowerActionRequirements towerActionRequirementsToConfront = new TowerActionRequirements(spaceActionRequirements,
                 requiredGoods, bonusGoods,
                 occupiedTowerCost, false, false);
-        assertTrue(towerActionRequirementsToConfront.equals(towerActionRequirements));
+        TowerActionRequirements towerActionRequirementsToConfront2 = towerActionRequirements;
+        assertTrue(towerActionRequirements.equals(towerActionRequirementsToConfront));
+        assertTrue(towerActionRequirements.equals(towerActionRequirementsToConfront2));
     }
 
     @Test
@@ -74,6 +76,24 @@ class TowerActionRequirementsTest {
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(towerActionRequirements.equals(obj));
+        assertFalse(towerActionRequirements.equals(null));
+    }
+
+    @Test
+    void testHashCode() {
+        SpaceActionRequirements spaceActionRequirements = new SpaceActionRequirements(
+                ActionType.BLUE_TOWER, PawnColor.BLACK,
+                4, 3, 1, false);
+        Goods requiredGoods = new Goods(new Resources(5,4,3,2));
+        Goods occupiedTowerCost = new Goods();
+        Goods bonusGoods = new Goods();
+
+        TowerActionRequirements towerActionRequirementsToConfront = new TowerActionRequirements(spaceActionRequirements,
+                requiredGoods, bonusGoods,
+                occupiedTowerCost, false, false);
+        assertTrue(towerActionRequirements.hashCode() == towerActionRequirementsToConfront.hashCode());
+        towerActionRequirementsToConfront.setOccupiedTower(true);
+        assertFalse(towerActionRequirements.hashCode() == towerActionRequirementsToConfront.hashCode());
     }
 
     @Test

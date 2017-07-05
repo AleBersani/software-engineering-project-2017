@@ -13,7 +13,7 @@ public class ProductionHarvestSpace {
     public ProductionHarvestSpace(Space space, int malusValue) {
         this.space = space;
         this.malusValue = malusValue;
-        int numberOfRequiredPlayers = 0;
+        numberOfRequiredPlayers = 0;
     }
 
     public ProductionHarvestSpace(Space space, int malusValue, int numberOfRequiredPlayers) {

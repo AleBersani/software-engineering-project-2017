@@ -36,34 +36,37 @@ class BoardActionRequirementsTest {
         BoardActionRequirements boardActionRequirementsToConfront = new BoardActionRequirements(
                 new SpaceActionRequirements(ActionType.MARKET, PawnColor.BLACK,
                         4, 3, 1, false));
-        Player playerToConfront = new Player(new PlayerDetails(),
-                new PlayerBoard(new BonusTiles(new Goods(), new Goods()), new Goods()));
-        List<Pawn> pawns = new ArrayList<>();
-        pawns.add(new Pawn(3, PawnColor.BLACK));
-        playerToConfront.getPlayerBoard().setPawns(pawns);
+        BoardActionRequirements boardActionRequirementsToConfront2 = boardActionRequirements;
         assertTrue(boardActionRequirements.equals(boardActionRequirementsToConfront));
-        assertTrue(player.equals(playerToConfront));
+        assertTrue(boardActionRequirements.equals(boardActionRequirementsToConfront2));
     }
 
     @Test
     void testEqualsFalse() {
-        BoardActionRequirements boardActionRequirementsToConfront = new BoardActionRequirements(
-                new SpaceActionRequirements(ActionType.HARVEST, PawnColor.ORANGE,
-                        4, 3, 1, false));
-        Player playerToConfront = new Player(new PlayerDetails(),
-                new PlayerBoard(new BonusTiles(new Goods(), new Goods()), new Goods()));
-        List<Pawn> pawns = new ArrayList<>();
-        pawns.add(new Pawn(3, PawnColor.WHITE));
-        playerToConfront.getPlayerBoard().setPawns(pawns);
+        BoardActionRequirements boardActionRequirementsToConfront = new BoardActionRequirements(new SpaceActionRequirements(
+                ActionType.MARKET, PawnColor.BLACK,
+                4, 3, 1, false));
+        boardActionRequirementsToConfront.setSpaceActionRequirements(new SpaceActionRequirements(
+                ActionType.HARVEST, PawnColor.BLACK,
+                4, 3, 1, false));
+        BoardActionRequirements boardActionRequirementsToConfront2 = new BoardActionRequirements(new SpaceActionRequirements(
+                ActionType.MARKET, PawnColor.BLACK,
+                4, 3, 1, false));
+        boardActionRequirementsToConfront2.setCanPlace(false);
+        BoardActionRequirements boardActionRequirementsToConfront3 = new BoardActionRequirements(new SpaceActionRequirements(
+                ActionType.MARKET, PawnColor.BLACK,
+                4, 3, 1, false));
+        boardActionRequirementsToConfront3.setMalusValue(3);
         assertFalse(boardActionRequirements.equals(boardActionRequirementsToConfront));
-        assertFalse(player.equals(playerToConfront));
+        assertFalse(boardActionRequirements.equals(boardActionRequirementsToConfront2));
+        assertFalse(boardActionRequirements.equals(boardActionRequirementsToConfront3));
     }
 
     @Test
     void testEqualsDifferent() {
         String different = "";
         assertFalse(boardActionRequirements.equals(different));
-        assertFalse(player.equals(different));
+        assertFalse(boardActionRequirements.equals(null));
     }
 
     @Test

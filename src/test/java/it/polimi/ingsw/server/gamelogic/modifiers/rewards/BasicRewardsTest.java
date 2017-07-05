@@ -78,7 +78,9 @@ class BasicRewardsTest {
 
     @Test
     void testGetRewardsCopy() {
-        assertEquals(new Goods(new Points(1,1,1)), basicRewards.getRewards());
+        Goods rewardsCopyToSet = new Goods(new Points(1,2,3));
+        basicRewards.setRewardsCopy(rewardsCopyToSet);
+        assertEquals(rewardsCopyToSet, basicRewards.getRewardsCopy());
     }
 
     @Test

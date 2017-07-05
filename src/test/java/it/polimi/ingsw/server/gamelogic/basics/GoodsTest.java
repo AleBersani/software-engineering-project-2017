@@ -17,7 +17,11 @@ class GoodsTest {
     void testEquals() {
         Goods goodsToConfront = new Goods(new Resources(1,2,3,0),
                 new Points(1,2,3));
+        Goods goodsToConfront2 = goods;
         assertTrue(goods.equals(goodsToConfront));
+        assertTrue(goods.equals(goodsToConfront2));
+        assertFalse(goods.equals(null));
+        assertFalse(goods.equals(" "));
     }
 
     @Test

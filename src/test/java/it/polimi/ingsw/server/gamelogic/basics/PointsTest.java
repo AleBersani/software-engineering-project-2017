@@ -79,4 +79,22 @@ class PointsTest {
     void testFalseIsEmpty() {
         assertFalse(points.isEmpty());
     }
+
+    @Test
+    void testGetVictory() {
+        points.setVictory(7);
+        assertEquals(7, points.getVictory());
+    }
+
+    @Test
+    void testGetMilitary() {
+        points.setMilitary(7);
+        assertEquals(7, points.getMilitary());
+    }
+
+    @Test
+    void testGetFaith() {
+        points.setFaith(7);
+        assertEquals(7, points.getFaith());
+    }
 }

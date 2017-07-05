@@ -14,8 +14,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class DeckTest {
     private Deck deck;
@@ -28,7 +27,11 @@ class DeckTest {
     @Test
     void testEquals() {
         Deck deckToConfront = new Deck();
+        Deck deckToConfront2 = deck;
         assertTrue(deckToConfront.equals(deck));
+        assertTrue(deck.equals(deckToConfront2));
+        assertFalse(deck.equals(" "));
+        assertFalse(deck.equals(null));
     }
 
     @Test

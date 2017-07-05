@@ -76,4 +76,32 @@ class BonusActionValueTest {
         towerActionRequirements = bonusActionValue.modifyRequirements(towerActionRequirements);
         assertFalse(towerActionRequirements.hasRequirements(player));
     }
+
+    @Test
+    void testEqualsTrue() {
+        bonusActionValue = new BonusActionValue(new AvailableActions(ActionType.BLUE_TOWER),
+                1);
+        BonusActionValue bonusActionValueToConfront = new BonusActionValue(new AvailableActions(ActionType.BLUE_TOWER),
+                1);
+        BonusActionValue bonusActionValueToConfront2 = bonusActionValue;
+        assertTrue(bonusActionValue.equals(bonusActionValueToConfront));
+        assertTrue(bonusActionValue.equals(bonusActionValueToConfront2));
+    }
+
+    @Test
+    void testEqualsFalse() {
+        bonusActionValue = new BonusActionValue(new AvailableActions(ActionType.BLUE_TOWER),
+                1);
+        BonusActionValue bonusActionValueToConfront = new BonusActionValue(new AvailableActions(ActionType.GREEN_TOWER),
+                2);
+        assertFalse(bonusActionValue.equals(bonusActionValueToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent() {
+        bonusActionValue = new BonusActionValue(new AvailableActions(ActionType.BLUE_TOWER),
+                1);
+        assertFalse(bonusActionValue.equals(" "));
+        assertFalse(bonusActionValue.equals(null));
+    }
 }

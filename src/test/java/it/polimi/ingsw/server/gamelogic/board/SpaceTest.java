@@ -20,12 +20,17 @@ class SpaceTest {
     @Test
     void testEqualsTrue() {
         Space spaceToConfront = new Space(BoardIdentifier.T_G_4, 2);
-        assertTrue(spaceToConfront.equals(space));
+        Space spaceToConfront2 = space;
+        assertTrue(space.equals(spaceToConfront));
+        assertTrue(space.equals(spaceToConfront2));
     }
 
     @Test
     void testEqualsFalse() {
         Space spaceToConfront = new Space(BoardIdentifier.T_G_3, 2);
+        spaceToConfront.setAlreadyTaken(true);
+        spaceToConfront.setPlayerPawn(new PlayerPawn(new PlayerDetails("Lorenzo", GeneralColor.BLUE),
+                PawnColor.ORANGE));
         assertFalse(spaceToConfront.equals(space));
     }
 
@@ -33,6 +38,7 @@ class SpaceTest {
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(space.equals(obj));
+        assertFalse(space.equals(null));
     }
 
     @Test

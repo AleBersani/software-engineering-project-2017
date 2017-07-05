@@ -4,8 +4,7 @@ import it.polimi.ingsw.shared.model.PawnColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PawnTest {
     private Pawn pawn;
@@ -18,7 +17,11 @@ class PawnTest {
     @Test
     void testEquals() {
         Pawn expectedPawn = new Pawn(2, PawnColor.ORANGE);
+        Pawn expectedPawn2 = pawn;
         assertTrue(expectedPawn.equals(pawn));
+        assertTrue(expectedPawn2.equals(pawn));
+        assertFalse(pawn.equals(null));
+        assertFalse(pawn.equals(" "));
     }
 
     @Test

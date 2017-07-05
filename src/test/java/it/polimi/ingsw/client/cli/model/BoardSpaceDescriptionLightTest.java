@@ -35,6 +35,7 @@ class BoardSpaceDescriptionLightTest {
     void testEqualsDifferent() {
         String obj = "Hello";
         assertFalse(boardSpaceDescriptionLight.equals(obj));
+        assertFalse(boardSpaceDescriptionLight.equals(null));
     }
 
     @Test

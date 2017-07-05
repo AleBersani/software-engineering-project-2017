@@ -28,40 +28,69 @@ class LessVictoryBasedOnBuildingsCostsTest {
 
     @Test
     void testEqualsTrue() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(
-                new Points(5,0,0), new Points(10,0,0),
-                new Points(15,0,0));
-        assertTrue(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCosts = new LessVictoryBasedOnBuildingsCosts();
+        List<Goods> goodsList = new ArrayList<>();
+        goodsList.add(new Goods(new Resources(1,2,3,4)));
+
+        List<Building> buildings = new ArrayList<>();
+        buildings.add(new Building(new BasicDevelopmentCard(
+                new CardInformation(1, "", PeriodNumber.FIRST, GeneralColor.YELLOW), goodsList)));
+        lessVictoryBasedOnBuildingsCosts.setBuildings(buildings);
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCostsToConfront =
+                new LessVictoryBasedOnBuildingsCosts();
+        lessVictoryBasedOnBuildingsCostsToConfront.setBuildings(buildings);
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCostsToConfront2 = lessVictoryBasedOnBuildingsCosts;
+        assertTrue(lessVictoryBasedOnBuildingsCosts.equals(lessVictoryBasedOnBuildingsCostsToConfront));
+        assertTrue(lessVictoryBasedOnBuildingsCosts.equals(lessVictoryBasedOnBuildingsCostsToConfront2));
     }
 
     @Test
     void testEqualsFalse() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(
-                new Points(0,0,0), new Points(0,0,0),
-                new Points(0,0,0));
-        assertFalse(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
-    }
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCosts = new LessVictoryBasedOnBuildingsCosts();
+        List<Goods> goodsList = new ArrayList<>();
+        goodsList.add(new Goods(new Resources(1,2,3,4)));
 
-    @Test
-    void testHashCodeTrue() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(
-                new Points(5,0,0), new Points(10,0,0),
-                new Points(15,0,0));
-        assertTrue(basicEndGameRewards.hashCode() == basicEndGameRewardsToConfront.hashCode());
-    }
-
-    @Test
-    void testHashCodeFalse() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(
-                new Points(0,0,0), new Points(0,0,0),
-                new Points(0,0,0));
-        assertFalse(basicEndGameRewards.hashCode() == basicEndGameRewardsToConfront.hashCode());
+        List<Building> buildings = new ArrayList<>();
+        buildings.add(new Building(new BasicDevelopmentCard(
+                new CardInformation(1, "", PeriodNumber.FIRST, GeneralColor.YELLOW), goodsList)));
+        lessVictoryBasedOnBuildingsCosts.setBuildings(buildings);
+        buildings.get(0).getCardInformation().setNumber(4);
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCostsToConfront =
+                new LessVictoryBasedOnBuildingsCosts();
+        assertFalse(lessVictoryBasedOnBuildingsCosts.equals(lessVictoryBasedOnBuildingsCostsToConfront));
     }
 
     @Test
     void testEqualsDifferent() {
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCosts = new LessVictoryBasedOnBuildingsCosts();
         String different = "";
-        assertFalse(basicEndGameRewards.equals(different));
+        assertFalse(lessVictoryBasedOnBuildingsCosts.equals(different));
+        assertFalse(lessVictoryBasedOnBuildingsCosts.equals(null));
+    }
+
+
+    @Test
+    void testHashCodeTrue() {
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCosts = new LessVictoryBasedOnBuildingsCosts();
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCostsToConfront =
+                new LessVictoryBasedOnBuildingsCosts();
+        assertTrue(lessVictoryBasedOnBuildingsCosts.hashCode() ==
+                lessVictoryBasedOnBuildingsCostsToConfront.hashCode());
+    }
+
+    @Test
+    void testHashCodeFalse() {
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCosts = new LessVictoryBasedOnBuildingsCosts();
+        LessVictoryBasedOnBuildingsCosts lessVictoryBasedOnBuildingsCostsToConfront =
+                new LessVictoryBasedOnBuildingsCosts();
+        List<Goods> goodsList = new ArrayList<>();
+        goodsList.add(new Goods(new Resources(1,2,3,4)));
+        List<Building> buildings = new ArrayList<>();
+        buildings.add(new Building(new BasicDevelopmentCard(
+                new CardInformation(1, "", PeriodNumber.FIRST, GeneralColor.YELLOW), goodsList)));
+        lessVictoryBasedOnBuildingsCosts.setBuildings(buildings);
+        assertFalse(lessVictoryBasedOnBuildingsCosts.hashCode() ==
+                lessVictoryBasedOnBuildingsCostsToConfront.hashCode());
     }
 
     @Test

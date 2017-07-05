@@ -23,7 +23,9 @@ class GoodsBasedOnPossessionsTest {
         Goods rewards = new Goods(new Points(1,2,3));
         GoodsBasedOnPossessions goodsBasedOnPossessionsToConfront = new GoodsBasedOnPossessions("", rewards,
                 "MILITARY", 5 );
+        GoodsBasedOnPossessions goodsBasedOnPossessionsToConfront2 = goodsBasedOnPossessions;
         assertTrue(goodsBasedOnPossessions.equals(goodsBasedOnPossessionsToConfront));
+        assertTrue(goodsBasedOnPossessions.equals(goodsBasedOnPossessionsToConfront2));
     }
 
     @Test
@@ -31,13 +33,22 @@ class GoodsBasedOnPossessionsTest {
         Goods rewards = new Goods(new Points(4,2,5));
         GoodsBasedOnPossessions goodsBasedOnPossessionsToConfront = new GoodsBasedOnPossessions("", rewards,
                 "MILITARY", 5 );
+        GoodsBasedOnPossessions goodsBasedOnPossessionsToConfront2 = new GoodsBasedOnPossessions("", rewards,
+                "FAITH", 5 );
+        GoodsBasedOnPossessions goodsBasedOnPossessionsToConfront3 = new GoodsBasedOnPossessions("", rewards,
+                "MILITARY", 3);
         assertFalse(goodsBasedOnPossessions.equals(goodsBasedOnPossessionsToConfront));
+        goodsBasedOnPossessionsToConfront.setName("Lorenzo");
+        assertFalse(goodsBasedOnPossessions.equals(goodsBasedOnPossessionsToConfront));
+        assertFalse(goodsBasedOnPossessions.equals(goodsBasedOnPossessionsToConfront2));
+        assertFalse(goodsBasedOnPossessions.equals(goodsBasedOnPossessionsToConfront3));
     }
 
     @Test
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(goodsBasedOnPossessions.equals(obj));
+        assertFalse(goodsBasedOnPossessions.equals(null));
     }
 
     @Test

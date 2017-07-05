@@ -20,7 +20,9 @@ class ProductionHarvestSpaceTest {
         ProductionHarvestSpace productionHarvestSpaceToConfront = new ProductionHarvestSpace(
                 new Space(BoardIdentifier.T_G_3,2),
                 2);
-        assertTrue(productionHarvestSpaceToConfront.equals(productionHarvestSpace));
+        ProductionHarvestSpace productionHarvestSpaceToConfront2 = productionHarvestSpace;
+        assertTrue(productionHarvestSpace.equals(productionHarvestSpaceToConfront));
+        assertTrue(productionHarvestSpace.equals(productionHarvestSpaceToConfront2));
     }
 
     @Test
@@ -35,6 +37,7 @@ class ProductionHarvestSpaceTest {
     void testEqualsDifferent() {
         String obj = "";
         assertFalse(productionHarvestSpace.equals(obj));
+        assertFalse(productionHarvestSpace.equals(null));
     }
 
     @Test
@@ -65,5 +68,12 @@ class ProductionHarvestSpaceTest {
         int numberToConfront = 5;
         productionHarvestSpace.setMalusValue(numberToConfront);
         assertEquals(numberToConfront, productionHarvestSpace.getMalusValue());
+    }
+
+    @Test
+    void testGetNumberOfRequiredPlayers() {
+        int numberToConfront = 3;
+        productionHarvestSpace.setNumberOfRequiredPlayers(numberToConfront);
+        assertEquals(numberToConfront, productionHarvestSpace.getNumberOfRequiredPlayers());
     }
 }

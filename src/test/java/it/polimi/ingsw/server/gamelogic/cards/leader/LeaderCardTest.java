@@ -1,6 +1,5 @@
 package it.polimi.ingsw.server.gamelogic.cards.leader;
 
-import it.polimi.ingsw.server.gamelogic.basics.CardsRequired;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.enums.LeaderCategory;
@@ -10,8 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class LeaderCardTest {
     private LeaderCard leaderCard;
@@ -20,13 +18,13 @@ class LeaderCardTest {
     void setUp() {
         LeaderInformation leaderInformation = new LeaderInformation("Lorenzo Il Magnifico",
                                                                     LeaderCategory.CONSUMABLE);
-        List<LeaderCost> leaderCosts = new ArrayList<LeaderCost>(){{add(new LeaderCost(new Goods(new Resources(1,1,2,3)),
-                                                                                        new ArrayList<CardsRequired>()));}};
+        List<LeaderCost> leaderCosts = new ArrayList<LeaderCost>(){{add(new LeaderCost(
+                new Goods(new Resources(1,1,2,3)), new ArrayList<>()));}};
         leaderCard = new LeaderCard(leaderInformation, leaderCosts);
     }
 
     @Test
-    void testEquals() {
+    void testEqualsTrue() {
         LeaderCard leaderCardToConfront;
         LeaderInformation leaderInformation = new LeaderInformation("Lorenzo Il Magnifico",
                 LeaderCategory.CONSUMABLE);
@@ -34,7 +32,45 @@ class LeaderCardTest {
                 new Resources(1,1,2,3)),
                 new ArrayList<>()));}};
         leaderCardToConfront = new LeaderCard(leaderInformation, leaderCosts);
-        assertTrue(leaderCardToConfront.equals(leaderCard));
+        LeaderCard leaderCardToConfront2 = leaderCard;
+        assertTrue(leaderCard.equals(leaderCardToConfront));
+        assertTrue(leaderCard.equals(leaderCardToConfront2));
+    }
+
+    @Test
+    void testEqualsFalse() {
+        LeaderInformation leaderInformation = new LeaderInformation("Lorenzo Il Magnifico",
+                LeaderCategory.CONSUMABLE);
+        List<LeaderCost> leaderCosts = new ArrayList<LeaderCost>(){{add(new LeaderCost(new Goods(
+                new Resources(1,1,2,3)),
+                new ArrayList<>()));}};
+        LeaderCard leaderCardToConfront = new LeaderCard(leaderInformation, leaderCosts);
+        LeaderCard leaderCardToConfront2 = new LeaderCard(leaderInformation, leaderCosts);
+        leaderCardToConfront.getLeaderInformation().setLeaderCategory(LeaderCategory.PERMANENT);
+        leaderCardToConfront.setPlacedOnBoard(true);
+        assertFalse(leaderCard.equals(leaderCardToConfront));
+        leaderCardToConfront2.setLeaderCosts(new ArrayList<>());
+        leaderCardToConfront2.setPlayable(false);
+        assertFalse(leaderCard.equals(leaderCardToConfront2));
+    }
+
+    @Test
+    void testEqualsDifferent() {
+        assertFalse(leaderCard.equals(" "));
+        assertFalse(leaderCard.equals(null));
+    }
+
+    @Test
+    void testHashCode() {
+        LeaderInformation leaderInformation = new LeaderInformation("Lorenzo Il Magnifico",
+                LeaderCategory.CONSUMABLE);
+        List<LeaderCost> leaderCosts = new ArrayList<LeaderCost>(){{add(new LeaderCost(new Goods(
+                new Resources(1,1,2,3)),
+                new ArrayList<>()));}};
+        LeaderCard leaderCardToConfront = new LeaderCard(leaderInformation, leaderCosts);
+        assertEquals(leaderCard.hashCode(), leaderCardToConfront.hashCode());
+        leaderCardToConfront.setPlayable(false);
+        assertNotEquals(leaderCard.hashCode(), leaderCardToConfront.hashCode());
     }
 
     @Test

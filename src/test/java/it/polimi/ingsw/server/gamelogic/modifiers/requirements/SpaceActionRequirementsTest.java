@@ -8,9 +8,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/**
- * Created by camilladottino on 29/06/17.
- */
 class SpaceActionRequirementsTest {
     private SpaceActionRequirements spaceActionRequirements;
 
@@ -24,7 +21,9 @@ class SpaceActionRequirementsTest {
     void testEqualsTrue() {
         SpaceActionRequirements spaceActionRequirementsToConfront = new SpaceActionRequirements(ActionType.HARVEST,
                 PawnColor.BLACK, 1,1, 0, false);
+        SpaceActionRequirements spaceActionRequirementsToConfront2 = spaceActionRequirements;
         assertTrue(spaceActionRequirements.equals(spaceActionRequirementsToConfront));
+        assertTrue(spaceActionRequirements.equals(spaceActionRequirementsToConfront2));
     }
 
     @Test
@@ -38,6 +37,7 @@ class SpaceActionRequirementsTest {
     void testEqualsDifferent() {
         String different = "";
         assertFalse(spaceActionRequirements.equals(different));
+        assertFalse(spaceActionRequirements.equals(null));
     }
 
     @Test
