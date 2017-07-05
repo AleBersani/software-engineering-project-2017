@@ -218,6 +218,9 @@ public class ParserAdditionalInfo {
                 case "playerOrderWeight":
                     parsedAddInfo.add(parsePlayerOrderWeight(card, name));
                     break;
+                case "churchSustainBonus":
+                    parsedAddInfo.add(parseChurchSustainBonus(card, name));
+                    break;
                 default:
                     break;
             }
@@ -343,6 +346,15 @@ public class ParserAdditionalInfo {
 
     private AdditionalCardInfo parsePlayerOrderWeight(JsonObject card, String name) {
         return new PlayerOrderWeight(name, card.get("weight").getAsInt());
+    }
+
+    private AdditionalCardInfo parseChurchSustainBonus(JsonObject card, String name) {
+        Gson gson = new Gson();
+        Resources resources = gson.fromJson(card.get("bonus").getAsJsonObject().get("resources").getAsJsonObject(),
+                                            Resources.class);
+        Points points = gson.fromJson(card.get("bonus").getAsJsonObject().get("points").getAsJsonObject(),
+                                            Points.class);
+        return new ChurchSustainBonus(name, new Goods(resources, points));
     }
 
     /**

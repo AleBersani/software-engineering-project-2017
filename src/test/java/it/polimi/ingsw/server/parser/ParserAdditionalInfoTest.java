@@ -222,4 +222,36 @@ class ParserAdditionalInfoTest {
         AdditionalCardInfo result = (AdditionalCardInfo) method.invoke(parserAdditionalInfo, obj, "2.7");
         assertTrue(resultExpected.equals(result));
     }
+
+    @Test
+    void testParseChurchSustainBonus() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        String methodName = "parseChurchSustainBonus";
+        Class targetClass = parserAdditionalInfo.getClass();
+        Method method = targetClass.getDeclaredMethod(methodName, JsonObject.class, String.class);
+        method.setAccessible(true);
+        String json = "{\"abilityType\": \"permanent\"," +
+                        "\"additionalInfoFlash\": {" +
+                            "\"onChoice\": []," +
+                            "\"notChoosable\": [] }," +
+                        "\"additionalInfoPermanent\": {" +
+                            "\"onChoice\": []," +
+                            "\"notChoosable\": [\"churchSustainBonus\"]}," +
+                        "\"bonus\": {" +
+                            "\"resources\": {" +
+                                "\"woods\": \"0\"," +
+                                "\"stones\": \"0\"," +
+                                "\"servants\": \"0\"," +
+                                "\"coins\": \"0\"" +
+                            "}," +
+                            "\"points\": {" +
+                                "\"victory\": \"5\"," +
+                                "\"military\": \"0\"," +
+                                "\"faith\": \"0\"" +
+                        "}}}";
+        JsonObject obj = (JsonObject) new JsonParser().parse(json);
+        AdditionalCardInfo resultExpected = new ChurchSustainBonus("Sisto IV", new Goods(
+                new Points(5,0,0)));
+        AdditionalCardInfo result = (AdditionalCardInfo) method.invoke(parserAdditionalInfo, obj, "Sisto IV");
+        assertTrue(resultExpected.equals(result));
+    }
 }
