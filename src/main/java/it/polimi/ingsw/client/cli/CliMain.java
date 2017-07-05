@@ -1,7 +1,5 @@
 package it.polimi.ingsw.client.cli;
 
-import java.util.Scanner;
-
 public class CliMain {
 //    private boolean disconnect = false;
 //    private ClientGameInformation gameInformation;

@@ -3,8 +3,6 @@ package it.polimi.ingsw.server.gamecontroller;
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gameelements.Cards;
-import it.polimi.ingsw.server.gameelements.SetGameElements;
-import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.basics.PlayerConfiguration;
 import it.polimi.ingsw.server.gamelogic.board.Board;
 import it.polimi.ingsw.server.gamelogic.board.Space;
@@ -23,7 +21,7 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.requests.serverclient.*;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -56,7 +54,7 @@ public class Game implements Runnable, Observer {
 
     @Override
     public void run() {
-        LOGGER.info("New game started! ID: " + gameId);
+        LOGGER.log(Level.INFO,() -> "New game started! ID: " + gameId);
         setupBoard();
     }
 
@@ -75,7 +73,7 @@ public class Game implements Runnable, Observer {
     }
 
     private void sendGameIdToPlayers() {
-        LOGGER.info("Sending game ID to players in game: " + gameId);
+        LOGGER.log(Level.INFO, () -> "Sending game ID to players in game: " + gameId);
         sendToAll(new UpdateGameId(gameId));
     }
 

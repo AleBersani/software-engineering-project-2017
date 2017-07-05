@@ -4,7 +4,8 @@ import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ExcommunicationTileTest {
     private ExcommunicationTile excommunicationTile;

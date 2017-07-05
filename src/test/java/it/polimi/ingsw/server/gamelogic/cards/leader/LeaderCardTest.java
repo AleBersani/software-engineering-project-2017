@@ -1,6 +1,5 @@
 package it.polimi.ingsw.server.gamelogic.cards.leader;
 
-import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.server.gamelogic.basics.CardsRequired;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
@@ -11,7 +10,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class LeaderCardTest {
     private LeaderCard leaderCard;

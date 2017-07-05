@@ -4,9 +4,7 @@ import it.polimi.ingsw.server.gamelogic.enums.DiceColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.nio.file.DirectoryStream;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DiceTest {
     private Dice dice;

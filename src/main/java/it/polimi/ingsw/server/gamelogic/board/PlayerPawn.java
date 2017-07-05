@@ -1,7 +1,7 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
-import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
+import it.polimi.ingsw.shared.model.PawnColor;
 
 import java.util.Objects;
 

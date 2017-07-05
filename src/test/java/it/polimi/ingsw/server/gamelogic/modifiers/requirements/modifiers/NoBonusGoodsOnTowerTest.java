@@ -5,13 +5,9 @@ import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.TowerActionRequirements;
-import it.polimi.ingsw.server.gamelogic.player.BonusTiles;
-import it.polimi.ingsw.server.gamelogic.player.Pawn;
-import it.polimi.ingsw.server.gamelogic.player.Player;
-import it.polimi.ingsw.server.gamelogic.player.PlayerBoard;
+import it.polimi.ingsw.server.gamelogic.player.*;
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.PawnColor;
-import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

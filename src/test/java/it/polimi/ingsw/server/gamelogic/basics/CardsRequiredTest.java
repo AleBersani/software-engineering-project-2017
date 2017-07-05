@@ -1,7 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.basics;
 
 import it.polimi.ingsw.shared.model.GeneralColor;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

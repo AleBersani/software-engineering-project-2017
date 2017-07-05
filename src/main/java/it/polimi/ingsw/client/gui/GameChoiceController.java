@@ -1,7 +1,6 @@
 package it.polimi.ingsw.client.gui;
 
 import com.jfoenix.controls.JFXButton;
-import it.polimi.ingsw.client.ClientStarterController;
 import it.polimi.ingsw.client.gui.notify.GameChoiceNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
@@ -14,10 +13,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

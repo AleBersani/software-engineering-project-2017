@@ -2,8 +2,6 @@ package it.polimi.ingsw.client.gui;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 
 import java.net.URL;

@@ -1,7 +1,6 @@
 package it.polimi.ingsw.shared.requests.serverclient;
 
 import it.polimi.ingsw.client.middleware.ClientReceiver;
-import it.polimi.ingsw.shared.support.GameStartType;
 
 public class ChosenGameResponse implements ServerClientRequest {
     private boolean accepted;

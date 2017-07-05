@@ -2,15 +2,11 @@ package it.polimi.ingsw.server.gamelogic.cards.additionalinfo;
 
 import it.polimi.ingsw.server.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.BonusActionValue;
-import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.NoMarketPlacement;
-import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
-import it.polimi.ingsw.shared.model.ActionType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class RequirementsOnCardTest {
     private RequirementsOnCard requirementsOnCard;

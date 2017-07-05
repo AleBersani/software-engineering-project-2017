@@ -1,12 +1,12 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
-import com.sun.javafx.image.impl.ByteGrayAlpha;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BoardActionSpacesTest {
     private BoardActionSpaces boardActionSpaces;

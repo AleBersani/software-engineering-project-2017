@@ -1,7 +1,6 @@
 package it.polimi.ingsw.client.gui;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 
 import java.util.Observable;

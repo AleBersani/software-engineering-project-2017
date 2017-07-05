@@ -6,7 +6,8 @@ import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BonusTilesTest {
     private BonusTiles bonusTiles;

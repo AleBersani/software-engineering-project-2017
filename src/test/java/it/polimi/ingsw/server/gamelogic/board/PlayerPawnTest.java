@@ -1,6 +1,5 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
-import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.PawnColor;

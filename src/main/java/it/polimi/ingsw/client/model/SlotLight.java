@@ -1,9 +1,6 @@
 package it.polimi.ingsw.client.model;
 
-import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
-
-import java.util.Map;
 
 public class SlotLight {
     private BoardIdentifier boardIdentifier;

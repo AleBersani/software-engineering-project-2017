@@ -4,8 +4,8 @@ import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
-import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

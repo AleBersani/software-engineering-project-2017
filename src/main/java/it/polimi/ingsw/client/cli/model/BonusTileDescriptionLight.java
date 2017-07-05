@@ -1,7 +1,5 @@
 package it.polimi.ingsw.client.cli.model;
 
-import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
-
 import java.util.Objects;
 
 public class BonusTileDescriptionLight {

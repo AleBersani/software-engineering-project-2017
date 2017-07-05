@@ -8,15 +8,14 @@ import it.polimi.ingsw.server.gamelogic.cards.development.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.Character;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.shared.model.GeneralColor;
-import org.apache.maven.model.Build;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import sun.awt.image.BufferedImageDevice;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DeckTest {
     private Deck deck;

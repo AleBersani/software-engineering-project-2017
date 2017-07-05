@@ -1,8 +1,8 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
 import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
-import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

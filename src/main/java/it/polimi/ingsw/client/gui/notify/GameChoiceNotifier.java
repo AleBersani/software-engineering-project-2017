@@ -1,7 +1,5 @@
 package it.polimi.ingsw.client.gui.notify;
 
-import it.polimi.ingsw.shared.support.GameStartType;
-
 import java.util.Observable;
 
 public class GameChoiceNotifier extends Observable {

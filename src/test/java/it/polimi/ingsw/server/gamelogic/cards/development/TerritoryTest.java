@@ -1,6 +1,5 @@
 package it.polimi.ingsw.server.gamelogic.cards.development;
 
-import it.polimi.ingsw.client.cli.gameinformation.CardsInformation;
 import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
@@ -13,7 +12,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TerritoryTest {
     private Territory territory;

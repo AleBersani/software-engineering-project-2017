@@ -23,6 +23,7 @@ public class ServerMain {
             gameElementsLoader.join();
         } catch (InterruptedException e) {
             LOGGER.log(Level.SEVERE, "An exception was thrown: join game elements");
+            Thread.currentThread().interrupt();
         }
         LOGGER.info("Game elements loading ended");
     }

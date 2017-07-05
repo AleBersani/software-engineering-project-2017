@@ -77,7 +77,7 @@ public class NewGamesHandler implements Observer {
                 createNewGame();
                 LOGGER.info("Time expired!");
             }
-        }, GameConfiguration.getStartingGameTimeout() * 1000);
+        }, GameConfiguration.getStartingGameTimeout() * (long)1_000);
     }
 
     private void createNewGame() {

@@ -6,18 +6,16 @@ import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.development.BasicDevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.development.Building;
 import it.polimi.ingsw.server.gamelogic.cards.development.CardInformation;
-import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.BasicEndGameRewards;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class LessVictoryBasedOnBuildingsCostsTest {
     private BasicEndGameRewards basicEndGameRewards;
