@@ -1,7 +1,6 @@
 package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.gameelements.BoardInformation;
-import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;

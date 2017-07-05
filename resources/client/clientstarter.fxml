@@ -31,7 +31,7 @@
         <Label layoutX="26.0" layoutY="281.0" text="Choose the connection:" />
         <JFXTextField fx:id="address" layoutX="176.0" layoutY="358.0" prefHeight="25.0" prefWidth="146.0" disable="true"
                       text="127.0.0.1" focusColor="chocolate"/>
-        <Label fx:id="IP" layoutX="94.0" layoutY="362.0" text="IP address:" disable="true"/>
+        <Label fx:id="ip" layoutX="94.0" layoutY="362.0" text="IP address:" disable="true"/>
         <JFXButton buttonType="RAISED" layoutX="66.0" layoutY="417.0" text="Register" styleClass="button"
                    onAction="#onRegister"/>
         <JFXButton buttonType="RAISED" layoutX="214.0" layoutY="417.0" text="Connect" styleClass="button"

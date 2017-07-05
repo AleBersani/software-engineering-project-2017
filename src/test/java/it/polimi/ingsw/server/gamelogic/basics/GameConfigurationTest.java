@@ -1,10 +1,9 @@
 package it.polimi.ingsw.server.gamelogic.basics;
 
-import it.polimi.ingsw.server.gamecontroller.Game;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GameConfigurationTest {
     @BeforeEach
