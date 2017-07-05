@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class ClientReceiverHandler implements ClientReceiver {
-    private final static Logger LOGGER = Logger.getLogger(ClientReceiverHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ClientReceiverHandler.class.getName());
 
     private ClientReceiverHandler() {}
 
@@ -28,6 +28,7 @@ public class ClientReceiverHandler implements ClientReceiver {
     public void visitServerClientRequest(ChosenGameResponse chosenGameResponse) {
         if (chosenGameResponse.isAccepted()) {
             System.out.println("Chosen game mode accepted!");
+            ClientInformation.setPlayerColor(chosenGameResponse.getPlayerColor());
         } else {
             System.out.println("Chosen game mode unaccepted!");
         }

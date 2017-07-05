@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ClientSenderHandler implements ClientSender {
-    private final static Logger LOGGER = Logger.getLogger(ClientSenderHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ClientSenderHandler.class.getName());
 
     private static String playerName;
     private static boolean socket = true;
@@ -30,7 +30,7 @@ public class ClientSenderHandler implements ClientSender {
         if (socket) {
             socketLogin(playerLogin);
         } else {
-            RMILogin(playerLogin);
+            rmiLogin(playerLogin);
         }
     }
 
@@ -40,7 +40,7 @@ public class ClientSenderHandler implements ClientSender {
         if (socket) {
             socketLogin(playerLogin);
         } else {
-            RMILogin(playerLogin);
+            rmiLogin(playerLogin);
         }
     }
 
@@ -52,7 +52,7 @@ public class ClientSenderHandler implements ClientSender {
         }
     }
 
-    private void RMILogin(PlayerLogin playerLogin) {
+    private void rmiLogin(PlayerLogin playerLogin) {
         try {
             RMIClient.remoteLogin(new PlayerLoginRMI(playerLogin, RMIClient.getClient()));
         } catch (RemoteException | NotBoundException e) {

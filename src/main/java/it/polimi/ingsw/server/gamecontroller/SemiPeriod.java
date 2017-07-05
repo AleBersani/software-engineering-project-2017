@@ -52,13 +52,18 @@ public class SemiPeriod extends Observable implements Observer {
         colors.add(DiceColor.WHITE);
         Random random = new Random();
         List<Dice> dices = new ArrayList<>();
-        for (DiceColor diceColor : colors)
+        for (DiceColor diceColor : colors) {
             dices.add( new Dice(diceColor, random.nextInt(5) + 1) );
+        }
+
         return dices;
     }
 
     private void setBoardCards() {
-        List<DevelopmentCard> territories, buildings, characters, ventures;
+        List<DevelopmentCard> territories;
+        List<DevelopmentCard> buildings;
+        List<DevelopmentCard> characters;
+        List<DevelopmentCard> ventures;
         territories = getParticularCardsList(GeneralColor.GREEN);
         buildings = getParticularCardsList(GeneralColor.YELLOW);
         characters = getParticularCardsList(GeneralColor.BLUE);

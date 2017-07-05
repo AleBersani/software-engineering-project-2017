@@ -69,7 +69,8 @@ public class Game implements Runnable, Observer {
 
     private void sendGameInitToPlayers() {
         LOGGER.info("Sending game init to players");
-        sendToAll(new ChosenGameResponse(true));
+        players.forEach(p -> sendTo(p.getPlayerDetails().getPlayerName(),
+                new ChosenGameResponse(true, p.getPlayerDetails().getPlayerColor())));
     }
 
     private void sendGameIdToPlayers() {

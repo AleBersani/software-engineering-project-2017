@@ -105,5 +105,4 @@ class MultipleProductionTest {
         multipleProduction.setName(name);
         assertEquals(name, multipleProduction.getName());
     }
-
 }

@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ParserLightModel implements Runnable {
-    private final static Logger LOGGER = Logger.getLogger(ParserLightModel.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ParserLightModel.class.getName());
 
     private ParserSettingsClient parserSettingsClient;
 
@@ -78,7 +78,9 @@ public class ParserLightModel implements Runnable {
     }
 
     public void parseCardsInformation() throws IOException {
-        JsonArray developmentCardsLight, excommunicationTilesLight,  leaderCardsLight;
+        JsonArray developmentCardsLight;
+        JsonArray excommunicationTilesLight;
+        JsonArray leaderCardsLight;
         developmentCardsLight = parserSettingsClient.extractJsonArray("DevelopmentCardsLight.json");
         excommunicationTilesLight = parserSettingsClient.extractJsonArray("ExcommunicationTileLight.json");
         leaderCardsLight = parserSettingsClient.extractJsonArray("LeaderCardLight.json");

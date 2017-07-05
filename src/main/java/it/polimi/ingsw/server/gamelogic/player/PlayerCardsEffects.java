@@ -9,9 +9,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-/**
- * TODO: JavaDoc
- */
 public class PlayerCardsEffects {
     private CardFlashAction cardFlashAction;
     private int playerOrderWeight;
@@ -50,11 +47,7 @@ public class PlayerCardsEffects {
     public void addRewardsModifier(RewardsModifier rewardsModifier) {
         rewardsModifiers.add(rewardsModifier);
     }
-
-    /**
-     * TODO: JavaDoc
-     * @return
-     */
+    
     public Optional<CardFlashAction> getCardFlashAction() {
         if (cardFlashAction == null) {
             return Optional.empty();

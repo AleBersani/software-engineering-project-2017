@@ -76,5 +76,4 @@ class ResourcesTest {
     void testFalseIsEmpty() {
         assertFalse(resources.isEmpty());
     }
-
 }

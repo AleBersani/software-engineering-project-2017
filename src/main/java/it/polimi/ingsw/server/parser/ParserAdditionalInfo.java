@@ -26,6 +26,8 @@ import java.util.concurrent.Callable;
  */
 public class ParserAdditionalInfo {
     private static final String MODIFIER = "modifiers";
+    private static final String POINTS = "points";
+    private static final String RESOURCES = "resources";
 
     private ParserSettings settings;
 
@@ -337,8 +339,8 @@ public class ParserAdditionalInfo {
     private AdditionalCardInfo parseCardFlashExchangingGoods(JsonObject card, String name) {
         Gson gson = new Gson();
         JsonObject exchGoods = card.get("instantEffect").getAsJsonArray().get(0).getAsJsonObject();
-        Resources resources = gson.fromJson(exchGoods.get("resources").getAsJsonObject(), Resources.class);
-        Points points = gson.fromJson(exchGoods.get("points").getAsJsonObject(), Points.class);
+        Resources resources = gson.fromJson(exchGoods.get(RESOURCES).getAsJsonObject(), Resources.class);
+        Points points = gson.fromJson(exchGoods.get(POINTS).getAsJsonObject(), Points.class);
         int councilPrivilege = exchGoods.get("councilePrivilege").getAsInt();
         ExchangingGoods parsedExchangingGoods = new ExchangingGoods(resources, points, councilPrivilege);
         return new CardFlashExchangingGoods(name, parsedExchangingGoods);
@@ -350,9 +352,9 @@ public class ParserAdditionalInfo {
 
     private AdditionalCardInfo parseChurchSustainBonus(JsonObject card, String name) {
         Gson gson = new Gson();
-        Resources resources = gson.fromJson(card.get("bonus").getAsJsonObject().get("resources").getAsJsonObject(),
+        Resources resources = gson.fromJson(card.get("bonus").getAsJsonObject().get(RESOURCES).getAsJsonObject(),
                                             Resources.class);
-        Points points = gson.fromJson(card.get("bonus").getAsJsonObject().get("points").getAsJsonObject(),
+        Points points = gson.fromJson(card.get("bonus").getAsJsonObject().get(POINTS).getAsJsonObject(),
                                             Points.class);
         return new ChurchSustainBonus(name, new Goods(resources, points));
     }
@@ -459,8 +461,8 @@ public class ParserAdditionalInfo {
         List<ExchangingGoods> exchangingGoodsList = new ArrayList<>();
         for (int i=0; i < arrayOfExchangingGoods.size(); i++) {
             object = arrayOfExchangingGoods.get(i).getAsJsonObject();
-            Resources resources = gson.fromJson(object.get("resources").getAsJsonObject(), Resources.class);
-            Points points = gson.fromJson(object.get("points").getAsJsonObject(), Points.class);
+            Resources resources = gson.fromJson(object.get(RESOURCES).getAsJsonObject(), Resources.class);
+            Points points = gson.fromJson(object.get(POINTS).getAsJsonObject(), Points.class);
             int councilPrivilege = object.get("councilePrivilege").getAsInt();
             exchangingGoodsList.add(new ExchangingGoods(resources, points, councilPrivilege));
         }

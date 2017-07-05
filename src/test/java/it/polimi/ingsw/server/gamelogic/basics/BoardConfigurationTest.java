@@ -39,5 +39,4 @@ class BoardConfigurationTest {
         BoardConfiguration.setMaxFaithPoints(666);
         assertEquals(666, BoardConfiguration.getMaxFaithPoints());
     }
-
 }

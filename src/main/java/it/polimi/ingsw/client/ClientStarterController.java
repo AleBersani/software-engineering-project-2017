@@ -30,7 +30,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ClientStarterController implements Observer {
-    private final static Logger LOGGER = Logger.getLogger(ClientStarterController.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ClientStarterController.class.getName());
 
     private final ScheduledExecutorService EXECUTOR_SERVICE = Executors.newScheduledThreadPool(1);
 
@@ -49,7 +49,7 @@ public class ClientStarterController implements Observer {
     @FXML
     private ToggleGroup connectionToggleGroup;
     @FXML
-    private Label IP;
+    private Label ip;
     @FXML
     private JFXTextField address;
     @FXML
@@ -156,13 +156,13 @@ public class ClientStarterController implements Observer {
 
     @FXML
     public void showIP() {
-        IP.setDisable(false);
+        ip.setDisable(false);
         address.setDisable(false);
     }
 
     @FXML
     public void hideIP() {
-        IP.setDisable(true);
+        ip.setDisable(true);
         address.setDisable(true);
     }
 }

@@ -57,10 +57,10 @@ class ParserConfigurationsTest {
         resultExpected.add(new Goods(new Resources(2,2,2,5)));
         resultExpected.add(new Goods(new Resources(2,2,2,6)));
         List<Goods> result = (List<Goods>) method.invoke(parserConfigurations, obj);
-        for(int i=0; i<resultExpected.size(); i++) {
+        for(int i = 0; i < resultExpected.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
-        for(int i=0; i<result.size(); i++) {
+        for(int i = 0; i < result.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
     }

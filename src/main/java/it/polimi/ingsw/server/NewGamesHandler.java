@@ -14,8 +14,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Logger;
 
 public class NewGamesHandler implements Observer {
-    private final static Logger LOGGER = Logger.getLogger(NewGamesHandler.class.getName());
-    private final static int MIN_PLAYERS = 2;
+    private static final Logger LOGGER = Logger.getLogger(NewGamesHandler.class.getName());
+    private static final int MIN_PLAYERS = 2;
 
     private final Queue<ConnectedClient> connectedClientList;
     private final int MAX_PLAYERS_FOR_GAME;

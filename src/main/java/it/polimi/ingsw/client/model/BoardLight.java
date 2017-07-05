@@ -12,18 +12,14 @@ public class BoardLight {
     private List<SlotLight> market;
     private CouncilPalaceLight councilPalaceLight;
 
-    public BoardLight(List<TowerSlotLight> greenTower, List<TowerSlotLight> yellowTower,
-                      List<TowerSlotLight> blueTower, List<TowerSlotLight> purpleTower,
-                      List<SlotLight> production, List<SlotLight> harvest,
-                      List<SlotLight> market, CouncilPalaceLight councilPalaceLight) {
-        this.greenTower = greenTower;
-        this.yellowTower = yellowTower;
-        this.blueTower = blueTower;
-        this.purpleTower = purpleTower;
-        this.production = production;
-        this.harvest = harvest;
-        this.market = market;
-        this.councilPalaceLight = councilPalaceLight;
+    private BoardLight() {}
+
+    private static class BoardLightHolder {
+        private static final BoardLight INSTANCE = new BoardLight();
+    }
+
+    public static BoardLight getInstance() {
+        return BoardLightHolder.INSTANCE;
     }
 
     public List<TowerSlotLight> getGreenTower() {

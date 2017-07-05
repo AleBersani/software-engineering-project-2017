@@ -18,6 +18,7 @@ class BonusTilesTest {
                                                 new Points(1,2,3)),
                                     new Goods(new Resources(1,3,4,0)));
     }
+
     @Test
     void testEquals() {
         BonusTiles expectedBonusTile = new BonusTiles(new Goods(new Resources(1,2,3,0),
@@ -41,5 +42,4 @@ class BonusTilesTest {
         bonusTiles.setHarvestBonus(goodsToConfront);
         assertEquals(goodsToConfront, bonusTiles.getHarvestBonus());
     }
-
 }

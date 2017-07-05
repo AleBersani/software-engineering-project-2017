@@ -71,7 +71,6 @@ class PlayerPawnTest {
     void getPlayerDetails() {
         PlayerDetails playerDetailsToGet = new PlayerDetails("", GeneralColor.BLUE);
         assertEquals(playerDetailsToGet, playerPawn.getPlayerDetails());
-
     }
 
     @Test

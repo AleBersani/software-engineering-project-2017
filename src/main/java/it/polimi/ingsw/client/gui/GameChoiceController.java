@@ -45,9 +45,9 @@ public class GameChoiceController implements Observer {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/leaderchoice.fxml"));
                 Parent root = fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.show();
+                Stage gameChoiceStage = new Stage();
+                gameChoiceStage.setScene(new Scene(root));
+                gameChoiceStage.show();
                 closeStage();
             } catch (IOException e) {
                 LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch leader choice board", e);

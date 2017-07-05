@@ -1,6 +1,7 @@
 package it.polimi.ingsw.shared.requests.serverclient;
 
 import it.polimi.ingsw.client.middleware.ClientReceiver;
+import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.io.Serializable;
 

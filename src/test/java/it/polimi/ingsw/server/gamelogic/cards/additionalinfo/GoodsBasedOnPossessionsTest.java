@@ -94,5 +94,4 @@ class GoodsBasedOnPossessionsTest {
         goodsBasedOnPossessions.setName(name);
         assertEquals(name, goodsBasedOnPossessions.getName());
     }
-
 }

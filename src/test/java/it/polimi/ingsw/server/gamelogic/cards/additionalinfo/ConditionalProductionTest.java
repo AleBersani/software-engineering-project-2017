@@ -57,5 +57,4 @@ class ConditionalProductionTest {
         conditionalProduction.setName(name);
         assertEquals(name, conditionalProduction.getName());
     }
-
 }

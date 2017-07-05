@@ -81,5 +81,4 @@ class BoardSpaceDescriptionLightTest {
         boardSpaceDescriptionLight.setMalus(numberToConfront);
         assertEquals(numberToConfront, boardSpaceDescriptionLight.getMalus());
     }
-
 }

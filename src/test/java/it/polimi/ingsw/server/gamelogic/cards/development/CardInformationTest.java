@@ -55,5 +55,4 @@ class CardInformationTest {
         cardInformation.setCardColor(colorToConfront);
         assertEquals(colorToConfront, cardInformation.getCardColor());
     }
-
 }

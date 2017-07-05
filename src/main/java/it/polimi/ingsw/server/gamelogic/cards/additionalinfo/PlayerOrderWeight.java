@@ -4,9 +4,6 @@ import it.polimi.ingsw.server.gamelogic.cards.CardVisitor;
 
 import java.util.Objects;
 
-/**
- * TODO: JavaDoc
- */
 public class PlayerOrderWeight extends AdditionalCardInfo {
     private int weight;
 

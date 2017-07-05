@@ -11,7 +11,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EndGameRewardsTest {
-    EndGameRewards endGameRewards;
+    private EndGameRewards endGameRewards;
 
     @BeforeEach
     void setUp() {
@@ -63,8 +63,6 @@ class EndGameRewardsTest {
         EndGameRewards newEndGamRewards = endGameRewards;
         assertTrue(newEndGamRewards.equals(endGameRewards));
     }
-
-
 
     @Test
     void testHashCodeTrue() {

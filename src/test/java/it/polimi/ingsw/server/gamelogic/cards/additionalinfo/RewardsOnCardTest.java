@@ -65,5 +65,4 @@ class RewardsOnCardTest {
         rewardsOnCard.setName(name);
         assertEquals(name, rewardsOnCard.getName());
     }
-
 }

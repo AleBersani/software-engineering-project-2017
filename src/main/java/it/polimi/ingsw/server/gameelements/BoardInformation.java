@@ -26,6 +26,8 @@ public class BoardInformation {
     private static List<MarketSpace> marketArea;
     private static Map<String, List<ExchangingGoods>> bonusTiles;
 
+    private BoardInformation() {}
+
     public static void initializeBoardInformationMaps() {
         greenTower = new HashMap<>();
         yellowTower = new HashMap<>();
@@ -37,9 +39,6 @@ public class BoardInformation {
         productionArea = new ArrayList<>();
         marketArea = new ArrayList<>();
         bonusTiles = new HashMap<>();
-    }
-
-    private BoardInformation() {
     }
 
     public static Map<Space, Goods> getGreenTower() {

@@ -3,7 +3,7 @@ package it.polimi.ingsw.client.model;
 public class TowerSlotLight {
     private SlotLight slotLight;
 
-    private Card card; //TODO
+    private Card card;
 
     public TowerSlotLight(SlotLight slotLight) {
         this.slotLight = slotLight;

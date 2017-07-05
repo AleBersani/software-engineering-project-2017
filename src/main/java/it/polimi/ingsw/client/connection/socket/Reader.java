@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Reader implements Runnable {
-    private final static Logger LOGGER = Logger.getLogger(Reader.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Reader.class.getName());
 
     private Socket socket;
     private ObjectInputStream objectInputStream;

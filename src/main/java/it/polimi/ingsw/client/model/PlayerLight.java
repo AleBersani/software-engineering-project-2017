@@ -16,6 +16,37 @@ public class PlayerLight {
     public PlayerLight(String playerName, GeneralColor playerColor) {
         this.playerName = playerName;
         this.playerColor = playerColor;
-        // TODO
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public GeneralColor getPlayerColor() {
+        return playerColor;
+    }
+
+    public void setPlayerColor(GeneralColor playerColor) {
+        this.playerColor = playerColor;
+    }
+
+    public List<Card> getActivatedLeaders() {
+        return activatedLeaders;
+    }
+
+    public void setActivatedLeaders(List<Card> activatedLeaders) {
+        this.activatedLeaders = activatedLeaders;
+    }
+
+    public Map<PointsLight, Integer> getNumberOfPoints() {
+        return numberOfPoints;
+    }
+
+    public void setNumberOfPoints(Map<PointsLight, Integer> numberOfPoints) {
+        this.numberOfPoints = numberOfPoints;
     }
 }

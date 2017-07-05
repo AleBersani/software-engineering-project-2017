@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ServerMain {
-    private final static Logger LOGGER = Logger.getLogger(NewGamesHandler.class.getName());
+    private final static Logger LOGGER = Logger.getLogger(ServerMain.class.getName());
 
     public static void main(String argv[]) {
         Thread socketServerStarted = new Thread(new SocketServerStarter());

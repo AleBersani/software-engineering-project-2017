@@ -49,10 +49,10 @@ class ParserLightModelTest {
                                                                     "1W", 5, 0));}};
         List<BoardSpaceDescriptionLight> result = new ArrayList<>();
         method.invoke(parserLightModel, obj, result);
-        for(int i=0; i<resultExpected.size(); i++) {
+        for (int i = 0; i< resultExpected.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
-        for(int i=0; i<result.size(); i++) {
+        for (int i = 0; i < result.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
     }
@@ -100,10 +100,10 @@ class ParserLightModelTest {
         }};
         List<BonusTileDescriptionLight> result = new ArrayList<>();
         method.invoke(parserLightModel, obj, result);
-        for(int i=0; i<resultExpected.size(); i++) {
+        for (int i = 0; i < resultExpected.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
-        for(int i=0; i<result.size(); i++) {
+        for (int i = 0; i < result.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
     }
@@ -156,9 +156,9 @@ class ParserLightModelTest {
                                             "None"));}};
         List<DevelopmentCardsLight> result = new ArrayList<>();
         method.invoke(parserLightModel, obj, result);
-        for(int i=0; i<resultExpected.size(); i++)
+        for (int i = 0; i < resultExpected.size(); i++)
             assertTrue(resultExpected.get(i).equals(result.get(i)));
-        for(int i=0; i<result.size(); i++)
+        for (int i = 0; i < result.size(); i++)
             assertTrue(resultExpected.get(i).equals(result.get(i)));
     }
 
@@ -215,9 +215,9 @@ class ParserLightModelTest {
         }};
         List<ExcommunicationTileLight> result = new ArrayList<>();
         method.invoke(parserLightModel, obj, result);
-        for(int i=0; i<resultExpected.size(); i++)
+        for (int i = 0; i< resultExpected.size(); i++)
             assertTrue(resultExpected.get(i).equals(result.get(i)));
-        for(int i=0; i<result.size(); i++)
+        for (int i = 0; i < result.size(); i++)
             assertTrue(resultExpected.get(i).equals(result.get(i)));
     }
 
@@ -267,9 +267,9 @@ class ParserLightModelTest {
         }};
         List<LeaderCardLight> result = new ArrayList<>();
         method.invoke(parserLightModel, obj, result);
-        for(int i=0; i<resultExpected.size(); i++)
+        for (int i = 0; i < resultExpected.size(); i++)
             assertTrue(resultExpected.get(i).equals(result.get(i)));
-        for(int i=0; i<result.size(); i++)
+        for (int i = 0; i < result.size(); i++)
             assertTrue(resultExpected.get(i).equals(result.get(i)));
     }
 

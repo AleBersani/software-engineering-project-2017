@@ -51,7 +51,6 @@ class LessVictoryForResourcesTest {
         assertFalse(basicEndGameRewards.hashCode() == basicEndGameRewardsToConfront.hashCode());
     }
 
-
     @Test
     void testModifyEndGameRewards() {
         LessVictoryForResources modifier = new LessVictoryForResources();

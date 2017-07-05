@@ -29,7 +29,6 @@ class BoardInformationTest {
                 new Goods(new Points(1,2,3)));
         BoardInformation.setGreenTower(mapToSet);
         assertEquals(mapToSet, BoardInformation.getGreenTower());
-
     }
 
     @Test

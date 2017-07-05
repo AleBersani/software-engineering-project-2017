@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SetGameElements implements Runnable {
-    private final static Logger LOGGER = Logger.getLogger(SetGameElements.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(SetGameElements.class.getName());
 
     private ParserCards parserCards;
     private ParserAdditionalInfo parserAdditionalInfo;

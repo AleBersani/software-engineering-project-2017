@@ -28,7 +28,7 @@ class ExchangingGoodsTest {
         chosenGoods.add(new Goods(new Points(1,2,3)));
         chosenGoods.add(new Goods(new Resources(1,2,3,4)));
         Goods sumOfConvertedGoods = new Goods();
-        chosenGoods.forEach(g -> sumOfConvertedGoods.addAll(g));
+        chosenGoods.forEach(sumOfConvertedGoods::addAll);
         Goods convertedGoods = exchangingGoods.exchangeCouncilsPrivileges(chosenGoods);
         assertEquals(sumOfConvertedGoods, convertedGoods);
     }
@@ -38,7 +38,7 @@ class ExchangingGoodsTest {
         List<Goods> chosenGoods = new ArrayList<>();
         chosenGoods.add(new Goods(new Points(1,2,3)));
         Goods sumOfConvertedGoods = new Goods();
-        chosenGoods.forEach(g -> sumOfConvertedGoods.addAll(g));
+        chosenGoods.forEach(sumOfConvertedGoods::addAll);
         assertThrows(IllegalArgumentException.class, ( )-> exchangingGoods.exchangeCouncilsPrivileges(chosenGoods));
     }
 }

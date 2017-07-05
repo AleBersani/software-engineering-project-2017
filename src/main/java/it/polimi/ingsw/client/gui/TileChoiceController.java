@@ -16,9 +16,17 @@ public class TileChoiceController implements Initializable {
     private ArrayList<String> ultimateTiles;
 
     @FXML
-    private ImageView tile1, tile2, tile3, tile4;
+    private ImageView tile1;
+    @FXML
+    private ImageView tile2;
+    @FXML
+    private ImageView tile3;
+    @FXML
+    private ImageView tile4;
+
     @FXML
     private JFXSpinner spinner;
+
     @FXML
     private Label waiting;
 
@@ -49,26 +57,22 @@ public class TileChoiceController implements Initializable {
 
     @FXML
     public String selectTile1() {
-        String selectedTile1 = tile1.getImage().toString();
-        return selectedTile1;
+        return tile1.getImage().toString();
     }
 
     @FXML
     public String selectTile2() {
-        String selectedTile2 = tile2.getImage().toString();
-        return selectedTile2;
+        return tile2.getImage().toString();
     }
 
     @FXML
     public String selectTile3() {
-        String selectedTile3 = tile3.getImage().toString();
-        return selectedTile3;
+        return tile3.getImage().toString();
     }
 
     @FXML
     public String selectTile4() {
-        String selectedTile4 = tile4.getImage().toString();
-        return selectedTile4;
+        return tile4.getImage().toString();
     }
 
     public String saveTile1() {

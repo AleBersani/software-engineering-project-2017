@@ -80,5 +80,4 @@ class AvailableActionsTest {
         availableActions.setActionTypes(actionTypes);
         assertEquals(actionTypes, availableActions.getActionTypes());
     }
-
 }

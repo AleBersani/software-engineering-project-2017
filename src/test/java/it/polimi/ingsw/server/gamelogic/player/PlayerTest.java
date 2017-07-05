@@ -83,7 +83,4 @@ class PlayerTest {
         PlayerDetails playerDetailsToGet = new PlayerDetails("", GeneralColor.BLUE);
         assertEquals(playerDetailsToGet, player.getPlayerDetails());
     }
-
-
-
 }

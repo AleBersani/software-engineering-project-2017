@@ -43,5 +43,4 @@ class PawnTest {
         pawn.setPlacedOnBoard(true);
         assertEquals(true, pawn.isPlacedOnBoard());
     }
-
 }

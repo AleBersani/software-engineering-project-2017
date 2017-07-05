@@ -51,17 +51,12 @@ class ParserModifiersTest {
         resultExpected.add(new FixedColouredPawnValue(new AvailableActions(ActionType.GREEN_TOWER),
                 PawnColor.ORANGE, 2));
         List<RequirementsModifier> result = parserModifiers.parseListRequirementsModifier(modifiers, obj);
-        for(int i=0; i<resultExpected.size(); i++) {
+        for (int i = 0; i < resultExpected.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
-        for(int i=0; i<result.size(); i++) {
+        for (int i = 0; i < result.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
-    }
-
-    @Test
-    void testParseRewardsModifier() {
-
     }
 
     @Test
@@ -407,10 +402,10 @@ class ParserModifiersTest {
                                                                         add(ActionType.PURPLE_TOWER);
                                                                         add(ActionType.YELLOW_TOWER);}};
         List<ActionType> result = (List<ActionType>) method.invoke(parserModifiers, obj);
-        for (int i=0; i<resultExpected.size(); i++) {
+        for (int i =0; i < resultExpected.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
-        for (int i=0; i<result.size(); i++) {
+        for (int i = 0; i < result.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
     }
@@ -426,10 +421,10 @@ class ParserModifiersTest {
         List<PawnColor> resultExpected = new ArrayList<PawnColor>(){{add(PawnColor.ORANGE); add(PawnColor.BLACK);
                                                                         add(PawnColor.NEUTRAL);}};
         List<PawnColor> result = (List<PawnColor>) method.invoke(parserModifiers, obj);
-        for (int i=0; i<resultExpected.size(); i++) {
+        for (int i = 0; i < resultExpected.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
-        for (int i=0; i<result.size(); i++) {
+        for (int i = 0; i < result.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
     }

@@ -150,10 +150,10 @@ class ParserBoardInformationTest {
                                                             4));}};
         List<MarketSpace> result = new ArrayList<>();
         method.invoke(parserBoardInformation, result, obj);
-        for(int i=0; i<resultExpected.size(); i++) {
+        for(int i = 0; i < resultExpected.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
-        for(int i=0; i<result.size(); i++) {
+        for(int i = 0; i < result.size(); i++) {
             assertTrue(resultExpected.get(i).equals(result.get(i)));
         }
     }
@@ -255,7 +255,8 @@ class ParserBoardInformationTest {
     }
 
     @Test
-    void testGetFaithToVictoryPointsMap() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testGetFaithToVictoryPointsMap()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "getFaithToVictoryPointsMap";
         Class targetClass = parserBoardInformation.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, Map.class, JsonObject.class);
@@ -276,7 +277,8 @@ class ParserBoardInformationTest {
     }
 
     @Test
-    void testGetFaithPointsForExcommunication() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testGetFaithPointsForExcommunication()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         String methodName = "getFaithPointsForExcommunication";
         Class targetClass = parserBoardInformation.getClass();
         Method method = targetClass.getDeclaredMethod(methodName, Map.class, JsonObject.class);

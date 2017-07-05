@@ -1,6 +1,7 @@
 package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.gameelements.BoardInformation;
+import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
@@ -110,19 +111,12 @@ public class Period extends Observable implements Observer {
         return newPlayerOrder;
     }
 
-    /**
-     * TODO
-     * @param semiPeriod
-     */
     public void initSemiPeriod(SemiPeriod semiPeriod) {
         /*
         metodo
          */
     }
 
-    /**
-     * TODO
-     */
     public void churchSupport() {
         int i =0;
 
@@ -150,31 +144,36 @@ public class Period extends Observable implements Observer {
      * @return A List of DevelopmentCard to be played in a new SemiPeriod.
      */
     private List<DevelopmentCard> getDevelopmentCardsForSemiPeriod() {
-        final int CARDS_FOR_SEMIPERIOD = 16;
-        int green=0, blue=0, purple=0, yellow=0;
+        final int CARDS_FOR_SEMI_PERIOD = 16;
+        int green = 0;
+        int blue = 0;
+        int purple = 0;
+        int yellow = 0;
+
         DevelopmentCard card;
         GeneralColor colorCard;
-        List<DevelopmentCard> cardsToExtract = new ArrayList(developmentCards), cardsToReturn = new ArrayList<>();
+        List<DevelopmentCard> cardsToExtract = new ArrayList(developmentCards);
+        List<DevelopmentCard> cardsToReturn = new ArrayList<>();
 
         if (!semiPeriods.isEmpty())
-            cardsToExtract.removeAll(semiPeriods.get(semiPeriods.size()-1).getDevelopmentCards());
+            cardsToExtract.removeAll(semiPeriods.get(semiPeriods.size() - 1).getDevelopmentCards());
         Collections.shuffle(cardsToExtract);
-        for (int i = 0; i < cardsToExtract.size() && cardsToReturn.size() < CARDS_FOR_SEMIPERIOD; i++) {
+        for (int i = 0; i < cardsToExtract.size() && cardsToReturn.size() < CARDS_FOR_SEMI_PERIOD; i++) {
             card = cardsToExtract.get(i);
             colorCard = card.getBasicDevelopmentCard().getCardInformation().getCardColor();
-            if (colorCard.equals(GeneralColor.GREEN) && green < CARDS_FOR_SEMIPERIOD/4){
+            if (colorCard.equals(GeneralColor.GREEN) && green < CARDS_FOR_SEMI_PERIOD / 4){
                 cardsToReturn.add(card);
                 green++;
             }
-            else if (colorCard.equals(GeneralColor.YELLOW) && yellow < CARDS_FOR_SEMIPERIOD/4){
+            else if (colorCard.equals(GeneralColor.YELLOW) && yellow < CARDS_FOR_SEMI_PERIOD / 4){
                 cardsToReturn.add(card);
                 yellow++;
             }
-            else if (colorCard.equals(GeneralColor.BLUE) && blue < CARDS_FOR_SEMIPERIOD/4){
+            else if (colorCard.equals(GeneralColor.BLUE) && blue < CARDS_FOR_SEMI_PERIOD / 4){
                 cardsToReturn.add(card);
                 blue++;
             }
-            else if (colorCard.equals(GeneralColor.PURPLE) && purple < CARDS_FOR_SEMIPERIOD/4){
+            else if (colorCard.equals(GeneralColor.PURPLE) && purple < CARDS_FOR_SEMI_PERIOD / 4){
                 cardsToReturn.add(card);
                 purple++;
             }

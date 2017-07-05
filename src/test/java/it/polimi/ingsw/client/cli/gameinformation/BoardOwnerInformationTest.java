@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BoardOwnerInformationTest {
-
     @BeforeEach
     void setUp() {
         BoardOwnerInformation.initLists();
@@ -39,8 +38,7 @@ class BoardOwnerInformationTest {
                 "4C", 2,1);
         result = BoardOwnerInformation.searchForBoardSpaceLight(BoardIdentifier.T_G_2);
         assertTrue(result.isPresent());
-        if(result.isPresent())
-            assertEquals(resultExpected, result.get());
+        result.ifPresent(boardSpaceDescriptionLight -> assertEquals(resultExpected, boardSpaceDescriptionLight));
     }
 
     @Test
@@ -50,8 +48,7 @@ class BoardOwnerInformationTest {
                 "4Se");
         result = BoardOwnerInformation.searchForBonusTileLight("B_TILE_2");
         assertTrue(result.isPresent());
-        if(result.isPresent())
-            assertEquals(resultExpected, result.get());
+        result.ifPresent(bonusTileDescriptionLight -> assertEquals(resultExpected, bonusTileDescriptionLight));
     }
 
     @Test
@@ -79,5 +76,4 @@ class BoardOwnerInformationTest {
         BoardOwnerInformation.setPossibleBonusTiles(bonusTileDescriptionLights);
         assertEquals(bonusTileDescriptionLights, BoardOwnerInformation.getPossibleBonusTiles());
     }
-
 }

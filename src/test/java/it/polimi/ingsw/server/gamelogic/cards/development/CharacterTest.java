@@ -32,5 +32,4 @@ class CharacterTest {
         Character characterToConfront = new Character(basicDevelopmentCard);
         assertTrue(character.equals(characterToConfront));
     }
-
 }

@@ -9,8 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SocketClient {
-    private final static Logger LOGGER = Logger.getLogger(SocketClient.class.getName());
-    private final static int PORT = 6677;
+    private static final Logger LOGGER = Logger.getLogger(SocketClient.class.getName());
+    private static final int PORT = 6677;
 
     private static Socket socket;
     private static ObjectOutputStream objectOutputStream;

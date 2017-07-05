@@ -28,7 +28,10 @@ public class GameBoardController extends Observable implements Initializable{
     private List<ImageView> yellowTower;
     private List<ImageView> blueTower;
     private List<ImageView> purpleTower;
-    private double startX, startY, originX, originY;
+    private double startX;
+    private double startY;
+    private double originX;
+    private double originY;
     private Stage playerBoard;
     private static final int FAITH_OFFSET = 35;
     private static final int ADDED_OFFSET = 15;
@@ -37,17 +40,115 @@ public class GameBoardController extends Observable implements Initializable{
     private static final int CRITICAL_FAITH_3 = 5;
 
     @FXML
-    private Circle whitePawn, orangePawn, blackPawn, neutralPawn, player1, player2, player3, player4;
+    private Circle whitePawn;
     @FXML
-    private StackPane G4, G3, G2, G1, B4, B3, B2, B1, Y4, Y3, Y2, Y1, P1, P2, P3, P4, M1, M2, M3, PRODUCTION_1, HARVEST_1;
+    private Circle orangePawn;
     @FXML
-    private StackPane PRODUCTION_2, COUNCIL_PALACE, HARVEST_2, faithPath;
+    private Circle blackPawn;
+    @FXML
+    private Circle neutralPawn;
+    @FXML
+    private Circle player1;
+    @FXML
+    private Circle player2;
+    @FXML
+    private Circle player3;
+    @FXML
+    private Circle player4;
 
     @FXML
-    private ImageView T_G_4, T_G_3, T_G_2, T_G_1, T_Y_4, T_Y_3, T_Y_2, T_Y_1, T_B_4, T_B_3, T_B_2, T_B_1,
-            T_P_4, T_P_3, T_P_2, T_P_1;
+    private StackPane G4;
     @FXML
-    private Label infoplayer1, infoplayer2, infoplayer3, playerName;
+    private StackPane G3;
+    @FXML
+    private StackPane G2;
+    @FXML
+    private StackPane G1;
+    @FXML
+    private StackPane B4;
+    @FXML
+    private StackPane B3;
+    @FXML
+    private StackPane B2;
+    @FXML
+    private StackPane B1;
+    @FXML
+    private StackPane Y4;
+    @FXML
+    private StackPane Y3;
+    @FXML
+    private StackPane Y2;
+    @FXML
+    private StackPane Y1;
+    @FXML
+    private StackPane P1;
+    @FXML
+    private StackPane P2;
+    @FXML
+    private StackPane P3;
+    @FXML
+    private StackPane P4;
+    @FXML
+    private StackPane M1;
+    @FXML
+    private StackPane M2;
+    @FXML
+    private StackPane M3;
+    @FXML
+    private StackPane PRODUCTION_1;
+    @FXML
+    private StackPane HARVEST_1;
+
+    @FXML
+    private StackPane PRODUCTION_2;
+    @FXML
+    private StackPane COUNCIL_PALACE;
+    @FXML
+    private StackPane HARVEST_2;
+    @FXML
+    private StackPane faithPath;
+
+    @FXML
+    private ImageView T_G_4;
+    @FXML
+    private ImageView T_G_3;
+    @FXML
+    private ImageView T_G_2;
+    @FXML
+    private ImageView T_G_1;
+    @FXML
+    private ImageView T_Y_4;
+    @FXML
+    private ImageView T_Y_3;
+    @FXML
+    private ImageView T_Y_2;
+    @FXML
+    private ImageView T_Y_1;
+    @FXML
+    private ImageView T_B_4;
+    @FXML
+    private ImageView T_B_3;
+    @FXML
+    private ImageView T_B_2;
+    @FXML
+    private ImageView T_B_1;
+    @FXML
+    private ImageView T_P_4;
+    @FXML
+    private ImageView T_P_3;
+    @FXML
+    private ImageView T_P_2;
+    @FXML
+    private ImageView T_P_1;
+
+    @FXML
+    private Label infoplayer1;
+    @FXML
+    private Label infoplayer2;
+    @FXML
+    private Label infoplayer3;
+    @FXML
+    private Label playerName;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -145,9 +246,7 @@ public class GameBoardController extends Observable implements Initializable{
 
     public void checkList() {
         for (Circle pawn : pawnList) {
-            pawn.setOnMouseClicked((event) -> {
-                moveCircle(pawn);
-            });
+            pawn.setOnMouseClicked(event -> moveCircle(pawn));
         }
     }
 
@@ -214,7 +313,7 @@ public class GameBoardController extends Observable implements Initializable{
     public void setFaith(int faithPoints, String player) {
         double newLayoutX;
         for (int i = 0; i < faithPath.getChildren().size(); i++) {
-            if (faithPath.getChildren().get(i).getId() == player) {
+            if (faithPath.getChildren().get(i).getId().equals(player)) {
                 faithPath.getChildren().get(i).setTranslateX(FAITH_OFFSET*faithPoints);
                 newLayoutX = faithPath.getChildren().get(i).getLayoutX();
                 if (faithPoints == CRITICAL_FAITH_1 || faithPoints == CRITICAL_FAITH_2 ||

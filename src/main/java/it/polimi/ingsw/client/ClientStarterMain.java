@@ -12,13 +12,17 @@ public class ClientStarterMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        stage = primaryStage;
+        setStage(primaryStage);
         FXMLLoader loaderClientStarter = new FXMLLoader(getClass().getResource("/client/clientstarter.fxml"));
         Parent root = loaderClientStarter.load();
         clientStarterController = loaderClientStarter.getController();
         primaryStage.setTitle("Lorenzo il Magnifico");
         primaryStage.setScene(new Scene(root, 400, 500));
         primaryStage.show();
+    }
+
+    private static void setStage(Stage stage) {
+        ClientStarterMain.stage = stage;
     }
 
     @Override

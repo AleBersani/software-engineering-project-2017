@@ -73,9 +73,9 @@ public class LeaderChoiceController implements Observer {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/tilechoice.fxml"));
                 Parent root = fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.show();
+                Stage leadersChoiceStage = new Stage();
+                leadersChoiceStage.setScene(new Scene(root));
+                leadersChoiceStage.show();
                 closeStage();
             } catch (IOException e) {
                 LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch player tiles board", e);

@@ -6,5 +6,4 @@ class SemiPeriodTest {
     @BeforeEach
     void setUp() {
     }
-
 }

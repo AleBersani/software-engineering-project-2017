@@ -19,7 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ServerReceiverHandler extends Observable implements ServerReceiver {
-    private final static Logger LOGGER = Logger.getLogger(ServerReceiverHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ServerReceiverHandler.class.getName());
 
     private ObjectOutputStream objectOutputStream;
 

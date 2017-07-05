@@ -52,5 +52,4 @@ class BasicDevelopmentCardTest {
         basicDevelopmentCard.setCosts(goodsListToConfront);
         assertEquals(goodsListToConfront, basicDevelopmentCard.getCosts());
     }
-
 }

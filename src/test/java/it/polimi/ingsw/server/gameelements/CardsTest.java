@@ -20,8 +20,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CardsTest {
-    Cards cards;
-
     @BeforeEach
     void setUp() {
     }
@@ -33,8 +31,8 @@ class CardsTest {
                 new CardInformation(1,"", PeriodNumber.FIRST, GeneralColor.GREEN),
                 new ArrayList<>()), 1, new ExchangingGoods(
                         new Goods(new Points(1,2,3)))));
-        cards.setTerritories(territoriesToSet);
-        assertEquals(territoriesToSet, cards.getTerritories());
+        Cards.setTerritories(territoriesToSet);
+        assertEquals(territoriesToSet, Cards.getTerritories());
     }
 
     @Test
@@ -43,8 +41,8 @@ class CardsTest {
         buildingsToSet.add(new Building(new BasicDevelopmentCard(
                 new CardInformation(9, "", PeriodNumber.FIRST, GeneralColor.YELLOW), new ArrayList<>()),
                 1, new ExchangingGoods(new Goods(new Points(1,2,3)))));
-        cards.setBuildings(buildingsToSet);
-        assertEquals(buildingsToSet, cards.getBuildings());
+        Cards.setBuildings(buildingsToSet);
+        assertEquals(buildingsToSet, Cards.getBuildings());
     }
 
     @Test
@@ -52,8 +50,8 @@ class CardsTest {
         List<Character> charactersToSet = new ArrayList<>();
         charactersToSet.add(new Character(new BasicDevelopmentCard(
                 new CardInformation(17, "", PeriodNumber.FIRST, GeneralColor.BLUE), new ArrayList<>())));
-        cards.setCharacters(charactersToSet);
-        assertEquals(charactersToSet, cards.getCharacters());
+        Cards.setCharacters(charactersToSet);
+        assertEquals(charactersToSet, Cards.getCharacters());
     }
 
     @Test
@@ -62,16 +60,16 @@ class CardsTest {
         venturesToSet.add(new Venture(new BasicDevelopmentCard(
                 new CardInformation(17, "", PeriodNumber.FIRST, GeneralColor.BLUE), new ArrayList<>()),
                 new Goods(new Points(1,2,3)), new ArrayList<>()));
-        cards.setVentures(venturesToSet);
-        assertEquals(venturesToSet, cards.getVentures());
+        Cards.setVentures(venturesToSet);
+        assertEquals(venturesToSet, Cards.getVentures());
     }
 
     @Test
     void testGetExcommunicationTiles() {
         List<ExcommunicationTile> excommunicationTilesToSet = new ArrayList<>();
         excommunicationTilesToSet.add(new ExcommunicationTile("", PeriodNumber.FIRST));
-        cards.setExcommunicationTiles(excommunicationTilesToSet);
-        assertEquals(excommunicationTilesToSet, cards.getExcommunicationTiles());
+        Cards.setExcommunicationTiles(excommunicationTilesToSet);
+        assertEquals(excommunicationTilesToSet, Cards.getExcommunicationTiles());
     }
 
     @Test
@@ -79,7 +77,7 @@ class CardsTest {
         List<LeaderCard> leaderCardsToSet = new ArrayList<>();
         leaderCardsToSet.add(new LeaderCard(new LeaderInformation("", LeaderCategory.CONSUMABLE),
                 new ArrayList<>()));
-        cards.setLeaderCards(leaderCardsToSet);
-        assertEquals(leaderCardsToSet, cards.getLeaderCards());
+        Cards.setLeaderCards(leaderCardsToSet);
+        assertEquals(leaderCardsToSet, Cards.getLeaderCards());
     }
 }

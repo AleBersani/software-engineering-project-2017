@@ -13,8 +13,7 @@ public class CardsInformation {
     private static List<ExcommunicationTileLight> excommunicationTileLights;
     private static List<LeaderCardLight> leaderCardsLights;
 
-    private CardsInformation() {
-    }
+    private CardsInformation() {}
 
     public static void initLists() {
         developmentCardsLights = new ArrayList<>();
@@ -30,7 +29,7 @@ public class CardsInformation {
      */
     public static Optional<DevelopmentCardsLight> searchForDevelopmentCardLight(String cardName) {
         return developmentCardsLights.stream()
-                                     .filter(T ->  cardName.equals(T.getName()))
+                                     .filter(t ->  cardName.equals(t.getName()))
                                      .findFirst();
     }
 
@@ -42,7 +41,7 @@ public class CardsInformation {
      */
     public static Optional<ExcommunicationTileLight> searchForExcommunicationTileLight(String cardName) {
         return excommunicationTileLights.stream()
-                                        .filter(T ->  cardName.equals(T.getName()))
+                                        .filter(t ->  cardName.equals(t.getName()))
                                         .findFirst();
     }
 
@@ -54,7 +53,7 @@ public class CardsInformation {
      */
     public static Optional<LeaderCardLight> searchForLeaderCardLight(String cardName) {
         return leaderCardsLights.stream()
-                                .filter(T ->  cardName.equals(T.getName()))
+                                .filter(t ->  cardName.equals(t.getName()))
                                 .findFirst();
     }
 

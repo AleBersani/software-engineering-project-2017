@@ -7,9 +7,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public final class DBConnector {
-    private final static Logger LOGGER = Logger.getLogger(DBConnector.class.getName());
-    private final static String URL = "jdbc:sqlite:./resources/server/lollolm02.db";
-    private final static String USERNAME = "root";
+    private static final Logger LOGGER = Logger.getLogger(DBConnector.class.getName());
+    private static final String URL = "jdbc:sqlite:./resources/server/lollolm02.db";
+    private static final String USERNAME = "root";
 
     private Connection connection;
 

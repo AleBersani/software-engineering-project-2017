@@ -8,16 +8,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public final class QueryHandler {
-    private final static Logger LOGGER = Logger.getLogger(QueryHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(QueryHandler.class.getName());
 
-    private final static String ID_GAME = "idGame";
+    private static final String ID_GAME = "idGame";
 
-    private final static String PLAYER_NAME = "playerName";
-    private final static String PSW = "password";
-    private final static String SCORE = "score";
-    private final static String VICTORIES_NUMBER = "victoriesNumber";
-    private final static String DEFEATS_NUMBER = "defeatsNumber";
-    private final static String PLAY_TIME = "playTime";
+    private static final String PLAYER_NAME = "playerName";
+    private static final String PSW = "password";
+    private static final String SCORE = "score";
+    private static final String VICTORIES_NUMBER = "victoriesNumber";
+    private static final String DEFEATS_NUMBER = "defeatsNumber";
+    private static final String PLAY_TIME = "playTime";
 
     private DBConnector dbConnector;
 
@@ -73,11 +73,7 @@ public final class QueryHandler {
         dbConnector.connect();
         try (Statement statement = dbConnector.getConnection().createStatement()) {
             try (ResultSet resultSet = statement.executeQuery(query)) {
-                if (resultSet.next()) {
-                    if (resultSet.getInt("Check") == 1) {
-                        isFree = false;
-                    }
-                }
+                isFree = checkEqualsOne(resultSet);
                 resultSet.close();
                 statement.close();
             }
@@ -86,6 +82,19 @@ public final class QueryHandler {
         }
         dbConnector.closeConnection();
         return isFree;
+    }
+
+    private boolean checkEqualsOne(ResultSet resultSet) {
+        try {
+            if (resultSet.next()) {
+                if (resultSet.getInt("Check") == 1) {
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Cannot check if player exist", e);
+        }
+        return true;
     }
 
     public boolean addGame() {

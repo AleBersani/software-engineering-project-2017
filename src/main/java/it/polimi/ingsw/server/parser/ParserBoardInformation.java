@@ -125,7 +125,7 @@ public class ParserBoardInformation {
         ExchangingGoods exchangingGoods;
         Resources resources;
         Points points;
-        for (int index=0; index < market.size(); index++) {
+        for (int index = 0; index < market.size(); index++) {
             object = market.get(index).getAsJsonObject();
             space = parseSpace(object.get("space").getAsJsonObject());
             resources = gson.fromJson(object.get("instantGoods").getAsJsonObject().get("resources").getAsJsonObject(),
@@ -149,9 +149,10 @@ public class ParserBoardInformation {
     private void getParsedBonusTiles(Map<String, List<ExchangingGoods>> parsedBonusTiles, JsonArray bonusTiles) {
         JsonObject object;
         String name;
-        ExchangingGoods production, harvest;
+        ExchangingGoods production;
+        ExchangingGoods harvest;
         List<ExchangingGoods> exchangingGoods;
-        for (int i=0; i < bonusTiles.size(); i++) {
+        for (int i = 0; i < bonusTiles.size(); i++) {
             object = bonusTiles.get(i).getAsJsonObject();
             name = object.get("name").getAsString();
             production = parseExchangingGoods(object.get("bonusProduction").getAsJsonObject());
@@ -173,7 +174,8 @@ public class ParserBoardInformation {
     }
 
     public void parseFaithToVictoryPointsMap(Map<Integer, Integer> faithToVictoryPointsMap) throws IOException {
-        JsonObject board, faithToVictoryPoints;
+        JsonObject board;
+        JsonObject faithToVictoryPoints;
         board = parserSettings.extractJsonObject("Board.json");
         faithToVictoryPoints = board.get("faithPointsToVictoryPoints").getAsJsonObject();
         getFaithToVictoryPointsMap(faithToVictoryPointsMap, faithToVictoryPoints);
@@ -190,7 +192,8 @@ public class ParserBoardInformation {
 
     public void parseFaithPointsToAvoidExcommunicationMap(Map<PeriodNumber, Integer> faithPointsToAvoidExcommunication)
             throws IOException {
-        JsonObject board, faithPointsForExcomm;
+        JsonObject board;
+        JsonObject faithPointsForExcomm;
         board = parserSettings.extractJsonObject("Board.json");
         faithPointsForExcomm = board.get("faithToAvoidExcommunication").getAsJsonObject();
         getFaithPointsForExcommunication(faithPointsToAvoidExcommunication, faithPointsForExcomm);

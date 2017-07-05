@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ServerSenderHandler implements ServerSender {
-    private final static Logger LOGGER = Logger.getLogger(ServerSenderHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ServerSenderHandler.class.getName());
 
     @Override
     public void sendToClient(ConnectionStream connectionStream, ServerClientRequest serverClientRequest) {

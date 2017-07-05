@@ -82,5 +82,4 @@ class DevelopmentCardsLightTest {
         developmentCardsLight.setCost(cost);
         assertEquals(cost, developmentCardsLight.getCost());
     }
-
 }

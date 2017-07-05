@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CardsInformationTest {
-
     @BeforeEach
     void setUp() {
         CardsInformation.initLists();
@@ -45,8 +44,7 @@ class CardsInformationTest {
                 "3Se", "3Mp");
         result = CardsInformation.searchForDevelopmentCardLight("Zecca");
         assertTrue(result.isPresent());
-        if(result.isPresent())
-            assertEquals(resultExpected, result.get());
+        result.ifPresent(developmentCardsLight -> assertEquals(resultExpected, developmentCardsLight));
     }
 
     @Test
@@ -56,8 +54,7 @@ class CardsInformationTest {
                 "4C, 3S");
         result = CardsInformation.searchForExcommunicationTileLight("1.2");
         assertTrue(result.isPresent());
-        if(result.isPresent())
-            assertEquals(resultExpected, result.get());
+        result.ifPresent(excommunicationTileLight -> assertEquals(resultExpected, excommunicationTileLight));
     }
 
     @Test
@@ -67,8 +64,7 @@ class CardsInformationTest {
                 "4Se", "4Mp");
         result = CardsInformation.searchForLeaderCardLight("Lorenzo Il Magnifico");
         assertTrue(result.isPresent());
-        if(result.isPresent())
-            assertEquals(resultExpected, result.get());
+        result.ifPresent(leaderCardLight -> assertEquals(resultExpected, leaderCardLight));
     }
 
     @Test
@@ -109,5 +105,4 @@ class CardsInformationTest {
         CardsInformation.setLeaderCardsLights(leaderCardLights);
         assertEquals(leaderCardLights, CardsInformation.getLeaderCardsLights());
     }
-
 }

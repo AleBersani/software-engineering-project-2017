@@ -52,5 +52,4 @@ class VentureTest {
         venture.setMinCostRequirements(goodsToConfront);
         assertEquals(goodsToConfront, venture.getMinCostRequirements());
     }
-
 }

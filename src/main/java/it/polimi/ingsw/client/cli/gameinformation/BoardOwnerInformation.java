@@ -12,12 +12,12 @@ public class BoardOwnerInformation {
     private static List<BoardSpaceDescriptionLight> boardSpaceDescriptionLights;
     private static List<BonusTileDescriptionLight> possibleBonusTiles;
 
+    private BoardOwnerInformation() {
+    }
+
     public static void initLists() {
         boardSpaceDescriptionLights = new ArrayList<>();
         possibleBonusTiles = new ArrayList<>();
-    }
-
-    private BoardOwnerInformation() {
     }
 
     /**
@@ -28,7 +28,7 @@ public class BoardOwnerInformation {
      */
     public static Optional<BoardSpaceDescriptionLight> searchForBoardSpaceLight(BoardIdentifier boardIdentifier) {
         return boardSpaceDescriptionLights.stream()
-                                          .filter(T -> boardIdentifier.equals(T.getBoardIdentifier()))
+                                          .filter(t -> boardIdentifier.equals(t.getBoardIdentifier()))
                                           .findFirst();
     }
 
@@ -40,7 +40,7 @@ public class BoardOwnerInformation {
      */
     public static Optional<BonusTileDescriptionLight> searchForBonusTileLight(String bonusTileIdentifier) {
         return possibleBonusTiles.stream()
-                                 .filter(T ->  bonusTileIdentifier.equals(T.getBonusTileIdentifier()))
+                                 .filter(t ->  bonusTileIdentifier.equals(t.getBonusTileIdentifier()))
                                  .findFirst();
     }
 

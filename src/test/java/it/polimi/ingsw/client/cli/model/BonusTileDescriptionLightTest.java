@@ -66,5 +66,4 @@ class BonusTileDescriptionLightTest {
         bonusTileDescriptionLight.setDescription(description);
         assertEquals(description, bonusTileDescriptionLight.getDescription());
     }
-
 }

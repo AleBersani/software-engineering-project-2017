@@ -75,5 +75,4 @@ class CardFlashExchangingGoodsTest {
         cardFlashExchangingGoods.setName(name);
         assertEquals(name, cardFlashExchangingGoods.getName());
     }
-
 }

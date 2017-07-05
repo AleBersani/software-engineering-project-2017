@@ -12,7 +12,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Logger;
 
 public class Communicator extends UnicastRemoteObject implements RMICommunicator {
-    private final static Logger LOGGER = Logger.getLogger(Communicator.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Communicator.class.getName());
 
     public Communicator() throws RemoteException {}
 

@@ -11,13 +11,19 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BoardLightTest {
-    BoardLight boardLight;
+    private BoardLight boardLight;
 
     @BeforeEach
     void setUp() {
-        boardLight = new BoardLight(new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(),
-                new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new CouncilPalaceLight(
-                        BoardIdentifier.COUNCIL_PALACE));
+        boardLight = BoardLight.getInstance();
+        boardLight.setGreenTower(new ArrayList<>());
+        boardLight.setYellowTower(new ArrayList<>());
+        boardLight.setBlueTower(new ArrayList<>());
+        boardLight.setPurpleTower(new ArrayList<>());
+        boardLight.setProduction(new ArrayList<>());
+        boardLight.setHarvest(new ArrayList<>());
+        boardLight.setMarket(new ArrayList<>());
+        boardLight.setCouncilPalaceLight(new CouncilPalaceLight(BoardIdentifier.COUNCIL_PALACE));
     }
 
     @Test

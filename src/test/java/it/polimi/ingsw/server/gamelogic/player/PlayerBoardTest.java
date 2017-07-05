@@ -166,5 +166,4 @@ class PlayerBoardTest {
         expectedPawns.add(new Pawn(0, PawnColor.NEUTRAL));
         assertEquals(expectedPawns, playerBoard.getPawns());
     }
-
 }

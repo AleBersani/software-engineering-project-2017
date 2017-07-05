@@ -137,5 +137,4 @@ class DeckTest {
         deck.setVentures(venturesToConfront);
         assertEquals(venturesToConfront, deck.getVentures());
     }
-
 }

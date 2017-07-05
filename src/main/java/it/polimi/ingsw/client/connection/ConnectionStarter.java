@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ConnectionStarter {
-    private final static Logger LOGGER = Logger.getLogger(ConnectionStarter.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ConnectionStarter.class.getName());
 
     private String connectionType;
 

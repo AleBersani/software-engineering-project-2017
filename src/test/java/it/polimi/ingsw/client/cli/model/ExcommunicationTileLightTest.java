@@ -66,5 +66,4 @@ class ExcommunicationTileLightTest {
         excommunicationTileLight.setEffectDescription(effectDescription);
         assertEquals(effectDescription, excommunicationTileLight.getEffectDescription());
     }
-
 }

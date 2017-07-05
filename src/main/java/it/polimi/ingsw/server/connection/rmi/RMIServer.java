@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public final class RMIServer {
-    private final static Logger LOGGER = Logger.getLogger(RMIServer.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(RMIServer.class.getName());
 
     private RMIServer() {}
 

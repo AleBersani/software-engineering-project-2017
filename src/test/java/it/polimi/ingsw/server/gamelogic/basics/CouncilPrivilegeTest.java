@@ -9,8 +9,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CouncilPrivilegeTest {
-    CouncilPrivilege councilPrivilege;
-
     @BeforeEach
     void setUp() {
     }
@@ -19,7 +17,7 @@ class CouncilPrivilegeTest {
     void testGetPossibleChoices() {
         List<Goods> goodsToSet = new ArrayList<>();
         goodsToSet.add(new Goods(new Points(1,2,3)));
-        councilPrivilege.setPossibleChoices(goodsToSet);
-        assertEquals(goodsToSet, councilPrivilege.getPossibleChoices());
+        CouncilPrivilege.setPossibleChoices(goodsToSet);
+        assertEquals(goodsToSet, CouncilPrivilege.getPossibleChoices());
     }
 }

@@ -76,5 +76,4 @@ class LeaderCardLightTest {
         leaderCardLight.setRequirements(requirements);
         assertEquals(requirements, leaderCardLight.getRequirements());
     }
-
 }

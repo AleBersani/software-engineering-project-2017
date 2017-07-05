@@ -70,13 +70,4 @@ class TerritoryTest {
         territory.getBasicDevelopmentCard().setCosts(costCard);
         assertEquals(costCard, territory.getCosts());
     }
-
-
-
-
-
-
-
-
-
 }

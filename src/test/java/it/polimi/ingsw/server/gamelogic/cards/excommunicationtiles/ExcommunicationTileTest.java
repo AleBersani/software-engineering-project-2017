@@ -35,5 +35,4 @@ class ExcommunicationTileTest {
         excommunicationTile.setPeriod(periodNumberToConfront);
         assertEquals(periodNumberToConfront, excommunicationTile.getPeriod());
     }
-
 }
