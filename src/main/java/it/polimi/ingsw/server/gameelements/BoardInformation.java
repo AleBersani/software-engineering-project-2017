@@ -39,6 +39,9 @@ public class BoardInformation {
         bonusTiles = new HashMap<>();
     }
 
+    private BoardInformation() {
+    }
+
     public static Map<Space, Goods> getGreenTower() {
         return greenTower;
     }
