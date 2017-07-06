@@ -81,7 +81,10 @@ public class ParserCards {
     public List<ExcommunicationTile> completeParseExcommunicationTiles() throws IOException {
         JsonObject excommunications = settings.extractJsonObject("ExcommunicationTiles.json");
         JsonArray cards = excommunications.get("ExcommunicationTiles").getAsJsonArray();
-        return parseExcommunicationTiles(cards);
+        JsonArray cardsThirdPeriod = excommunications.get("ExcommunicationTilesThirdPeriod").getAsJsonArray();
+        List<ExcommunicationTile> excommunicationTilesComplete = parseExcommunicationTiles(cards);
+        excommunicationTilesComplete.addAll(parseExcommunicationTiles(cardsThirdPeriod));
+        return excommunicationTilesComplete;
     }
 
     /**
