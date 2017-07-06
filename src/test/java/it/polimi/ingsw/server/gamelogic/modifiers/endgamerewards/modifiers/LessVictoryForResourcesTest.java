@@ -18,37 +18,61 @@ class LessVictoryForResourcesTest {
     }
 
     @Test
-    void TestEqualsTrue() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(5,0,0),
-                new Points(10,0,0), new Points(15,0,0));
-        assertTrue(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
+    void TestEqualsTrue1() {
+        LessVictoryForResources lessVictoryForResources = new LessVictoryForResources();
+        lessVictoryForResources.setResources(new Resources(1,2,3,4));
+        LessVictoryForResources lessVictoryForResourcesToConfront = new LessVictoryForResources();
+        lessVictoryForResourcesToConfront.setResources(new Resources(1,2,3,4));
+        assertTrue(lessVictoryForResources.equals(lessVictoryForResourcesToConfront));
+    }
+
+    @Test
+    void TestEqualsTrue2() {
+        LessVictoryForResources lessVictoryForResources = new LessVictoryForResources();
+        lessVictoryForResources.setResources(new Resources(1,2,3,4));
+        LessVictoryForResources lessVictoryForResourcesToConfront = lessVictoryForResources;
+        assertTrue(lessVictoryForResources.equals(lessVictoryForResourcesToConfront));
     }
 
     @Test
     void TestEqualsFalse() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(0,0,0),
-                new Points(0,0,0), new Points(0,0,0));
-        assertFalse(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
+        LessVictoryForResources lessVictoryForResources = new LessVictoryForResources();
+        lessVictoryForResources.setResources(new Resources(1,2,3,4));
+        LessVictoryForResources lessVictoryForResourcesToConfront = new LessVictoryForResources();
+        lessVictoryForResources.setResources(new Resources(5,6,7,8));
+        assertFalse(lessVictoryForResources.equals(lessVictoryForResourcesToConfront));
     }
 
     @Test
-    void TestEqualsDifferent() {
+    void TestEqualsDifferent1() {
         String different = "";
-        assertFalse(basicEndGameRewards.equals(different));
+        LessVictoryForResources lessVictoryForResources = new LessVictoryForResources();
+        lessVictoryForResources.setResources(new Resources(1,2,3,4));
+        assertFalse(lessVictoryForResources.equals(different));
+    }
+
+    @Test
+    void TestEqualsDifferent2() {
+        LessVictoryForResources lessVictoryForResources = new LessVictoryForResources();
+        lessVictoryForResources.setResources(new Resources(1,2,3,4));
+        assertFalse(lessVictoryForResources.equals(null));
     }
 
     @Test
     void testHashCodeTrue() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(5,0,0),
-                new Points(10,0,0), new Points(15,0,0));
-        assertTrue(basicEndGameRewards.hashCode() == basicEndGameRewardsToConfront.hashCode());
+        LessVictoryForResources lessVictoryForResources = new LessVictoryForResources();
+        lessVictoryForResources.setResources(new Resources(1,2,3,4));
+        LessVictoryForResources lessVictoryForResourcesToConfront = new LessVictoryForResources();
+        lessVictoryForResourcesToConfront.setResources(new Resources(1,2,3,4));
+        assertEquals(lessVictoryForResources.hashCode(), lessVictoryForResourcesToConfront.hashCode());
     }
 
     @Test
     void testHashCodeFalse() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(0,0,0),
-                new Points(0,0,0), new Points(0,0,0));
-        assertFalse(basicEndGameRewards.hashCode() == basicEndGameRewardsToConfront.hashCode());
+        LessVictoryForResources lessVictoryForResources = new LessVictoryForResources();
+        lessVictoryForResources.setResources(new Resources(1,2,3,4));
+        LessVictoryForResources lessVictoryForResourcesToConfront = new LessVictoryForResources();
+        assertNotEquals(lessVictoryForResources.hashCode(), lessVictoryForResourcesToConfront.hashCode());
     }
 
     @Test

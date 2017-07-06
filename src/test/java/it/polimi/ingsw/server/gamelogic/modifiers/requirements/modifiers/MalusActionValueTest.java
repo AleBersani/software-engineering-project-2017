@@ -15,8 +15,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MalusActionValueTest {
     private BoardActionRequirements boardActionRequirements;
@@ -55,6 +54,59 @@ class MalusActionValueTest {
     }
 
     @Test
+    void testEqualsTrue1() {
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.BLUE_TOWER);
+        MalusActionValue malusActionValueToConfront = new MalusActionValue(
+                new AvailableActions(actionTypes), 2);
+        assertTrue(malusActionValue.equals(malusActionValueToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        MalusActionValue malusActionValueToConfront = malusActionValue;
+        assertTrue(malusActionValue.equals(malusActionValueToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        MalusActionValue malusActionValueToConfront = new MalusActionValue(new AvailableActions(ActionType.GREEN_TOWER), 2);
+        assertFalse(malusActionValue.equals(malusActionValueToConfront));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        MalusActionValue malusActionValueToConfront = new MalusActionValue(
+                new AvailableActions(ActionType.BLUE_TOWER), 3);
+        assertFalse(malusActionValue.equals(malusActionValueToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(malusActionValue.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(malusActionValue.equals(null));
+    }
+
+    @Test
+    void testHashCodeTrue() {
+        MalusActionValue malusActionValueToConfront = new MalusActionValue(
+                new AvailableActions(ActionType.BLUE_TOWER), 2);
+        assertEquals(malusActionValue.hashCode(), malusActionValueToConfront.hashCode());
+    }
+
+    @Test
+    void testHashCodeFalse() {
+        MalusActionValue malusActionValueToConfront = new MalusActionValue(
+                new AvailableActions(ActionType.BLUE_TOWER), 4);
+        assertNotEquals(malusActionValue.hashCode(), malusActionValueToConfront.hashCode());
+    }
+
+    @Test
     void testModifyRequirementsOfBoardAction() {
         boardActionRequirements = malusActionValue.modifyRequirements(boardActionRequirements);
         assertTrue(boardActionRequirements.hasRequirements(player));
@@ -64,5 +116,12 @@ class MalusActionValueTest {
     void testModifyRequirementsOfTowerAction() {
         towerActionRequirements = malusActionValue.modifyRequirements(towerActionRequirements);
         assertFalse(towerActionRequirements.hasRequirements(player));
+    }
+
+    @Test
+    void testGetMalusValue() {
+        int numberToGet = 3;
+        malusActionValue.setMalusValue(numberToGet);
+        assertEquals(numberToGet, malusActionValue.getMalusValue());
     }
 }

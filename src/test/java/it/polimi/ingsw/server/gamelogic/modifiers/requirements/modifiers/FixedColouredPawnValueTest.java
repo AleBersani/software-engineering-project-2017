@@ -15,8 +15,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class FixedColouredPawnValueTest {
     private BoardActionRequirements boardActionRequirements;
@@ -56,6 +55,77 @@ class FixedColouredPawnValueTest {
     }
 
     @Test
+    void testEqualsTrue1() {
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.BLUE_TOWER);
+        actionTypes.add(ActionType.MARKET);
+        FixedColouredPawnValue fixedColouredPawnValueToConfront = new FixedColouredPawnValue(
+                new AvailableActions(actionTypes), PawnColor.BLACK, 5);
+        assertTrue(fixedColouredPawnValue.equals(fixedColouredPawnValueToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        FixedColouredPawnValue fixedColouredPawnValueToConfront = fixedColouredPawnValue;
+        assertTrue(fixedColouredPawnValue.equals(fixedColouredPawnValueToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        FixedColouredPawnValue fixedColouredPawnValueToConfront = new FixedColouredPawnValue(
+                new AvailableActions(ActionType.BLUE_TOWER), PawnColor.BLACK, 5);
+        assertFalse(fixedColouredPawnValue.equals(fixedColouredPawnValueToConfront));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.BLUE_TOWER);
+        actionTypes.add(ActionType.MARKET);
+        FixedColouredPawnValue fixedColouredPawnValueToConfront = new FixedColouredPawnValue(
+                new AvailableActions(actionTypes), PawnColor.ORANGE, 5);
+        assertFalse(fixedColouredPawnValue.equals(fixedColouredPawnValueToConfront));
+    }
+
+    @Test
+    void testEqualsFalse3() {
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.BLUE_TOWER);
+        actionTypes.add(ActionType.MARKET);
+        FixedColouredPawnValue fixedColouredPawnValueToConfront = new FixedColouredPawnValue(
+                new AvailableActions(actionTypes), PawnColor.BLACK, 6);
+        assertFalse(fixedColouredPawnValue.equals(fixedColouredPawnValueToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(fixedColouredPawnValue.equals(different));
+    }
+
+    @Test
+    void testDifferent2() {
+        assertFalse(fixedColouredPawnValue.equals(null));
+    }
+
+    @Test
+    void testHashCodeTrue() {
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.BLUE_TOWER);
+        actionTypes.add(ActionType.MARKET);
+        FixedColouredPawnValue fixedColouredPawnValueToConfront = new FixedColouredPawnValue(
+                new AvailableActions(actionTypes), PawnColor.BLACK, 5);
+        assertEquals(fixedColouredPawnValue.hashCode(), fixedColouredPawnValueToConfront.hashCode());
+    }
+
+    @Test
+    void testHashCodeFalse() {
+        FixedColouredPawnValue fixedColouredPawnValueToConfront = new FixedColouredPawnValue(
+                new AvailableActions(ActionType.BLUE_TOWER), PawnColor.BLACK, 5);
+        assertNotEquals(fixedColouredPawnValue.hashCode(), fixedColouredPawnValueToConfront.hashCode());
+    }
+
+    @Test
     void testModifyRequirementsOfBoardAction() {
         boardActionRequirements = fixedColouredPawnValue.modifyRequirements(boardActionRequirements);
         assertTrue(boardActionRequirements.hasRequirements(player));
@@ -65,5 +135,19 @@ class FixedColouredPawnValueTest {
     void testModifyRequirementsOfTowerAction() {
         towerActionRequirements = fixedColouredPawnValue.modifyRequirements(towerActionRequirements);
         assertFalse(towerActionRequirements.hasRequirements(player));
+    }
+
+    @Test
+    void testGetPawnColor() {
+        PawnColor colorToGet = PawnColor.WHITE;
+        fixedColouredPawnValue.setPawnColor(colorToGet);
+        assertEquals(colorToGet, fixedColouredPawnValue.getPawnColor());
+    }
+
+    @Test
+    void testGetPawnValue() {
+        int pawnValueToGet = 8;
+        fixedColouredPawnValue.setPawnValue(pawnValueToGet);
+        assertEquals(pawnValueToGet, fixedColouredPawnValue.getPawnValue());
     }
 }

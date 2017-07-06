@@ -17,37 +17,62 @@ class LessVictoryBasedOnVictoryTest {
     }
 
     @Test
-    void testEqualsTrue() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(5,0,0),
-                new Points(10,0,0), new Points(15,0,0));
-        assertTrue(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
+    void testEqualsTrue1() {
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictory = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictory.setPlayerVictory(new Points(1,2,3));
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictoryToConfront = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictoryToConfront.setPlayerVictory(new Points(1,2,3));
+        assertTrue(lessVictoryBasedOnVictory.equals(lessVictoryBasedOnVictoryToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictory = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictory.setPlayerVictory(new Points(1,2,3));
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictoryToConfront = lessVictoryBasedOnVictory;
+        assertTrue(lessVictoryBasedOnVictory.equals(lessVictoryBasedOnVictoryToConfront));
     }
 
     @Test
     void testEqualsFalse() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(0,0,0),
-                new Points(0,0,0), new Points(0,0,0));
-        assertFalse(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictory = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictory.setPlayerVictory(new Points(1,2,3));
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictoryToConfront = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictoryToConfront.setPlayerVictory(new Points(4,5,6));
+        assertFalse(lessVictoryBasedOnVictory.equals(lessVictoryBasedOnVictoryToConfront));
     }
 
     @Test
-    void testEqualsDifferent() {
+    void testEqualsDifferent1() {
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictory = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictory.setPlayerVictory(new Points(1,2,3));
         String different = "";
-        assertFalse(basicEndGameRewards.equals(different));
+        assertFalse(lessVictoryBasedOnVictory.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictory = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictory.setPlayerVictory(new Points(1,2,3));
+        assertFalse(lessVictoryBasedOnVictory.equals(null));
     }
 
     @Test
     void testHashCodeTrue() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(5,0,0),
-                new Points(10,0,0), new Points(15,0,0));
-        assertTrue(basicEndGameRewards.hashCode() == basicEndGameRewardsToConfront.hashCode());
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictory = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictory.setPlayerVictory(new Points(1,2,3));
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictoryToConfront = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictoryToConfront.setPlayerVictory(new Points(1,2,3));
+        assertEquals(lessVictoryBasedOnVictory.hashCode(), lessVictoryBasedOnVictoryToConfront.hashCode());
     }
 
     @Test
     void testHashCodeFalse() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(0,0,0),
-                new Points(0,0,0), new Points(0,0,0));
-        assertFalse(basicEndGameRewards.hashCode() == basicEndGameRewardsToConfront.hashCode());
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictory = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictory.setPlayerVictory(new Points(1,2,3));
+        LessVictoryBasedOnVictory lessVictoryBasedOnVictoryToConfront = new LessVictoryBasedOnVictory();
+        lessVictoryBasedOnVictoryToConfront.setPlayerVictory(new Points(3,5,3));
+        assertNotEquals(lessVictoryBasedOnVictory.hashCode(), lessVictoryBasedOnVictoryToConfront.hashCode());
     }
 
     @Test

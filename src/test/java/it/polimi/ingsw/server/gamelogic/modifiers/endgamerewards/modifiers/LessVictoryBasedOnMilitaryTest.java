@@ -17,37 +17,62 @@ class LessVictoryBasedOnMilitaryTest {
     }
 
     @Test
-    void testEqualsTrue() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(5,0,0),
-                new Points(10,0,0), new Points(15,0,0));
-        assertTrue(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
+    void testEqualsTrue1() {
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitary = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitary.setPlayerMilitary(new Points(1,2,3));
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitaryToConfront = lessVictoryBasedOnMilitary;
+        assertTrue(lessVictoryBasedOnMilitary.equals(lessVictoryBasedOnMilitaryToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitary = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitary.setPlayerMilitary(new Points(1,2,3));
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitaryToConfront = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitaryToConfront.setPlayerMilitary(new Points(1,2,3));
+        assertTrue(lessVictoryBasedOnMilitary.equals(lessVictoryBasedOnMilitaryToConfront));
     }
 
     @Test
     void testEqualsFalse() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(0,0,0),
-                new Points(0,0,0), new Points(0,0,0));
-        assertFalse(basicEndGameRewards.equals(basicEndGameRewardsToConfront));
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitary = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitary.setPlayerMilitary(new Points(1,2,3));
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitaryToConfront = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitaryToConfront.setPlayerMilitary(new Points(2,2,3));
+        assertFalse(lessVictoryBasedOnMilitary.equals(lessVictoryBasedOnMilitaryToConfront));
     }
 
     @Test
     void testEqualsDifferent() {
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitary = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitary.setPlayerMilitary(new Points(1,2,3));
         String different = "";
-        assertFalse(basicEndGameRewards.equals(different));
+        assertFalse(lessVictoryBasedOnMilitary.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitary = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitary.setPlayerMilitary(new Points(1,2,3));
+        assertFalse(lessVictoryBasedOnMilitary.equals(null));
     }
 
     @Test
     void testHashCodeTrue() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(5,0,0),
-                new Points(10,0,0), new Points(15,0,0));
-        assertTrue(basicEndGameRewards.hashCode() == basicEndGameRewardsToConfront.hashCode());
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitary = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitary.setPlayerMilitary(new Points(1,2,3));
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitaryToConfront = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitaryToConfront.setPlayerMilitary(new Points(1,2,3));
+        assertEquals(lessVictoryBasedOnMilitary.hashCode(), lessVictoryBasedOnMilitaryToConfront.hashCode());
     }
 
     @Test
     void testHashCodeFalse() {
-        BasicEndGameRewards basicEndGameRewardsToConfront = new BasicEndGameRewards(new Points(0,0,0),
-                new Points(0,0,0), new Points(0,0,0));
-        assertFalse(basicEndGameRewards.hashCode() == basicEndGameRewardsToConfront.hashCode());
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitary = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitary.setPlayerMilitary(new Points(1,2,3));
+        LessVictoryBasedOnMilitary lessVictoryBasedOnMilitaryToConfront = new LessVictoryBasedOnMilitary();
+        lessVictoryBasedOnMilitaryToConfront.setPlayerMilitary(new Points(2,2,3));
+        assertNotEquals(lessVictoryBasedOnMilitary.hashCode(), lessVictoryBasedOnMilitaryToConfront.hashCode());
     }
 
     @Test

@@ -42,6 +42,7 @@ public class SemiPeriod extends Observable implements Observer {
     }
 
     public void setupBoard() {
+        playersOrder = calculateTotalPlayer();
         List<Dice> newDices;
         newDices = extractDices();
         board.setDices(newDices);
@@ -50,6 +51,7 @@ public class SemiPeriod extends Observable implements Observer {
 
     private List<Dice> extractDices() {
         List<DiceColor> colors = new ArrayList<>();
+
         colors.add(DiceColor.BLACK);
         colors.add(DiceColor.ORANGE);
         colors.add(DiceColor.WHITE);
@@ -58,7 +60,6 @@ public class SemiPeriod extends Observable implements Observer {
         for (DiceColor diceColor : colors) {
             dices.add( new Dice(diceColor, random.nextInt(5) + 1) );
         }
-
         return dices;
     }
 
@@ -113,8 +114,35 @@ public class SemiPeriod extends Observable implements Observer {
          */
     }
 
-    public void calculateTotalPlayer(){
-        //Calcola turno giocatori
+    public List<PlayerDetails> calculateTotalPlayer() {
+        int position = 0;
+        Map<Integer, PlayerDetails> playerOrderMap = new HashMap<>();
+        Optional<Player> playerOptional;
+        List<PlayerDetails> finalPlayerDetails = new ArrayList<>();
+        int offset;
+        List<Player> sortedPlayers = new ArrayList<>();
+        for (PlayerDetails playerDetail : basePlayersOrder) {
+            if ((playerOptional = players.stream()
+                    .filter(player -> player.getPlayerDetails().equals(playerDetail)).findFirst()).isPresent()) {
+                sortedPlayers.add(playerOptional.get());
+            }
+        }
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < basePlayersOrder.size(); j++) {
+                offset = 0;
+                if (i==0 && j < sortedPlayers.size()) {
+                    offset+= sortedPlayers.get(j).getPlayerOrderWeight();
+                }
+                playerOrderMap.put(position+offset, basePlayersOrder.get(j));
+                position++;
+            }
+        }
+        List<Integer> sortedKeys = new ArrayList<>(playerOrderMap.keySet());
+        Collections.sort(sortedKeys);
+        for (int i = 0; i < sortedKeys.size(); i++) {
+            finalPlayerDetails.add(playerOrderMap.get(sortedKeys.get(i)));
+        }
+        return finalPlayerDetails;
     }
 
     public List<DevelopmentCard> getDevelopmentCards() {
@@ -131,6 +159,22 @@ public class SemiPeriod extends Observable implements Observer {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public List<PlayerDetails> getPlayersOrder() {
+        return playersOrder;
+    }
+
+    public void setPlayersOrder(List<PlayerDetails> playersOrder) {
+        this.playersOrder = playersOrder;
+    }
+
+    public List<PlayerDetails> getBasePlayersOrder() {
+        return basePlayersOrder;
+    }
+
+    public void setBasePlayersOrder(List<PlayerDetails> basePlayersOrder) {
+        this.basePlayersOrder = basePlayersOrder;
     }
 
     public Board getBoard() {

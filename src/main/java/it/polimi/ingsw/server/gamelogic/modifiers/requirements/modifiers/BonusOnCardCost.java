@@ -45,4 +45,12 @@ public class BonusOnCardCost extends RequirementsModifier {
         }
         return towerActionRequirements;
     }
+
+    public Goods getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Goods discount) {
+        this.discount = discount;
+    }
 }

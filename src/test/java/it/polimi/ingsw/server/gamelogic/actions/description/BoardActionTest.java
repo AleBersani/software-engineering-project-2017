@@ -17,23 +17,41 @@ class BoardActionTest {
     }
 
     @Test
-    void testEqualsTrue() {
+    void testEqualsTrue1() {
         BoardAction boardActionToConfront = new BoardAction(new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1,
                 1));
         assertTrue(boardAction.equals(boardActionToConfront));
     }
 
     @Test
-    void testEqualsFalse() {
+    void testEqualsTrue2() {
+        BoardAction boardActionToConfront = boardAction;
+        assertTrue(boardAction.equals(boardActionToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
         BoardAction boardActionToConfront = new BoardAction(new BasicAction(ActionType.GREEN_TOWER, BoardIdentifier.T_B_1,
                 2));
         assertFalse(boardAction.equals(boardActionToConfront));
     }
 
     @Test
-    void testEqualsDifferent() {
+    void testEqualsFalse2() {
+        BoardAction boardActionToConfront = new BoardAction(new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1,
+                1),2);
+        assertFalse(boardAction.equals(boardActionToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
         String different = "";
         assertFalse(boardAction.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(boardAction.equals(null));
     }
 
     @Test

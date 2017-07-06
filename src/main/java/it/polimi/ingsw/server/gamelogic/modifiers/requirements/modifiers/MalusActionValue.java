@@ -59,4 +59,12 @@ public class MalusActionValue extends RequirementsModifier {
         int actualBonusValue = spaceActionRequirements.getActionValueModifier();
         spaceActionRequirements.setActionValueModifier(actualBonusValue - malusValue);
     }
+
+    public int getMalusValue() {
+        return malusValue;
+    }
+
+    public void setMalusValue(int malusValue) {
+        this.malusValue = malusValue;
+    }
 }

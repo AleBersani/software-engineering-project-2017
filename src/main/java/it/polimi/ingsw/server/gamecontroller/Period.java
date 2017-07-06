@@ -5,11 +5,13 @@ import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
+import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.util.*;
+import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -23,15 +25,18 @@ public class Period extends Observable implements Observer {
 
     private List<ConnectedClient> connectedClients;
     private List<Player> players;
+    private List<PlayerDetails> playerOrder; //QUELLO BASE DELL'ULTIMO SEMIPERIODO DEL PERIODO PRECEDENTE,
     private Board board;
     private boolean current;
     private List<SemiPeriod> semiPeriods;
+    private PeriodNumber periodNumber;
 
     public Period(ExcommunicationTile actualExcommunicationTile, List<DevelopmentCard> developmentCards) {
         this.actualExcommunicationTile = actualExcommunicationTile;
         this.developmentCards = developmentCards;
         connectedClients = new ArrayList<>();
         players = new ArrayList<>();
+        playerOrder = new ArrayList<>();
         board = new Board();
         semiPeriods = new ArrayList<>();
         current = false;
@@ -45,49 +50,30 @@ public class Period extends Observable implements Observer {
      */
     public void setupSemiPeriod() {
         SemiPeriod semiPeriod = new SemiPeriod(getDevelopmentCardsForSemiPeriod(), players, new Board(board));
-        semiPeriods.add(semiPeriod);
 
         if (semiPeriods.isEmpty()) {
-            // semiPeriod.setPlayerOrder(List<PlayerDetails> ..)
+            semiPeriod.setBasePlayersOrder(playerOrder);
         } else {
-            //
-            // semiPeriod.setPlayerOrder(calculateNewPlayerOrder(semiPeriod.getOldPlayerOrder));
+            semiPeriod.setPlayersOrder(calculateNewPlayerOrder(getLastSemiperiod().getBasePlayersOrder(),
+                    getLastSemiperiod().getBoard().getCouncilPalace().getPlayerOrder()));
         }
-
+        semiPeriods.add(semiPeriod);
         semiPeriod.setDevelopmentCards(getDevelopmentCardsForSemiPeriod());
-        /*
-        List<Player> previousOrderPlayers = semiPeriods.get(semiPeriods.size() - 1).getPlayers();
-        Board oldBoard = semiPeriods.get(semiPeriods.size() - 1).getBoard();
-        Board newBoard = new Board(oldBoard);
-
-        List<Player> playersForSemiPeriod = calculatePlayerOrder(previousOrderPlayers, newBoard);
-        semiPeriods.add(new SemiPeriod(developmentCardsForSemiPeriod,
-                playersForSemiPeriod,
-                cleanBoard(newBoard)));
-        initSemiPeriod(semiPeriods.get(semiPeriods.size() - 1));*/
-        /*calcolo ordine di gioco (pattern su scomunica)*/
     }
 
     /**
-     * Private method that calculates a new Player Order, based of the order of players placed on CouncilPalace.
-     * @param previousOrderPlayers List of previous SemiPeriod's players order.
-     * @param board Board from previous SemiPeriod, not cleaned yet, where to get new players order.
-     * @return new List of Players representing new players order.
+     * // TODO
+     * @return //
+     * @param basePlayersOrder
+     * @param councilPlayerOrder
      */
-    private List<Player> calculatePlayerOrder(List<Player> previousOrderPlayers, Board board) {
-        List<Player> newPlayerOrder = new ArrayList<>();
-        Optional<Player> playerToAdd;
-        List<PlayerDetails> councilPlayerOrder = board.getCouncilPalace().getPlayerOrder();
+    public List<PlayerDetails> calculateNewPlayerOrder(List<PlayerDetails> basePlayersOrder,
+                                                       List<PlayerDetails> councilPlayerOrder) {
+        List<PlayerDetails> newPlayerOrder = new ArrayList<>();
         for (PlayerDetails playerDetails : councilPlayerOrder) {
-            playerToAdd = previousOrderPlayers.stream()
-                    .filter((Player player) -> player.getPlayerDetails()
-                            .getPlayerName()
-                            .equals(playerDetails
-                                    .getPlayerName())).findFirst();
-            if (playerToAdd.isPresent() && !newPlayerOrder.contains(playerToAdd.get()))
-                newPlayerOrder.add(playerToAdd.get());
+            newPlayerOrder.add(playerDetails);
         }
-        for (Player remainingPlayer : previousOrderPlayers) {
+        for (PlayerDetails remainingPlayer : basePlayersOrder) {
             if (!newPlayerOrder.contains(remainingPlayer))
                 newPlayerOrder.add(remainingPlayer);
         }
@@ -106,14 +92,12 @@ public class Period extends Observable implements Observer {
         int blue = 0;
         int purple = 0;
         int yellow = 0;
-
         DevelopmentCard card;
         GeneralColor colorCard;
-        List<DevelopmentCard> cardsToExtract = new ArrayList(developmentCards);
+        List<DevelopmentCard> cardsToExtract = new ArrayList<>(developmentCards);
         List<DevelopmentCard> cardsToReturn = new ArrayList<>();
-
         if (!semiPeriods.isEmpty())
-            cardsToExtract.removeAll(semiPeriods.get(semiPeriods.size() - 1).getDevelopmentCards());
+            cardsToExtract.removeAll(getLastSemiperiod().getDevelopmentCards());
         Collections.shuffle(cardsToExtract);
         for (int i = 0; i < cardsToExtract.size() && cardsToReturn.size() < CARDS_FOR_SEMI_PERIOD; i++) {
             card = cardsToExtract.get(i);
@@ -191,6 +175,14 @@ public class Period extends Observable implements Observer {
         this.players = players;
     }
 
+    public List<PlayerDetails> getPlayerOrder() {
+        return playerOrder;
+    }
+
+    public void setPlayerOrder(List<PlayerDetails> playerOrder) {
+        this.playerOrder = playerOrder;
+    }
+
     public Board getBoard() {
         return board;
     }
@@ -213,5 +205,17 @@ public class Period extends Observable implements Observer {
 
     public void setSemiPeriods(List<SemiPeriod> semiPeriods) {
         this.semiPeriods = semiPeriods;
+    }
+
+    public PeriodNumber getPeriodNumber() {
+        return periodNumber;
+    }
+
+    public void setPeriodNumber(PeriodNumber periodNumber) {
+        this.periodNumber = periodNumber;
+    }
+
+    public SemiPeriod getLastSemiperiod() {
+        return semiPeriods.get(semiPeriods.size() - 1);
     }
 }

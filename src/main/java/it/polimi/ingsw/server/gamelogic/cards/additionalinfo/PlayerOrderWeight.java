@@ -33,4 +33,12 @@ public class PlayerOrderWeight extends AdditionalCardInfo {
     public void acceptCardVisitor(CardVisitor cardVisitor) {
         cardVisitor.visitAdditionalCardInfo(this);
     }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 }

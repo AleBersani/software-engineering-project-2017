@@ -69,4 +69,20 @@ public class FixedColouredPawnValue extends RequirementsModifier {
                 spaceActionRequirements.setActionValue(pawnValue);
         }
     }
+
+    public PawnColor getPawnColor() {
+        return pawnColor;
+    }
+
+    public void setPawnColor(PawnColor pawnColor) {
+        this.pawnColor = pawnColor;
+    }
+
+    public int getPawnValue() {
+        return pawnValue;
+    }
+
+    public void setPawnValue(int pawnValue) {
+        this.pawnValue = pawnValue;
+    }
 }

@@ -48,4 +48,12 @@ public class MalusRewards extends RewardsModifier {
             }
         }
     }
+
+    public Goods getMalus() {
+        return malus;
+    }
+
+    public void setMalus(Goods malus) {
+        this.malus = malus;
+    }
 }

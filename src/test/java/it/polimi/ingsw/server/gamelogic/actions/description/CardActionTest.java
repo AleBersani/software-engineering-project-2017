@@ -1,6 +1,7 @@
 package it.polimi.ingsw.server.gamelogic.actions.description;
 
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,34 +18,60 @@ class CardActionTest {
     }
 
     @Test
-    void testEqualsTrue() {
+    void testEqualsTrue1() {
         CardAction cardActionToConfront = new CardAction(new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1,
                 1));
         assertTrue(cardAction.equals(cardActionToConfront));
     }
 
     @Test
-    void testEqualsFalse() {
-        CardAction cardActionToConfront = new CardAction(new BasicAction(ActionType.GREEN_TOWER, BoardIdentifier.T_B_1,
-                2));
+    void testEqualsTrue2() {
+        CardAction cardActionToConfront = cardAction;
+        assertTrue(cardAction.equals(cardActionToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        CardAction cardActionToConfront = new CardAction(
+                new BasicAction(ActionType.GREEN_TOWER, BoardIdentifier.T_B_1, 2));
         assertFalse(cardAction.equals(cardActionToConfront));
     }
 
     @Test
-    void testEqualsDifferent() {
+    void testEqualsFalse2() {
+        CardAction cardActionToConfront = new CardAction(
+                new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1, 1), 2);
+        assertFalse(cardAction.equals(cardActionToConfront));
+    }
+
+    @Test
+    void testEqualsFalse3() {
+        CardAction cardActionToConfront = new CardAction(
+                new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1, 1),
+                new Goods(new Points(1,2,3)));
+        assertFalse(cardAction.equals(cardActionToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
         String different = "";
         assertFalse(cardAction.equals(different));
     }
 
     @Test
-    void tesHashCodeTrue() {
+    void testEqualsDifferent2() {
+        assertFalse(cardAction.equals(null));
+    }
+
+    @Test
+    void testHashCodeTrue() {
         CardAction cardActionToConfront = new CardAction(new BasicAction(ActionType.BLUE_TOWER, BoardIdentifier.T_B_1,
                 1));
         assertTrue(cardAction.hashCode() == cardActionToConfront.hashCode());
     }
 
     @Test
-    void tesHashCodeFalse() {
+    void testHashCodeFalse() {
         CardAction cardActionToConfront = new CardAction(new BasicAction(ActionType.GREEN_TOWER, BoardIdentifier.T_B_1,
                 2));
         assertFalse(cardAction.hashCode() == cardActionToConfront.hashCode());
