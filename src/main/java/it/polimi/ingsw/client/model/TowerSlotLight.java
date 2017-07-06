@@ -1,13 +1,23 @@
 package it.polimi.ingsw.client.model;
 
-public class TowerSlotLight {
+import java.io.Serializable;
+
+public class TowerSlotLight implements Serializable {
     private SlotLight slotLight;
 
     private Card card;
 
-    public TowerSlotLight(SlotLight slotLight) {
+    public TowerSlotLight(SlotLight slotLight, Card card) {
         this.slotLight = slotLight;
-        card = null;
+        this.card = card;
+    }
+
+    @Override
+    public String toString() {
+        return "TowerSlotLight{" +
+                "slotLight=" + slotLight +
+                ", card=" + card +
+                '}';
     }
 
     public SlotLight getSlotLight() {

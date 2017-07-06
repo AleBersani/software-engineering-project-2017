@@ -21,6 +21,7 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.requests.serverclient.*;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -39,6 +40,7 @@ public class Game implements Runnable, Observer {
 
     private LeaderCardChoiceHandler leaderCardChoiceHandler;
     private BonusTileChoiceHandler bonusTileChoiceHandler;
+    private AtomicInteger numberOfPlayersReadyToPlay;
 
     public Game(int gameId, Queue<ConnectedClient> connectedClients) {
         this.gameId = gameId;
@@ -50,6 +52,7 @@ public class Game implements Runnable, Observer {
         board = new Board();
         leaderCardChoiceHandler = new LeaderCardChoiceHandler();
         bonusTileChoiceHandler = new BonusTileChoiceHandler();
+        numberOfPlayersReadyToPlay = new AtomicInteger(0);
     }
 
     @Override
@@ -286,16 +289,18 @@ public class Game implements Runnable, Observer {
         }
     }
 
-    public void initPeriod() {
-        for (Period period : periods) {
-            if (!period.isCurrent()) {
-                setPeriodInformation(period);
-                if (PeriodNumber.FIRST != period.getPeriodNumber()) {
-                    setNewStartingPlayerOrderForPeriod(period);
+    public void initFirstPeriod() {
+        if (numberOfPlayersReadyToPlay.incrementAndGet() == players.size())  {
+            for (Period period : periods) {
+                if (!period.isCurrent()) {
+                    setPeriodInformation(period);
+                    if (PeriodNumber.FIRST != period.getPeriodNumber()) {
+                        setNewStartingPlayerOrderForPeriod(period);
+                    }
+                    LOGGER.log(Level.INFO, () -> "Starting Period: " + period.getPeriodNumber());
+                    period.startSemiPeriod();
+                    break;
                 }
-                LOGGER.log(Level.INFO, () -> "Starting Period: " + period.getPeriodNumber());
-                period.startSemiPeriod();
-                break;
             }
         }
     }

@@ -1,10 +1,19 @@
 package it.polimi.ingsw.client.model;
 
-public class Card {
+import java.io.Serializable;
+
+public class Card implements Serializable {
     private String name;
 
     public Card(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
     public String getName() {

@@ -2,10 +2,10 @@ package it.polimi.ingsw.client.middleware;
 
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.*;
+import it.polimi.ingsw.client.model.BoardLight;
 import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.client.model.Owner;
 import it.polimi.ingsw.shared.requests.serverclient.*;
-import it.polimi.ingsw.shared.support.Client;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,6 +84,22 @@ public class ClientReceiverHandler implements ClientReceiver {
     }
 
     @Override
+    public void visitServerClientRequest(UpdateGameBoard updateGameBoard) {
+        BoardLight boardLight = BoardLight.getInstance();
+        boardLight.setGreenTower(updateGameBoard.getNewGreenTower());
+        boardLight.setYellowTower(updateGameBoard.getNewYellowTower());
+        boardLight.setBlueTower(updateGameBoard.getNewBlueTower());
+        boardLight.setPurpleTower(updateGameBoard.getNewPurpleTower());
+        boardLight.setProduction(updateGameBoard.getNewProduction());
+        boardLight.setHarvest(updateGameBoard.getNewHarvest());
+        boardLight.setMarket(updateGameBoard.getNewMarket());
+        boardLight.setCouncilPalaceLight(updateGameBoard.getNewCouncilPalaceLight());
+        boardLight.setPlayerLights(updateGameBoard.getNewPlayerLights());
+        GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
+        guiNotifier.updateGui();
+    }
+
+    @Override
     public void visitServerClientRequest(UpdateGameId updateGameId) {
         ClientInformation.setCurrentGameId(updateGameId.getGameId());
     }
@@ -96,7 +112,7 @@ public class ClientReceiverHandler implements ClientReceiver {
         owner.setNumberOfResources(updatePlayerBoard.getNumberOfResources());
         owner.getPlayerLight().setActivatedLeaders(updatePlayerBoard.getNewActivatedLeaders());
         owner.getPlayerLight().setNumberOfPoints(updatePlayerBoard.getNewNumberOfPoints());
-        GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
+        PlayerBoardNotifier guiNotifier = PlayerBoardNotifier.getInstance();
         guiNotifier.updateGui();
     }
 }

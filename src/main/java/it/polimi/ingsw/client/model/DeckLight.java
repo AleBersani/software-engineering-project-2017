@@ -1,9 +1,10 @@
 package it.polimi.ingsw.client.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeckLight {
+public class DeckLight implements Serializable {
     private List<Card> territories;
     private List<Card> buildings;
     private List<Card> characters;
@@ -25,6 +26,17 @@ public class DeckLight {
         this.characters = characters;
         this.ventures = ventures;
         this.leaders = leaders;
+    }
+
+    @Override
+    public String toString() {
+        return "DeckLight{" +
+                "territories=" + territories.toString() +
+                ", buildings=" + buildings.toString() +
+                ", characters=" + characters.toString() +
+                ", ventures=" + ventures.toString() +
+                ", leaders=" + leaders.toString() +
+                '}';
     }
 
     public List<Card> getTerritories() {

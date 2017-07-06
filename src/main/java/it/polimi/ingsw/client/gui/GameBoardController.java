@@ -2,14 +2,14 @@ package it.polimi.ingsw.client.gui;
 
 
 import it.polimi.ingsw.client.ClientInformation;
+import it.polimi.ingsw.client.gui.notify.GameBoardNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
-import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.GeneralColor;
-import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -28,8 +28,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GameBoardController extends Observable implements Observer {
+    private static final Logger LOGGER = Logger.getLogger(TileChoiceController.class.getName());
     private static final int FAITH_OFFSET = 35;
     private static final int ADDED_OFFSET = 15;
     private static final int CRITICAL_FAITH_1 = 3;
@@ -167,24 +170,35 @@ public class GameBoardController extends Observable implements Observer {
 
     public void initialize() {
         boardLight = BoardLight.getInstance();
+        GameBoardNotifier.getInstance().addObserver(this);
+        showPlayerBoard();
         setTowers();
         setStackPaneList();
         setPawnList();
-        setOtherPlayersInfo();
         initPawnColors();
-        setOwnerPawns();
         setPositions();
-        otherPlayersPawns();
+        setOwnerPawns();
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
         }
-        try {
-            showPlayerBoard();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "game"));
+    }
+
+    private void showPlayerBoard() {
+        Platform.runLater(() ->  {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/playerboard.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage playerBoardStage = new Stage();
+                playerBoardStage.setScene(new Scene(root));
+                playerBoardStage.show();
+                playerBoardStage.toFront();
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch player board", e);
+            }
+        });
     }
 
     private void setTowers() {
@@ -247,67 +261,7 @@ public class GameBoardController extends Observable implements Observer {
         pawnList.add(neutralPawn);
     }
 
-    private void setOtherPlayersInfo() {
-        infoplayer1.setText(boardLight.getPlayerLights().get(0).getPlayerName());
-        infoplayer1.setTextFill(Paint.valueOf(pawnColors.get(
-                boardLight.getPlayerLights().get(0).getPlayerColor())));
-        infoplayer2.setText(boardLight.getPlayerLights().get(1).getPlayerName());
-        infoplayer2.setTextFill(Paint.valueOf(pawnColors.get(
-                boardLight.getPlayerLights().get(1).getPlayerColor())));
-        infoplayer3.setText(boardLight.getPlayerLights().get(2).getPlayerName());
-        infoplayer3.setTextFill(Paint.valueOf(pawnColors.get(
-                boardLight.getPlayerLights().get(2).getPlayerColor())));
-        playerName.setText(ClientInformation.getPlayerName());
-    }
-
-    private void checkList() {
-        for (Circle pawn : pawnList) {
-            pawn.setOnMouseClicked(event -> moveCircle(pawn));
-        }
-    }
-
-    @Override
-    public void update(Observable o, Object arg) {
-        /*
-        initGreenTower();
-        initYellowTower();
-        initBlueTower();
-        initPurpleTower();*/
-    }
-
-    public void initGreenTower() {
-        for (int i = 0; i < greenTower.size(); i++) {
-            Image newGreenCard = new Image("client/devcards/" +
-                    boardLight.getGreenTower().get(i).getCard().getName() + ".png");
-            greenTower.get(i).setImage(newGreenCard);
-        }
-    }
-
-    public void initYellowTower() {
-        for (int i = 0; i < yellowTower.size(); i++) {
-            Image newYellowCard = new Image("client/devcards/" +
-                    boardLight.getYellowTower().get(i).getCard().getName() + ".png");
-            yellowTower.get(i).setImage(newYellowCard);
-        }
-    }
-
-    public void initBlueTower() {
-        for (int i = 0; i < blueTower.size(); i++) {
-            Image newBlueCard = new Image("client/devcards/" +
-                    boardLight.getBlueTower().get(i).getCard().getName() + ".png");
-            blueTower.get(i).setImage(newBlueCard);
-        }
-    }
-
-    public void initPurpleTower() {
-        for (int i = 0; i < purpleTower.size(); i++) {
-            Image newPurpleCard = new Image("client/devcards/" +
-                    boardLight.getPurpleTower().get(i).getCard().getName() + ".png");
-            purpleTower.get(i).setImage(newPurpleCard);
-        }
-    }
-
-    public void initPawnColors() {
+    private void initPawnColors() {
         pawnColors = new EnumMap<>(GeneralColor.class);
         pawnColors.put(GeneralColor.PURPLE, "#d00000");
         pawnColors.put(GeneralColor.BLUE, "#1300cf");
@@ -315,7 +269,7 @@ public class GameBoardController extends Observable implements Observer {
         pawnColors.put(GeneralColor.GREEN, "09dd02");
     }
 
-    public void setPositions() {
+    private void setPositions() {
         boardPositions = new EnumMap<>(BoardIdentifier.class);
         boardPositions.put(BoardIdentifier.T_G_1, g1);
         boardPositions.put(BoardIdentifier.T_G_2, g2);
@@ -341,8 +295,98 @@ public class GameBoardController extends Observable implements Observer {
         boardPositions.put(BoardIdentifier.M_4, m4);
     }
 
+    private void setOwnerPawns() {
+        for (Circle pawn : pawnList ) {
+            pawn.setStroke(Paint.valueOf(pawnColors.get(ClientInformation.getPlayerColor())));
+        }
+    }
 
-    public void moveCircle(Circle circle) {
+    @Override
+    public void update(Observable o, Object arg) {
+        Platform.runLater(() -> {
+            clearBoard();
+            setOtherPlayersInfo();
+            initGreenTower();
+            initYellowTower();
+            initBlueTower();
+            initPurpleTower();
+            otherPlayersPawns();
+        });
+    }
+
+    private void clearBoard() {
+        for (ImageView slot : greenTower) {
+            slot.setImage(null);
+        }
+        for (ImageView slot : yellowTower) {
+            slot.setImage(null);
+        }
+        for (ImageView slot : blueTower) {
+            slot.setImage(null);
+        }
+        for (ImageView slot : purpleTower) {
+            slot.setImage(null);
+        }
+        for (StackPane stackPane : stackPaneList) {
+            stackPane.getChildren().clear();
+        }
+        council_palace.getChildren().clear();
+        harvest2.getChildren().clear();
+        production2.getChildren().clear();
+    }
+
+    private void setOtherPlayersInfo() {
+        infoplayer1.setText(boardLight.getPlayerLights().get(0).getPlayerName());
+        infoplayer1.setTextFill(Paint.valueOf(pawnColors.get(
+                boardLight.getPlayerLights().get(0).getPlayerColor())));
+        infoplayer2.setText(boardLight.getPlayerLights().get(1).getPlayerName());
+        infoplayer2.setTextFill(Paint.valueOf(pawnColors.get(
+                boardLight.getPlayerLights().get(1).getPlayerColor())));/*
+        infoplayer3.setText(boardLight.getPlayerLights().get(2).getPlayerName());
+        infoplayer3.setTextFill(Paint.valueOf(pawnColors.get(
+                boardLight.getPlayerLights().get(2).getPlayerColor())));
+        playerName.setText(ClientInformation.getPlayerName());*/
+    }
+
+    private void initGreenTower() {
+        for (int i = 0; i < greenTower.size(); i++) {
+            Image newGreenCard = new Image("client/devcards/" +
+                    boardLight.getGreenTower().get(i).getCard().getName() + ".png");
+            greenTower.get(i).setImage(newGreenCard);
+        }
+    }
+
+    private void initYellowTower() {
+        for (int i = 0; i < yellowTower.size(); i++) {
+            Image newYellowCard = new Image("client/devcards/" +
+                    boardLight.getYellowTower().get(i).getCard().getName() + ".png");
+            yellowTower.get(i).setImage(newYellowCard);
+        }
+    }
+
+    private void initBlueTower() {
+        for (int i = 0; i < blueTower.size(); i++) {
+            Image newBlueCard = new Image("client/devcards/" +
+                    boardLight.getBlueTower().get(i).getCard().getName() + ".png");
+            blueTower.get(i).setImage(newBlueCard);
+        }
+    }
+
+    private void initPurpleTower() {
+        for (int i = 0; i < purpleTower.size(); i++) {
+            Image newPurpleCard = new Image("client/devcards/" +
+                    boardLight.getPurpleTower().get(i).getCard().getName() + ".png");
+            purpleTower.get(i).setImage(newPurpleCard);
+        }
+    }
+
+    private void checkList() {
+        for (Circle pawn : pawnList) {
+            pawn.setOnMouseClicked(event -> moveCircle(pawn));
+        }
+    }
+
+    private void moveCircle(Circle circle) {
         circle.setOnMousePressed((MouseEvent e) -> {
             Circle c = (Circle) (e.getSource());
             c.setCursor(Cursor.HAND);
@@ -409,60 +453,7 @@ public class GameBoardController extends Observable implements Observer {
         circle.setTranslateX(7.0*(harvest2.getChildren().size()-1));
     }
 
-    public void undoAction(Circle pawn) {
-        pawn.setCenterY(originX);
-        pawn.setCenterY(originY);
-    }
-
-    public void setFaith(int faithPoints, String player) {
-        double newLayoutX;
-        for (int i = 0; i < faithPath.getChildren().size(); i++) {
-            if (faithPath.getChildren().get(i).getId().equals(player)) {
-                faithPath.getChildren().get(i).setTranslateX(FAITH_OFFSET*faithPoints);
-                newLayoutX = faithPath.getChildren().get(i).getLayoutX();
-                if (faithPoints == CRITICAL_FAITH_1 || faithPoints == CRITICAL_FAITH_2 ||
-                        faithPoints == CRITICAL_FAITH_3){
-                    faithPath.getChildren().get(i).setTranslateX(newLayoutX + ADDED_OFFSET);
-                }
-            }
-        }
-    }
-    
-    private void showPlayerBoard() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/gui/playerboard.fxml"));
-        Parent playerBoard_parent = loader.load();
-        playerBoard = new Stage();
-        playerBoard.setScene(new Scene(playerBoard_parent));
-        playerBoard.show();
-        playerBoard.toFront();
-        playerBoard.setResizable(false);
-    }
-
-    @FXML
-    public void hidePlayerBoard() {
-        if (playerBoard.getScene().getWindow().isShowing()) {
-            playerBoard.hide();
-        }
-    }
-
-    @FXML
-    public void reOpenPlayerBoard() {
-        if (!playerBoard.getScene().getWindow().isShowing()) {
-            playerBoard.show();
-        }
-    }
-
-    public void setPlayerName() {
-        playerName.setText(ClientInformation.getPlayerName());
-    }
-
-    public void setOwnerPawns() {
-        for (Circle pawn : pawnList ) {
-            pawn.setStroke(Paint.valueOf(pawnColors.get(ClientInformation.getPlayerColor())));
-        }
-    }
-
-    public void otherPlayersPawns() {
+    private void otherPlayersPawns() {
         GeneralColor playerColor;
         String playerName;
         for (PlayerLight player : boardLight.getPlayerLights() ) {
@@ -516,7 +507,7 @@ public class GameBoardController extends Observable implements Observer {
 
     }
 
-    public void addPawn(BoardIdentifier pawnIdentifier, PawnLight placedPawn, GeneralColor playerColor) {
+    private void addPawn(BoardIdentifier pawnIdentifier, PawnLight placedPawn, GeneralColor playerColor) {
         Circle c1 = new Circle();
         if (boardPositions.containsKey(pawnIdentifier)) {
             StackPane pawnStack = boardPositions.get(pawnIdentifier);
@@ -525,20 +516,20 @@ public class GameBoardController extends Observable implements Observer {
         } else {
             switch (pawnIdentifier) {
                 case HARVEST_2: c1.setRadius(15.0);
-                                harvest2.getChildren().add(c1);
-                                harvest2.setAlignment(Pos.CENTER_LEFT);
-                                c1.setTranslateX(7.0*(harvest2.getChildren().size()-1));
-                                break;
+                    harvest2.getChildren().add(c1);
+                    harvest2.setAlignment(Pos.CENTER_LEFT);
+                    c1.setTranslateX(7.0*(harvest2.getChildren().size()-1));
+                    break;
                 case PRODUCTION_2: c1.setRadius(15.0);
-                                    production2.getChildren().add(c1);
-                                    production2.setAlignment(Pos.CENTER_LEFT);
-                                    c1.setTranslateX(7.0*(production2.getChildren().size()-1));
-                                    break;
+                    production2.getChildren().add(c1);
+                    production2.setAlignment(Pos.CENTER_LEFT);
+                    c1.setTranslateX(7.0*(production2.getChildren().size()-1));
+                    break;
                 case COUNCIL_PALACE: c1.setRadius(15.0);
-                                        council_palace.getChildren().add(c1);
-                                        council_palace.setAlignment(c1, Pos.CENTER_LEFT);
-                                        c1.setTranslateX(7.5*(council_palace.getChildren().size()-1));
-                                        break;
+                    council_palace.getChildren().add(c1);
+                    council_palace.setAlignment(c1, Pos.CENTER_LEFT);
+                    c1.setTranslateX(7.5*(council_palace.getChildren().size()-1));
+                    break;
             }
         }
         c1.setStroke(Paint.valueOf(pawnColors.get(playerColor)));
@@ -547,14 +538,36 @@ public class GameBoardController extends Observable implements Observer {
         c1.setStrokeWidth(4.0);
     }
 
-    public void clearBoard() {
-        for (ImageView slot : greenTower) { slot.setImage(null); }
-        for (ImageView slot : yellowTower) { slot.setImage(null); }
-        for (ImageView slot : blueTower) { slot.setImage(null); }
-        for (ImageView slot : purpleTower) { slot.setImage(null); }
-        for (StackPane stackPane : stackPaneList) { stackPane.getChildren().clear(); }
-        council_palace.getChildren().clear();
-        harvest2.getChildren().clear();
-        production2.getChildren().clear();
+    public void undoAction(Circle pawn) {
+        pawn.setCenterY(originX);
+        pawn.setCenterY(originY);
+    }
+
+    public void setFaith(int faithPoints, String player) {
+        double newLayoutX;
+        for (int i = 0; i < faithPath.getChildren().size(); i++) {
+            if (faithPath.getChildren().get(i).getId().equals(player)) {
+                faithPath.getChildren().get(i).setTranslateX(FAITH_OFFSET*faithPoints);
+                newLayoutX = faithPath.getChildren().get(i).getLayoutX();
+                if (faithPoints == CRITICAL_FAITH_1 || faithPoints == CRITICAL_FAITH_2 ||
+                        faithPoints == CRITICAL_FAITH_3){
+                    faithPath.getChildren().get(i).setTranslateX(newLayoutX + ADDED_OFFSET);
+                }
+            }
+        }
+    }
+
+    @FXML
+    public void hidePlayerBoard() {
+        if (playerBoard.getScene().getWindow().isShowing()) {
+            playerBoard.hide();
+        }
+    }
+
+    @FXML
+    public void reOpenPlayerBoard() {
+        if (!playerBoard.getScene().getWindow().isShowing()) {
+            playerBoard.show();
+        }
     }
 }

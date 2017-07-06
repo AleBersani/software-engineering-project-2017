@@ -1,21 +1,19 @@
 package it.polimi.ingsw.client.gui;
 
 import it.polimi.ingsw.client.ClientInformation;
+import it.polimi.ingsw.client.gui.notify.PlayerBoardNotifier;
 import it.polimi.ingsw.client.model.Owner;
-import it.polimi.ingsw.client.model.PlayerLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundSize;
 
 import java.util.*;
 
-public class PlayerboardController {
+public class PlayerboardController implements Observer {
     private static final String BACKGROUND_URL = "/client/backgrounds/";
 
     private List<ImageView> greenCards;
@@ -108,13 +106,24 @@ public class PlayerboardController {
     private Label servants1;
 
     public void initialize() {
+        PlayerBoardNotifier.getInstance().addObserver(this);
         owner = Owner.getInstance();
         initEnumMap();
         setBackground();
         setCards();
-        setResources();
-        initLeaders();
-        setChosenBonusTile();
+    }
+
+    private void initEnumMap() {
+        leaderBackgrounds = new EnumMap<>(GeneralColor.class);
+        leaderBackgrounds.put(GeneralColor.BLUE, BACKGROUND_URL + "blue.jpg");
+        leaderBackgrounds.put(GeneralColor.GREEN, BACKGROUND_URL + "green.jpg");
+        leaderBackgrounds.put(GeneralColor.YELLOW, BACKGROUND_URL + "yellow.jpg");
+        leaderBackgrounds.put(GeneralColor.PURPLE, BACKGROUND_URL + "red.jpg");
+    }
+
+    private void setBackground() {
+        Image newBackground = new Image(leaderBackgrounds.get(ClientInformation.getPlayerColor()));
+        backgroundLeaders.setImage(newBackground);
     }
 
     private void setCards() {
@@ -155,6 +164,19 @@ public class PlayerboardController {
         leaders.add(led2);
         leaders.add(led3);
         leaders.add(led4);
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        Platform.runLater(() -> {
+            initGreenCards();
+            initYellowCards();
+            initBlueCards();
+            initPurpleCards();
+            initLeaders();
+            setChosenBonusTile();
+            setResources();
+        });
     }
 
     private void initGreenCards() {
@@ -207,18 +229,5 @@ public class PlayerboardController {
         stones1.setText(owner.getNumberOfResources().get(ResourcesLight.STONES).toString());
         servants.setText(owner.getNumberOfResources().get(ResourcesLight.SERVANTS).toString());
         servants1.setText(owner.getNumberOfResources().get(ResourcesLight.SERVANTS).toString());
-    }
-
-    private void initEnumMap() {
-        leaderBackgrounds = new EnumMap<>(GeneralColor.class);
-        leaderBackgrounds.put(GeneralColor.BLUE, BACKGROUND_URL + "blue.jpg");
-        leaderBackgrounds.put(GeneralColor.GREEN, BACKGROUND_URL + "green.jpg");
-        leaderBackgrounds.put(GeneralColor.YELLOW, BACKGROUND_URL + "yellow.jpg");
-        leaderBackgrounds.put(GeneralColor.PURPLE, BACKGROUND_URL + "red.jpg");
-    }
-
-    private void setBackground() {
-        Image newBackground = new Image(leaderBackgrounds.get(ClientInformation.getPlayerColor()));
-        backgroundLeaders.setImage(newBackground);
     }
 }

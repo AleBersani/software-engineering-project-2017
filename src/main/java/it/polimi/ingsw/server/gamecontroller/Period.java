@@ -2,7 +2,7 @@ package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
-import it.polimi.ingsw.server.gamelogic.board.*;
+import it.polimi.ingsw.server.gamelogic.board.Board;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
@@ -14,7 +14,6 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
 
 import java.util.*;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -128,6 +127,13 @@ public class Period extends Observable implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {}
+
+    private void sendToAll(ServerClientRequest serverClientRequest) {
+        for (ConnectedClient connectedClient : connectedClients) {
+            ServerSender serverSender = new ServerSenderHandler();
+            serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
+        }
+    }
 
     private void sendTo(String playerName, ServerClientRequest serverClientRequest) {
         for (ConnectedClient connectedClient : connectedClients) {

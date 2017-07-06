@@ -10,6 +10,7 @@ public interface ClientReceiver {
     void visitServerClientRequest(LoginResponse loginResponse);
     void visitServerClientRequest(SimpleMessage simpleMessage);
     void visitServerClientRequest(TileChoice tileChoice);
+    void visitServerClientRequest(UpdateGameBoard updateGameBoard);
     void visitServerClientRequest(UpdateGameId updateGameId);
     void visitServerClientRequest(UpdatePlayerBoard updatePlayerBoard);
 }

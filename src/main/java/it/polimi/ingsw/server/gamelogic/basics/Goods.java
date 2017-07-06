@@ -35,6 +35,18 @@ public class Goods {
         this.points = points;
     }
 
+    public Goods(Goods goods) {
+        resources = new Resources();
+        resources.setWoods(goods.getResources().getWoods());
+        resources.setStones(goods.getResources().getStones());
+        resources.setCoins(goods.getResources().getCoins());
+        resources.setServants(goods.getResources().getServants());
+        points = new Points();
+        points.setVictory(goods.getPoints().getVictory());
+        points.setMilitary(goods.getPoints().getMilitary());
+        points.setFaith(goods.getPoints().getFaith());
+    }
+
     /**
      * Constructor with both Resources and Points
      * @param resources

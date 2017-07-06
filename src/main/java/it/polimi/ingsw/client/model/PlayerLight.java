@@ -3,10 +3,11 @@ package it.polimi.ingsw.client.model;
 import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.shared.model.GeneralColor;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public class PlayerLight {
+public class PlayerLight implements Serializable {
     private String playerName;
     private GeneralColor playerColor;
 
@@ -16,6 +17,16 @@ public class PlayerLight {
     public PlayerLight(String playerName, GeneralColor playerColor) {
         this.playerName = playerName;
         this.playerColor = playerColor;
+    }
+
+    @Override
+    public String toString() {
+        return "PlayerLight{" +
+                "playerName='" + playerName + '\'' +
+                ", playerColor=" + playerColor +
+                ", activatedLeaders=" + activatedLeaders +
+                ", numberOfPoints=" + numberOfPoints +
+                '}';
     }
 
     public String getPlayerName() {
