@@ -8,15 +8,16 @@ import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.Excommunicati
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
+import it.polimi.ingsw.server.middleware.ServerSender;
+import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
 
 import java.util.*;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * //
- */
 public class Period extends Observable implements Observer {
     private final static Logger LOGGER = Logger.getLogger(Period.class.getName());
 
@@ -25,40 +26,43 @@ public class Period extends Observable implements Observer {
 
     private List<ConnectedClient> connectedClients;
     private List<Player> players;
-    private List<PlayerDetails> playerOrder; //QUELLO BASE DELL'ULTIMO SEMIPERIODO DEL PERIODO PRECEDENTE,
+    private List<PlayerDetails> playersOrder;
     private Board board;
     private boolean current;
     private List<SemiPeriod> semiPeriods;
     private PeriodNumber periodNumber;
 
-    public Period(ExcommunicationTile actualExcommunicationTile, List<DevelopmentCard> developmentCards) {
+    public Period(ExcommunicationTile actualExcommunicationTile,
+                  List<DevelopmentCard> developmentCards,
+                  PeriodNumber periodNumber) {
         this.actualExcommunicationTile = actualExcommunicationTile;
         this.developmentCards = developmentCards;
+        this.periodNumber = periodNumber;
         connectedClients = new ArrayList<>();
         players = new ArrayList<>();
-        playerOrder = new ArrayList<>();
+        playersOrder = new ArrayList<>();
         board = new Board();
-        semiPeriods = new ArrayList<>();
         current = false;
+        semiPeriods = new ArrayList<>();
     }
-
-    @Override
-    public void update(Observable o, Object arg) {}
 
     /**
      * Public method that set a new SemiPeriod up and launches it.
      */
-    public void setupSemiPeriod() {
+    public void startSemiPeriod() {
         SemiPeriod semiPeriod = new SemiPeriod(getDevelopmentCardsForSemiPeriod(), players, new Board(board));
+        semiPeriod.setConnectedClients(connectedClients);
 
         if (semiPeriods.isEmpty()) {
-            semiPeriod.setBasePlayersOrder(playerOrder);
+            semiPeriod.setBasePlayersOrder(playersOrder);
         } else {
-            semiPeriod.setPlayersOrder(calculateNewPlayerOrder(getLastSemiperiod().getBasePlayersOrder(),
+            semiPeriod.setBasePlayersOrder(calculateNewPlayerOrder(getLastSemiperiod().getBasePlayersOrder(),
                     getLastSemiperiod().getBoard().getCouncilPalace().getPlayerOrder()));
         }
         semiPeriods.add(semiPeriod);
         semiPeriod.setDevelopmentCards(getDevelopmentCardsForSemiPeriod());
+        LOGGER.log(Level.INFO, () -> "Starting Semi Period");
+        semiPeriod.initSemiPeriod();
     }
 
     /**
@@ -122,7 +126,17 @@ public class Period extends Observable implements Observer {
         return cardsToReturn;
     }
 
-    public void initSemiPeriod() {}
+    @Override
+    public void update(Observable o, Object arg) {}
+
+    private void sendTo(String playerName, ServerClientRequest serverClientRequest) {
+        for (ConnectedClient connectedClient : connectedClients) {
+            if (connectedClient.getPlayerName().equals(playerName)) {
+                ServerSender serverSender = new ServerSenderHandler();
+                serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
+            }
+        }
+    }
 
     public void churchSupport() {
         int i =0;
@@ -175,12 +189,12 @@ public class Period extends Observable implements Observer {
         this.players = players;
     }
 
-    public List<PlayerDetails> getPlayerOrder() {
-        return playerOrder;
+    public List<PlayerDetails> getPlayersOrder() {
+        return playersOrder;
     }
 
-    public void setPlayerOrder(List<PlayerDetails> playerOrder) {
-        this.playerOrder = playerOrder;
+    public void setPlayersOrder(List<PlayerDetails> playersOrder) {
+        this.playersOrder = playersOrder;
     }
 
     public Board getBoard() {

@@ -2,6 +2,10 @@ package it.polimi.ingsw.client.gui;
 
 
 import it.polimi.ingsw.client.ClientInformation;
+import it.polimi.ingsw.client.middleware.ClientSender;
+import it.polimi.ingsw.client.middleware.ClientSenderHandler;
+import it.polimi.ingsw.client.model.BoardLight;
+import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +25,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class GameBoardController extends Observable implements Initializable{
+public class GameBoardController extends Observable implements Observer {
+    private static final int FAITH_OFFSET = 35;
+    private static final int ADDED_OFFSET = 15;
+    private static final int CRITICAL_FAITH_1 = 3;
+    private static final int CRITICAL_FAITH_2 = 4;
+    private static final int CRITICAL_FAITH_3 = 5;
+
     private List<Circle> pawnList;
     private List<StackPane> stackPaneList;
     private List<ImageView> greenTower;
@@ -33,11 +43,8 @@ public class GameBoardController extends Observable implements Initializable{
     private double originX;
     private double originY;
     private Stage playerBoard;
-    private static final int FAITH_OFFSET = 35;
-    private static final int ADDED_OFFSET = 15;
-    private static final int CRITICAL_FAITH_1 = 3;
-    private static final int CRITICAL_FAITH_2 = 4;
-    private static final int CRITICAL_FAITH_3 = 5;
+
+    private BoardLight boardLight;
 
     @FXML
     private Circle whitePawn;
@@ -152,8 +159,8 @@ public class GameBoardController extends Observable implements Initializable{
     @FXML
     private Label playerName;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize() {
+        boardLight = BoardLight.getInstance();
         setTowers();
         setStackPaneList();
         setPawnList();
@@ -161,9 +168,16 @@ public class GameBoardController extends Observable implements Initializable{
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
         }
+        try {
+            showPlayerBoard();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "game"));
     }
 
-    public void setTowers() {
+    private void setTowers() {
         greenTower = new ArrayList<>();
         greenTower.add(t_g_1);
         greenTower.add(t_g_2);
@@ -187,34 +201,6 @@ public class GameBoardController extends Observable implements Initializable{
         purpleTower.add(t_p_2);
         purpleTower.add(t_p_3);
         purpleTower.add(t_p_4);
-    }
-
-    public void initGreenTower(ArrayList<String> greenCards) {
-        for (int i = 0; i < greenTower.size(); i++) {
-            Image newGreenCard = new Image("client/devcards/" + greenCards.get(i) + ".png");
-            greenTower.get(i).setImage(newGreenCard);
-        }
-    }
-
-    public void initYellowTower(ArrayList<String> yellowCards) {
-        for (int i = 0; i < yellowTower.size(); i++) {
-            Image newYellowCard = new Image("client/devcards/" + yellowCards.get(i) + ".png");
-            yellowTower.get(i).setImage(newYellowCard);
-        }
-    }
-
-    public void initBlueTower(ArrayList<String> blueCards) {
-        for (int i = 0; i < blueTower.size(); i++) {
-            Image newBlueCard = new Image("client/devcards/" + blueCards.get(i) + ".png");
-            blueTower.get(i).setImage(newBlueCard);
-        }
-    }
-
-    public void initPurpleTower(ArrayList<String> purpleCards) {
-        for (int i = 0; i < purpleTower.size(); i++) {
-            Image newPurpleCard = new Image("client/devcards/" + purpleCards.get(i) + ".png");
-            purpleTower.get(i).setImage(newPurpleCard);
-        }
     }
 
     private void setStackPaneList() {
@@ -243,7 +229,7 @@ public class GameBoardController extends Observable implements Initializable{
         stackPaneList.add(harvest1);
     }
 
-    public void setPawnList() {
+    private void setPawnList() {
         pawnList = new ArrayList<>();
         pawnList.add(orangePawn);
         pawnList.add(blackPawn);
@@ -251,9 +237,52 @@ public class GameBoardController extends Observable implements Initializable{
         pawnList.add(neutralPawn);
     }
 
-    public void checkList() {
+    private void setOtherPlayersInfo() {
+        infoplayer1.setText("qualcosa");
+        infoplayer2.setText("bho");
+        infoplayer3.setText("teso");
+    }
+
+    private void checkList() {
         for (Circle pawn : pawnList) {
             pawn.setOnMouseClicked(event -> moveCircle(pawn));
+        }
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        /*
+        initGreenTower();
+        initYellowTower();
+        initBlueTower();
+        initPurpleTower();*/
+    }
+
+    public void initGreenTower(ArrayList<String> greenCards) {
+        for (int i = 0; i < greenTower.size(); i++) {
+            Image newGreenCard = new Image("client/devcards/" + greenCards.get(i) + ".png");
+            greenTower.get(i).setImage(newGreenCard);
+        }
+    }
+
+    public void initYellowTower(ArrayList<String> yellowCards) {
+        for (int i = 0; i < yellowTower.size(); i++) {
+            Image newYellowCard = new Image("client/devcards/" + yellowCards.get(i) + ".png");
+            yellowTower.get(i).setImage(newYellowCard);
+        }
+    }
+
+    public void initBlueTower(ArrayList<String> blueCards) {
+        for (int i = 0; i < blueTower.size(); i++) {
+            Image newBlueCard = new Image("client/devcards/" + blueCards.get(i) + ".png");
+            blueTower.get(i).setImage(newBlueCard);
+        }
+    }
+
+    public void initPurpleTower(ArrayList<String> purpleCards) {
+        for (int i = 0; i < purpleTower.size(); i++) {
+            Image newPurpleCard = new Image("client/devcards/" + purpleCards.get(i) + ".png");
+            purpleTower.get(i).setImage(newPurpleCard);
         }
     }
 
@@ -346,13 +375,13 @@ public class GameBoardController extends Observable implements Initializable{
     @FXML
     public void showPlayerBoard() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/gui/playerboard.fxml"));
-        Parent playerBoard_parent = (Parent) loader.load();
+        Parent playerBoard_parent = loader.load();
         playerBoard = new Stage();
         playerBoard.setScene(new Scene(playerBoard_parent));
         playerBoard.show();
         playerBoard.toFront();
         playerBoard.setResizable(false);
-        this.addObserver((Observer) loader.getController());
+        this.addObserver(loader.getController());
     }
 
     @FXML
@@ -360,12 +389,6 @@ public class GameBoardController extends Observable implements Initializable{
         if (playerBoard.getScene().getWindow().isShowing()) {
             playerBoard.hide();
         }
-    }
-
-    public void setOtherPlayersInfo() {
-        infoplayer1.setText("qualcosa");
-        infoplayer2.setText("bho");
-        infoplayer3.setText("teso");
     }
 
     @FXML

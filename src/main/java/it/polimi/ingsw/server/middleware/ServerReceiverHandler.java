@@ -183,6 +183,8 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
                 case "tileChoice":
                     game.bonusTilesSetup();
                     break;
+                case "game":
+                    game.initPeriod();
             }
         }
     }

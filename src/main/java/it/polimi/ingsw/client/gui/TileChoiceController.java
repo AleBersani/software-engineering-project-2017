@@ -11,9 +11,13 @@ import it.polimi.ingsw.shared.requests.clientserver.ChosenBonusTile;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenLeader;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import it.polimi.ingsw.shared.support.Client;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -23,14 +27,19 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 import javax.script.Bindings;
 import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TileChoiceController implements Observer {
+    private final static Logger LOGGER = Logger.getLogger(TileChoiceController.class.getName());
     private static final String BACKGROUND_URL = "/client/backgrounds/";
 
     private int gameId;
@@ -102,7 +111,11 @@ public class TileChoiceController implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         hideWaiting();
-        setTiles((List<String>)arg);
+        if (arg != null) {
+            setTiles((List<String>)arg);
+        } else {
+            startGameBoard();
+        }
     }
 
     private void hideWaiting() {
@@ -116,6 +129,26 @@ public class TileChoiceController implements Observer {
             Image newTile = new Image("client/bonustiles/"  + availableTiles.get(i) +  ".png");
             tileList.get(i).setImage(newTile);
         }
+    }
+
+    private void startGameBoard() {
+        Platform.runLater(() ->  {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/gameboard.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage gameBoardStage = new Stage();
+                gameBoardStage.setScene(new Scene(root));
+                gameBoardStage.show();
+                closeStage();
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch player tiles board", e);
+            }
+        });
+    }
+
+    public void closeStage() {
+        Stage stage = (Stage)root.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

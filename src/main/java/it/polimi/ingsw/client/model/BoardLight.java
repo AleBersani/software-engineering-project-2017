@@ -1,5 +1,8 @@
 package it.polimi.ingsw.client.model;
 
+import it.polimi.ingsw.shared.model.BoardIdentifier;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class BoardLight {
@@ -11,8 +14,19 @@ public class BoardLight {
     private List<SlotLight> harvest;
     private List<SlotLight> market;
     private CouncilPalaceLight councilPalaceLight;
+    private List<PlayerLight> playerLights;
 
-    private BoardLight() {}
+    private BoardLight() {
+        greenTower = new ArrayList<>();
+        yellowTower = new ArrayList<>();
+        blueTower = new ArrayList<>();
+        purpleTower = new ArrayList<>();
+        production = new ArrayList<>();
+        harvest = new ArrayList<>();
+        market = new ArrayList<>();
+        councilPalaceLight = new CouncilPalaceLight(BoardIdentifier.COUNCIL_PALACE);
+        playerLights = new ArrayList<>();
+    }
 
     private static class BoardLightHolder {
         private static final BoardLight INSTANCE = new BoardLight();
@@ -84,5 +98,13 @@ public class BoardLight {
 
     public void setCouncilPalaceLight(CouncilPalaceLight councilPalaceLight) {
         this.councilPalaceLight = councilPalaceLight;
+    }
+
+    public List<PlayerLight> getPlayerLights() {
+        return playerLights;
+    }
+
+    public void setPlayerLights(List<PlayerLight> playerLights) {
+        this.playerLights = playerLights;
     }
 }

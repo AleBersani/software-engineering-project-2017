@@ -25,9 +25,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-/**
- * //
- */
 public class Game implements Runnable, Observer {
     private final static Logger LOGGER = Logger.getLogger(Game.class.getName());
 
@@ -35,6 +32,7 @@ public class Game implements Runnable, Observer {
     private List<ConnectedClient> connectedClients;
 
     private List<Player> players;
+    private List<PlayerDetails> playersOrder;
     private List<Period> periods;
     private List<DevelopmentCard> developmentCards;
     private Board board;
@@ -46,6 +44,7 @@ public class Game implements Runnable, Observer {
         this.gameId = gameId;
         this.connectedClients = new ArrayList<>(connectedClients);
         players = new ArrayList<>();
+        playersOrder = new ArrayList<>();
         periods = new ArrayList<>();
         developmentCards = new ArrayList<>();
         board = new Board();
@@ -143,8 +142,9 @@ public class Game implements Runnable, Observer {
         for (int i = 0; i < GameConfiguration.getNumberOfPeriods(); i++) {
             PeriodNumber periodNumber = PeriodNumber.values()[i];
             periods.add(new Period(getExcommunicationTilePerPeriodNumber(periodNumber),
-                    developmentCardsForPeriod.get(periodNumber)));
+                    developmentCardsForPeriod.get(periodNumber), periodNumber));
         }
+        periods.get(0).setPlayersOrder(playersOrder);
     }
 
     private Map<PeriodNumber, List<DevelopmentCard>> generateDevelopmentCardsForPeriod() {
@@ -270,7 +270,7 @@ public class Game implements Runnable, Observer {
         if (bonusTileChoiceHandler.phaseEnded()) {
             LOGGER.info("Players have chosen their bonus tile!");
             addBonusTilesToPlayers();
-            initPeriod();
+            sendToAll(new TileChoice(null));
         } else {
             sendBonusTileChoiceToNextPlayer();
         }
@@ -284,6 +284,31 @@ public class Game implements Runnable, Observer {
                 }
             });
         }
+    }
+
+    public void initPeriod() {
+        for (Period period : periods) {
+            if (!period.isCurrent()) {
+                setPeriodInformation(period);
+                if (PeriodNumber.FIRST != period.getPeriodNumber()) {
+                    setNewStartingPlayerOrderForPeriod(period);
+                }
+                LOGGER.log(Level.INFO, () -> "Starting Period: " + period.getPeriodNumber());
+                period.startSemiPeriod();
+                break;
+            }
+        }
+    }
+
+    private void setPeriodInformation(Period period) {
+        period.setConnectedClients(connectedClients);
+        period.setPlayers(players);
+        period.setBoard(board);
+        period.setCurrent(true);
+    }
+
+    private void setNewStartingPlayerOrderForPeriod(Period period) {
+        //period.calculateNewPlayerOrder();
     }
 
     private void sendToAll(ServerClientRequest serverClientRequest) {
@@ -300,22 +325,6 @@ public class Game implements Runnable, Observer {
                 serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
             }
         }
-    }
-
-    public void initPeriod() {
-        for (Period period : periods) {
-            if (!period.isCurrent()) {
-                setPeriodInformation(period);
-                break;
-            }
-        }
-    }
-
-    private void setPeriodInformation(Period period) {
-        period.setConnectedClients(connectedClients);
-        period.setPlayers(players);
-        period.setBoard(board);
-        period.setCurrent(true);
     }
 
     public int getGameId() {

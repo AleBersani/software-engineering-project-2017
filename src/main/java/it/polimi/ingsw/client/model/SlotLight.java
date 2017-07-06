@@ -2,6 +2,8 @@ package it.polimi.ingsw.client.model;
 
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
+import java.util.Optional;
+
 public class SlotLight {
     private BoardIdentifier boardIdentifier;
     private int requestedValue;
@@ -10,6 +12,7 @@ public class SlotLight {
     public SlotLight(BoardIdentifier boardIdentifier, int requestedValue) {
         this.boardIdentifier = boardIdentifier;
         this.requestedValue = requestedValue;
+        pawnLight = null;
     }
 
     public SlotLight(BoardIdentifier boardIdentifier, int requestedValue, PawnLight pawnLight) {
@@ -34,8 +37,11 @@ public class SlotLight {
         this.requestedValue = requestedValue;
     }
 
-    public PawnLight getPawnLight() {
-        return pawnLight;
+    public Optional<PawnLight> getPawnLight() {
+        if (pawnLight == null) {
+            return Optional.empty();
+        }
+        return Optional.of(pawnLight);
     }
 
     public void setPawnLight(PawnLight pawnLight) {
