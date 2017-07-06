@@ -10,6 +10,7 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -54,6 +55,7 @@ public class TileChoiceController implements Observer {
         tileList = new ArrayList<>();
         initEnumMap();
         setTileList();
+        ClientInformation.setPlayerColor(GeneralColor.BLUE);
         setBackground();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "tileChoice"));
@@ -96,8 +98,9 @@ public class TileChoiceController implements Observer {
     private void setTiles(List<String> availableTiles) {
         for (int i = 0; i < availableTiles.size(); i++) {
             System.out.println(availableTiles.get(i));
-            Image newTile = new Image("client/bonustiles/" + availableTiles.get(i) + ".png");
+            Image newTile = new Image("client/bonustiles/"  + availableTiles.get(i) +  ".png");
             tileList.get(i).setImage(newTile);
+
         }
     }
 

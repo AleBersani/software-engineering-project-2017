@@ -11,7 +11,7 @@ public class TileChoiceMain extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/client/gui/tileChoice.fxml"));
         primaryStage.setTitle("TileChoice");
-        primaryStage.setScene(new Scene(root, 800, 555));
+        primaryStage.setScene(new Scene(root, 800, 560));
         primaryStage.show();
     }
 }

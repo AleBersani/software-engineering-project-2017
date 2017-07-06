@@ -14,7 +14,7 @@
                     <Image url="@punchboard.jpg" />
                 </ImageView>
                 <ImageView fitHeight="514.0" fitWidth="68.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@personalbonustile_1.png" />
+                    <Image url="@../bonustiles/B_TILE_5.png" />
                 </ImageView>
 
                 <Label fx:id="coins" layoutX="106.0" layoutY="448.0" prefHeight="35.0" prefWidth="47.0" styleClass="try" text="Coins" />
@@ -46,7 +46,7 @@
                         <Image url="@punchboard2.jpg" />
                     </ImageView>
                     <ImageView fitHeight="515.0" fitWidth="64.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@personalbonustile_1.png" />
+                        <Image url="@../bonustiles/B_TILE_5.png" />
                     </ImageView>
 
                     <StackPane layoutX="75.0" layoutY="35.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
