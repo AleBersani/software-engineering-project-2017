@@ -25,6 +25,13 @@ public class UniqueRandomGenerator {
         return range.subList(0, numberToExtract);
     }
 
+    public int generateRandom() {
+        List<Integer> range = IntStream.range(0, poolSize).boxed()
+                .collect(Collectors.toCollection(ArrayList::new));
+        Collections.shuffle(range);
+        return range.get(0);
+    }
+
     public int getPoolSize() {
         return poolSize;
     }

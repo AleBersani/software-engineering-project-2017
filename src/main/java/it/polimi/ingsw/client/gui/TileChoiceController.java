@@ -7,6 +7,8 @@ import it.polimi.ingsw.client.gui.notify.BonusTileChoiceNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.requests.clientserver.ChosenBonusTile;
+import it.polimi.ingsw.shared.requests.clientserver.ChosenLeader;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -29,7 +31,10 @@ import java.util.List;
 public class TileChoiceController implements Observer {
     private static final String BACKGROUND_URL = "/client/backgrounds/";
 
+    private int gameId;
+    private String playerName;
     private List<ImageView> tileList;
+    private List<String> bonusTileIdentifiers;
     private Map<GeneralColor, String> backgrounds;
 
     @FXML
@@ -50,19 +55,24 @@ public class TileChoiceController implements Observer {
     @FXML
     private AnchorPane root;
 
+    public TileChoiceController() {
+        gameId = ClientInformation.getCurrentGameId();
+        playerName = ClientInformation.getPlayerName();
+        tileList = new ArrayList<>();
+        bonusTileIdentifiers = new ArrayList<>();
+        backgrounds = new EnumMap<>(GeneralColor.class);
+    }
+
     public void initialize() {
         BonusTileChoiceNotifier.getInstance().addObserver(this);
-        tileList = new ArrayList<>();
         initEnumMap();
         setTileList();
-        ClientInformation.setPlayerColor(GeneralColor.BLUE);
         setBackground();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "tileChoice"));
     }
 
     private void initEnumMap() {
-        backgrounds = new EnumMap<>(GeneralColor.class);
         backgrounds.put(GeneralColor.GREEN, BACKGROUND_URL + "green.jpg");
         backgrounds.put(GeneralColor.BLUE, BACKGROUND_URL + "blue.jpg");
         backgrounds.put(GeneralColor.YELLOW, BACKGROUND_URL + "yellow.jpg");
@@ -96,27 +106,34 @@ public class TileChoiceController implements Observer {
     }
 
     private void setTiles(List<String> availableTiles) {
+        bonusTileIdentifiers = new ArrayList<>(availableTiles);
         for (int i = 0; i < availableTiles.size(); i++) {
-            System.out.println(availableTiles.get(i));
             Image newTile = new Image("client/bonustiles/"  + availableTiles.get(i) +  ".png");
             tileList.get(i).setImage(newTile);
-
         }
     }
 
     @FXML
     public void selectTile1() {
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new ChosenBonusTile(gameId, playerName, bonusTileIdentifiers.get(0)));
     }
 
     @FXML
     public void selectTile2() {
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new ChosenBonusTile(gameId, playerName, bonusTileIdentifiers.get(1)));
     }
 
     @FXML
     public void selectTile3() {
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new ChosenBonusTile(gameId, playerName, bonusTileIdentifiers.get(2)));
     }
 
     @FXML
     public void selectTile4() {
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new ChosenBonusTile(gameId, playerName, bonusTileIdentifiers.get(3)));
     }
 }

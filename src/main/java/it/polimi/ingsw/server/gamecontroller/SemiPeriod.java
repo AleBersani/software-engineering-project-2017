@@ -7,6 +7,7 @@ import it.polimi.ingsw.server.gamelogic.board.TowerSlot;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.enums.DiceColor;
 import it.polimi.ingsw.server.gamelogic.player.Player;
+import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.util.*;
@@ -18,6 +19,8 @@ import java.util.stream.Collectors;
 public class SemiPeriod extends Observable implements Observer {
     private List<DevelopmentCard> developmentCards;
     private List<Player> players;
+    private List<PlayerDetails> playersOrder;
+    private List<PlayerDetails> basePlayersOrder;
     private Board board;
 
     private List<Round> rounds;

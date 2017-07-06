@@ -3,14 +3,15 @@ package it.polimi.ingsw.server.gamecontroller;
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gameelements.Cards;
+import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.server.gamelogic.basics.PlayerConfiguration;
-import it.polimi.ingsw.server.gamelogic.board.Board;
-import it.polimi.ingsw.server.gamelogic.board.Space;
-import it.polimi.ingsw.server.gamelogic.board.Tower;
-import it.polimi.ingsw.server.gamelogic.board.TowerSlot;
-import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
+import it.polimi.ingsw.server.gamelogic.board.*;
+import it.polimi.ingsw.server.gamelogic.cards.development.*;
+import it.polimi.ingsw.server.gamelogic.cards.development.Character;
+import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
+import it.polimi.ingsw.server.gamelogic.player.BonusTiles;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerBoard;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
@@ -22,6 +23,7 @@ import it.polimi.ingsw.shared.requests.serverclient.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  * //
@@ -54,15 +56,16 @@ public class Game implements Runnable, Observer {
     @Override
     public void run() {
         LOGGER.log(Level.INFO,() -> "New game started! ID: " + gameId);
-        setupBoard();
+        setupGame();
     }
 
-    private void setupBoard() {
+    private void setupGame() {
         sendGameIdToPlayers();
         setupTowers();
         setupCouncilPalace();
         setupActionSpaces();
         basicSetupPlayers();
+        setupPeriods();
         sendGameInitToPlayers();
     }
 
@@ -113,7 +116,7 @@ public class Game implements Runnable, Observer {
 
     private void setupCouncilPalace() {
         LOGGER.info("Setup council palace");
-        board.setCouncilPalace(BoardInformation.getCouncilPalace());
+        board.setCouncilPalace(new CouncilPalace(BoardInformation.getCouncilPalace()));
     }
 
     private void setupActionSpaces() {
@@ -132,6 +135,50 @@ public class Game implements Runnable, Observer {
                     new PlayerBoard(PlayerConfiguration.getStartingGoods().get(playerCounter))));
             playerCounter ++;
         }
+    }
+
+    private void setupPeriods() {
+        Map<PeriodNumber, List<DevelopmentCard>> developmentCardsForPeriod = generateDevelopmentCardsForPeriod();
+
+        for (int i = 0; i < GameConfiguration.getNumberOfPeriods(); i++) {
+            PeriodNumber periodNumber = PeriodNumber.values()[i];
+            periods.add(new Period(getExcommunicationTilePerPeriodNumber(periodNumber),
+                    developmentCardsForPeriod.get(periodNumber)));
+        }
+    }
+
+    private Map<PeriodNumber, List<DevelopmentCard>> generateDevelopmentCardsForPeriod() {
+        Map<PeriodNumber, List<DevelopmentCard>> developmentCardsForPeriod = new EnumMap<>(PeriodNumber.class);
+
+        for (int i = 0; i < GameConfiguration.getNumberOfPeriods(); i++) {
+            List<DevelopmentCard> developmentCards = new ArrayList<>();
+
+            DevelopmentCardsFilter<Territory> territories = new DevelopmentCardsFilter<>(Cards.getTerritories());
+            developmentCards.addAll(territories.returnDevelopmentCardsForPeriod(i));
+
+            DevelopmentCardsFilter<Building> buildings = new DevelopmentCardsFilter<>(Cards.getBuildings());
+            developmentCards.addAll(buildings.returnDevelopmentCardsForPeriod(i));
+
+            DevelopmentCardsFilter<Character> characters = new DevelopmentCardsFilter<>(Cards.getCharacters());
+            developmentCards.addAll(characters.returnDevelopmentCardsForPeriod(i));
+
+            DevelopmentCardsFilter<Venture> ventures = new DevelopmentCardsFilter<>(Cards.getVentures());
+            developmentCards.addAll(ventures.returnDevelopmentCardsForPeriod(i));
+
+            developmentCardsForPeriod.put(PeriodNumber.values()[i], developmentCards);
+        }
+
+        return developmentCardsForPeriod;
+    }
+
+    private ExcommunicationTile getExcommunicationTilePerPeriodNumber(PeriodNumber periodNumber) {
+        UniqueRandomGenerator uniqueRandomGenerator = new UniqueRandomGenerator(
+                Cards.getExcommunicationTiles().size() / GameConfiguration.getNumberOfPeriods());
+        int excommunicationTilePosition = uniqueRandomGenerator.generateRandom();
+        List<ExcommunicationTile> excommunicationTilesForPeriod = Cards.getExcommunicationTiles().stream()
+                .filter(e -> e.getPeriod() == periodNumber)
+                .collect(Collectors.toList());
+        return excommunicationTilesForPeriod.get(excommunicationTilePosition);
     }
 
     @Override
@@ -182,7 +229,18 @@ public class Game implements Runnable, Observer {
         }
         if (leaderCardChoiceHandler.phaseEnded()) {
             LOGGER.info("Players have chosen leaders!");
+            addLeaderCardsToPlayers();
             sendToAll(new EndLeadersChoicePhase());
+        }
+    }
+
+    private void addLeaderCardsToPlayers() {
+        for (Map.Entry<String, List<LeaderCard>> entry : leaderCardChoiceHandler.getLeaderCardsForPlayers().entrySet()) {
+            players.forEach(p -> {
+                if (p.getPlayerDetails().getPlayerName().equals(entry.getKey())) {
+                    p.setLeaderCards(entry.getValue());
+                }
+            });
         }
     }
 
@@ -211,6 +269,20 @@ public class Game implements Runnable, Observer {
         bonusTileChoiceHandler.addBonusTileToPlayer(playerName, bonusTileIdentifier);
         if (bonusTileChoiceHandler.phaseEnded()) {
             LOGGER.info("Players have chosen their bonus tile!");
+            addBonusTilesToPlayers();
+            initPeriod();
+        } else {
+            sendBonusTileChoiceToNextPlayer();
+        }
+    }
+
+    private void addBonusTilesToPlayers() {
+        for (Map.Entry<String, BonusTiles> entry : bonusTileChoiceHandler.getBonusTileForPlayer().entrySet()) {
+            players.forEach(p -> {
+                if (p.getPlayerDetails().getPlayerName().equals(entry.getKey())) {
+                    p.getPlayerBoard().setBonusTiles(entry.getValue());
+                }
+            });
         }
     }
 
@@ -230,29 +302,20 @@ public class Game implements Runnable, Observer {
         }
     }
 
-    public void setupGame() {
-        /*
-        calcolo ordine di gioco, setup carte leader, scelta bonus tiles, setup goods players (sono metodi diversi)
-         */
-    }
-
-    public void setupPeriods() {
-        /*
-        creazione dei periodi, scelta delle scomuniche
-         */
-    }
-
     public void initPeriod() {
-        /*
-        metodo
-         */
+        for (Period period : periods) {
+            if (!period.isCurrent()) {
+                setPeriodInformation(period);
+                break;
+            }
+        }
     }
 
-    public List<DevelopmentCard> getDevelopmentCardsForPeriod(PeriodNumber periodNumber) {
-        /*
-        ritorna la lista di dev card del periodo selezionato (algoritmo come in player)
-         */
-        return null;
+    private void setPeriodInformation(Period period) {
+        period.setConnectedClients(connectedClients);
+        period.setPlayers(players);
+        period.setBoard(board);
+        period.setCurrent(true);
     }
 
     public int getGameId() {
@@ -309,5 +372,13 @@ public class Game implements Runnable, Observer {
 
     public void setLeaderCardChoiceHandler(LeaderCardChoiceHandler leaderCardChoiceHandler) {
         this.leaderCardChoiceHandler = leaderCardChoiceHandler;
+    }
+
+    public BonusTileChoiceHandler getBonusTileChoiceHandler() {
+        return bonusTileChoiceHandler;
+    }
+
+    public void setBonusTileChoiceHandler(BonusTileChoiceHandler bonusTileChoiceHandler) {
+        this.bonusTileChoiceHandler = bonusTileChoiceHandler;
     }
 }
