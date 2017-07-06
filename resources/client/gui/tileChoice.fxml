@@ -10,9 +10,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" stylesheets="/client/gui/tileChoice.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.gui.TileChoiceController">
-    <StackPane fx:id="pane4" prefHeight="555.0" prefWidth="800" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <Label fx:id="waiting" text="Waiting for the other players to choose"/>
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" stylesheets="/client/gui/tileChoice.css"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.polimi.ingsw.client.gui.TileChoiceController">
+
+    <StackPane fx:id="pane4" prefHeight="555.0" prefWidth="800" AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label fx:id="waiting" text="Waiting for the other players to choose" textFill="white"/>
         <JFXSpinner fx:id="spinner" translateY="30"/>
         <HBox fx:id="pane5" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20">
             <ImageView fx:id="tile1" fitHeight="450.0" fitWidth="180.0" onMouseClicked="#selectTile1" preserveRatio="true">
@@ -25,4 +29,5 @@
             </ImageView>
         </HBox>
        </StackPane>
+    <Label fx:id="namePlayer" layoutX="365.0" layoutY="25.0" textFill="white"/>
 </AnchorPane>

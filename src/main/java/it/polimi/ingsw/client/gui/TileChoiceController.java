@@ -10,6 +10,7 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenBonusTile;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenLeader;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
+import it.polimi.ingsw.shared.support.Client;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Rectangle2D;
@@ -23,6 +24,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
 
+import javax.script.Bindings;
 import java.awt.*;
 import java.net.URL;
 import java.util.*;
@@ -51,6 +53,8 @@ public class TileChoiceController implements Observer {
 
     @FXML
     private Label waiting;
+    @FXML
+    private Label namePlayer;
 
     @FXML
     private AnchorPane root;
@@ -68,6 +72,7 @@ public class TileChoiceController implements Observer {
         initEnumMap();
         setTileList();
         setBackground();
+        setPlayerName();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "tileChoice"));
     }
@@ -135,5 +140,10 @@ public class TileChoiceController implements Observer {
     public void selectTile4() {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenBonusTile(gameId, playerName, bonusTileIdentifiers.get(3)));
+    }
+
+    public void setPlayerName() {
+        namePlayer.setText(ClientInformation.getPlayerName());
+        namePlayer.prefWidth(namePlayer.getText().length());
     }
 }

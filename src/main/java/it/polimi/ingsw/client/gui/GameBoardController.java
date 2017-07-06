@@ -381,5 +381,4 @@ public class GameBoardController extends Observable implements Initializable{
     public void setPlayerName() {
         playerName.setText(ClientInformation.getPlayerName());
     }
-
 }
