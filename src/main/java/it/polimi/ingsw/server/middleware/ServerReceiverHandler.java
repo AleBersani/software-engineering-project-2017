@@ -32,6 +32,17 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
     }
 
     @Override
+    public void visitClientServerRequest(ChosenBonusTile bonusTile) {
+        ActiveGames activeGames = ActiveGames.getInstance();
+        Optional<Game> optionalGame = activeGames.getGameById(bonusTile.getGameId());
+        if (optionalGame.isPresent()) {
+            Game game = optionalGame.get();
+            game.addBonusTileToPlayer(bonusTile.getPlayerName(),
+                    bonusTile.getBonusTileIdentifier());
+        }
+    }
+
+    @Override
     public void visitClientServerRequest(ChosenLeader chosenLeader) {
         ActiveGames activeGames = ActiveGames.getInstance();
         Optional<Game> optionalGame = activeGames.getGameById(chosenLeader.getGameId());
@@ -161,12 +172,17 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
 
     @Override
     public void visitClientServerRequest(Ready ready) {
-        if ("leaderChoice".equals(ready.getReadyForWhat())) {
-            ActiveGames activeGames = ActiveGames.getInstance();
-            Optional<Game> optionalGame = activeGames.getGameById(ready.getGameId());
-            if (optionalGame.isPresent()) {
-                Game game = optionalGame.get();
-                game.checkAndStartLeaderChoice();
+        ActiveGames activeGames = ActiveGames.getInstance();
+        Optional<Game> optionalGame = activeGames.getGameById(ready.getGameId());
+        if (optionalGame.isPresent()) {
+            Game game = optionalGame.get();
+            switch (ready.getReadyForWhat()) {
+                case "leadersChoice":
+                    game.checkAndStartLeaderChoice();
+                    break;
+                case "tileChoice":
+                    game.bonusTilesSetup();
+                    break;
             }
         }
     }

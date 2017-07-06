@@ -1,11 +1,13 @@
 package it.polimi.ingsw.client.middleware;
 
 import it.polimi.ingsw.client.ClientInformation;
+import it.polimi.ingsw.client.gui.notify.BonusTileChoiceNotifier;
 import it.polimi.ingsw.client.gui.notify.GameChoiceNotifier;
 import it.polimi.ingsw.client.gui.notify.LeaderChoiceNotifier;
 import it.polimi.ingsw.client.gui.notify.PlayerLoginNotifier;
 import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.shared.requests.serverclient.*;
+import it.polimi.ingsw.shared.support.Client;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +70,12 @@ public class ClientReceiverHandler implements ClientReceiver {
     @Override
     public void visitServerClientRequest(SimpleMessage simpleMessage) {
         System.out.println(simpleMessage.getMessage());
+    }
+
+    @Override
+    public void visitServerClientRequest(TileChoice tileChoice) {
+        BonusTileChoiceNotifier guiNotifier = BonusTileChoiceNotifier.getInstance();
+        guiNotifier.updateGui(tileChoice.getBonusTiles());
     }
 
     @Override

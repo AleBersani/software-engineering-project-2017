@@ -11,7 +11,6 @@ import it.polimi.ingsw.server.gamelogic.board.TowerSlot;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
-import it.polimi.ingsw.server.gamelogic.player.BonusTiles;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerBoard;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
@@ -39,7 +38,7 @@ public class Game implements Runnable, Observer {
     private Board board;
 
     private LeaderCardChoiceHandler leaderCardChoiceHandler;
-    private List<BonusTiles> bonusTiles;
+    private BonusTileChoiceHandler bonusTileChoiceHandler;
 
     public Game(int gameId, Queue<ConnectedClient> connectedClients) {
         this.gameId = gameId;
@@ -49,7 +48,7 @@ public class Game implements Runnable, Observer {
         developmentCards = new ArrayList<>();
         board = new Board();
         leaderCardChoiceHandler = new LeaderCardChoiceHandler();
-        bonusTiles = new ArrayList<>();
+        bonusTileChoiceHandler = new BonusTileChoiceHandler();
     }
 
     @Override
@@ -141,7 +140,7 @@ public class Game implements Runnable, Observer {
     public void checkAndStartLeaderChoice() {
         int numberOfPlayersReady = leaderCardChoiceHandler.getNumberOfPlayersReady().incrementAndGet();
         if (numberOfPlayersReady == connectedClients.size()) {
-            LOGGER.info("Players are ready, starting leader choice!");
+            LOGGER.info("Players are ready, starting leaders choice!");
             startLeaderChoice();
         }
     }
@@ -188,7 +187,31 @@ public class Game implements Runnable, Observer {
     }
 
     public void bonusTilesSetup() {
-        LOGGER.info("Starting tiles choice");
+        int numberOfPlayersReady = bonusTileChoiceHandler.getNumberOfPlayersReady().incrementAndGet();
+        if (numberOfPlayersReady == connectedClients.size()) {
+            LOGGER.info("Players are ready, starting bonus tile choice");
+            startTileChoice();
+        }
+    }
+
+    private void startTileChoice() {
+        List<String> playersName = new ArrayList<>();
+        connectedClients.forEach(c -> playersName.add(c.getPlayerName()));
+        Collections.reverse(playersName);
+
+        bonusTileChoiceHandler.setup(playersName);
+        sendBonusTileChoiceToNextPlayer();
+    }
+
+    public void sendBonusTileChoiceToNextPlayer() {
+        sendTo(bonusTileChoiceHandler.getNextPlayer(), new TileChoice(bonusTileChoiceHandler.getRemainingBonusTiles()));
+    }
+
+    public void addBonusTileToPlayer(String playerName, String bonusTileIdentifier) {
+        bonusTileChoiceHandler.addBonusTileToPlayer(playerName, bonusTileIdentifier);
+        if (bonusTileChoiceHandler.phaseEnded()) {
+            LOGGER.info("Players have chosen their bonus tile!");
+        }
     }
 
     private void sendToAll(ServerClientRequest serverClientRequest) {

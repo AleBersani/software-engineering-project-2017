@@ -3,7 +3,11 @@ package it.polimi.ingsw.client.gui;
 import com.jfoenix.controls.JFXSpinner;
 import com.sun.javafx.css.Size;
 import it.polimi.ingsw.client.ClientInformation;
+import it.polimi.ingsw.client.gui.notify.BonusTileChoiceNotifier;
+import it.polimi.ingsw.client.middleware.ClientSender;
+import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -21,10 +25,10 @@ import java.net.URL;
 import java.util.*;
 import java.util.List;
 
-public class TileChoiceController {
+public class TileChoiceController implements Observer {
     private static final String BACKGROUND_URL = "/client/backgrounds/";
+
     private List<ImageView> tileList;
-    private List<String> ultimateTiles;
     private Map<GeneralColor, String> backgrounds;
 
     @FXML
@@ -43,14 +47,16 @@ public class TileChoiceController {
     private Label waiting;
 
     @FXML
-    private AnchorPane anchorPane;
+    private AnchorPane root;
 
     public void initialize() {
+        BonusTileChoiceNotifier.getInstance().addObserver(this);
         tileList = new ArrayList<>();
-        ultimateTiles = new ArrayList<>();
         initEnumMap();
-        setBackground();
         setTileList();
+        setBackground();
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "tileChoice"));
     }
 
     private void initEnumMap() {
@@ -61,14 +67,6 @@ public class TileChoiceController {
         backgrounds.put(GeneralColor.PURPLE, BACKGROUND_URL + "red.jpg");
     }
 
-    public void setBackground() {
-        anchorPane.setBackground(new Background(new BackgroundImage(
-                new Image(backgrounds.get(ClientInformation.getPlayerColor())),
-                null,null, null, new BackgroundSize(
-                        BackgroundSize.AUTO, BackgroundSize.AUTO,
-                false, false, true, true))));
-    }
-
     private void setTileList() {
         tileList.add(tile1);
         tileList.add(tile2);
@@ -76,65 +74,46 @@ public class TileChoiceController {
         tileList.add(tile4);
     }
 
-    public void setLeaderCards(ArrayList<String> availableTiles) {
-        ultimateTiles.clear();
-        ultimateTiles = availableTiles;
-        for (int i = 0; i < tileList.size(); i++) {
-            Image newTile = new Image("client/leader/" + availableTiles.get(i) + ".jpg");
+    private void setBackground() {
+        root.setBackground(new Background(new BackgroundImage(
+                new Image(backgrounds.get(ClientInformation.getPlayerColor())),
+                null,null, null, new BackgroundSize(
+                        BackgroundSize.AUTO, BackgroundSize.AUTO,
+                false, false, true, true))));
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        hideWaiting();
+        setTiles((List<String>)arg);
+    }
+
+    private void hideWaiting() {
+        waiting.setVisible(false);
+        spinner.setVisible(false);
+    }
+
+    private void setTiles(List<String> availableTiles) {
+        for (int i = 0; i < availableTiles.size(); i++) {
+            System.out.println(availableTiles.get(i));
+            Image newTile = new Image("client/bonustiles/" + availableTiles.get(i) + ".png");
             tileList.get(i).setImage(newTile);
         }
     }
 
     @FXML
-    public String selectTile1() {
-        tile2.setDisable(true);
-        tile3.setDisable(true);
-        tile4.setDisable(true);
-        return saveTile1();
+    public void selectTile1() {
     }
 
     @FXML
-    public String selectTile2() {
-        tile1.setDisable(true);
-        tile3.setDisable(true);
-        tile4.setDisable(true);
-        return saveTile2();
+    public void selectTile2() {
     }
 
     @FXML
-    public String selectTile3() {
-        tile1.setDisable(true);
-        tile2.setDisable(true);
-        tile4.setDisable(true);
-        return saveTile3();
+    public void selectTile3() {
     }
 
     @FXML
-    public String selectTile4() {
-        tile1.setDisable(true);
-        tile2.setDisable(true);
-        tile3.setDisable(true);
-        return saveTile4();
-    }
-
-    public String saveTile1() {
-        return ultimateTiles.get(0);
-    }
-
-    public String saveTile2() {
-        return ultimateTiles.get(1);
-    }
-
-    public String saveTile3() {
-        return ultimateTiles.get(2);
-    }
-
-    public String saveTile4() {
-        return ultimateTiles.get(3);
-    }
-
-    public void hideWaiting() {
-        waiting.setVisible(false);
-        spinner.setVisible(false);
+    public void selectTile4() {
     }
 }

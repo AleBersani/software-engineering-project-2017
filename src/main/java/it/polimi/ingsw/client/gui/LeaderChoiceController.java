@@ -28,10 +28,11 @@ import java.util.logging.Logger;
 
 public class LeaderChoiceController implements Observer {
     private final static Logger LOGGER = Logger.getLogger(LeaderChoiceController.class.getName());
-
     private static final String BACKGROUND_URL = "/client/backgrounds/";
+
     private int gameId;
     private String playerName;
+    private int numberOfLeaders;
     private List<ImageView> leaderCards;
     private List<String> ultimateLeaders;
     private Map<GeneralColor, String> leaderBackgrounds;
@@ -52,13 +53,14 @@ public class LeaderChoiceController implements Observer {
         LeaderChoiceNotifier.getInstance().addObserver(this);
         gameId = ClientInformation.getCurrentGameId();
         playerName = ClientInformation.getPlayerName();
+        numberOfLeaders = 0;
         leaderCards = new ArrayList<>();
         ultimateLeaders = new ArrayList<>();
         setLeaderList();
         initEnumMap();
         setBackground();
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "leaderChoice"));
+        clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "leadersChoice"));
     }
 
     private void setLeaderList() {
@@ -73,7 +75,7 @@ public class LeaderChoiceController implements Observer {
         if (arg == null) {
             startPlayerTileChoice();
         } else {
-            runUpdateLeaders((List<Card>)arg);
+            updateLeaders((List<Card>)arg);
         }
     }
 
@@ -109,17 +111,19 @@ public class LeaderChoiceController implements Observer {
     }
 
     private void closeStage() {
-        Stage stage = (Stage)led1.getScene().getWindow();
+        Stage stage = (Stage)root.getScene().getWindow();
         stage.close();
     }
 
-    private void runUpdateLeaders(List<Card> leaderCards) {
+    private void updateLeaders(List<Card> leaderCards) {
         clearLeaderList();
+        numberOfLeaders = leaderCards.size();
         List<String> leaderNames = new ArrayList<>();
         for (Card card : leaderCards) {
             leaderNames.add(card.getName());
         }
         setLeaderCards(leaderNames);
+        enableLeaders();
     }
 
     private void clearLeaderList() {
@@ -136,39 +140,43 @@ public class LeaderChoiceController implements Observer {
         }
     }
 
+    private void enableLeaders()  {
+        for (int i = 0; i < numberOfLeaders; i++) {
+            leaderCards.get(i).setDisable(false);
+        }
+    }
+
     @FXML
     public void selectLeader1(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(0)));
-        led2.setDisable(true);
-        led3.setDisable(true);
-        led4.setDisable(true);
+        //disableLeaders();
     }
 
     @FXML
     public void selectLeader2(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(1)));
-        led1.setDisable(true);
-        led3.setDisable(true);
-        led4.setDisable(true);
+        //disableLeaders();
     }
 
     @FXML
     public void selectLeader3(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(2)));
-        led1.setDisable(true);
-        led2.setDisable(true);
-        led4.setDisable(true);
+        //disableLeaders();
     }
 
     @FXML
     public void selectLeader4(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(3)));
-        led1.setDisable(true);
-        led2.setDisable(true);
-        led3.setDisable(true);
+        //disableLeaders();
+    }
+
+    private void disableLeaders() {
+        for (int i = 0; i < numberOfLeaders; i++) {
+            leaderCards.get(i).setDisable(true);
+        }
     }
 }

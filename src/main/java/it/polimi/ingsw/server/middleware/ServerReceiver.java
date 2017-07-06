@@ -3,6 +3,7 @@ package it.polimi.ingsw.server.middleware;
 import it.polimi.ingsw.shared.requests.clientserver.*;
 
 public interface ServerReceiver {
+    void visitClientServerRequest(ChosenBonusTile bonusTile);
     void visitClientServerRequest(ChosenLeader chosenLeader);
     void visitClientServerRequest(GameStartChoice gameStartChoice);
     void visitClientServerRequest(GameStartChoiceRMI gameStartChoiceRMI);

@@ -8,6 +8,7 @@ public interface ClientReceiver {
     void visitServerClientRequest(LeadersChoice leadersChoice);
     void visitServerClientRequest(LoginResponse loginResponse);
     void visitServerClientRequest(SimpleMessage simpleMessage);
+    void visitServerClientRequest(TileChoice tileChoice);
     void visitServerClientRequest(UpdateActionSpaces updateActionSpaces);
     void visitServerClientRequest(UpdateGameId updateGameId);
     void visitServerClientRequest(UpdateTowers updateTowers);
