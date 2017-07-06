@@ -27,6 +27,7 @@ import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 
 public class GameBoardController extends Observable implements Observer {
@@ -177,11 +178,6 @@ public class GameBoardController extends Observable implements Observer {
         otherPlayersPawns();
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
-        }
-        try {
-            showPlayerBoard();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "game"));
@@ -427,7 +423,7 @@ public class GameBoardController extends Observable implements Observer {
             }
         }
     }
-    
+
     private void showPlayerBoard() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/gui/playerboard.fxml"));
         Parent playerBoard_parent = loader.load();

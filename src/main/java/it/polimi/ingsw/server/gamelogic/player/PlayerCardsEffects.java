@@ -1,5 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.player;
 
+import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.CardFlashAction;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
@@ -11,12 +12,14 @@ import java.util.Optional;
 
 public class PlayerCardsEffects {
     private CardFlashAction cardFlashAction;
+    private Goods churchSustainBonus;
     private int playerOrderWeight;
     private List<RequirementsModifier> requirementsModifiers;
     private List<RewardsModifier> rewardsModifiers;
 
     public PlayerCardsEffects() {
         cardFlashAction = null;
+        churchSustainBonus = new Goods();
         playerOrderWeight = 0;
         requirementsModifiers = new ArrayList<>();
         rewardsModifiers = new ArrayList<>();
@@ -57,6 +60,14 @@ public class PlayerCardsEffects {
 
     public void setCardFlashAction(CardFlashAction cardFlashAction) {
         this.cardFlashAction = cardFlashAction;
+    }
+
+    public Goods getChurchSustainBonus() {
+        return churchSustainBonus;
+    }
+
+    public void setChurchSustainBonus(Goods churchSustainBonus) {
+        this.churchSustainBonus = churchSustainBonus;
     }
 
     public int getPlayerOrderWeight() {
