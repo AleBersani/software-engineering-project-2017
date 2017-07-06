@@ -1,10 +1,15 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
 import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
+import it.polimi.ingsw.server.gamelogic.basics.Points;
+import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -100,5 +105,27 @@ class CouncilPalaceTest {
     void testAlreadyAddedToPlayerOrder() {
         councilPalace.addToPlayerOrder(new PlayerDetails("Dennis", GeneralColor.BLUE));
         assertEquals(2, councilPalace.getPlayerOrder().stream().count());
+    }
+
+    @Test
+    void testGetInstantGoods() {
+        ExchangingGoods exchangingGoodsToGet = new ExchangingGoods(new Points(1,2,3),
+                2);
+        councilPalace.setInstantGoods(exchangingGoodsToGet);
+        assertEquals(exchangingGoodsToGet, councilPalace.getInstantGoods());
+    }
+
+    @Test
+    void testGetRequiredValue() {
+        int requiredValueToGet = 5;
+        councilPalace.setRequiredValue(requiredValueToGet);
+        assertEquals(requiredValueToGet, councilPalace.getRequiredValue());
+    }
+
+    @Test
+    void testGetPlayerOrder() {
+        List<PlayerDetails> playerDetails = new ArrayList<>();
+        councilPalace.setPlayerOrder(playerDetails);
+        assertEquals(playerDetails, councilPalace.getPlayerOrder());
     }
 }

@@ -11,8 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class VentureTest {
     private Venture venture;
@@ -32,9 +31,72 @@ class VentureTest {
     }
 
     @Test
-    void testEquals() {
+    void testEqualsTrue1() {
         Venture ventureToConfront = new Venture(basicDevelopmentCard, endGameRewards, new ArrayList<>());
         assertTrue(venture.equals(ventureToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        Venture ventureToConfront = venture;
+        assertTrue(venture.equals(ventureToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        CardInformation cardInformation = new CardInformation(1, "Name",
+                PeriodNumber.SECOND, GeneralColor.PURPLE);
+        basicDevelopmentCard = new BasicDevelopmentCard(cardInformation, new ArrayList<>());
+        endGameRewards = new Goods(new Points(5,0,0));
+        Venture ventureToConfront = new Venture(basicDevelopmentCard, endGameRewards, new ArrayList<>());
+        assertFalse(venture.equals(ventureToConfront));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        CardInformation cardInformation = new CardInformation(1, "Name",
+                PeriodNumber.FIRST, GeneralColor.PURPLE);
+        basicDevelopmentCard = new BasicDevelopmentCard(cardInformation, new ArrayList<>());
+        endGameRewards = new Goods(new Points(7,0,0));
+        Venture ventureToConfront = new Venture(basicDevelopmentCard, endGameRewards, new ArrayList<>());
+        assertFalse(venture.equals(ventureToConfront));
+    }
+
+    @Test
+    void testEqualsFalse3() {
+        CardInformation cardInformation = new CardInformation(1, "Name",
+                PeriodNumber.FIRST, GeneralColor.PURPLE);
+        basicDevelopmentCard = new BasicDevelopmentCard(cardInformation, new ArrayList<>());
+        endGameRewards = new Goods(new Points(5,0,0));
+        List<Goods> goods = new ArrayList<>();
+        goods.add(new Goods(new Points(1,2,3)));
+        Venture ventureToConfront = new Venture(basicDevelopmentCard, endGameRewards, goods);
+        assertFalse(venture.equals(ventureToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(venture.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(venture.equals(null));
+    }
+
+    @Test
+    void testHashCodeTrue() {
+        Venture ventureToConfront = new Venture(basicDevelopmentCard, endGameRewards, new ArrayList<>());
+        assertEquals(venture.hashCode(), ventureToConfront.hashCode());
+    }
+
+    @Test
+    void testHashCodeFalse() {
+        List<Goods> goods = new ArrayList<>();
+        goods.add(new Goods(new Points(1,2,3)));
+        Venture ventureToConfront = new Venture(basicDevelopmentCard, endGameRewards, goods);
+        assertNotEquals(venture.hashCode(), ventureToConfront.hashCode());
     }
 
     @Test

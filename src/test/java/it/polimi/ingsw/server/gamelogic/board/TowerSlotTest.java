@@ -1,6 +1,7 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.development.BasicDevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.development.CardInformation;
@@ -26,7 +27,7 @@ class TowerSlotTest {
     }
 
     @Test
-    void testEqualsTrue() {
+    void testEqualsTrue1() {
         TowerSlot towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_1, 1),
                 new Goods(), new Character( new BasicDevelopmentCard(
                 new CardInformation(1,"", PeriodNumber.FIRST , GeneralColor.BLUE),
@@ -35,18 +36,47 @@ class TowerSlotTest {
     }
 
     @Test
-    void testEqualsFalse() {
-        TowerSlot towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_2, 4),
+    void testEqualsTrue2() {
+        TowerSlot towerSlotToConfront = towerSlot;
+        assertTrue(towerSlot.equals(towerSlotToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        TowerSlot towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_G_1, 1),
                 new Goods(), new Character( new BasicDevelopmentCard(
-                new CardInformation(1,"", PeriodNumber.SECOND , GeneralColor.BLUE),
+                new CardInformation(1,"", PeriodNumber.FIRST , GeneralColor.BLUE),
                 new ArrayList<>())));
         assertFalse(towerSlot.equals(towerSlotToConfront));
     }
 
     @Test
-    void testEqualsDifferent() {
-        String obj = "";
-        assertFalse(towerSlot.equals(obj));
+    void testEqualsFalse2() {
+        TowerSlot towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_1, 1),
+                new Goods(new Points(1,2,3)), new Character( new BasicDevelopmentCard(
+                new CardInformation(1,"", PeriodNumber.FIRST , GeneralColor.BLUE),
+                new ArrayList<>())));
+        assertFalse(towerSlot.equals(towerSlotToConfront));
+    }
+
+    @Test
+    void testEqualsFalse3() {
+        TowerSlot towerSlotToConfront = new TowerSlot(new Space(BoardIdentifier.T_B_1, 1),
+                new Goods(), new Character( new BasicDevelopmentCard(
+                new CardInformation(5,"", PeriodNumber.FIRST , GeneralColor.BLUE),
+                new ArrayList<>())));
+        assertFalse(towerSlot.equals(towerSlotToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(towerSlot.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(towerSlot.equals(null));
     }
 
     @Test

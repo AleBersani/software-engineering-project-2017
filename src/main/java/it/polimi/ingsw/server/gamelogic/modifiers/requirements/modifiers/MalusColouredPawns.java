@@ -67,4 +67,20 @@ public class MalusColouredPawns extends RequirementsModifier {
             spaceActionRequirements.setActionValueModifier(actualBonusValue - value);
         }
     }
+
+    public List<PawnColor> getPawnColors() {
+        return pawnColors;
+    }
+
+    public void setPawnColors(List<PawnColor> pawnColors) {
+        this.pawnColors = pawnColors;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

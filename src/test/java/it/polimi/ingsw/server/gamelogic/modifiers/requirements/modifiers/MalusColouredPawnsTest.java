@@ -15,7 +15,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MalusColouredPawnsTest {
     private BoardActionRequirements boardActionRequirements;
@@ -58,6 +60,73 @@ class MalusColouredPawnsTest {
     }
 
     @Test
+    void testEqualsTrue1() {
+        List<PawnColor> pawnColors = new ArrayList<>();
+        pawnColors.add(PawnColor.BLACK);
+        pawnColors.add(PawnColor.ORANGE);
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.MARKET);
+        actionTypes.add(ActionType.BLUE_TOWER);
+        MalusColouredPawns malusColouredPawnsToConfront = new MalusColouredPawns(new AvailableActions(actionTypes),
+                pawnColors, 2);
+        assertTrue(malusColouredPawns.equals(malusColouredPawnsToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        MalusColouredPawns malusColouredPawnsToConfront = malusColouredPawns;
+        assertTrue(malusColouredPawns.equals(malusColouredPawnsToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        List<PawnColor> pawnColors = new ArrayList<>();
+        pawnColors.add(PawnColor.BLACK);
+        pawnColors.add(PawnColor.ORANGE);
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.BLUE_TOWER);
+        MalusColouredPawns malusColouredPawnsToConfront = new MalusColouredPawns(new AvailableActions(actionTypes),
+                pawnColors, 2);
+        assertFalse(malusColouredPawns.equals(malusColouredPawnsToConfront));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        List<PawnColor> pawnColors = new ArrayList<>();
+        pawnColors.add(PawnColor.BLACK);
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.MARKET);
+        actionTypes.add(ActionType.BLUE_TOWER);
+        MalusColouredPawns malusColouredPawnsToConfront = new MalusColouredPawns(new AvailableActions(actionTypes),
+                pawnColors, 2);
+        assertFalse(malusColouredPawns.equals(malusColouredPawnsToConfront));
+    }
+
+    @Test
+    void testEqualsFalse3() {
+        List<PawnColor> pawnColors = new ArrayList<>();
+        pawnColors.add(PawnColor.BLACK);
+        pawnColors.add(PawnColor.ORANGE);
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.MARKET);
+        actionTypes.add(ActionType.BLUE_TOWER);
+        MalusColouredPawns malusColouredPawnsToConfront = new MalusColouredPawns(new AvailableActions(actionTypes),
+                pawnColors, 4);
+        assertFalse(malusColouredPawns.equals(malusColouredPawnsToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(malusColouredPawns.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(malusColouredPawns.equals(null));
+    }
+
+    @Test
     void testModifyRequirementsOfBoardAction() {
         boardActionRequirements = malusColouredPawns.modifyRequirements(boardActionRequirements);
         assertFalse(boardActionRequirements.hasRequirements(player));
@@ -67,5 +136,21 @@ class MalusColouredPawnsTest {
     void testModifyRequirementsOfTowerAction() {
         towerActionRequirements = malusColouredPawns.modifyRequirements(towerActionRequirements);
         assertFalse(towerActionRequirements.hasRequirements(player));
+    }
+
+    @Test
+    void testGetPawnColors() {
+        List<PawnColor> pawnColors = new ArrayList<>();
+        pawnColors.add(PawnColor.WHITE);
+        pawnColors.add(PawnColor.ORANGE);
+        malusColouredPawns.setPawnColors(pawnColors);
+        assertEquals(malusColouredPawns.getPawnColors(), pawnColors);
+    }
+
+    @Test
+    void testGetValue() {
+        int numberToGet = 7;
+        malusColouredPawns.setValue(numberToGet);
+        assertEquals(numberToGet, malusColouredPawns.getValue());
     }
 }

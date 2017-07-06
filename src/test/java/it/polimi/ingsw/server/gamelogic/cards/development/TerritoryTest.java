@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TerritoryTest {
@@ -29,7 +30,7 @@ class TerritoryTest {
     }
 
     @Test
-    void testEquals() {
+    void testEqualsTrue1() {
         List<Goods> costCard = new ArrayList<Goods>(){{add(new Goods(
                 new Resources(0, 0, 0, 4),
                 new Points(2, 0, 0)));}};
@@ -37,6 +38,57 @@ class TerritoryTest {
                 PeriodNumber.FIRST, GeneralColor.GREEN), costCard);
         Territory cardToConfront = new Territory(card, 2, new ExchangingGoods());
         assertTrue(cardToConfront.equals(territory));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        Territory cardToConfront = territory;
+        assertTrue(cardToConfront.equals(territory));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        List<Goods> costCard = new ArrayList<Goods>(){{add(new Goods(
+                new Resources(0, 0, 0, 4),
+                new Points(2, 0, 0)));}};
+        BasicDevelopmentCard card = new BasicDevelopmentCard(new CardInformation(2, "Zecca",
+                PeriodNumber.FIRST, GeneralColor.GREEN), costCard);
+        Territory cardToConfront = new Territory(card, 2, new ExchangingGoods());
+        assertFalse(territory.equals(cardToConfront));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        List<Goods> costCard = new ArrayList<Goods>(){{add(new Goods(
+                new Resources(0, 0, 0, 4),
+                new Points(2, 0, 0)));}};
+        BasicDevelopmentCard card = new BasicDevelopmentCard(new CardInformation(25, "Zecca",
+                PeriodNumber.FIRST, GeneralColor.GREEN), costCard);
+        Territory cardToConfront = new Territory(card, 5, new ExchangingGoods());
+        assertFalse(territory.equals(cardToConfront));
+    }
+
+    @Test
+    void testEqualsFalse3() {
+        List<Goods> costCard = new ArrayList<Goods>(){{add(new Goods(
+                new Resources(0, 0, 0, 4),
+                new Points(2, 0, 0)));}};
+        BasicDevelopmentCard card = new BasicDevelopmentCard(new CardInformation(25, "Zecca",
+                PeriodNumber.FIRST, GeneralColor.GREEN), costCard);
+        Territory cardToConfront = new Territory(card, 2,
+                new ExchangingGoods(5));
+        assertFalse(territory.equals(cardToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(territory.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(territory.equals(null));
     }
 
     @Test
