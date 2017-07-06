@@ -16,11 +16,61 @@ class GoodsForEndGamePossessionTest {
     }
 
     @Test
-    void testEquals() {
+    void testEqualsTrue() {
         GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
                 new Goods(new Resources(1,0,1,0),
                         new Points(1,0,0)));
         assertTrue(goodsForEndGamePossession.equals(result));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        GoodsForEndGamePossession result = goodsForEndGamePossession;
+        assertTrue(goodsForEndGamePossession.equals(result));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
+                new Goods(new Resources(0,1,0,1),
+                        new Points(0,0,0)));
+        assertFalse(goodsForEndGamePossession.equals(result));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        GoodsForEndGamePossession result = new GoodsForEndGamePossession(1,
+                new Goods(new Resources(1,0,1,0),
+                new Points(1,0,0)));
+        assertFalse(goodsForEndGamePossession.equals(result));
+    }
+
+    @Test
+    void testEqualsNull() {
+        GoodsForEndGamePossession nullGoods = null;
+        assertFalse(goodsForEndGamePossession.equals(nullGoods));
+    }
+
+    @Test
+    void testEqualsDifferent() {
+        String different = "";
+        assertFalse(goodsForEndGamePossession.equals(different));
+    }
+
+    @Test
+    void testHashCodeTrue() {
+        GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
+                new Goods(new Resources(1,0,1,0),
+                        new Points(1,0,0)));
+        assertEquals(result.hashCode(), goodsForEndGamePossession.hashCode());
+    }
+
+    @Test
+    void testHashCodeFalse() {
+        GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
+                new Goods(new Resources(0,1,0,1),
+                        new Points(0,0,0)));
+        assertNotEquals(result.hashCode(), goodsForEndGamePossession.hashCode());
     }
 
     @Test
