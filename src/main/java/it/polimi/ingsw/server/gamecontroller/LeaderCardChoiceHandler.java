@@ -95,6 +95,14 @@ public class LeaderCardChoiceHandler {
         this.initialLeaderCardsForPlayers = initialLeaderCardsForPlayers;
     }
 
+    public Map<String, List<LeaderCard>> getLeaderCardsForPlayers() {
+        return leaderCardsForPlayers;
+    }
+
+    public void setLeaderCardsForPlayers(Map<String, List<LeaderCard>> leaderCardsForPlayers) {
+        this.leaderCardsForPlayers = leaderCardsForPlayers;
+    }
+
     public AtomicInteger getNumberOfPlayersReady() {
         return numberOfPlayersReady;
     }

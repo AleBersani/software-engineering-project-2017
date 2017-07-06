@@ -1,5 +1,6 @@
 package it.polimi.ingsw.server.gamecontroller;
 
+import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
@@ -9,79 +10,62 @@ import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.shared.model.GeneralColor;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * //
  */
 public class Period extends Observable implements Observer {
+    private final static Logger LOGGER = Logger.getLogger(Period.class.getName());
+
     private ExcommunicationTile actualExcommunicationTile;
     private List<DevelopmentCard> developmentCards;
 
-    private List<SemiPeriod> semiPeriods;
+    private List<ConnectedClient> connectedClients;
+    private List<Player> players;
+    private Board board;
     private boolean current;
+    private List<SemiPeriod> semiPeriods;
 
     public Period(ExcommunicationTile actualExcommunicationTile, List<DevelopmentCard> developmentCards) {
         this.actualExcommunicationTile = actualExcommunicationTile;
         this.developmentCards = developmentCards;
+        connectedClients = new ArrayList<>();
+        players = new ArrayList<>();
+        board = new Board();
         semiPeriods = new ArrayList<>();
         current = false;
     }
 
     @Override
-    public void update(Observable o, Object arg) {
-        /*
-
-         */
-    }
+    public void update(Observable o, Object arg) {}
 
     /**
      * Public method that set a new SemiPeriod up and launches it.
      */
     public void setupSemiPeriod() {
-        List<Player> previousOrderPlayers = semiPeriods.get(semiPeriods.size()-1).getPlayers();
-        Board oldBoard = semiPeriods.get(semiPeriods.size()-1).getBoard();
+        SemiPeriod semiPeriod = new SemiPeriod(getDevelopmentCardsForSemiPeriod(), players, new Board(board));
+        semiPeriods.add(semiPeriod);
+
+        if (semiPeriods.isEmpty()) {
+            // semiPeriod.setPlayerOrder(List<PlayerDetails> ..)
+        } else {
+            //
+            // semiPeriod.setPlayerOrder(calculateNewPlayerOrder(semiPeriod.getOldPlayerOrder));
+        }
+
+        semiPeriod.setDevelopmentCards(getDevelopmentCardsForSemiPeriod());
+        /*
+        List<Player> previousOrderPlayers = semiPeriods.get(semiPeriods.size() - 1).getPlayers();
+        Board oldBoard = semiPeriods.get(semiPeriods.size() - 1).getBoard();
         Board newBoard = new Board(oldBoard);
-        List<DevelopmentCard> developmentCardsForSemiPeriod = getDevelopmentCardsForSemiPeriod();
+
         List<Player> playersForSemiPeriod = calculatePlayerOrder(previousOrderPlayers, newBoard);
         semiPeriods.add(new SemiPeriod(developmentCardsForSemiPeriod,
                 playersForSemiPeriod,
                 cleanBoard(newBoard)));
-        initSemiPeriod(semiPeriods.get(semiPeriods.size() - 1));
+        initSemiPeriod(semiPeriods.get(semiPeriods.size() - 1));*/
         /*calcolo ordine di gioco (pattern su scomunica)*/
-    }
-
-    /**
-     * Private method to clean the Board of the last SemiPeriod Ended.
-     * @return Cleaned Board from DevelopmentCards and player of ActionSpaces.
-     */
-    private Board cleanBoard(Board board) {
-        List<Tower> towers;
-        towers = board.getTowers();
-
-        for (Tower T : towers)
-            T.getTowerSlots().forEach((TowerSlot slot) -> {slot.setDevelopmentCard(null);
-                slot.getSpace().setPlayerPawn(null);
-                slot.getSpace().setAlreadyTaken(false);});
-
-        board.getCouncilPalace().setPlayerOrder(new ArrayList<>());
-        cleanBoardSpaces(board.getBoardActionSpaces());
-        return board;
-    }
-
-    /**
-     * Private method to clean BoardActionSpaces in the Board of the last SemiPeriod ended.
-     * @param boardActionSpaces BoardActionSpaces to clean
-     */
-    private void cleanBoardSpaces(BoardActionSpaces boardActionSpaces) {
-        boardActionSpaces.getProductionArea()
-                .forEach((ProductionHarvestSpace actionSpace) -> actionSpace.getSpace()
-                        .setPlayerPawn(new PlayerPawn()));
-        boardActionSpaces.getHarvestArea()
-                .forEach((ProductionHarvestSpace actionSpace) -> actionSpace.getSpace()
-                        .setPlayerPawn(new PlayerPawn()));
-        boardActionSpaces.getMarketArea()
-                .forEach((MarketSpace actionSpace) -> actionSpace.getSpace()
-                        .setPlayerPawn(new PlayerPawn()));
     }
 
     /**
@@ -108,32 +92,6 @@ public class Period extends Observable implements Observer {
                 newPlayerOrder.add(remainingPlayer);
         }
         return newPlayerOrder;
-    }
-
-    public void initSemiPeriod(SemiPeriod semiPeriod) {
-        /*
-        metodo
-         */
-    }
-
-    public void churchSupport() {
-        int i =0;
-
-        List<Player> players;
-        players = semiPeriods.get(semiPeriods.size()-1).getPlayers();
-        int faithPointsRequired = BoardInformation.getFaithPointsToAvoidExcommunication()
-                .get(actualExcommunicationTile.getPeriod());
-        for (Player player : players) {
-            if (player.getPlayerGoods().getPoints().getFaith() < faithPointsRequired)
-                i++;
-                //roba del visitor
-            else
-                i--;
-            //fai scegliere al player
-        }
-        /*
-        supporto della chiesa (command sulla update del game)
-         */
     }
 
     /**
@@ -180,6 +138,27 @@ public class Period extends Observable implements Observer {
         return cardsToReturn;
     }
 
+    public void initSemiPeriod() {}
+
+    public void churchSupport() {
+        int i =0;
+        List<Player> players;
+        players = semiPeriods.get(semiPeriods.size()-1).getPlayers();
+        int faithPointsRequired = BoardInformation.getFaithPointsToAvoidExcommunication()
+                .get(actualExcommunicationTile.getPeriod());
+        for (Player player : players) {
+            if (player.getPlayerGoods().getPoints().getFaith() < faithPointsRequired)
+                i++;
+                //roba del visitor
+            else
+                i--;
+            //fai scegliere al player
+        }
+        /*
+        supporto della chiesa (command sulla update del game)
+         */
+    }
+
     public ExcommunicationTile getActualExcommunicationTile() {
         return actualExcommunicationTile;
     }
@@ -188,12 +167,36 @@ public class Period extends Observable implements Observer {
         this.actualExcommunicationTile = actualExcommunicationTile;
     }
 
-    public List<SemiPeriod> getSemiPeriods() {
-        return semiPeriods;
+    public List<DevelopmentCard> getDevelopmentCards() {
+        return developmentCards;
     }
 
-    public void setSemiPeriods(List<SemiPeriod> semiPeriods) {
-        this.semiPeriods = semiPeriods;
+    public void setDevelopmentCards(List<DevelopmentCard> developmentCards) {
+        this.developmentCards = developmentCards;
+    }
+
+    public List<ConnectedClient> getConnectedClients() {
+        return connectedClients;
+    }
+
+    public void setConnectedClients(List<ConnectedClient> connectedClients) {
+        this.connectedClients = connectedClients;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
     }
 
     public boolean isCurrent() {
@@ -202,5 +205,13 @@ public class Period extends Observable implements Observer {
 
     public void setCurrent(boolean current) {
         this.current = current;
+    }
+
+    public List<SemiPeriod> getSemiPeriods() {
+        return semiPeriods;
+    }
+
+    public void setSemiPeriods(List<SemiPeriod> semiPeriods) {
+        this.semiPeriods = semiPeriods;
     }
 }

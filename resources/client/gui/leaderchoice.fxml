@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
-<AnchorPane fx:id="root" prefHeight="555.0" prefWidth="800.0" stylesheets="/client/gui/leaderchoice.css"
+<AnchorPane fx:id="background" prefHeight="555.0" prefWidth="800.0" stylesheets="/client/gui/leaderchoice.css"
             xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="it.polimi.ingsw.client.gui.LeaderChoiceController">
        <StackPane fx:id="pane4" layoutY="84.0" prefHeight="471.0" prefWidth="800">

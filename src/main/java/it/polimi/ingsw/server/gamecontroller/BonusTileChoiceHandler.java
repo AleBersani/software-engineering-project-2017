@@ -55,13 +55,15 @@ public class BonusTileChoiceHandler {
 
     public void addBonusTileToPlayer(String playerName, String bonusTileIdentifier) {
         numberOfSatisfiedPlayers++;
-        bonusTiles.forEach(b -> {
-            if (b.getBonusTileIdentifier().equals(bonusTileIdentifier)) {
-                bonusTileForPlayer.get(playerName).setBonusTile(b);
-                bonusTiles.remove(b);
+        for (int i = 0; i < bonusTiles.size(); i++) {
+            if (bonusTiles.get(i).getBonusTileIdentifier().equals(bonusTileIdentifier)) {
+                BonusTiles copy = new BonusTiles();
+                copy.setBonusTile(bonusTiles.get(i));
+                bonusTileForPlayer.get(playerName).setBonusTile(copy);
+                bonusTiles.remove(i);
             }
-        });
-        players.remove(playerName);
+        }
+        players.remove(0);
     }
 
     public boolean phaseEnded() {

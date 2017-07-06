@@ -23,6 +23,12 @@ public class CouncilPalace {
         playerOrder = new ArrayList<>();
     }
 
+    public CouncilPalace(CouncilPalace councilPalace) {
+        instantGoods = councilPalace.instantGoods;
+        requiredValue = councilPalace.requiredValue;
+        playerOrder = new ArrayList<>();
+    }
+
     public CouncilPalace(ExchangingGoods instantGoods, int requiredValue) {
         this.instantGoods = instantGoods;
         this.requiredValue = requiredValue;

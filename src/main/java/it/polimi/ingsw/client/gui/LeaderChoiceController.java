@@ -47,15 +47,19 @@ public class LeaderChoiceController implements Observer {
     private ImageView led4;
 
     @FXML
-    private AnchorPane root;
+    private AnchorPane background;
 
-    public void initialize() {
-        LeaderChoiceNotifier.getInstance().addObserver(this);
+    public LeaderChoiceController() {
         gameId = ClientInformation.getCurrentGameId();
         playerName = ClientInformation.getPlayerName();
         numberOfLeaders = 0;
         leaderCards = new ArrayList<>();
         ultimateLeaders = new ArrayList<>();
+        leaderBackgrounds = new EnumMap<>(GeneralColor.class);
+    }
+
+    public void initialize() {
+        LeaderChoiceNotifier.getInstance().addObserver(this);
         setLeaderList();
         initEnumMap();
         setBackground();
@@ -68,6 +72,21 @@ public class LeaderChoiceController implements Observer {
         leaderCards.add(led2);
         leaderCards.add(led3);
         leaderCards.add(led4);
+    }
+
+    private void initEnumMap() {
+        leaderBackgrounds.put(GeneralColor.BLUE, BACKGROUND_URL + "blue.jpg");
+        leaderBackgrounds.put(GeneralColor.GREEN, BACKGROUND_URL + "green.jpg");
+        leaderBackgrounds.put(GeneralColor.YELLOW, BACKGROUND_URL + "yellow.jpg");
+        leaderBackgrounds.put(GeneralColor.PURPLE, BACKGROUND_URL + "red.jpg");
+    }
+
+    private void setBackground() {
+        background.setBackground(new Background(new BackgroundImage(
+                new Image(leaderBackgrounds.get(ClientInformation.getPlayerColor())),
+                null,null, null, new BackgroundSize(
+                BackgroundSize.AUTO, BackgroundSize.AUTO,
+                false, false, true, true))));
     }
 
     @Override
@@ -94,24 +113,8 @@ public class LeaderChoiceController implements Observer {
         });
     }
 
-    private void initEnumMap() {
-        leaderBackgrounds = new EnumMap<>(GeneralColor.class);
-        leaderBackgrounds.put(GeneralColor.BLUE, BACKGROUND_URL + "blue.jpg");
-        leaderBackgrounds.put(GeneralColor.GREEN, BACKGROUND_URL + "green.jpg");
-        leaderBackgrounds.put(GeneralColor.YELLOW, BACKGROUND_URL + "yellow.jpg");
-        leaderBackgrounds.put(GeneralColor.PURPLE, BACKGROUND_URL + "red.jpg");
-    }
-
-    public void setBackground() {
-        root.setBackground(new Background(new BackgroundImage(
-                new Image(leaderBackgrounds.get(ClientInformation.getPlayerColor())),
-                null,null, null, new BackgroundSize(
-                BackgroundSize.AUTO, BackgroundSize.AUTO,
-                false, false, true, true))));
-    }
-
     private void closeStage() {
-        Stage stage = (Stage)root.getScene().getWindow();
+        Stage stage = (Stage)background.getScene().getWindow();
         stage.close();
     }
 
