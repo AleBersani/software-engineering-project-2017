@@ -14,6 +14,7 @@ public class GameBoardNotifier extends Observable {
     }
 
     public void updateGui() {
-
+        setChanged();
+        notifyObservers();
     }
 }

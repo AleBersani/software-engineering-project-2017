@@ -23,7 +23,8 @@ class PeriodTest {
 
     @BeforeEach
     void setUp() {
-        period = new Period(new ExcommunicationTile("1.2", PeriodNumber.FIRST), new ArrayList<>());
+        period = new Period(new ExcommunicationTile("1.2", PeriodNumber.FIRST), new ArrayList<>(),
+                PeriodNumber.FIRST);
         councilPalacePlayersOrder = new ArrayList<>();
         playerDetails = new ArrayList<>();
         playerDetails.add(new PlayerDetails("A", GeneralColor.BLUE));
@@ -43,5 +44,4 @@ class PeriodTest {
         playerDetailsExpected.add(new PlayerDetails("D", GeneralColor.PURPLE));
         assertEquals(playerDetailsExpected, period.calculateNewPlayerOrder(playerDetails, councilPalacePlayersOrder));
     }
-
 }
