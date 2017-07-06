@@ -189,27 +189,31 @@ public class GameBoardController extends Observable implements Initializable{
         purpleTower.add(t_p_4);
     }
 
-    public void initGreenTower(ArrayList<Image> greenCards) {
+    public void initGreenTower(ArrayList<String> greenCards) {
         for (int i = 0; i < greenTower.size(); i++) {
-            greenTower.get(i).setImage(greenCards.get(i));
+            Image newGreenCard = new Image("client/devcards/" + greenCards.get(i) + ".png");
+            greenTower.get(i).setImage(newGreenCard);
         }
     }
 
-    public void initYellowTower(ArrayList<Image> yellowCards) {
+    public void initYellowTower(ArrayList<String> yellowCards) {
         for (int i = 0; i < yellowTower.size(); i++) {
-            yellowTower.get(i).setImage(yellowCards.get(i));
+            Image newYellowCard = new Image("client/devcards/" + yellowCards.get(i) + ".png");
+            yellowTower.get(i).setImage(newYellowCard);
         }
     }
 
-    public void initBlueTower(ArrayList<Image> blueCards) {
+    public void initBlueTower(ArrayList<String> blueCards) {
         for (int i = 0; i < blueTower.size(); i++) {
-            blueTower.get(i).setImage(blueCards.get(i));
+            Image newBlueCard = new Image("client/devcards/" + blueCards.get(i) + ".png");
+            blueTower.get(i).setImage(newBlueCard);
         }
     }
 
-    public void initPurpleTower(ArrayList<Image> purpleCards) {
+    public void initPurpleTower(ArrayList<String> purpleCards) {
         for (int i = 0; i < purpleTower.size(); i++) {
-            purpleTower.get(i).setImage(purpleCards.get(i));
+            Image newPurpleCard = new Image("client/devcards/" + purpleCards.get(i) + ".png");
+            purpleTower.get(i).setImage(newPurpleCard);
         }
     }
 
@@ -289,23 +293,35 @@ public class GameBoardController extends Observable implements Initializable{
                         }
                     }
                     if ((circle.getBoundsInParent().intersects(council_palace.getBoundsInParent()))) {
-                        council_palace.getChildren().add(circle);
-                        council_palace.setAlignment(circle, Pos.CENTER_LEFT);
-                        circle.setTranslateX(7.5*(council_palace.getChildren().size()-1));
+                        setCouncil_palace(circle);
                     }
                     if ((circle.getBoundsInParent().intersects(production2.getBoundsInParent()))) {
-                        production2.getChildren().add(circle);
-                        production2.setAlignment(circle, Pos.CENTER_LEFT);
-                        circle.setTranslateX(7.0*(production2.getChildren().size()-1));
+                        setProduction2(circle);
                     }
                     if ((circle.getBoundsInParent().intersects(harvest2.getBoundsInParent()))) {
-                        harvest2.getChildren().add(circle);
-                        harvest2.setAlignment(circle, Pos.CENTER_LEFT);
-                        circle.setTranslateX(7.0*(harvest2.getChildren().size()-1));
+                        setHarvest2(circle);
                     }
                 });
             });
         });
+    }
+
+    private void setCouncil_palace(Circle circle) {
+        council_palace.getChildren().add(circle);
+        council_palace.setAlignment(circle, Pos.CENTER_LEFT);
+        circle.setTranslateX(7.5*(council_palace.getChildren().size()-1));
+    }
+
+    private void setProduction2(Circle circle) {
+        production2.getChildren().add(circle);
+        production2.setAlignment(circle, Pos.CENTER_LEFT);
+        circle.setTranslateX(7.0*(production2.getChildren().size()-1));
+    }
+
+    private void setHarvest2(Circle circle) {
+        harvest2.getChildren().add(circle);
+        harvest2.setAlignment(circle, Pos.CENTER_LEFT);
+        circle.setTranslateX(7.0*(harvest2.getChildren().size()-1));
     }
 
     public void undoAction(Circle pawn) {
@@ -365,4 +381,5 @@ public class GameBoardController extends Observable implements Initializable{
     public void setPlayerName() {
         playerName.setText(ClientInformation.getPlayerName());
     }
+
 }
