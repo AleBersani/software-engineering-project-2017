@@ -8,10 +8,7 @@ import it.polimi.ingsw.server.gamelogic.board.ProductionHarvestSpace;
 import it.polimi.ingsw.server.gamelogic.board.Space;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BoardInformation {
     private static Map<Space, Goods> greenTower;
@@ -34,7 +31,7 @@ public class BoardInformation {
         blueTower = new HashMap<>();
         purpleTower = new HashMap<>();
         faithToVictoryPoints = new HashMap<>();
-        faithPointsToAvoidExcommunication = new HashMap<>();
+        faithPointsToAvoidExcommunication = new EnumMap<>(PeriodNumber.class);
         harvestArea = new ArrayList<>();
         productionArea = new ArrayList<>();
         marketArea = new ArrayList<>();

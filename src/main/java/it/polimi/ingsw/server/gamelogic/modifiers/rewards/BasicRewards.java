@@ -20,7 +20,7 @@ public class BasicRewards {
         this.actionType = actionType;
         this.rewards = rewards;
         additionalRewards = new Goods();
-        rewardsCopy = rewards;
+        rewardsCopy = new Goods(rewards);
         bonusAndMalus = new Goods();
     }
 

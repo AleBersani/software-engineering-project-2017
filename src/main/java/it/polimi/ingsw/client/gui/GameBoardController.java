@@ -8,7 +8,6 @@ import it.polimi.ingsw.client.model.BoardLight;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
@@ -22,8 +21,10 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 public class GameBoardController extends Observable implements Observer {
     private static final int FAITH_OFFSET = 35;
@@ -167,11 +168,6 @@ public class GameBoardController extends Observable implements Observer {
         setOtherPlayersInfo();
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
-        }
-        try {
-            showPlayerBoard();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "game"));

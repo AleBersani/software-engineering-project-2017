@@ -1,9 +1,10 @@
 package it.polimi.ingsw.client.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeckLight {
+public class DeckLight implements Serializable {
     private List<Card> territories;
     private List<Card> buildings;
     private List<Card> characters;
