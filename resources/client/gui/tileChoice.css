@@ -1,3 +1,9 @@
 #waiting {
-    -fx-background-color: sandybrown;
+    -fx-font-size: 15;
+    -fx-font-weight: bolder;
+}
+
+#namePlayer {
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
 }

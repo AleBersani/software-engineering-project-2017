@@ -1,0 +1,9 @@
+#waitingLeader {
+    -fx-font-size: 15;
+    -fx-font-weight: bolder;
+}
+
+#player {
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}

@@ -3,7 +3,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Avamposto Commerciale",
+						"name": "Commercial Hub",
 						"number": "1",
 						"period": "1",
 						"cardColor": "green"
@@ -69,7 +69,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Bosco",
+						"name": "Woods",
 						"number": "2",
 						"period": "1",
 						"cardColor": "green"
@@ -135,7 +135,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Borgo",
+						"name": "Village",
 						"number": "3",
 						"period": "1",
 						"cardColor": "green"
@@ -201,7 +201,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Cava di Ghiaia",
+						"name": "Gravel Pit",
 						"number": "4",
 						"period": "1",
 						"cardColor": "green"
@@ -267,7 +267,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Foresta",
+						"name": "Forest",
 						"number": "5",
 						"period": "1",
 						"cardColor": "green"
@@ -333,7 +333,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Monastero",
+						"name": "Monastery",
 						"number": "6",
 						"period": "1",
 						"cardColor": "green"
@@ -399,7 +399,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Rocca",
+						"name": "Citadel",
 						"number": "7",
 						"period": "1",
 						"cardColor": "green"
@@ -465,7 +465,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Citta'",
+						"name": "City",
 						"number": "8",
 						"period": "1",
 						"cardColor": "green"
@@ -531,7 +531,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Miniera d'Oro",
+						"name": "Gold Mine",
 						"number": "9",
 						"period": "2",
 						"cardColor": "green"
@@ -597,7 +597,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Villaggio Montano",
+						"name": "Mountain Town",
 						"number": "10",
 						"period": "2",
 						"cardColor": "green"
@@ -663,7 +663,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Villaggio Minerario",
+						"name": "Mining Town",
 						"number": "11",
 						"period": "2",
 						"cardColor": "green"
@@ -729,7 +729,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Cava di Pietra",
+						"name": "Rock Pit",
 						"number": "12",
 						"period": "2",
 						"cardColor": "green"
@@ -795,7 +795,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Possedimento",
+						"name": "Estate",
 						"number": "13",
 						"period": "2",
 						"cardColor": "green"
@@ -861,7 +861,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Eremo",
+						"name": "Hermitage",
 						"number": "14",
 						"period": "2",
 						"cardColor": "green"
@@ -927,7 +927,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Maniero",
+						"name": "Manor House",
 						"number": "15",
 						"period": "2",
 						"cardColor": "green"
@@ -993,7 +993,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Ducato",
+						"name": "Dukedom",
 						"number": "16",
 						"period": "2",
 						"cardColor": "green"
@@ -1059,7 +1059,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Citta' Mercantile",
+						"name": "Trading Town",
 						"number": "17",
 						"period": "3",
 						"cardColor": "green"
@@ -1125,7 +1125,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Tenuta",
+						"name": "Farm",
 						"number": "18",
 						"period": "3",
 						"cardColor": "green"
@@ -1191,7 +1191,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Colonia",
+						"name": "Colony",
 						"number": "19",
 						"period": "3",
 						"cardColor": "green"
@@ -1257,7 +1257,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Cava di Marmo",
+						"name": "Marble Pit",
 						"number": "20",
 						"period": "3",
 						"cardColor": "green"
@@ -1323,7 +1323,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Provincia",
+						"name": "Province",
 						"number": "21",
 						"period": "3",
 						"cardColor": "green"
@@ -1389,7 +1389,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Santuario",
+						"name": "Sanctuary",
 						"number": "22",
 						"period": "3",
 						"cardColor": "green"
@@ -1455,7 +1455,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Castello",
+						"name": "Castle",
 						"number": "23",
 						"period": "3",
 						"cardColor": "green"
@@ -1521,7 +1521,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Citta' Fortificata",
+						"name": "Fortified Town",
 						"number": "24",
 						"period": "3",
 						"cardColor": "green"
@@ -1589,7 +1589,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Zecca",
+						"name": "Mint",
 						"number": "25",
 						"period": "1",
 						"cardColor": "yellow"
@@ -1688,7 +1688,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Esattoria",
+						"name": "Tax Office",
 						"number": "26",
 						"period": "1",
 						"cardColor": "yellow"
@@ -1787,7 +1787,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Arco di Trionfo",
+						"name": "Triumphal Arch",
 						"number": "27",
 						"period": "1",
 						"cardColor": "yellow"
@@ -1886,7 +1886,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Teatro",
+						"name": "Theatre",
 						"number": "28",
 						"period": "1",
 						"cardColor": "yellow"
@@ -1985,7 +1985,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Falegnameria",
+						"name": "Carpenter's Shop",
 						"number": "29",
 						"period": "1",
 						"cardColor": "yellow"
@@ -2153,7 +2153,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Tagliapietre",
+						"name": "Stonemason's Shop",
 						"number": "30",
 						"period": "1",
 						"cardColor": "yellow"
@@ -2320,7 +2320,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Cappella",
+						"name": "Chapel",
 						"number": "31",
 						"period": "1",
 						"cardColor": "yellow"
@@ -2460,7 +2460,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Residenza",
+						"name": "Residence",
 						"number": "32",
 						"period": "1",
 						"cardColor": "yellow"
@@ -2600,7 +2600,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Mercato",
+						"name": "Marketplace",
 						"number": "33",
 						"period": "2",
 						"cardColor": "yellow"
@@ -2740,7 +2740,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Tesoreria",
+						"name": "Treasury",
 						"number": "34",
 						"period": "2",
 						"cardColor": "yellow"
@@ -2907,7 +2907,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Gilda dei Pittori",
+						"name": "Painters' Guild",
 						"number": "35",
 						"period": "2",
 						"cardColor": "yellow"
@@ -3074,7 +3074,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Gilda degli Scultori",
+						"name": "Sculptors' Guild",
 						"number": "36",
 						"period": "2",
 						"cardColor": "yellow"
@@ -3241,7 +3241,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Gilda dei Costruttori",
+						"name": "Stonemasons' Guild",
 						"number": "37",
 						"period": "2",
 						"cardColor": "yellow"
@@ -3381,7 +3381,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Battistero",
+						"name": "Baptistery",
 						"number": "38",
 						"period": "2",
 						"cardColor": "yellow"
@@ -3521,7 +3521,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Caserma",
+						"name": "Barracks",
 						"number": "39",
 						"period": "2",
 						"cardColor": "yellow"
@@ -3661,7 +3661,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Fortezza",
+						"name": "Stronghold",
 						"number": "40",
 						"period": "2",
 						"cardColor": "yellow"
@@ -3743,7 +3743,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Banca",
+						"name": "Bank",
 						"number": "41",
 						"period": "3",
 						"cardColor": "yellow"
@@ -3825,7 +3825,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Fiera",
+						"name": "Fair",
 						"number": "42",
 						"period": "3",
 						"cardColor": "yellow"
@@ -3965,7 +3965,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Giardino",
+						"name": "Garden",
 						"number": "43",
 						"period": "3",
 						"cardColor": "yellow"
@@ -4047,7 +4047,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Castelletto",
+						"name": "Fortress",
 						"number": "44",
 						"period": "3",
 						"cardColor": "yellow"
@@ -4130,7 +4130,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Palazzo",
+						"name": "Palace",
 						"number": "45",
 						"period": "3",
 						"cardColor": "yellow"
@@ -4270,7 +4270,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Basilica",
+						"name": "Church",
 						"number": "46",
 						"period": "3",
 						"cardColor": "yellow"
@@ -4437,7 +4437,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Accademia Militare",
+						"name": "Military Academy",
 						"number": "47",
 						"period": "3",
 						"cardColor": "yellow"
@@ -4577,7 +4577,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Cattedrale",
+						"name": "Cathedral",
 						"number": "48",
 						"period": "3",
 						"cardColor": "yellow"
@@ -4661,7 +4661,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Condottiero",
+						"name": "Warlord",
 						"number": "49",
 						"period": "1",
 						"cardColor": "blue"
@@ -4730,7 +4730,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Costruttore",
+						"name": "Stonemason",
 						"number": "50",
 						"period": "1",
 						"cardColor": "blue"
@@ -4842,7 +4842,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Dama",
+						"name": "Dame",
 						"number": "51",
 						"period": "1",
 						"cardColor": "blue"
@@ -4928,7 +4928,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Cavaliere",
+						"name": "Knight",
 						"number": "52",
 						"period": "1",
 						"cardColor": "blue"
@@ -4999,7 +4999,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Contadino",
+						"name": "Farmer",
 						"number": "53",
 						"period": "1",
 						"cardColor": "blue"
@@ -5070,7 +5070,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Artigiano",
+						"name": "Artisan",
 						"number": "54",
 						"period": "1",
 						"cardColor": "blue"
@@ -5141,7 +5141,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Predicatore",
+						"name": "Preacher",
 						"number": "55",
 						"period": "1",
 						"cardColor": "blue"
@@ -5214,7 +5214,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Badessa",
+						"name": "Abbess",
 						"number": "56",
 						"period": "1",
 						"cardColor": "blue"
@@ -5299,7 +5299,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Capitano",
+						"name": "Captain",
 						"number": "57",
 						"period": "2",
 						"cardColor": "blue"
@@ -5384,7 +5384,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Architetto",
+						"name": "Architect",
 						"number": "58",
 						"period": "2",
 						"cardColor": "blue"
@@ -5485,7 +5485,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Mecenate",
+						"name": "Patron",
 						"number": "59",
 						"period": "2",
 						"cardColor": "blue"
@@ -5585,7 +5585,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Eroe",
+						"name": "Hero",
 						"number": "60",
 						"period": "2",
 						"cardColor": "blue"
@@ -5670,7 +5670,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Fattore",
+						"name": "Peasant",
 						"number": "61",
 						"period": "2",
 						"cardColor": "blue"
@@ -5742,7 +5742,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Studioso",
+						"name": "Scholar",
 						"number": "62",
 						"period": "2",
 						"cardColor": "blue"
@@ -5813,7 +5813,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Messo Papale",
+						"name": "Papal messenger",
 						"number": "63",
 						"period": "2",
 						"cardColor": "blue"
@@ -5883,7 +5883,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Messo Reale",
+						"name": "Royal messenger",
 						"number": "64",
 						"period": "2",
 						"cardColor": "blue"
@@ -5953,7 +5953,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Nobile",
+						"name": "Noble",
 						"number": "65",
 						"period": "3",
 						"cardColor": "blue"
@@ -6040,7 +6040,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Governatore",
+						"name": "Governor",
 						"number": "66",
 						"period": "3",
 						"cardColor": "blue"
@@ -6127,7 +6127,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Cortigiana",
+						"name": "Paramour",
 						"number": "67",
 						"period": "3",
 						"cardColor": "blue"
@@ -6214,7 +6214,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Araldo",
+						"name": "Herald",
 						"number": "68",
 						"period": "3",
 						"cardColor": "blue"
@@ -6301,7 +6301,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Cardinale",
+						"name": "Cardinal",
 						"number": "69",
 						"period": "3",
 						"cardColor": "blue"
@@ -6387,7 +6387,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Vescovo",
+						"name": "Bishop",
 						"number": "70",
 						"period": "3",
 						"cardColor": "blue"
@@ -6473,7 +6473,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Generale",
+						"name": "General",
 						"number": "71",
 						"period": "3",
 						"cardColor": "blue"
@@ -6560,7 +6560,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Ambasciatore",
+						"name": "Ambassador",
 						"number": "72",
 						"period": "3",
 						"cardColor": "blue"
@@ -6647,7 +6647,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Ingaggiare reclute",
+						"name": "Hiring Recruits",
 						"number": "73",
 						"period": "1",
 						"cardColor": "purple"
@@ -6718,7 +6718,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Riparare la Chiesa",
+						"name": "Repairing the Church",
 						"number": "74",
 						"period": "1",
 						"cardColor": "purple"
@@ -6789,7 +6789,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Costruire le Mura",
+						"name": "Building the Walls",
 						"number": "75",
 						"period": "1",
 						"cardColor": "purple"
@@ -6860,7 +6860,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Innalzare una Statua",
+						"name": "Raising a statue",
 						"number": "76",
 						"period": "1",
 						"cardColor": "purple"
@@ -6931,7 +6931,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Campagna Militare",
+						"name": "Military campaign",
 						"number": "77",
 						"period": "1",
 						"cardColor": "purple"
@@ -7002,7 +7002,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Ospitare i Mendicanti",
+						"name": "Hosting panhandlers",
 						"number": "78",
 						"period": "1",
 						"cardColor": "purple"
@@ -7073,7 +7073,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Combattere le Eresie",
+						"name": "Fighting Heresies",
 						"number": "79",
 						"period": "1",
 						"cardColor": "purple"
@@ -7143,7 +7143,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Sostegno al Vescovo",
+						"name": "Support to the bishop",
 						"number": "80",
 						"period": "1",
 						"cardColor": "purple"
@@ -7241,7 +7241,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Ingaggiare Soldati",
+						"name": "Hiring soldiers",
 						"number": "81",
 						"period": "2",
 						"cardColor": "purple"
@@ -7312,7 +7312,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Riparare l'Abbazia",
+						"name": "Repairing the abbey",
 						"number": "82",
 						"period": "2",
 						"cardColor": "purple"
@@ -7383,7 +7383,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Costruire i Bastioni",
+						"name": "Building the bastions",
 						"number": "83",
 						"period": "2",
 						"cardColor": "purple"
@@ -7454,7 +7454,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Supporto al Re",
+						"name": "Support to the king",
 						"number": "84",
 						"period": "2",
 						"cardColor": "purple"
@@ -7525,7 +7525,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Scavare Canalizzazioni",
+						"name": "Improving the canals",
 						"number": "85",
 						"period": "2",
 						"cardColor": "purple"
@@ -7611,7 +7611,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Accogliere gli Stranieri",
+						"name": "Hosting foreigners",
 						"number": "86",
 						"period": "2",
 						"cardColor": "purple"
@@ -7682,7 +7682,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Crociata",
+						"name": "Crusade",
 						"number": "87",
 						"period": "2",
 						"cardColor": "purple"
@@ -7753,7 +7753,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Sostegno al Cardinale",
+						"name": "Support to the cardinal",
 						"number": "88",
 						"period": "2",
 						"cardColor": "purple"
@@ -7851,7 +7851,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Ingaggiare Mercenari",
+						"name": "Hiring mercenaries",
 						"number": "89",
 						"period": "3",
 						"cardColor": "purple"
@@ -7922,7 +7922,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Riparare la Cattedrale",
+						"name": "Repairing the cathedral",
 						"number": "90",
 						"period": "3",
 						"cardColor": "purple"
@@ -8008,7 +8008,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Costruire le Torri",
+						"name": "Building the towers",
 						"number": "91",
 						"period": "3",
 						"cardColor": "purple"
@@ -8079,7 +8079,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Commissionare Arte Sacra",
+						"name": "Promoting sacred art",
 						"number": "92",
 						"period": "3",
 						"cardColor": "purple"
@@ -8150,7 +8150,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Conquista Militare",
+						"name": "Military conquest",
 						"number": "93",
 						"period": "3",
 						"cardColor": "purple"
@@ -8221,7 +8221,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Migliorare le strade",
+						"name": "Improving the roads",
 						"number": "94",
 						"period": "3",
 						"cardColor": "purple"
@@ -8307,7 +8307,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Guerra Santa",
+						"name": "Sacred war",
 						"number": "95",
 						"period": "3",
 						"cardColor": "purple"
@@ -8378,7 +8378,7 @@
 			{
 				"cardInformations": [
 					{
-						"name": "Sostegno al Papa",
+						"name": "Support to the pope",
 						"number": "96",
 						"period": "3",
 						"cardColor": "purple"

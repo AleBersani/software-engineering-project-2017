@@ -1,5 +1,6 @@
 package it.polimi.ingsw.client.gui;
 
+import com.jfoenix.controls.JFXSpinner;
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.LeaderChoiceNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
@@ -13,6 +14,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -21,8 +24,10 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundSize;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -49,6 +54,14 @@ public class LeaderChoiceController implements Observer {
     @FXML
     private AnchorPane background;
 
+    @FXML
+    private Label waitingLeader;
+    @FXML
+    private Label player;
+
+    @FXML
+    private JFXSpinner spinnerLeader;
+
     public LeaderChoiceController() {
         gameId = ClientInformation.getCurrentGameId();
         playerName = ClientInformation.getPlayerName();
@@ -63,6 +76,7 @@ public class LeaderChoiceController implements Observer {
         setLeaderList();
         initEnumMap();
         setBackground();
+        setPlayerName();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "leadersChoice"));
     }
@@ -181,5 +195,20 @@ public class LeaderChoiceController implements Observer {
         for (int i = 0; i < numberOfLeaders; i++) {
             leaderCards.get(i).setDisable(true);
         }
+    }
+
+    private void hideWaiting() {
+        waitingLeader.setVisible(false);
+        spinnerLeader.setVisible(false);
+    }
+
+    private void showWaiting() {
+        waitingLeader.setVisible(true);
+        spinnerLeader.setVisible(true);
+    }
+
+    public void setPlayerName() {
+        player.setText(ClientInformation.getPlayerName());
+        player.prefWidth(player.getText().length());
     }
 }
