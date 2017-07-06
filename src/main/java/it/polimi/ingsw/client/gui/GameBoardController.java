@@ -57,89 +57,91 @@ public class GameBoardController extends Observable implements Initializable{
     private Circle player4;
 
     @FXML
-    private StackPane G4;
+    private StackPane g4;
     @FXML
-    private StackPane G3;
+    private StackPane g3;
     @FXML
-    private StackPane G2;
+    private StackPane g2;
     @FXML
-    private StackPane G1;
+    private StackPane g1;
     @FXML
-    private StackPane B4;
+    private StackPane b4;
     @FXML
-    private StackPane B3;
+    private StackPane b3;
     @FXML
-    private StackPane B2;
+    private StackPane b2;
     @FXML
-    private StackPane B1;
+    private StackPane b1;
     @FXML
-    private StackPane Y4;
+    private StackPane y4;
     @FXML
-    private StackPane Y3;
+    private StackPane y3;
     @FXML
-    private StackPane Y2;
+    private StackPane y2;
     @FXML
-    private StackPane Y1;
+    private StackPane y1;
     @FXML
-    private StackPane P1;
+    private StackPane p1;
     @FXML
-    private StackPane P2;
+    private StackPane p2;
     @FXML
-    private StackPane P3;
+    private StackPane p3;
     @FXML
-    private StackPane P4;
+    private StackPane p4;
     @FXML
-    private StackPane M1;
+    private StackPane m1;
     @FXML
-    private StackPane M2;
+    private StackPane m2;
     @FXML
-    private StackPane M3;
+    private StackPane m3;
     @FXML
-    private StackPane PRODUCTION_1;
+    private StackPane m4;
     @FXML
-    private StackPane HARVEST_1;
+    private StackPane production1;
+    @FXML
+    private StackPane harvest1;
 
     @FXML
-    private StackPane PRODUCTION_2;
+    private StackPane production2;
     @FXML
-    private StackPane COUNCIL_PALACE;
+    private StackPane council_palace;
     @FXML
-    private StackPane HARVEST_2;
+    private StackPane harvest2;
     @FXML
     private StackPane faithPath;
 
     @FXML
-    private ImageView T_G_4;
+    private ImageView t_g_4;
     @FXML
-    private ImageView T_G_3;
+    private ImageView t_g_3;
     @FXML
-    private ImageView T_G_2;
+    private ImageView t_g_2;
     @FXML
-    private ImageView T_G_1;
+    private ImageView t_g_1;
     @FXML
-    private ImageView T_Y_4;
+    private ImageView t_y_4;
     @FXML
-    private ImageView T_Y_3;
+    private ImageView t_y_3;
     @FXML
-    private ImageView T_Y_2;
+    private ImageView t_y_2;
     @FXML
-    private ImageView T_Y_1;
+    private ImageView t_y_1;
     @FXML
-    private ImageView T_B_4;
+    private ImageView t_b_4;
     @FXML
-    private ImageView T_B_3;
+    private ImageView t_b_3;
     @FXML
-    private ImageView T_B_2;
+    private ImageView t_b_2;
     @FXML
-    private ImageView T_B_1;
+    private ImageView t_b_1;
     @FXML
-    private ImageView T_P_4;
+    private ImageView t_p_4;
     @FXML
-    private ImageView T_P_3;
+    private ImageView t_p_3;
     @FXML
-    private ImageView T_P_2;
+    private ImageView t_p_2;
     @FXML
-    private ImageView T_P_1;
+    private ImageView t_p_1;
 
     @FXML
     private Label infoplayer1;
@@ -163,28 +165,28 @@ public class GameBoardController extends Observable implements Initializable{
 
     public void setTowers() {
         greenTower = new ArrayList<>();
-        greenTower.add(T_G_1);
-        greenTower.add(T_G_2);
-        greenTower.add(T_G_3);
-        greenTower.add(T_G_4);
+        greenTower.add(t_g_1);
+        greenTower.add(t_g_2);
+        greenTower.add(t_g_3);
+        greenTower.add(t_g_4);
 
         yellowTower = new ArrayList<>();
-        yellowTower.add(T_Y_1);
-        yellowTower.add(T_Y_2);
-        yellowTower.add(T_Y_3);
-        yellowTower.add(T_Y_4);
+        yellowTower.add(t_y_1);
+        yellowTower.add(t_y_2);
+        yellowTower.add(t_y_3);
+        yellowTower.add(t_y_4);
 
         blueTower = new ArrayList<>();
-        blueTower.add(T_B_1);
-        blueTower.add(T_B_2);
-        blueTower.add(T_B_3);
-        blueTower.add(T_B_4);
+        blueTower.add(t_b_1);
+        blueTower.add(t_b_2);
+        blueTower.add(t_b_3);
+        blueTower.add(t_b_4);
 
         purpleTower = new ArrayList<>();
-        purpleTower.add(T_P_1);
-        purpleTower.add(T_P_2);
-        purpleTower.add(T_P_3);
-        purpleTower.add(T_P_4);
+        purpleTower.add(t_p_1);
+        purpleTower.add(t_p_2);
+        purpleTower.add(t_p_3);
+        purpleTower.add(t_p_4);
     }
 
     public void initGreenTower(ArrayList<Image> greenCards) {
@@ -213,27 +215,28 @@ public class GameBoardController extends Observable implements Initializable{
 
     private void setStackPaneList() {
         stackPaneList = new ArrayList<>();
-        stackPaneList.add(Y1);
-        stackPaneList.add(Y2);
-        stackPaneList.add(Y3);
-        stackPaneList.add(Y4);
-        stackPaneList.add(G1);
-        stackPaneList.add(G2);
-        stackPaneList.add(G3);
-        stackPaneList.add(G4);
-        stackPaneList.add(B1);
-        stackPaneList.add(B2);
-        stackPaneList.add(B3);
-        stackPaneList.add(B4);
-        stackPaneList.add(P1);
-        stackPaneList.add(P2);
-        stackPaneList.add(P3);
-        stackPaneList.add(P4);
-        stackPaneList.add(M1);
-        stackPaneList.add(M2);
-        stackPaneList.add(M3);
-        stackPaneList.add(PRODUCTION_1);
-        stackPaneList.add(HARVEST_1);
+        stackPaneList.add(y1);
+        stackPaneList.add(y2);
+        stackPaneList.add(y3);
+        stackPaneList.add(y4);
+        stackPaneList.add(g1);
+        stackPaneList.add(g2);
+        stackPaneList.add(g3);
+        stackPaneList.add(g4);
+        stackPaneList.add(b1);
+        stackPaneList.add(b2);
+        stackPaneList.add(b3);
+        stackPaneList.add(b4);
+        stackPaneList.add(p1);
+        stackPaneList.add(p2);
+        stackPaneList.add(p3);
+        stackPaneList.add(p4);
+        stackPaneList.add(m1);
+        stackPaneList.add(m2);
+        stackPaneList.add(m3);
+        stackPaneList.add(m4);
+        stackPaneList.add(production1);
+        stackPaneList.add(harvest1);
     }
 
     public void setPawnList() {
@@ -285,20 +288,20 @@ public class GameBoardController extends Observable implements Initializable{
                             break;
                         }
                     }
-                    if ((circle.getBoundsInParent().intersects(COUNCIL_PALACE.getBoundsInParent()))) {
-                        COUNCIL_PALACE.getChildren().add(circle);
-                        COUNCIL_PALACE.setAlignment(circle, Pos.CENTER_LEFT);
-                        circle.setTranslateX(7.5*(COUNCIL_PALACE.getChildren().size()-1));
+                    if ((circle.getBoundsInParent().intersects(council_palace.getBoundsInParent()))) {
+                        council_palace.getChildren().add(circle);
+                        council_palace.setAlignment(circle, Pos.CENTER_LEFT);
+                        circle.setTranslateX(7.5*(council_palace.getChildren().size()-1));
                     }
-                    if ((circle.getBoundsInParent().intersects(PRODUCTION_2.getBoundsInParent()))) {
-                        PRODUCTION_2.getChildren().add(circle);
-                        PRODUCTION_2.setAlignment(circle, Pos.CENTER_LEFT);
-                        circle.setTranslateX(7.0*(PRODUCTION_2.getChildren().size()-1));
+                    if ((circle.getBoundsInParent().intersects(production2.getBoundsInParent()))) {
+                        production2.getChildren().add(circle);
+                        production2.setAlignment(circle, Pos.CENTER_LEFT);
+                        circle.setTranslateX(7.0*(production2.getChildren().size()-1));
                     }
-                    if ((circle.getBoundsInParent().intersects(HARVEST_2.getBoundsInParent()))) {
-                        HARVEST_2.getChildren().add(circle);
-                        HARVEST_2.setAlignment(circle, Pos.CENTER_LEFT);
-                        circle.setTranslateX(7.0*(HARVEST_2.getChildren().size()-1));
+                    if ((circle.getBoundsInParent().intersects(harvest2.getBoundsInParent()))) {
+                        harvest2.getChildren().add(circle);
+                        harvest2.setAlignment(circle, Pos.CENTER_LEFT);
+                        circle.setTranslateX(7.0*(harvest2.getChildren().size()-1));
                     }
                 });
             });
