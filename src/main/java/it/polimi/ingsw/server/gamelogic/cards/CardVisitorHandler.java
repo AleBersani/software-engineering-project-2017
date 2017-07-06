@@ -1,6 +1,7 @@
 package it.polimi.ingsw.server.gamelogic.cards;
 
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.*;
+import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 
 public class CardVisitorHandler implements CardVisitor {
@@ -42,16 +43,18 @@ public class CardVisitorHandler implements CardVisitor {
 
     @Override
     public void visitAdditionalCardInfo(RequirementsOnCard requirementsOnCard) {
-
+        for (RequirementsModifier requirementsModifier : requirementsOnCard.getRequirementsModifiers()) {
+            player.getPlayerCardsEffects().addRequirementsModifier(requirementsModifier);
+        }
     }
 
     @Override
     public void visitAdditionalCardInfo(RewardsOnCard rewardsOnCard) {
-
+        player.getPlayerCardsEffects().addRewardsModifier(rewardsOnCard.getRewardsModifier());
     }
 
     @Override
     public void visitAdditionalCardInfo(PlayerOrderWeight playerOrderWeight) {
-
+        player.getPlayerCardsEffects().setPlayerOrderWeight(playerOrderWeight.getWeight());
     }
 }
