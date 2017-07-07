@@ -387,40 +387,57 @@ public class GameBoardController extends Observable implements Observer {
 
     private void initGreenTower() {
         for (int i = 0; i < greenTower.size(); i++) {
-            if (!"Empty".equals(boardLight.getGreenTower().get(i).getCard().getName())) {
-                Image newGreenCard = new Image("client/devcards/" +
-                        boardLight.getGreenTower().get(i).getCard().getName() + ".png");
-                greenTower.get(i).setImage(newGreenCard);
+            for (int j = 0; j < boardLight.getGreenTower().size(); j++) {
+                if (!"Empty".equals(boardLight.getGreenTower().get(j).getCard().getName()) &&
+                    greenTower.get(i).getId().toUpperCase().equals(
+                            boardLight.getGreenTower().get(j).getSlotLight().getBoardIdentifier().toString())) {
+                    Image newGreenCard = new Image("client/devcards/" +
+                            boardLight.getGreenTower().get(j).getCard().getName() + ".png");
+                    greenTower.get(i).setImage(newGreenCard);
+                }
             }
         }
     }
 
+
     private void initYellowTower() {
         for (int i = 0; i < yellowTower.size(); i++) {
-            if (!"Empty".equals(boardLight.getYellowTower().get(i).getCard().getName())) {
-                Image newYellowCard = new Image("client/devcards/" +
-                        boardLight.getYellowTower().get(i).getCard().getName() + ".png");
-                yellowTower.get(i).setImage(newYellowCard);
+            for (int j = 0; j < boardLight.getYellowTower().size(); j++) {
+                if (!"Empty".equals(boardLight.getYellowTower().get(j).getCard().getName()) &&
+                        yellowTower.get(i).getId().toUpperCase().equals(
+                                boardLight.getYellowTower().get(j).getSlotLight().getBoardIdentifier().toString())) {
+                    Image newYellowCard = new Image("client/devcards/" +
+                            boardLight.getYellowTower().get(j).getCard().getName() + ".png");
+                    yellowTower.get(i).setImage(newYellowCard);
+                }
             }
         }
     }
 
     private void initBlueTower() {
         for (int i = 0; i < blueTower.size(); i++) {
-            if (!"Empty".equals(boardLight.getBlueTower().get(i).getCard().getName())) {
-                Image newBlueCard = new Image("client/devcards/" +
-                        boardLight.getBlueTower().get(i).getCard().getName() + ".png");
-                blueTower.get(i).setImage(newBlueCard);
+            for (int j = 0; j < boardLight.getBlueTower().size(); j++) {
+                if (!"Empty".equals(boardLight.getBlueTower().get(j).getCard().getName()) &&
+                        blueTower.get(i).getId().toUpperCase().equals(
+                                boardLight.getBlueTower().get(j).getSlotLight().getBoardIdentifier().toString())) {
+                    Image newBlueCard = new Image("client/devcards/" +
+                            boardLight.getBlueTower().get(j).getCard().getName() + ".png");
+                    blueTower.get(i).setImage(newBlueCard);
+                }
             }
         }
     }
 
     private void initPurpleTower() {
         for (int i = 0; i < purpleTower.size(); i++) {
-            if (!"Empty".equals(boardLight.getPurpleTower().get(i).getCard().getName())) {
-                Image newPurpleCard = new Image("client/devcards/" +
-                        boardLight.getPurpleTower().get(i).getCard().getName() + ".png");
-                purpleTower.get(i).setImage(newPurpleCard);
+            for (int j = 0; j < boardLight.getPurpleTower().size(); j++) {
+                if (!"Empty".equals(boardLight.getPurpleTower().get(j).getCard().getName()) &&
+                        purpleTower.get(i).getId().toUpperCase().equals(
+                                boardLight.getPurpleTower().get(j).getSlotLight().getBoardIdentifier().toString())) {
+                    Image newPurpleCard = new Image("client/devcards/" +
+                            boardLight.getPurpleTower().get(j).getCard().getName() + ".png");
+                    purpleTower.get(i).setImage(newPurpleCard);
+                }
             }
         }
     }
