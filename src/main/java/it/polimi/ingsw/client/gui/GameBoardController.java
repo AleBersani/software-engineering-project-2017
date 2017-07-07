@@ -17,6 +17,8 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -177,13 +179,13 @@ public class GameBoardController extends Observable implements Observer {
         setPawnList();
         initPawnColors();
         setPositions();
-        setOwnerPawns();
+       // setOwnerPawns();
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
         }
 
-        ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "game"));
+      //  ClientSender clientSender = new ClientSenderHandler();
+      //  clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "game"));
     }
 
     private void showPlayerBoard() {
@@ -344,8 +346,8 @@ public class GameBoardController extends Observable implements Observer {
                 boardLight.getPlayerLights().get(1).getPlayerColor())));/*
         infoplayer3.setText(boardLight.getPlayerLights().get(2).getPlayerName());
         infoplayer3.setTextFill(Paint.valueOf(pawnColors.get(
-                boardLight.getPlayerLights().get(2).getPlayerColor())));
-        playerName.setText(ClientInformation.getPlayerName());*/
+                boardLight.getPlayerLights().get(2).getPlayerColor())));*/
+        playerName.setText(ClientInformation.getPlayerName());
     }
 
     private void initGreenTower() {

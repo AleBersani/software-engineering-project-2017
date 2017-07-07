@@ -1,6 +1,7 @@
 package it.polimi.ingsw.client.gui;
 
 import com.jfoenix.controls.JFXButton;
+import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.GameChoiceNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
@@ -10,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,8 +28,12 @@ public class GameChoiceController implements Observer {
     @FXML
     private JFXButton resumeGame;
 
+    @FXML
+    private Label playerName;
+
     public void initialize() {
         GameChoiceNotifier.getInstance().addObserver(this);
+       // setPlayerName();
     }
 
     @Override
@@ -70,5 +76,9 @@ public class GameChoiceController implements Observer {
     public void resumeGame() {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.choseGameType(GameStartType.RESUME);
+    }
+
+    private void setPlayerName() {
+        playerName.setText(ClientInformation.getPlayerName() + "!");
     }
 }
