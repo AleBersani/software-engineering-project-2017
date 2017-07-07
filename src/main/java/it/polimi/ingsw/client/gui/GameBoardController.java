@@ -662,4 +662,10 @@ public class GameBoardController extends Observable implements Observer {
             }
         }
     }
+
+ /*   public void setExcommunications() {
+        excom1.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(0).getName() + ".png"));
+        excom2.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(1).getName() + ".png"));
+        excom3.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(2).getName() + ".png"));
+    } */
 }
