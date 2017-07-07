@@ -16,23 +16,27 @@ public class CouncilPalace {
     private int requiredValue;
 
     private List<PlayerDetails> playerOrder;
+    private List<PlayerPawn> playerPawnList;
 
     public CouncilPalace() {
         instantGoods = new ExchangingGoods();
         requiredValue = 0;
         playerOrder = new ArrayList<>();
+        playerPawnList = new ArrayList<>();
     }
 
     public CouncilPalace(CouncilPalace councilPalace) {
         instantGoods = councilPalace.instantGoods;
         requiredValue = councilPalace.requiredValue;
         playerOrder = new ArrayList<>();
+        playerPawnList = new ArrayList<>();
     }
 
     public CouncilPalace(ExchangingGoods instantGoods, int requiredValue) {
         this.instantGoods = instantGoods;
         this.requiredValue = requiredValue;
         playerOrder = new ArrayList<>();
+        playerPawnList = new ArrayList<>();
     }
 
     @Override
@@ -94,5 +98,13 @@ public class CouncilPalace {
 
     public void setPlayerOrder(List<PlayerDetails> playerOrder) {
         this.playerOrder = playerOrder;
+    }
+
+    public List<PlayerPawn> getPlayerPawnList() {
+        return playerPawnList;
+    }
+
+    public void setPlayerPawnList(List<PlayerPawn> playerPawnList) {
+        this.playerPawnList = playerPawnList;
     }
 }

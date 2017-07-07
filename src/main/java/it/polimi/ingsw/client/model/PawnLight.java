@@ -2,7 +2,9 @@ package it.polimi.ingsw.client.model;
 
 import it.polimi.ingsw.shared.model.PawnColor;
 
-public class PawnLight {
+import java.io.Serializable;
+
+public class PawnLight implements Serializable {
     private String playerName;
     private PawnColor pawnColor;
     private boolean placed;
@@ -11,6 +13,15 @@ public class PawnLight {
         this.playerName = playerName;
         this.pawnColor = pawnColor;
         this.placed = placed;
+    }
+
+    @Override
+    public String toString() {
+        return "PawnLight{" +
+                "playerName='" + playerName + '\'' +
+                ", pawnColor=" + pawnColor +
+                ", placed=" + placed +
+                '}';
     }
 
     public String getPlayerName() {

@@ -28,6 +28,17 @@ public class DeckLight implements Serializable {
         this.leaders = leaders;
     }
 
+    @Override
+    public String toString() {
+        return "DeckLight{" +
+                "territories=" + territories.toString() +
+                ", buildings=" + buildings.toString() +
+                ", characters=" + characters.toString() +
+                ", ventures=" + ventures.toString() +
+                ", leaders=" + leaders.toString() +
+                '}';
+    }
+
     public List<Card> getTerritories() {
         return territories;
     }

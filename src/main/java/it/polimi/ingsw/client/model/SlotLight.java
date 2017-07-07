@@ -2,9 +2,10 @@ package it.polimi.ingsw.client.model;
 
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
+import java.io.Serializable;
 import java.util.Optional;
 
-public class SlotLight {
+public class SlotLight implements Serializable {
     private BoardIdentifier boardIdentifier;
     private int requestedValue;
     private PawnLight pawnLight;
@@ -19,6 +20,15 @@ public class SlotLight {
         this.boardIdentifier = boardIdentifier;
         this.requestedValue = requestedValue;
         this.pawnLight = pawnLight;
+    }
+
+    @Override
+    public String toString() {
+        return "SlotLight{" +
+                "boardIdentifier=" + boardIdentifier +
+                ", requestedValue=" + requestedValue +
+                ", pawnLight=" + pawnLight +
+                '}';
     }
 
     public BoardIdentifier getBoardIdentifier() {

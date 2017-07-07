@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<TabPane prefHeight="550.0" prefWidth="791.0" stylesheets="@playerboard.css" tabClosingPolicy="UNAVAILABLE"
-         xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.gui.PlayerboardController">
+
+<TabPane prefHeight="550.0" prefWidth="791.0" stylesheets="@playerboard.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.gui.PlayerboardController">
     <tabs>
         <Tab text="Territory_Building">
          <content>
@@ -13,26 +14,25 @@
                 <ImageView fitHeight="515.0" fitWidth="733.0" layoutX="58.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@punchboard.jpg" />
                 </ImageView>
-                <ImageView fitHeight="514.0" fitWidth="68.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@../bonustiles/B_TILE_5.png" />
+                <ImageView fx:id="chosenBonusTile" fitHeight="514.0" fitWidth="68.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                 </ImageView>
-
-                <Label fx:id="coins" layoutX="106.0" layoutY="448.0" prefHeight="35.0" prefWidth="47.0" styleClass="try" text="Coins" />
-                <Label fx:id="woods" layoutX="213.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0" styleClass="try" text="Woods" />
-                <Label fx:id="stones" layoutX="333.0" layoutY="446.0" prefHeight="35.0" prefWidth="57.0" styleClass="try" text="Stones" />
-                <Label fx:id="servants" layoutX="440.0" layoutY="463.0" prefHeight="35.0" prefWidth="63.0" styleClass="try" text="Servants" />
-                <StackPane layoutX="73.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="191.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="305.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="420.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="532.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="648.0" layoutY="33.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="80.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="191.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="305.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="420.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="532.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                <StackPane layoutX="648.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
+   
+                <Label fx:id="coins" layoutX="106.0" layoutY="448.0" prefHeight="35.0" prefWidth="47.0" text="Coins" />
+                <Label fx:id="woods" layoutX="213.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0"  text="Woods" />
+                <Label fx:id="stones" layoutX="333.0" layoutY="446.0" prefHeight="35.0" prefWidth="57.0"  text="Stones" />
+                <Label fx:id="servants" layoutX="440.0" layoutY="463.0" prefHeight="35.0" prefWidth="63.0"  text="Servants" />
+                <ImageView fx:id="yellow1" fitHeight="153.0" fitWidth="100.0" layoutX="73.0" layoutY="33.0" />
+                <ImageView fx:id="yellow2" fitHeight="153.0" fitWidth="100.0" layoutX="191.0" layoutY="33.0"  />
+                <ImageView fx:id="yellow3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="33.0"  />
+                <ImageView fx:id="yellow4" fitHeight="153.0" fitWidth="100.0" layoutX="420.0" layoutY="33.0"  />
+                <ImageView fx:id="yellow5" fitHeight="153.0" fitWidth="100.0" layoutX="532.0" layoutY="33.0" />
+                <ImageView fx:id="yellow6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="33.0"  />
+                <ImageView fx:id="green1" fitHeight="153.0" fitWidth="100.0" layoutX="80.0" layoutY="240.0"  />
+                <ImageView fx:id="green2" fitHeight="153.0" fitWidth="100.0" layoutX="191.0" layoutY="240.0"  />
+                <ImageView fx:id="green3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="240.0"  />
+                <ImageView fx:id="green4" fitHeight="153.0" fitWidth="100.0" layoutX="420.0" layoutY="240.0"  />
+                <ImageView fx:id="green5" fitHeight="153.0" fitWidth="100.0" layoutX="532.0" layoutY="240.0"  />
+                <ImageView fx:id="green6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="240.0"  />
 
             </Pane>
          </content>
@@ -45,27 +45,26 @@
                     <ImageView fitHeight="518.0" fitWidth="734.0" layoutX="58.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                         <Image url="@punchboard2.jpg" />
                     </ImageView>
-                    <ImageView fitHeight="515.0" fitWidth="64.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../bonustiles/B_TILE_5.png" />
+                    <ImageView fx:id="chosenBonusTile1" fitHeight="515.0" fitWidth="64.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                     </ImageView>
-
-                    <StackPane layoutX="75.0" layoutY="35.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="193.0" layoutY="34.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="305.0" layoutY="34.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="421.0" layoutY="35.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="533.0" layoutY="35.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="648.0" layoutY="35.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="77.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="193.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="305.0" layoutY="241.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="420.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="533.0" layoutY="240.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-                    <StackPane layoutX="648.0" layoutY="241.0" prefHeight="153.0" prefWidth="100.0" styleClass="try" />
-
-                    <Label fx:id="coins" layoutX="102.0" layoutY="447.0" prefHeight="35.0" prefWidth="47.0" styleClass="try" text="Coins" />
-                    <Label fx:id="woods" layoutX="216.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0" styleClass="try" text="Woods" />
-                    <Label fx:id="stones" layoutX="329.0" layoutY="445.0" prefHeight="35.0" prefWidth="57.0" styleClass="try" text="Stones" />
-                    <Label fx:id="servants" layoutX="438.0" layoutY="461.0" prefHeight="35.0" prefWidth="63.0" styleClass="try" text="Servants" />
+   
+                    <ImageView fx:id="purple1" fitHeight="153.0" fitWidth="100.0" layoutX="75.0" layoutY="35.0"  />
+                    <ImageView fx:id="purple2" fitHeight="153.0" fitWidth="100.0" layoutX="193.0" layoutY="34.0"  />
+                    <ImageView fx:id="purple3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="34.0"  />
+                    <ImageView fx:id="purple4" fitHeight="153.0" fitWidth="100.0" layoutX="421.0" layoutY="35.0"  />
+                    <ImageView fx:id="purple5" fitHeight="153.0" fitWidth="100.0" layoutX="533.0" layoutY="35.0"  />
+                    <ImageView fx:id="purple6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="35.0"  />
+                    <ImageView fx:id="blue1" fitHeight="153.0" fitWidth="100.0" layoutX="77.0" layoutY="240.0"  />
+                    <ImageView fx:id="blue2" fitHeight="153.0" fitWidth="100.0" layoutX="193.0" layoutY="240.0"  />
+                    <ImageView fx:id="blue3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="241.0"  />
+                    <ImageView fx:id="blue4" fitHeight="153.0" fitWidth="100.0" layoutX="420.0" layoutY="240.0"  />
+                    <ImageView fx:id="blue5" fitHeight="153.0" fitWidth="100.0" layoutX="533.0" layoutY="240.0"  />
+                    <ImageView fx:id="blue6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="241.0"  />
+   
+                    <Label fx:id="coins1" layoutX="102.0" layoutY="447.0" prefHeight="35.0" prefWidth="47.0" styleClass="try" text="Coins" />
+                    <Label fx:id="woods1" layoutX="216.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0" styleClass="try" text="Woods" />
+                    <Label fx:id="stones1" layoutX="329.0" layoutY="445.0" prefHeight="35.0" prefWidth="57.0" styleClass="try" text="Stones" />
+                    <Label fx:id="servants1" layoutX="438.0" layoutY="461.0" prefHeight="35.0" prefWidth="63.0" styleClass="try" text="Servants" />
 
                 </Pane>
             </content>
@@ -75,26 +74,19 @@
             <content>
                 <StackPane fx:id="pane4" prefHeight="800" prefWidth="1000">
 
-                    <ImageView fx:id="pane3" fitHeight="515" fitWidth="750" preserveRatio="true" styleClass="try">
-                        <Image preserveRatio="true" url="/client/backgrounds/yellow.jpg" />
+                    <ImageView fx:id="backgroundLeaders" fitHeight="515" fitWidth="750" preserveRatio="true" styleClass="try">
                     </ImageView>
-
-                    <HBox fx:id="pane5" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20">
-
-                        <ImageView fx:id="led1" fitHeight="250" fitWidth="158" preserveRatio="true" styleClass="try">
-
-                        </ImageView>
-                        <ImageView fx:id="led2" fitHeight="250" fitWidth="158" preserveRatio="true" styleClass="try">
-
-                        </ImageView>
-                        <ImageView fx:id="led3" fitHeight="250" fitWidth="158" preserveRatio="true" styleClass="try">
-
-                        </ImageView>
-                        <ImageView fx:id="led4" fitHeight="250" fitWidth="158" preserveRatio="true" styleClass="try">
-
-                        </ImageView>
-
-                    </HBox>
+   
+                       <HBox fx:id="pane5" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20">
+                           <ImageView fx:id="led1" fitHeight="250" fitWidth="158" preserveRatio="true" >
+                           </ImageView>
+                           <ImageView fx:id="led2" fitHeight="250" fitWidth="158" preserveRatio="true" >
+                           </ImageView>
+                           <ImageView fx:id="led3" fitHeight="250" fitWidth="158" preserveRatio="true" >
+                           </ImageView>
+                           <ImageView fx:id="led4" fitHeight="250" fitWidth="158" preserveRatio="true" >
+                           </ImageView>
+                       </HBox>
 
                 </StackPane>
             </content>

@@ -1,9 +1,8 @@
 package it.polimi.ingsw.client.model.enums;
 
-/**
- * Created by Champ on 22/06/2017.
- */
-public enum ResourcesLight {
+import java.io.Serializable;
+
+public enum ResourcesLight implements Serializable {
     WOODS,
     STONES,
     SERVANTS,

@@ -184,7 +184,7 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
                     game.bonusTilesSetup();
                     break;
                 case "game":
-                    game.initPeriod();
+                    game.initFirstPeriod();
             }
         }
     }

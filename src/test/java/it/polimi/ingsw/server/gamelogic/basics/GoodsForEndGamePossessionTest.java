@@ -16,7 +16,7 @@ class GoodsForEndGamePossessionTest {
     }
 
     @Test
-    void testEqualsTrue1() {
+    void testEqualsTrue() {
         GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
                 new Goods(new Resources(1,0,1,0),
                         new Points(1,0,0)));
@@ -32,26 +32,45 @@ class GoodsForEndGamePossessionTest {
     @Test
     void testEqualsFalse1() {
         GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
-                new Goods(new Points(1,0,0)));
+                new Goods(new Resources(0,1,0,1),
+                        new Points(0,0,0)));
         assertFalse(goodsForEndGamePossession.equals(result));
     }
 
     @Test
     void testEqualsFalse2() {
-        GoodsForEndGamePossession result = new GoodsForEndGamePossession(5,
-                new Goods(new Points(1,0,0)));
+        GoodsForEndGamePossession result = new GoodsForEndGamePossession(1,
+                new Goods(new Resources(1,0,1,0),
+                new Points(1,0,0)));
         assertFalse(goodsForEndGamePossession.equals(result));
     }
 
     @Test
-    void testEqualsDifferent1() {
+    void testEqualsNull() {
+        GoodsForEndGamePossession nullGoods = null;
+        assertFalse(goodsForEndGamePossession.equals(nullGoods));
+    }
+
+    @Test
+    void testEqualsDifferent() {
         String different = "";
         assertFalse(goodsForEndGamePossession.equals(different));
     }
 
     @Test
-    void testEqualsDifferent2() {
-        assertFalse(goodsForEndGamePossession.equals(null));
+    void testHashCodeTrue() {
+        GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
+                new Goods(new Resources(1,0,1,0),
+                        new Points(1,0,0)));
+        assertEquals(result.hashCode(), goodsForEndGamePossession.hashCode());
+    }
+
+    @Test
+    void testHashCodeFalse() {
+        GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
+                new Goods(new Resources(0,1,0,1),
+                        new Points(0,0,0)));
+        assertNotEquals(result.hashCode(), goodsForEndGamePossession.hashCode());
     }
 
     @Test

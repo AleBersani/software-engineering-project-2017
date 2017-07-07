@@ -1,21 +1,16 @@
 package it.polimi.ingsw.client.gui;
 
 import com.jfoenix.controls.JFXSpinner;
-import com.sun.javafx.css.Size;
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.BonusTileChoiceNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenBonusTile;
-import it.polimi.ingsw.shared.requests.clientserver.ChosenLeader;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
-import it.polimi.ingsw.shared.support.Client;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -25,21 +20,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.paint.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import javax.script.Bindings;
-import java.awt.*;
 import java.io.IOException;
-import java.net.URL;
 import java.util.*;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TileChoiceController implements Observer {
-    private final static Logger LOGGER = Logger.getLogger(TileChoiceController.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(TileChoiceController.class.getName());
     private static final String BACKGROUND_URL = "/client/backgrounds/";
 
     private int gameId;

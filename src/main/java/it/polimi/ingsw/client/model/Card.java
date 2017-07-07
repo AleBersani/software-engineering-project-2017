@@ -9,6 +9,13 @@ public class Card implements Serializable {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Card{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

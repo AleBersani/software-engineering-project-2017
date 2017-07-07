@@ -2,6 +2,10 @@
     -fx-border-color: aliceblue;
 }
 
+.try2 {
+    -fx-border-color: blue;
+}
+
 .try:hover {
     -fx-border-color: blueviolet;
 }
@@ -11,22 +15,22 @@
 }
 
 
-#coins {
+#coins, #coins1 {
     -fx-background-color: yellow;
     -fx-alignment: center;
 }
 
-#woods {
+#woods, #woods1 {
     -fx-background-color: chocolate;
     -fx-alignment: center;
 }
 
-#stones {
+#stones, #stones1 {
     -fx-background-color: darkgray;
     -fx-alignment: center;
 }
 
-#servants {
+#servants, #servants1 {
     -fx-background-color: blueviolet;
     -fx-alignment: center;
 }
