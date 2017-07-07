@@ -6,6 +6,7 @@ import it.polimi.ingsw.client.gui.notify.GameBoardNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
+import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.DiceColor;
@@ -65,6 +66,7 @@ public class GameBoardController extends Observable implements Observer {
     private BaseInformation baseInformation;
     private BoardLight boardLight;
     private ActionDescription actionDescription;
+    private Owner owner;
 
     @FXML
     private Circle whitePawn;
@@ -199,6 +201,8 @@ public class GameBoardController extends Observable implements Observer {
     private Label infoplayer3;
     @FXML
     private Label playerName;
+    @FXML
+    private Label infoOwner;
 
     @FXML
     private Spinner spinner;
@@ -206,6 +210,7 @@ public class GameBoardController extends Observable implements Observer {
     public GameBoardController() {
         baseInformation = new BaseInformation(ClientInformation.getCurrentGameId(), ClientInformation.getPlayerName());
         boardLight = BoardLight.getInstance();
+        owner = Owner.getInstance();
     }
 
     public void initialize() {
@@ -394,6 +399,12 @@ public class GameBoardController extends Observable implements Observer {
         }
         playerName.setText(ClientInformation.getPlayerName());
         playerName.setMinWidth(Region.USE_PREF_SIZE);
+        StringBuilder text1 = new StringBuilder();
+        owner.getPlayerLight().getActivatedLeaders().forEach(leader -> text1.append(leader.getName() + "\n"));
+        text1.append("Victory P: " + owner.getPlayerLight().getNumberOfPoints().get(PointsLight.VICTORY_POINTS) + "\n");
+        text1.append("Military P: " + owner.getPlayerLight().getNumberOfPoints().get(PointsLight.MILITARY_POINTS) + "\n");
+        infoOwner.setText(text1.toString());
+        infoOwner.setTextFill(Paint.valueOf(ClientInformation.getPlayerColor().toString()));
     }
 
     private void initGreenTower() {

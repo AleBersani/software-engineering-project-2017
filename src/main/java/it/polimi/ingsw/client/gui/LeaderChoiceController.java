@@ -135,7 +135,9 @@ public class LeaderChoiceController implements Observer {
         for (Card card : leaderCards) {
             leaderNames.add(card.getName());
         }
+        hideWaiting();
         setLeaderCards(leaderNames);
+        showLeaders();
         enableLeaders();
     }
 
@@ -162,6 +164,8 @@ public class LeaderChoiceController implements Observer {
     @FXML
     public void selectLeader1(){
         disableLeaders();
+        hideLeaders();
+        showWaiting();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(0)));
 
@@ -170,6 +174,8 @@ public class LeaderChoiceController implements Observer {
     @FXML
     public void selectLeader2(){
         disableLeaders();
+        hideLeaders();
+        showWaiting();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(1)));
     }
@@ -177,6 +183,8 @@ public class LeaderChoiceController implements Observer {
     @FXML
     public void selectLeader3(){
         disableLeaders();
+        hideLeaders();
+        showWaiting();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(2)));
     }
@@ -184,6 +192,8 @@ public class LeaderChoiceController implements Observer {
     @FXML
     public void selectLeader4(){
         disableLeaders();
+        hideLeaders();
+        showWaiting();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(3)));
     }
@@ -207,5 +217,17 @@ public class LeaderChoiceController implements Observer {
     public void setPlayerName() {
         player.setText(ClientInformation.getPlayerName());
         player.prefWidth(player.getText().length());
+    }
+
+    public void hideLeaders() {
+        for (ImageView imageView : leaderCards) {
+            imageView.setVisible(false);
+        }
+    }
+
+    public void showLeaders() {
+        for (ImageView imageView : leaderCards) {
+            imageView.setVisible(true);
+        }
     }
 }

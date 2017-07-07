@@ -112,6 +112,12 @@ public class TileChoiceController implements Observer {
         spinner.setVisible(false);
     }
 
+    private void showWaiting() {
+        waiting.setVisible(true);
+        spinner.setVisible(true);
+    }
+
+
     private void setTiles(List<String> availableTiles) {
         bonusTileIdentifiers = new ArrayList<>(availableTiles);
         for (int i = 0; i < availableTiles.size(); i++) {
@@ -145,6 +151,8 @@ public class TileChoiceController implements Observer {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(0)));
         disable();
+        hideBonusTiles();
+        showWaiting();
     }
 
     @FXML
@@ -152,6 +160,8 @@ public class TileChoiceController implements Observer {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(1)));
         disable();
+        hideBonusTiles();
+        showWaiting();
     }
 
     @FXML
@@ -159,6 +169,8 @@ public class TileChoiceController implements Observer {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(2)));
         disable();
+        hideBonusTiles();
+        showWaiting();
     }
 
     @FXML
@@ -166,6 +178,8 @@ public class TileChoiceController implements Observer {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(3)));
         disable();
+        hideBonusTiles();
+        showWaiting();
     }
 
     public void setPlayerName() {
@@ -176,6 +190,12 @@ public class TileChoiceController implements Observer {
     public void disable() {
         for (ImageView image : tileList) {
                 image.setMouseTransparent(true);
-            }
         }
+    }
+
+    public void hideBonusTiles() {
+        for (ImageView imageView : tileList) {
+            imageView.setVisible(false);
+        }
+    }
 }
