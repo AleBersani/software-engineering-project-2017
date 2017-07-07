@@ -101,12 +101,12 @@
        <Circle fx:id="neutralPawn" fill="#c99463" layoutX="780.0" layoutY="501.0" radius="15.0"
                strokeType="INSIDE" strokeWidth="4.0" />
 
-       <ImageView fx:id="excom1" fitHeight="106.0" fitWidth="49.0" layoutX="780.0" layoutY="56.0" pickOnBounds="true"
+       <ImageView fx:id="excom1" fitHeight="106.0" fitWidth="49.0" layoutX="780.0" layoutY="62.0" pickOnBounds="true"
                   preserveRatio="true" />
-       <ImageView fx:id="excom2" fitHeight="106.0" fitWidth="49.0" layoutX="836.0" layoutY="62.0" pickOnBounds="true"
+       <ImageView fx:id="excom2" fitHeight="106.0" fitWidth="49.0" layoutX="834.0" layoutY="75.0" pickOnBounds="true"
                   preserveRatio="true" />
-       <ImageView fx:id="excom3" fitHeight="106.0" fitWidth="49.0" layoutX="891.0" layoutY="62.0" pickOnBounds="true"
-                  preserveRatio="true" />
+       <ImageView fx:id="excom3" fitHeight="106.0" fitWidth="49.0" layoutX="887.0" layoutY="63.0" pickOnBounds="true"
+                  preserveRatio="true"/>
 
        <ImageView fx:id="blackDice" fitHeight="47.0" fitWidth="43.0" layoutX="1019.0" layoutY="365.0" pickOnBounds="true"
                   preserveRatio="true" />
