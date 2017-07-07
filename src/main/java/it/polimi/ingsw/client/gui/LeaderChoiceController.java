@@ -161,30 +161,31 @@ public class LeaderChoiceController implements Observer {
 
     @FXML
     public void selectLeader1(){
+        disableLeaders();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(0)));
-        disableLeaders();
+
     }
 
     @FXML
     public void selectLeader2(){
+        disableLeaders();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(1)));
-        disableLeaders();
     }
 
     @FXML
     public void selectLeader3(){
+        disableLeaders();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(2)));
-        disableLeaders();
     }
 
     @FXML
     public void selectLeader4(){
+        disableLeaders();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(3)));
-        disableLeaders();
     }
 
     private void disableLeaders() {

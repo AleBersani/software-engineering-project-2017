@@ -176,6 +176,12 @@ public class GameBoardController extends Observable implements Observer {
     private ImageView whiteDice;
     @FXML
     private ImageView orangeDice;
+    @FXML
+    private ImageView excom1;
+    @FXML
+    private ImageView excom2;
+    @FXML
+    private ImageView excom3;
 
     @FXML
     private Label infoplayer1;
@@ -196,14 +202,13 @@ public class GameBoardController extends Observable implements Observer {
 
     public void initialize() {
         GameBoardNotifier.getInstance().addObserver(this);
-        showPlayerBoard();
+       // showPlayerBoard();
         setTowers();
         setStackPaneList();
         setPawnList();
         initPawnColors();
         setPositions();
-        setOwnerPawns();
-      //  setDices();
+      //  setOwnerPawns();
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
         }
@@ -657,4 +662,10 @@ public class GameBoardController extends Observable implements Observer {
             }
         }
     }
+
+ /*   public void setExcommunications() {
+        excom1.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(0).getName() + ".png"));
+        excom2.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(1).getName() + ".png"));
+        excom3.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(2).getName() + ".png"));
+    } */
 }
