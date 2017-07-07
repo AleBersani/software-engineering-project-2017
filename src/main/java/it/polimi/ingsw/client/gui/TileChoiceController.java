@@ -68,12 +68,12 @@ public class TileChoiceController implements Observer {
     public void initialize() {
         BonusTileChoiceNotifier.getInstance().addObserver(this);
         initEnumMap();
-     //   setTileList();
-        ClientInformation.setPlayerColor(GeneralColor.GREEN);
+        setTileList();
+
         setBackground();
-     //   setPlayerName();
-    //    ClientSender clientSender = new ClientSenderHandler();
-    //    clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "tileChoice"));
+        setPlayerName();
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "tileChoice"));
     }
 
     private void initEnumMap() {
