@@ -60,6 +60,7 @@ public class GameBoardController extends Observable implements Observer {
     private Stage playerBoard;
     private Map<GeneralColor, String> pawnColors;
     private Map<BoardIdentifier, StackPane> boardPositions;
+    private List<Circle> order;
 
     private BaseInformation baseInformation;
     private BoardLight boardLight;
@@ -137,6 +138,15 @@ public class GameBoardController extends Observable implements Observer {
     private StackPane faithPath;
 
     @FXML
+    private Circle first;
+    @FXML
+    private Circle second;
+    @FXML
+    private Circle third;
+    @FXML
+    private Circle fourth;
+
+    @FXML
     private ImageView t_g_4;
     @FXML
     private ImageView t_g_3;
@@ -207,6 +217,7 @@ public class GameBoardController extends Observable implements Observer {
         initPawnColors();
         setPositions();
         setOwnerPawns();
+        setPlayersOrder();
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
         }
@@ -691,4 +702,15 @@ public class GameBoardController extends Observable implements Observer {
         excom2.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(1).getName() + ".png"));
         excom3.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(2).getName() + ".png"));
     } */
+
+    public void setPlayersOrder() {
+        order = new ArrayList<>();
+        order.add(first);
+        order.add(second);
+        order.add(third);
+        order.add(fourth);
+        for (int i = 0; i < order.size() && i < boardLight.getPlayerLights().size(); i++) {
+            order.get(i).setFill(Paint.valueOf(boardLight.getPlayerLights().get(i).getPlayerColor().toString()));
+        }
+    }
 }
