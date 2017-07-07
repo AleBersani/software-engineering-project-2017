@@ -135,8 +135,8 @@
        <JFXButton fx:id="hide" buttonType="RAISED" focusTraversable="false" layoutX="694.0" layoutY="574.0"
                   onMouseClicked="#hidePlayerBoard" ripplerFill="darksalmon" text="Hide PlayerBoard" />
 
-       <GridPane fx:id="otherPlayers" alignment="CENTER" gridLinesVisible="true" layoutX="839.0" layoutY="492.0"
-                 prefHeight="112.0" prefWidth="393.0">
+       <GridPane fx:id="otherPlayers" alignment="CENTER" gridLinesVisible="true" layoutX="839.0" layoutY="530.0"
+                 prefHeight="75.0" prefWidth="393.0">
             <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -151,12 +151,15 @@
            <Label fx:id="infoplayer3" textAlignment="CENTER" GridPane.columnIndex="2" />
        </GridPane>
 
-       <Label fx:id="playerName" layoutX="824.0" layoutY="451.0" prefHeight="17.0" prefWidth="31.0" />
+       <Label fx:id="playerName" layoutX="824.0" layoutY="450.0" prefHeight="17.0" prefWidth="31.0"/>
       <JFXButton fx:id="pass" buttonType="RAISED" layoutX="909.0" layoutY="446.0" text="Pass Turn"
                  ripplerFill="darksalmon" focusTraversable="false"/>
       <JFXButton fx:id="leave" buttonType="RAISED" layoutX="995.0" layoutY="446.0" text="Leave game"
                  ripplerFill="darksalmon" focusTraversable="false"/>
       <JFXButton fx:id="interrupt" buttonType="RAISED" layoutX="1094.0" layoutY="446.0" text="Ask for interruption"
                  ripplerFill="darksalmon" focusTraversable="false"/>
+
+      <Label text="How many servants do you want to sacrifice?" layoutY="495.0" layoutX="820.0"/>
+      <Spinner layoutX="1110.0" layoutY="490.0" min="0" max="10" prefWidth="80.0"/>
 
 </Pane>
