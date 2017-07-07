@@ -6,7 +6,6 @@ import it.polimi.ingsw.client.gui.notify.GameBoardNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
-import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.DiceColor;
@@ -35,7 +34,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
 
-import javax.script.Bindings;
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
@@ -202,13 +200,13 @@ public class GameBoardController extends Observable implements Observer {
 
     public void initialize() {
         GameBoardNotifier.getInstance().addObserver(this);
-       // showPlayerBoard();
+        showPlayerBoard();
         setTowers();
         setStackPaneList();
         setPawnList();
         initPawnColors();
         setPositions();
-      //  setOwnerPawns();
+        setOwnerPawns();
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
         }
@@ -389,33 +387,41 @@ public class GameBoardController extends Observable implements Observer {
 
     private void initGreenTower() {
         for (int i = 0; i < greenTower.size(); i++) {
-            Image newGreenCard = new Image("client/devcards/" +
-                    boardLight.getGreenTower().get(i).getCard().getName() + ".png");
-            greenTower.get(i).setImage(newGreenCard);
+            if (!"Empty".equals(boardLight.getGreenTower().get(i).getCard().getName())) {
+                Image newGreenCard = new Image("client/devcards/" +
+                        boardLight.getGreenTower().get(i).getCard().getName() + ".png");
+                greenTower.get(i).setImage(newGreenCard);
+            }
         }
     }
 
     private void initYellowTower() {
         for (int i = 0; i < yellowTower.size(); i++) {
-            Image newYellowCard = new Image("client/devcards/" +
-                    boardLight.getYellowTower().get(i).getCard().getName() + ".png");
-            yellowTower.get(i).setImage(newYellowCard);
+            if (!"Empty".equals(boardLight.getYellowTower().get(i).getCard().getName())) {
+                Image newYellowCard = new Image("client/devcards/" +
+                        boardLight.getYellowTower().get(i).getCard().getName() + ".png");
+                yellowTower.get(i).setImage(newYellowCard);
+            }
         }
     }
 
     private void initBlueTower() {
         for (int i = 0; i < blueTower.size(); i++) {
-            Image newBlueCard = new Image("client/devcards/" +
-                    boardLight.getBlueTower().get(i).getCard().getName() + ".png");
-            blueTower.get(i).setImage(newBlueCard);
+            if (!"Empty".equals(boardLight.getBlueTower().get(i).getCard().getName())) {
+                Image newBlueCard = new Image("client/devcards/" +
+                        boardLight.getBlueTower().get(i).getCard().getName() + ".png");
+                blueTower.get(i).setImage(newBlueCard);
+            }
         }
     }
 
     private void initPurpleTower() {
         for (int i = 0; i < purpleTower.size(); i++) {
-            Image newPurpleCard = new Image("client/devcards/" +
-                    boardLight.getPurpleTower().get(i).getCard().getName() + ".png");
-            purpleTower.get(i).setImage(newPurpleCard);
+            if (!"Empty".equals(boardLight.getPurpleTower().get(i).getCard().getName())) {
+                Image newPurpleCard = new Image("client/devcards/" +
+                        boardLight.getPurpleTower().get(i).getCard().getName() + ".png");
+                purpleTower.get(i).setImage(newPurpleCard);
+            }
         }
     }
 

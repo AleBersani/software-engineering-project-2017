@@ -37,6 +37,7 @@ public class BasicRewardsGenerator {
                 if (optionalTowerSlot.isPresent()) {
                     TowerSlot towerSlot = optionalTowerSlot.get();
                     player.getPlayerBoard().getDeck().getTerritories().add((Territory)towerSlot.getDevelopmentCard());
+                    towerSlot.setDevelopmentCard(null);
                 }
                 LOGGER.info("Action type: green tower, rewards given to player!");
                 break;
@@ -46,7 +47,9 @@ public class BasicRewardsGenerator {
                 if (optionalTowerSlot.isPresent()) {
                     TowerSlot towerSlot = optionalTowerSlot.get();
                     player.getPlayerBoard().getDeck().getBuildings().add((Building)towerSlot.getDevelopmentCard());
+                    towerSlot.setDevelopmentCard(null);
                 }
+                LOGGER.info("Action type: yellow tower, rewards given to player!");
                 break;
             }
             case BLUE_TOWER: {
@@ -54,7 +57,9 @@ public class BasicRewardsGenerator {
                 if (optionalTowerSlot.isPresent()) {
                     TowerSlot towerSlot = optionalTowerSlot.get();
                     player.getPlayerBoard().getDeck().getCharacters().add((Character)towerSlot.getDevelopmentCard());
+                    towerSlot.setDevelopmentCard(null);
                 }
+                LOGGER.info("Action type: blue tower, rewards given to player!");
                 break;
             }
             case PURPLE_TOWER: {
@@ -62,7 +67,9 @@ public class BasicRewardsGenerator {
                 if (optionalTowerSlot.isPresent()) {
                     TowerSlot towerSlot = optionalTowerSlot.get();
                     player.getPlayerBoard().getDeck().getVentures().add((Venture)towerSlot.getDevelopmentCard());
+                    towerSlot.setDevelopmentCard(null);
                 }
+                LOGGER.info("Action type: purple tower, rewards given to player!");
                 break;
             }
             case COUNCIL_PALACE: {

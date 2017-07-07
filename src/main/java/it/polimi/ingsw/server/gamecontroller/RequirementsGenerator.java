@@ -7,7 +7,9 @@ import it.polimi.ingsw.server.gamelogic.modifiers.requirements.BoardActionRequir
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.TowerActionRequirements;
 import it.polimi.ingsw.server.gamelogic.player.Player;
+import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
+import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
@@ -100,7 +102,8 @@ public class RequirementsGenerator {
                     .get(boardAction.getPositionMultipleCostChosen());
             Goods bonusGoods = towerSlot.getInstantGoods();
             return new TowerActionRequirements(spaceActionRequirements, requiredGoods, bonusGoods,
-                    OCCUPIED_TOWER_COST, isOccupiedTower(), isOccupiedTowerByMyColouredPawn());
+                    OCCUPIED_TOWER_COST, isOccupiedTower(boardAction.getBasicAction().getActionType()),
+                    isOccupiedTowerByMyColouredPawn(boardAction.getBasicAction().getActionType()));
         }
         return null;
     }
@@ -116,8 +119,9 @@ public class RequirementsGenerator {
         return Optional.empty();
     }
 
-    private boolean isOccupiedTower() {
-        for (Tower tower : board.getTowers()) {
+    private boolean isOccupiedTower(ActionType actionType) {
+        Tower tower = getTowerBasedOnActionType(actionType);
+        if (tower != null) {
             for (TowerSlot towerSlot : tower.getTowerSlots()) {
                 if (towerSlot.getSpace().isAlreadyTaken()) {
                     return true;
@@ -127,8 +131,43 @@ public class RequirementsGenerator {
         return false;
     }
 
-    private boolean isOccupiedTowerByMyColouredPawn() {
-        for (Tower tower : board.getTowers()) {
+    private Tower getTowerBasedOnActionType(ActionType actionType) {
+        switch (actionType) {
+            case GREEN_TOWER:
+                for (Tower tower : board.getTowers()) {
+                    if (GeneralColor.GREEN == tower.getColor()) {
+                        return tower;
+                    }
+                }
+                break;
+            case YELLOW_TOWER:
+                for (Tower tower : board.getTowers()) {
+                    if (GeneralColor.YELLOW == tower.getColor()) {
+                        return tower;
+                    }
+                }
+                break;
+            case BLUE_TOWER:
+                for (Tower tower : board.getTowers()) {
+                    if (GeneralColor.BLUE == tower.getColor()) {
+                        return tower;
+                    }
+                }
+                break;
+            case PURPLE_TOWER:
+                for (Tower tower : board.getTowers()) {
+                    if (GeneralColor.PURPLE == tower.getColor()) {
+                        return tower;
+                    }
+                }
+                break;
+        }
+        return null;
+    }
+
+    private boolean isOccupiedTowerByMyColouredPawn(ActionType actionType) {
+        Tower tower = getTowerBasedOnActionType(actionType);
+        if (tower != null) {
             for (TowerSlot towerSlot : tower.getTowerSlots()) {
                 PlayerPawn playerPawn = towerSlot.getSpace().getPlayerPawn();
                 if (playerPawn.getPlayerDetails().getPlayerName().equals(player.getPlayerDetails().getPlayerName()) &&

@@ -33,6 +33,15 @@ public class TowerSlot {
     }
 
     @Override
+    public String toString() {
+        return "TowerSlot{" +
+                "space=" + space.toString() +
+                ", instantGoods=" + instantGoods +
+                ", developmentCard=" + developmentCard.toString() +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;

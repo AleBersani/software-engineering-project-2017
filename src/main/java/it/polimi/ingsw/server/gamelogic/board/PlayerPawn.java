@@ -23,6 +23,14 @@ public class PlayerPawn {
     }
 
     @Override
+    public String toString() {
+        return "PlayerPawn{" +
+                "playerDetails=" + playerDetails.toString() +
+                ", pawnColor=" + pawnColor +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;

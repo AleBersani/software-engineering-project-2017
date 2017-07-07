@@ -5,6 +5,7 @@ import it.polimi.ingsw.client.gui.notify.*;
 import it.polimi.ingsw.client.model.BoardLight;
 import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.client.model.Owner;
+import it.polimi.ingsw.client.model.TowerSlotLight;
 import it.polimi.ingsw.shared.requests.serverclient.*;
 
 import java.util.ArrayList;
@@ -87,6 +88,9 @@ public class ClientReceiverHandler implements ClientReceiver {
     public void visitServerClientRequest(UpdateGameBoard updateGameBoard) {
         BoardLight boardLight = BoardLight.getInstance();
         boardLight.setGreenTower(updateGameBoard.getNewGreenTower());
+        for (TowerSlotLight towerSlotLight : boardLight.getGreenTower()) {
+            System.out.println(towerSlotLight.getCard().getName() + " " + towerSlotLight.getSlotLight().getBoardIdentifier());
+        }
         boardLight.setYellowTower(updateGameBoard.getNewYellowTower());
         boardLight.setBlueTower(updateGameBoard.getNewBlueTower());
         boardLight.setPurpleTower(updateGameBoard.getNewPurpleTower());

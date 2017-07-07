@@ -14,6 +14,7 @@ import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.LeaderRequirements;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.TowerActionRequirements;
+import it.polimi.ingsw.server.gamelogic.player.Pawn;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.server.middleware.ServerSender;
@@ -59,8 +60,8 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
 
     public void initSemiPeriod() {
         setBoardCards();
-        board.setDices(extractDices());
-        playersOrder = calculateTotalPlayer();
+        board.setDices(extractDicesAndSetPawns());
+        calculatePlayersOrder();
         sendBoardsToPlayers();
         LOGGER.info("Init semi period ended");
         sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(true));
@@ -134,6 +135,9 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     private UpdateGameBoard setupUpdateGameBoard() {
         UpdateGameBoard updateGameBoard = new UpdateGameBoard();
         updateGameBoard.setNewGreenTower(copyTowersInformation(board.getTowers().get(0).getTowerSlots()));
+        for (TowerSlotLight towerSlotLight : updateGameBoard.getNewGreenTower()) {
+            System.out.println(towerSlotLight.getCard().getName() + " " + towerSlotLight.getSlotLight().getBoardIdentifier());
+        }
 
         updateGameBoard.setNewYellowTower(copyTowersInformation(board.getTowers().get(1).getTowerSlots()));
 
@@ -146,31 +150,32 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         updateGameBoard.setNewHarvest(copyProductionHarvestSpaces(board.getBoardActionSpaces().getHarvestArea()));
 
         List<SlotLight> newMarket = new ArrayList<>();
-        board.getBoardActionSpaces().getMarketArea().forEach(m -> {
+        for (MarketSpace m : board.getBoardActionSpaces().getMarketArea()) {
             PlayerPawn playerPawn = m.getSpace().getPlayerPawn();
             PawnLight pawnLight = null;
-            if (PawnColor.UNCOLORED != playerPawn.getPawnColor())  {
+            if (PawnColor.UNCOLORED != playerPawn.getPawnColor()) {
                 pawnLight = new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true);
             }
             newMarket.add(new SlotLight(m.getSpace().getBoardIdentifier(), m.getSpace().getRequestedValue(), pawnLight));
-        });
+        }
         updateGameBoard.setNewMarket(newMarket);
 
         List<PawnLight> pawnLightList = new ArrayList<>();
-        board.getCouncilPalace().getPlayerPawnList().forEach(playerPawn -> {
+        for (PlayerPawn playerPawn : board.getCouncilPalace().getPlayerPawnList()) {
             pawnLightList.add(new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true));
-        });
+        }
+        updateGameBoard.getNewCouncilPalaceLight().setPawnLightList(pawnLightList);
 
         List<PlayerLight> newPlayerLights = new ArrayList<>();
-        players.forEach(player -> {
+        for (Player player : players) {
             newPlayerLights.add(new PlayerLight(player.getPlayerDetails().getPlayerName(), player.getPlayerDetails().getPlayerColor()));
-        });
+        }
         updateGameBoard.setNewPlayerLights(newPlayerLights);
 
         List<DiceLight> newDiceLightList = new ArrayList<>();
-        board.getDices().forEach(d -> {
+        for (Dice d : board.getDices()) {
             newDiceLightList.add(new DiceLight(d.getDiceColor(), d.getValue()));
-        });
+        }
         updateGameBoard.setDiceLightList(newDiceLightList);
 
         return updateGameBoard;
@@ -178,30 +183,37 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
 
     private List<TowerSlotLight> copyTowersInformation(List<TowerSlot> towerSlots) {
         List<TowerSlotLight> towerSlotLightList = new ArrayList<>();
-        towerSlots.forEach(t -> {
+        for (TowerSlot t : towerSlots) {
             PlayerPawn playerPawn = t.getSpace().getPlayerPawn();
             PawnLight pawnLight = null;
-            if (PawnColor.UNCOLORED != playerPawn.getPawnColor())  {
+            if (PawnColor.UNCOLORED != playerPawn.getPawnColor()) {
                 pawnLight = new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true);
             }
-            TowerSlotLight towerSlotLight = new TowerSlotLight(
-                    new SlotLight(t.getSpace().getBoardIdentifier(), t.getSpace().getRequestedValue(), pawnLight),
-                    new Card(t.getDevelopmentCard().getBasicDevelopmentCard().getCardInformation().getName()));
+            TowerSlotLight towerSlotLight;
+            if (t.getDevelopmentCard() != null) {
+                towerSlotLight = new TowerSlotLight(
+                        new SlotLight(t.getSpace().getBoardIdentifier(), t.getSpace().getRequestedValue(), pawnLight),
+                        new Card(t.getDevelopmentCard().getBasicDevelopmentCard().getCardInformation().getName()));
+            } else {
+                towerSlotLight = new TowerSlotLight(
+                        new SlotLight(t.getSpace().getBoardIdentifier(), t.getSpace().getRequestedValue(), pawnLight),
+                        new Card("Empty"));
+            }
             towerSlotLightList.add(towerSlotLight);
-        });
+        }
         return towerSlotLightList;
     }
 
     private List<SlotLight> copyProductionHarvestSpaces(List<ProductionHarvestSpace> productionHarvestSpaceList) {
         List<SlotLight> slotLightList = new ArrayList<>();
-        productionHarvestSpaceList.forEach(s -> {
+        for (ProductionHarvestSpace s : productionHarvestSpaceList) {
             PlayerPawn playerPawn = s.getSpace().getPlayerPawn();
             PawnLight pawnLight = null;
             if (PawnColor.UNCOLORED != playerPawn.getPawnColor()) {
                 pawnLight = new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true);
             }
             slotLightList.add(new SlotLight(s.getSpace().getBoardIdentifier(), s.getSpace().getRequestedValue(), pawnLight));
-        });
+        }
         return slotLightList;
     }
 
@@ -224,7 +236,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         }
     }
 
-    private List<Dice> extractDices() {
+    private List<Dice> extractDicesAndSetPawns() {
         List<DiceColor> colors = new ArrayList<>();
 
         colors.add(DiceColor.BLACK);
@@ -233,40 +245,49 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         Random random = new Random();
         List<Dice> dices = new ArrayList<>();
         for (DiceColor diceColor : colors) {
-            dices.add( new Dice(diceColor, random.nextInt(5) + 1) );
+            Dice dice = new Dice(diceColor, random.nextInt(5) + 1);
+            dices.add(dice);
+            for (Player player : players) {
+                player.getPlayerBoard().getPawns().add(new Pawn(dice.getValue(),
+                        PawnColor.valueOf(dice.getDiceColor().toString())));
+            }
+        }
+        for (Player player : players) {
+            player.getPlayerBoard().getPawns().add(new Pawn(0, PawnColor.NEUTRAL));
         }
         return dices;
     }
 
-    private List<PlayerDetails> calculateTotalPlayer() {
-        int position = 0;
-        Map<Integer, PlayerDetails> playerOrderMap = new HashMap<>();
-        Optional<Player> playerOptional;
-        List<PlayerDetails> finalPlayerDetails = new ArrayList<>();
-        int offset;
-        List<Player> sortedPlayers = new ArrayList<>();
-        for (PlayerDetails playerDetail : basePlayersOrder) {
-            if ((playerOptional = players.stream()
-                    .filter(player -> player.getPlayerDetails().equals(playerDetail)).findFirst()).isPresent()) {
-                sortedPlayers.add(playerOptional.get());
-            }
-        }
+    private void calculatePlayersOrder() {
+        Map<Integer, PlayerDetails> playerDetailsMap = new HashMap<>();
+
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < basePlayersOrder.size(); j++) {
-                offset = 0;
-                if (i==0 && j < sortedPlayers.size()) {
-                    offset+= sortedPlayers.get(j).getPlayerOrderWeight();
-                }
-                playerOrderMap.put(position+offset, basePlayersOrder.get(j));
-                position++;
+                playerDetailsMap.put(j + (i * basePlayersOrder.size()), basePlayersOrder.get(j));
             }
         }
-        List<Integer> sortedKeys = new ArrayList<>(playerOrderMap.keySet());
-        Collections.sort(sortedKeys);
-        for (int i = 0; i < sortedKeys.size(); i++) {
-            finalPlayerDetails.add(playerOrderMap.get(sortedKeys.get(i)));
+
+        Map<Integer, PlayerDetails> orderedCopy = new HashMap<>();
+
+        int counter = 0;
+        for (Map.Entry<Integer, PlayerDetails> entry : playerDetailsMap.entrySet()) {
+            if (counter < players.size()) {
+                for (Player p : players) {
+                    if (p.getPlayerDetails().equals(entry.getValue())) {
+                        orderedCopy.put(entry.getKey() + p.getPlayerOrderWeight(), p.getPlayerDetails());
+                    }
+                }
+            } else {
+                orderedCopy.put(entry.getKey(), entry.getValue());
+            }
+            counter++;
         }
-        return finalPlayerDetails;
+
+        playersOrder.clear();
+        Map<Integer, PlayerDetails> treeMap = new TreeMap<>(orderedCopy);
+        for (PlayerDetails p : treeMap.values()) {
+            playersOrder.add(p);
+        }
     }
 
     @Override
@@ -281,14 +302,17 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         LOGGER.info("Action: board action");
         for (Player player : players) {
             if (player.getPlayerDetails().getPlayerName().equals(playersOrder.get(0).getPlayerName())) {
+                System.out.println("Ci sono1");
                 RequirementsGenerator requirementsGenerator =
                         new RequirementsGenerator(board, player, boardAction.getBasicAction().getBoardIdentifier());
                 if (runRequirements(requirementsGenerator.generateRequirements(boardAction), player)) {
+                    System.out.println("Ci sono2");
                     LOGGER.info("Action: player has requirements!");
                     BasicRewardsGenerator basicRewardsGenerator = new BasicRewardsGenerator(board);
                     basicRewardsGenerator.generateRewards(player, boardAction);
                     sendBoardsToPlayers();
                 } else {
+                    System.out.println("Ci sono3");
                     // TODO: player non ha requisiti
                 }
                 break;

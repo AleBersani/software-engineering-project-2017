@@ -29,6 +29,16 @@ public class Space {
     }
 
     @Override
+    public String toString() {
+        return "Space{" +
+                "boardIdentifier=" + boardIdentifier +
+                ", requestedValue=" + requestedValue +
+                ", playerPawn=" + playerPawn.toString() +
+                ", alreadyTaken=" + alreadyTaken +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;

@@ -149,6 +149,9 @@ public class Game implements Runnable, Observer {
             periods.add(new Period(getExcommunicationTilePerPeriodNumber(periodNumber),
                     developmentCardsForPeriod.get(periodNumber), periodNumber));
         }
+        for (Player player : players) {
+            playersOrder.add(player.getPlayerDetails());
+        }
         periods.get(0).setPlayersOrder(playersOrder);
     }
 
