@@ -4,7 +4,7 @@
       {
         "space": {
           "requestedValue": "7",
-          "boardIdentifier": "T_G_1"
+          "boardIdentifier": "T_G_4"
         },
         "instantGoods": {
           "resources": {
@@ -23,7 +23,7 @@
       {
         "space": {
           "requestedValue": "5",
-          "boardIdentifier": "T_G_2"
+          "boardIdentifier": "T_G_3"
         },
         "instantGoods": {
           "resources": {
@@ -42,14 +42,14 @@
       {
         "space": {
           "requestedValue": "3",
-          "boardIdentifier": "T_G_3"
+          "boardIdentifier": "T_G_2"
         },
         "instantGoods": {
           "resources": {
             "woods": "0",
             "stones": "0",
             "servants": "0",
-            "coins": "1"
+            "coins": "0"
           },
           "points": {
             "victory": "0",
@@ -61,7 +61,7 @@
       {
         "space": {
           "requestedValue": "1",
-          "boardIdentifier": "T_G_4"
+          "boardIdentifier": "T_G_1"
         },
         "instantGoods": {
           "resources": {
@@ -82,7 +82,7 @@
       {
         "space": {
           "requestedValue": "7",
-          "boardIdentifier": "T_Y_1"
+          "boardIdentifier": "T_Y_4"
         },
         "instantGoods": {
           "resources": {
@@ -101,7 +101,7 @@
       {
         "space": {
           "requestedValue": "5",
-          "boardIdentifier": "T_Y_2"
+          "boardIdentifier": "T_Y_3"
         },
         "instantGoods": {
           "resources": {
@@ -120,7 +120,7 @@
       {
         "space": {
           "requestedValue": "3",
-          "boardIdentifier": "T_Y_3"
+          "boardIdentifier": "T_Y_2"
         },
         "instantGoods": {
           "resources": {
@@ -139,7 +139,7 @@
       {
         "space": {
           "requestedValue": "1",
-          "boardIdentifier": "T_Y_4"
+          "boardIdentifier": "T_Y_1"
         },
         "instantGoods": {
           "resources": {
@@ -160,7 +160,7 @@
       {
         "space": {
           "requestedValue": "7",
-          "boardIdentifier": "T_B_1"
+          "boardIdentifier": "T_B_4"
         },
         "instantGoods": {
           "resources": {
@@ -179,7 +179,7 @@
       {
         "space": {
           "requestedValue": "5",
-          "boardIdentifier": "T_B_2"
+          "boardIdentifier": "T_B_3"
         },
         "instantGoods": {
           "resources": {
@@ -198,7 +198,7 @@
       {
         "space": {
           "requestedValue": "3",
-          "boardIdentifier": "T_B_3"
+          "boardIdentifier": "T_B_2"
         },
         "instantGoods": {
           "resources": {
@@ -217,7 +217,7 @@
       {
         "space": {
           "requestedValue": "1",
-          "boardIdentifier": "T_B_4"
+          "boardIdentifier": "T_B_1"
         },
         "instantGoods": {
           "resources": {
@@ -238,7 +238,7 @@
       {
         "space": {
           "requestedValue": "7",
-          "boardIdentifier": "T_P_1"
+          "boardIdentifier": "T_P_4"
         },
         "instantGoods": {
           "resources": {
@@ -257,7 +257,7 @@
       {
         "space": {
           "requestedValue": "5",
-          "boardIdentifier": "T_P_2"
+          "boardIdentifier": "T_P_3"
         },
         "instantGoods": {
           "resources": {
@@ -276,7 +276,7 @@
       {
         "space": {
           "requestedValue": "3",
-          "boardIdentifier": "T_P_3"
+          "boardIdentifier": "T_P_2"
         },
         "instantGoods": {
           "resources": {
@@ -295,7 +295,7 @@
       {
         "space": {
           "requestedValue": "1",
-          "boardIdentifier": "T_P_4"
+          "boardIdentifier": "T_P_1"
         },
         "instantGoods": {
           "resources": {
