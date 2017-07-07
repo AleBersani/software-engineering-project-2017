@@ -207,7 +207,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
                 .collect(Collectors.toList());
     }
 
-    private void setTowerCards(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
+    public void setTowerCards(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
         Optional<Tower> optionalTowerToFill = board.getTowers().stream()
                 .filter(tower -> color.equals(tower.getColor()))
                 .findFirst();
@@ -216,6 +216,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
             int i=0;
             for (TowerSlot towerSlot : towerToFill.getTowerSlots()) {
                 towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+                i++;
             }
         }
     }
