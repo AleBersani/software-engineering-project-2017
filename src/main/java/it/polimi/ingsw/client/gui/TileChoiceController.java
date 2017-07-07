@@ -144,28 +144,38 @@ public class TileChoiceController implements Observer {
     public void selectTile1() {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(0)));
+        disable();
     }
 
     @FXML
     public void selectTile2() {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(1)));
+        disable();
     }
 
     @FXML
     public void selectTile3() {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(2)));
+        disable();
     }
 
     @FXML
     public void selectTile4() {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(3)));
+        disable();
     }
 
     public void setPlayerName() {
         namePlayer.setText(ClientInformation.getPlayerName());
         namePlayer.prefWidth(namePlayer.getText().length());
     }
+
+    public void disable() {
+        for (ImageView image : tileList) {
+                image.setMouseTransparent(true);
+            }
+        }
 }

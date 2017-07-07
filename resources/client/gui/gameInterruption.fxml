@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="it.polimi.ingsw.client.gui.GameInterruptionController"
+            prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: sandybrown">
+
+    <Label layoutX="49.0" layoutY="40.0" prefHeight="22.0" prefWidth="236.0"
+           text="Someone asked to interrupt the game" />
+    <Label layoutX="92.0" layoutY="62.0" text="what do you want to do?" />
+    <JFXButton fx:id="but1" buttonType="RAISED" layoutX="140.0" layoutY="132.0" text="Go on" ripplerFill="salmon"
+               focusTraversable="false" style="-fx-border-color: coral"/>
+    <JFXButton fx:id="but2" buttonType="RAISED" layoutX="113.0" layoutY="181.0" text="Interrupt game" ripplerFill="salmon"
+               focusTraversable="false" style="-fx-border-color: coral"/>
+
+</AnchorPane>

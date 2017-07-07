@@ -6,8 +6,10 @@ import it.polimi.ingsw.client.gui.notify.GameBoardNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
+import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
+import it.polimi.ingsw.shared.model.DiceColor;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
@@ -26,12 +28,14 @@ import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
 
+import javax.script.Bindings;
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
@@ -166,6 +170,12 @@ public class GameBoardController extends Observable implements Observer {
     private ImageView t_p_2;
     @FXML
     private ImageView t_p_1;
+    @FXML
+    private ImageView blackDice;
+    @FXML
+    private ImageView whiteDice;
+    @FXML
+    private ImageView orangeDice;
 
     @FXML
     private Label infoplayer1;
@@ -193,6 +203,7 @@ public class GameBoardController extends Observable implements Observer {
         initPawnColors();
         setPositions();
         setOwnerPawns();
+      //  setDices();
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
         }
@@ -317,12 +328,13 @@ public class GameBoardController extends Observable implements Observer {
     public void update(Observable o, Object arg) {
         Platform.runLater(() -> {
             clearBoard();
-            setOtherPlayersInfo();
             initGreenTower();
             initYellowTower();
             initBlueTower();
             initPurpleTower();
             otherPlayersPawns();
+            setDices();
+            setOtherPlayersInfo();
         });
     }
 
@@ -348,16 +360,26 @@ public class GameBoardController extends Observable implements Observer {
     }
 
     private void setOtherPlayersInfo() {
-        infoplayer1.setText(boardLight.getPlayerLights().get(0).getPlayerName());
-        infoplayer1.setTextFill(Paint.valueOf(pawnColors.get(
-                boardLight.getPlayerLights().get(0).getPlayerColor())));
-        infoplayer2.setText(boardLight.getPlayerLights().get(1).getPlayerName());
-        infoplayer2.setTextFill(Paint.valueOf(pawnColors.get(
-                boardLight.getPlayerLights().get(1).getPlayerColor())));/*
-        infoplayer3.setText(boardLight.getPlayerLights().get(2).getPlayerName());
-        infoplayer3.setTextFill(Paint.valueOf(pawnColors.get(
-                boardLight.getPlayerLights().get(2).getPlayerColor())));*/
+        List<Label> labels = new ArrayList<>();
+        labels.add(infoplayer1);
+        labels.add(infoplayer2);
+        labels.add(infoplayer3);
+        int labelIndex = 0;
+        StringBuilder text = new StringBuilder();
+        for (PlayerLight player : boardLight.getPlayerLights()) {
+            if (!player.getPlayerName().equals(ClientInformation.getPlayerName())) {
+                text.append(player.getPlayerName() + "\n");
+              //  if (!player.getActivatedLeaders().isEmpty()) {
+              //      player.getActivatedLeaders().forEach(leader -> text.append(leader.getName() + "\n"));
+             //   }
+              //  text.append("Victory points: " + player.getNumberOfPoints().get(PointsLight.VICTORY_POINTS));
+                labels.get(labelIndex).setText(text.toString());
+                labels.get(labelIndex).setTextFill(Paint.valueOf(pawnColors.get(player.getPlayerColor())));
+                labelIndex++;
+            }
+        }
         playerName.setText(ClientInformation.getPlayerName());
+        playerName.setMinWidth(Region.USE_PREF_SIZE);
     }
 
     private void initGreenTower() {
@@ -609,6 +631,30 @@ public class GameBoardController extends Observable implements Observer {
     public void reOpenPlayerBoard() {
         if (!playerBoard.getScene().getWindow().isShowing()) {
             playerBoard.show();
+        }
+    }
+
+    public void setDices() {
+        DiceColor color;
+        int value;
+        boardLight.getDiceLightList().forEach(diceLight -> System.out.println(diceLight.getDiceColor().toString() + " " + diceLight.getValue()));
+        for (int i = 0; i < boardLight.getDiceLightList().size(); i++) {
+            color = boardLight.getDiceLightList().get(i).getDiceColor();
+            value = boardLight.getDiceLightList().get(i).getValue();
+            switch (color) {
+                case BLACK: blackDice.setImage(new Image(
+                        "client/dices/" + color.toString() + "_" + value + ".png"));
+                    System.out.println("client/dices/" + color.toString() + "_" + value + ".png");
+                        break;
+                case WHITE: whiteDice.setImage(new Image(
+                        "client/dices/" + color.toString() + "_" + value + ".png"));
+                    System.out.println("client/dices/" + color.toString() + "_" + value + ".png");
+                    break;
+                case ORANGE: orangeDice.setImage(new Image(
+                        "client/dices/" + color.toString() + "_" + value + ".png"));
+                    System.out.println("client/dices/" + color.toString() + "_" + value + ".png");
+                    break;
+            }
         }
     }
 }

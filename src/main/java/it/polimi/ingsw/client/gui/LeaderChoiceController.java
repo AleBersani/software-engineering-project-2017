@@ -114,7 +114,7 @@ public class LeaderChoiceController implements Observer {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/tilechoice.fxml"));
                 Parent root = fxmlLoader.load();
                 Stage leadersChoiceStage = new Stage();
-                leadersChoiceStage.setScene(new Scene(root));
+                leadersChoiceStage.setScene(new Scene(root, 800, 570));
                 leadersChoiceStage.show();
                 closeStage();
             } catch (IOException e) {
@@ -155,7 +155,7 @@ public class LeaderChoiceController implements Observer {
 
     private void enableLeaders()  {
         for (int i = 0; i < numberOfLeaders; i++) {
-            leaderCards.get(i).setDisable(false);
+            leaderCards.get(i).setMouseTransparent(false);
         }
     }
 
@@ -163,33 +163,33 @@ public class LeaderChoiceController implements Observer {
     public void selectLeader1(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(0)));
-        //disableLeaders();
+        disableLeaders();
     }
 
     @FXML
     public void selectLeader2(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(1)));
-        //disableLeaders();
+        disableLeaders();
     }
 
     @FXML
     public void selectLeader3(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(2)));
-        //disableLeaders();
+        disableLeaders();
     }
 
     @FXML
     public void selectLeader4(){
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(3)));
-        //disableLeaders();
+        disableLeaders();
     }
 
     private void disableLeaders() {
         for (int i = 0; i < numberOfLeaders; i++) {
-            leaderCards.get(i).setDisable(true);
+            leaderCards.get(i).setMouseTransparent(true);
         }
     }
 

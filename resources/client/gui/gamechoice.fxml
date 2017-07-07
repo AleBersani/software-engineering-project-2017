@@ -13,7 +13,7 @@
             <Font size="18.0"/>
          </font>
       </Label>
-      <Label fx:id="playerName" layoutX="115.0" layoutY="90.0">
+      <Label fx:id="playerName" layoutX="110.0" layoutY="90.0">
       <font>
          <Font size="15.0"/>
       </font>

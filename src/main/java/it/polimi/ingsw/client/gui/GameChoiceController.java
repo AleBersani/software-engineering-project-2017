@@ -70,15 +70,23 @@ public class GameChoiceController implements Observer {
     public void startNewGame() {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.choseGameType(GameStartType.NEW);
+        disable();
     }
 
     @FXML
     public void resumeGame() {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.choseGameType(GameStartType.RESUME);
+        disable();
     }
 
     private void setPlayerName() {
         playerName.setText(ClientInformation.getPlayerName() + "!");
     }
+
+    public void disable() {
+        newGame.setMouseTransparent(true);
+        resumeGame.setMouseTransparent(true);
+        }
+
 }

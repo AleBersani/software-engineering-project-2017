@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="it.polimi.ingsw.client.gui.CouncilConvertController"
+            prefHeight="400.0" prefWidth="600.0" stylesheets="/client/gui/councilConvert.css">
+
+    <Label layoutX="82.0" layoutY="50.0" text="Council Privilege conversion" />
+    <GridPane alignment="CENTER" layoutX="86.0" layoutY="97.0" prefHeight="199.0" prefWidth="167.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+            <fx:define>
+                <ToggleGroup fx:id="conversionToggleGroup"/>
+            </fx:define>
+            <JFXRadioButton fx:id="choice0" mnemonicParsing="false" text="1 Stone and 1 Wood" GridPane.rowIndex="0"
+                            toggleGroup="$conversionToggleGroup" focusTraversable="false" selectedColor="coral"/>
+            <JFXRadioButton fx:id="choice1" mnemonicParsing="false" text="2 Servants" GridPane.rowIndex="1"
+                            toggleGroup="$conversionToggleGroup" focusTraversable="false" selectedColor="coral"/>
+            <JFXRadioButton fx:id="choice2" mnemonicParsing="false" text="2 Coins" toggleGroup="$conversionToggleGroup"
+                            focusTraversable="false" selectedColor="coral" GridPane.rowIndex="2"/>
+            <JFXRadioButton fx:id="choice3" mnemonicParsing="false" text="2 Military Points" GridPane.rowIndex="3"
+                            toggleGroup="$conversionToggleGroup" focusTraversable="false" selectedColor="coral"/>
+            <JFXRadioButton fx:id="choice4" mnemonicParsing="false" text="1 Faith Point" GridPane.rowIndex="4"
+                            toggleGroup="$conversionToggleGroup" focusTraversable="false" selectedColor="coral"/>
+        </children>
+    </GridPane>
+    <JFXButton fx:id="convert" layoutX="133.0" layoutY="318.0" mnemonicParsing="false" text="Convert" focusTraversable="false"
+               ripplerFill="coral" buttonType="RAISED" onAction="#getConversion"/>
+</AnchorPane>
