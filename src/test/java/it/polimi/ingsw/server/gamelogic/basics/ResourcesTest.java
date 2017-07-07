@@ -14,9 +14,50 @@ class ResourcesTest {
     }
 
     @Test
-    void testEquals() {
+    void testEqualsTrue1() {
         Resources resourcesToConfront = new Resources(1,2,3,4);
         assertTrue(resources.equals(resourcesToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        Resources resourcesToConfront = resources;
+        assertTrue(resources.equals(resourcesToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        Resources resourcesToConfront = new Resources(2,2,3,4);
+        assertFalse(resources.equals(resourcesToConfront));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        Resources resourcesToConfront = new Resources(1,3,3,4);
+        assertFalse(resources.equals(resourcesToConfront));
+    }
+
+    @Test
+    void testEqualsFalse3() {
+        Resources resourcesToConfront = new Resources(1,2,4,4);
+        assertFalse(resources.equals(resourcesToConfront));
+    }
+
+    @Test
+    void testEqualsFalse4() {
+        Resources resourcesToConfront = new Resources(1,2,3,5);
+        assertFalse(resources.equals(resourcesToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(resources.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(resources.equals(null));
     }
 
     @Test
@@ -75,5 +116,33 @@ class ResourcesTest {
     @Test
     void testFalseIsEmpty() {
         assertFalse(resources.isEmpty());
+    }
+
+    @Test
+    void testGetWoods() {
+        int numberToGet = 8;
+        resources.setWoods(numberToGet);
+        assertEquals(numberToGet, resources.getWoods());
+    }
+
+    @Test
+    void testGetServants() {
+        int numberToGet = 8;
+        resources.setServants(numberToGet);
+        assertEquals(numberToGet, resources.getServants());
+    }
+
+    @Test
+    void testGetStones() {
+        int numberToGet = 8;
+        resources.setStones(numberToGet);
+        assertEquals(numberToGet, resources.getStones());
+    }
+
+    @Test
+    void testGetCoins() {
+        int numberToGet = 8;
+        resources.setCoins(numberToGet);
+        assertEquals(numberToGet, resources.getCoins());
     }
 }

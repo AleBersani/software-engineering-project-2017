@@ -53,6 +53,38 @@ class DoubleServantsTest {
         doubleServants = new DoubleServants(new AvailableActions(actionTypes));
     }
 
+     @Test
+     void testEqualsTrue1() {
+         List<ActionType> actionTypes = new ArrayList<>();
+         actionTypes.add(ActionType.MARKET);
+         actionTypes.add(ActionType.BLUE_TOWER);
+        DoubleServants doubleServantsToConfront = new DoubleServants(new AvailableActions(actionTypes));
+        assertTrue(doubleServants.equals(doubleServantsToConfront));
+     }
+
+     @Test
+     void testEqualsTrue2() {
+        DoubleServants doubleServantsToConfront = doubleServants;
+        assertTrue(doubleServants.equals(doubleServantsToConfront));
+     }
+
+     @Test
+     void testEqualsFalse() {
+        DoubleServants doubleServantsToConfront = new DoubleServants(new AvailableActions(ActionType.COUNCIL_PALACE));
+        assertFalse(doubleServants.equals(doubleServantsToConfront));
+     }
+
+     @Test
+     void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(doubleServants.equals(different));
+     }
+
+     @Test
+     void testEqualsDifferent2() {
+         assertFalse(doubleServants.equals(null));
+     }
+
     @Test
     void testModifyRequirementsOfBoardAction() {
         boardActionRequirements = doubleServants.modifyRequirements(boardActionRequirements);

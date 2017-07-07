@@ -35,7 +35,8 @@ public class PlayerCardsEffects {
         return getPlayerOrderWeight() == that.getPlayerOrderWeight() &&
                 Objects.equals(getCardFlashAction(), that.getCardFlashAction()) &&
                 Objects.equals(getRequirementsModifiers(), that.getRequirementsModifiers()) &&
-                Objects.equals(getRewardsModifiers(), that.getRewardsModifiers());
+                Objects.equals(getRewardsModifiers(), that.getRewardsModifiers()) &&
+                Objects.equals(getChurchSustainBonus(), that.getChurchSustainBonus());
     }
 
     @Override

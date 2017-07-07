@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class NoMarketPlacementTest {
     private BoardActionRequirements boardActionRequirements;
@@ -42,5 +43,12 @@ class NoMarketPlacementTest {
     void testModifyRequirements() {
         boardActionRequirements = noMarketPlacement.modifyRequirements(boardActionRequirements);
         assertFalse(boardActionRequirements.hasRequirements(player));
+    }
+
+    @Test
+    void testModifyRequirements2() {
+        boardActionRequirements.getSpaceActionRequirements().setActionType(ActionType.BLUE_TOWER);
+        boardActionRequirements = noMarketPlacement.modifyRequirements(boardActionRequirements);
+        assertTrue(boardActionRequirements.hasRequirements(player));
     }
 }

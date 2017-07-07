@@ -1,5 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.cards.additionalinfo;
 
+import com.sun.org.apache.xpath.internal.operations.Mult;
 import it.polimi.ingsw.server.gamelogic.basics.ExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
@@ -27,7 +28,7 @@ class MultipleProductionTest {
     }
 
     @Test
-    void testEqualsTrue() {
+    void testEqualsTrue1() {
         List<Goods> costs = new ArrayList<>();
         costs.add(new Goods(new Points(1,3,4)));
         costs.add(new Goods(new Resources(1,2,3,4)));
@@ -36,6 +37,12 @@ class MultipleProductionTest {
         results.add(new ExchangingGoods(new Goods(), 2));
         MultipleProduction multipleProductionToConfront = new MultipleProduction("", costs, results);
         assertTrue(multipleProductionToConfront.equals(multipleProduction));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        MultipleProduction multipleProductionToConfront = multipleProduction;
+        assertTrue(multipleProduction.equals(multipleProductionToConfront));
     }
 
     @Test
@@ -51,9 +58,14 @@ class MultipleProductionTest {
     }
 
     @Test
-    void testEqualsDifferent() {
+    void testEqualsDifferent1() {
         String obj = "";
         assertFalse(multipleProduction.equals(obj));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(multipleProduction.equals(null));
     }
 
     @Test

@@ -16,11 +16,42 @@ class GoodsForEndGamePossessionTest {
     }
 
     @Test
-    void testEquals() {
+    void testEqualsTrue1() {
         GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
                 new Goods(new Resources(1,0,1,0),
                         new Points(1,0,0)));
         assertTrue(goodsForEndGamePossession.equals(result));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        GoodsForEndGamePossession result = goodsForEndGamePossession;
+        assertTrue(goodsForEndGamePossession.equals(result));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        GoodsForEndGamePossession result = new GoodsForEndGamePossession(4,
+                new Goods(new Points(1,0,0)));
+        assertFalse(goodsForEndGamePossession.equals(result));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        GoodsForEndGamePossession result = new GoodsForEndGamePossession(5,
+                new Goods(new Points(1,0,0)));
+        assertFalse(goodsForEndGamePossession.equals(result));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(goodsForEndGamePossession.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(goodsForEndGamePossession.equals(null));
     }
 
     @Test

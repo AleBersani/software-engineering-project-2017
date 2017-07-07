@@ -67,4 +67,20 @@ public class BonusPawnsValue extends RequirementsModifier {
             spaceActionRequirements.setActionValueModifier(addedPawnsValue + actualBonusPawnsValue);
         }
     }
+
+    public List<PawnColor> getPawnColors() {
+        return pawnColors;
+    }
+
+    public void setPawnColors(List<PawnColor> pawnColors) {
+        this.pawnColors = pawnColors;
+    }
+
+    public int getAddedPawnsValue() {
+        return addedPawnsValue;
+    }
+
+    public void setAddedPawnsValue(int addedPawnsValue) {
+        this.addedPawnsValue = addedPawnsValue;
+    }
 }

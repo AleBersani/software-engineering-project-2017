@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CanPlaceOnOccupiedSpaceTest {
@@ -50,6 +51,42 @@ class CanPlaceOnOccupiedSpaceTest {
         actionTypes.add(ActionType.MARKET);
         actionTypes.add(ActionType.BLUE_TOWER);
         canPlaceOnOccupiedSpace = new CanPlaceOnOccupiedSpace(new AvailableActions(actionTypes));
+    }
+
+    @Test
+    void testEqualsTrue1() {
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.MARKET);
+        actionTypes.add(ActionType.BLUE_TOWER);
+        CanPlaceOnOccupiedSpace canPlaceOnOccupiedSpaceToConfront = new CanPlaceOnOccupiedSpace(
+                new AvailableActions(actionTypes));
+        assertTrue(canPlaceOnOccupiedSpace.equals(canPlaceOnOccupiedSpaceToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        CanPlaceOnOccupiedSpace canPlaceOnOccupiedSpaceToConfront = canPlaceOnOccupiedSpace;
+        assertTrue(canPlaceOnOccupiedSpaceToConfront.equals(canPlaceOnOccupiedSpace));
+    }
+
+    @Test
+    void testEqualsFalse() {
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.BLUE_TOWER);
+        CanPlaceOnOccupiedSpace canPlaceOnOccupiedSpaceToConfront = new CanPlaceOnOccupiedSpace(
+                new AvailableActions(actionTypes));
+        assertFalse(canPlaceOnOccupiedSpace.equals(canPlaceOnOccupiedSpaceToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(canPlaceOnOccupiedSpace.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(canPlaceOnOccupiedSpace.equals(null));
     }
 
     @Test

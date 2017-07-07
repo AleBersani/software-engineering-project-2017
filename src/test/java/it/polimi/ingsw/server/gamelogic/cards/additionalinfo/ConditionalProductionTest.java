@@ -15,21 +15,38 @@ class ConditionalProductionTest {
     }
 
     @Test
-    void testEqualsTrue() {
+    void testEqualsTrue1() {
         ConditionalProduction conditionalProductionToConfront = new ConditionalProduction("", GeneralColor.GREEN);
         assertTrue(conditionalProductionToConfront.equals(conditionalProduction));
     }
 
     @Test
-    void testEqualsFalse() {
+    void testEqualsTrue2() {
+        ConditionalProduction conditionalProductionToConfront = conditionalProduction;
+        assertTrue(conditionalProductionToConfront.equals(conditionalProduction));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        ConditionalProduction conditionalProductionToConfront = new ConditionalProduction("Lorenzo", GeneralColor.GREEN);
+        assertFalse(conditionalProductionToConfront.equals(conditionalProduction));
+    }
+
+    @Test
+    void testEqualsFalse2() {
         ConditionalProduction conditionalProductionToConfront = new ConditionalProduction("", GeneralColor.YELLOW);
         assertFalse(conditionalProductionToConfront.equals(conditionalProduction));
     }
 
     @Test
-    void testEqualsDifferent() {
+    void testEqualsDifferent1() {
         String obj = "";
         assertFalse(conditionalProduction.equals(obj));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(conditionalProduction.equals(null));
     }
 
     @Test

@@ -20,7 +20,7 @@ class CardFlashExchangingGoodsTest {
     }
 
     @Test
-    void testEqualsTrue() {
+    void testEqualsTrue1() {
         CardFlashExchangingGoods cardFlashExchangingGoodsToConfront = new CardFlashExchangingGoods("",
                 new ExchangingGoods(
                         new Goods(new Points(1,2,3)),
@@ -29,18 +29,36 @@ class CardFlashExchangingGoodsTest {
     }
 
     @Test
-    void testEqualsFalse() {
-        CardFlashExchangingGoods cardFlashExchangingGoodsToConfront = new CardFlashExchangingGoods("",
+    void testEqualsTrue2() {
+        CardFlashExchangingGoods cardFlashExchangingGoodsToConfront = cardFlashExchangingGoods;
+        assertTrue(cardFlashExchangingGoodsToConfront.equals(cardFlashExchangingGoods));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        CardFlashExchangingGoods cardFlashExchangingGoodsToConfront = new CardFlashExchangingGoods("Lorenzo",
                 new ExchangingGoods(
-                        new Goods(new Points(1,5,3)),
-                        1));
+                        new Goods(new Points(1,2,3)),
+                        2));
         assertFalse(cardFlashExchangingGoodsToConfront.equals(cardFlashExchangingGoods));
     }
 
     @Test
-    void testEqualsDifferent() {
+    void testEqualsFalse2() {
+        CardFlashExchangingGoods cardFlashExchangingGoodsToConfront = new CardFlashExchangingGoods("",
+                new ExchangingGoods());
+        assertFalse(cardFlashExchangingGoodsToConfront.equals(cardFlashExchangingGoods));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
         String obj = "";
         assertFalse(cardFlashExchangingGoods.equals(obj));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(cardFlashExchangingGoods.equals(null));
     }
 
     @Test

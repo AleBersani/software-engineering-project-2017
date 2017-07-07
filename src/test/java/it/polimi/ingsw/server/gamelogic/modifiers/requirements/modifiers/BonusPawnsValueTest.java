@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BonusPawnsValueTest {
@@ -54,6 +55,71 @@ class BonusPawnsValueTest {
         actionTypes.add(ActionType.MARKET);
         actionTypes.add(ActionType.BLUE_TOWER);
         bonusPawnsValue = new BonusPawnsValue(new AvailableActions(actionTypes), pawnColors, 2);
+    }
+
+    @Test
+    void testEqualsTrue1() {
+        List<PawnColor> pawnColors = new ArrayList<>();
+        pawnColors.add(PawnColor.BLACK);
+        pawnColors.add(PawnColor.ORANGE);
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.MARKET);
+        actionTypes.add(ActionType.BLUE_TOWER);
+        BonusPawnsValue bonusPawnsValueToConfront = new BonusPawnsValue(new AvailableActions(actionTypes),
+                pawnColors, 2);
+        assertTrue(bonusPawnsValue.equals(bonusPawnsValueToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        BonusPawnsValue bonusPawnsValueToConfront = bonusPawnsValue;
+        assertTrue(bonusPawnsValue.equals(bonusPawnsValueToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        List<PawnColor> pawnColors = new ArrayList<>();
+        pawnColors.add(PawnColor.BLACK);
+        pawnColors.add(PawnColor.ORANGE);
+        BonusPawnsValue bonusPawnsValueToConfront = new BonusPawnsValue(new AvailableActions(),
+                pawnColors, 2);
+        assertFalse(bonusPawnsValue.equals(bonusPawnsValueToConfront));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        List<PawnColor> pawnColors = new ArrayList<>();
+        pawnColors.add(PawnColor.BLACK);
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.MARKET);
+        actionTypes.add(ActionType.BLUE_TOWER);
+        BonusPawnsValue bonusPawnsValueToConfront = new BonusPawnsValue(new AvailableActions(actionTypes),
+                pawnColors, 2);
+        assertFalse(bonusPawnsValue.equals(bonusPawnsValueToConfront));
+    }
+
+    @Test
+    void testEqualsFalse3() {
+        List<PawnColor> pawnColors = new ArrayList<>();
+        pawnColors.add(PawnColor.BLACK);
+        pawnColors.add(PawnColor.ORANGE);
+        List<ActionType> actionTypes = new ArrayList<>();
+        actionTypes.add(ActionType.MARKET);
+        actionTypes.add(ActionType.BLUE_TOWER);
+        BonusPawnsValue bonusPawnsValueToConfront = new BonusPawnsValue(new AvailableActions(actionTypes),
+                pawnColors, 5);
+        assertFalse(bonusPawnsValue.equals(bonusPawnsValueToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(bonusPawnsValue.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(bonusPawnsValue.equals(null));
     }
 
     @Test

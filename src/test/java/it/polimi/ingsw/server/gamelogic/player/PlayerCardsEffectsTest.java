@@ -1,7 +1,11 @@
 package it.polimi.ingsw.server.gamelogic.player;
 
+import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.basics.Points;
+import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.CardFlashAction;
 import it.polimi.ingsw.server.gamelogic.modifiers.AvailableActions;
+import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.DoubleServants;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTower;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.DoubleRewards;
@@ -15,6 +19,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PlayerCardsEffectsTest {
@@ -27,9 +32,62 @@ class PlayerCardsEffectsTest {
 
 
     @Test
-    void testEquals() {
+    void testEqualsTrue1() {
         PlayerCardsEffects playerCardsEffectsToConfront = new PlayerCardsEffects();
         assertTrue(playerCardsEffects.equals(playerCardsEffectsToConfront));
+    }
+
+    @Test
+    void testEqualsTrue2() {
+        PlayerCardsEffects playerCardsEffectsToConfront = playerCardsEffects;
+        assertTrue(playerCardsEffects.equals(playerCardsEffectsToConfront));
+    }
+
+    @Test
+    void testEqualsFalse1() {
+        PlayerCardsEffects playerCardsEffectsToConfront = new PlayerCardsEffects();
+        playerCardsEffectsToConfront.setCardFlashAction(new CardFlashAction("", ActionType.BLUE_TOWER, 2));
+        assertFalse(playerCardsEffects.equals(playerCardsEffectsToConfront));
+    }
+
+    @Test
+    void testEqualsFalse2() {
+        PlayerCardsEffects playerCardsEffectsToConfront = new PlayerCardsEffects();
+        playerCardsEffectsToConfront.setPlayerOrderWeight(2);
+        assertFalse(playerCardsEffects.equals(playerCardsEffectsToConfront));
+    }
+
+    @Test
+    void testEqualsFalse3() {
+        PlayerCardsEffects playerCardsEffectsToConfront = new PlayerCardsEffects();
+        playerCardsEffectsToConfront.setChurchSustainBonus(new Goods(new Resources(1,2,3,4)));
+        assertFalse(playerCardsEffects.equals(playerCardsEffectsToConfront));
+    }
+
+    @Test
+    void testEqualsFalse4() {
+        PlayerCardsEffects playerCardsEffectsToConfront = new PlayerCardsEffects();
+        playerCardsEffectsToConfront.addRequirementsModifier(new DoubleServants(
+                new AvailableActions(ActionType.BLUE_TOWER)));
+        assertFalse(playerCardsEffects.equals(playerCardsEffectsToConfront));
+    }
+
+    @Test
+    void testEqualsFalse5() {
+        PlayerCardsEffects playerCardsEffectsToConfront = new PlayerCardsEffects();
+        playerCardsEffectsToConfront.addRewardsModifier(new DoubleRewards(new AvailableActions()));
+        assertFalse(playerCardsEffects.equals(playerCardsEffectsToConfront));
+    }
+
+    @Test
+    void testEqualsDifferent1() {
+        String different = "";
+        assertFalse(playerCardsEffects.equals(different));
+    }
+
+    @Test
+    void testEqualsDifferent2() {
+        assertFalse(playerCardsEffects.equals(null));
     }
 
     @Test
