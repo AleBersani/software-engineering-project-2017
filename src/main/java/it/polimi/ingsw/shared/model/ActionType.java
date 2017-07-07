@@ -16,5 +16,6 @@ public enum ActionType implements Serializable {
     MARKET,
     LEADER_PLACEMENT,
     LEADER_ACTIVATION,
-    LEARD_DISCARD
+    LEARD_DISCARD,
+    UNDEFINED
 }

@@ -1,4 +1,4 @@
-package it.polimi.ingsw.server.gamelogic.actions.description;
+package it.polimi.ingsw.shared.model.actionsdescription;
 
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;

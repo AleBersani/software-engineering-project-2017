@@ -1,8 +1,10 @@
-package it.polimi.ingsw.server.gamelogic.actions.description;
+package it.polimi.ingsw.shared.model.actionsdescription;
 
-import it.polimi.ingsw.server.gamelogic.actions.ActionVisitor;
+import it.polimi.ingsw.server.gamecontroller.ActionVisitor;
+import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.shared.model.ActionType;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -11,7 +13,7 @@ import java.util.Objects;
  *      - activation of a Leader
  *      - discard of a Leader
  */
-public class LeaderAction implements ActionDescription {
+public class LeaderAction implements ActionDescription, Serializable {
     private ActionType actionType;
     private String leaderName;
 

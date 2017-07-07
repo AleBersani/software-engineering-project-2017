@@ -33,7 +33,7 @@ public class GameChoiceController implements Observer {
 
     public void initialize() {
         GameChoiceNotifier.getInstance().addObserver(this);
-       // setPlayerName();
+        setPlayerName();
     }
 
     @Override

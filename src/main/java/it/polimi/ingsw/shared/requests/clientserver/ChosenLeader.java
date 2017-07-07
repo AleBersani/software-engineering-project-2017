@@ -3,13 +3,11 @@ package it.polimi.ingsw.shared.requests.clientserver;
 import it.polimi.ingsw.server.middleware.ServerReceiver;
 
 public class ChosenLeader implements ClientServerRequest {
-    private int gameId;
-    private String playerName;
+    private BaseInformation baseInformation;
     private String leaderName;
 
-    public ChosenLeader(int gameId, String playerName, String leaderName) {
-        this.gameId = gameId;
-        this.playerName = playerName;
+    public ChosenLeader(BaseInformation baseInformation, String leaderName) {
+        this.baseInformation = baseInformation;
         this.leaderName = leaderName;
     }
 
@@ -19,19 +17,19 @@ public class ChosenLeader implements ClientServerRequest {
     }
 
     public int getGameId() {
-        return gameId;
+        return baseInformation.getGameId();
     }
 
     public void setGameId(int gameId) {
-        this.gameId = gameId;
+        baseInformation.setGameId(gameId);
     }
 
     public String getPlayerName() {
-        return playerName;
+        return baseInformation.getPlayerName();
     }
 
     public void setPlayerName(String playerName) {
-        this.playerName = playerName;
+        baseInformation.setPlayerName(playerName);
     }
 
     public String getLeaderName() {

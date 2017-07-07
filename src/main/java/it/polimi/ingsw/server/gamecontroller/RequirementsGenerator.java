@@ -1,7 +1,5 @@
 package it.polimi.ingsw.server.gamecontroller;
 
-import it.polimi.ingsw.server.gamelogic.actions.description.BasicAction;
-import it.polimi.ingsw.server.gamelogic.actions.description.BoardAction;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.board.*;
@@ -11,6 +9,8 @@ import it.polimi.ingsw.server.gamelogic.modifiers.requirements.TowerActionRequir
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.PawnColor;
+import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 
 import java.util.Optional;
 

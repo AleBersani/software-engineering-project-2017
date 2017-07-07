@@ -3,6 +3,7 @@ package it.polimi.ingsw.server.gamecontroller;
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gameelements.Cards;
+import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.server.gamelogic.basics.PlayerConfiguration;
 import it.polimi.ingsw.server.gamelogic.board.*;
@@ -75,6 +76,7 @@ public class Game implements Runnable, Observer {
         LOGGER.info("Sending game init to players");
         players.forEach(p -> sendTo(p.getPlayerDetails().getPlayerName(),
                 new ChosenGameResponse(true, p.getPlayerDetails().getPlayerColor())));
+        sendToAll(new YourTurn(false));
     }
 
     private void sendGameIdToPlayers() {
@@ -92,26 +94,26 @@ public class Game implements Runnable, Observer {
 
         List<TowerSlot> blueTowerSlot = new ArrayList<>();
         for (Space space : BoardInformation.getBlueTower().keySet()) {
-            greenTowerSlot.add(new TowerSlot(space, BoardInformation.getBlueTower().get(space)));
+            blueTowerSlot.add(new TowerSlot(space, BoardInformation.getBlueTower().get(space)));
         }
         Tower blueTower = new Tower(GeneralColor.BLUE, blueTowerSlot);
 
         List<TowerSlot> yellowTowerSlot = new ArrayList<>();
         for (Space space : BoardInformation.getYellowTower().keySet()) {
-            greenTowerSlot.add(new TowerSlot(space, BoardInformation.getYellowTower().get(space)));
+            yellowTowerSlot.add(new TowerSlot(space, BoardInformation.getYellowTower().get(space)));
         }
-        Tower buildingTower = new Tower(GeneralColor.YELLOW, yellowTowerSlot);
+        Tower yellowTower = new Tower(GeneralColor.YELLOW, yellowTowerSlot);
 
         List<TowerSlot> purpleTowerSlot = new ArrayList<>();
         for (Space space : BoardInformation.getPurpleTower().keySet()) {
-            greenTowerSlot.add(new TowerSlot(space, BoardInformation.getPurpleTower().get(space)));
+            purpleTowerSlot.add(new TowerSlot(space, BoardInformation.getPurpleTower().get(space)));
         }
         Tower purpleTower = new Tower(GeneralColor.PURPLE, purpleTowerSlot);
 
         List<Tower> towers = new ArrayList<>();
         towers.add(greenTower);
+        towers.add(yellowTower);
         towers.add(blueTower);
-        towers.add(buildingTower);
         towers.add(purpleTower);
         board.setTowers(towers);
     }
@@ -264,7 +266,7 @@ public class Game implements Runnable, Observer {
         sendBonusTileChoiceToNextPlayer();
     }
 
-    public void sendBonusTileChoiceToNextPlayer() {
+    private void sendBonusTileChoiceToNextPlayer() {
         sendTo(bonusTileChoiceHandler.getNextPlayer(), new TileChoice(bonusTileChoiceHandler.getRemainingBonusTiles()));
     }
 
@@ -314,6 +316,16 @@ public class Game implements Runnable, Observer {
 
     private void setNewStartingPlayerOrderForPeriod(Period period) {
         //period.calculateNewPlayerOrder();
+    }
+
+    public void activatePlayerAction(ActionDescription actionDescription) {
+        periods.forEach(p -> {
+            p.getSemiPeriods().forEach(sp -> {
+                if (sp.isCurrent()) {
+                    actionDescription.acceptActionVisitor(sp);
+                }
+            });
+        });
     }
 
     private void sendToAll(ServerClientRequest serverClientRequest) {

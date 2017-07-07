@@ -6,9 +6,14 @@ import it.polimi.ingsw.client.gui.notify.GameBoardNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
+import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.GeneralColor;
-import it.polimi.ingsw.shared.requests.clientserver.Ready;
+import it.polimi.ingsw.shared.model.PawnColor;
+import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
+import it.polimi.ingsw.shared.requests.clientserver.BaseInformation;
+import it.polimi.ingsw.shared.requests.clientserver.PawnPlacement;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +23,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -55,7 +59,9 @@ public class GameBoardController extends Observable implements Observer {
     private Map<GeneralColor, String> pawnColors;
     private Map<BoardIdentifier, StackPane> boardPositions;
 
+    private BaseInformation baseInformation;
     private BoardLight boardLight;
+    private ActionDescription actionDescription;
 
     @FXML
     private Circle whitePawn;
@@ -170,8 +176,15 @@ public class GameBoardController extends Observable implements Observer {
     @FXML
     private Label playerName;
 
-    public void initialize() {
+    @FXML
+    private Spinner spinner;
+
+    public GameBoardController() {
+        baseInformation = new BaseInformation(ClientInformation.getCurrentGameId(), ClientInformation.getPlayerName());
         boardLight = BoardLight.getInstance();
+    }
+
+    public void initialize() {
         GameBoardNotifier.getInstance().addObserver(this);
         showPlayerBoard();
         setTowers();
@@ -179,13 +192,10 @@ public class GameBoardController extends Observable implements Observer {
         setPawnList();
         initPawnColors();
         setPositions();
-       // setOwnerPawns();
+        setOwnerPawns();
         for (Circle c : pawnList) {
             if (!c.isDisabled()) checkList();
         }
-
-      //  ClientSender clientSender = new ClientSenderHandler();
-      //  clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "game"));
     }
 
     private void showPlayerBoard() {
@@ -290,7 +300,7 @@ public class GameBoardController extends Observable implements Observer {
         boardPositions.put(BoardIdentifier.T_P_3, p3);
         boardPositions.put(BoardIdentifier.T_P_4, p4);
         boardPositions.put(BoardIdentifier.HARVEST_1, harvest1);
-        boardPositions.put(BoardIdentifier.PRODUCTION_1, production2);
+        boardPositions.put(BoardIdentifier.PRODUCTION_1, production1);
         boardPositions.put(BoardIdentifier.M_1, m1);
         boardPositions.put(BoardIdentifier.M_2, m2);
         boardPositions.put(BoardIdentifier.M_3, m3);
@@ -411,7 +421,6 @@ public class GameBoardController extends Observable implements Observer {
 
                 circle.setOnMouseReleased((MouseEvent event) -> {
                     Circle newX = (Circle) event.getSource();
-                    System.out.println(newX);
                     circle.setCenterX(newX.getCenterX());
                     circle.setCenterY(newX.getCenterY());
                     for (StackPane stackPane : stackPaneList) {
@@ -420,7 +429,31 @@ public class GameBoardController extends Observable implements Observer {
                             stackPane.getChildren().add(circle);
                             circle.relocate(stackPane.getHeight() / 2, stackPane.getWidth() / 2);
                             circle.setDisable(true);
-                            break;
+                            for (Map.Entry<BoardIdentifier, StackPane> entry : boardPositions.entrySet()) {
+                                if (entry.getValue().equals(stackPane)) {
+                                    BoardIdentifier boardIdentifier = entry.getKey();
+                                    PawnColor pawnColor = PawnColor.UNCOLORED;
+                                    switch (circle.getFill().toString()) {
+                                        case "0x000000ff":
+                                            pawnColor = PawnColor.BLACK;
+                                            break;
+                                        case "0xffffffff":
+                                            pawnColor = PawnColor.WHITE;
+                                            break;
+                                        case "0xff8706ff":
+                                            pawnColor = PawnColor.ORANGE;
+                                            break;
+                                        case "0xc99463ff":
+                                            pawnColor = PawnColor.NEUTRAL;
+                                            break;
+                                    }
+                                    BasicAction basicAction =
+                                            new BasicAction(Utils.getActionTypeByBoardIdentifier(boardIdentifier),
+                                                    boardIdentifier, Utils.pawnValueGivenPawnColor(pawnColor));
+                                    sendBoardAction(basicAction, pawnColor, (int)spinner.getValue());
+                                    break;
+                                }
+                            }
                         }
                     }
                     if ((circle.getBoundsInParent().intersects(council_palace.getBoundsInParent()))) {
@@ -453,6 +486,12 @@ public class GameBoardController extends Observable implements Observer {
         harvest2.getChildren().add(circle);
         harvest2.setAlignment(circle, Pos.CENTER_LEFT);
         circle.setTranslateX(7.0*(harvest2.getChildren().size()-1));
+    }
+
+    private void sendBoardAction(BasicAction basicAction, PawnColor pawnColor, int numberOfServant) {
+        actionDescription = new BoardAction(basicAction, pawnColor, numberOfServant);
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new PawnPlacement(baseInformation, actionDescription));
     }
 
     private void otherPlayersPawns() {

@@ -1,8 +1,8 @@
-package it.polimi.ingsw.server.gamelogic.actions;
+package it.polimi.ingsw.server.gamecontroller;
 
-import it.polimi.ingsw.server.gamelogic.actions.description.BoardAction;
-import it.polimi.ingsw.server.gamelogic.actions.description.CardAction;
-import it.polimi.ingsw.server.gamelogic.actions.description.LeaderAction;
+import it.polimi.ingsw.server.gamelogic.actionsdescription.CardAction;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
+import it.polimi.ingsw.shared.model.actionsdescription.LeaderAction;
 
 /**
  * Interface that defines methods that are implemented by the classes that want to call the Visitors

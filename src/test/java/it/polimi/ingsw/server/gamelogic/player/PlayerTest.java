@@ -1,8 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.player;
 
-import it.polimi.ingsw.server.gamelogic.actions.description.ActionDescription;
-import it.polimi.ingsw.server.gamelogic.actions.description.BasicAction;
-import it.polimi.ingsw.server.gamelogic.actions.description.BoardAction;
+import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
@@ -17,6 +15,8 @@ import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModif
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

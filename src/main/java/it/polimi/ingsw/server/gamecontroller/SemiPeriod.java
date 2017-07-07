@@ -5,16 +5,12 @@ import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gameelements.Cards;
-import it.polimi.ingsw.server.gamelogic.actions.ActionVisitor;
-import it.polimi.ingsw.server.gamelogic.actions.description.ActionDescription;
-import it.polimi.ingsw.server.gamelogic.actions.description.BoardAction;
-import it.polimi.ingsw.server.gamelogic.actions.description.CardAction;
-import it.polimi.ingsw.server.gamelogic.actions.description.LeaderAction;
+import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
+import it.polimi.ingsw.server.gamelogic.actionsdescription.CardAction;
 import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCost;
-import it.polimi.ingsw.server.gamelogic.enums.DiceColor;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.LeaderRequirements;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.TowerActionRequirements;
@@ -22,13 +18,18 @@ import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.server.middleware.ServerSender;
 import it.polimi.ingsw.server.middleware.ServerSenderHandler;
+import it.polimi.ingsw.shared.model.DiceColor;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.PawnColor;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
+import it.polimi.ingsw.shared.model.actionsdescription.LeaderAction;
 import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
 import it.polimi.ingsw.shared.requests.serverclient.UpdateGameBoard;
 import it.polimi.ingsw.shared.requests.serverclient.UpdatePlayerBoard;
+import it.polimi.ingsw.shared.requests.serverclient.YourTurn;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -59,12 +60,18 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     public void initSemiPeriod() {
         setBoardCards();
         board.setDices(extractDices());
-        playersOrder = calculateTotalPlayer();/*
+        playersOrder = calculateTotalPlayer();
+        sendBoardsToPlayers();
+        LOGGER.info("Init semi period ended");
+        sendTo(players.get(0).getPlayerDetails().getPlayerName(), new YourTurn(true));
+        LOGGER.log(Level.INFO, () -> "Turn token given to: " + players.get(0).getPlayerDetails().getPlayerName());
+    }
+
+    private void sendBoardsToPlayers() {
         for (Player player : players) {
             sendTo(player.getPlayerDetails().getPlayerName(), setupUpdatePlayerBoard(player));
-        }*/
+        }
         sendToAll(setupUpdateGameBoard());
-        LOGGER.info("Init semi period ended");
     }
 
     private UpdatePlayerBoard setupUpdatePlayerBoard(Player player) {
@@ -127,22 +134,16 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     private UpdateGameBoard setupUpdateGameBoard() {
         UpdateGameBoard updateGameBoard = new UpdateGameBoard();
         updateGameBoard.setNewGreenTower(copyTowersInformation(board.getTowers().get(0).getTowerSlots()));
-        updateGameBoard.getNewGreenTower().forEach(s -> System.out.println(s.toString()));
 
         updateGameBoard.setNewYellowTower(copyTowersInformation(board.getTowers().get(1).getTowerSlots()));
-        updateGameBoard.getNewYellowTower().forEach(s -> System.out.println(s.toString()));
 
         updateGameBoard.setNewBlueTower(copyTowersInformation(board.getTowers().get(2).getTowerSlots()));
-        updateGameBoard.getNewBlueTower().forEach(s -> System.out.println(s.toString()));
 
         updateGameBoard.setNewPurpleTower(copyTowersInformation(board.getTowers().get(3).getTowerSlots()));
-        updateGameBoard.getNewPurpleTower().forEach(s -> System.out.println(s.toString()));
 
         updateGameBoard.setNewProduction(copyProductionHarvestSpaces(board.getBoardActionSpaces().getProductionArea()));
-        updateGameBoard.getNewProduction().forEach(s -> System.out.println(s.toString()));
 
         updateGameBoard.setNewHarvest(copyProductionHarvestSpaces(board.getBoardActionSpaces().getHarvestArea()));
-        updateGameBoard.getNewHarvest().forEach(s -> System.out.println(s.toString()));
 
         List<SlotLight> newMarket = new ArrayList<>();
         board.getBoardActionSpaces().getMarketArea().forEach(m -> {
@@ -154,20 +155,23 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
             newMarket.add(new SlotLight(m.getSpace().getBoardIdentifier(), m.getSpace().getRequestedValue(), pawnLight));
         });
         updateGameBoard.setNewMarket(newMarket);
-        newMarket.forEach(s -> System.out.println(s.toString()));
 
         List<PawnLight> pawnLightList = new ArrayList<>();
         board.getCouncilPalace().getPlayerPawnList().forEach(playerPawn -> {
             pawnLightList.add(new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true));
         });
-        updateGameBoard.getNewCouncilPalaceLight().setPawnLightList(pawnLightList);
 
         List<PlayerLight> newPlayerLights = new ArrayList<>();
         players.forEach(player -> {
             newPlayerLights.add(new PlayerLight(player.getPlayerDetails().getPlayerName(), player.getPlayerDetails().getPlayerColor()));
         });
         updateGameBoard.setNewPlayerLights(newPlayerLights);
-        updateGameBoard.getNewPlayerLights().forEach(s -> System.out.println(s.toString()));
+
+        List<DiceLight> newDiceLightList = new ArrayList<>();
+        board.getDices().forEach(d -> {
+            newDiceLightList.add(new DiceLight(d.getDiceColor(), d.getValue()));
+        });
+        updateGameBoard.setDiceLightList(newDiceLightList);
 
         return updateGameBoard;
     }
@@ -208,15 +212,14 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     }
 
     public void setTowerCards(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
-        Optional<Tower> optionalTowerToFill = board.getTowers().stream()
-                .filter(tower -> color.equals(tower.getColor()))
-                .findFirst();
-        if (optionalTowerToFill.isPresent()) {
-            Tower towerToFill = optionalTowerToFill.get();
-            int i=0;
-            for (TowerSlot towerSlot : towerToFill.getTowerSlots()) {
-                towerSlot.setDevelopmentCard(cardsToAdd.get(i));
-                i++;
+        for (Tower tower : board.getTowers()) {
+            if (tower.getColor() == color) {
+                int i = 0;
+                for (TowerSlot towerSlot : tower.getTowerSlots()) {
+                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
+                    i++;
+                }
+                break;
             }
         }
     }
@@ -275,13 +278,16 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
 
     @Override
     public void visitActionDescription(BoardAction boardAction) {
+        LOGGER.info("Action: board action");
         for (Player player : players) {
             if (player.getPlayerDetails().getPlayerName().equals(playersOrder.get(0).getPlayerName())) {
                 RequirementsGenerator requirementsGenerator =
                         new RequirementsGenerator(board, player, boardAction.getBasicAction().getBoardIdentifier());
                 if (runRequirements(requirementsGenerator.generateRequirements(boardAction), player)) {
+                    LOGGER.info("Action: player has requirements!");
                     BasicRewardsGenerator basicRewardsGenerator = new BasicRewardsGenerator(board);
                     basicRewardsGenerator.generateRewards(player, boardAction);
+                    sendBoardsToPlayers();
                 } else {
                     // TODO: player non ha requisiti
                 }

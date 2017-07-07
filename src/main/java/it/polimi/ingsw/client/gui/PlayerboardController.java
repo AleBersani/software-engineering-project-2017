@@ -2,9 +2,12 @@ package it.polimi.ingsw.client.gui;
 
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.PlayerBoardNotifier;
+import it.polimi.ingsw.client.middleware.ClientSender;
+import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.Owner;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -111,6 +114,8 @@ public class PlayerboardController implements Observer {
         initEnumMap();
         setBackground();
         setCards();
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "game"));
     }
 
     private void initEnumMap() {
@@ -180,36 +185,36 @@ public class PlayerboardController implements Observer {
     }
 
     private void initGreenCards() {
-        for (int i = 0; i < greenCards.size(); i++) {
-            Image newGreenCard = new Image("client/devcards/" + owner.getTerritories().get(i) + ".png");
+        for (int i = 0; i < owner.getDeckLight().getTerritories().size(); i++) {
+            Image newGreenCard = new Image("client/devcards/" + owner.getTerritories().get(i).getName() + ".png");
             greenCards.get(i).setImage(newGreenCard);
         }
     }
 
     private void initYellowCards() {
-        for (int i = 0; i < yellowCards.size(); i++) {
-            Image newYellowCard = new Image("client/devcards/" + owner.getBuildings().get(i) + ".png");
+        for (int i = 0; i < owner.getDeckLight().getBuildings().size(); i++) {
+            Image newYellowCard = new Image("client/devcards/" + owner.getBuildings().get(i).getName() + ".png");
             yellowCards.get(i).setImage(newYellowCard);
         }
     }
 
     private void initBlueCards() {
-        for (int i = 0; i < blueCards.size(); i++) {
-            Image newBlueCard = new Image("client/devcards/" + owner.getCharacters().get(i) + ".png");
+        for (int i = 0; i < owner.getDeckLight().getCharacters().size(); i++) {
+            Image newBlueCard = new Image("client/devcards/" + owner.getCharacters().get(i).getName() + ".png");
             blueCards.get(i).setImage(newBlueCard);
         }
     }
 
     private void initPurpleCards() {
-        for (int i = 0; i < purpleCards.size(); i++) {
-            Image newPurpleCard = new Image("client/devcards/" + owner.getVentures().get(i) + ".png");
+        for (int i = 0; i < owner.getDeckLight().getVentures().size(); i++) {
+            Image newPurpleCard = new Image("client/devcards/" + owner.getVentures().get(i).getName() + ".png");
             purpleCards.get(i).setImage(newPurpleCard);
         }
     }
 
     private void initLeaders() {
-        for (int i = 0; i < leaders.size(); i++) {
-            Image newLeader = new Image("client/devcards/" + owner.getLeaders().get(i) + ".png");
+        for (int i = 0; i < owner.getDeckLight().getLeaders().size(); i++) {
+            Image newLeader = new Image("client/leader/" + owner.getLeaders().get(i).getName() + ".jpg");
             leaders.get(i).setImage(newLeader);
         }
     }

@@ -1,10 +1,7 @@
 package it.polimi.ingsw.shared.requests.serverclient;
 
 import it.polimi.ingsw.client.middleware.ClientReceiver;
-import it.polimi.ingsw.client.model.CouncilPalaceLight;
-import it.polimi.ingsw.client.model.PlayerLight;
-import it.polimi.ingsw.client.model.SlotLight;
-import it.polimi.ingsw.client.model.TowerSlotLight;
+import it.polimi.ingsw.client.model.*;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
 import java.util.ArrayList;
@@ -20,6 +17,7 @@ public class UpdateGameBoard implements ServerClientRequest {
     private List<SlotLight> newMarket;
     private CouncilPalaceLight newCouncilPalaceLight;
     private List<PlayerLight> newPlayerLights;
+    private List<DiceLight> diceLightList;
 
     public UpdateGameBoard() {
         newGreenTower = new ArrayList<>();
@@ -31,6 +29,7 @@ public class UpdateGameBoard implements ServerClientRequest {
         newMarket = new ArrayList<>();
         newCouncilPalaceLight = new CouncilPalaceLight(BoardIdentifier.COUNCIL_PALACE);
         newPlayerLights = new ArrayList<>();
+        diceLightList = new ArrayList<>();
     }
 
     @Override
@@ -108,5 +107,13 @@ public class UpdateGameBoard implements ServerClientRequest {
 
     public void setNewPlayerLights(List<PlayerLight> newPlayerLights) {
         this.newPlayerLights = newPlayerLights;
+    }
+
+    public List<DiceLight> getDiceLightList() {
+        return diceLightList;
+    }
+
+    public void setDiceLightList(List<DiceLight> diceLightList) {
+        this.diceLightList = diceLightList;
     }
 }

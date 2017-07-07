@@ -1,6 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.board;
 
-import it.polimi.ingsw.server.gamelogic.enums.DiceColor;
+import it.polimi.ingsw.shared.model.DiceColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

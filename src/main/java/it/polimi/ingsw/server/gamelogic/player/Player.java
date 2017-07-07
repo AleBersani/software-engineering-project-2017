@@ -1,6 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.player;
 
-import it.polimi.ingsw.server.gamelogic.actions.description.ActionDescription;
+import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.CardFlashAction;

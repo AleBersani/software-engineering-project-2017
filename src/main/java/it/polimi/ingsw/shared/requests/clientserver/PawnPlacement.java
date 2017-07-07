@@ -1,33 +1,17 @@
 package it.polimi.ingsw.shared.requests.clientserver;
 
+import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.middleware.ServerReceiver;
-import it.polimi.ingsw.shared.model.ActionType;
-import it.polimi.ingsw.shared.model.BoardIdentifier;
-import it.polimi.ingsw.shared.model.PawnColor;
 
 import java.io.Serializable;
 
 public class PawnPlacement implements Serializable, ClientServerRequest {
-    private ActionType actionType;
-    private BoardIdentifier boardIdentifier;
-    private PawnColor pawnColor;
-    private int actionValue;
+    private BaseInformation baseInformation;
+    private ActionDescription actionDescription;
 
-    public PawnPlacement(ActionType actionType, BoardIdentifier boardIdentifier, PawnColor pawnColor, int actionValue) {
-        this.actionType = actionType;
-        this.boardIdentifier = boardIdentifier;
-        this.pawnColor = pawnColor;
-        this.actionValue = actionValue;
-    }
-
-    @Override
-    public String toString() {
-        return "PawnPlacement{" +
-                "actionType=" + actionType +
-                ", boardIdentifier=" + boardIdentifier +
-                ", pawnColor=" + pawnColor +
-                ", actionValue=" + actionValue +
-                '}';
+    public PawnPlacement(BaseInformation baseInformation, ActionDescription actionDescription) {
+        this.baseInformation = baseInformation;
+        this.actionDescription = actionDescription;
     }
 
     @Override
@@ -35,35 +19,27 @@ public class PawnPlacement implements Serializable, ClientServerRequest {
         serverReceiver.visitClientServerRequest(this);
     }
 
-    public ActionType getActionType() {
-        return actionType;
+    public int getGameId() {
+        return baseInformation.getGameId();
     }
 
-    public void setActionType(ActionType actionType) {
-        this.actionType = actionType;
+    public void setGameId(int gameId) {
+        baseInformation.setGameId(gameId);
     }
 
-    public BoardIdentifier getBoardIdentifier() {
-        return boardIdentifier;
+    public String getPlayerName() {
+        return baseInformation.getPlayerName();
     }
 
-    public void setBoardIdentifier(BoardIdentifier boardIdentifier) {
-        this.boardIdentifier = boardIdentifier;
+    public void setPlayerName(String playerName) {
+        baseInformation.setPlayerName(playerName);
     }
 
-    public PawnColor getPawnColor() {
-        return pawnColor;
+    public ActionDescription getActionDescription() {
+        return actionDescription;
     }
 
-    public void setPawnColor(PawnColor pawnColor) {
-        this.pawnColor = pawnColor;
-    }
-
-    public int getActionValue() {
-        return actionValue;
-    }
-
-    public void setActionValue(int actionValue) {
-        this.actionValue = actionValue;
+    public void setActionDescription(ActionDescription actionDescription) {
+        this.actionDescription = actionDescription;
     }
 }

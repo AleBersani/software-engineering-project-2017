@@ -7,6 +7,7 @@ import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.requests.clientserver.BaseInformation;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenLeader;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.application.Platform;
@@ -14,7 +15,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,10 +24,8 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundSize;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.*;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -35,8 +33,7 @@ public class LeaderChoiceController implements Observer {
     private final static Logger LOGGER = Logger.getLogger(LeaderChoiceController.class.getName());
     private static final String BACKGROUND_URL = "/client/backgrounds/";
 
-    private int gameId;
-    private String playerName;
+    private BaseInformation baseInformation;
     private int numberOfLeaders;
     private List<ImageView> leaderCards;
     private List<String> ultimateLeaders;
@@ -63,8 +60,7 @@ public class LeaderChoiceController implements Observer {
     private JFXSpinner spinnerLeader;
 
     public LeaderChoiceController() {
-        gameId = ClientInformation.getCurrentGameId();
-        playerName = ClientInformation.getPlayerName();
+        baseInformation = new BaseInformation(ClientInformation.getCurrentGameId(), ClientInformation.getPlayerName());
         numberOfLeaders = 0;
         leaderCards = new ArrayList<>();
         ultimateLeaders = new ArrayList<>();
@@ -166,28 +162,28 @@ public class LeaderChoiceController implements Observer {
     @FXML
     public void selectLeader1(){
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(0)));
+        clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(0)));
         //disableLeaders();
     }
 
     @FXML
     public void selectLeader2(){
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(1)));
+        clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(1)));
         //disableLeaders();
     }
 
     @FXML
     public void selectLeader3(){
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(2)));
+        clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(2)));
         //disableLeaders();
     }
 
     @FXML
     public void selectLeader4(){
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new ChosenLeader(gameId, playerName, ultimateLeaders.get(3)));
+        clientSender.sendToServer(new ChosenLeader(baseInformation, ultimateLeaders.get(3)));
         //disableLeaders();
     }
 

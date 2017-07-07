@@ -13,4 +13,5 @@ public interface ClientReceiver {
     void visitServerClientRequest(UpdateGameBoard updateGameBoard);
     void visitServerClientRequest(UpdateGameId updateGameId);
     void visitServerClientRequest(UpdatePlayerBoard updatePlayerBoard);
+    void visitServerClientRequest(YourTurn yourTurn);
 }

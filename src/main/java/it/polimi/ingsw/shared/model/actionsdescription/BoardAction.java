@@ -1,8 +1,10 @@
-package it.polimi.ingsw.server.gamelogic.actions.description;
+package it.polimi.ingsw.shared.model.actionsdescription;
 
-import it.polimi.ingsw.server.gamelogic.actions.ActionVisitor;
+import it.polimi.ingsw.server.gamecontroller.ActionVisitor;
+import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.shared.model.PawnColor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,7 +13,7 @@ import java.util.Objects;
  * This Class describes an action concerning the activation of an Action Space on the Board.
  * It can be set up by the player using the effect of a Card (Leader or Development).
  */
-public class BoardAction implements ActionDescription {
+public class BoardAction implements ActionDescription, Serializable {
     private BasicAction basicAction;
 
     private PawnColor pawnColor;
@@ -67,6 +69,17 @@ public class BoardAction implements ActionDescription {
         this.numberOfServants = numberOfServants;
         this.positionMultipleCostChosen = positionMultipleCostChosen;
         this.positionExchangingGoodsChosen = positionExchangingGoodsChosen;
+    }
+
+    @Override
+    public String toString() {
+        return "BoardAction{" +
+                "basicAction=" + basicAction.toString() +
+                ", pawnColor=" + pawnColor +
+                ", numberOfServants=" + numberOfServants +
+                ", positionMultipleCostChosen=" + positionMultipleCostChosen +
+                ", positionExchangingGoodsChosen=" + positionExchangingGoodsChosen +
+                '}';
     }
 
     @Override

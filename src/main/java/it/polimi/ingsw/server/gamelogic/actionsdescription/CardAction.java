@@ -1,15 +1,17 @@
-package it.polimi.ingsw.server.gamelogic.actions.description;
+package it.polimi.ingsw.server.gamelogic.actionsdescription;
 
-import it.polimi.ingsw.server.gamelogic.actions.ActionVisitor;
+import it.polimi.ingsw.server.gamecontroller.ActionVisitor;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Class that describes actions related to collecting a card from the Towers.
  * This action can eventually have a "bonus" (called discount) that represents a discount on the action's cost.
  */
-public class CardAction implements ActionDescription {
+public class CardAction implements ActionDescription, Serializable {
     private BasicAction basicAction;
 
     private int numberOfServants;

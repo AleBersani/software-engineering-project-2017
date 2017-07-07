@@ -1,14 +1,15 @@
-package it.polimi.ingsw.server.gamelogic.actions.description;
+package it.polimi.ingsw.shared.model.actionsdescription;
 
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Class representing the basic information of an action
  */
-public class BasicAction {
+public class BasicAction implements Serializable {
     private ActionType actionType;
     private BoardIdentifier boardIdentifier;
     private int actionValue;
@@ -17,6 +18,15 @@ public class BasicAction {
         this.actionType = actionType;
         this.boardIdentifier = boardIdentifier;
         this.actionValue = actionValue;
+    }
+
+    @Override
+    public String toString() {
+        return "BasicAction{" +
+                "actionType=" + actionType +
+                ", boardIdentifier=" + boardIdentifier +
+                ", actionValue=" + actionValue +
+                '}';
     }
 
     @Override

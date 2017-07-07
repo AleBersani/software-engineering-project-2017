@@ -1,6 +1,5 @@
 package it.polimi.ingsw.server.gamecontroller;
 
-import it.polimi.ingsw.server.gamelogic.actions.description.BoardAction;
 import it.polimi.ingsw.server.gamelogic.basics.CouncilPrivilege;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.board.Board;
@@ -13,12 +12,16 @@ import it.polimi.ingsw.server.gamelogic.cards.development.Venture;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.BasicRewards;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 public class BasicRewardsGenerator {
+    private final static Logger LOGGER = Logger.getLogger(BasicRewardsGenerator.class.getName());
+
     private Board board;
 
     public BasicRewardsGenerator(Board board) {
@@ -35,6 +38,7 @@ public class BasicRewardsGenerator {
                     TowerSlot towerSlot = optionalTowerSlot.get();
                     player.getPlayerBoard().getDeck().getTerritories().add((Territory)towerSlot.getDevelopmentCard());
                 }
+                LOGGER.info("Action type: green tower, rewards given to player!");
                 break;
             }
             case YELLOW_TOWER: {

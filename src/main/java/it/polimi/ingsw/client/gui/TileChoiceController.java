@@ -6,6 +6,7 @@ import it.polimi.ingsw.client.gui.notify.BonusTileChoiceNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.requests.clientserver.BaseInformation;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenBonusTile;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.application.Platform;
@@ -31,8 +32,7 @@ public class TileChoiceController implements Observer {
     private static final Logger LOGGER = Logger.getLogger(TileChoiceController.class.getName());
     private static final String BACKGROUND_URL = "/client/backgrounds/";
 
-    private int gameId;
-    private String playerName;
+    private BaseInformation baseInformation;
     private List<ImageView> tileList;
     private List<String> bonusTileIdentifiers;
     private Map<GeneralColor, String> backgrounds;
@@ -58,8 +58,7 @@ public class TileChoiceController implements Observer {
     private AnchorPane root;
 
     public TileChoiceController() {
-        gameId = ClientInformation.getCurrentGameId();
-        playerName = ClientInformation.getPlayerName();
+        baseInformation = new BaseInformation(ClientInformation.getCurrentGameId(), ClientInformation.getPlayerName());
         tileList = new ArrayList<>();
         bonusTileIdentifiers = new ArrayList<>();
         backgrounds = new EnumMap<>(GeneralColor.class);
@@ -144,25 +143,25 @@ public class TileChoiceController implements Observer {
     @FXML
     public void selectTile1() {
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new ChosenBonusTile(gameId, playerName, bonusTileIdentifiers.get(0)));
+        clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(0)));
     }
 
     @FXML
     public void selectTile2() {
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new ChosenBonusTile(gameId, playerName, bonusTileIdentifiers.get(1)));
+        clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(1)));
     }
 
     @FXML
     public void selectTile3() {
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new ChosenBonusTile(gameId, playerName, bonusTileIdentifiers.get(2)));
+        clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(2)));
     }
 
     @FXML
     public void selectTile4() {
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new ChosenBonusTile(gameId, playerName, bonusTileIdentifiers.get(3)));
+        clientSender.sendToServer(new ChosenBonusTile(baseInformation, bonusTileIdentifiers.get(3)));
     }
 
     public void setPlayerName() {

@@ -95,6 +95,7 @@ public class ClientReceiverHandler implements ClientReceiver {
         boardLight.setMarket(updateGameBoard.getNewMarket());
         boardLight.setCouncilPalaceLight(updateGameBoard.getNewCouncilPalaceLight());
         boardLight.setPlayerLights(updateGameBoard.getNewPlayerLights());
+        boardLight.setDiceLightList(updateGameBoard.getDiceLightList());
         GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
         guiNotifier.updateGui();
     }
@@ -114,5 +115,13 @@ public class ClientReceiverHandler implements ClientReceiver {
         owner.getPlayerLight().setNumberOfPoints(updatePlayerBoard.getNewNumberOfPoints());
         PlayerBoardNotifier guiNotifier = PlayerBoardNotifier.getInstance();
         guiNotifier.updateGui();
+    }
+
+    @Override
+    public void visitServerClientRequest(YourTurn yourTurn) {
+        ClientInformation.setCanPlay(yourTurn.isCanPlay());
+        if (yourTurn.isCanPlay()) {
+            System.out.println("It's your turn!");
+        }
     }
 }

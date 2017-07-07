@@ -51,10 +51,12 @@ public class Period extends Observable implements Observer {
     public void startSemiPeriod() {
         SemiPeriod semiPeriod = new SemiPeriod(getDevelopmentCardsForSemiPeriod(), players, new Board(board));
         semiPeriod.setConnectedClients(connectedClients);
+        semiPeriod.setCurrent(true);
 
         if (semiPeriods.isEmpty()) {
             semiPeriod.setBasePlayersOrder(playersOrder);
         } else {
+            semiPeriods.get(0).setCurrent(false);
             semiPeriod.setBasePlayersOrder(calculateNewPlayerOrder(getLastSemiperiod().getBasePlayersOrder(),
                     getLastSemiperiod().getBoard().getCouncilPalace().getPlayerOrder()));
         }

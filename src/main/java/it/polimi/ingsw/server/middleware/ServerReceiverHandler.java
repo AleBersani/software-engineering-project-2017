@@ -60,7 +60,12 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
 
     @Override
     public void visitClientServerRequest(PawnPlacement pawnPlacement) {
-        System.out.println("PawnPlacement");
+        ActiveGames activeGames = ActiveGames.getInstance();
+        Optional<Game> optionalGame = activeGames.getGameById(pawnPlacement.getGameId());
+        if (optionalGame.isPresent()) {
+            Game game = optionalGame.get();
+            game.activatePlayerAction(pawnPlacement.getActionDescription());
+        }
     }
 
     @Override
