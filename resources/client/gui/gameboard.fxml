@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0"
       prefWidth="1252.0" stylesheets="/client/gui/gameboard.css" xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.gui.GameBoardController">
@@ -96,11 +92,11 @@
                   styleClass="prova">
        </StackPane>
 
-       <Circle fx:id="whitePawn" fill="WHITE" layoutX="780.0" layoutY="459.0" radius="15.0"
+       <Circle fx:id="whitePawn" fill="#ffffff" layoutX="780.0" layoutY="459.0" radius="15.0"
                strokeType="INSIDE" strokeWidth="4.0" />
        <Circle fx:id="orangePawn" fill="#ff8706" layoutX="721.0" layoutY="459.0" radius="15.0"
                strokeType="INSIDE" strokeWidth="4.0" />
-       <Circle fx:id="blackPawn" fill="black" layoutX="721.0" layoutY="501.0" radius="15.0" strokeType="INSIDE"
+       <Circle fx:id="blackPawn" fill="#000000" layoutX="721.0" layoutY="501.0" radius="15.0" strokeType="INSIDE"
                strokeWidth="4.0" />
        <Circle fx:id="neutralPawn" fill="#c99463" layoutX="780.0" layoutY="501.0" radius="15.0"
                strokeType="INSIDE" strokeWidth="4.0" />
@@ -160,6 +156,6 @@
                  ripplerFill="darksalmon" focusTraversable="false"/>
 
       <Label text="How many servants do you want to sacrifice?" layoutY="495.0" layoutX="820.0"/>
-      <Spinner layoutX="1110.0" layoutY="490.0" min="0" max="10" prefWidth="80.0"/>
+      <Spinner fx:id="spinner" layoutX="1110.0" layoutY="490.0" min="0" max="10" prefWidth="80.0"/>
 
 </Pane>

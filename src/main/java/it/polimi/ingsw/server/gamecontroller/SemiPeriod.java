@@ -63,7 +63,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         playersOrder = calculateTotalPlayer();
         sendBoardsToPlayers();
         LOGGER.info("Init semi period ended");
-        sendTo(players.get(0).getPlayerDetails().getPlayerName(), new YourTurn(true));
+        sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(true));
         LOGGER.log(Level.INFO, () -> "Turn token given to: " + players.get(0).getPlayerDetails().getPlayerName());
     }
 
