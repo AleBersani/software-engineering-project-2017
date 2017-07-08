@@ -3,6 +3,7 @@ package it.polimi.ingsw.client.gui;
 
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.GameBoardNotifier;
+import it.polimi.ingsw.client.gui.notify.PlayerBoardNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
@@ -215,6 +216,8 @@ public class GameBoardController extends Observable implements Observer {
 
     public void initialize() {
         GameBoardNotifier.getInstance().addObserver(this);
+        PlayerBoardNotifier.getInstance().addObserver(this);
+        owner = Owner.getInstance();
         showPlayerBoard();
         setTowers();
         setStackPaneList();
@@ -760,6 +763,5 @@ public class GameBoardController extends Observable implements Observer {
                     boardLight.getPlayerLights().get(i).getPlayerColor().toString().toLowerCase()));
         }
     }
-
 }
 
