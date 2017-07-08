@@ -19,6 +19,7 @@ public class UpdateGameBoard implements ServerClientRequest {
     private List<PlayerLight> newPlayerLights;
     private List<DiceLight> diceLightList;
     private List<Card> newExcommunicationTiles;
+    private List<PawnLight> pawnLightList;
 
     public UpdateGameBoard() {
         newGreenTower = new ArrayList<>();
@@ -32,6 +33,7 @@ public class UpdateGameBoard implements ServerClientRequest {
         newPlayerLights = new ArrayList<>();
         diceLightList = new ArrayList<>();
         newExcommunicationTiles = new ArrayList<>();
+        pawnLightList = new ArrayList<>();
     }
 
     @Override
@@ -125,5 +127,13 @@ public class UpdateGameBoard implements ServerClientRequest {
 
     public void setNewExcommunicationTiles(List<Card> newExcommunicationTiles) {
         this.newExcommunicationTiles = newExcommunicationTiles;
+    }
+
+    public List<PawnLight> getPawnLightList() {
+        return pawnLightList;
+    }
+
+    public void setPawnLightList(List<PawnLight> pawnLightList) {
+        this.pawnLightList = pawnLightList;
     }
 }

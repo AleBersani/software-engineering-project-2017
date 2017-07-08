@@ -98,6 +98,7 @@ public class ClientReceiverHandler implements ClientReceiver {
 
     @Override
     public void visitServerClientRequest(UpdateGameBoard updateGameBoard) {
+        Owner owner = Owner.getInstance();
         BoardLight boardLight = BoardLight.getInstance();
         boardLight.setGreenTower(updateGameBoard.getNewGreenTower());
         boardLight.setYellowTower(updateGameBoard.getNewYellowTower());
@@ -110,6 +111,7 @@ public class ClientReceiverHandler implements ClientReceiver {
         boardLight.setPlayerLights(updateGameBoard.getNewPlayerLights());
         boardLight.setDiceLightList(updateGameBoard.getDiceLightList());
         boardLight.setExcommunicationTiles(updateGameBoard.getNewExcommunicationTiles());
+        owner.setPawnLights(updateGameBoard.getPawnLightList());
         GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
         guiNotifier.updateGui();
     }
@@ -127,7 +129,6 @@ public class ClientReceiverHandler implements ClientReceiver {
         owner.setNumberOfResources(updatePlayerBoard.getNumberOfResources());
         owner.getPlayerLight().setActivatedLeaders(updatePlayerBoard.getNewActivatedLeaders());
         owner.getPlayerLight().setNumberOfPoints(updatePlayerBoard.getNewNumberOfPoints());
-        owner.setPawnLights(updatePlayerBoard.getPawnLights());
         PlayerBoardNotifier guiNotifier = PlayerBoardNotifier.getInstance();
         guiNotifier.updateGui();
     }

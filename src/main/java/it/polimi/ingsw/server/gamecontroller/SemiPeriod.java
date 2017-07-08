@@ -166,7 +166,20 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
 
     private void sendBoardToPlayers() {
         UpdateGameBoard updateGameBoard = setupUpdateGameBoard();
-        sendToAll(updateGameBoard);
+        for (Player player : players) {
+            List<PawnLight> pawnLightList = new ArrayList<>();
+            player.getPlayerBoard().getPawns().forEach(pawn -> {
+                pawnLightList.add(
+                        new PawnLight(player.getPlayerDetails().getPlayerName(),
+                                pawn.getPawnColor(), pawn.isPlacedOnBoard()));
+                System.out.println(pawn.getPawnColor().toString() + " " + player.getPlayerDetails().getPlayerName() + " " +
+                pawn.isPlacedOnBoard());
+            });
+            System.out.println("Size Of " + pawnLightList.size() + " "+ player.getPlayerDetails().getPlayerName());
+            updateGameBoard.setPawnLightList(pawnLightList);
+            sendTo(player.getPlayerDetails().getPlayerName(), updateGameBoard);
+        }
+
     }
 
     private UpdateGameBoard setupUpdateGameBoard() {
@@ -320,11 +333,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     private UpdatePlayerBoard setupUpdatePlayerBoard(Player player) {
         String copyOfBonusTileIdentifier = player.getPlayerBoard().getBonusTiles().getBonusTileIdentifier();
         List<PawnLight> pawnLightList = new ArrayList<>();
-        player.getPlayerBoard().getPawns().forEach(pawn -> pawnLightList.add(
-                new PawnLight(player.getPlayerDetails().getPlayerName(), pawn.getPawnColor(), pawn.isPlacedOnBoard())));
+        //player.getPlayerBoard().getPawns().forEach(pawn -> pawnLightList.add(
+          //      new PawnLight(player.getPlayerDetails().getPlayerName(), pawn.getPawnColor(), pawn.isPlacedOnBoard())));
 
         return new UpdatePlayerBoard(copyActivatedLeadersOfPlayer(player), copyPointsOfPlayer(player),
-                copyOfBonusTileIdentifier, copyDeckLight(player), copyResourcesOfPlayer(player), pawnLightList);
+                copyOfBonusTileIdentifier, copyDeckLight(player), copyResourcesOfPlayer(player));
     }
 
     private DeckLight copyDeckLight(Player player) {

@@ -3,7 +3,6 @@ package it.polimi.ingsw.shared.requests.serverclient;
 import it.polimi.ingsw.client.middleware.ClientReceiver;
 import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.client.model.DeckLight;
-import it.polimi.ingsw.client.model.PawnLight;
 import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 
@@ -16,17 +15,15 @@ public class UpdatePlayerBoard implements ServerClientRequest {
     private String newBonusTileIdentifier;
     private DeckLight newDeckLight;
     private Map<ResourcesLight, Integer> numberOfResources;
-    private List<PawnLight> pawnLights;
 
     public UpdatePlayerBoard(List<Card> newActivatedLeaders, Map<PointsLight, Integer> newNumberOfPoints,
                              String newBonusTileIdentifier, DeckLight newDeckLight,
-                             Map<ResourcesLight, Integer> numberOfResources, List<PawnLight> pawnLights) {
+                             Map<ResourcesLight, Integer> numberOfResources) {
         this.newActivatedLeaders = newActivatedLeaders;
         this.newNumberOfPoints = newNumberOfPoints;
         this.newBonusTileIdentifier = newBonusTileIdentifier;
         this.newDeckLight = newDeckLight;
         this.numberOfResources = numberOfResources;
-        this.pawnLights = pawnLights;
     }
 
     @Override
@@ -72,13 +69,5 @@ public class UpdatePlayerBoard implements ServerClientRequest {
 
     public void setNumberOfResources(Map<ResourcesLight, Integer> numberOfResources) {
         this.numberOfResources = numberOfResources;
-    }
-
-    public List<PawnLight> getPawnLights() {
-        return pawnLights;
-    }
-
-    public void setPawnLights(List<PawnLight> pawnLights) {
-        this.pawnLights = pawnLights;
     }
 }

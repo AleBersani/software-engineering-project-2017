@@ -45,6 +45,9 @@ public class BasicRewardsGenerator {
                     towerSlot.setDevelopmentCard(null);
                     towerSlot.getSpace().setAlreadyTaken(true);
                     towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+                    if (player.getPawnGivenColor(boardAction.getPawnColor()).isPresent()) {
+                        player.getPawnGivenColor(boardAction.getPawnColor()).get().setPlacedOnBoard(true);
+                    }
                 }
                 LOGGER.info("Action type: green tower, rewards given to player!");
                 break;
@@ -59,6 +62,9 @@ public class BasicRewardsGenerator {
                     towerSlot.setDevelopmentCard(null);
                     towerSlot.getSpace().setAlreadyTaken(true);
                     towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+                    if (player.getPawnGivenColor(boardAction.getPawnColor()).isPresent()) {
+                        player.getPawnGivenColor(boardAction.getPawnColor()).get().setPlacedOnBoard(true);
+                    }
                 }
                 LOGGER.info("Action type: yellow tower, rewards given to player!");
                 break;
@@ -73,6 +79,9 @@ public class BasicRewardsGenerator {
                     towerSlot.setDevelopmentCard(null);
                     towerSlot.getSpace().setAlreadyTaken(true);
                     towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+                    if (player.getPawnGivenColor(boardAction.getPawnColor()).isPresent()) {
+                        player.getPawnGivenColor(boardAction.getPawnColor()).get().setPlacedOnBoard(true);
+                    }
                 }
                 LOGGER.info("Action type: blue tower, rewards given to player!");
                 break;
@@ -87,6 +96,9 @@ public class BasicRewardsGenerator {
                     towerSlot.setDevelopmentCard(null);
                     towerSlot.getSpace().setAlreadyTaken(true);
                     towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+                    if (player.getPawnGivenColor(boardAction.getPawnColor()).isPresent()) {
+                        player.getPawnGivenColor(boardAction.getPawnColor()).get().setPlacedOnBoard(true);
+                    }
                 }
                 LOGGER.info("Action type: purple tower, rewards given to player!");
                 break;
