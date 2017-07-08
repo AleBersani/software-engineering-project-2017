@@ -1,3 +1,9 @@
-#table, #scroll, #root, .root {
+.scroll-pane > .viewport {
     -fx-background-color: sandybrown;
+}
+
+#scroll {
+    -fx-background-color: sandybrown;
+
+
 }

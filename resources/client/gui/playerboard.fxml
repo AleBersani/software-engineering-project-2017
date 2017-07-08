@@ -5,34 +5,36 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <TabPane prefHeight="550.0" prefWidth="791.0" stylesheets="@playerboard.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.gui.PlayerboardController">
     <tabs>
         <Tab text="Territory_Building">
          <content>
             <Pane prefHeight="200.0" prefWidth="200.0">
-
-                <ImageView fitHeight="515.0" fitWidth="733.0" layoutX="58.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@punchboard.jpg" />
-                </ImageView>
-                <ImageView fx:id="chosenBonusTile" fitHeight="514.0" fitWidth="68.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                </ImageView>
-   
-                <Label fx:id="coins" layoutX="106.0" layoutY="448.0" prefHeight="35.0" prefWidth="47.0" text="Coins" />
-                <Label fx:id="woods" layoutX="213.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0"  text="Woods" />
-                <Label fx:id="stones" layoutX="333.0" layoutY="446.0" prefHeight="35.0" prefWidth="57.0"  text="Stones" />
-                <Label fx:id="servants" layoutX="440.0" layoutY="463.0" prefHeight="35.0" prefWidth="63.0"  text="Servants" />
-                <ImageView fx:id="yellow1" fitHeight="153.0" fitWidth="100.0" layoutX="73.0" layoutY="33.0" />
-                <ImageView fx:id="yellow2" fitHeight="153.0" fitWidth="100.0" layoutX="191.0" layoutY="33.0"  />
-                <ImageView fx:id="yellow3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="33.0"  />
-                <ImageView fx:id="yellow4" fitHeight="153.0" fitWidth="100.0" layoutX="420.0" layoutY="33.0"  />
-                <ImageView fx:id="yellow5" fitHeight="153.0" fitWidth="100.0" layoutX="532.0" layoutY="33.0" />
-                <ImageView fx:id="yellow6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="33.0"  />
-                <ImageView fx:id="green1" fitHeight="153.0" fitWidth="100.0" layoutX="80.0" layoutY="240.0"  />
-                <ImageView fx:id="green2" fitHeight="153.0" fitWidth="100.0" layoutX="191.0" layoutY="240.0"  />
-                <ImageView fx:id="green3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="240.0"  />
-                <ImageView fx:id="green4" fitHeight="153.0" fitWidth="100.0" layoutX="420.0" layoutY="240.0"  />
-                <ImageView fx:id="green5" fitHeight="153.0" fitWidth="100.0" layoutX="532.0" layoutY="240.0"  />
-                <ImageView fx:id="green6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="240.0"  />
+               <children>
+                   <ImageView fitHeight="515.0" fitWidth="733.0" layoutX="58.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@punchboard.jpg" />
+                   </ImageView>
+                   <ImageView fx:id="chosenBonusTile" fitHeight="514.0" fitWidth="68.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                   </ImageView>
+      
+                   <Label fx:id="coins" layoutX="106.0" layoutY="448.0" prefHeight="35.0" prefWidth="47.0" text="Coins" />
+                   <Label fx:id="woods" layoutX="213.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0" text="Woods" />
+                   <Label fx:id="stones" layoutX="333.0" layoutY="446.0" prefHeight="35.0" prefWidth="57.0" text="Stones" />
+                   <Label fx:id="servants" layoutX="440.0" layoutY="463.0" prefHeight="35.0" prefWidth="63.0" text="Servants" />
+                   <ImageView fx:id="yellow1" fitHeight="153.0" fitWidth="100.0" layoutX="73.0" layoutY="33.0" />
+                   <ImageView fx:id="yellow2" fitHeight="153.0" fitWidth="100.0" layoutX="191.0" layoutY="33.0" />
+                   <ImageView fx:id="yellow3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="33.0" />
+                   <ImageView fx:id="yellow4" fitHeight="153.0" fitWidth="100.0" layoutX="420.0" layoutY="33.0" />
+                   <ImageView fx:id="yellow5" fitHeight="153.0" fitWidth="100.0" layoutX="532.0" layoutY="33.0" />
+                   <ImageView fx:id="yellow6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="33.0" />
+                   <ImageView fx:id="green1" fitHeight="153.0" fitWidth="100.0" layoutX="80.0" layoutY="240.0" />
+                   <ImageView fx:id="green2" fitHeight="153.0" fitWidth="100.0" layoutX="191.0" layoutY="240.0" />
+                   <ImageView fx:id="green3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="240.0" />
+                   <ImageView fx:id="green4" fitHeight="153.0" fitWidth="100.0" layoutX="420.0" layoutY="240.0" />
+                   <ImageView fx:id="green5" fitHeight="153.0" fitWidth="100.0" layoutX="532.0" layoutY="240.0" />
+                   <ImageView fx:id="green6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="240.0" />
+               </children>
 
             </Pane>
          </content>
@@ -41,30 +43,34 @@
         <Tab text="Ventures_Characters">
             <content>
                 <Pane prefHeight="200.0" prefWidth="200.0">
-
-                    <ImageView fitHeight="518.0" fitWidth="734.0" layoutX="58.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@punchboard2.jpg" />
-                    </ImageView>
-                    <ImageView fx:id="chosenBonusTile1" fitHeight="515.0" fitWidth="64.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                    </ImageView>
+                   <children>
    
-                    <ImageView fx:id="purple1" fitHeight="153.0" fitWidth="100.0" layoutX="75.0" layoutY="35.0"  />
-                    <ImageView fx:id="purple2" fitHeight="153.0" fitWidth="100.0" layoutX="193.0" layoutY="34.0"  />
-                    <ImageView fx:id="purple3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="34.0"  />
-                    <ImageView fx:id="purple4" fitHeight="153.0" fitWidth="100.0" layoutX="421.0" layoutY="35.0"  />
-                    <ImageView fx:id="purple5" fitHeight="153.0" fitWidth="100.0" layoutX="533.0" layoutY="35.0"  />
-                    <ImageView fx:id="purple6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="35.0"  />
-                    <ImageView fx:id="blue1" fitHeight="153.0" fitWidth="100.0" layoutX="77.0" layoutY="240.0"  />
-                    <ImageView fx:id="blue2" fitHeight="153.0" fitWidth="100.0" layoutX="193.0" layoutY="240.0"  />
-                    <ImageView fx:id="blue3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="241.0"  />
-                    <ImageView fx:id="blue4" fitHeight="153.0" fitWidth="100.0" layoutX="420.0" layoutY="240.0"  />
-                    <ImageView fx:id="blue5" fitHeight="153.0" fitWidth="100.0" layoutX="533.0" layoutY="240.0"  />
-                    <ImageView fx:id="blue6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="241.0"  />
-   
-                    <Label fx:id="coins1" layoutX="102.0" layoutY="447.0" prefHeight="35.0" prefWidth="47.0" styleClass="try" text="Coins" />
-                    <Label fx:id="woods1" layoutX="216.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0" styleClass="try" text="Woods" />
-                    <Label fx:id="stones1" layoutX="329.0" layoutY="445.0" prefHeight="35.0" prefWidth="57.0" styleClass="try" text="Stones" />
-                    <Label fx:id="servants1" layoutX="438.0" layoutY="461.0" prefHeight="35.0" prefWidth="63.0" styleClass="try" text="Servants" />
+                       <ImageView fitHeight="518.0" fitWidth="734.0" layoutX="58.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+                              <Image url="@punchboard2.jpg" />
+      </image>
+                       </ImageView>
+                       <ImageView fx:id="chosenBonusTile1" fitHeight="515.0" fitWidth="64.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                    </ImageView>
+      
+                       <ImageView fx:id="purple1" fitHeight="153.0" fitWidth="100.0" layoutX="75.0" layoutY="35.0" />
+                       <ImageView fx:id="purple2" fitHeight="153.0" fitWidth="100.0" layoutX="193.0" layoutY="34.0" />
+                       <ImageView fx:id="purple3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="34.0" />
+                       <ImageView fx:id="purple4" fitHeight="153.0" fitWidth="100.0" layoutX="421.0" layoutY="35.0" />
+                       <ImageView fx:id="purple5" fitHeight="153.0" fitWidth="100.0" layoutX="533.0" layoutY="35.0" />
+                       <ImageView fx:id="purple6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="35.0" />
+                       <ImageView fx:id="blue1" fitHeight="153.0" fitWidth="100.0" layoutX="77.0" layoutY="240.0" />
+                       <ImageView fx:id="blue2" fitHeight="153.0" fitWidth="100.0" layoutX="193.0" layoutY="240.0" />
+                       <ImageView fx:id="blue3" fitHeight="153.0" fitWidth="100.0" layoutX="305.0" layoutY="241.0" />
+                       <ImageView fx:id="blue4" fitHeight="153.0" fitWidth="100.0" layoutX="420.0" layoutY="240.0" />
+                       <ImageView fx:id="blue5" fitHeight="153.0" fitWidth="100.0" layoutX="533.0" layoutY="240.0" />
+                       <ImageView fx:id="blue6" fitHeight="153.0" fitWidth="100.0" layoutX="648.0" layoutY="241.0" />
+      
+                       <Label fx:id="coins1" layoutX="102.0" layoutY="447.0" prefHeight="35.0" prefWidth="47.0" styleClass="try" text="Coins" />
+                       <Label fx:id="woods1" layoutX="216.0" layoutY="447.0" prefHeight="35.0" prefWidth="55.0" styleClass="try" text="Woods" />
+                       <Label fx:id="stones1" layoutX="329.0" layoutY="445.0" prefHeight="35.0" prefWidth="57.0" styleClass="try" text="Stones" />
+                       <Label fx:id="servants1" layoutX="438.0" layoutY="461.0" prefHeight="35.0" prefWidth="63.0" styleClass="try" text="Servants" />
+                   </children>
 
                 </Pane>
             </content>
@@ -73,21 +79,51 @@
         <Tab text="Leaders">
             <content>
                 <StackPane fx:id="pane4" prefHeight="800" prefWidth="1000">
-
-                    <ImageView fx:id="backgroundLeaders" fitHeight="515" fitWidth="750" preserveRatio="true" styleClass="try">
-                    </ImageView>
+                   <children>
    
-                       <HBox fx:id="pane5" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20">
-                           <ImageView fx:id="led1" fitHeight="250" fitWidth="158" preserveRatio="true" >
+                       <ImageView fx:id="backgroundLeaders" fitHeight="515" fitWidth="750" preserveRatio="true" styleClass="try">
+                    </ImageView>
+      
+                          <HBox fx:id="pane5" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20">
+         <children>
+                                 <ImageView fx:id="led1" fitHeight="250" fitWidth="158" preserveRatio="true">
                            </ImageView>
-                           <ImageView fx:id="led2" fitHeight="250" fitWidth="158" preserveRatio="true" >
+                                 <ImageView fx:id="led2" fitHeight="250" fitWidth="158" preserveRatio="true">
                            </ImageView>
-                           <ImageView fx:id="led3" fitHeight="250" fitWidth="158" preserveRatio="true" >
+                                 <ImageView fx:id="led3" fitHeight="250" fitWidth="158" preserveRatio="true">
                            </ImageView>
-                           <ImageView fx:id="led4" fitHeight="250" fitWidth="158" preserveRatio="true" >
+                                 <ImageView fx:id="led4" fitHeight="250" fitWidth="158" preserveRatio="true">
                            </ImageView>
-                       </HBox>
-
+         </children>
+                          </HBox>
+                           <JFXButton fx:id="place1" focusTraversable="false" style="-fx-border-color: coral"
+                                      text="Place" translateX="-310.0" translateY="150.0" ripplerFill="salmon"
+                                      onMouseClicked="#placeLeader"/>
+                           <JFXButton fx:id="active1" focusTraversable="false" style="-fx-border-color: coral"
+                                      text="Activate" translateX="-235.0" translateY="150.0" ripplerFill="salmon"
+                                      onMouseClicked="#activateLeader"/>
+   
+                           <JFXButton fx:id="place2" focusTraversable="false" style="-fx-border-color: coral"
+                                      text="Place" translateX="-131.0" translateY="150.0" ripplerFill="salmon"
+                                      onMouseClicked="#placeLeader"/>
+                           <JFXButton fx:id="active2" focusTraversable="false" style="-fx-border-color: coral"
+                                      text="Activate" translateX="-55.0" translateY="150.0" ripplerFill="salmon"
+                                      onMouseClicked="#activateLeader"/>
+   
+                           <JFXButton fx:id="place3" focusTraversable="false" style="-fx-border-color: coral"
+                                      text="Place" translateX="50.0" translateY="150.0" ripplerFill="salmon"
+                                      onMouseClicked="#placeLeader"/>
+                           <JFXButton fx:id="active3" focusTraversable="false" style="-fx-border-color: coral"
+                                      text="Activate" translateX="124.0" translateY="150.0" ripplerFill="salmon"
+                                      onMouseClicked="#activateLeader"/>
+   
+                           <JFXButton fx:id="place4" focusTraversable="false" style="-fx-border-color: coral"
+                                      text="Place" translateX="227.0" translateY="150.0" ripplerFill="salmon"
+                                      onMouseClicked="#placeLeader"/>
+                           <JFXButton fx:id="active4" focusTraversable="false" style="-fx-border-color: coral"
+                                      text="Activate" translateX="301.0" translateY="150.0" ripplerFill="salmon"
+                                      onMouseClicked="#activateLeader"/>
+                   </children>
                 </StackPane>
             </content>
         </Tab>
