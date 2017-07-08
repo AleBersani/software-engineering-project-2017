@@ -7,7 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="1252.0" stylesheets="/client/gui/gameboard.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.gui.GameBoardController">
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0"
+      prefWidth="1252.0" stylesheets="/client/gui/gameboard.css" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.gui.GameBoardController">
    <children>
    
       
@@ -91,11 +93,11 @@
       
           <StackPane fx:id="council_palace" layoutX="1021.0" layoutY="10.0" prefHeight="64.0" prefWidth="128.0" styleClass="prova">
        </StackPane>
-   
-          <Circle fx:id="whitePawn" fill="#ffffff" layoutX="752.0" layoutY="451.0" radius="15.0" strokeType="INSIDE" strokeWidth="4.0" />
+
+    <!--      <Circle fx:id="whitePawn" fill="#ffffff" layoutX="752.0" layoutY="451.0" radius="15.0" strokeType="INSIDE" strokeWidth="4.0" />
           <Circle fx:id="orangePawn" fill="#ff8706" layoutX="710.0" layoutY="451.0" radius="15.0" strokeType="INSIDE" strokeWidth="4.0" />
           <Circle fx:id="blackPawn" fill="#000000" layoutX="795.0" layoutY="451.0" radius="15.0" strokeType="INSIDE" strokeWidth="4.0" />
-          <Circle fx:id="neutralPawn" fill="#c99463" layoutX="844.0" layoutY="451.0" radius="15.0" strokeType="INSIDE" strokeWidth="4.0" />
+          <Circle fx:id="neutralPawn" fill="#c99463" layoutX="844.0" layoutY="451.0" radius="15.0" strokeType="INSIDE" strokeWidth="4.0" /> -->
    
           <ImageView fx:id="excom1" fitHeight="106.0" fitWidth="49.0" layoutX="780.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
           <ImageView fx:id="excom2" fitHeight="106.0" fitWidth="49.0" layoutX="834.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
