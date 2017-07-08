@@ -174,10 +174,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
                 pawnLightList.add(
                         new PawnLight(player.getPlayerDetails().getPlayerName(),
                                 pawn.getPawnColor(), pawn.isPlacedOnBoard()));
-                System.out.println(pawn.getPawnColor().toString() + " " + player.getPlayerDetails().getPlayerName() + " " +
-                pawn.isPlacedOnBoard());
             });
-            System.out.println("Size Of " + pawnLightList.size() + " "+ player.getPlayerDetails().getPlayerName());
             updateGameBoard.setPawnLightList(pawnLightList);
             sendTo(player.getPlayerDetails().getPlayerName(), updateGameBoard);
         }
@@ -228,7 +225,6 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
                     towerSlotLight.getSlotLight().setPawnLight(
                             new PawnLight(t.getSpace().getPlayerPawn().getPlayerDetails().getPlayerName(),
                                     t.getSpace().getPlayerPawn().getPawnColor(), true));
-                    System.out.println("Ci sono: " + towerSlotLight.getSlotLight().getPawnLight().toString());
                 }
             }
             towerSlotLightList.add(towerSlotLight);
@@ -313,6 +309,12 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         List<DiceLight> newDiceLightList = new ArrayList<>();
         for (Dice d : board.getDices()) {
             newDiceLightList.add(new DiceLight(d.getDiceColor(), d.getValue()));
+            for (Player player : players) {
+                player.getPlayerBoard().getPawns().add(new Pawn(d.getValue(), PawnColor.valueOf(d.getDiceColor().toString())));
+            }
+        }
+        for (Player player : players) {
+            player.getPlayerBoard().getPawns().add(new Pawn(0, PawnColor.NEUTRAL));
         }
         return newDiceLightList;
     }
@@ -393,7 +395,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
 
 
                 } else {
-                    // TODO: player non ha requisiti
+                    sendPlayerBoardToEachSeparatePlayer();
                 }
                 break;
             }
