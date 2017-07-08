@@ -11,7 +11,7 @@ public class FinalRankingMain extends Application{
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/client/gui/finalRanking.fxml"));
         primaryStage.setTitle("Final Ranking");
-        primaryStage.setScene(new Scene(root, 350, 600));
+        primaryStage.setScene(new Scene(root, 440, 300));
         primaryStage.show();
     }
 

@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="321.0" prefWidth="273.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="it.polimi.ingsw.client.gui.GameChoiceController" stylesheets="/client/gui/gamechoice.css">
-   <children>
-      <Label layoutX="94.0" layoutY="60.0" text="Welcome">
+<?import javafx.scene.control.Button?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane prefHeight="409.0" prefWidth="273.0" stylesheets="/client/gui/gamechoice.css"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.polimi.ingsw.client.gui.GameChoiceController">
+
+   <Label layoutX="94.0" layoutY="60.0" text="Welcome">
          <font>
-            <Font size="18.0"/>
+            <Font size="18.0" />
          </font>
       </Label>
       <Label fx:id="playerName" layoutX="110.0" layoutY="90.0">
       <font>
-         <Font size="15.0"/>
+         <Font size="15.0" />
       </font>
       </Label>
       <Label layoutX="60.0" layoutY="118.0" text="What do you want to do?" />
-      <JFXButton fx:id="newGame" buttonType="RAISED" layoutX="79.0" layoutY="161.0" text="Start new game"
-                 styleClass="button" onAction="#startNewGame" focusTraversable="false"/>
-      <JFXButton fx:id="resumeGame" buttonType="RAISED" layoutX="84.0" layoutY="206.0" text="Resume game"
-                 styleClass="button" onAction="#resumeGame" focusTraversable="false"/>
-   </children>
+      <JFXButton fx:id="charts" layoutX="94.0" layoutY="334.0" mnemonicParsing="false" text="Show charts"
+                 buttonType="RAISED" styleClass="button" focusTraversable="false"/>
+      <GridPane layoutX="37.0" layoutY="146.0" prefHeight="165.0" prefWidth="200.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+
+            <JFXButton fx:id="newGame" buttonType="RAISED" focusTraversable="false" onAction="#startNewGame"
+                       styleClass="button" text="Start new game" />
+            <JFXButton fx:id="resumeGame" buttonType="RAISED" focusTraversable="false" onAction="#resumeGame"
+                       styleClass="button" text="Resume game" GridPane.rowIndex="1" />
+            <JFXButton fx:id="interrupted" buttonType="RAISED" mnemonicParsing="false" text="Resume interrupted game"
+                       GridPane.rowIndex="2" styleClass="button" focusTraversable="false"/>
+
+      </GridPane>
+
 </AnchorPane>

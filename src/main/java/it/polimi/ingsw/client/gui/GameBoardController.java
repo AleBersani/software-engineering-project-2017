@@ -354,6 +354,8 @@ public class GameBoardController extends Observable implements Observer {
             otherPlayersPawns();
             setDices();
             setOtherPlayersInfo();
+            setExcommunications();
+            setPlayersOrder();
         });
     }
 
@@ -384,14 +386,15 @@ public class GameBoardController extends Observable implements Observer {
         labels.add(infoplayer2);
         labels.add(infoplayer3);
         int labelIndex = 0;
-        StringBuilder text = new StringBuilder();
         for (PlayerLight player : boardLight.getPlayerLights()) {
             if (!player.getPlayerName().equals(ClientInformation.getPlayerName())) {
+                StringBuilder text = new StringBuilder();
                 text.append(player.getPlayerName() + "\n");
-              //  if (!player.getActivatedLeaders().isEmpty()) {
-              //      player.getActivatedLeaders().forEach(leader -> text.append(leader.getName() + "\n"));
-             //   }
-              //  text.append("Victory points: " + player.getNumberOfPoints().get(PointsLight.VICTORY_POINTS));
+                if (!player.getActivatedLeaders().isEmpty()) {
+                    player.getActivatedLeaders().forEach(leader -> text.append(leader.getName() + "\n"));
+                }
+                text.append("Victory P: " + player.getNumberOfPoints().get(PointsLight.VICTORY_POINTS) + "\n");
+                text.append("Military P: " + player.getNumberOfPoints().get(PointsLight.MILITARY_POINTS));
                 labels.get(labelIndex).setText(text.toString());
                 labels.get(labelIndex).setTextFill(Paint.valueOf(pawnColors.get(player.getPlayerColor())));
                 labelIndex++;
@@ -670,20 +673,6 @@ public class GameBoardController extends Observable implements Observer {
         }
     }
 
-    @FXML
-    public void hidePlayerBoard() {
-        if (playerBoard.getScene().getWindow().isShowing()) {
-            playerBoard.hide();
-        }
-    }
-
-    @FXML
-    public void reOpenPlayerBoard() {
-        if (!playerBoard.getScene().getWindow().isShowing()) {
-            playerBoard.show();
-        }
-    }
-
     public void setDices() {
         DiceColor color;
         int value;
@@ -708,11 +697,27 @@ public class GameBoardController extends Observable implements Observer {
         }
     }
 
- /*   public void setExcommunications() {
-        excom1.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(0).getName() + ".png"));
-        excom2.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(1).getName() + ".png"));
-        excom3.setImage(new Image("client/excomtiles/" + boardLight.getExcomTiles.get(2).getName() + ".png"));
-    } */
+    public void setExcommunications() {
+        System.out.println(boardLight.getExcommunicationTiles().size());
+        for (int i = 0; i < boardLight.getExcommunicationTiles().size(); i++) {
+            String excomName = boardLight.getExcommunicationTiles().get(i).getName();
+            System.out.println(boardLight.getExcommunicationTiles().get(i).getName());
+            if (excomName.startsWith("1.")) {
+                Image firstExcom = new Image(
+                        "client/excomtiles/" + excomName + ".png");
+                excom1.setImage(firstExcom);
+            }
+            if (excomName.startsWith("2.")) {
+                Image secondExcom = new Image(
+                        "client/excomtiles/" + excomName + ".png");
+                excom1.setImage(secondExcom);
+            } else {
+                Image thirdExcom = new Image(
+                        "client/excomtiles/" + excomName + ".png");
+                excom3.setImage(thirdExcom);
+            }
+        }
+    }
 
     public void setPlayersOrder() {
         order = new ArrayList<>();
@@ -721,7 +726,10 @@ public class GameBoardController extends Observable implements Observer {
         order.add(third);
         order.add(fourth);
         for (int i = 0; i < order.size() && i < boardLight.getPlayerLights().size(); i++) {
-            order.get(i).setFill(Paint.valueOf(boardLight.getPlayerLights().get(i).getPlayerColor().toString()));
+            order.get(i).setFill(Paint.valueOf(
+                    boardLight.getPlayerLights().get(i).getPlayerColor().toString().toLowerCase()));
         }
     }
+
 }
+

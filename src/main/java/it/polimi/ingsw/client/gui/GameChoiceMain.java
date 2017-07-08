@@ -11,7 +11,7 @@ public class GameChoiceMain extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/client/gui/gamechoice.fxml"));
         primaryStage.setTitle("GameChoice");
-        primaryStage.setScene(new Scene(root, 270, 300));
+        primaryStage.setScene(new Scene(root, 270, 400));
         primaryStage.show();
     }
 

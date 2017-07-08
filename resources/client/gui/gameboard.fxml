@@ -134,12 +134,15 @@
           </GridPane>
    
           <Label fx:id="playerName" layoutX="695.0" layoutY="475.0" prefHeight="17.0" prefWidth="100.0" />
-         <JFXButton fx:id="pass" buttonType="RAISED" focusTraversable="false" layoutX="912.0" layoutY="437.0" ripplerFill="darksalmon" text="Pass Turn" />
-         <JFXButton fx:id="leave" buttonType="RAISED" focusTraversable="false" layoutX="995.0" layoutY="437.0" ripplerFill="darksalmon" text="Leave game" />
-         <JFXButton fx:id="interrupt" buttonType="RAISED" focusTraversable="false" layoutX="1094.0" layoutY="437.0" ripplerFill="darksalmon" text="Ask for interruption" />
+         <JFXButton fx:id="pass" buttonType="RAISED" focusTraversable="false" layoutX="910.0" layoutY="435.0"
+                    ripplerFill="darksalmon" text="Pass Turn" />
+         <JFXButton fx:id="leave" buttonType="RAISED" focusTraversable="false" layoutX="995.0" layoutY="435.0"
+                    ripplerFill="darksalmon" text="Leave game" />
+         <JFXButton fx:id="interrupt" buttonType="RAISED" focusTraversable="false" layoutX="1094.0" layoutY="435.0"
+                    ripplerFill="darksalmon" text="Ask for interruption" />
    
-         <Label layoutX="871.0" layoutY="469.0" text="How many servants do you want to sacrifice?" />
-         <Spinner fx:id="spinner" layoutX="1110.0" layoutY="490.0" max="10" min="0" prefWidth="80.0" />
+         <Label layoutX="871.0" layoutY="470.0" text="How many servants do you want to sacrifice?" />
+         <Spinner fx:id="spinner" layoutX="1155.0" layoutY="465.0" max="10" min="0" prefWidth="70.0" />
    </children>
 
 </Pane>

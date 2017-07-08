@@ -1,5 +1,6 @@
 package it.polimi.ingsw.client.gui;
 
+import com.jfoenix.controls.JFXButton;
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.PlayerBoardNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
@@ -107,6 +108,23 @@ public class PlayerboardController implements Observer {
     private Label servants;
     @FXML
     private Label servants1;
+
+    @FXML
+    private JFXButton place1;
+    @FXML
+    private JFXButton active1;
+    @FXML
+    private JFXButton place2;
+    @FXML
+    private JFXButton active2;
+    @FXML
+    private JFXButton place3;
+    @FXML
+    private JFXButton active3;
+    @FXML
+    private JFXButton place4;
+    @FXML
+    private JFXButton active4;
 
     public void initialize() {
         PlayerBoardNotifier.getInstance().addObserver(this);
@@ -234,5 +252,15 @@ public class PlayerboardController implements Observer {
         stones1.setText(owner.getNumberOfResources().get(ResourcesLight.STONES).toString());
         servants.setText(owner.getNumberOfResources().get(ResourcesLight.SERVANTS).toString());
         servants1.setText(owner.getNumberOfResources().get(ResourcesLight.SERVANTS).toString());
+    }
+
+    @FXML
+    public void activateLeader() {
+
+    }
+
+    @FXML
+    public void placeLeader() {
+
     }
 }
