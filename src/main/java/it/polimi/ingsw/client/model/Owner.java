@@ -1,12 +1,14 @@
 package it.polimi.ingsw.client.model;
 
 import it.polimi.ingsw.client.ClientInformation;
+import it.polimi.ingsw.client.cli.gameinformation.BoardOwnerInformation;
+import it.polimi.ingsw.client.cli.model.BonusTileDescriptionLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public class Owner {
     private PlayerLight playerLight;
@@ -23,6 +25,42 @@ public class Owner {
 
     private static class OwnerHolder {
         private static final Owner INSTANCE = new Owner();
+    }
+
+    public String printPlayerLight() {
+        return playerLight.printPlayerLightInfo();
+    }
+
+    public String printOwnResourcesPoints() {
+        String toString =
+                "Resources: {" +
+                        numberOfResources.get(ResourcesLight.WOODS) + "W, " +
+                        numberOfResources.get(ResourcesLight.STONES) + "S, " +
+                        numberOfResources.get(ResourcesLight.SERVANTS) + "Se, " +
+                        numberOfResources.get(ResourcesLight.COINS) + "C} " +
+                        playerLight.printPlayerPoints();
+        return toString;
+    }
+
+    public String printBonusTiles() {
+        BonusTileDescriptionLight bonusTileDescriptionLight;
+        Optional<BonusTileDescriptionLight> bonusTile = BoardOwnerInformation
+                .searchForBonusTileLight(bonusTileIdentifier);
+        if (bonusTile.isPresent()){
+            bonusTileDescriptionLight = bonusTile.get();
+            return bonusTileDescriptionLight.getDescription();
+        }
+        return "";
+    }
+
+    public String printLeaders() {
+        StringBuilder string = new StringBuilder().append("Leaders: ");
+        for (Card card : deckLight.getLeaders()) {
+            string.append(card.getName());
+            string.append(", ");
+        }
+        string.delete(string.length()-2, string.length());
+        return string.toString();
     }
 
     public static Owner getInstance() {

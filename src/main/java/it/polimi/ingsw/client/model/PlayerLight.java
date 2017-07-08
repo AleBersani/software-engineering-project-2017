@@ -29,6 +29,28 @@ public class PlayerLight implements Serializable {
                 '}';
     }
 
+    public String printPlayerLightInfo() {
+        String toString = "Player Name: " + playerName +
+                ", Color: " + playerColor + "\n" +
+                "Activated Leaders: ";
+        StringBuilder string = new StringBuilder().append(toString);
+        for (Card card : activatedLeaders) {
+            string.append(card.getName());
+            string.append(", ");
+        }
+        string.delete(string.length()-2, string.length());
+        string.append("\n");
+        return string.toString();
+    }
+
+    public String printPlayerPoints() {
+        String toString = "Points: {" +
+                numberOfPoints.get(PointsLight.FAITH_POINTS) + "Fp, " +
+                numberOfPoints.get(PointsLight.MILITARY_POINTS) + "Mp, " +
+                numberOfPoints.get(PointsLight.VICTORY_POINTS) + "Vp}\n";
+        return toString;
+    }
+
     public String getPlayerName() {
         return playerName;
     }
