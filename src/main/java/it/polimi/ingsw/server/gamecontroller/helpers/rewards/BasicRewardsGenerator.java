@@ -1,5 +1,6 @@
 package it.polimi.ingsw.server.gamecontroller.helpers.rewards;
 
+import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gameelements.AdditionalInfoMaps;
 import it.polimi.ingsw.server.gamelogic.basics.CouncilPrivilege;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
@@ -13,8 +14,11 @@ import it.polimi.ingsw.server.gamelogic.cards.development.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.Character;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.BasicRewards;
 import it.polimi.ingsw.server.gamelogic.player.Player;
+import it.polimi.ingsw.server.middleware.ServerSender;
+import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
+import it.polimi.ingsw.shared.requests.serverclient.CouncilPrivilegeChoice;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +30,11 @@ public class BasicRewardsGenerator {
     private final static Logger LOGGER = Logger.getLogger(BasicRewardsGenerator.class.getName());
 
     private Board board;
+    private ConnectedClient connectedClient;
 
-    public BasicRewardsGenerator(Board board) {
+    public BasicRewardsGenerator(Board board, ConnectedClient connectedClient) {
         this.board = board;
+        this.connectedClient = connectedClient;
     }
 
     public void generateRewards(Player player, BoardAction boardAction) {
@@ -41,6 +47,7 @@ public class BasicRewardsGenerator {
                     TowerSlot towerSlot = optionalTowerSlot.get();
                     getAndRunAdditionalCardInfo(player, boardAction, towerSlot.getDevelopmentCard());
                     player.getPlayerBoard().getDeck().getTerritories().add((Territory)towerSlot.getDevelopmentCard());
+                    calculateModifiedRewards(player, boardAction, towerSlot.getInstantGoods());
                     player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
                     towerSlot.setDevelopmentCard(null);
                     towerSlot.getSpace().setAlreadyTaken(true);
@@ -58,6 +65,7 @@ public class BasicRewardsGenerator {
                     TowerSlot towerSlot = optionalTowerSlot.get();
                     getAndRunAdditionalCardInfo(player, boardAction, towerSlot.getDevelopmentCard());
                     player.getPlayerBoard().getDeck().getBuildings().add((Building)towerSlot.getDevelopmentCard());
+                    calculateModifiedRewards(player, boardAction, towerSlot.getInstantGoods());
                     player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
                     towerSlot.setDevelopmentCard(null);
                     towerSlot.getSpace().setAlreadyTaken(true);
@@ -75,6 +83,7 @@ public class BasicRewardsGenerator {
                     TowerSlot towerSlot = optionalTowerSlot.get();
                     getAndRunAdditionalCardInfo(player, boardAction, towerSlot.getDevelopmentCard());
                     player.getPlayerBoard().getDeck().getCharacters().add((Character)towerSlot.getDevelopmentCard());
+                    calculateModifiedRewards(player, boardAction, towerSlot.getInstantGoods());
                     player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
                     towerSlot.setDevelopmentCard(null);
                     towerSlot.getSpace().setAlreadyTaken(true);
@@ -92,6 +101,7 @@ public class BasicRewardsGenerator {
                     TowerSlot towerSlot = optionalTowerSlot.get();
                     getAndRunAdditionalCardInfo(player, boardAction, towerSlot.getDevelopmentCard());
                     player.getPlayerBoard().getDeck().getVentures().add((Venture)towerSlot.getDevelopmentCard());
+                    calculateModifiedRewards(player, boardAction, towerSlot.getInstantGoods());
                     player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
                     towerSlot.setDevelopmentCard(null);
                     towerSlot.getSpace().setAlreadyTaken(true);
@@ -117,16 +127,22 @@ public class BasicRewardsGenerator {
             }
             case HARVEST: {
 
+
                 break;
             }
             case MARKET: {
                 board.getBoardActionSpaces().getMarketArea().forEach(m -> {
                     if (m.getSpace().getBoardIdentifier() == boardAction.getBasicAction().getBoardIdentifier()) {
                         Goods goods = m.getExchangingGoods().getGoods();
-                        for (int i = 0; i < m.getExchangingGoods().getNumberOfCouncilPrivilege(); i++) {
-                            goods.addAll(CouncilPrivilege.getPossibleChoices()
-                                    .get(boardAction.getPositionExchangingGoodsChosen().get(i)));
+                        calculateModifiedRewards(player, boardAction, goods);
+                        if (m.getExchangingGoods().getNumberOfCouncilPrivilege() > 0){
+                            CouncilPrivilegeChoice councilPrivilegeChoice = new CouncilPrivilegeChoice(
+                                    m.getExchangingGoods().getNumberOfCouncilPrivilege());
+                            ServerSender serverSender = new ServerSenderHandler();
+                            serverSender.sendToClient(connectedClient.getConnectionStream(), councilPrivilegeChoice);
                         }
+                        m.getSpace().setAlreadyTaken(true);
+                        m.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
                         basicRewardsList.add(new BasicRewards(boardAction.getBasicAction().getActionType(), goods));
                     }
                 });
@@ -186,6 +202,12 @@ public class BasicRewardsGenerator {
     public void giveRewardsToPlayer(List<BasicRewards> basicRewardsList, Player player) {
         basicRewardsList.forEach(b -> player.getRewardsModifiers().forEach(m -> m.modifyRewards(b)));
 
+    }
+
+    public void calculateModifiedRewards(Player player, BoardAction boardAction, Goods goods) {
+        BasicRewards basicRewards = new BasicRewards(boardAction.getBasicAction().getActionType(), goods);
+        player.getRewardsModifiers().forEach(rewardsModifier -> rewardsModifier.modifyRewards(basicRewards));
+        player.getPlayerGoods().addAll(basicRewards.getRewards());
     }
 
     public Board getBoard() {

@@ -60,6 +60,7 @@ public class Period extends Observable implements Observer {
             semiPeriod.setBasePlayersOrder(calculateNewPlayerOrder(getLastSemiperiod().getBasePlayersOrder(),
                     getLastSemiperiod().getBoard().getCouncilPalace().getPlayerOrder()));
         }
+        semiPeriod.addObserver(this);
         semiPeriods.add(semiPeriod);
         semiPeriod.setDevelopmentCards(getDevelopmentCardsForSemiPeriod());
         LOGGER.log(Level.INFO, () -> "Starting Semi Period");
@@ -101,8 +102,8 @@ public class Period extends Observable implements Observer {
         GeneralColor colorCard;
         List<DevelopmentCard> cardsToExtract = new ArrayList<>(developmentCards);
         List<DevelopmentCard> cardsToReturn = new ArrayList<>();
-        if (!semiPeriods.isEmpty())
-            cardsToExtract.removeAll(getLastSemiperiod().getDevelopmentCards());
+       // if (!semiPeriods.isEmpty())
+         //   cardsToExtract.removeAll(getLastSemiperiod().getDevelopmentCards());
         Collections.shuffle(cardsToExtract);
         for (int i = 0; i < cardsToExtract.size() && cardsToReturn.size() < CARDS_FOR_SEMI_PERIOD; i++) {
             card = cardsToExtract.get(i);
@@ -124,11 +125,16 @@ public class Period extends Observable implements Observer {
                 purple++;
             }
         }
+        developmentCards.removeAll(cardsToReturn);
+        developmentCards.forEach(developmentCard -> System.out.println(developmentCard.getCardInformation().getName()));
         return cardsToReturn;
     }
 
     @Override
-    public void update(Observable o, Object arg) {}
+    public void update(Observable o, Object arg) {
+        LOGGER.info("Starting new Semiperiod...");
+        startSemiPeriod();
+    }
 
     private void sendToAll(ServerClientRequest serverClientRequest) {
         for (ConnectedClient connectedClient : connectedClients) {

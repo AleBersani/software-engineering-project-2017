@@ -10,6 +10,7 @@ import it.polimi.ingsw.server.gamecontroller.helpers.rewards.BasicRewardsGenerat
 import it.polimi.ingsw.server.gameelements.Cards;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.CardAction;
+import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
@@ -49,6 +50,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     private List<PlayerDetails> playersOrder;
     private List<PlayerDetails> basePlayersOrder;
     private Map<PlayerDetails, List<ActionDescription>> actionsForPlayer;
+    private Timer timer;
     private boolean current;
 
     public SemiPeriod(List<DevelopmentCard> developmentCards, List<Player> players, Board board) {
@@ -72,7 +74,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         sendBoardToPlayers();
         LOGGER.info("Board sent to players, now sending players boards..");
         sendPlayerBoardToEachSeparatePlayer();
-        sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(true));
+        startTurn();
         LOGGER.log(Level.INFO, () -> "Turn token given to: " + players.get(0).getPlayerDetails().getPlayerName());
     }
 
@@ -164,7 +166,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         playersOrder.addAll(treeMap.values());
     }
 
-    private void sendBoardToPlayers() {
+    public void sendBoardToPlayers() {
         UpdateGameBoard updateGameBoard = setupUpdateGameBoard();
         for (Player player : players) {
             List<PawnLight> pawnLightList = new ArrayList<>();
@@ -179,7 +181,6 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
             updateGameBoard.setPawnLightList(pawnLightList);
             sendTo(player.getPlayerDetails().getPlayerName(), updateGameBoard);
         }
-
     }
 
     private UpdateGameBoard setupUpdateGameBoard() {
@@ -324,7 +325,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return excommunicationTiles;
     }
 
-    private void sendPlayerBoardToEachSeparatePlayer() {
+    public void sendPlayerBoardToEachSeparatePlayer() {
         for (Player player : players) {
             sendTo(player.getPlayerDetails().getPlayerName(), setupUpdatePlayerBoard(player));
         }
@@ -379,11 +380,18 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
                 RequirementsGenerator requirementsGenerator =
                         new RequirementsGenerator(board, player, boardAction.getBasicAction().getBoardIdentifier());
                 if (runRequirements(requirementsGenerator.generateRequirements(boardAction), player)) {
+                    for (ConnectedClient connectedClient : connectedClients) {
+                        if (connectedClient.getPlayerName().equals(player.getPlayerDetails().getPlayerName())){
+                            BasicRewardsGenerator basicRewardsGenerator = new BasicRewardsGenerator(board, connectedClient);
+                            basicRewardsGenerator.generateRewards(player, boardAction);
+                            sendBoardToPlayers();
+                            sendPlayerBoardToEachSeparatePlayer();
+                        }
+                    }
                     LOGGER.info("Action: player has requirements!");
-                    BasicRewardsGenerator basicRewardsGenerator = new BasicRewardsGenerator(board);
-                    basicRewardsGenerator.generateRewards(player, boardAction);
-                    sendBoardToPlayers();
-                    sendPlayerBoardToEachSeparatePlayer();
+
+
+
                 } else {
                     // TODO: player non ha requisiti
                 }
@@ -437,6 +445,34 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     }
 
     public void endSemiPeriod() {}
+
+    private void startTurn() {
+        if (playersOrder.size() > 0) {
+            sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(true));
+            startTimer();
+        } else {
+            setChanged();
+            notifyObservers();
+        }
+    }
+
+    private void passTurn() {
+        sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(false));
+        playersOrder.remove(0);
+        timer.cancel();
+        startTurn();
+    }
+
+    private void startTimer() {
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                passTurn();
+                LOGGER.info("Time expired!");
+            }
+        }, GameConfiguration.getMoveTimeout() * (long)1_000);
+    }
 
     private void sendToAll(ServerClientRequest serverClientRequest) {
         for (ConnectedClient connectedClient : connectedClients) {

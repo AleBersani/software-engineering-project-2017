@@ -1,7 +1,7 @@
 {
   "maxNumberOfPlayer": "4",
   "startingGameTimeout": "10",
-  "moveTimeout": "45",
+  "moveTimeout": "5",
   "numberOfPeriods": "3",
 
   "numberOfTowers": "4",

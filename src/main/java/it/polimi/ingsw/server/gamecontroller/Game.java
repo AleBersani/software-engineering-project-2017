@@ -1,11 +1,11 @@
 package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.connection.ConnectedClient;
-import it.polimi.ingsw.server.gamecontroller.helpers.choices.BonusTileChoiceHandler;
 import it.polimi.ingsw.server.gamecontroller.helpers.DevelopmentCardsFilter;
+import it.polimi.ingsw.server.gamecontroller.helpers.UniqueRandomGenerator;
+import it.polimi.ingsw.server.gamecontroller.helpers.choices.BonusTileChoiceHandler;
 import it.polimi.ingsw.server.gamecontroller.helpers.choices.CouncilPrivilegeChoiceHandler;
 import it.polimi.ingsw.server.gamecontroller.helpers.choices.LeaderCardChoiceHandler;
-import it.polimi.ingsw.server.gamecontroller.helpers.UniqueRandomGenerator;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gameelements.Cards;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
@@ -25,7 +25,6 @@ import it.polimi.ingsw.server.middleware.ServerSender;
 import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
-import it.polimi.ingsw.shared.requests.clientserver.PlayerLoginRMI;
 import it.polimi.ingsw.shared.requests.serverclient.*;
 
 import java.util.*;
@@ -344,6 +343,17 @@ public class Game implements Runnable, Observer {
             if (player.getPlayerDetails().getPlayerName().equals(playerName)) {
                 CouncilPrivilegeChoiceHandler councilPrivilegeChoiceHandler = new CouncilPrivilegeChoiceHandler(
                         choices, player, boardAction);
+                councilPrivilegeChoiceHandler.addModifiedCouncilPrivilegeChoices();
+                periods.forEach(period -> {
+                    if (period.isCurrent()){
+                        period.getSemiPeriods().forEach(semiPeriod -> {
+                            if (semiPeriod.isCurrent()) {
+                                semiPeriod.sendBoardToPlayers();
+                                semiPeriod.sendPlayerBoardToEachSeparatePlayer();
+                            }
+                        });
+                    }
+                });
                 break;
             }
         }

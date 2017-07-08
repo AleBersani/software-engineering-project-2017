@@ -1,8 +1,6 @@
 package it.polimi.ingsw.server.gamecontroller.helpers.choices;
 
-import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gamelogic.basics.CouncilPrivilege;
-import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.BasicRewards;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
@@ -27,7 +25,6 @@ public class CouncilPrivilegeChoiceHandler {
         for (Integer integer : positionChoices) {
             goods.addAll(CouncilPrivilege.getPossibleChoices().get(integer));
         }
-
         BasicRewards basicRewards = new BasicRewards(boardAction.getBasicAction().getActionType(), goods);
         for (RewardsModifier rewardsModifier : player.getRewardsModifiers()) {
             rewardsModifier.modifyRewards(basicRewards);

@@ -55,6 +55,7 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
 
     @Override
     public void visitClientServerRequest(ChosenCouncilPrivilege chosenCouncilPrivilege) {
+        System.out.println("ci sono nel server");
         ActiveGames activeGames = ActiveGames.getInstance();
         Optional<Game> optionalGame = activeGames.getGameById(chosenCouncilPrivilege.getGameId());
         if (optionalGame.isPresent()) {

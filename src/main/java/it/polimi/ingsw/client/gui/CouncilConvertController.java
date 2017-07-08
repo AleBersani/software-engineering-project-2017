@@ -1,6 +1,5 @@
 package it.polimi.ingsw.client.gui;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.middleware.ClientSender;
@@ -9,14 +8,10 @@ import it.polimi.ingsw.shared.requests.clientserver.BaseInformation;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenCouncilPrivilege;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ToggleGroup;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class CouncilConvertController {
     private List<Integer> choices;
@@ -76,26 +71,34 @@ public class CouncilConvertController {
                 switch (radio.getId()) {
                     case "choice0":
                         choices.add(0);
+                        System.out.println(0);
                         break;
                     case "choice1":
                         choices.add(1);
+                        System.out.println(1);
                         break;
                     case "choice2":
                         choices.add(2);
+                        System.out.println(2);
                         break;
                     case "choice3":
                         choices.add(3);
+                        System.out.println(3);
                         break;
                     case "choice4":
                         choices.add(4);
+                        System.out.println(4);
                         break;
                 }
             }
         }
+        System.out.println(choices.toString());
+        System.out.println(ClientInformation.getLastBoardAction());
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new ChosenCouncilPrivilege(
                 new BaseInformation(ClientInformation.getCurrentGameId(), ClientInformation.getPlayerName()),
                 choices, ClientInformation.getLastBoardAction()));
+
     }
 
 

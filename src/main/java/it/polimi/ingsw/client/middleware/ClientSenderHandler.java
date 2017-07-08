@@ -91,6 +91,7 @@ public class ClientSenderHandler implements ClientSender {
     public void sendToServer(ClientServerRequest clientServerRequest) {
         if (socket) {
             try {
+                System.out.println("ci sono");
                 SocketClient.writeSocket(clientServerRequest);
             } catch (IOException e) {
                 LOGGER.log(Level.SEVERE, "An exception was thrown: cannot send client server request on socket", e);
