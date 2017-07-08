@@ -17,4 +17,9 @@ public class GameBoardNotifier extends Observable {
         setChanged();
         notifyObservers();
     }
+
+    public void updateGui(int numberOfChoices) {
+        setChanged();
+        notifyObservers(numberOfChoices);
+    }
 }

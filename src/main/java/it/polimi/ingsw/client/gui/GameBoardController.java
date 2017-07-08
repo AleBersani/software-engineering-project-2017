@@ -345,17 +345,35 @@ public class GameBoardController extends Observable implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        Platform.runLater(() -> {
-            clearBoard();
-            initGreenTower();
-            initYellowTower();
-            initBlueTower();
-            initPurpleTower();
-            otherPlayersPawns();
-            setDices();
-            setOtherPlayersInfo();
-            setExcommunications();
-            setPlayersOrder();
+        if (arg != null) {
+            startCouncilPrivilegeChoice();
+        } else {
+            Platform.runLater(() -> {
+                clearBoard();
+                initGreenTower();
+                initYellowTower();
+                initBlueTower();
+                initPurpleTower();
+                otherPlayersPawns();
+                setDices();
+                setOtherPlayersInfo();
+                setExcommunications();
+                setPlayersOrder();
+            });
+        }
+    }
+
+    private void startCouncilPrivilegeChoice() {
+        Platform.runLater(() ->  {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/councilConvert.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage councilPrivilegeChoice = new Stage();
+                councilPrivilegeChoice.setScene(new Scene(root));
+                councilPrivilegeChoice.show();
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch council convert", e);
+            }
         });
     }
 
@@ -565,6 +583,7 @@ public class GameBoardController extends Observable implements Observer {
 
     private void sendBoardAction(BasicAction basicAction, PawnColor pawnColor, int numberOfServant) {
         actionDescription = new BoardAction(basicAction, pawnColor, numberOfServant);
+        ClientInformation.setLastBoardAction((BoardAction)actionDescription);
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new PawnPlacement(baseInformation, actionDescription));
     }
@@ -676,32 +695,26 @@ public class GameBoardController extends Observable implements Observer {
     public void setDices() {
         DiceColor color;
         int value;
-        boardLight.getDiceLightList().forEach(diceLight -> System.out.println(diceLight.getDiceColor().toString() + " " + diceLight.getValue()));
         for (int i = 0; i < boardLight.getDiceLightList().size(); i++) {
             color = boardLight.getDiceLightList().get(i).getDiceColor();
             value = boardLight.getDiceLightList().get(i).getValue();
             switch (color) {
                 case BLACK: blackDice.setImage(new Image(
                         "client/dices/" + color.toString() + "_" + value + ".png"));
-                    System.out.println("client/dices/" + color.toString() + "_" + value + ".png");
                         break;
                 case WHITE: whiteDice.setImage(new Image(
                         "client/dices/" + color.toString() + "_" + value + ".png"));
-                    System.out.println("client/dices/" + color.toString() + "_" + value + ".png");
                     break;
                 case ORANGE: orangeDice.setImage(new Image(
                         "client/dices/" + color.toString() + "_" + value + ".png"));
-                    System.out.println("client/dices/" + color.toString() + "_" + value + ".png");
                     break;
             }
         }
     }
 
     public void setExcommunications() {
-        System.out.println(boardLight.getExcommunicationTiles().size());
         for (int i = 0; i < boardLight.getExcommunicationTiles().size(); i++) {
             String excomName = boardLight.getExcommunicationTiles().get(i).getName();
-            System.out.println(boardLight.getExcommunicationTiles().get(i).getName());
             if (excomName.startsWith("1.")) {
                 Image firstExcom = new Image(
                         "client/excomtiles/" + excomName + ".png");
@@ -710,7 +723,7 @@ public class GameBoardController extends Observable implements Observer {
             if (excomName.startsWith("2.")) {
                 Image secondExcom = new Image(
                         "client/excomtiles/" + excomName + ".png");
-                excom1.setImage(secondExcom);
+                excom2.setImage(secondExcom);
             } else {
                 Image thirdExcom = new Image(
                         "client/excomtiles/" + excomName + ".png");

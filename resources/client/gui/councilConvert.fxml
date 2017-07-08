@@ -26,19 +26,17 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
         <children>
-            <fx:define>
-                <ToggleGroup fx:id="conversionToggleGroup"/>
-            </fx:define>
+
             <JFXRadioButton fx:id="choice0" mnemonicParsing="false" text="1 Stone and 1 Wood" GridPane.rowIndex="0"
-                            toggleGroup="$conversionToggleGroup" focusTraversable="false" selectedColor="coral"/>
+                            focusTraversable="false" selectedColor="coral"/>
             <JFXRadioButton fx:id="choice1" mnemonicParsing="false" text="2 Servants" GridPane.rowIndex="1"
-                            toggleGroup="$conversionToggleGroup" focusTraversable="false" selectedColor="coral"/>
-            <JFXRadioButton fx:id="choice2" mnemonicParsing="false" text="2 Coins" toggleGroup="$conversionToggleGroup"
+                            focusTraversable="false" selectedColor="coral"/>
+            <JFXRadioButton fx:id="choice2" mnemonicParsing="false" text="2 Coins"
                             focusTraversable="false" selectedColor="coral" GridPane.rowIndex="2"/>
             <JFXRadioButton fx:id="choice3" mnemonicParsing="false" text="2 Military Points" GridPane.rowIndex="3"
-                            toggleGroup="$conversionToggleGroup" focusTraversable="false" selectedColor="coral"/>
+                            focusTraversable="false" selectedColor="coral"/>
             <JFXRadioButton fx:id="choice4" mnemonicParsing="false" text="1 Faith Point" GridPane.rowIndex="4"
-                            toggleGroup="$conversionToggleGroup" focusTraversable="false" selectedColor="coral"/>
+                            focusTraversable="false" selectedColor="coral"/>
         </children>
     </GridPane>
     <JFXButton fx:id="convert" layoutX="133.0" layoutY="318.0" mnemonicParsing="false" text="Convert" focusTraversable="false"

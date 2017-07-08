@@ -4,6 +4,7 @@ import it.polimi.ingsw.shared.requests.serverclient.*;
 
 public interface ClientReceiver {
     void visitServerClientRequest(ChosenGameResponse chosenGameResponse);
+    void visitServerClientRequest(CouncilPrivilegeChoice councilPrivilegeChoice);
     void visitServerClientRequest(EndLeadersChoicePhase endLeadersChoicePhase);
     void visitServerClientRequest(EndTileChoicePhase endTileChoicePhase);
     void visitServerClientRequest(LeadersChoice leadersChoice);

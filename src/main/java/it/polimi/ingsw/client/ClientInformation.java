@@ -2,6 +2,7 @@ package it.polimi.ingsw.client;
 
 import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 
 import java.util.List;
 
@@ -9,6 +10,8 @@ public class ClientInformation {
     private static String playerName;
     private static GeneralColor playerColor;
     private static int currentGameId;
+    private static BoardAction lastBoardAction;
+
     private static boolean gameStarted;
     private static boolean canPlay;
     private static boolean loginSuccessful;
@@ -47,6 +50,14 @@ public class ClientInformation {
 
     public static void setCurrentGameId(int currentGameId) {
         ClientInformation.currentGameId = currentGameId;
+    }
+
+    public static BoardAction getLastBoardAction() {
+        return lastBoardAction;
+    }
+
+    public static void setLastBoardAction(BoardAction lastBoardAction) {
+        ClientInformation.lastBoardAction = lastBoardAction;
     }
 
     public static boolean isGameStarted() {

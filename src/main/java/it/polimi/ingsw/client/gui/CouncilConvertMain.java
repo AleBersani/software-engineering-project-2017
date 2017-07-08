@@ -11,7 +11,7 @@ public class CouncilConvertMain extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/client/gui/councilConvert.fxml"));
-        primaryStage.setTitle("Final Ranking");
+        primaryStage.setTitle("Council Privilege Choice");
         primaryStage.setScene(new Scene(root, 350, 500));
         primaryStage.show();
     }

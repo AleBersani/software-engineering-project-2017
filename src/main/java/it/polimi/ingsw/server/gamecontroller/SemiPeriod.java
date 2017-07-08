@@ -4,9 +4,9 @@ import it.polimi.ingsw.client.model.*;
 import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 import it.polimi.ingsw.server.connection.ConnectedClient;
-import it.polimi.ingsw.server.gamecontroller.helpers.BasicRewardsGenerator;
-import it.polimi.ingsw.server.gamecontroller.helpers.RequirementsGenerator;
-import it.polimi.ingsw.server.gamecontroller.helpers.RequirementsSupport;
+import it.polimi.ingsw.server.gamecontroller.helpers.rewards.BasicRewardsGenerator;
+import it.polimi.ingsw.server.gamecontroller.helpers.requirements.RequirementsGenerator;
+import it.polimi.ingsw.server.gamecontroller.helpers.requirements.RequirementsSupport;
 import it.polimi.ingsw.server.gameelements.Cards;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.CardAction;
@@ -210,6 +210,12 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
                 towerSlotLight = new TowerSlotLight(
                         new SlotLight(t.getSpace().getBoardIdentifier(), t.getSpace().getRequestedValue(), pawnLight),
                         new Card("Empty"));
+                if (PawnColor.UNCOLORED != t.getSpace().getPlayerPawn().getPawnColor()) {
+                    towerSlotLight.getSlotLight().setPawnLight(
+                            new PawnLight(t.getSpace().getPlayerPawn().getPlayerDetails().getPlayerName(),
+                                    t.getSpace().getPlayerPawn().getPawnColor(), true));
+                    System.out.println("Ci sono: " + towerSlotLight.getSlotLight().getPawnLight().toString());
+                }
             }
             towerSlotLightList.add(towerSlotLight);
         }

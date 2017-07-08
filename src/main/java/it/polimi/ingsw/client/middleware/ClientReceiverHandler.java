@@ -38,6 +38,13 @@ public class ClientReceiverHandler implements ClientReceiver {
     }
 
     @Override
+    public void visitServerClientRequest(CouncilPrivilegeChoice councilPrivilegeChoice) {
+        System.out.printf("You have to chose &d council privilege", councilPrivilegeChoice.getNumberOfChoices());
+        GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
+        guiNotifier.updateGui(councilPrivilegeChoice.getNumberOfChoices());
+    }
+
+    @Override
     public void visitServerClientRequest(EndLeadersChoicePhase endLeadersChoicePhase) {
         System.out.println("Leader choice phase ended!");
         ClientInformation.setLeaderChoiceEnded(true);

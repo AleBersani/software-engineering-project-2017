@@ -1,9 +1,10 @@
 package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.connection.ConnectedClient;
-import it.polimi.ingsw.server.gamecontroller.helpers.BonusTileChoiceHandler;
+import it.polimi.ingsw.server.gamecontroller.helpers.choices.BonusTileChoiceHandler;
 import it.polimi.ingsw.server.gamecontroller.helpers.DevelopmentCardsFilter;
-import it.polimi.ingsw.server.gamecontroller.helpers.LeaderCardChoiceHandler;
+import it.polimi.ingsw.server.gamecontroller.helpers.choices.CouncilPrivilegeChoiceHandler;
+import it.polimi.ingsw.server.gamecontroller.helpers.choices.LeaderCardChoiceHandler;
 import it.polimi.ingsw.server.gamecontroller.helpers.UniqueRandomGenerator;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gameelements.Cards;
@@ -23,6 +24,8 @@ import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.server.middleware.ServerSender;
 import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
+import it.polimi.ingsw.shared.requests.clientserver.PlayerLoginRMI;
 import it.polimi.ingsw.shared.requests.serverclient.*;
 
 import java.util.*;
@@ -150,8 +153,9 @@ public class Game implements Runnable, Observer {
 
         for (int i = 0; i < GameConfiguration.getNumberOfPeriods(); i++) {
             PeriodNumber periodNumber = PeriodNumber.values()[i];
-            periods.add(new Period(getExcommunicationTilePerPeriodNumber(periodNumber),
-                    developmentCardsForPeriod.get(periodNumber), periodNumber));
+            ExcommunicationTile excommunicationTile = getExcommunicationTilePerPeriodNumber(periodNumber);
+            periods.add(new Period(excommunicationTile, developmentCardsForPeriod.get(periodNumber), periodNumber));
+            board.getExcommunicationTiles().add(excommunicationTile);
         }
         for (Player player : players) {
             playersOrder.add(player.getPlayerDetails());
@@ -333,6 +337,16 @@ public class Game implements Runnable, Observer {
                 }
             });
         });
+    }
+
+    public void executeCouncilPrivilegeChoice(String playerName, List<Integer> choices, BoardAction boardAction) {
+        for (Player player : players) {
+            if (player.getPlayerDetails().getPlayerName().equals(playerName)) {
+                CouncilPrivilegeChoiceHandler councilPrivilegeChoiceHandler = new CouncilPrivilegeChoiceHandler(
+                        choices, player, boardAction);
+                break;
+            }
+        }
     }
 
     private void sendToAll(ServerClientRequest serverClientRequest) {

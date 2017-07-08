@@ -1,14 +1,21 @@
-package it.polimi.ingsw.server.gamelogic.cards;
+package it.polimi.ingsw.server.gamecontroller.helpers.rewards;
 
+import it.polimi.ingsw.server.gamelogic.basics.Goods;
+import it.polimi.ingsw.server.gamelogic.cards.CardVisitor;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.*;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
+import it.polimi.ingsw.server.gamelogic.modifiers.rewards.BasicRewards;
+import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 import it.polimi.ingsw.server.gamelogic.player.Player;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 
 public class CardVisitorHandler implements CardVisitor {
     private Player player;
+    private BoardAction boardAction;
 
-    public CardVisitorHandler(Player player) {
+    public CardVisitorHandler(Player player, BoardAction boardAction) {
         this.player = player;
+        this.boardAction = boardAction;
     }
 
     @Override
@@ -18,7 +25,13 @@ public class CardVisitorHandler implements CardVisitor {
 
     @Override
     public void visitAdditionalCardInfo(CardFlashExchangingGoods cardFlashExchangingGoods) {
-
+        BasicRewards basicRewards = new BasicRewards(boardAction.getBasicAction().getActionType(),
+                cardFlashExchangingGoods.getExchangingGoods().getGoods());
+        for (RewardsModifier rewardsModifier : player.getRewardsModifiers()) {
+            rewardsModifier.modifyRewards(basicRewards);
+        }
+        player.getPlayerGoods().addAll(basicRewards.calculateFinalRewards());
+        System.out.println("Ho dato a " + player.getPlayerDetails().getPlayerName() + ": " + cardFlashExchangingGoods.getExchangingGoods().getGoods());
     }
 
     @Override

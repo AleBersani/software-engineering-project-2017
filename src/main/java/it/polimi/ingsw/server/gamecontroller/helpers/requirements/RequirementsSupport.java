@@ -1,4 +1,4 @@
-package it.polimi.ingsw.server.gamecontroller.helpers;
+package it.polimi.ingsw.server.gamecontroller.helpers.requirements;
 
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.BoardActionRequirements;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.TowerActionRequirements;
