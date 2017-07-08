@@ -127,6 +127,7 @@ public class ClientReceiverHandler implements ClientReceiver {
         owner.setNumberOfResources(updatePlayerBoard.getNumberOfResources());
         owner.getPlayerLight().setActivatedLeaders(updatePlayerBoard.getNewActivatedLeaders());
         owner.getPlayerLight().setNumberOfPoints(updatePlayerBoard.getNewNumberOfPoints());
+        owner.setPawnLights(updatePlayerBoard.getPawnLights());
         PlayerBoardNotifier guiNotifier = PlayerBoardNotifier.getInstance();
         guiNotifier.updateGui();
     }

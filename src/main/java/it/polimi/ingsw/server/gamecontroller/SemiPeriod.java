@@ -4,9 +4,9 @@ import it.polimi.ingsw.client.model.*;
 import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 import it.polimi.ingsw.server.connection.ConnectedClient;
-import it.polimi.ingsw.server.gamecontroller.helpers.rewards.BasicRewardsGenerator;
 import it.polimi.ingsw.server.gamecontroller.helpers.requirements.RequirementsGenerator;
 import it.polimi.ingsw.server.gamecontroller.helpers.requirements.RequirementsSupport;
+import it.polimi.ingsw.server.gamecontroller.helpers.rewards.BasicRewardsGenerator;
 import it.polimi.ingsw.server.gameelements.Cards;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.CardAction;
@@ -319,9 +319,12 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
 
     private UpdatePlayerBoard setupUpdatePlayerBoard(Player player) {
         String copyOfBonusTileIdentifier = player.getPlayerBoard().getBonusTiles().getBonusTileIdentifier();
+        List<PawnLight> pawnLightList = new ArrayList<>();
+        player.getPlayerBoard().getPawns().forEach(pawn -> pawnLightList.add(
+                new PawnLight(player.getPlayerDetails().getPlayerName(), pawn.getPawnColor(), pawn.isPlacedOnBoard())));
 
         return new UpdatePlayerBoard(copyActivatedLeadersOfPlayer(player), copyPointsOfPlayer(player),
-                copyOfBonusTileIdentifier, copyDeckLight(player), copyResourcesOfPlayer(player));
+                copyOfBonusTileIdentifier, copyDeckLight(player), copyResourcesOfPlayer(player), pawnLightList);
     }
 
     private DeckLight copyDeckLight(Player player) {

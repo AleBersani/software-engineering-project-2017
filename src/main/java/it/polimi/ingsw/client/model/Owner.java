@@ -5,22 +5,21 @@ import it.polimi.ingsw.client.cli.gameinformation.BoardOwnerInformation;
 import it.polimi.ingsw.client.cli.model.BonusTileDescriptionLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 
-import java.util.EnumMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class Owner {
     private PlayerLight playerLight;
     private String bonusTileIdentifier;
     private DeckLight deckLight;
     private Map<ResourcesLight, Integer> numberOfResources;
+    private List<PawnLight> pawnLights;
 
     private Owner() {
         playerLight = new PlayerLight(ClientInformation.getPlayerName(), ClientInformation.getPlayerColor());
         bonusTileIdentifier = "";
         deckLight = new DeckLight();
         numberOfResources = new EnumMap<>(ResourcesLight.class);
+        pawnLights = new ArrayList<>();
     }
 
     private static class OwnerHolder {
@@ -117,5 +116,13 @@ public class Owner {
 
     public void setNumberOfResources(Map<ResourcesLight, Integer> numberOfResources) {
         this.numberOfResources = numberOfResources;
+    }
+
+    public List<PawnLight> getPawnLights() {
+        return pawnLights;
+    }
+
+    public void setPawnLights(List<PawnLight> pawnLights) {
+        this.pawnLights = pawnLights;
     }
 }
