@@ -237,13 +237,11 @@ public class GameBoardController extends Observable implements Observer {
         initPawnColors();
       //  setOwnerPawns();
         setPlayersOrder();
-        drawPawns();
-        for (Circle c : pawnList) {
-            if (!c.isDisabled()) checkList();
-        }
+
     }
 
     private void drawPawns() {
+        System.out.println("list " + boardLight.getPlayerLights().size());
         System.out.println("pawns " + owner.getPawnLights().size());
         for (PawnLight pawnLight : owner.getPawnLights()) {
             System.out.println(pawnLight.getPawnColor() + " pawn di questo colore");
@@ -410,6 +408,7 @@ public class GameBoardController extends Observable implements Observer {
         } else {
             Platform.runLater(() -> {
                 clearBoard();
+                drawPawns();
                 initGreenTower();
                 initYellowTower();
                 initBlueTower();
@@ -420,6 +419,9 @@ public class GameBoardController extends Observable implements Observer {
                 setExcommunications();
                 setPlayersOrder();
                 checkFaithPoints();
+                for (Circle c : pawnList) {
+                    if (!c.isDisabled()) checkList();
+                }
             //    ownerPawnToOrigins();
             });
         }

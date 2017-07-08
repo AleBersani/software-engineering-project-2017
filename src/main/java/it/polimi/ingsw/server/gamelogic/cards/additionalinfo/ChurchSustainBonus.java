@@ -5,6 +5,10 @@ import it.polimi.ingsw.server.gamelogic.cards.CardVisitor;
 
 import java.util.Objects;
 
+/**
+ * Class that describes the result of the choice of sustaining the Church as a bonus in Goods
+ */
+
 public class ChurchSustainBonus extends AdditionalCardInfo {
     private Goods bonus;
 

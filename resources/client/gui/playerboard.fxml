@@ -96,31 +96,31 @@
                            </ImageView>
          </children>
                           </HBox>
-                           <JFXButton fx:id="place1" focusTraversable="false" style="-fx-border-color: coral"
+                           <JFXButton fx:id="place1" focusTraversable="false" style="-fx-background-color: coral"
                                       text="Place" translateX="-310.0" translateY="150.0" ripplerFill="salmon"
                                       onMouseClicked="#placeLeader"/>
-                           <JFXButton fx:id="active1" focusTraversable="false" style="-fx-border-color: coral"
+                           <JFXButton fx:id="active1" focusTraversable="false" style="-fx-background-color: coral"
                                       text="Activate" translateX="-235.0" translateY="150.0" ripplerFill="salmon"
                                       onMouseClicked="#activateLeader"/>
    
-                           <JFXButton fx:id="place2" focusTraversable="false" style="-fx-border-color: coral"
+                           <JFXButton fx:id="place2" focusTraversable="false" style="-fx-background-color: coral"
                                       text="Place" translateX="-131.0" translateY="150.0" ripplerFill="salmon"
                                       onMouseClicked="#placeLeader"/>
-                           <JFXButton fx:id="active2" focusTraversable="false" style="-fx-border-color: coral"
+                           <JFXButton fx:id="active2" focusTraversable="false" style="-fx-background-color: coral"
                                       text="Activate" translateX="-55.0" translateY="150.0" ripplerFill="salmon"
                                       onMouseClicked="#activateLeader"/>
    
-                           <JFXButton fx:id="place3" focusTraversable="false" style="-fx-border-color: coral"
+                           <JFXButton fx:id="place3" focusTraversable="false" style="-fx-background-color: coral"
                                       text="Place" translateX="50.0" translateY="150.0" ripplerFill="salmon"
                                       onMouseClicked="#placeLeader"/>
-                           <JFXButton fx:id="active3" focusTraversable="false" style="-fx-border-color: coral"
+                           <JFXButton fx:id="active3" focusTraversable="false" style="-fx-background-color: coral"
                                       text="Activate" translateX="124.0" translateY="150.0" ripplerFill="salmon"
                                       onMouseClicked="#activateLeader"/>
    
-                           <JFXButton fx:id="place4" focusTraversable="false" style="-fx-border-color: coral"
+                           <JFXButton fx:id="place4" focusTraversable="false" style="-fx-background-color: coral"
                                       text="Place" translateX="227.0" translateY="150.0" ripplerFill="salmon"
                                       onMouseClicked="#placeLeader"/>
-                           <JFXButton fx:id="active4" focusTraversable="false" style="-fx-border-color: coral"
+                           <JFXButton fx:id="active4" focusTraversable="false" style="-fx-background-color: coral"
                                       text="Activate" translateX="301.0" translateY="150.0" ripplerFill="salmon"
                                       onMouseClicked="#activateLeader"/>
                    </children>

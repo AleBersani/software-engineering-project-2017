@@ -4,6 +4,9 @@ import it.polimi.ingsw.server.gamelogic.cards.CardVisitor;
 
 import java.util.Objects;
 
+/**
+ * Class that calculate the weight of each player in order to take trace of the players' order
+ */
 public class PlayerOrderWeight extends AdditionalCardInfo {
     private int weight;
 
