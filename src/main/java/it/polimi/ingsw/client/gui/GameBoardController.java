@@ -359,6 +359,7 @@ public class GameBoardController extends Observable implements Observer {
                 setOtherPlayersInfo();
                 setExcommunications();
                 setPlayersOrder();
+                checkFaithPoints();
             });
         }
     }
@@ -678,10 +679,26 @@ public class GameBoardController extends Observable implements Observer {
         pawn.setCenterY(originY);
     }
 
-    public void setFaith(int faithPoints, String player) {
+    public void checkFaithPoints() {
+        for (int i = 0; i < boardLight.getPlayerLights().size(); i++) {
+            for (int j = 0; j < faithPath.getChildren().size(); j++) {
+                if (boardLight.getPlayerLights().get(i).getPlayerColor().toString().equals(
+                        faithPath.getChildren().get(j).getId())) {
+                    ((Circle) faithPath.getChildren().get(j)).setFill(Paint.valueOf(
+                            boardLight.getPlayerLights().get(i).getPlayerColor().toString()));
+                }
+            }
+        }
+        for (int i = 0; i < boardLight.getPlayerLights().size(); i++) {
+            setFaith(boardLight.getPlayerLights().get(i).getNumberOfPoints().get(PointsLight.FAITH_POINTS),
+                    boardLight.getPlayerLights().get(i).getPlayerColor());
+        }
+    }
+
+    public void setFaith(int faithPoints, GeneralColor player) {
         double newLayoutX;
-        for (int i = 0; i < faithPath.getChildren().size(); i++) {
-            if (faithPath.getChildren().get(i).getId().equals(player)) {
+        for (int i = 0; i < boardLight.getPlayerLights().size(); i++) {
+            if (faithPath.getChildren().get(i).getId().equals(player.toString())) {
                 faithPath.getChildren().get(i).setTranslateX(FAITH_OFFSET*faithPoints);
                 newLayoutX = faithPath.getChildren().get(i).getLayoutX();
                 if (faithPoints == CRITICAL_FAITH_1 || faithPoints == CRITICAL_FAITH_2 ||

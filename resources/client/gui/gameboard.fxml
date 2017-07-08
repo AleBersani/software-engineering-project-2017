@@ -61,22 +61,22 @@
    
           <StackPane layoutX="1195.0" layoutY="1.0" prefHeight="26.0" prefWidth="31.0" styleClass="prova2">
          <children>
-            <Circle fx:id="first"  radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" />
+            <Circle fx:id="first" fill="TRANSPARENT" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" />
          </children>
       </StackPane>
           <StackPane layoutX="1195.0" layoutY="36.0" prefHeight="26.0" prefWidth="31.0" styleClass="prova">
          <children>
-            <Circle fx:id="second" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" />
+            <Circle fx:id="second" fill="TRANSPARENT" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" />
          </children>
       </StackPane>
           <StackPane layoutX="1195.0" layoutY="65.0" prefHeight="26.0" prefWidth="31.0" styleClass="prova">
          <children>
-            <Circle fx:id="third"  radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" />
+            <Circle fx:id="third" fill="TRANSPARENT" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" />
          </children>
       </StackPane>
           <StackPane layoutX="1195.0" layoutY="96.0" prefHeight="26.0" prefWidth="31.0" styleClass="prova">
          <children>
-            <Circle fx:id="fourth" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" />
+            <Circle fx:id="fourth" fill="TRANSPARENT" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" />
          </children>
       </StackPane>
       
@@ -107,10 +107,10 @@
    
           <StackPane fx:id="faithPath" layoutX="686.0" layoutY="185.0" prefHeight="32.0" prefWidth="565.0" styleClass="prova">
       <children>
-                        <Circle fx:id="player1" fill="#d00000" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" translateX="7.0" StackPane.alignment="CENTER_LEFT" />
-                        <Circle fx:id="player3" fill="#fff200" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" StackPane.alignment="BOTTOM_LEFT" />
-                        <Circle fx:id="player2" fill="#1300cf" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" StackPane.alignment="TOP_LEFT" />
-                        <Circle fx:id="player4" fill="#09dd02" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" StackPane.alignment="CENTER_LEFT" />
+                        <Circle fx:id="PURPLE" fill="TRANSPARENT" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" translateX="7.0" StackPane.alignment="CENTER_LEFT" />
+                        <Circle fx:id="YELLOW" fill="TRANSPARENT" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" StackPane.alignment="BOTTOM_LEFT" />
+                        <Circle fx:id="BLUE"  fill="TRANSPARENT" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" StackPane.alignment="TOP_LEFT" />
+                        <Circle fx:id="GREEN" fill="TRANSPARENT" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" StackPane.alignment="CENTER_LEFT" />
       </children>
           </StackPane>
    
