@@ -16,6 +16,7 @@ public class BoardLight {
     private CouncilPalaceLight councilPalaceLight;
     private List<PlayerLight> playerLights;
     private List<DiceLight> diceLightList;
+    private List<Card> excommunicationTiles;
 
     private BoardLight() {
         greenTower = new ArrayList<>();
@@ -28,6 +29,7 @@ public class BoardLight {
         councilPalaceLight = new CouncilPalaceLight(BoardIdentifier.COUNCIL_PALACE);
         playerLights = new ArrayList<>();
         diceLightList = new ArrayList<>();
+        excommunicationTiles = new ArrayList<>();
     }
 
     private static class BoardLightHolder {
@@ -116,5 +118,13 @@ public class BoardLight {
 
     public void setDiceLightList(List<DiceLight> diceLightList) {
         this.diceLightList = diceLightList;
+    }
+
+    public List<Card> getExcommunicationTiles() {
+        return excommunicationTiles;
+    }
+
+    public void setExcommunicationTiles(List<Card> excommunicationTiles) {
+        this.excommunicationTiles = excommunicationTiles;
     }
 }

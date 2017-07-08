@@ -1,4 +1,4 @@
-package it.polimi.ingsw.server.gamecontroller;
+package it.polimi.ingsw.server.gamecontroller.helpers;
 
 import it.polimi.ingsw.server.gamelogic.basics.CouncilPrivilege;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;

@@ -18,6 +18,7 @@ public class UpdateGameBoard implements ServerClientRequest {
     private CouncilPalaceLight newCouncilPalaceLight;
     private List<PlayerLight> newPlayerLights;
     private List<DiceLight> diceLightList;
+    private List<Card> newExcommunicationTiles;
 
     public UpdateGameBoard() {
         newGreenTower = new ArrayList<>();
@@ -30,6 +31,7 @@ public class UpdateGameBoard implements ServerClientRequest {
         newCouncilPalaceLight = new CouncilPalaceLight(BoardIdentifier.COUNCIL_PALACE);
         newPlayerLights = new ArrayList<>();
         diceLightList = new ArrayList<>();
+        newExcommunicationTiles = new ArrayList<>();
     }
 
     @Override
@@ -115,5 +117,13 @@ public class UpdateGameBoard implements ServerClientRequest {
 
     public void setDiceLightList(List<DiceLight> diceLightList) {
         this.diceLightList = diceLightList;
+    }
+
+    public List<Card> getNewExcommunicationTiles() {
+        return newExcommunicationTiles;
+    }
+
+    public void setNewExcommunicationTiles(List<Card> newExcommunicationTiles) {
+        this.newExcommunicationTiles = newExcommunicationTiles;
     }
 }

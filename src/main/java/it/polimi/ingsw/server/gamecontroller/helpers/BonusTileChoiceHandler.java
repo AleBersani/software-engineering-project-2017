@@ -1,4 +1,4 @@
-package it.polimi.ingsw.server.gamecontroller;
+package it.polimi.ingsw.server.gamecontroller.helpers;
 
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gameelements.SetGameElements;

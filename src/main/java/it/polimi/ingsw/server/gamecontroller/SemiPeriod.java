@@ -4,11 +4,15 @@ import it.polimi.ingsw.client.model.*;
 import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 import it.polimi.ingsw.server.connection.ConnectedClient;
+import it.polimi.ingsw.server.gamecontroller.helpers.BasicRewardsGenerator;
+import it.polimi.ingsw.server.gamecontroller.helpers.RequirementsGenerator;
+import it.polimi.ingsw.server.gamecontroller.helpers.RequirementsSupport;
 import it.polimi.ingsw.server.gameelements.Cards;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.CardAction;
 import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
+import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCost;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.BoardActionRequirements;
@@ -59,65 +63,20 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     }
 
     public void initSemiPeriod() {
-        setBoardCards();
-        board.setDices(extractDicesAndSetPawns());
+        LOGGER.info("Init semi period started");
+        putDevelopmentCardsOnTowers();
+        rollDices();
+        givePawnsToPlayers();
         calculatePlayersOrder();
-        sendBoardsToPlayers();
-        LOGGER.info("Init semi period ended");
+        LOGGER.info("Init semi period ended, sending game board to players...");
+        sendBoardToPlayers();
+        LOGGER.info("Board sent to players, now sending players boards..");
+        sendPlayerBoardToEachSeparatePlayer();
         sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(true));
         LOGGER.log(Level.INFO, () -> "Turn token given to: " + players.get(0).getPlayerDetails().getPlayerName());
     }
 
-    private void sendBoardsToPlayers() {
-        for (Player player : players) {
-            sendTo(player.getPlayerDetails().getPlayerName(), setupUpdatePlayerBoard(player));
-        }
-        sendToAll(setupUpdateGameBoard());
-    }
-
-    private UpdatePlayerBoard setupUpdatePlayerBoard(Player player) {
-        List<Card> newActivatedLeaders = new ArrayList<>();
-        board.getLeaderInformationList().forEach(l -> newActivatedLeaders.add(new Card(l.getName())));
-
-        Map<PointsLight, Integer> newNumberOfPoints = new EnumMap<>(PointsLight.class);
-        newNumberOfPoints.put(PointsLight.VICTORY_POINTS, player.getPlayerGoods().getPoints().getVictory());
-        newNumberOfPoints.put(PointsLight.MILITARY_POINTS, player.getPlayerGoods().getPoints().getMilitary());
-        newNumberOfPoints.put(PointsLight.FAITH_POINTS, player.getPlayerGoods().getPoints().getFaith());
-
-        String newBonusTileIdentifier = player.getPlayerBoard().getBonusTiles().getBonusTileIdentifier();
-
-        DeckLight newDeckLight = setupDeckLight(player);
-
-        Map<ResourcesLight, Integer> newNumberOfResources = new EnumMap<>(ResourcesLight.class);
-        newNumberOfResources.put(ResourcesLight.WOODS, player.getPlayerGoods().getResources().getWoods());
-        newNumberOfResources.put(ResourcesLight.STONES, player.getPlayerGoods().getResources().getStones());
-        newNumberOfResources.put(ResourcesLight.SERVANTS, player.getPlayerGoods().getResources().getServants());
-        newNumberOfResources.put(ResourcesLight.COINS, player.getPlayerGoods().getResources().getCoins());
-
-        return new UpdatePlayerBoard(newActivatedLeaders, newNumberOfPoints, newBonusTileIdentifier,
-                newDeckLight, newNumberOfResources);
-    }
-
-    private DeckLight setupDeckLight(Player player) {
-        List<Card> territories = new ArrayList<>();
-        player.getPlayerBoard().getDeck().getTerritories()
-                .forEach(card -> territories.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
-        List<Card> buildings = new ArrayList<>();
-        player.getPlayerBoard().getDeck().getBuildings()
-                .forEach(card -> buildings.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
-        List<Card> characters = new ArrayList<>();
-        player.getPlayerBoard().getDeck().getCharacters()
-                .forEach(card -> characters.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
-        List<Card> ventures = new ArrayList<>();
-        player.getPlayerBoard().getDeck().getVentures()
-                .forEach(card -> ventures.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
-        List<Card> leaders = new ArrayList<>();
-        player.getLeaderCards().forEach(card -> leaders.add(new Card(card.getLeaderName())));
-
-        return new DeckLight(territories, buildings, characters, ventures, leaders);
-    }
-
-    private void setBoardCards() {
+    private void putDevelopmentCardsOnTowers() {
         List<DevelopmentCard> territories;
         List<DevelopmentCard> buildings;
         List<DevelopmentCard> characters;
@@ -126,95 +85,10 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         buildings = getParticularCardsList(GeneralColor.YELLOW);
         characters = getParticularCardsList(GeneralColor.BLUE);
         ventures = getParticularCardsList(GeneralColor.PURPLE);
-        setTowerCards(territories, GeneralColor.GREEN);
-        setTowerCards(buildings, GeneralColor.YELLOW);
-        setTowerCards(characters, GeneralColor.BLUE);
-        setTowerCards(ventures, GeneralColor.PURPLE);
-    }
-
-    private UpdateGameBoard setupUpdateGameBoard() {
-        UpdateGameBoard updateGameBoard = new UpdateGameBoard();
-        updateGameBoard.setNewGreenTower(copyTowersInformation(board.getTowers().get(0).getTowerSlots()));
-        for (TowerSlotLight towerSlotLight : updateGameBoard.getNewGreenTower()) {
-            System.out.println(towerSlotLight.getCard().getName() + " " + towerSlotLight.getSlotLight().getBoardIdentifier());
-        }
-
-        updateGameBoard.setNewYellowTower(copyTowersInformation(board.getTowers().get(1).getTowerSlots()));
-
-        updateGameBoard.setNewBlueTower(copyTowersInformation(board.getTowers().get(2).getTowerSlots()));
-
-        updateGameBoard.setNewPurpleTower(copyTowersInformation(board.getTowers().get(3).getTowerSlots()));
-
-        updateGameBoard.setNewProduction(copyProductionHarvestSpaces(board.getBoardActionSpaces().getProductionArea()));
-
-        updateGameBoard.setNewHarvest(copyProductionHarvestSpaces(board.getBoardActionSpaces().getHarvestArea()));
-
-        List<SlotLight> newMarket = new ArrayList<>();
-        for (MarketSpace m : board.getBoardActionSpaces().getMarketArea()) {
-            PlayerPawn playerPawn = m.getSpace().getPlayerPawn();
-            PawnLight pawnLight = null;
-            if (PawnColor.UNCOLORED != playerPawn.getPawnColor()) {
-                pawnLight = new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true);
-            }
-            newMarket.add(new SlotLight(m.getSpace().getBoardIdentifier(), m.getSpace().getRequestedValue(), pawnLight));
-        }
-        updateGameBoard.setNewMarket(newMarket);
-
-        List<PawnLight> pawnLightList = new ArrayList<>();
-        for (PlayerPawn playerPawn : board.getCouncilPalace().getPlayerPawnList()) {
-            pawnLightList.add(new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true));
-        }
-        updateGameBoard.getNewCouncilPalaceLight().setPawnLightList(pawnLightList);
-
-        List<PlayerLight> newPlayerLights = new ArrayList<>();
-        for (Player player : players) {
-            newPlayerLights.add(new PlayerLight(player.getPlayerDetails().getPlayerName(), player.getPlayerDetails().getPlayerColor()));
-        }
-        updateGameBoard.setNewPlayerLights(newPlayerLights);
-
-        List<DiceLight> newDiceLightList = new ArrayList<>();
-        for (Dice d : board.getDices()) {
-            newDiceLightList.add(new DiceLight(d.getDiceColor(), d.getValue()));
-        }
-        updateGameBoard.setDiceLightList(newDiceLightList);
-
-        return updateGameBoard;
-    }
-
-    private List<TowerSlotLight> copyTowersInformation(List<TowerSlot> towerSlots) {
-        List<TowerSlotLight> towerSlotLightList = new ArrayList<>();
-        for (TowerSlot t : towerSlots) {
-            PlayerPawn playerPawn = t.getSpace().getPlayerPawn();
-            PawnLight pawnLight = null;
-            if (PawnColor.UNCOLORED != playerPawn.getPawnColor()) {
-                pawnLight = new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true);
-            }
-            TowerSlotLight towerSlotLight;
-            if (t.getDevelopmentCard() != null) {
-                towerSlotLight = new TowerSlotLight(
-                        new SlotLight(t.getSpace().getBoardIdentifier(), t.getSpace().getRequestedValue(), pawnLight),
-                        new Card(t.getDevelopmentCard().getBasicDevelopmentCard().getCardInformation().getName()));
-            } else {
-                towerSlotLight = new TowerSlotLight(
-                        new SlotLight(t.getSpace().getBoardIdentifier(), t.getSpace().getRequestedValue(), pawnLight),
-                        new Card("Empty"));
-            }
-            towerSlotLightList.add(towerSlotLight);
-        }
-        return towerSlotLightList;
-    }
-
-    private List<SlotLight> copyProductionHarvestSpaces(List<ProductionHarvestSpace> productionHarvestSpaceList) {
-        List<SlotLight> slotLightList = new ArrayList<>();
-        for (ProductionHarvestSpace s : productionHarvestSpaceList) {
-            PlayerPawn playerPawn = s.getSpace().getPlayerPawn();
-            PawnLight pawnLight = null;
-            if (PawnColor.UNCOLORED != playerPawn.getPawnColor()) {
-                pawnLight = new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true);
-            }
-            slotLightList.add(new SlotLight(s.getSpace().getBoardIdentifier(), s.getSpace().getRequestedValue(), pawnLight));
-        }
-        return slotLightList;
+        putDevelopmentCardsOnSpecificTower(territories, GeneralColor.GREEN);
+        putDevelopmentCardsOnSpecificTower(buildings, GeneralColor.YELLOW);
+        putDevelopmentCardsOnSpecificTower(characters, GeneralColor.BLUE);
+        putDevelopmentCardsOnSpecificTower(ventures, GeneralColor.PURPLE);
     }
 
     private List<DevelopmentCard> getParticularCardsList(GeneralColor color) {
@@ -223,39 +97,41 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
                 .collect(Collectors.toList());
     }
 
-    public void setTowerCards(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
+    private void putDevelopmentCardsOnSpecificTower(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
         for (Tower tower : board.getTowers()) {
             if (tower.getColor() == color) {
-                int i = 0;
-                for (TowerSlot towerSlot : tower.getTowerSlots()) {
-                    towerSlot.setDevelopmentCard(cardsToAdd.get(i));
-                    i++;
+                for (int i = 0; i < tower.getTowerSlots().size(); i++) {
+                    tower.getTowerSlots().get(i).setDevelopmentCard(cardsToAdd.get(i));
                 }
                 break;
             }
         }
     }
 
-    private List<Dice> extractDicesAndSetPawns() {
+    private void rollDices() {
         List<DiceColor> colors = new ArrayList<>();
-
         colors.add(DiceColor.BLACK);
         colors.add(DiceColor.ORANGE);
         colors.add(DiceColor.WHITE);
+
         Random random = new Random();
-        List<Dice> dices = new ArrayList<>();
+
         for (DiceColor diceColor : colors) {
             Dice dice = new Dice(diceColor, random.nextInt(5) + 1);
-            dices.add(dice);
+            board.getDices().add(dice);
+        }
+    }
+
+    private void givePawnsToPlayers() {
+        for (Dice dice : board.getDices()) {
             for (Player player : players) {
-                player.getPlayerBoard().getPawns().add(new Pawn(dice.getValue(),
-                        PawnColor.valueOf(dice.getDiceColor().toString())));
+                player.getPlayerBoard().getPawns().add(
+                        new Pawn(dice.getValue(), PawnColor.valueOf(dice.getDiceColor().toString())));
             }
         }
         for (Player player : players) {
             player.getPlayerBoard().getPawns().add(new Pawn(0, PawnColor.NEUTRAL));
         }
-        return dices;
     }
 
     private void calculatePlayersOrder() {
@@ -285,34 +161,208 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
 
         playersOrder.clear();
         Map<Integer, PlayerDetails> treeMap = new TreeMap<>(orderedCopy);
-        for (PlayerDetails p : treeMap.values()) {
-            playersOrder.add(p);
+        playersOrder.addAll(treeMap.values());
+    }
+
+    private void sendBoardToPlayers() {
+        UpdateGameBoard updateGameBoard = setupUpdateGameBoard();
+        sendToAll(updateGameBoard);
+    }
+
+    private UpdateGameBoard setupUpdateGameBoard() {
+        UpdateGameBoard updateGameBoard = new UpdateGameBoard();
+
+        updateGameBoard.setNewGreenTower(copyTowersInformation(board.getTowers().get(0).getTowerSlots()));
+        updateGameBoard.setNewYellowTower(copyTowersInformation(board.getTowers().get(1).getTowerSlots()));
+        updateGameBoard.setNewBlueTower(copyTowersInformation(board.getTowers().get(2).getTowerSlots()));
+        updateGameBoard.setNewPurpleTower(copyTowersInformation(board.getTowers().get(3).getTowerSlots()));
+
+        updateGameBoard.setNewProduction(copyProductionHarvestSpaces(board.getBoardActionSpaces().getProductionArea()));
+        updateGameBoard.setNewHarvest(copyProductionHarvestSpaces(board.getBoardActionSpaces().getHarvestArea()));
+
+        updateGameBoard.setNewMarket(copyMarket());
+
+        updateGameBoard.getNewCouncilPalaceLight().setPawnLightList(copyCouncilPalacePawns());
+
+        updateGameBoard.setNewPlayerLights(copyPlayersInformation());
+
+        updateGameBoard.setDiceLightList(copyDices());
+
+        updateGameBoard.setNewExcommunicationTiles(copyExcommunicationTiles());
+
+        return updateGameBoard;
+    }
+
+    private List<TowerSlotLight> copyTowersInformation(List<TowerSlot> towerSlots) {
+        List<TowerSlotLight> towerSlotLightList = new ArrayList<>();
+        for (TowerSlot t : towerSlots) {
+            PlayerPawn playerPawn = t.getSpace().getPlayerPawn();
+            PawnLight pawnLight = null;
+            if (PawnColor.UNCOLORED != playerPawn.getPawnColor()) {
+                pawnLight = new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true);
+            }
+            TowerSlotLight towerSlotLight;
+            if (t.getDevelopmentCard() != null) {
+                towerSlotLight = new TowerSlotLight(
+                        new SlotLight(t.getSpace().getBoardIdentifier(), t.getSpace().getRequestedValue(), pawnLight),
+                        new Card(t.getDevelopmentCard().getBasicDevelopmentCard().getCardInformation().getName()));
+            } else {
+                towerSlotLight = new TowerSlotLight(
+                        new SlotLight(t.getSpace().getBoardIdentifier(), t.getSpace().getRequestedValue(), pawnLight),
+                        new Card("Empty"));
+            }
+            towerSlotLightList.add(towerSlotLight);
+        }
+        return towerSlotLightList;
+    }
+
+    private List<SlotLight> copyProductionHarvestSpaces(List<ProductionHarvestSpace> productionHarvestSpaceList) {
+        List<SlotLight> slotLightList = new ArrayList<>();
+        for (ProductionHarvestSpace productionHarvestSpace : productionHarvestSpaceList) {
+            PlayerPawn playerPawn = productionHarvestSpace.getSpace().getPlayerPawn();
+            PawnLight pawnLight = null;
+            if (PawnColor.UNCOLORED != playerPawn.getPawnColor()) {
+                pawnLight = new PawnLight(playerPawn.getPlayerDetails().getPlayerName(),
+                        playerPawn.getPawnColor(), true);
+            }
+            slotLightList.add(new SlotLight(productionHarvestSpace.getSpace().getBoardIdentifier(),
+                    productionHarvestSpace.getSpace().getRequestedValue(), pawnLight));
+        }
+        return slotLightList;
+    }
+
+    private List<SlotLight> copyMarket() {
+        List<SlotLight> newMarket = new ArrayList<>();
+        for (MarketSpace m : board.getBoardActionSpaces().getMarketArea()) {
+            PlayerPawn playerPawn = m.getSpace().getPlayerPawn();
+            PawnLight pawnLight = null;
+            if (PawnColor.UNCOLORED != playerPawn.getPawnColor()) {
+                pawnLight = new PawnLight(playerPawn.getPlayerDetails().getPlayerName(), playerPawn.getPawnColor(), true);
+            }
+            newMarket.add(new SlotLight(m.getSpace().getBoardIdentifier(), m.getSpace().getRequestedValue(), pawnLight));
+        }
+        return newMarket;
+    }
+
+    private List<PawnLight> copyCouncilPalacePawns() {
+        List<PawnLight> councilPalacePawns = new ArrayList<>();
+        for (PlayerPawn playerPawn : board.getCouncilPalace().getPlayerPawnList()) {
+            councilPalacePawns.add(new PawnLight(playerPawn.getPlayerDetails().getPlayerName(),
+                    playerPawn.getPawnColor(), true));
+        }
+        return councilPalacePawns;
+    }
+
+    private List<PlayerLight> copyPlayersInformation() {
+        List<PlayerLight> playerLightList = new ArrayList<>();
+        for (PlayerDetails playerDetails : basePlayersOrder) {
+            for (Player player : players) {
+                if (playerDetails.equals(player.getPlayerDetails())) {
+                    PlayerLight playerLight = new PlayerLight(player.getPlayerDetails().getPlayerName(),
+                            player.getPlayerDetails().getPlayerColor());
+                    playerLight.setActivatedLeaders(copyActivatedLeadersOfPlayer(player));
+                    playerLight.setNumberOfPoints(copyPointsOfPlayer(player));
+                    playerLightList.add(playerLight);
+                    break;
+                }
+            }
+        }
+
+        return playerLightList;
+    }
+
+    private List<Card> copyActivatedLeadersOfPlayer(Player player) {
+        List<Card> activatedLeaders = new ArrayList<>();
+        for (LeaderCard leaderCard : player.getLeaderCards()) {
+            if (leaderCard.isPlacedOnBoard()) {
+                activatedLeaders.add(new Card(leaderCard.getLeaderName()));
+            }
+        }
+        return activatedLeaders;
+    }
+
+    private Map<PointsLight, Integer> copyPointsOfPlayer(Player player) {
+        Map<PointsLight, Integer> pointsOfPlayer = new EnumMap<>(PointsLight.class);
+        pointsOfPlayer.put(PointsLight.VICTORY_POINTS, player.getPlayerGoods().getPoints().getVictory());
+        pointsOfPlayer.put(PointsLight.MILITARY_POINTS, player.getPlayerGoods().getPoints().getMilitary());
+        pointsOfPlayer.put(PointsLight.FAITH_POINTS, player.getPlayerGoods().getPoints().getFaith());
+        return pointsOfPlayer;
+    }
+
+    private List<DiceLight> copyDices() {
+        List<DiceLight> newDiceLightList = new ArrayList<>();
+        for (Dice d : board.getDices()) {
+            newDiceLightList.add(new DiceLight(d.getDiceColor(), d.getValue()));
+        }
+        return newDiceLightList;
+    }
+
+    private List<Card> copyExcommunicationTiles() {
+        List<Card> excommunicationTiles = new ArrayList<>();
+        for (ExcommunicationTile excommunicationTile : board.getExcommunicationTiles()) {
+            excommunicationTiles.add(new Card(excommunicationTile.getExcommunicationTileName()));
+        }
+        return excommunicationTiles;
+    }
+
+    private void sendPlayerBoardToEachSeparatePlayer() {
+        for (Player player : players) {
+            sendTo(player.getPlayerDetails().getPlayerName(), setupUpdatePlayerBoard(player));
         }
     }
 
-    @Override
-    public void update(Observable o, Object arg) {
-        /*
+    private UpdatePlayerBoard setupUpdatePlayerBoard(Player player) {
+        String copyOfBonusTileIdentifier = player.getPlayerBoard().getBonusTiles().getBonusTileIdentifier();
 
-         */
+        return new UpdatePlayerBoard(copyActivatedLeadersOfPlayer(player), copyPointsOfPlayer(player),
+                copyOfBonusTileIdentifier, copyDeckLight(player), copyResourcesOfPlayer(player));
     }
+
+    private DeckLight copyDeckLight(Player player) {
+        List<Card> territories = new ArrayList<>();
+        player.getPlayerBoard().getDeck().getTerritories()
+                .forEach(card -> territories.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
+        List<Card> buildings = new ArrayList<>();
+        player.getPlayerBoard().getDeck().getBuildings()
+                .forEach(card -> buildings.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
+        List<Card> characters = new ArrayList<>();
+        player.getPlayerBoard().getDeck().getCharacters()
+                .forEach(card -> characters.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
+        List<Card> ventures = new ArrayList<>();
+        player.getPlayerBoard().getDeck().getVentures()
+                .forEach(card -> ventures.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
+        List<Card> leaders = new ArrayList<>();
+        player.getLeaderCards().forEach(card -> leaders.add(new Card(card.getLeaderName())));
+
+        return new DeckLight(territories, buildings, characters, ventures, leaders);
+    }
+
+    private Map<ResourcesLight, Integer> copyResourcesOfPlayer(Player player) {
+        Map<ResourcesLight, Integer> numberOfResources = new EnumMap<>(ResourcesLight.class);
+        numberOfResources.put(ResourcesLight.WOODS, player.getPlayerGoods().getResources().getWoods());
+        numberOfResources.put(ResourcesLight.STONES, player.getPlayerGoods().getResources().getStones());
+        numberOfResources.put(ResourcesLight.SERVANTS, player.getPlayerGoods().getResources().getServants());
+        numberOfResources.put(ResourcesLight.COINS, player.getPlayerGoods().getResources().getCoins());
+        return numberOfResources;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {}
 
     @Override
     public void visitActionDescription(BoardAction boardAction) {
         LOGGER.info("Action: board action");
         for (Player player : players) {
             if (player.getPlayerDetails().getPlayerName().equals(playersOrder.get(0).getPlayerName())) {
-                System.out.println("Ci sono1");
                 RequirementsGenerator requirementsGenerator =
                         new RequirementsGenerator(board, player, boardAction.getBasicAction().getBoardIdentifier());
                 if (runRequirements(requirementsGenerator.generateRequirements(boardAction), player)) {
-                    System.out.println("Ci sono2");
                     LOGGER.info("Action: player has requirements!");
                     BasicRewardsGenerator basicRewardsGenerator = new BasicRewardsGenerator(board);
                     basicRewardsGenerator.generateRewards(player, boardAction);
-                    sendBoardsToPlayers();
+                    sendBoardToPlayers();
+                    sendPlayerBoardToEachSeparatePlayer();
                 } else {
-                    System.out.println("Ci sono3");
                     // TODO: player non ha requisiti
                 }
                 break;

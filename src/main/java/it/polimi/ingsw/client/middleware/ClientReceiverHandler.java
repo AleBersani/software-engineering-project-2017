@@ -88,9 +88,6 @@ public class ClientReceiverHandler implements ClientReceiver {
     public void visitServerClientRequest(UpdateGameBoard updateGameBoard) {
         BoardLight boardLight = BoardLight.getInstance();
         boardLight.setGreenTower(updateGameBoard.getNewGreenTower());
-        for (TowerSlotLight towerSlotLight : boardLight.getGreenTower()) {
-            System.out.println(towerSlotLight.getCard().getName() + " " + towerSlotLight.getSlotLight().getBoardIdentifier());
-        }
         boardLight.setYellowTower(updateGameBoard.getNewYellowTower());
         boardLight.setBlueTower(updateGameBoard.getNewBlueTower());
         boardLight.setPurpleTower(updateGameBoard.getNewPurpleTower());
@@ -100,6 +97,7 @@ public class ClientReceiverHandler implements ClientReceiver {
         boardLight.setCouncilPalaceLight(updateGameBoard.getNewCouncilPalaceLight());
         boardLight.setPlayerLights(updateGameBoard.getNewPlayerLights());
         boardLight.setDiceLightList(updateGameBoard.getDiceLightList());
+        boardLight.setExcommunicationTiles(updateGameBoard.getNewExcommunicationTiles());
         GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
         guiNotifier.updateGui();
     }
