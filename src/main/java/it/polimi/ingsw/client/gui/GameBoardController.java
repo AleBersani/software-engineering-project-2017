@@ -3,7 +3,6 @@ package it.polimi.ingsw.client.gui;
 
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.GameBoardNotifier;
-import it.polimi.ingsw.client.gui.notify.PlayerBoardNotifier;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
@@ -71,7 +70,6 @@ public class GameBoardController extends Observable implements Observer {
     private BoardLight boardLight;
     private ActionDescription actionDescription;
     private Owner owner;
-
 
     private Circle whitePawn;
     private Circle orangePawn;
@@ -218,17 +216,12 @@ public class GameBoardController extends Observable implements Observer {
         owner = Owner.getInstance();
         pawnList = new ArrayList<>();
         pawnColors = new EnumMap<>(GeneralColor.class);
+        order = new ArrayList<>();
     }
 
     public void initialize() {
         GameBoardNotifier.getInstance().addObserver(this);
         owner = Owner.getInstance();
-      /*  List<PawnLight> pawnLightList = new ArrayList<>();
-        pawnLightList.add(new PawnLight("Dennis", PawnColor.BLACK, false));
-        pawnLightList.add(new PawnLight("Dennis", PawnColor.ORANGE, false));
-        pawnLightList.add(new PawnLight("Dennis", PawnColor.WHITE, false));
-        pawnLightList.add(new PawnLight("Dennis", PawnColor.NEUTRAL, false));
-        owner.setPawnLights(pawnLightList); */
         setPositions();
         showPlayerBoard();
         setTowers();
@@ -238,66 +231,59 @@ public class GameBoardController extends Observable implements Observer {
     }
 
     private void drawPawns() {
-        if (!pawnList.isEmpty()) {
-            for (Circle pawn : pawnList) {
-                pawnList.remove(pawn);
-            }
+        for (Circle pawn : pawnList) {
+            root.getChildren().remove(pawn);
         }
+        System.out.println("Pre clear " + pawnList.size());
         pawnList.clear();
-        System.out.println("list " + boardLight.getPlayerLights().size());
-        System.out.println("pawns " + owner.getPawnLights().size());
+        System.out.println("Post clear " + pawnList.size());
         for (PawnLight pawnLight : owner.getPawnLights()) {
-            System.out.println(pawnLight.getPawnColor() + " pawn di questo colore");
             if (!pawnLight.isPlaced()) {
-            switch (pawnLight.getPawnColor()) {
-                case BLACK:
-                    Circle blackPawn = new Circle(15.0);
-                    blackPawn.setFill(Color.BLACK);
-                    blackPawn.setCenterY(453.0);
-                    blackPawn.setCenterX(712.0);
-                    blackPawn.setStroke(Paint.valueOf(owner.getPlayerLight().getPlayerColor().toString()));
-                    blackPawn.setStrokeWidth(4.0);
-                    System.out.println(blackPawn.getCenterX() + " " + blackPawn.getCenterY());
-                    root.getChildren().add(blackPawn);
-                    pawnList.add(blackPawn);
-                    break;
-                case ORANGE:
-                    Circle orangePawn = new Circle(15.0);
-                    orangePawn.setFill(Color.ORANGE);
-                    orangePawn.setCenterY(453.0);
-                    orangePawn.setCenterX(755.0);
-                    orangePawn.setStroke(Paint.valueOf(owner.getPlayerLight().getPlayerColor().toString()));
-                    orangePawn.setStrokeWidth(4.0);
-                    System.out.println(orangePawn.getCenterX() + " " + orangePawn.getCenterY());
-                    root.getChildren().add(orangePawn);
-                    pawnList.add(orangePawn);
-                    break;
-                case WHITE:
-                    Circle whitePawn = new Circle(15.0);
-                    whitePawn.setFill(Color.WHITE);
-                    whitePawn.setCenterY(453.0);
-                    whitePawn.setCenterX(800.0);
-                    whitePawn.setStroke(Paint.valueOf(owner.getPlayerLight().getPlayerColor().toString()));
-                    whitePawn.setStrokeWidth(4.0);
-                    System.out.println(whitePawn.getCenterX() + " " + whitePawn.getCenterY());
-                    root.getChildren().add(whitePawn);
-                    pawnList.add(whitePawn);
-                    break;
-                case NEUTRAL:
-                    Circle neutralPawn = new Circle(15.0);
-                    neutralPawn.setFill(Color.PERU);
-                    neutralPawn.setCenterY(453.0);
-                    neutralPawn.setCenterX(845.0);
-                    neutralPawn.setStroke(Paint.valueOf(owner.getPlayerLight().getPlayerColor().toString()));
-                    neutralPawn.setStrokeWidth(4.0);
-                    System.out.println(neutralPawn.getCenterX() + " " + neutralPawn.getCenterY());
-                    root.getChildren().add(neutralPawn);
-                    pawnList.add(neutralPawn);
-                    break;
+                switch (pawnLight.getPawnColor()) {
+                    case BLACK:
+                        Circle blackPawn = new Circle(15.0);
+                        blackPawn.setFill(Color.BLACK);
+                        blackPawn.setCenterY(453.0);
+                        blackPawn.setCenterX(712.0);
+                        blackPawn.setStroke(Paint.valueOf(owner.getPlayerLight().getPlayerColor().toString()));
+                        blackPawn.setStrokeWidth(4.0);
+                        root.getChildren().add(blackPawn);
+                        pawnList.add(blackPawn);
+                        break;
+                    case ORANGE:
+                        Circle orangePawn = new Circle(15.0);
+                        orangePawn.setFill(Color.ORANGE);
+                        orangePawn.setCenterY(453.0);
+                        orangePawn.setCenterX(755.0);
+                        orangePawn.setStroke(Paint.valueOf(owner.getPlayerLight().getPlayerColor().toString()));
+                        orangePawn.setStrokeWidth(4.0);
+                        root.getChildren().add(orangePawn);
+                        pawnList.add(orangePawn);
+                        break;
+                    case WHITE:
+                        Circle whitePawn = new Circle(15.0);
+                        whitePawn.setFill(Color.WHITE);
+                        whitePawn.setCenterY(453.0);
+                        whitePawn.setCenterX(800.0);
+                        whitePawn.setStroke(Paint.valueOf(owner.getPlayerLight().getPlayerColor().toString()));
+                        whitePawn.setStrokeWidth(4.0);
+                        root.getChildren().add(whitePawn);
+                        pawnList.add(whitePawn);
+                        break;
+                    case NEUTRAL:
+                        Circle neutralPawn = new Circle(15.0);
+                        neutralPawn.setFill(Color.PERU);
+                        neutralPawn.setCenterY(453.0);
+                        neutralPawn.setCenterX(845.0);
+                        neutralPawn.setStroke(Paint.valueOf(owner.getPlayerLight().getPlayerColor().toString()));
+                        neutralPawn.setStrokeWidth(4.0);
+                        root.getChildren().add(neutralPawn);
+                        pawnList.add(neutralPawn);
+                        break;
                 }
             }
         }
-        pawnList.forEach(pawn -> System.out.println(pawn));
+        System.out.println("Post for " + pawnList.size());
     }
 
     private void showPlayerBoard() {
@@ -458,12 +444,6 @@ public class GameBoardController extends Observable implements Observer {
         council_palace.getChildren().clear();
         harvest2.getChildren().clear();
         production2.getChildren().clear();
-    /*    for (Circle pawn : pawnList) {
-            pawn.setVisible(false);
-            pawn.setDisable(true);
-            pawnList.remove(pawn);
-        }
-        pawnList.clear(); */
     }
 
     private void setOtherPlayersInfo() {
@@ -497,14 +477,14 @@ public class GameBoardController extends Observable implements Observer {
     }
 
     private void initGreenTower() {
-        for (int i = 0; i < greenTower.size(); i++) {
+        for (ImageView aGreenTower : greenTower) {
             for (int j = 0; j < boardLight.getGreenTower().size(); j++) {
                 if (!"Empty".equals(boardLight.getGreenTower().get(j).getCard().getName()) &&
-                    greenTower.get(i).getId().toUpperCase().equals(
-                            boardLight.getGreenTower().get(j).getSlotLight().getBoardIdentifier().toString())) {
+                        aGreenTower.getId().toUpperCase().equals(
+                                boardLight.getGreenTower().get(j).getSlotLight().getBoardIdentifier().toString())) {
                     Image newGreenCard = new Image("client/devcards/" +
                             boardLight.getGreenTower().get(j).getCard().getName() + ".png");
-                    greenTower.get(i).setImage(newGreenCard);
+                    aGreenTower.setImage(newGreenCard);
                 }
             }
         }
@@ -512,49 +492,49 @@ public class GameBoardController extends Observable implements Observer {
 
 
     private void initYellowTower() {
-        for (int i = 0; i < yellowTower.size(); i++) {
+        for (ImageView aYellowTower : yellowTower) {
             for (int j = 0; j < boardLight.getYellowTower().size(); j++) {
                 if (!"Empty".equals(boardLight.getYellowTower().get(j).getCard().getName()) &&
-                        yellowTower.get(i).getId().toUpperCase().equals(
+                        aYellowTower.getId().toUpperCase().equals(
                                 boardLight.getYellowTower().get(j).getSlotLight().getBoardIdentifier().toString())) {
                     Image newYellowCard = new Image("client/devcards/" +
                             boardLight.getYellowTower().get(j).getCard().getName() + ".png");
-                    yellowTower.get(i).setImage(newYellowCard);
+                    aYellowTower.setImage(newYellowCard);
                 }
             }
         }
     }
 
     private void initBlueTower() {
-        for (int i = 0; i < blueTower.size(); i++) {
+        for (ImageView aBlueTower : blueTower) {
             for (int j = 0; j < boardLight.getBlueTower().size(); j++) {
                 if (!"Empty".equals(boardLight.getBlueTower().get(j).getCard().getName()) &&
-                        blueTower.get(i).getId().toUpperCase().equals(
+                        aBlueTower.getId().toUpperCase().equals(
                                 boardLight.getBlueTower().get(j).getSlotLight().getBoardIdentifier().toString())) {
                     Image newBlueCard = new Image("client/devcards/" +
                             boardLight.getBlueTower().get(j).getCard().getName() + ".png");
-                    blueTower.get(i).setImage(newBlueCard);
+                    aBlueTower.setImage(newBlueCard);
                 }
             }
         }
     }
 
     private void initPurpleTower() {
-        for (int i = 0; i < purpleTower.size(); i++) {
+        for (ImageView aPurpleTower : purpleTower) {
             for (int j = 0; j < boardLight.getPurpleTower().size(); j++) {
                 if (!"Empty".equals(boardLight.getPurpleTower().get(j).getCard().getName()) &&
-                        purpleTower.get(i).getId().toUpperCase().equals(
+                        aPurpleTower.getId().toUpperCase().equals(
                                 boardLight.getPurpleTower().get(j).getSlotLight().getBoardIdentifier().toString())) {
                     Image newPurpleCard = new Image("client/devcards/" +
                             boardLight.getPurpleTower().get(j).getCard().getName() + ".png");
-                    purpleTower.get(i).setImage(newPurpleCard);
+                    aPurpleTower.setImage(newPurpleCard);
                 }
             }
         }
     }
 
     private void checkList() {
-        if (ClientInformation.isCanPlay()) {
+        if (ClientInformation.getCanPlay().get()) {
             for (Circle pawn : pawnList) {
                 pawn.setOnMouseClicked(event -> moveCircle(pawn));
             }
@@ -596,6 +576,7 @@ public class GameBoardController extends Observable implements Observer {
                                 if (entry.getValue().equals(stackPane)) {
                                     BoardIdentifier boardIdentifier = entry.getKey();
                                     PawnColor pawnColor = PawnColor.UNCOLORED;
+                                    System.out.println(circle.getFill().toString());
                                     switch (circle.getFill().toString()) {
                                         case "0x000000ff":
                                             pawnColor = PawnColor.BLACK;
@@ -606,7 +587,7 @@ public class GameBoardController extends Observable implements Observer {
                                         case "0xff8706ff":
                                             pawnColor = PawnColor.ORANGE;
                                             break;
-                                        case "0xc99463ff":
+                                        case "0xcd853fff":
                                             pawnColor = PawnColor.NEUTRAL;
                                             break;
                                     }
@@ -655,6 +636,7 @@ public class GameBoardController extends Observable implements Observer {
     private void sendBoardAction(BasicAction basicAction, PawnColor pawnColor, int numberOfServant) {
         actionDescription = new BoardAction(basicAction, pawnColor, numberOfServant);
         ClientInformation.setLastBoardAction((BoardAction)actionDescription);
+        System.out.println(actionDescription);
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new PawnPlacement(baseInformation, actionDescription));
     }
@@ -739,7 +721,11 @@ public class GameBoardController extends Observable implements Observer {
             }
         }
         c1.setStroke(Paint.valueOf(pawnColors.get(playerColor)));
-        c1.setFill(Paint.valueOf(placedPawn.getPawnColor().toString()));
+        if (placedPawn.getPawnColor() == PawnColor.NEUTRAL) {
+            c1.setFill(Paint.valueOf("PERU"));
+        } else {
+            c1.setFill(Paint.valueOf(placedPawn.getPawnColor().toString()));
+        }
         c1.setStrokeType(StrokeType.INSIDE);
         c1.setStrokeWidth(4.0);
     }
@@ -815,7 +801,6 @@ public class GameBoardController extends Observable implements Observer {
     }
 
     public void setPlayersOrder() {
-        order = new ArrayList<>();
         order.add(first);
         order.add(second);
         order.add(third);

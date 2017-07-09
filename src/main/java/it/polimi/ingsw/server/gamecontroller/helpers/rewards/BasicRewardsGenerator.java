@@ -1,21 +1,19 @@
 package it.polimi.ingsw.server.gamecontroller.helpers.rewards;
 
-import it.polimi.ingsw.server.connection.ConnectedClient;
+import it.polimi.ingsw.server.gamecontroller.helpers.Sender;
 import it.polimi.ingsw.server.gameelements.AdditionalInfoMaps;
 import it.polimi.ingsw.server.gamelogic.basics.CouncilPrivilege;
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
-import it.polimi.ingsw.server.gamelogic.board.Board;
-import it.polimi.ingsw.server.gamelogic.board.PlayerPawn;
-import it.polimi.ingsw.server.gamelogic.board.Tower;
-import it.polimi.ingsw.server.gamelogic.board.TowerSlot;
-import it.polimi.ingsw.server.gamelogic.cards.CardVisitor;
+import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.AdditionalCardInfo;
 import it.polimi.ingsw.server.gamelogic.cards.development.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.Character;
+import it.polimi.ingsw.server.gamelogic.modifiers.requirements.BoardActionRequirements;
+import it.polimi.ingsw.server.gamelogic.modifiers.requirements.Requirements;
+import it.polimi.ingsw.server.gamelogic.modifiers.requirements.SpaceActionRequirements;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.BasicRewards;
 import it.polimi.ingsw.server.gamelogic.player.Player;
-import it.polimi.ingsw.server.middleware.ServerSender;
-import it.polimi.ingsw.server.middleware.ServerSenderHandler;
+import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import it.polimi.ingsw.shared.requests.serverclient.CouncilPrivilegeChoice;
@@ -30,140 +28,87 @@ public class BasicRewardsGenerator {
     private final static Logger LOGGER = Logger.getLogger(BasicRewardsGenerator.class.getName());
 
     private Board board;
-    private ConnectedClient connectedClient;
+    private Player player;
+    private Sender sender;
+    private List<BasicRewards> basicRewards;
 
-    public BasicRewardsGenerator(Board board, ConnectedClient connectedClient) {
+    private BoardAction boardAction;
+    private ActionType actionType;
+    private BoardIdentifier boardIdentifier;
+
+    public BasicRewardsGenerator(Board board, Player player, Sender sender) {
         this.board = board;
-        this.connectedClient = connectedClient;
+        this.player = player;
+        this.sender = sender;
+        basicRewards = new ArrayList<>();
     }
 
-    public void generateRewards(Player player, BoardAction boardAction) {
-        List<BasicRewards> basicRewardsList = new ArrayList<>();
-        Optional<TowerSlot> optionalTowerSlot;
-        switch (boardAction.getBasicAction().getActionType()) {
+    public void addAttributesToCalculateBasicRewards(BoardAction boardAction) {
+        this.boardAction = boardAction;
+        actionType = boardAction.getBasicAction().getActionType();
+        boardIdentifier = boardAction.getBasicAction().getBoardIdentifier();
+    }
+
+    public void generateRewards() {
+        switch (actionType) {
             case GREEN_TOWER: {
-                optionalTowerSlot = generateBasicRewardForTowerAction(boardAction, basicRewardsList);
-                if (optionalTowerSlot.isPresent()) {
-                    TowerSlot towerSlot = optionalTowerSlot.get();
-                    getAndRunAdditionalCardInfo(player, boardAction, towerSlot.getDevelopmentCard());
-                    player.getPlayerBoard().getDeck().getTerritories().add((Territory)towerSlot.getDevelopmentCard());
-                    calculateModifiedRewards(player, boardAction, towerSlot.getInstantGoods());
-                    player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
-                    towerSlot.setDevelopmentCard(null);
-                    towerSlot.getSpace().setAlreadyTaken(true);
-                    towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
-                    if (player.getPawnGivenColor(boardAction.getPawnColor()).isPresent()) {
-                        player.getPawnGivenColor(boardAction.getPawnColor()).get().setPlacedOnBoard(true);
-                    }
-                }
-                LOGGER.info("Action type: green tower, rewards given to player!");
+                greenTowerCase();
                 break;
             }
             case YELLOW_TOWER: {
-                optionalTowerSlot = generateBasicRewardForTowerAction(boardAction, basicRewardsList);
-                if (optionalTowerSlot.isPresent()) {
-                    TowerSlot towerSlot = optionalTowerSlot.get();
-                    getAndRunAdditionalCardInfo(player, boardAction, towerSlot.getDevelopmentCard());
-                    player.getPlayerBoard().getDeck().getBuildings().add((Building)towerSlot.getDevelopmentCard());
-                    calculateModifiedRewards(player, boardAction, towerSlot.getInstantGoods());
-                    player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
-                    towerSlot.setDevelopmentCard(null);
-                    towerSlot.getSpace().setAlreadyTaken(true);
-                    towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
-                    if (player.getPawnGivenColor(boardAction.getPawnColor()).isPresent()) {
-                        player.getPawnGivenColor(boardAction.getPawnColor()).get().setPlacedOnBoard(true);
-                    }
-                }
-                LOGGER.info("Action type: yellow tower, rewards given to player!");
+                yellowTowerCase();
                 break;
             }
             case BLUE_TOWER: {
-                optionalTowerSlot = generateBasicRewardForTowerAction(boardAction, basicRewardsList);
-                if (optionalTowerSlot.isPresent()) {
-                    TowerSlot towerSlot = optionalTowerSlot.get();
-                    getAndRunAdditionalCardInfo(player, boardAction, towerSlot.getDevelopmentCard());
-                    player.getPlayerBoard().getDeck().getCharacters().add((Character)towerSlot.getDevelopmentCard());
-                    calculateModifiedRewards(player, boardAction, towerSlot.getInstantGoods());
-                    player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
-                    towerSlot.setDevelopmentCard(null);
-                    towerSlot.getSpace().setAlreadyTaken(true);
-                    towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
-                    if (player.getPawnGivenColor(boardAction.getPawnColor()).isPresent()) {
-                        player.getPawnGivenColor(boardAction.getPawnColor()).get().setPlacedOnBoard(true);
-                    }
-                }
-                LOGGER.info("Action type: blue tower, rewards given to player!");
+                blueTowerCase();
                 break;
             }
             case PURPLE_TOWER: {
-                optionalTowerSlot = generateBasicRewardForTowerAction(boardAction, basicRewardsList);
-                if (optionalTowerSlot.isPresent()) {
-                    TowerSlot towerSlot = optionalTowerSlot.get();
-                    getAndRunAdditionalCardInfo(player, boardAction, towerSlot.getDevelopmentCard());
-                    player.getPlayerBoard().getDeck().getVentures().add((Venture)towerSlot.getDevelopmentCard());
-                    calculateModifiedRewards(player, boardAction, towerSlot.getInstantGoods());
-                    player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
-                    towerSlot.setDevelopmentCard(null);
-                    towerSlot.getSpace().setAlreadyTaken(true);
-                    towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
-                    if (player.getPawnGivenColor(boardAction.getPawnColor()).isPresent()) {
-                        player.getPawnGivenColor(boardAction.getPawnColor()).get().setPlacedOnBoard(true);
-                    }
-                }
-                LOGGER.info("Action type: purple tower, rewards given to player!");
+                purpleTowerCase();
                 break;
             }
             case COUNCIL_PALACE: {
-                for (int i = 0; i < board.getCouncilPalace().getInstantGoods().getNumberOfCouncilPrivilege(); i++) {
-                    Goods goods = CouncilPrivilege.getPossibleChoices().get(i);
-                    goods.addAll(board.getCouncilPalace().getInstantGoods().getGoods());
-                    basicRewardsList.add(new BasicRewards(boardAction.getBasicAction().getActionType(), goods));
-                }
+                councilPalaceCase();
                 break;
             }
             case PRODUCTION: {
-
+                productionCase();
                 break;
             }
             case HARVEST: {
-
-
+                harvestCase();
                 break;
             }
             case MARKET: {
-                board.getBoardActionSpaces().getMarketArea().forEach(m -> {
-                    if (m.getSpace().getBoardIdentifier() == boardAction.getBasicAction().getBoardIdentifier()) {
-                        Goods goods = m.getExchangingGoods().getGoods();
-                        calculateModifiedRewards(player, boardAction, goods);
-                        if (m.getExchangingGoods().getNumberOfCouncilPrivilege() > 0){
-                            CouncilPrivilegeChoice councilPrivilegeChoice = new CouncilPrivilegeChoice(
-                                    m.getExchangingGoods().getNumberOfCouncilPrivilege());
-                            ServerSender serverSender = new ServerSenderHandler();
-                            serverSender.sendToClient(connectedClient.getConnectionStream(), councilPrivilegeChoice);
-                        }
-                        m.getSpace().setAlreadyTaken(true);
-                        m.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
-                        basicRewardsList.add(new BasicRewards(boardAction.getBasicAction().getActionType(), goods));
-                    }
-                });
+                marketCase();
                 break;
             }
         }
-        giveRewardsToPlayer(basicRewardsList, player);
+        int newServant = player.getPlayerGoods().getResources().getServants() - boardAction.getNumberOfServants();
+        player.getPlayerGoods().getResources().setServants(newServant);
+        giveRewardsToPlayer();
     }
 
-    private Optional<TowerSlot> generateBasicRewardForTowerAction(BoardAction boardAction, List<BasicRewards> basicRewardsList) {
-        Optional<TowerSlot> optionalTowerSlot =
-                findTowerSlotByBoardIdentifier(boardAction.getBasicAction().getBoardIdentifier());
+    public void greenTowerCase() {
+        LOGGER.info("Action type: green tower");
+        Optional<TowerSlot> optionalTowerSlot = generateBasicRewardForTowerAction();
         if (optionalTowerSlot.isPresent()) {
             TowerSlot towerSlot = optionalTowerSlot.get();
-            basicRewardsList.add(new BasicRewards(boardAction.getBasicAction().getActionType(),
-                    towerSlot.getInstantGoods()));
+            player.getPlayerBoard().getDeck().getTerritories().add((Territory)towerSlot.getDevelopmentCard());
+            towerCaseGeneralOperations(towerSlot);
+        }
+    }
+
+    public Optional<TowerSlot> generateBasicRewardForTowerAction() {
+        Optional<TowerSlot> optionalTowerSlot = findTowerSlotByBoardIdentifier();
+        if (optionalTowerSlot.isPresent()) {
+            TowerSlot towerSlot = optionalTowerSlot.get();
+            basicRewards.add(new BasicRewards(actionType, towerSlot.getInstantGoods()));
         }
         return optionalTowerSlot;
     }
 
-    private Optional<TowerSlot> findTowerSlotByBoardIdentifier(BoardIdentifier boardIdentifier) {
+    public Optional<TowerSlot> findTowerSlotByBoardIdentifier() {
         for (Tower tower : board.getTowers()) {
             for (TowerSlot towerSlot : tower.getTowerSlots()) {
                 if (towerSlot.getSpace().getBoardIdentifier() == boardIdentifier) {
@@ -174,41 +119,190 @@ public class BasicRewardsGenerator {
         return Optional.empty();
     }
 
-    private void getAndRunAdditionalCardInfo(Player player, BoardAction boardAction, DevelopmentCard developmentCard) {
-        runAdditionalCardInfo(player, boardAction, developmentCard.getCardInformation().getName(),
-                AdditionalInfoMaps.getFlashEffectsOnChoice());
-        runAdditionalCardInfo(player, boardAction, developmentCard.getCardInformation().getName(),
-                AdditionalInfoMaps.getFlashEffectsNotSelectable());
-        runAdditionalCardInfo(player, boardAction, developmentCard.getCardInformation().getName(),
-                AdditionalInfoMaps.getPermanentEffectsOnChoice());
-        runAdditionalCardInfo(player, boardAction, developmentCard.getCardInformation().getName(),
-                AdditionalInfoMaps.getPermanentEffectsNotSelectable());
+    public void towerCaseGeneralOperations(TowerSlot towerSlot) {
+        getAndRunAdditionalCardInfoConsumable(towerSlot.getDevelopmentCard());
+        player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
+        towerSlot.setDevelopmentCard(null);
+        towerSlot.getSpace().setAlreadyTaken(true);
+        towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+        basicRewards.add(generateBasicRewardsWithActualActionDescriptionGivenGoods(towerSlot.getInstantGoods()));
+        setPlayerPawnAsPlacedOnBoard();
     }
 
-    private void runAdditionalCardInfo(Player player, BoardAction boardAction, String cardName, Map<String, List<AdditionalCardInfo>> effectsForCards) {
-        System.out.println("Cerco additional info per: " + cardName);
+    public BasicRewards generateBasicRewardsWithActualActionDescriptionGivenGoods(Goods goods) {
+        return new BasicRewards(actionType, goods);
+    }
+
+    public void setPlayerPawnAsPlacedOnBoard() {
+        if (player.getPawnGivenColor(boardAction.getPawnColor()).isPresent()) {
+            player.getPawnGivenColor(boardAction.getPawnColor()).get().setPlacedOnBoard(true);
+        }
+    }
+
+    public void getAndRunAdditionalCardInfoConsumable(DevelopmentCard developmentCard) {
+        runAdditionalCardInfoWithBoardAction(developmentCard.getCardInformation().getName(),
+                AdditionalInfoMaps.getFlashEffectsOnChoice());
+        runAdditionalCardInfoWithBoardAction(developmentCard.getCardInformation().getName(),
+                AdditionalInfoMaps.getFlashEffectsNotSelectable());
+    }
+
+    public void runAdditionalCardInfoWithBoardAction(String cardName, Map<String, List<AdditionalCardInfo>> effectsForCards) {
         for (Map.Entry<String, List<AdditionalCardInfo>> entry : effectsForCards.entrySet()) {
-            System.out.println(entry.getKey());
             if (entry.getKey().equals(cardName)) {
-                System.out.println("Additional info trovata per: " + entry.getKey());
                 for (AdditionalCardInfo additionalCardInfo : entry.getValue()) {
-                    CardVisitor cardVisitor = new CardVisitorHandler(player, boardAction);
-                    additionalCardInfo.acceptCardVisitor(cardVisitor);
+                    CardVisitorHandler cardVisitorHandler = new CardVisitorHandler(player, sender);
+                    cardVisitorHandler.addAdditionalAttributesForBoardAction(boardAction, basicRewards);
+                    additionalCardInfo.acceptCardVisitor(cardVisitorHandler);
                 }
             }
         }
     }
 
-    public void giveRewardsToPlayer(List<BasicRewards> basicRewardsList, Player player) {
-        basicRewardsList.forEach(b -> player.getRewardsModifiers().forEach(m -> m.modifyRewards(b)));
-
+    public void yellowTowerCase() {
+        LOGGER.info("Action type: yellow tower");
+        Optional<TowerSlot> optionalTowerSlot = generateBasicRewardForTowerAction();
+        if (optionalTowerSlot.isPresent()) {
+            TowerSlot towerSlot = optionalTowerSlot.get();
+            player.getPlayerBoard().getDeck().getBuildings().add((Building)towerSlot.getDevelopmentCard());
+            towerCaseGeneralOperations(towerSlot);
+        }
     }
 
-    public void calculateModifiedRewards(Player player, BoardAction boardAction, Goods goods) {
-        BasicRewards basicRewards = new BasicRewards(boardAction.getBasicAction().getActionType(), goods);
-        player.getRewardsModifiers().forEach(rewardsModifier -> rewardsModifier.modifyRewards(basicRewards));
-        player.getPlayerGoods().addAll(basicRewards.getRewards());
+    public void blueTowerCase() {
+        LOGGER.info("Action type: blue tower");
+        Optional<TowerSlot> optionalTowerSlot = generateBasicRewardForTowerAction();
+        if (optionalTowerSlot.isPresent()) {
+            TowerSlot towerSlot = optionalTowerSlot.get();
+            player.getPlayerBoard().getDeck().getCharacters().add((Character)towerSlot.getDevelopmentCard());
+            towerCaseGeneralOperations(towerSlot);
+        }
     }
+
+    public void purpleTowerCase() {
+        LOGGER.info("Action type: purple tower");
+        Optional<TowerSlot> optionalTowerSlot = generateBasicRewardForTowerAction();
+        if (optionalTowerSlot.isPresent()) {
+            TowerSlot towerSlot = optionalTowerSlot.get();
+            player.getPlayerBoard().getDeck().getVentures().add((Venture)towerSlot.getDevelopmentCard());
+            towerCaseGeneralOperations(towerSlot);
+        }
+    }
+
+    public void councilPalaceCase() {
+        Goods goods = board.getCouncilPalace().getInstantGoods().getGoods();
+        basicRewards.add(generateBasicRewardsWithActualActionDescriptionGivenGoods(goods));
+        Goods chosenGoods = CouncilPrivilege.getPossibleChoices().get(boardAction.getPositionExchangingGoodsChosen().get(0));
+        basicRewards.add(generateBasicRewardsWithActualActionDescriptionGivenGoods(chosenGoods));
+    }
+
+    public void productionCase() {
+        int numberOfCouncilPrivilege = 0;
+        for (Building building : player.getPlayerBoard().getDeck().getBuildings()) {
+            if (building.getProductionResult().getGoods().isEmpty()) {
+                numberOfCouncilPrivilege += building.getProductionResult().getNumberOfCouncilPrivilege();
+                CardVisitorHandler cardVisitorHandler = new CardVisitorHandler(player, sender);
+                cardVisitorHandler.addAdditionalAttributesForBoardAction(boardAction, basicRewards);
+                getAndRunAdditionalCardInfoPermanent(building);
+            } else {
+                if (checkIfBuildingHasConditionalProduction(building)) {
+                    getAndRunAdditionalCardInfoPermanent(building);
+                } else {
+                    SpaceActionRequirements spaceActionRequirements = new SpaceActionRequirements(actionType,
+                            boardAction.getPawnColor(), building.getProductionActionValueRequired(),
+                            boardAction.getBasicAction().getActionValue(), boardAction.getNumberOfServants(), false);
+                    Requirements requirements = new BoardActionRequirements(spaceActionRequirements, getProductionSpaceMalus());
+                    if (requirements.hasRequirements(player)) {
+                        Goods goods = building.getProductionResult().getGoods();
+                        basicRewards.add(generateBasicRewardsWithActualActionDescriptionGivenGoods(goods));
+                        numberOfCouncilPrivilege += building.getProductionResult().getNumberOfCouncilPrivilege();
+                    }
+                }
+            }
+        }
+        sendCouncilPrivilegeChoice(numberOfCouncilPrivilege);
+    }
+
+    public void getAndRunAdditionalCardInfoPermanent(DevelopmentCard developmentCard) {
+        runAdditionalCardInfoWithBoardAction(developmentCard.getCardInformation().getName(),
+                AdditionalInfoMaps.getPermanentEffectsNotSelectable());
+        runAdditionalCardInfoWithBoardAction(developmentCard.getCardInformation().getName(),
+                AdditionalInfoMaps.getPermanentEffectsOnChoice());
+    }
+
+    public boolean checkIfBuildingHasConditionalProduction(DevelopmentCard developmentCard) {
+        for (Map.Entry<String, List<AdditionalCardInfo>> entry : AdditionalInfoMaps.getPermanentEffectsOnChoice().entrySet()) {
+            if (entry.getKey().equals(developmentCard.getCardInformation().getName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int getProductionSpaceMalus() {
+        for (ProductionHarvestSpace productionHarvestSpace : board.getBoardActionSpaces().getProductionArea()) {
+            if (productionHarvestSpace.getSpace().getBoardIdentifier() == boardAction.getBasicAction().getBoardIdentifier()) {
+                return productionHarvestSpace.getMalusValue();
+            }
+        }
+        return 0;
+    }
+
+    public void sendCouncilPrivilegeChoice(int numberOfCouncilPrivilege) {
+        if (numberOfCouncilPrivilege > 0) {
+            CouncilPrivilegeChoice councilPrivilegeChoice = new CouncilPrivilegeChoice(numberOfCouncilPrivilege);
+            sender.sendTo(player.getPlayerDetails().getPlayerName(), councilPrivilegeChoice);
+        }
+    }
+
+    public void harvestCase() {
+        int numberOfCouncilPrivilege = 0;
+        for (Territory territory : player.getPlayerBoard().getDeck().getTerritories()) {
+            SpaceActionRequirements spaceActionRequirements = new SpaceActionRequirements(actionType,
+                    boardAction.getPawnColor(), territory.getHarvestActionValueRequired(),
+                    boardAction.getBasicAction().getActionValue(), boardAction.getNumberOfServants(), false);
+            Requirements requirements = new BoardActionRequirements(spaceActionRequirements, getHarvestSpaceMalus());
+            if (requirements.hasRequirements(player)) {
+                Goods goods = territory.getHarvestResult().getGoods();
+                basicRewards.add(generateBasicRewardsWithActualActionDescriptionGivenGoods(goods));
+                numberOfCouncilPrivilege += territory.getHarvestResult().getNumberOfCouncilPrivilege();
+            }
+        }
+        sendCouncilPrivilegeChoice(numberOfCouncilPrivilege);
+    }
+
+    public int getHarvestSpaceMalus() {
+        for (ProductionHarvestSpace productionHarvestSpace : board.getBoardActionSpaces().getHarvestArea()) {
+            if (productionHarvestSpace.getSpace().getBoardIdentifier() == boardAction.getBasicAction().getBoardIdentifier()) {
+                return productionHarvestSpace.getMalusValue();
+            }
+        }
+        return 0;
+    }
+
+    public void marketCase() {
+        for (MarketSpace marketSpace : board.getBoardActionSpaces().getMarketArea()) {
+            if (marketSpace.getSpace().getBoardIdentifier() == boardAction.getBasicAction().getBoardIdentifier()) {
+                Goods goods = marketSpace.getExchangingGoods().getGoods();
+                basicRewards.add(generateBasicRewardsWithActualActionDescriptionGivenGoods(goods));
+                marketSpace.getSpace().setAlreadyTaken(true);
+                marketSpace.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+                int numberOfCouncilPrivilege = marketSpace.getExchangingGoods().getNumberOfCouncilPrivilege();
+                sendCouncilPrivilegeChoice(numberOfCouncilPrivilege);
+                break;
+            }
+        }
+    }
+
+    public void giveRewardsToPlayer() {
+        for (BasicRewards basicReward : basicRewards) {
+            player.getRewardsModifiers().forEach(m -> m.modifyRewards(basicReward));
+            player.getPlayerGoods().addAll(basicReward.calculateFinalRewards());
+        }
+    }
+
+    /*
+        GETTERS AND SETTERS
+     */
 
     public Board getBoard() {
         return board;
@@ -216,5 +310,53 @@ public class BasicRewardsGenerator {
 
     public void setBoard(Board board) {
         this.board = board;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Sender getSender() {
+        return sender;
+    }
+
+    public void setSender(Sender sender) {
+        this.sender = sender;
+    }
+
+    public List<BasicRewards> getBasicRewards() {
+        return basicRewards;
+    }
+
+    public void setBasicRewards(List<BasicRewards> basicRewards) {
+        this.basicRewards = basicRewards;
+    }
+
+    public BoardAction getBoardAction() {
+        return boardAction;
+    }
+
+    public void setBoardAction(BoardAction boardAction) {
+        this.boardAction = boardAction;
+    }
+
+    public ActionType getActionType() {
+        return actionType;
+    }
+
+    public void setActionType(ActionType actionType) {
+        this.actionType = actionType;
+    }
+
+    public BoardIdentifier getBoardIdentifier() {
+        return boardIdentifier;
+    }
+
+    public void setBoardIdentifier(BoardIdentifier boardIdentifier) {
+        this.boardIdentifier = boardIdentifier;
     }
 }

@@ -1,6 +1,5 @@
 package it.polimi.ingsw.client.cli;
 
-import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.cli.gameinformation.BoardOwnerInformation;
 import it.polimi.ingsw.client.cli.gameinformation.CardsInformation;
 import it.polimi.ingsw.client.cli.model.*;
@@ -49,7 +48,7 @@ public class CliMain {
     private void chooseGameType() {
         String choice;
         boolean requestSent = false;
-        flagToObserve = new AtomicBoolean(ClientInformation.isGameStarted());
+        flagToObserve = new AtomicBoolean(ClientCliInformation.isGameStarted());
         do {
             System.out.printf("A: New Game\n" +
                               "B: Resume Game\n");
@@ -67,7 +66,7 @@ public class CliMain {
                 System.out.println("Request Sent! ");
             } else if ("B".equals(choice.trim().toUpperCase()))
                 System.out.printf("Work in progress...\n");
-            System.out.println(ClientInformation.isGameStarted() + " :Game is started?");
+            System.out.println(ClientCliInformation.isGameStarted() + " :Game is started?");
         } while (!flagToObserve.get());
         chooseLeaderCards();
     }
@@ -78,7 +77,7 @@ public class CliMain {
         int maxNumOfLines;
         String leaderChosen;
         do {
-            leadersToShowUp = ClientInformation.getCurrentLeadersToChoice();
+            leadersToShowUp = ClientCliInformation.getCurrentLeadersToChoice();
             leadersToShowUpInformation = getLeadersToShowUpString(leadersToShowUp);
             maxNumOfLines = getMaxNumOfLines(leadersToShowUpInformation);
             System.out.println("Choose your Leaders: ");
@@ -100,7 +99,7 @@ public class CliMain {
             } catch (InterruptedException e) {
                 LOGGER.log(Level.SEVERE, "An Exception was thrown for waiting Thread ", e);
             }
-        } while (!ClientInformation.isLeaderChoiceEnded());
+        } while (!ClientCliInformation.isLeaderChoiceEnded());
         chooseBonusTile();
     }
 
@@ -135,7 +134,7 @@ public class CliMain {
         List<String[]> bonusTilesInformation;
         String choice;
         do {
-            bonusTilesToChoose = ClientInformation.getCurrentBonusTilesToChoice();
+            bonusTilesToChoose = ClientCliInformation.getCurrentBonusTilesToChoice();
             if (bonusTilesToChoose.size() < 0) {
                 System.out.printf("Waiting for other players to choose\n");
             } else {
@@ -155,7 +154,7 @@ public class CliMain {
                     System.out.printf("Incorrect choice! \n");
                 }
             }
-        } while(!ClientInformation.isBonusTilesChoiceEnded());
+        } while(!ClientCliInformation.isBonusTilesChoiceEnded());
         showMainMenu();
     }
 

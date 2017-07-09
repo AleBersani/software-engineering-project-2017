@@ -21,27 +21,40 @@ public class RequirementsGenerator {
 
     private Board board;
     private Player player;
+
+    private BoardAction boardAction;
+    private ActionType actionType;
     private BoardIdentifier boardIdentifier;
 
-    public RequirementsGenerator(Board board, Player player, BoardIdentifier boardIdentifier) {
+    public RequirementsGenerator(Board board, Player player) {
         this.board = board;
         this.player = player;
-        this.boardIdentifier = boardIdentifier;
     }
 
-    public RequirementsSupport generateRequirements(BoardAction boardAction) {
-        BasicAction basicAction = boardAction.getBasicAction();
-        SpaceActionRequirements spaceActionRequirements = new SpaceActionRequirements(
-                basicAction.getActionType(), boardAction.getPawnColor(), getRequiredValue(),
-                basicAction.getActionValue(), boardAction.getNumberOfServants(), getIsOccupied());
+    public void addAttributesToCalculateRequirements(BoardAction boardAction) {
+        this.boardAction = boardAction;
+        actionType = boardAction.getBasicAction().getActionType();
+        boardIdentifier = boardAction.getBasicAction().getBoardIdentifier();
+    }
+
+    public RequirementsSupport generateRequirements() {
+        SpaceActionRequirements spaceActionRequirements = createSpaceActionRequirements();
+
         if ('T' == boardIdentifier.toString().charAt(0)) {
-            return new RequirementsSupport(generateTowerActionRequirements(boardAction, spaceActionRequirements));
+            return new RequirementsSupport(generateTowerActionRequirements(spaceActionRequirements));
         } else {
-            return new RequirementsSupport(generateBoardActionRequirements(boardAction, spaceActionRequirements));
+            return new RequirementsSupport(generateBoardActionRequirements(spaceActionRequirements));
         }
     }
 
-    private int getRequiredValue() {
+    public SpaceActionRequirements createSpaceActionRequirements() {
+        BasicAction basicAction = boardAction.getBasicAction();
+
+        return new SpaceActionRequirements(actionType, boardAction.getPawnColor(), getRequestedValue(),
+                basicAction.getActionValue(), boardAction.getNumberOfServants(), getIsOccupied());
+    }
+
+    public int getRequestedValue() {
         Optional<Space> optionalSpace = searchSpace();
         if (optionalSpace.isPresent()) {
             Space space = optionalSpace.get();
@@ -50,19 +63,7 @@ public class RequirementsGenerator {
         return 0;
     }
 
-    private boolean getIsOccupied() {
-        if (BoardIdentifier.PRODUCTION_2 == boardIdentifier || BoardIdentifier.HARVEST_2 == boardIdentifier) {
-            return true;
-        }
-        Optional<Space> optionalSpace = searchSpace();
-        if (optionalSpace.isPresent()) {
-            Space space = optionalSpace.get();
-            return space.isAlreadyTaken();
-        }
-        return true;
-    }
-
-    private Optional<Space> searchSpace() {
+    public Optional<Space> searchSpace() {
         for (Tower tower : board.getTowers()) {
             for (TowerSlot towerSlot : tower.getTowerSlots()) {
                 if (towerSlot.getSpace().getBoardIdentifier() == boardIdentifier) {
@@ -92,23 +93,32 @@ public class RequirementsGenerator {
         return Optional.empty();
     }
 
-    private TowerActionRequirements generateTowerActionRequirements(BoardAction boardAction,
-                                                         SpaceActionRequirements spaceActionRequirements) {
+    public boolean getIsOccupied() {
+        if (BoardIdentifier.PRODUCTION_2 == boardIdentifier || BoardIdentifier.HARVEST_2 == boardIdentifier) {
+            return true;
+        }
+        Optional<Space> optionalSpace = searchSpace();
+        if (optionalSpace.isPresent()) {
+            Space space = optionalSpace.get();
+            return space.isAlreadyTaken();
+        }
+        return true;
+    }
+
+    public TowerActionRequirements generateTowerActionRequirements(SpaceActionRequirements spaceActionRequirements) {
         Optional<TowerSlot> optionalTowerSlot = searchTowerSlot();
         if (optionalTowerSlot.isPresent()) {
             TowerSlot towerSlot = optionalTowerSlot.get();
-            Goods requiredGoods = towerSlot.getDevelopmentCard()
-                    .getCosts()
+            Goods requiredGoods = towerSlot.getDevelopmentCard().getCosts()
                     .get(boardAction.getPositionMultipleCostChosen());
             Goods bonusGoods = towerSlot.getInstantGoods();
             return new TowerActionRequirements(spaceActionRequirements, requiredGoods, bonusGoods,
-                    OCCUPIED_TOWER_COST, isOccupiedTower(boardAction.getBasicAction().getActionType()),
-                    isOccupiedTowerByMyColouredPawn(boardAction.getBasicAction().getActionType()));
+                    OCCUPIED_TOWER_COST, isOccupiedTower(), isOccupiedTowerByMyColouredPawn());
         }
         return null;
     }
 
-    private Optional<TowerSlot> searchTowerSlot() {
+    public Optional<TowerSlot> searchTowerSlot() {
         for (Tower tower : board.getTowers()) {
             for (TowerSlot towerSlot : tower.getTowerSlots()) {
                 if (towerSlot.getSpace().getBoardIdentifier() == boardIdentifier) {
@@ -119,9 +129,10 @@ public class RequirementsGenerator {
         return Optional.empty();
     }
 
-    private boolean isOccupiedTower(ActionType actionType) {
-        Tower tower = getTowerBasedOnActionType(actionType);
-        if (tower != null) {
+    public boolean isOccupiedTower() {
+        Optional<Tower> optionalTower = getTowerBasedOnActionType();
+        if (optionalTower.isPresent()) {
+            Tower tower = optionalTower.get();
             for (TowerSlot towerSlot : tower.getTowerSlots()) {
                 if (towerSlot.getSpace().isAlreadyTaken()) {
                     return true;
@@ -131,43 +142,44 @@ public class RequirementsGenerator {
         return false;
     }
 
-    private Tower getTowerBasedOnActionType(ActionType actionType) {
+    public Optional<Tower> getTowerBasedOnActionType() {
         switch (actionType) {
             case GREEN_TOWER:
                 for (Tower tower : board.getTowers()) {
                     if (GeneralColor.GREEN == tower.getColor()) {
-                        return tower;
+                        return Optional.of(tower);
                     }
                 }
                 break;
             case YELLOW_TOWER:
                 for (Tower tower : board.getTowers()) {
                     if (GeneralColor.YELLOW == tower.getColor()) {
-                        return tower;
+                        return Optional.of(tower);
                     }
                 }
                 break;
             case BLUE_TOWER:
                 for (Tower tower : board.getTowers()) {
                     if (GeneralColor.BLUE == tower.getColor()) {
-                        return tower;
+                        return Optional.of(tower);
                     }
                 }
                 break;
             case PURPLE_TOWER:
                 for (Tower tower : board.getTowers()) {
                     if (GeneralColor.PURPLE == tower.getColor()) {
-                        return tower;
+                        return Optional.of(tower);
                     }
                 }
                 break;
         }
-        return null;
+        return Optional.empty();
     }
 
-    private boolean isOccupiedTowerByMyColouredPawn(ActionType actionType) {
-        Tower tower = getTowerBasedOnActionType(actionType);
-        if (tower != null) {
+    public boolean isOccupiedTowerByMyColouredPawn() {
+        Optional<Tower> optionalTower = getTowerBasedOnActionType();
+        if (optionalTower.isPresent()) {
+            Tower tower = optionalTower.get();
             for (TowerSlot towerSlot : tower.getTowerSlots()) {
                 PlayerPawn playerPawn = towerSlot.getSpace().getPlayerPawn();
                 if (playerPawn.getPlayerDetails().getPlayerName().equals(player.getPlayerDetails().getPlayerName()) &&
@@ -179,12 +191,11 @@ public class RequirementsGenerator {
         return false;
     }
 
-    private BoardActionRequirements generateBoardActionRequirements(BoardAction boardAction,
-                                                                   SpaceActionRequirements spaceActionRequirements) {
+    public BoardActionRequirements generateBoardActionRequirements(SpaceActionRequirements spaceActionRequirements) {
         return new BoardActionRequirements(spaceActionRequirements, searchMalusValueOnBoardActionSpace());
     }
 
-    private int searchMalusValueOnBoardActionSpace() {
+    public int searchMalusValueOnBoardActionSpace() {
         for (ProductionHarvestSpace productionHarvestSpace : board.getBoardActionSpaces().getProductionArea()) {
             if (productionHarvestSpace.getSpace().getBoardIdentifier() == boardIdentifier) {
                 return productionHarvestSpace.getMalusValue();
@@ -198,6 +209,46 @@ public class RequirementsGenerator {
         }
 
         return 0;
+    }
+
+    /*
+        GETTERS AND SETTERS
+     */
+
+    public static Goods getOccupiedTowerCost() {
+        return OCCUPIED_TOWER_COST;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public BoardAction getBoardAction() {
+        return boardAction;
+    }
+
+    public void setBoardAction(BoardAction boardAction) {
+        this.boardAction = boardAction;
+    }
+
+    public ActionType getActionType() {
+        return actionType;
+    }
+
+    public void setActionType(ActionType actionType) {
+        this.actionType = actionType;
     }
 
     public BoardIdentifier getBoardIdentifier() {

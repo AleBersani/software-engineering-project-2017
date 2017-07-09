@@ -1,31 +1,19 @@
 package it.polimi.ingsw.client;
 
-import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 
-import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ClientInformation {
     private static String playerName;
     private static GeneralColor playerColor;
     private static int currentGameId;
     private static BoardAction lastBoardAction;
+    private static AtomicBoolean canPlay;
 
-    private static boolean gameStarted;
-    private static boolean canPlay;
-    private static boolean loginSuccessful;
-    private static boolean leaderChoiceEnded;
-    private static List<Card> currentLeadersToChoice;
-    private static boolean bonusTilesChoiceEnded;
-    private static List<String> currentBonusTilesToChoice;
-
-    public static void initClientInformation() {
-        gameStarted = false;
-        canPlay = false;
-        loginSuccessful = false;
-        leaderChoiceEnded = false;
-        bonusTilesChoiceEnded = false;
+    public static void initClass() {
+        canPlay = new AtomicBoolean(false);
     }
 
     public static String getPlayerName() {
@@ -60,59 +48,11 @@ public class ClientInformation {
         ClientInformation.lastBoardAction = lastBoardAction;
     }
 
-    public static boolean isGameStarted() {
-        return gameStarted;
-    }
-
-    public static void setGameStarted(boolean gameStarted) {
-        ClientInformation.gameStarted = gameStarted;
-    }
-
-    public static boolean isCanPlay() {
+    public static AtomicBoolean getCanPlay() {
         return canPlay;
     }
 
-    public static void setCanPlay(boolean canPlay) {
+    public static void setCanPlay(AtomicBoolean canPlay) {
         ClientInformation.canPlay = canPlay;
-    }
-
-    public static boolean isLoginSuccessful() {
-        return loginSuccessful;
-    }
-
-    public static void setLoginSuccessful(boolean loginSuccessful) {
-        ClientInformation.loginSuccessful = loginSuccessful;
-    }
-
-    public static boolean isLeaderChoiceEnded() {
-        return leaderChoiceEnded;
-    }
-
-    public static void setLeaderChoiceEnded(boolean leaderChoiceEnded) {
-        ClientInformation.leaderChoiceEnded = leaderChoiceEnded;
-    }
-
-    public static List<Card> getCurrentLeadersToChoice() {
-        return currentLeadersToChoice;
-    }
-
-    public static void setCurrentLeadersToChoice(List<Card> currentLeadersToChoice) {
-        ClientInformation.currentLeadersToChoice = currentLeadersToChoice;
-    }
-
-    public static boolean isBonusTilesChoiceEnded() {
-        return bonusTilesChoiceEnded;
-    }
-
-    public static void setBonusTilesChoiceEnded(boolean bonusTilesChoiceEnded) {
-        ClientInformation.bonusTilesChoiceEnded = bonusTilesChoiceEnded;
-    }
-
-    public static List<String> getCurrentBonusTilesToChoice() {
-        return currentBonusTilesToChoice;
-    }
-
-    public static void setCurrentBonusTilesToChoice(List<String> currentBonusTilesToChoice) {
-        ClientInformation.currentBonusTilesToChoice = currentBonusTilesToChoice;
     }
 }

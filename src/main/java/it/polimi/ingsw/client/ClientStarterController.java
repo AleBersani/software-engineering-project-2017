@@ -58,6 +58,7 @@ public class ClientStarterController implements Observer {
     private JFXToggleButton socketRadio;
 
     public void initialize() {
+        ClientInformation.initClass();
         futureScheduled = EXECUTOR_SERVICE.scheduleAtFixedRate
                 (this::rotateImage, 0, 45, TimeUnit.MILLISECONDS);
 

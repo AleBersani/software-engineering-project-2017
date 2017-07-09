@@ -4,6 +4,7 @@ import it.polimi.ingsw.client.model.*;
 import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 import it.polimi.ingsw.server.connection.ConnectedClient;
+import it.polimi.ingsw.server.gamecontroller.helpers.Sender;
 import it.polimi.ingsw.server.gamecontroller.helpers.requirements.RequirementsGenerator;
 import it.polimi.ingsw.server.gamecontroller.helpers.requirements.RequirementsSupport;
 import it.polimi.ingsw.server.gamecontroller.helpers.rewards.BasicRewardsGenerator;
@@ -25,14 +26,11 @@ import it.polimi.ingsw.server.gamelogic.modifiers.requirements.TowerActionRequir
 import it.polimi.ingsw.server.gamelogic.player.Pawn;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
-import it.polimi.ingsw.server.middleware.ServerSender;
-import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.model.DiceColor;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import it.polimi.ingsw.shared.model.actionsdescription.LeaderAction;
-import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
 import it.polimi.ingsw.shared.requests.serverclient.UpdateGameBoard;
 import it.polimi.ingsw.shared.requests.serverclient.UpdatePlayerBoard;
 import it.polimi.ingsw.shared.requests.serverclient.YourTurn;
@@ -42,7 +40,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-public class SemiPeriod extends Observable implements Observer, ActionVisitor {
+public class SemiPeriod extends Observable implements ActionVisitor {
     private final static Logger LOGGER = Logger.getLogger(SemiPeriod.class.getName());
 
     private List<DevelopmentCard> developmentCards;
@@ -53,8 +51,9 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     private List<PlayerDetails> playersOrder;
     private List<PlayerDetails> basePlayersOrder;
     private Map<PlayerDetails, List<ActionDescription>> actionsForPlayer;
-    private Timer timer;
     private boolean current;
+
+    private Timer timer;
 
     public SemiPeriod(List<DevelopmentCard> developmentCards, List<Player> players, Board board) {
         this.developmentCards = developmentCards;
@@ -129,7 +128,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
      * TODO: JavaDoc + Test
      */
     public void rollDices() {
-        LOGGER.info("Launch dices");
+        LOGGER.info("Roll dices");
         board.getDices().clear();
         List<DiceColor> colors = new ArrayList<>();
         colors.add(DiceColor.BLACK);
@@ -148,7 +147,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
      * TODO: JavaDoc + Test
      */
     public void givePawnsToPlayers() {
-        LOGGER.info("Five pawns to players");
+        LOGGER.info("Give pawns to players");
         for (Player player : players) {
             player.getPlayerBoard().getPawns().clear();
         }
@@ -167,6 +166,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
      * TODO: JavaDoc + Test
      */
     public void calculatePlayersOrder() {
+        LOGGER.info("Calculate player order");
         Map<Integer, PlayerDetails> playerDetailsMap = new HashMap<>();
 
         for (int i = 0; i < 4; i++) {
@@ -199,18 +199,22 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     public void sendBoardToPlayers() {
         LOGGER.info("Init semi period ended, sending game board to players...");
         UpdateGameBoard updateGameBoard = setupUpdateGameBoard();
+        Sender sender = new Sender(connectedClients);
         for (Player player : players) {
             List<PawnLight> pawnLightList = new ArrayList<>();
             player.getPlayerBoard().getPawns().forEach(pawn -> pawnLightList.add(
                     new PawnLight(player.getPlayerDetails().getPlayerName(),
                             pawn.getPawnColor(), pawn.isPlacedOnBoard())));
             updateGameBoard.setPawnLightList(pawnLightList);
-            System.out.println(player.getPlayerBoard().getPawns().size());
-            sendTo(player.getPlayerDetails().getPlayerName(), updateGameBoard);
+            sender.sendTo(player.getPlayerDetails().getPlayerName(), updateGameBoard);
         }
     }
 
-    private UpdateGameBoard setupUpdateGameBoard() {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public UpdateGameBoard setupUpdateGameBoard() {
         UpdateGameBoard updateGameBoard = new UpdateGameBoard();
 
         updateGameBoard.setNewGreenTower(copyTowersInformation(board.getTowers().get(0).getTowerSlots()));
@@ -234,7 +238,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return updateGameBoard;
     }
 
-    private List<TowerSlotLight> copyTowersInformation(List<TowerSlot> towerSlots) {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public List<TowerSlotLight> copyTowersInformation(List<TowerSlot> towerSlots) {
         List<TowerSlotLight> towerSlotLightList = new ArrayList<>();
         for (TowerSlot t : towerSlots) {
             PlayerPawn playerPawn = t.getSpace().getPlayerPawn();
@@ -262,7 +270,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return towerSlotLightList;
     }
 
-    private List<SlotLight> copyProductionHarvestSpaces(List<ProductionHarvestSpace> productionHarvestSpaceList) {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public List<SlotLight> copyProductionHarvestSpaces(List<ProductionHarvestSpace> productionHarvestSpaceList) {
         List<SlotLight> slotLightList = new ArrayList<>();
         for (ProductionHarvestSpace productionHarvestSpace : productionHarvestSpaceList) {
             PlayerPawn playerPawn = productionHarvestSpace.getSpace().getPlayerPawn();
@@ -277,7 +289,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return slotLightList;
     }
 
-    private List<SlotLight> copyMarket() {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public List<SlotLight> copyMarket() {
         List<SlotLight> newMarket = new ArrayList<>();
         for (MarketSpace m : board.getBoardActionSpaces().getMarketArea()) {
             PlayerPawn playerPawn = m.getSpace().getPlayerPawn();
@@ -290,7 +306,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return newMarket;
     }
 
-    private List<PawnLight> copyCouncilPalacePawns() {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public List<PawnLight> copyCouncilPalacePawns() {
         List<PawnLight> councilPalacePawns = new ArrayList<>();
         for (PlayerPawn playerPawn : board.getCouncilPalace().getPlayerPawnList()) {
             councilPalacePawns.add(new PawnLight(playerPawn.getPlayerDetails().getPlayerName(),
@@ -299,7 +319,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return councilPalacePawns;
     }
 
-    private List<PlayerLight> copyPlayersInformation() {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public List<PlayerLight> copyPlayersInformation() {
         List<PlayerLight> playerLightList = new ArrayList<>();
         for (PlayerDetails playerDetails : basePlayersOrder) {
             for (Player player : players) {
@@ -317,7 +341,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return playerLightList;
     }
 
-    private List<Card> copyActivatedLeadersOfPlayer(Player player) {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public List<Card> copyActivatedLeadersOfPlayer(Player player) {
         List<Card> activatedLeaders = new ArrayList<>();
         for (LeaderCard leaderCard : player.getLeaderCards()) {
             if (leaderCard.isPlacedOnBoard()) {
@@ -327,7 +355,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return activatedLeaders;
     }
 
-    private Map<PointsLight, Integer> copyPointsOfPlayer(Player player) {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public Map<PointsLight, Integer> copyPointsOfPlayer(Player player) {
         Map<PointsLight, Integer> pointsOfPlayer = new EnumMap<>(PointsLight.class);
         pointsOfPlayer.put(PointsLight.VICTORY_POINTS, player.getPlayerGoods().getPoints().getVictory());
         pointsOfPlayer.put(PointsLight.MILITARY_POINTS, player.getPlayerGoods().getPoints().getMilitary());
@@ -335,7 +367,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return pointsOfPlayer;
     }
 
-    private List<DiceLight> copyDices() {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public List<DiceLight> copyDices() {
         List<DiceLight> newDiceLightList = new ArrayList<>();
         for (Dice d : board.getDices()) {
             newDiceLightList.add(new DiceLight(d.getDiceColor(), d.getValue()));
@@ -343,7 +379,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return newDiceLightList;
     }
 
-    private List<Card> copyExcommunicationTiles() {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public List<Card> copyExcommunicationTiles() {
         List<Card> excommunicationTiles = new ArrayList<>();
         for (ExcommunicationTile excommunicationTile : board.getExcommunicationTiles()) {
             excommunicationTiles.add(new Card(excommunicationTile.getExcommunicationTileName()));
@@ -351,24 +391,34 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return excommunicationTiles;
     }
 
+    /**
+     * TODO: JavaDoc
+     * @return
+     */
     public void sendPlayerBoardToEachSeparatePlayer() {
         LOGGER.info("Board sent to players, now sending players boards..");
+        Sender sender = new Sender(connectedClients);
         for (Player player : players) {
-            sendTo(player.getPlayerDetails().getPlayerName(), setupUpdatePlayerBoard(player));
+            sender.sendTo(player.getPlayerDetails().getPlayerName(), setupUpdatePlayerBoard(player));
         }
     }
 
-    private UpdatePlayerBoard setupUpdatePlayerBoard(Player player) {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public UpdatePlayerBoard setupUpdatePlayerBoard(Player player) {
         String copyOfBonusTileIdentifier = player.getPlayerBoard().getBonusTiles().getBonusTileIdentifier();
-      //  List<PawnLight> pawnLightList = new ArrayList<>();
-        //player.getPlayerBoard().getPawns().forEach(pawn -> pawnLightList.add(
-          //      new PawnLight(player.getPlayerDetails().getPlayerName(), pawn.getPawnColor(), pawn.isPlacedOnBoard())));
 
         return new UpdatePlayerBoard(copyActivatedLeadersOfPlayer(player), copyPointsOfPlayer(player),
                 copyOfBonusTileIdentifier, copyDeckLight(player), copyResourcesOfPlayer(player));
     }
 
-    private DeckLight copyDeckLight(Player player) {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public DeckLight copyDeckLight(Player player) {
         List<Card> territories = new ArrayList<>();
         player.getPlayerBoard().getDeck().getTerritories()
                 .forEach(card -> territories.add(copyCard(card)));
@@ -388,7 +438,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return new DeckLight(territories, buildings, characters, ventures, leaders);
     }
 
-    private Card copyCard(DevelopmentCard developmentCard) {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public Card copyCard(DevelopmentCard developmentCard) {
         Card card = new Card(developmentCard.getBasicDevelopmentCard().getCardInformation().getName());
         for (Map.Entry<String, List<AdditionalCardInfo>> entry : AdditionalInfoMaps.getFlashEffectsOnChoice().entrySet()) {
             if (entry.getKey().equals(developmentCard.getCardInformation().getName())) {
@@ -405,7 +459,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         return card;
     }
 
-    private Map<ResourcesLight, Integer> copyResourcesOfPlayer(Player player) {
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public Map<ResourcesLight, Integer> copyResourcesOfPlayer(Player player) {
         Map<ResourcesLight, Integer> numberOfResources = new EnumMap<>(ResourcesLight.class);
         numberOfResources.put(ResourcesLight.WOODS, player.getPlayerGoods().getResources().getWoods());
         numberOfResources.put(ResourcesLight.STONES, player.getPlayerGoods().getResources().getStones());
@@ -415,50 +473,53 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     }
 
     @Override
-    public void update(Observable o, Object arg) {}
-
-    @Override
     public void visitActionDescription(BoardAction boardAction) {
         LOGGER.info("Action: board action");
+        Sender sender = new Sender(connectedClients);
         for (Player player : players) {
             if (player.getPlayerDetails().getPlayerName().equals(playersOrder.get(0).getPlayerName())) {
-                RequirementsGenerator requirementsGenerator =
-                        new RequirementsGenerator(board, player, boardAction.getBasicAction().getBoardIdentifier());
-                if (runRequirements(requirementsGenerator.generateRequirements(boardAction), player)) {
-                    for (ConnectedClient connectedClient : connectedClients) {
-                        if (connectedClient.getPlayerName().equals(player.getPlayerDetails().getPlayerName())){
-                            BasicRewardsGenerator basicRewardsGenerator = new BasicRewardsGenerator(board, connectedClient);
-                            basicRewardsGenerator.generateRewards(player, boardAction);
-                            sendBoardToPlayers();
-                            sendPlayerBoardToEachSeparatePlayer();
-                        }
-                    }
-                    LOGGER.info("Action: player has requirements!");
+                RequirementsGenerator requirementsGenerator = new RequirementsGenerator(board, player);
+                requirementsGenerator.addAttributesToCalculateRequirements(boardAction);
+                RequirementsSupport requirementsSupport = requirementsGenerator.generateRequirements();
 
+                boolean playerHasRequirements = runRequirements(requirementsSupport, player);
 
-
-                } else {
+                if (playerHasRequirements) {
+                    LOGGER.info("Action: player has requirements");
+                    BasicRewardsGenerator basicRewardsGenerator = new BasicRewardsGenerator(board, player, sender);
+                    basicRewardsGenerator.addAttributesToCalculateBasicRewards(boardAction);
+                    basicRewardsGenerator.generateRewards();
+                    sendBoardToPlayers();
                     sendPlayerBoardToEachSeparatePlayer();
+                    LOGGER.info("Action: player has requirements");
+                } else {
+                    sendBoardToPlayers();
+                    sendPlayerBoardToEachSeparatePlayer();
+                    LOGGER.info("Action: player doesn't have requirements");
                 }
                 break;
             }
         }
     }
 
-    private boolean runRequirements(RequirementsSupport requirementsSupport, Player player) {
+    public boolean runRequirements(RequirementsSupport requirementsSupport, Player player) {
         Optional<TowerActionRequirements> optionalTowerActionRequirements =
                 requirementsSupport.getTowerActionRequirements();
         Optional<BoardActionRequirements> optionalBoardActionRequirements =
                 requirementsSupport.getBoardActionRequirements();
+
         if (optionalTowerActionRequirements.isPresent()) {
             TowerActionRequirements towerActionRequirements = optionalTowerActionRequirements.get();
             player.getRequirementsModifiers().forEach(m -> m.modifyRequirements(towerActionRequirements));
+
             return towerActionRequirements.hasRequirements(player);
         } else if (optionalBoardActionRequirements.isPresent()) {
             BoardActionRequirements boardActionRequirements = optionalBoardActionRequirements.get();
             player.getRequirementsModifiers().forEach(m -> m.modifyRequirements(boardActionRequirements));
+
             return boardActionRequirements.hasRequirements(player);
         }
+
         return false;
     }
 
@@ -489,11 +550,10 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         }
     }
 
-    public void endSemiPeriod() {}
-
     private void startTurn() {
         if (playersOrder.size() > 0) {
-            sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(true));
+            Sender sender = new Sender(connectedClients);
+            sender.sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(true));
             startTimer();
         } else {
             setChanged();
@@ -502,7 +562,8 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     }
 
     private void passTurn() {
-        sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(false));
+        Sender sender = new Sender(connectedClients);
+        sender.sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(false));
         playersOrder.remove(0);
         timer.cancel();
         startTurn();
@@ -519,21 +580,9 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         }, GameConfiguration.getMoveTimeout() * (long)1_000);
     }
 
-    private void sendToAll(ServerClientRequest serverClientRequest) {
-        for (ConnectedClient connectedClient : connectedClients) {
-            ServerSender serverSender = new ServerSenderHandler();
-            serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
-        }
-    }
-
-    private void sendTo(String playerName, ServerClientRequest serverClientRequest) {
-        for (ConnectedClient connectedClient : connectedClients) {
-            if (connectedClient.getPlayerName().equals(playerName)) {
-                ServerSender serverSender = new ServerSenderHandler();
-                serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
-            }
-        }
-    }
+    /*
+        GETTERS AND SETTERS
+     */
 
     public List<DevelopmentCard> getDevelopmentCards() {
         return developmentCards;
@@ -597,5 +646,13 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
 
     public void setCurrent(boolean current) {
         this.current = current;
+    }
+
+    public Timer getTimer() {
+        return timer;
+    }
+
+    public void setTimer(Timer timer) {
+        this.timer = timer;
     }
 }

@@ -1,6 +1,5 @@
 package it.polimi.ingsw.client.cli;
 
-import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.connection.ConnectionStarter;
 
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class LoginCli implements Runnable {
     }
 
     private void init() {
-        ClientInformation.initClientInformation();
+        //ClientCliInformation.initClientInformation();
         connectionCommands = setConnectionAndLoginRegisterCommands();
         loginRegisterCommands = setConnectionAndLoginRegisterCommands();
         chooseConnection();
@@ -105,7 +104,7 @@ public class LoginCli implements Runnable {
             } catch (InterruptedException e) {
                 LOGGER.log(Level.SEVERE, "An Exception was thrown for waiting Thread ", e);
             }
-        } while (!ClientInformation.isLoginSuccessful());
+        } while (!ClientCliInformation.isLoginSuccessful());
     }
 
     private boolean chooseNewClient() {
@@ -119,7 +118,7 @@ public class LoginCli implements Runnable {
             loginRegister = input.next();
             loginRegister = loginRegister.trim().toUpperCase();
             if (choiceIsCorrect(loginRegister, loginRegisterCommands)) {
-                newClient = (loginRegister.equals("A")) ? false : true;
+                newClient = !loginRegister.equals("A");
                 chosen = true;
             } else
                 System.out.printf("Your choice is incorrect!\n");

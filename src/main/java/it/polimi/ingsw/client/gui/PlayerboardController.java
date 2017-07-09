@@ -129,18 +129,29 @@ public class PlayerboardController implements Observer {
     @FXML
     private JFXButton active4;
 
+    public PlayerboardController() {
+        greenCards = new ArrayList<>();
+        yellowCards = new ArrayList<>();
+        purpleCards = new ArrayList<>();
+        blueCards = new ArrayList<>();
+        leaders = new ArrayList<>();
+        leaderBackgrounds = new EnumMap<>(GeneralColor.class);
+        activateButtons = new ArrayList<>();
+        placeButtons = new ArrayList<>();
+    }
+
     public void initialize() {
         PlayerBoardNotifier.getInstance().addObserver(this);
         owner = Owner.getInstance();
         initEnumMap();
         setBackground();
         setCards();
+        setButtons();
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new Ready(ClientInformation.getCurrentGameId(), "game"));
     }
 
     private void initEnumMap() {
-        leaderBackgrounds = new EnumMap<>(GeneralColor.class);
         leaderBackgrounds.put(GeneralColor.BLUE, BACKGROUND_URL + "blue.jpg");
         leaderBackgrounds.put(GeneralColor.GREEN, BACKGROUND_URL + "green.jpg");
         leaderBackgrounds.put(GeneralColor.YELLOW, BACKGROUND_URL + "yellow.jpg");
@@ -153,7 +164,6 @@ public class PlayerboardController implements Observer {
     }
 
     private void setCards() {
-        greenCards = new ArrayList<>();
         greenCards.add(green1);
         greenCards.add(green2);
         greenCards.add(green3);
@@ -161,7 +171,6 @@ public class PlayerboardController implements Observer {
         greenCards.add(green5);
         greenCards.add(green6);
 
-        yellowCards = new ArrayList<>();
         yellowCards.add(yellow1);
         yellowCards.add(yellow2);
         yellowCards.add(yellow3);
@@ -169,7 +178,6 @@ public class PlayerboardController implements Observer {
         yellowCards.add(yellow5);
         yellowCards.add(yellow6);
 
-        purpleCards = new ArrayList<>();
         purpleCards.add(purple1);
         purpleCards.add(purple2);
         purpleCards.add(purple3);
@@ -177,7 +185,6 @@ public class PlayerboardController implements Observer {
         purpleCards.add(purple5);
         purpleCards.add(purple6);
 
-        blueCards = new ArrayList<>();
         blueCards.add(blue1);
         blueCards.add(blue2);
         blueCards.add(blue3);
@@ -185,7 +192,6 @@ public class PlayerboardController implements Observer {
         blueCards.add(blue5);
         blueCards.add(blue6);
 
-        leaders = new ArrayList<>();
         leaders.add(led1);
         leaders.add(led2);
         leaders.add(led3);
@@ -193,13 +199,11 @@ public class PlayerboardController implements Observer {
     }
 
     private void setButtons() {
-        activateButtons = new ArrayList<>();
         activateButtons.add(active1);
         activateButtons.add(active2);
         activateButtons.add(active3);
         activateButtons.add(active4);
 
-        placeButtons = new ArrayList<>();
         placeButtons.add(place1);
         placeButtons.add(place2);
         placeButtons.add(place3);
