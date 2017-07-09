@@ -9,7 +9,7 @@ public class DeckLight implements Serializable {
     private List<Card> buildings;
     private List<Card> characters;
     private List<Card> ventures;
-    private List<Card> leaders;
+    private List<LeaderLight> leaders;
 
     public DeckLight() {
         territories = new ArrayList<>();
@@ -20,7 +20,7 @@ public class DeckLight implements Serializable {
     }
 
     public DeckLight(List<Card> territories, List<Card> buildings, List<Card> characters,
-                     List<Card> ventures, List<Card> leaders) {
+                     List<Card> ventures, List<LeaderLight> leaders) {
         this.territories = territories;
         this.buildings = buildings;
         this.characters = characters;
@@ -71,11 +71,11 @@ public class DeckLight implements Serializable {
         this.ventures = ventures;
     }
 
-    public List<Card> getLeaders() {
+    public List<LeaderLight> getLeaders() {
         return leaders;
     }
 
-    public void setLeaders(List<Card> leaders) {
+    public void setLeaders(List<LeaderLight> leaders) {
         this.leaders = leaders;
     }
 }

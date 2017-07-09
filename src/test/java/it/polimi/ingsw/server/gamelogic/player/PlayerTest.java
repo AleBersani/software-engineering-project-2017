@@ -6,7 +6,6 @@ import it.polimi.ingsw.server.gamelogic.basics.Points;
 import it.polimi.ingsw.server.gamelogic.basics.Resources;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderInformation;
-import it.polimi.ingsw.server.gamelogic.enums.LeaderCategory;
 import it.polimi.ingsw.server.gamelogic.modifiers.AvailableActions;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.NoBonusGoodsOnTower;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
@@ -15,6 +14,7 @@ import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModif
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.model.LeaderCategory;
 import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import org.junit.jupiter.api.BeforeEach;
