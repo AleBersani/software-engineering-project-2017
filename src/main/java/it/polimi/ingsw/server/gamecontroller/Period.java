@@ -1,6 +1,7 @@
 package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.connection.ConnectedClient;
+import it.polimi.ingsw.server.gamecontroller.helpers.Sender;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gamelogic.board.Board;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
@@ -8,13 +9,9 @@ import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.Excommunicati
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
-import it.polimi.ingsw.server.middleware.ServerSender;
-import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
-import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
 
 import java.util.*;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Period extends Observable implements Observer {
@@ -46,54 +43,37 @@ public class Period extends Observable implements Observer {
     }
 
     /**
-     * Public method that set a new SemiPeriod up and launches it.
+     * Method that set a new SemiPeriod and launches it.
      */
     public void startSemiPeriod() {
         SemiPeriod semiPeriod = new SemiPeriod(getDevelopmentCardsForSemiPeriod(), players, new Board(board));
         semiPeriod.setConnectedClients(connectedClients);
         semiPeriod.setCurrent(true);
+        semiPeriods.add(semiPeriod);
 
         if (semiPeriods.isEmpty()) {
             semiPeriod.setBasePlayersOrder(playersOrder);
         } else {
-            semiPeriods.get(0).setCurrent(false);
-            semiPeriod.setBasePlayersOrder(calculateNewPlayerOrder(getLastSemiperiod().getBasePlayersOrder(),
-                    getLastSemiperiod().getBoard().getCouncilPalace().getPlayerOrder()));
+            getSecondLastSemiPeriod().setCurrent(false);
+            semiPeriod.setBasePlayersOrder(calculateNewPlayerOrder(getSecondLastSemiPeriod().getBasePlayersOrder(),
+                    getSecondLastSemiPeriod().getBoard().getCouncilPalace().getPlayerOrder()));
         }
+
         semiPeriod.addObserver(this);
-        semiPeriods.add(semiPeriod);
-        semiPeriod.setDevelopmentCards(getDevelopmentCardsForSemiPeriod());
-        LOGGER.log(Level.INFO, () -> "Starting Semi Period");
+
         semiPeriod.initSemiPeriod();
     }
 
     /**
-     * // TODO
-     * @return //
-     * @param basePlayersOrder
-     * @param councilPlayerOrder
-     */
-    public List<PlayerDetails> calculateNewPlayerOrder(List<PlayerDetails> basePlayersOrder,
-                                                       List<PlayerDetails> councilPlayerOrder) {
-        List<PlayerDetails> newPlayerOrder = new ArrayList<>();
-        for (PlayerDetails playerDetails : councilPlayerOrder) {
-            newPlayerOrder.add(playerDetails);
-        }
-        for (PlayerDetails remainingPlayer : basePlayersOrder) {
-            if (!newPlayerOrder.contains(remainingPlayer))
-                newPlayerOrder.add(remainingPlayer);
-        }
-        return newPlayerOrder;
-    }
-
-    /**
-     * Private method that extracts randomly 16 DevelopmentCards (4 for each color) to be passed to new SemiPeriod.
+     * Method that extracts randomly 16 DevelopmentCards (4 for each color) to be passed to new SemiPeriod.
      * It controls also that the cards from which extract new cards to be played, have not been placed yet.
      * If so, already played cards are removed.
      * @return A List of DevelopmentCard to be played in a new SemiPeriod.
      */
     private List<DevelopmentCard> getDevelopmentCardsForSemiPeriod() {
+        LOGGER.info("Extract development cards for semi period");
         final int CARDS_FOR_SEMI_PERIOD = 16;
+        final int CARDS_FOR_TOWER = 4;
         int green = 0;
         int blue = 0;
         int purple = 0;
@@ -102,32 +82,56 @@ public class Period extends Observable implements Observer {
         GeneralColor colorCard;
         List<DevelopmentCard> cardsToExtract = new ArrayList<>(developmentCards);
         List<DevelopmentCard> cardsToReturn = new ArrayList<>();
-       // if (!semiPeriods.isEmpty())
-         //   cardsToExtract.removeAll(getLastSemiperiod().getDevelopmentCards());
+
         Collections.shuffle(cardsToExtract);
         for (int i = 0; i < cardsToExtract.size() && cardsToReturn.size() < CARDS_FOR_SEMI_PERIOD; i++) {
             card = cardsToExtract.get(i);
             colorCard = card.getBasicDevelopmentCard().getCardInformation().getCardColor();
-            if (colorCard.equals(GeneralColor.GREEN) && green < CARDS_FOR_SEMI_PERIOD / 4){
+            if (colorCard.equals(GeneralColor.GREEN) && green < CARDS_FOR_SEMI_PERIOD / CARDS_FOR_TOWER){
                 cardsToReturn.add(card);
                 green++;
             }
-            else if (colorCard.equals(GeneralColor.YELLOW) && yellow < CARDS_FOR_SEMI_PERIOD / 4){
+            else if (colorCard.equals(GeneralColor.YELLOW) && yellow < CARDS_FOR_SEMI_PERIOD / CARDS_FOR_TOWER){
                 cardsToReturn.add(card);
                 yellow++;
             }
-            else if (colorCard.equals(GeneralColor.BLUE) && blue < CARDS_FOR_SEMI_PERIOD / 4){
+            else if (colorCard.equals(GeneralColor.BLUE) && blue < CARDS_FOR_SEMI_PERIOD / CARDS_FOR_TOWER){
                 cardsToReturn.add(card);
                 blue++;
             }
-            else if (colorCard.equals(GeneralColor.PURPLE) && purple < CARDS_FOR_SEMI_PERIOD / 4){
+            else if (colorCard.equals(GeneralColor.PURPLE) && purple < CARDS_FOR_SEMI_PERIOD / CARDS_FOR_TOWER){
                 cardsToReturn.add(card);
                 purple++;
             }
         }
+
         developmentCards.removeAll(cardsToReturn);
-        developmentCards.forEach(developmentCard -> System.out.println(developmentCard.getCardInformation().getName()));
         return cardsToReturn;
+    }
+
+    /**
+     * TODO: JavaDoc + Test
+     * @return
+     */
+    public SemiPeriod getSecondLastSemiPeriod() {
+        return semiPeriods.get(semiPeriods.size() - 2);
+    }
+
+    /**
+     * TODO: JavaDoc + Test
+     * @param basePlayersOrder
+     * @param councilPlayerOrder
+     * @return
+     */
+    public List<PlayerDetails> calculateNewPlayerOrder(List<PlayerDetails> basePlayersOrder,
+                                                       List<PlayerDetails> councilPlayerOrder) {
+        List<PlayerDetails> newPlayerOrder = new ArrayList<>();
+        newPlayerOrder.addAll(councilPlayerOrder);
+        for (PlayerDetails remainingPlayer : basePlayersOrder) {
+            if (!newPlayerOrder.contains(remainingPlayer))
+                newPlayerOrder.add(remainingPlayer);
+        }
+        return newPlayerOrder;
     }
 
     @Override
@@ -136,39 +140,24 @@ public class Period extends Observable implements Observer {
         startSemiPeriod();
     }
 
-    private void sendToAll(ServerClientRequest serverClientRequest) {
-        for (ConnectedClient connectedClient : connectedClients) {
-            ServerSender serverSender = new ServerSenderHandler();
-            serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
-        }
-    }
-
-    private void sendTo(String playerName, ServerClientRequest serverClientRequest) {
-        for (ConnectedClient connectedClient : connectedClients) {
-            if (connectedClient.getPlayerName().equals(playerName)) {
-                ServerSender serverSender = new ServerSenderHandler();
-                serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
+    public void churchSupport() {
+        Sender sender = new Sender(connectedClients);
+        for (Player player : players) {
+            if (player.getPlayerGoods().getPoints().getFaith() < BoardInformation
+                    .getFaithPointsToAvoidExcommunication().get(periodNumber)) {
+                //sender.sendTo(player.getPlayerDetails().getPlayerName(), new );
+            } else {
+                //
             }
         }
     }
 
-    public void churchSupport() {
-        int i =0;
-        List<Player> players;
-        players = semiPeriods.get(semiPeriods.size()-1).getPlayers();
-        int faithPointsRequired = BoardInformation.getFaithPointsToAvoidExcommunication()
-                .get(actualExcommunicationTile.getPeriod());
-        for (Player player : players) {
-            if (player.getPlayerGoods().getPoints().getFaith() < faithPointsRequired)
-                i++;
-                //roba del visitor
-            else
-                i--;
-            //fai scegliere al player
-        }
-        /*
-        supporto della chiesa (command sulla update del game)
-         */
+    /*
+        GETTERS AND SETTERS
+     */
+
+    public SemiPeriod getLastSemiperiod() {
+        return semiPeriods.get(semiPeriods.size() - 1);
     }
 
     public ExcommunicationTile getActualExcommunicationTile() {
@@ -241,9 +230,5 @@ public class Period extends Observable implements Observer {
 
     public void setPeriodNumber(PeriodNumber periodNumber) {
         this.periodNumber = periodNumber;
-    }
-
-    public SemiPeriod getLastSemiperiod() {
-        return semiPeriods.get(semiPeriods.size() - 1);
     }
 }

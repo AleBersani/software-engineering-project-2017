@@ -195,13 +195,13 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
             Game game = optionalGame.get();
             switch (ready.getReadyForWhat()) {
                 case "leadersChoice":
-                    game.checkAndStartLeaderChoice();
+                    game.checkIfPlayersAreReadyAndStartLeadersChoice();
                     break;
                 case "tileChoice":
                     game.bonusTilesSetup();
                     break;
                 case "game":
-                    game.initFirstPeriod();
+                    game.setupAndStartFirstPeriod();
             }
         }
     }

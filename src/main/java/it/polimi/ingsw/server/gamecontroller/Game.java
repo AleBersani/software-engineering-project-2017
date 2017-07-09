@@ -2,6 +2,7 @@ package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gamecontroller.helpers.DevelopmentCardsFilter;
+import it.polimi.ingsw.server.gamecontroller.helpers.Sender;
 import it.polimi.ingsw.server.gamecontroller.helpers.UniqueRandomGenerator;
 import it.polimi.ingsw.server.gamecontroller.helpers.choices.BonusTileChoiceHandler;
 import it.polimi.ingsw.server.gamecontroller.helpers.choices.CouncilPrivilegeChoiceHandler;
@@ -21,8 +22,6 @@ import it.polimi.ingsw.server.gamelogic.player.BonusTiles;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerBoard;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
-import it.polimi.ingsw.server.middleware.ServerSender;
-import it.polimi.ingsw.server.middleware.ServerSenderHandler;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import it.polimi.ingsw.shared.requests.serverclient.*;
@@ -62,80 +61,97 @@ public class Game implements Runnable, Observer {
         numberOfPlayersReadyToPlay = new AtomicInteger(0);
     }
 
+    /*
+        RUN: INITIAL SETUP
+     */
+
     @Override
     public void run() {
         LOGGER.log(Level.INFO,() -> "New game started! ID: " + gameId);
         setupGame();
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     private void setupGame() {
         sendGameIdToPlayers();
         setupTowers();
         setupCouncilPalace();
         setupActionSpaces();
         basicSetupPlayers();
-        setupPeriods();
+        constructPeriods();
         sendGameInitToPlayers();
     }
 
-    private void sendGameInitToPlayers() {
-        LOGGER.info("Sending game init to players");
-        players.forEach(p -> sendTo(p.getPlayerDetails().getPlayerName(),
-                new ChosenGameResponse(true, p.getPlayerDetails().getPlayerColor())));
-        sendToAll(new YourTurn(false));
-    }
-
+    /**
+     * TODO: JavaDoc
+     */
     private void sendGameIdToPlayers() {
         LOGGER.log(Level.INFO, () -> "Sending game ID to players in game: " + gameId);
-        sendToAll(new UpdateGameId(gameId));
+        Sender sender = new Sender(connectedClients);
+        sender.sendToAll(new UpdateGameId(gameId));
     }
 
-    private void setupTowers() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void setupTowers() {
         LOGGER.info("Setup towers");
+        List<Tower> towers = new ArrayList<>();
+
         List<TowerSlot> greenTowerSlot = new ArrayList<>();
         for (Space space : BoardInformation.getGreenTower().keySet()) {
             greenTowerSlot.add(new TowerSlot(space, BoardInformation.getGreenTower().get(space)));
         }
         Tower greenTower = new Tower(GeneralColor.GREEN, greenTowerSlot);
-
-        List<TowerSlot> blueTowerSlot = new ArrayList<>();
-        for (Space space : BoardInformation.getBlueTower().keySet()) {
-            blueTowerSlot.add(new TowerSlot(space, BoardInformation.getBlueTower().get(space)));
-        }
-        Tower blueTower = new Tower(GeneralColor.BLUE, blueTowerSlot);
+        towers.add(greenTower);
 
         List<TowerSlot> yellowTowerSlot = new ArrayList<>();
         for (Space space : BoardInformation.getYellowTower().keySet()) {
             yellowTowerSlot.add(new TowerSlot(space, BoardInformation.getYellowTower().get(space)));
         }
         Tower yellowTower = new Tower(GeneralColor.YELLOW, yellowTowerSlot);
+        towers.add(yellowTower);
+
+        List<TowerSlot> blueTowerSlot = new ArrayList<>();
+        for (Space space : BoardInformation.getBlueTower().keySet()) {
+            blueTowerSlot.add(new TowerSlot(space, BoardInformation.getBlueTower().get(space)));
+        }
+        Tower blueTower = new Tower(GeneralColor.BLUE, blueTowerSlot);
+        towers.add(blueTower);
 
         List<TowerSlot> purpleTowerSlot = new ArrayList<>();
         for (Space space : BoardInformation.getPurpleTower().keySet()) {
             purpleTowerSlot.add(new TowerSlot(space, BoardInformation.getPurpleTower().get(space)));
         }
         Tower purpleTower = new Tower(GeneralColor.PURPLE, purpleTowerSlot);
-
-        List<Tower> towers = new ArrayList<>();
-        towers.add(greenTower);
-        towers.add(yellowTower);
-        towers.add(blueTower);
         towers.add(purpleTower);
+
         board.setTowers(towers);
     }
 
-    private void setupCouncilPalace() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void setupCouncilPalace() {
         LOGGER.info("Setup council palace");
         board.setCouncilPalace(new CouncilPalace(BoardInformation.getCouncilPalace()));
     }
 
-    private void setupActionSpaces() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void setupActionSpaces() {
         LOGGER.info("Setup action spaces");
         board.getBoardActionSpaces().setProductionArea(BoardInformation.getProductionArea());
         board.getBoardActionSpaces().setHarvestArea(BoardInformation.getHarvestArea());
         board.getBoardActionSpaces().setMarketArea(BoardInformation.getMarketArea());
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     private void basicSetupPlayers() {
         LOGGER.info("Setup players");
         int playerCounter = 0;
@@ -147,7 +163,11 @@ public class Game implements Runnable, Observer {
         }
     }
 
-    private void setupPeriods() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void constructPeriods() {
+        LOGGER.info("Construct periods");
         Map<PeriodNumber, List<DevelopmentCard>> developmentCardsForPeriod = generateDevelopmentCardsForPeriod();
 
         for (int i = 0; i < GameConfiguration.getNumberOfPeriods(); i++) {
@@ -156,13 +176,15 @@ public class Game implements Runnable, Observer {
             periods.add(new Period(excommunicationTile, developmentCardsForPeriod.get(periodNumber), periodNumber));
             board.getExcommunicationTiles().add(excommunicationTile);
         }
-        for (Player player : players) {
-            playersOrder.add(player.getPlayerDetails());
-        }
+
+        generateInitialPlayerOrder();
         periods.get(0).setPlayersOrder(playersOrder);
     }
 
-    private Map<PeriodNumber, List<DevelopmentCard>> generateDevelopmentCardsForPeriod() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public Map<PeriodNumber, List<DevelopmentCard>> generateDevelopmentCardsForPeriod() {
         Map<PeriodNumber, List<DevelopmentCard>> developmentCardsForPeriod = new EnumMap<>(PeriodNumber.class);
 
         for (int i = 0; i < GameConfiguration.getNumberOfPeriods(); i++) {
@@ -186,7 +208,10 @@ public class Game implements Runnable, Observer {
         return developmentCardsForPeriod;
     }
 
-    private ExcommunicationTile getExcommunicationTilePerPeriodNumber(PeriodNumber periodNumber) {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public ExcommunicationTile getExcommunicationTilePerPeriodNumber(PeriodNumber periodNumber) {
         UniqueRandomGenerator uniqueRandomGenerator = new UniqueRandomGenerator(
                 Cards.getExcommunicationTiles().size() / GameConfiguration.getNumberOfPeriods());
         int excommunicationTilePosition = uniqueRandomGenerator.generateRandom();
@@ -196,18 +221,61 @@ public class Game implements Runnable, Observer {
         return excommunicationTilesForPeriod.get(excommunicationTilePosition);
     }
 
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void generateInitialPlayerOrder() {
+        for (Player player : players) {
+            playersOrder.add(player.getPlayerDetails());
+        }
+    }
+
+    /**
+     * TODO: JavaDoc
+     */
+    private void sendGameInitToPlayers() {
+        LOGGER.info("Sending game init to players");
+        Sender sender = new Sender(connectedClients);
+        players.forEach(p -> sender.sendTo(p.getPlayerDetails().getPlayerName(),
+                new ChosenGameResponse(true, p.getPlayerDetails().getPlayerColor())));
+        sender.sendToAll(new YourTurn(false));
+    }
+
+    /**
+     * TODO: JavaDoc
+     * @param o Actual period
+     * @param arg optional arguments passed by the notifier
+     */
     @Override
     public void update(Observable o, Object arg) {}
 
-    public void checkAndStartLeaderChoice() {
-        int numberOfPlayersReady = leaderCardChoiceHandler.getNumberOfPlayersReady().incrementAndGet();
-        if (numberOfPlayersReady == connectedClients.size()) {
+    /*
+        METHODS CALLED BY MIDDLEWARE
+     */
+
+    /**
+     * TODO: JavaDoc
+     */
+    public void checkIfPlayersAreReadyAndStartLeadersChoice() {
+        if (checkIfPlayersAreReady()) {
             LOGGER.info("Players are ready, starting leaders choice!");
             startLeaderChoice();
         }
     }
 
+    /**
+     * TODO: JavaDoc
+     */
+    private boolean checkIfPlayersAreReady() {
+        int numberOfPlayersReady = leaderCardChoiceHandler.getNumberOfPlayersReady().incrementAndGet();
+        return numberOfPlayersReady == connectedClients.size();
+    }
+
+    /**
+     * TODO: JavaDoc
+     */
     private void startLeaderChoice() {
+        LOGGER.info("Start leader cards choice");
         List<String> playersName = new ArrayList<>();
         for (ConnectedClient connectedClient : connectedClients) {
             playersName.add(connectedClient.getPlayerName());
@@ -217,8 +285,11 @@ public class Game implements Runnable, Observer {
         sendLeaderChoiceToPlayers();
     }
 
-    private List<LeaderCard> leaderCardsExtraction() {
-        LOGGER.info("Starting leader cards choice");
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public List<LeaderCard> leaderCardsExtraction() {
+        LOGGER.info("Extract random leader cards");
         List<LeaderCard> leaderCards = new ArrayList<>();
         UniqueRandomGenerator uniqueRandomGenerator = new UniqueRandomGenerator(Cards.getLeaderCards().size());
         List<Integer> leadersPositions = uniqueRandomGenerator.generateRandoms(
@@ -228,15 +299,22 @@ public class Game implements Runnable, Observer {
         return leaderCards;
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     private void sendLeaderChoiceToPlayers() {
+        Sender sender = new Sender(connectedClients);
         for (Map.Entry<String, List<LeaderCard>> entry :
                 leaderCardChoiceHandler.getInitialLeaderCardsForPlayers().entrySet()) {
             List<String> leaderNames = new ArrayList<>();
             entry.getValue().forEach(leaderCard -> leaderNames.add(leaderCard.getLeaderName()));
-            sendTo(entry.getKey(), new LeadersChoice(leaderNames));
+            sender.sendTo(entry.getKey(), new LeadersChoice(leaderNames));
         }
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     public void addChosenLeaderToPlayer(String playerName, String leaderName) {
         boolean needToResend = leaderCardChoiceHandler.addChosenLeaderToPlayer(playerName, leaderName);
         if (needToResend) {
@@ -245,11 +323,15 @@ public class Game implements Runnable, Observer {
         if (leaderCardChoiceHandler.phaseEnded()) {
             LOGGER.info("Players have chosen leaders!");
             addLeaderCardsToPlayers();
-            sendToAll(new EndLeadersChoicePhase());
+            Sender sender = new Sender(connectedClients);
+            sender.sendToAll(new EndLeadersChoicePhase());
         }
     }
 
-    private void addLeaderCardsToPlayers() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void addLeaderCardsToPlayers() {
         for (Map.Entry<String, List<LeaderCard>> entry : leaderCardChoiceHandler.getLeaderCardsForPlayers().entrySet()) {
             players.forEach(p -> {
                 if (p.getPlayerDetails().getPlayerName().equals(entry.getKey())) {
@@ -259,6 +341,9 @@ public class Game implements Runnable, Observer {
         }
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     public void bonusTilesSetup() {
         int numberOfPlayersReady = bonusTileChoiceHandler.getNumberOfPlayersReady().incrementAndGet();
         if (numberOfPlayersReady == connectedClients.size()) {
@@ -267,6 +352,9 @@ public class Game implements Runnable, Observer {
         }
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     private void startTileChoice() {
         List<String> playersName = new ArrayList<>();
         connectedClients.forEach(c -> playersName.add(c.getPlayerName()));
@@ -276,22 +364,34 @@ public class Game implements Runnable, Observer {
         sendBonusTileChoiceToNextPlayer();
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     private void sendBonusTileChoiceToNextPlayer() {
-        sendTo(bonusTileChoiceHandler.getNextPlayer(), new TileChoice(bonusTileChoiceHandler.getRemainingBonusTiles()));
+        Sender sender = new Sender(connectedClients);
+        sender.sendTo(bonusTileChoiceHandler.getNextPlayer(),
+                new TileChoice(bonusTileChoiceHandler.getRemainingBonusTiles()));
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     public void addBonusTileToPlayer(String playerName, String bonusTileIdentifier) {
         bonusTileChoiceHandler.addBonusTileToPlayer(playerName, bonusTileIdentifier);
         if (bonusTileChoiceHandler.phaseEnded()) {
             LOGGER.info("Players have chosen their bonus tile!");
             addBonusTilesToPlayers();
-            sendToAll(new TileChoice(null));
+            Sender sender = new Sender(connectedClients);
+            sender.sendToAll(new TileChoice(null));
         } else {
             sendBonusTileChoiceToNextPlayer();
         }
     }
 
-    private void addBonusTilesToPlayers() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void addBonusTilesToPlayers() {
         for (Map.Entry<String, BonusTiles> entry : bonusTileChoiceHandler.getBonusTileForPlayer().entrySet()) {
             players.forEach(p -> {
                 if (p.getPlayerDetails().getPlayerName().equals(entry.getKey())) {
@@ -301,43 +401,70 @@ public class Game implements Runnable, Observer {
         }
     }
 
-    public void initFirstPeriod() {
+    /**
+     * TODO: JavaDoc
+     */
+    public void setupAndStartFirstPeriod() {
         if (numberOfPlayersReadyToPlay.incrementAndGet() == players.size())  {
-            for (Period period : periods) {
-                if (!period.isCurrent()) {
-                    setPeriodInformation(period);
-                    if (PeriodNumber.FIRST != period.getPeriodNumber()) {
-                        setNewStartingPlayerOrderForPeriod(period);
-                    }
-                    LOGGER.log(Level.INFO, () -> "Starting Period: " + period.getPeriodNumber());
-                    period.startSemiPeriod();
-                    break;
+            setupAndStartNewPeriod();
+        }
+    }
+
+    /**
+     * TODO: JavaDoc
+     */
+    private void setupAndStartNewPeriod() {
+        for (Period period : periods) {
+            if (!period.isCurrent()) {
+                setPeriodInformation(period);
+                if (PeriodNumber.FIRST != period.getPeriodNumber()) {
+                    setNewStartingPlayerOrderForPeriod();
                 }
+                LOGGER.log(Level.INFO, () -> "Starting Period: " + period.getPeriodNumber());
+                period.startSemiPeriod();
+                break;
             }
         }
     }
 
-    private void setPeriodInformation(Period period) {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void setPeriodInformation(Period period) {
         period.setConnectedClients(connectedClients);
         period.setPlayers(players);
         period.setBoard(board);
         period.setCurrent(true);
     }
 
-    private void setNewStartingPlayerOrderForPeriod(Period period) {
-        //period.calculateNewPlayerOrder();
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void setNewStartingPlayerOrderForPeriod() {
+        for (int i = 0; i < periods.size(); i++) {
+            if (periods.get(i).isCurrent()) {
+                Period secondLastPeriod = periods.get(i - 1);
+                List<PlayerDetails> basePlayerOrder = secondLastPeriod.calculateNewPlayerOrder(secondLastPeriod.getLastSemiperiod().getBasePlayersOrder(),
+                        secondLastPeriod.getLastSemiperiod().getBoard().getCouncilPalace().getPlayerOrder());
+                periods.get(i).setPlayersOrder(basePlayerOrder);
+            }
+        }
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     public void activatePlayerAction(ActionDescription actionDescription) {
-        periods.forEach(p -> {
-            p.getSemiPeriods().forEach(sp -> {
-                if (sp.isCurrent()) {
-                    actionDescription.acceptActionVisitor(sp);
-                }
-            });
-        });
+        periods.forEach(p -> p.getSemiPeriods().forEach(sp -> {
+            if (sp.isCurrent()) {
+                actionDescription.acceptActionVisitor(sp);
+            }
+        }));
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     public void executeCouncilPrivilegeChoice(String playerName, List<Integer> choices, BoardAction boardAction) {
         for (Player player : players) {
             if (player.getPlayerDetails().getPlayerName().equals(playerName)) {
@@ -345,7 +472,7 @@ public class Game implements Runnable, Observer {
                         choices, player, boardAction);
                 councilPrivilegeChoiceHandler.addModifiedCouncilPrivilegeChoices();
                 periods.forEach(period -> {
-                    if (period.isCurrent()){
+                    if (period.isCurrent()) {
                         period.getSemiPeriods().forEach(semiPeriod -> {
                             if (semiPeriod.isCurrent()) {
                                 semiPeriod.sendBoardToPlayers();
@@ -359,21 +486,9 @@ public class Game implements Runnable, Observer {
         }
     }
 
-    private void sendToAll(ServerClientRequest serverClientRequest) {
-        for (ConnectedClient connectedClient : connectedClients) {
-            ServerSender serverSender = new ServerSenderHandler();
-            serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
-        }
-    }
-
-    private void sendTo(String playerName, ServerClientRequest serverClientRequest) {
-        for (ConnectedClient connectedClient : connectedClients) {
-            if (connectedClient.getPlayerName().equals(playerName)) {
-                ServerSender serverSender = new ServerSenderHandler();
-                serverSender.sendToClient(connectedClient.getConnectionStream(), serverClientRequest);
-            }
-        }
-    }
+    /*
+        GETTERS AND SETTERS
+     */
 
     public int getGameId() {
         return gameId;

@@ -15,7 +15,6 @@ import java.util.logging.Logger;
 public class ClientSenderHandler implements ClientSender {
     private static final Logger LOGGER = Logger.getLogger(ClientSenderHandler.class.getName());
 
-    private static String playerName;
     private static boolean socket = true;
 
     public ClientSenderHandler() {}
@@ -103,14 +102,6 @@ public class ClientSenderHandler implements ClientSender {
                 LOGGER.log(Level.SEVERE, "An exception was thrown: cannot send client server request on RMI", e);
             }
         }
-    }
-
-    public static String getPlayerName() {
-        return playerName;
-    }
-
-    public static void setPlayerName(String playerName) {
-        ClientSenderHandler.playerName = playerName;
     }
 
     public static boolean isSocket() {

@@ -64,21 +64,26 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         current = false;
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     public void initSemiPeriod() {
         LOGGER.info("Init semi period started");
         putDevelopmentCardsOnTowers();
         rollDices();
         givePawnsToPlayers();
         calculatePlayersOrder();
-        LOGGER.info("Init semi period ended, sending game board to players...");
         sendBoardToPlayers();
-        LOGGER.info("Board sent to players, now sending players boards..");
         sendPlayerBoardToEachSeparatePlayer();
         startTurn();
         LOGGER.log(Level.INFO, () -> "Turn token given to: " + players.get(0).getPlayerDetails().getPlayerName());
     }
 
-    private void putDevelopmentCardsOnTowers() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void putDevelopmentCardsOnTowers() {
+        LOGGER.info("Get developments cards");
         List<DevelopmentCard> territories;
         List<DevelopmentCard> buildings;
         List<DevelopmentCard> characters;
@@ -93,24 +98,35 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         putDevelopmentCardsOnSpecificTower(ventures, GeneralColor.PURPLE);
     }
 
+    /**
+     * TODO: JavaDoc
+     */
     private List<DevelopmentCard> getParticularCardsList(GeneralColor color) {
         return developmentCards.stream()
                 .filter(card -> color.equals(card.getCardInformation().getCardColor()))
                 .collect(Collectors.toList());
     }
 
-    private void putDevelopmentCardsOnSpecificTower(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void putDevelopmentCardsOnSpecificTower(List<DevelopmentCard> cardsToAdd, GeneralColor color) {
         for (Tower tower : board.getTowers()) {
             if (tower.getColor() == color) {
                 for (int i = 0; i < tower.getTowerSlots().size(); i++) {
                     tower.getTowerSlots().get(i).setDevelopmentCard(cardsToAdd.get(i));
+                    System.out.println(tower.getTowerSlots().get(i).getDevelopmentCard().getCardInformation().getName());
                 }
                 break;
             }
         }
     }
 
-    private void rollDices() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void rollDices() {
+        LOGGER.info("Launch dices");
         List<DiceColor> colors = new ArrayList<>();
         colors.add(DiceColor.BLACK);
         colors.add(DiceColor.ORANGE);
@@ -124,7 +140,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         }
     }
 
-    private void givePawnsToPlayers() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void givePawnsToPlayers() {
+        LOGGER.info("Five pawns to players");
         for (Dice dice : board.getDices()) {
             for (Player player : players) {
                 player.getPlayerBoard().getPawns().add(
@@ -136,7 +156,10 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         }
     }
 
-    private void calculatePlayersOrder() {
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void calculatePlayersOrder() {
         Map<Integer, PlayerDetails> playerDetailsMap = new HashMap<>();
 
         for (int i = 0; i < 4; i++) {
@@ -167,6 +190,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     }
 
     public void sendBoardToPlayers() {
+        LOGGER.info("Init semi period ended, sending game board to players...");
         UpdateGameBoard updateGameBoard = setupUpdateGameBoard();
         for (Player player : players) {
             List<PawnLight> pawnLightList = new ArrayList<>();
@@ -328,6 +352,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     }
 
     public void sendPlayerBoardToEachSeparatePlayer() {
+        LOGGER.info("Board sent to players, now sending players boards..");
         for (Player player : players) {
             sendTo(player.getPlayerDetails().getPlayerName(), setupUpdatePlayerBoard(player));
         }
