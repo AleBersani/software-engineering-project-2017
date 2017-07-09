@@ -38,7 +38,11 @@ public class Owner {
                         numberOfResources.get(ResourcesLight.SERVANTS) + "Se, " +
                         numberOfResources.get(ResourcesLight.COINS) + "C} " +
                         playerLight.printPlayerPoints();
-        return toString;
+        StringBuilder pawns = new StringBuilder().append("[");
+                pawnLights.forEach(pawnLight -> pawns.append(pawnLight.getPawnColor().toString()).append(" "));
+                pawns.append("]\n");
+
+        return new StringBuilder().append(toString).append(pawns).toString();
     }
 
     public String printBonusTiles() {

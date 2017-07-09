@@ -24,11 +24,15 @@ public class SlotLight implements Serializable {
 
     @Override
     public String toString() {
-        return "SlotLight{" +
-                "boardIdentifier=" + boardIdentifier +
-                ", requestedValue=" + requestedValue +
-                ", pawnLight=" + pawnLight +
-                '}';
+        String toString = "BoardId " + boardIdentifier + "\n" +
+                "Value " + requestedValue + "\n";
+        if (pawnLight != null){
+            toString = toString + "Player " + pawnLight.getPlayerName() + "\n" +
+                    "Color " + pawnLight.getPawnColor() + "\n";
+        }
+        else
+            toString = toString + " \n";
+        return toString;
     }
 
     public BoardIdentifier getBoardIdentifier() {

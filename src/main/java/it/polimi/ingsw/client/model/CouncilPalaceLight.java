@@ -17,10 +17,13 @@ public class CouncilPalaceLight implements Serializable {
 
     @Override
     public String toString() {
-        return "CouncilPalaceLight{" +
-                "boardIdentifier=" + boardIdentifier +
-                ", pawnLightList=" + pawnLightList.toString() +
-                '}';
+        String toString = "CouncilPalace: " +
+                "BoardId: " + boardIdentifier +
+                "\nPresent Players: ";
+        for (PawnLight pawn : pawnLightList) {
+            toString = toString + pawn.toString() + "\n";
+        }
+        return toString;
     }
 
     public BoardIdentifier getBoardIdentifier() {

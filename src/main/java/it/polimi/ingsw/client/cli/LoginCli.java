@@ -2,12 +2,12 @@ package it.polimi.ingsw.client.cli;
 
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.connection.ConnectionStarter;
-import it.polimi.ingsw.client.middleware.ClientSender;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,8 +18,8 @@ public class LoginCli implements Runnable {
     private List<String> loginRegisterCommands;
     private boolean connectionChosen;
 
-    private ClientSender clientSender;
     private ConnectionStarter connectionStarter;
+    private AtomicBoolean flagToObserve;
 
     public LoginCli() {
         input = new Scanner(System.in);
@@ -70,6 +70,8 @@ public class LoginCli implements Runnable {
                 System.out.printf("Your choice is incorrect! \n");
             }
         } while(!connectionChosen);
+        CliMain cliMain = new CliMain();
+        cliMain.init();
     }
 
     private boolean choiceIsCorrect(String s, List<String> commands) {
@@ -81,6 +83,7 @@ public class LoginCli implements Runnable {
         String ipAddress;
         System.out.println("Choose your Ip Address: (Default: 127.0.0.1)");
         ipAddress = input.nextLine();
+        input.nextLine();
         if ("".equals(ipAddress.trim())){
             ipAddress = "127.0.0.1";
         }

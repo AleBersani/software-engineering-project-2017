@@ -17,11 +17,8 @@ public class PawnLight implements Serializable {
 
     @Override
     public String toString() {
-        return "PawnLight{" +
-                "playerName='" + playerName + '\'' +
-                ", pawnColor=" + pawnColor +
-                ", placed=" + placed +
-                '}';
+        return "PlayerName: " + playerName +
+                ", PawnColor: " + pawnColor;
     }
 
     public String getPlayerName() {

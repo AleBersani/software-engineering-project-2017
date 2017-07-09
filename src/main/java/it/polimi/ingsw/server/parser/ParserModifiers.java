@@ -48,7 +48,7 @@ public class ParserModifiers {
         commands.put("bonusRewards", ()->parseBonusRewards(card));
         commands.put("doubleRewards", ()->parseDoubleRewards(card));
         commands.put("malusRewards", ()->parseMalusRewards(card));
-        commands.put("noTowerBonusRewards", ()->parseNoTowerBonusRewards(card));
+        commands.put("noBonusGoodsOnTower", ()->parseNoTowerBonusRewards(card));
 
         return commands.get(modifiers.get(0)).call();
     }

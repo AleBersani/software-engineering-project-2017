@@ -22,11 +22,11 @@
                 }
             }],
             "additionalInfoFlash": {
-                "onChoice": [],
+                "onChoice": ["cardFlashAction"],
                 "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": ["cardFlashAction"],
+                "onChoice": [],
                 "notChoosable": []
             },
             "actionType": ["HARVEST"],
@@ -69,11 +69,11 @@
             }],
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["requirementsOnCard"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCard"]
+                "notChoosable": []
             },
             "modifiers": ["canPlaceOnOccupiedSpace"],
             "abilityType": "permanent",
@@ -104,11 +104,11 @@
 
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["requirementsOnCard"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCard"]
+                "notChoosable": []
             },
             "abilityType": "permanent",
             "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER"],
@@ -137,11 +137,11 @@
             }],
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["requirementsOnCard"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCard"]
+                "notChoosable": []
             },
             "modifiers": ["bonusPawnValue"],
             "actionValueSurplus": "3",
@@ -187,10 +187,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
-                "onChoice": ["cardFlashExchangingGoods"],
+                "onChoice": [],
                 "notChoosable": []
             }
 
@@ -233,10 +233,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
-                "onChoice": ["cardFlashExchangingGoods"],
+                "onChoice": [],
                 "notChoosable": []
             }
         },
@@ -278,10 +278,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
-                "onChoice": ["cardFlashExchangingGoods"],
+                "onChoice": [],
                 "notChoosable": []
             }
         },
@@ -369,10 +369,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
-                "onChoice": ["cardFlashExchangingGoods"],
+                "onChoice": [],
                 "notChoosable": []
             }
         },
@@ -399,11 +399,11 @@
             }],
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["requirementsOnCard"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCard"]
+                "notChoosable": []
             },
             "modifiers": ["fixedColouredPawnsValue"],
             "actionValueSurplus": "",
@@ -498,49 +498,13 @@
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
-            },
-            "additionalInfoPermanent": {
-                "onChoice": [],
                 "notChoosable": ["requirementsOnCard"]
             },
-            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
-
-        },
-        {
-            "name": "Federico da Montefeltro",
-            "requirements": [{
-                "developmentCards": {
-                    "territories": "5",
-                    "buildings": "0",
-                    "characters": "0",
-                    "ventures": "0"
-                },
-                "resources": {
-                    "woods": "0",
-                    "stones": "0",
-                    "servants": "0",
-                    "coins": "0"
-                },
-                "points": {
-                    "victory": "0",
-                    "military": "0",
-                    "faith": "0"
-                }
-            }],
-            "pawnValue": "6",
-            "additionalInfoFlash": {
+            "additionalInfoPermanent": {
                 "onChoice": [],
                 "notChoosable": []
             },
-            "additionalInfoPermanent": {
-                "onChoice": ["requirementsOnCard"],
-                "notChoosable": []
-            },
-            "modifiers": ["fixedColouredPawnValue", "fixedColouredPawnValue", "fixedColouredPawnValue"],
-            "pawnColor": ["orange", "white", "black"],
-            "abilityType": "consumable",
-            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER"]
+            "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "BLUE_TOWER", "PURPLE_TOWER", "COUNCIL_PALACE", "PRODUCTION", "HARVEST", "MARKET"]
 
         },
         {
@@ -598,11 +562,11 @@
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["churchSustainBonus"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["churchSustainBonus"]
+                "notChoosable": []
             },
             "bonus": {
                 "resources": {
@@ -644,11 +608,11 @@
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["requirementsOnCard"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCard"]
+                "notChoosable": []
             }
         },
         {
@@ -676,11 +640,11 @@
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["rewardsOnCard"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["rewardsOnCard"]
+                "notChoosable": []
             },
             "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "PURPLE_TOWER", "BLUE_TOWER"]
         },
@@ -722,10 +686,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
-                "onChoice": ["cardFlashExchangingGoods"],
+                "onChoice": [],
                 "notChoosable": []
             }
         },
@@ -767,10 +731,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
-                "onChoice": ["cardFlashExchangingGoods"],
+                "onChoice": [],
                 "notChoosable": []
             }
         },
@@ -812,10 +776,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["cardFlashExchangingGoods"]
             },
             "additionalInfoPermanent": {
-                "onChoice": ["cardFlashExchangingGoods"],
+                "onChoice": [],
                 "notChoosable": []
             }
         },
@@ -857,11 +821,11 @@
             "abilityType": "permanent",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": []
+                "notChoosable": ["requirementsOnCard"]
             },
             "additionalInfoPermanent": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCard"]
+                "notChoosable": []
             },
             "actionType": ["GREEN_TOWER", "YELLOW_TOWER", "PURPLE_TOWER", "BLUE_TOWER"]
         }

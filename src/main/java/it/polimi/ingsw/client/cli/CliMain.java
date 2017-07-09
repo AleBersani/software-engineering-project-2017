@@ -1,68 +1,24 @@
 package it.polimi.ingsw.client.cli;
 
+import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.cli.gameinformation.BoardOwnerInformation;
 import it.polimi.ingsw.client.cli.gameinformation.CardsInformation;
-import it.polimi.ingsw.client.cli.model.BoardSpaceDescriptionLight;
-import it.polimi.ingsw.client.cli.model.DevelopmentCardsLight;
-import it.polimi.ingsw.client.cli.model.ExcommunicationTileLight;
-import it.polimi.ingsw.client.cli.model.LeaderCardLight;
+import it.polimi.ingsw.client.cli.model.*;
+import it.polimi.ingsw.client.middleware.ClientSender;
+import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
+import it.polimi.ingsw.shared.model.ActionType;
+import it.polimi.ingsw.shared.model.BoardIdentifier;
+import it.polimi.ingsw.shared.model.PawnColor;
+import it.polimi.ingsw.shared.support.GameStartType;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CliMain {
-//    private boolean disconnect = false;
-//    private ClientGameInformation gameInformation;
-//
-//    public void showMainMenu() {
-//        //MAPPA DI METODI DA INVOCARE
-//        Scanner input = new Scanner(System.in);
-//        do {
-//            System.out.println("Main Menu:\n" +
-//                                "Z: Exit\n" +
-//                                "A: Show Board\n" +
-//                                "B: Show your player board\n" +
-//                                "C: Show other players' information\n" +
-//                                "D: Perform an action\n" +
-//                                "E: Pass the turn\n" +
-//                                "F: Suggest game's interruption\n");
-//            String s = input.next();
-//            //se s è presente nella mappa, invoco, altrimenti:
-//            System.out.println("Sorry, your choice \""+ s +"\" is not valid\n");
-//        }while (!disconnect);
-//    }
-//
-//    public void showBoard() {
-//        BoardLight board = gameInformation.getBoardLight();
-//        String boardToPrint = board.toString();
-//        //DA RIVEDERE
-//        System.out.println(boardToPrint);
-//    }
-//
-//    public void showPlayerBoard() {
-//        PlayerLight playerInfo = gameInformation.getPlayerLight();
-//        String playerInfoToPrint = playerInfo.toString();
-//        System.out.println(playerInfoToPrint);
-//    }
-//
-//    public void showOtherPlayers() {
-//
-//    }
-//
-//    public void showPerformActionMenu() {
-//
-//    }
-//
-//    public void passTurn() {
-//
-//    }
-//
-//    public void suggestGameInterruption() {
-//
-//    }
+    private static final Logger LOGGER = Logger.getLogger(LoginCli.class.getName());
 
     private Scanner input;
     private List<String> mainMenu;
@@ -70,39 +26,155 @@ public class CliMain {
     //liste di comandi possibili
 
     private BoardLight boardLight;
-    private Owner mainPlayer;
+    private Owner owner;
     private boolean disconnect = false;
+    private ClientSender clientSender;
+    private RequestsGeneratorCli requestsGeneratorCli;
+    private AtomicBoolean flagToObserve;
 
-    public void init(Scanner input) {
-        this.input = input;
+    public CliMain() {
+        this.input = new Scanner(System.in);
         mainMenu = setMainMenuCommands();
+        performActionMenu = setPerformActionMenu();
         boardLight = BoardLight.getInstance();
-        mainPlayer = Owner.getInstance();
+        owner = Owner.getInstance();
+        clientSender = new ClientSenderHandler();
+        requestsGeneratorCli = new RequestsGeneratorCli();
+    }
 
+    public void init() {
+        chooseGameType();
+    }
+
+    private void chooseGameType() {
+        String choice;
+        boolean requestSent = false;
+        flagToObserve = new AtomicBoolean(ClientInformation.isGameStarted());
+        do {
+            System.out.printf("A: New Game\n" +
+                              "B: Resume Game\n");
+            choice = input.next();
+            System.out.println("Choice is "+ choice);
+            if ("A".equals(choice.trim().toUpperCase())){
+                clientSender.choseGameType(GameStartType.NEW);
+                Thread threadObserver = new Thread(new ObserveThisForCli(flagToObserve));
+                threadObserver.run();
+                try {
+                    threadObserver.join();
+                } catch (InterruptedException e) {
+                    System.out.println("An Error Occurred!");
+                }
+                System.out.println("Request Sent! ");
+            } else if ("B".equals(choice.trim().toUpperCase()))
+                System.out.printf("Work in progress...\n");
+            System.out.println(ClientInformation.isGameStarted() + " :Game is started?");
+        } while (!flagToObserve.get());
+        chooseLeaderCards();
+    }
+
+    private void chooseLeaderCards() {
+        List<Card> leadersToShowUp;
+        List<String[]> leadersToShowUpInformation;
+        int maxNumOfLines;
+        String leaderChosen;
+        do {
+            leadersToShowUp = ClientInformation.getCurrentLeadersToChoice();
+            leadersToShowUpInformation = getLeadersToShowUpString(leadersToShowUp);
+            maxNumOfLines = getMaxNumOfLines(leadersToShowUpInformation);
+            System.out.println("Choose your Leaders: ");
+            for (int i = 0; i < maxNumOfLines; i++) {
+                for (int j = 0; j < leadersToShowUpInformation.size(); j++) {
+                    if (i > leadersToShowUpInformation.get(j).length)
+                        System.out.printf("| %-40s |", " ");
+                    else {
+                        System.out.printf("| %-40s |", leadersToShowUpInformation.get(j)[i]);
+                    }
+                }
+                System.out.printf("\n");
+            }
+            leaderChosen = input.nextLine();
+            input.nextLine();
+            clientSender.sendToServer(requestsGeneratorCli.generateLeaderChoice(leaderChosen.trim()));
+            try {
+                Thread.sleep(500, 0);
+            } catch (InterruptedException e) {
+                LOGGER.log(Level.SEVERE, "An Exception was thrown for waiting Thread ", e);
+            }
+        } while (!ClientInformation.isLeaderChoiceEnded());
+        chooseBonusTile();
+    }
+
+    private int getMaxNumOfLines(List<String[]> leadersToShowUpInformation) {
+        int max = 0;
+        for (int i = 0; i < leadersToShowUpInformation.size(); i++) {
+            if (leadersToShowUpInformation.get(i).length > max)
+                max = leadersToShowUpInformation.get(i).length;
+        }
+        return max;
+    }
+
+    private List<String[]> getLeadersToShowUpString(List<Card> leadersToShowUp) {
+        Card card;
+        List<String[]> listOfInformation = new ArrayList<>();
+        Optional<LeaderCardLight> leaderCardLightOptional;
+        for (int i = 0; i < leadersToShowUp.size(); i++) {
+            StringBuilder leadersInformation = new StringBuilder();
+            card = leadersToShowUp.get(i);
+            leaderCardLightOptional = CardsInformation.searchForLeaderCardLight(card.getName());
+            if (leaderCardLightOptional.isPresent()) {
+                leadersInformation.append(card.getName()).append("\n");
+                leadersInformation.append(leaderCardLightOptional.get().getEffectDescription());
+                listOfInformation.add(leadersInformation.toString().split("\n"));
+            }
+        }
+        return listOfInformation;
+    }
+
+    private void chooseBonusTile() {
+        List<String> bonusTilesToChoose;
+        List<String[]> bonusTilesInformation;
+        String choice;
+        do {
+            bonusTilesToChoose = ClientInformation.getCurrentBonusTilesToChoice();
+            if (bonusTilesToChoose.size() < 0) {
+                System.out.printf("Waiting for other players to choose\n");
+            } else {
+                System.out.printf("Choose your Bonus Tile!\n");
+                bonusTilesInformation = getBonusTilesInformation(bonusTilesToChoose);
+                for (int i = 0; i < bonusTilesInformation.get(0).length; i++) {
+                    for (int j = 0; j < bonusTilesInformation.size(); j++) {
+                        System.out.printf("| %-25s |", bonusTilesInformation.get(j)[i]);
+                    }
+                    System.out.printf("\n");
+                }
+                choice = input.nextLine();
+                input.nextLine();
+                if (BoardOwnerInformation.searchForBonusTileLight(choice.trim()).isPresent()) {
+                    clientSender.sendToServer(requestsGeneratorCli.generateChosenBonusTile(choice));
+                } else {
+                    System.out.printf("Incorrect choice! \n");
+                }
+            }
+        } while(!ClientInformation.isBonusTilesChoiceEnded());
         showMainMenu();
     }
 
-    private List<String> setMainMenuCommands() {
-        List<String> commands = new ArrayList<>();
-        commands.add("Z");
-        commands.add("A");
-        commands.add("B");
-        commands.add("C");
-        commands.add("D");
-        commands.add("E");
-        commands.add("F");
-        commands.add("I");
-        return commands;
+    private List<String[]> getBonusTilesInformation(List<String> bonusTilesToChoose) {
+        Optional<BonusTileDescriptionLight> bonusTileDescriptionLight;
+        List<String[]> bonusTileToPrint = new ArrayList<>();
+        for (int i = 0; i < bonusTilesToChoose.size(); i++) {
+            StringBuilder description = new StringBuilder();
+            bonusTileDescriptionLight = BoardOwnerInformation.searchForBonusTileLight(bonusTilesToChoose.get(i));
+            if (bonusTileDescriptionLight.isPresent()) {
+                description.append(bonusTileDescriptionLight.get().getBonusTileIdentifier()).append("\n");
+                description.append(bonusTileDescriptionLight.get().getDescription()).append("\n");
+                bonusTileToPrint.add(description.toString().split("\n"));
+            }
+        }
+        return bonusTileToPrint;
     }
-
-    private List<String> setPerformActionMenu() {
-        List<String> commands = new ArrayList<>();
-        return commands;
-    }
-
 
     public void showMainMenu() {
-        Scanner input = new Scanner(System.in);
         do {
             System.out.println("Main Menu:\n" +
                     "Z: Exit\n" +
@@ -123,7 +195,8 @@ public class CliMain {
                     case "D": showPerformActionMenu(); break;
                     case "E": passTurn(); break;
                     case "F": suggestGameInterruption(); break;
-                    case "Z": disconnect = true; break;
+                    case "Z": disconnect = true; //Disconnessione?
+                        break;
                     case "I": showCardInformation(); break;
                     default: break;
                 }
@@ -133,13 +206,24 @@ public class CliMain {
         }while (!disconnect);
     }
 
-    private boolean isPresentCommand(List<String> menu, String s) {
-        Optional<String> command = menu.stream().filter(str -> str.equals(s)).findFirst();
-        return command.isPresent();
+    private List<String> setMainMenuCommands() {
+        List<String> commands = new ArrayList<>();
+        commands.add("Z");
+        commands.add("A");
+        commands.add("B");
+        commands.add("C");
+        commands.add("D");
+        commands.add("E");
+        commands.add("F");
+        commands.add("I");
+        return commands;
     }
 
     private void showBoard() {
         printTowers();
+        boardLight.getDiceLightList().forEach(diceLight -> System.out.printf("{%s -> %d}     ", diceLight.getDiceColor().toString(),
+                                                                                diceLight.getValue()));
+        System.out.println("\n");
         printOtherSpaces();
         printCouncilPalace();
     }
@@ -208,18 +292,18 @@ public class CliMain {
     }
 
     private void showPlayerBoard() {
-        System.out.printf("%s", mainPlayer.printPlayerLight());
-        System.out.printf("%s", mainPlayer.printOwnResourcesPoints());
-        System.out.printf("%s\n", mainPlayer.printBonusTiles());
+        System.out.printf("%s", owner.printPlayerLight());
+        System.out.printf("%s", owner.printOwnResourcesPoints());
+        System.out.printf("%s\n", owner.printBonusTiles());
         printDevelopmentCards();
-        System.out.printf("%s\n", mainPlayer.printLeaders());
+        System.out.printf("%s\n", owner.printLeaders());
     }
 
     public void printDevelopmentCards() {
-        String[] territoriesCards = getCardsName(mainPlayer.getTerritories());
-        String[] buildingCards = getCardsName(mainPlayer.getBuildings());
-        String[] characterCards = getCardsName(mainPlayer.getCharacters());
-        String[] ventureCards = getCardsName(mainPlayer.getVentures());
+        String[] territoriesCards = getCardsName(owner.getTerritories());
+        String[] buildingCards = getCardsName(owner.getBuildings());
+        String[] characterCards = getCardsName(owner.getCharacters());
+        String[] ventureCards = getCardsName(owner.getVentures());
         int maxSize = Integer.max(
                 Integer.max(territoriesCards.length, buildingCards.length),
                 Integer.max(characterCards.length, ventureCards.length));
@@ -269,7 +353,212 @@ public class CliMain {
     }
 
     private void showPerformActionMenu() {
+        boolean back = false;
+        boolean actionPerformed = false;
+        String choice;
+        do {
+            System.out.printf("Choose an action to perform: \n" +
+                              "A: Get a card from Tower\n" +
+                              "B: Place on Market\n" +
+                              "C: Place on Council Palace\n" +
+                              "D: Place on Harvest area\n" +
+                              "E: Place on Production area\n" +
+                              "F: Activate a Leader card\n" +
+                              "G: Placement of Leader\n" +
+                              "H: Discard a Leader\n" +
+                              "Z: Go back\n");
+            choice = input.next();
+            if (isPresentCommand(performActionMenu, choice.trim().toUpperCase())) {
+                switch (choice) {
+                    case "A":
+                        placeOnTowers();
+                        actionPerformed = true;
+                        break;
+                    case "B":
+                        placeOnMarket();
+                        actionPerformed = true;
+                        break;
+                    case "C":
+                        placeOnCouncilPalace();
+                        actionPerformed = true;
+                        break;
+                    case "D":
+                        placeOnHarvestArea();
+                        actionPerformed = true;
+                        break;
+                    case "E":
+                        placeOnProductionArea();
+                        actionPerformed = true;
+                        break;
+                    case "F":
+                        activateALeaderCard();
+                        actionPerformed = true;
+                        break;
+                    case "G":
+                        placeALeaderCard();
+                        actionPerformed = true;
+                        break;
+                    case "H":
+                        discardALeaderCard();
+                        actionPerformed = true;
+                        break;
+                    case "Z":
+                        back = true;
+                        break;
+                }
+            }
+        } while (!back && !actionPerformed);
 
+    }
+
+    private void placeOnTowers() {
+        printTowers();
+        boardLight.getDiceLightList().forEach(diceLight -> System.out.printf("{%s -> %d}     ", diceLight.getDiceColor().toString(),
+                diceLight.getValue()));
+        placeOnBoardSpace();
+    }
+
+    private void placeOnMarket() {
+        printOtherSpaces();
+        boardLight.getDiceLightList().forEach(diceLight -> System.out.printf("{%s -> %d}     ", diceLight.getDiceColor().toString(),
+                diceLight.getValue()));
+        placeOnBoardSpace();
+
+    }
+
+    private void placeOnCouncilPalace() {
+        printCouncilPalace();
+        boardLight.getDiceLightList().forEach(diceLight -> System.out.printf("{%s -> %d}     ", diceLight.getDiceColor().toString(),
+                diceLight.getValue()));
+        placeOnBoardSpace();
+    }
+
+    private void placeOnHarvestArea() {
+        printOtherSpaces();
+        boardLight.getDiceLightList().forEach(diceLight -> System.out.printf("{%s -> %d}     ", diceLight.getDiceColor().toString(),
+                diceLight.getValue()));
+        placeOnBoardSpace();
+    }
+
+    private void placeOnProductionArea() {
+        printOtherSpaces();
+        boardLight.getDiceLightList().forEach(diceLight -> System.out.printf("{%s -> %d}     ", diceLight.getDiceColor().toString(),
+                diceLight.getValue()));
+        placeOnBoardSpace();
+    }
+
+    private void placeOnBoardSpace() {
+        boolean sent = false;
+        boolean incorrect;
+        String boardIdentifier, pawnColor;
+        int numberOfServants = 0;
+        do {
+            System.out.printf("Insert an Action, specifying: \n" +
+                              "- identifier of the space: \n");
+            incorrect = false;
+            boardIdentifier = input.nextLine();
+            input.nextLine();
+            if (isBoardIdentifier(boardIdentifier)) {
+                System.out.printf("- color of the pawn \n");
+                pawnColor = input.nextLine();
+                input.nextLine();
+                if (isPawnColor(pawnColor.trim())) {
+                    System.out.printf("- number of servants you want to sacrifice for grow pawn value\n");
+                    if (input.hasNextInt()){
+                        numberOfServants = input.nextInt();
+                        clientSender.sendToServer(requestsGeneratorCli.generatePawnPlacement(boardIdentifier, pawnColor,
+                                numberOfServants));
+                        sent = true;
+                    } else
+                        incorrect = true;
+                } else
+                    incorrect = true;
+            } else
+                incorrect = true;
+            if (incorrect) {
+                System.out.println("Invalid input! \n");
+            }
+        } while (!sent);
+    }
+
+    private boolean isPawnColor(String trim) {
+        Optional<PawnColor> pawnColorOptional =
+                Arrays.stream(PawnColor.values()).filter(F -> F.equals(PawnColor.valueOf(trim))).findFirst();
+        return pawnColorOptional.isPresent();
+    }
+
+    private boolean isBoardIdentifier(String boardIdentifier) {
+        Optional<BoardIdentifier> boardIdentifierOptional =
+                Arrays.stream(BoardIdentifier.values())
+                        .filter(F -> F.equals(BoardIdentifier.valueOf(boardIdentifier))).findFirst();
+
+        return boardIdentifierOptional.isPresent();
+    }
+
+    private void activateALeaderCard() {
+        showPlayerBoard();
+        String leaderCardName;
+        Optional<Card> leaderCardInOwner;
+        boolean sent = false;
+        do {
+            System.out.println("Enter a name of a Leader Card to activate: ");
+            leaderCardName = input.nextLine();
+            Optional<Card> found = Optional.empty();
+            for (Card card : owner.getPlayerLight().getActivatedLeaders()) {
+                if (card.getName().equals(leaderCardName.trim())) {
+                    found = Optional.of(card);
+                    break;
+                }
+            }
+            leaderCardInOwner = found;
+            if (CardsInformation.searchForLeaderCardLight(leaderCardName.trim()).isPresent() &&
+                    !leaderCardInOwner.isPresent()) {
+                clientSender.sendToServer(requestsGeneratorCli.generateLeaderAction(ActionType.LEADER_ACTIVATION, leaderCardName));
+                sent = true;
+            } else
+                System.out.println("Invalid Leader Card name!");
+        } while (!sent);
+    }
+
+    private void placeALeaderCard() {
+        showPlayerBoard();
+        String leaderCardName;
+        boolean sent = false;
+        do {
+            System.out.println("Enter a name of a Leader Card to place: ");
+            leaderCardName = input.nextLine();
+            if (CardsInformation.searchForLeaderCardLight(leaderCardName.trim()).isPresent()) {
+                clientSender.sendToServer(requestsGeneratorCli.generateLeaderAction(ActionType.LEADER_PLACEMENT, leaderCardName));
+                sent = true;
+            } else
+                System.out.println("Invalid Leader Card name!");
+        } while (!sent);
+    }
+
+    private void discardALeaderCard() {
+        showPlayerBoard();
+        String leaderCardName;
+        Optional<Card> leaderCardInOwner;
+        boolean sent = false;
+        Owner owner = Owner.getInstance();
+        do {
+            System.out.println("Enter a name of a Leader Card to discard: ");
+            leaderCardName = input.nextLine();
+            Optional<Card> found = Optional.empty();
+            for (Card card : owner.getPlayerLight().getActivatedLeaders()) {
+                if (card.getName().equals(leaderCardName.trim())) {
+                    found = Optional.of(card);
+                    break;
+                }
+            }
+            leaderCardInOwner = found;
+            if (CardsInformation.searchForLeaderCardLight(leaderCardName.trim()).isPresent() &&
+                    !leaderCardInOwner.isPresent()) {
+                clientSender.sendToServer(requestsGeneratorCli.generateLeaderAction(ActionType.LEARD_DISCARD, leaderCardName));
+                sent = true;
+            } else
+                System.out.println("Invalid Leader Card name!");
+        } while (!sent);
     }
 
     private void passTurn() {
@@ -277,7 +566,7 @@ public class CliMain {
     }
 
     private void suggestGameInterruption() {
-
+        System.out.println("WORK IN PROGRESS...");
     }
 
     private void showCardInformation() {
@@ -292,12 +581,33 @@ public class CliMain {
             s = s.replaceAll("^\\s+|\\s+$", "");
             if ((developmentCardsLight = CardsInformation.searchForDevelopmentCardLight(s)).isPresent()) {
                 System.out.println(developmentCardsLight.get().toString());
+                found = true;
             } else if ((leaderCardLight = CardsInformation.searchForLeaderCardLight(s)).isPresent()) {
                 System.out.println(leaderCardLight.get().toString());
+                found = true;
             } else if ((excommunicationTileLight = CardsInformation.searchForExcommunicationTileLight(s)).isPresent()) {
                 System.out.println(excommunicationTileLight.get().toString());
+                found = true;
+            } else if ("E".equals(s)) {
+                exit = true;
             }
+        }while(!found && !exit);
+    }
 
-        }while(!found || !exit);
+    private List<String> setPerformActionMenu() {
+        List<String> commands = new ArrayList<>();
+        commands.add("A");
+        commands.add("B");
+        commands.add("C");
+        commands.add("D");
+        commands.add("E");
+        commands.add("F");
+        commands.add("Z");
+        return commands;
+    }
+
+    private boolean isPresentCommand(List<String> menu, String s) {
+        Optional<String> command = menu.stream().filter(str -> str.equals(s)).findFirst();
+        return command.isPresent();
     }
 }

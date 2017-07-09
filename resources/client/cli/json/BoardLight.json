@@ -154,19 +154,19 @@
   "bonusTiles": [
     {
       "name": "B_TILE_1",
-      "description": "Production: {2Se, 1C} Harvest: {1W, 1S, 1Mp}"
+      "description": "Production: {2Se, 1C}\nHarvest: {1W, 1S, 1Mp}"
     },
     {
       "name": "B_TILE_2",
-      "description": "Production: {2Mp, 1C} Harvest: {1W, 1S, 1Se}"
+      "description": "Production: {2Mp, 1C}\nHarvest: {1W, 1S, 1Se}"
     },
     {
       "name": "B_TILE_3",
-      "description": "Production: {1Se, 2C} Harvest: {1W, 1S, 1Mp}"
+      "description": "Production: {1Se, 2C}\nHarvest: {1W, 1S, 1Mp}"
     },
     {
       "name": "B_TILE_4",
-      "description": "Production: {1Se, 2Mp} Harvest: {1W, 1S, 1C}"
+      "description": "Production: {1Se, 2Mp}\nHarvest: {1W, 1S, 1C}"
     }
   ]
 }

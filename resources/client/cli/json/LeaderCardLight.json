@@ -11,12 +11,12 @@
   },
   {
     "name": "Filippo Brunelleschi",
-    "effectDescription": "You don’t have to spend 3 Coins when you place your pawns in a Tower that is already occupied",
+    "effectDescription": "You don’t have to spend 3 Coins when \nyou place your pawns in a Tower that\n is already occupied",
     "requirements": ["5 Building cards"]
   },
   {
     "name": "Sigismondo Malatesta",
-    "effectDescription": "Your uncolored Family Member has an extra value of 3",
+    "effectDescription": "Your uncolored Family Member has an \nextra value of 3",
     "requirements": ["7 Military points and 3 Faith points"]
   },
   {
@@ -41,42 +41,42 @@
   },
   {
     "name": "Sandro Botticelli",
-    "effectDescription": "You get 2 Military points and 1 Victory point",
+    "effectDescription": "You get 2 Military points and \n1 Victory point",
     "requirements": ["10 Woods"]
   },
   {
     "name": "Ludovico il Moro",
-    "effectDescription": "Your colored pawn has a value of 5, regardless of their related dice",
+    "effectDescription": "Your colored pawn has a value of 5, \nregardless of their related dice",
     "requirements": ["2 Territory cards, 2 Character cards, 2 Building cards and 2 Venture cards"]
   },
   {
     "name": "Lucrezia Borgia",
-    "effectDescription": "Your colored pawns have a extra value of 2",
+    "effectDescription": "Your colored pawns have a extra \nvalue of 2",
     "requirements": ["6 Territory cards | 6 Character cards | 6 Building cards | 6 Venture cards"]
   },
   {
     "name": "Federico da Montefeltro",
-    "effectDescription": "One of your colored pawns has a value of 6, regardless of its related die",
+    "effectDescription": "One of your colored pawns has a value\n of 6, regardless of its related die",
     "requirements": ["5 Territory cards"]
   },
   {
     "name": "Lorenzo de’ Medici",
-    "effectDescription": "Copy the ability of another Leader card already played by another player, Once you decide the ability to copy, it can’t be changed",
+    "effectDescription": "Copy the ability of another Leader \ncard already played by another player.\n Once you decide the ability to copy,\n it can’t be changed",
     "requirements": ["35 Victory points"]
   },
   {
     "name": "Sisto IV",
-    "effectDescription": "You gain 5 additional Victory points when you support the Church in a Vatican Report phase",
+    "effectDescription": "You gain 5 additional Victory points \nwhen you support the Church in a Vatican\n Report phase",
     "requirements": ["6 Wood, 6 Stone, 6 Coins and 6 Servants"]
   },
   {
     "name": "Cesare Borgia",
-    "effectDescription": "You don’t need to satisfy the Military points requirement when you take Territory cards",
+    "effectDescription": "You don’t need to satisfy the Military\n points requirement when you take \nTerritory cards",
     "requirements": ["3 Building cards, 12 Coins and 2 Faith points"]
   },
   {
     "name": "Santa Rita",
-    "effectDescription": "Each time you receive Wood, Stone, Coins or Servants as an immediate effect from Development cards (not from an action space), you receive the resources twice",
+    "effectDescription": "Each time you receive Wood, Stone, Coins\n or Servants as an immediate effect from\n Development cards (not from an action \nspace), you receive the resources twice",
     "requirements": ["8 Faith points"]
   },
   {
@@ -96,7 +96,7 @@
   },
   {
     "name": "Pico della Mirandola",
-    "effectDescription": "When you take Development cards, you get a discount of 3 coins (if the card you are taking has coins in its cost.) This is not a discount on the coins you must spend if you take a Development card from a Tower that’s already occupied",
+    "effectDescription": "When you take Development cards, you get\n a discount of 3 coins (if the card you \nare taking has coins in its cost). This\n is not a discount on the coins you must\n spend if you take a Development card \nfrom a Tower that’s already occupied",
     "requirements": ["4 Venture cards and 2 Building cards"]
   }
 ]

@@ -520,8 +520,8 @@
 					}
 				],
                 "additionalInfoFlash": {
-                    "onChoice": ["cardFlashExchangingGoods"],
-                    "notChoosable": []
+                    "onChoice": [],
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -652,8 +652,8 @@
 					}
 				],
                 "additionalInfoFlash": {
-                    "onChoice": ["cardFlashExchangingGoods"],
-                    "notChoosable": []
+                    "onChoice": [],
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -983,7 +983,7 @@
 				],
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": ["cardFlashExchangingGoods"]
+                    "notChoosable": []
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1378,8 +1378,8 @@
 					}
 				],
                 "additionalInfoFlash": {
-                    "onChoice": ["cardFlashExchangingGoods"],
-                    "notChoosable": []
+                    "onChoice": [],
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
                     "onChoice": [],
@@ -1664,8 +1664,8 @@
                     "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
-                    "onChoice": [],
-                    "notChoosable": ["goodsBasedOnPossessions"]
+                    "onChoice": ["conditionalProduction"],
+                    "notChoosable": []
                 },
 				"rewardsForPossessions": [
 					{
@@ -1682,7 +1682,7 @@
 						}
 					}
 				],
-				"typeOfObjectRequired": "yellow",
+				"cardColor": "yellow",
 				"numberOfObjectRequired": "1"
 			},
 			{
@@ -1760,11 +1760,11 @@
 				"cardRequiredForProductionExchange": "green",
                 "additionalInfoFlash": {
                     "onChoice": [],
-                    "notChoosable": []
+                    "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
-                    "onChoice": ["cardFlashExchangingGoods"],
-                    "notChoosable": ["goodsBasedOnPossessions"]
+                    "onChoice": ["conditionalProduction"],
+                    "notChoosable": []
                 },
 				"rewardsForPossessions": [
 					{
@@ -1781,7 +1781,7 @@
 						}
 					}
 				],
-				"typeOfObjectRequired": "green",
+				"cardColor": "green",
 				"numberOfObjectRequired": "1"
 			},
 			{
@@ -1862,8 +1862,8 @@
                     "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
-                    "onChoice": [],
-                    "notChoosable": ["goodsBasedOnPossessions"]
+                    "onChoice": ["conditionalProduction"],
+                    "notChoosable": []
                 },
                 "rewardsForPossessions": [
                     {
@@ -1880,7 +1880,7 @@
                         }
                     }
                 ],
-                "typeOfObjectRequired": "purple",
+                "cardColor": "purple",
                 "numberOfObjectRequired": "1"
 			},
 			{
@@ -1961,8 +1961,8 @@
                     "notChoosable": ["cardFlashExchangingGoods"]
                 },
                 "additionalInfoPermanent": {
-                    "onChoice": [],
-                    "notChoosable": ["goodsBasedOnPossessions"]
+                    "onChoice": ["conditionalProduction"],
+                    "notChoosable": []
                 },
                 "rewardsForPossessions": [
                     {
@@ -1979,7 +1979,7 @@
                         }
                     }
                 ],
-                "typeOfObjectRequired": "blue",
+                "cardColor": "blue",
                 "numberOfObjectRequired": "1"
 			},
 			{
@@ -2029,7 +2029,7 @@
 							"woods": "0",
 							"stones": "0",
 							"servants": "0",
-							"coins": "3"
+							"coins": "0"
 						},
 						"points": {
 							"victory": "0",
@@ -2197,21 +2197,7 @@
 							"woods": "0",
 							"stones": "0",
 							"servants": "0",
-							"coins": "3"
-						},
-						"points": {
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						},
-						"councilePrivilege": "0"
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "5"
+							"coins": "0"
 						},
 						"points": {
 							"victory": "0",
@@ -2369,7 +2355,7 @@
 						"points": {
 							"victory": "0",
 							"military": "0",
-							"faith": "1"
+							"faith": "0"
 						},
 						"councilePrivilege": "0"
 					}
@@ -2511,7 +2497,7 @@
 							"military": "0",
 							"faith": "0"
 						},
-						"councilePrivilege": "1"
+						"councilePrivilege": "0"
 					}
 				],
 				"requirementsForProductionExchange": [
@@ -2641,8 +2627,8 @@
 				"productionResult": [
 					{
 						"resources": {
-							"woods": "2",
-							"stones": "2",
+							"woods": "0",
+							"stones": "0",
 							"servants": "0",
 							"coins": "0"
 						},
@@ -2787,21 +2773,7 @@
 							"coins": "0"
 						},
 						"points": {
-							"victory": "3",
-							"military": "0",
-							"faith": "0"
-						},
-						"councilePrivilege": "0"
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points": {
-							"victory": "5",
+							"victory": "0",
 							"military": "0",
 							"faith": "0"
 						},
@@ -2954,27 +2926,12 @@
 							"coins": "0"
 						},
 						"points": {
-							"victory": "3",
+							"victory": "0",
 							"military": "0",
 							"faith": "0"
 						},
 						"councilePrivilege": "0"
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points": {
-							"victory": "7",
-							"military": "0",
-							"faith": "0"
-						},
-						"councilePrivilege": "0"
-					}
-				],
+					}],
 				"requirementsForProductionExchange": [
 					{
 						"resources": {
@@ -3121,21 +3078,7 @@
 							"coins": "0"
 						},
 						"points": {
-							"victory": "3",
-							"military": "0",
-							"faith": "0"
-						},
-						"councilePrivilege": "0"
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points": {
-							"victory": "7",
+							"victory": "0",
 							"military": "0",
 							"faith": "0"
 						},
@@ -3288,7 +3231,7 @@
 							"coins": "0"
 						},
 						"points": {
-							"victory": "6",
+							"victory": "0",
 							"military": "0",
 							"faith": "0"
 						},
@@ -3425,10 +3368,10 @@
 							"woods": "0",
 							"stones": "0",
 							"servants": "0",
-							"coins": "2"
+							"coins": "0"
 						},
 						"points": {
-							"victory": "2",
+							"victory": "0",
 							"military": "0",
 							"faith": "0"
 						},
@@ -3569,7 +3512,7 @@
 						},
 						"points": {
 							"victory": "0",
-							"military": "3",
+							"military": "0",
 							"faith": "0"
 						},
 						"councilePrivilege": "0"
@@ -3866,8 +3809,8 @@
 				"productionResult": [
 					{
 						"resources": {
-							"woods": "3",
-							"stones": "3",
+							"woods": "0",
+							"stones": "0",
 							"servants": "0",
 							"coins": "0"
 						},
@@ -4173,11 +4116,11 @@
 						"resources": {
 							"woods": "0",
 							"stones": "0",
-							"servants": "2",
+							"servants": "0",
 							"coins": "0"
 						},
 						"points": {
-							"victory": "4",
+							"victory": "0",
 							"military": "0",
 							"faith": "0"
 						},
@@ -4319,21 +4262,7 @@
 						"points": {
 							"victory": "0",
 							"military": "0",
-							"faith": "2"
-						},
-						"councilePrivilege": "0"
-					},
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points": {
-							"victory": "0",
-							"military": "0",
-							"faith": "2"
+							"faith": "0"
 						},
 						"councilePrivilege": "0"
 					}
@@ -4484,8 +4413,8 @@
 							"coins": "0"
 						},
 						"points": {
-							"victory": "1",
-							"military": "3",
+							"victory": "0",
+							"military": "0",
 							"faith": "0"
 						},
 						"councilePrivilege": "0"
@@ -4718,11 +4647,11 @@
 				}],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": ["cardFlashExchangingGoods"]
+					"notChoosable": ["cardFlashExchangingGoods", "requirementsOnCard"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["requirementsOnCard"]
+					"notChoosable": []
 				},
 				"bonusValue":"2",
 				"actionType": ["GREEN_TOWER"]
@@ -4802,11 +4731,11 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["requirementsOnCard"]
+					"notChoosable": []
 				},
 				"bonusValue":"2",
 				"actionType": ["YELLOW_TOWER"],
@@ -4901,11 +4830,11 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["requirementsOnCard"]
+					"notChoosable": []
 				},
 				"bonusValue":"2",
 				"actionType": ["BLUE_TOWER"],
@@ -4986,12 +4915,12 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashExchangingGoods"],
-					"notChoosable": []
+					"onChoice": [],
+					"notChoosable": ["cardFlashExchangingGoods", "requirementsOnCard"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["requirementsOnCard"]
+					"notChoosable": []
 				},
 				"bonusValue":"2",
 				"actionType": ["PURPLE_TOWER"]
@@ -5058,11 +4987,11 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCost"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["requirementsOnCost"]
+					"notChoosable": []
 				},
 				"bonusValue":"2",
 				"actionType": ["HARVEST"]
@@ -5129,11 +5058,11 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
-					"notChoosable": ["requirementsOnCard"]
+					"notChoosable": []
 				},
 				"bonusValue":"2",
 				"actionType": ["PRODUCTION"]
@@ -5200,7 +5129,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": []
+					"notChoosable": ["requirementsOnCard", "rewardsOnCard"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5443,7 +5372,7 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashAction", "bonusOnCardCost"],
+					"onChoice": ["cardFlashAction"],
 					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
@@ -5543,7 +5472,7 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashAction", "bonusOnCardCost"],
+					"onChoice": ["cardFlashAction"],
 					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
@@ -5643,8 +5572,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashAction", "cardFlashExchangingGoods"],
-					"notChoosable": []
+					"onChoice": ["cardFlashAction"],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5942,8 +5871,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashExchangingGoods"],
-					"notChoosable": []
+					"onChoice": [],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6618,8 +6547,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashExchangingGoods"],
-					"notChoosable": []
+					"onChoice": ["cardFlashAction", "cardFlashAction", "cardFlashAction", "cardFlashAction"],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6826,8 +6755,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashExchangingGoods"],
-					"notChoosable": []
+					"onChoice": [],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6897,8 +6826,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashExchangingGoods"],
-					"notChoosable": []
+					"onChoice": [],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7420,8 +7349,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashExchangingGoods"],
-					"notChoosable": []
+					"onChoice": [],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7491,8 +7420,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashExchangingGoods"],
-					"notChoosable": []
+					"onChoice": [],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -7562,8 +7491,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
-					"notChoosable": ["cardFlashAction"]
+					"onChoice": ["cardFlashAction"],
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8045,8 +7974,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": ["cardFlashExchangingGoods"],
-					"notChoosable": []
+					"onChoice": [],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -8258,8 +8187,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
-					"notChoosable": ["cardFlashAction"]
+					"onChoice": ["cardFlashAction"],
+					"notChoosable": []
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
