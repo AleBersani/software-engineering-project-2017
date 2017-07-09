@@ -52,7 +52,7 @@ public class CouncilConvertController {
             radio.selectedProperty().addListener(new ChangeListener<Boolean>() {
                 @Override
                 public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                    if (newValue == true) {
+                    if (newValue) {
                         radio.setMouseTransparent(true);
                         count[0]++;
                         if (count[0] == ClientInformation.getLastBoardAction().getPositionExchangingGoodsChosen().size()) {

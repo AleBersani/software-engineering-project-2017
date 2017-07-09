@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="477.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.gui.ActivatedLeadersController"
+            style="-fx-background-color: sandybrown">
+   <children>
+      <Label layoutX="112.0" layoutY="30.0" text="Choose the Leader to copy" />
+      <VBox fx:id="list1" layoutX="33.0" layoutY="74.0" prefHeight="200.0" prefWidth="145.0" spacing="10.0" />
+      <VBox fx:id="list2" layoutX="205.0" layoutY="74.0" prefHeight="200.0" prefWidth="145.0" />
+      <JFXButton buttonType="RAISED" layoutX="163.0" layoutY="343.0" text="Chosen" style="-fx-border-color: indianred"/>
+   </children>
+</AnchorPane>
