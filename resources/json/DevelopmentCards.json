@@ -245,7 +245,7 @@
 							"woods": "0",
 							"stones": "2",
 							"servants": "0",
-							"coins": "1"
+							"coins": "0"
 						},
 						"points": {
 							"victory": "0",
@@ -4202,7 +4202,7 @@
                             "coins": "0"
                         },
                         "points": {
-                            "victory": "2",
+                            "victory": "4",
                             "military": "0",
                             "faith": "0"
                         },
@@ -4869,12 +4869,12 @@
 							"woods": "0",
 							"stones": "0",
 							"servants": "0",
-							"coins": "0"
+							"coins": "2"
 						},
 						"points": {
 							"victory": "0",
 							"military": "0",
-							"faith": "2"
+							"faith": "0"
 						}
 					}
 				],
@@ -5129,7 +5129,7 @@
 				],
 				"additionalInfoFlash": {
 					"onChoice": [],
-					"notChoosable": ["requirementsOnCard", "rewardsOnCard"]
+					"notChoosable": ["requirementsOnCard", "rewardsOnCard", "cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -5356,7 +5356,7 @@
 				"actionValueSurplus": "",
 				"modifiers": [],
 				"actionSpaceIdentifier" : "",
-				"discountOnAction" : [
+				"discount" : [
 					{
 						"resources": {
 							"woods": "1",
@@ -5380,21 +5380,6 @@
 					"notChoosable": []
 				},
 				"actionType": ["YELLOW_TOWER"],
-				"discount": [
-					{
-						"resources": {
-							"woods": "0",
-							"stones": "0",
-							"servants": "0",
-							"coins": "0"
-						},
-						"points": {
-							"victory": "0",
-							"military": "0",
-							"faith": "0"
-						}
-					}
-				],
 				"bonus": [
 					{
 						"resources": {
@@ -5486,7 +5471,7 @@
 							"woods": "0",
 							"stones": "0",
 							"servants": "0",
-							"coins": "0"
+							"coins": "2"
 						},
 						"points": {
 							"victory": "0",
