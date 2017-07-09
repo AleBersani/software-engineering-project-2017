@@ -360,7 +360,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
 
     private UpdatePlayerBoard setupUpdatePlayerBoard(Player player) {
         String copyOfBonusTileIdentifier = player.getPlayerBoard().getBonusTiles().getBonusTileIdentifier();
-        List<PawnLight> pawnLightList = new ArrayList<>();
+      //  List<PawnLight> pawnLightList = new ArrayList<>();
         //player.getPlayerBoard().getPawns().forEach(pawn -> pawnLightList.add(
           //      new PawnLight(player.getPlayerDetails().getPlayerName(), pawn.getPawnColor(), pawn.isPlacedOnBoard())));
 

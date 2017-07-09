@@ -8,6 +8,7 @@ import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.Owner;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.model.LeaderCategory;
 import it.polimi.ingsw.shared.requests.clientserver.Ready;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -26,6 +27,8 @@ public class PlayerboardController implements Observer {
     private List<ImageView> blueCards;
     private List<ImageView> leaders;
     private Map<GeneralColor, String> leaderBackgrounds;
+    private List<JFXButton> activateButtons;
+    private List<JFXButton> placeButtons;
 
     private Owner owner;
 
@@ -189,6 +192,20 @@ public class PlayerboardController implements Observer {
         leaders.add(led4);
     }
 
+    private void setButtons() {
+        activateButtons = new ArrayList<>();
+        activateButtons.add(active1);
+        activateButtons.add(active2);
+        activateButtons.add(active3);
+        activateButtons.add(active4);
+
+        placeButtons = new ArrayList<>();
+        placeButtons.add(place1);
+        placeButtons.add(place2);
+        placeButtons.add(place3);
+        placeButtons.add(place4);
+    }
+
     @Override
     public void update(Observable o, Object arg) {
         Platform.runLater(() -> {
@@ -199,6 +216,7 @@ public class PlayerboardController implements Observer {
             initLeaders();
             setChosenBonusTile();
             setResources();
+            checkButtons();
         });
     }
 
@@ -262,5 +280,17 @@ public class PlayerboardController implements Observer {
     @FXML
     public void placeLeader() {
 
+    }
+
+    public void checkButtons() {
+        for (int i = 0; i < owner.getDeckLight().getLeaders().size(); i++) {
+            if (owner.getDeckLight().getLeaders().get(i).getLeaderCategory().equals(LeaderCategory.PERMANENT)) {
+                activateButtons.get(i).setMouseTransparent(true);
+            }
+            if (owner.getDeckLight().getLeaders().get(i).isActive()) {
+                activateButtons.get(i).setMouseTransparent(true);
+                placeButtons.get(i).setMouseTransparent(true);
+            }
+        }
     }
 }

@@ -55,7 +55,7 @@ public class CouncilConvertController {
                     if (newValue == true) {
                         radio.setMouseTransparent(true);
                         count[0]++;
-                        if (count[0] == 2) {
+                        if (count[0] == ClientInformation.getLastBoardAction().getPositionExchangingGoodsChosen().size()) {
                             radioButtons.forEach(jfxRadioButton -> jfxRadioButton.setMouseTransparent(true));
                         }
                     }
