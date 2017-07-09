@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+
+<AnchorPane prefHeight="443.0" prefWidth="848.0" style="-fx-background-color: sandybrown" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polimi.ingsw.client.gui.HarvestProdController">
+   <children>
+      <HBox layoutY="51.0" prefHeight="238.0" prefWidth="848.0" spacing="5.0">
+
+         <children>
+            <ImageView fx:id="card1" fitHeight="211.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card2" fitHeight="211.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card3" fitHeight="211.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card4" fitHeight="211.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card5" fitHeight="211.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card6" fitHeight="211.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="SOMETIMES" />
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </HBox>
+      <CheckBox fx:id="num1" layoutX="71.0" layoutY="310.0" mnemonicParsing="false" />
+      <CheckBox fx:id="num2" layoutX="198.0" layoutY="310.0" mnemonicParsing="false" />
+      <CheckBox fx:id="num3" layoutX="341.0" layoutY="310.0" mnemonicParsing="false" />
+      <CheckBox fx:id="num4" layoutX="475.0" layoutY="310.0" mnemonicParsing="false" />
+      <CheckBox fx:id="num5" layoutX="610.0" layoutY="310.0" mnemonicParsing="false" />
+      <CheckBox fx:id="num6" layoutX="741.0" layoutY="310.0" mnemonicParsing="false" />
+      <Button focusTraversable="false" layoutX="389.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#getCards" prefHeight="27.0" prefWidth="68.0" style="-fx-border-color: indianred" text="GO" />
+   </children>
+</AnchorPane>
