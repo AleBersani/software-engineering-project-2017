@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="401.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.polimi.ingsw.client.gui.CardActionController" style="-fx-background-color: sandybrown">
+   <children>
+      <GridPane layoutX="7.0" layoutY="58.0" prefHeight="235.0" prefWidth="586.0" hgap="3" vgap="3" gridLinesVisible="true">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+             <fx:define>
+                 <ToggleGroup fx:id="cardsToggleGroup"/>
+             </fx:define>
+            <JFXRadioButton fx:id="t_g_4" toggleGroup="$cardsToggleGroup" focusTraversable="false"
+                            selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_g_3" GridPane.rowIndex="1" toggleGroup="$cardsToggleGroup" focusTraversable="false"
+                            selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_g_2" GridPane.rowIndex="2" toggleGroup="$cardsToggleGroup" focusTraversable="false"
+                            selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_g_1" GridPane.rowIndex="3" toggleGroup="$cardsToggleGroup" focusTraversable="false"
+                            selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_b_4" GridPane.columnIndex="1" toggleGroup="$cardsToggleGroup" focusTraversable="false"
+                            selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_b_3" GridPane.columnIndex="1" GridPane.rowIndex="1" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_b_2" GridPane.columnIndex="1" GridPane.rowIndex="2" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_b_1" GridPane.columnIndex="1" GridPane.rowIndex="3" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_y_4" GridPane.columnIndex="2" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_y_3" GridPane.columnIndex="2" GridPane.rowIndex="1" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_y_2" GridPane.columnIndex="2" GridPane.rowIndex="2" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_y_1" GridPane.columnIndex="2" GridPane.rowIndex="3" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_p_4" GridPane.columnIndex="3" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_p_3" GridPane.columnIndex="3" GridPane.rowIndex="1" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_p_2" GridPane.columnIndex="3" GridPane.rowIndex="2" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+            <JFXRadioButton fx:id="t_p_1" GridPane.columnIndex="3" GridPane.rowIndex="3" toggleGroup="$cardsToggleGroup"
+                            focusTraversable="false" selectedColor="indianred"/>
+         </children>
+      </GridPane>
+      <JFXButton buttonType="RAISED" layoutX="269.0" layoutY="320.0" text="Chosen" style="-fx-border-color: indianred"
+      focusTraversable="false" />
+      <Label layoutX="203.0" layoutY="31.0" text="Which card do you want to pick?" />
+   </children>
+</AnchorPane>
