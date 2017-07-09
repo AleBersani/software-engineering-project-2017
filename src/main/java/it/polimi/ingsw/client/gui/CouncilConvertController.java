@@ -1,5 +1,6 @@
 package it.polimi.ingsw.client.gui;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.middleware.ClientSender;
@@ -8,8 +9,11 @@ import it.polimi.ingsw.shared.requests.clientserver.BaseInformation;
 import it.polimi.ingsw.shared.requests.clientserver.ChosenCouncilPrivilege;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.stage.Stage;
 
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +32,9 @@ public class CouncilConvertController {
     @FXML
     private JFXRadioButton choice4;
 
+    @FXML
+    private JFXButton convert;
+
     public CouncilConvertController() {
         choices = new ArrayList<>();
     }
@@ -35,6 +42,7 @@ public class CouncilConvertController {
     public void initialize() {
         setRadioButtons();
         getRadioButtons();
+        convert.setMouseTransparent(true);
     }
 
     public void setRadioButtons() {
@@ -48,6 +56,7 @@ public class CouncilConvertController {
 
     public void getRadioButtons() {
         final int[] count = {0};
+        System.out.println(ClientInformation.getNumberOfCouncilPrivilegeToChoose());
         for (JFXRadioButton radio : radioButtons) {
             radio.selectedProperty().addListener(new ChangeListener<Boolean>() {
                 @Override
@@ -55,8 +64,10 @@ public class CouncilConvertController {
                     if (newValue) {
                         radio.setMouseTransparent(true);
                         count[0]++;
-                        if (count[0] == ClientInformation.getLastBoardAction().getPositionExchangingGoodsChosen().size()) {
+                        if (count[0] == ClientInformation.getNumberOfCouncilPrivilegeToChoose().get()) {
+                            System.out.println(count[0]);
                             radioButtons.forEach(jfxRadioButton -> jfxRadioButton.setMouseTransparent(true));
+                            convert.setMouseTransparent(false);
                         }
                     }
                 }
@@ -95,16 +106,15 @@ public class CouncilConvertController {
         System.out.println(choices.toString());
         System.out.println(ClientInformation.getLastBoardAction());
         ClientSender clientSender = new ClientSenderHandler();
-        clientSender.sendToServer(new ChosenCouncilPrivilege(
+        ChosenCouncilPrivilege chosenCouncilPrivilege = new ChosenCouncilPrivilege(
                 new BaseInformation(ClientInformation.getCurrentGameId(), ClientInformation.getPlayerName()),
-                choices, ClientInformation.getLastBoardAction()));
+                choices, ClientInformation.getLastBoardAction());
+
+        clientSender.sendToServer(chosenCouncilPrivilege);
+        if (convert.getScene().getWindow().isShowing()) {
+            Stage stage = (Stage) convert.getScene().getWindow();
+            stage.close();
+        }
 
     }
-
-
-
-
-
-
-
 }

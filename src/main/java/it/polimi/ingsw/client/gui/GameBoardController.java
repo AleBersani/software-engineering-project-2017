@@ -8,14 +8,12 @@ import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
 import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
-import it.polimi.ingsw.shared.model.BoardIdentifier;
-import it.polimi.ingsw.shared.model.DiceColor;
-import it.polimi.ingsw.shared.model.GeneralColor;
-import it.polimi.ingsw.shared.model.PawnColor;
+import it.polimi.ingsw.shared.model.*;
 import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import it.polimi.ingsw.shared.requests.clientserver.BaseInformation;
 import it.polimi.ingsw.shared.requests.clientserver.PawnPlacement;
+import it.polimi.ingsw.shared.support.Client;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -460,7 +458,8 @@ public class GameBoardController extends Observable implements Observer {
                     player.getActivatedLeaders().forEach(leader -> text.append(leader.getName() + "\n"));
                 }
                 text.append("Victory P: " + player.getNumberOfPoints().get(PointsLight.VICTORY_POINTS) + "\n");
-                text.append("Military P: " + player.getNumberOfPoints().get(PointsLight.MILITARY_POINTS));
+                text.append("Military P: " + player.getNumberOfPoints().get(PointsLight.MILITARY_POINTS) + "\n");
+                text.append("Faith P: " + player.getNumberOfPoints().get(PointsLight.FAITH_POINTS));
                 labels.get(labelIndex).setText(text.toString());
                 labels.get(labelIndex).setTextFill(Paint.valueOf(pawnColors.get(player.getPlayerColor())));
                 labelIndex++;
@@ -472,6 +471,7 @@ public class GameBoardController extends Observable implements Observer {
         owner.getPlayerLight().getActivatedLeaders().forEach(leader -> text1.append(leader.getName() + "\n"));
         text1.append("Victory P: " + owner.getPlayerLight().getNumberOfPoints().get(PointsLight.VICTORY_POINTS) + "\n");
         text1.append("Military P: " + owner.getPlayerLight().getNumberOfPoints().get(PointsLight.MILITARY_POINTS) + "\n");
+        text1.append("Faith P: " + owner.getPlayerLight().getNumberOfPoints().get(PointsLight.FAITH_POINTS));
         infoOwner.setText(text1.toString());
         infoOwner.setTextFill(Paint.valueOf(ClientInformation.getPlayerColor().toString()));
     }
@@ -617,7 +617,28 @@ public class GameBoardController extends Observable implements Observer {
     private void setCouncil_palace(Circle circle) {
         council_palace.getChildren().add(circle);
         council_palace.setAlignment(circle, Pos.CENTER_LEFT);
-        circle.setTranslateX(7.5*(council_palace.getChildren().size()-1));
+        circle.setTranslateX(7.5 * (council_palace.getChildren().size() - 1));
+        PawnColor pawnColor = PawnColor.UNCOLORED;
+        String color = circle.getFill().toString();
+        switch (color) {
+            case "0xffffffff":
+                pawnColor = PawnColor.WHITE;
+                break;
+            case "0x000000ff":
+                pawnColor = PawnColor.BLACK;
+                break;
+            case "0xcd853fff":
+                pawnColor = PawnColor.NEUTRAL;
+                break;
+            case "0xff8706ff":
+                pawnColor = PawnColor.ORANGE;
+                break;
+        }
+        BasicAction basicAction = new BasicAction(ActionType.COUNCIL_PALACE, BoardIdentifier.COUNCIL_PALACE,
+                        Utils.pawnValueGivenPawnColor(pawnColor));
+        BoardAction boardAction = new BoardAction(basicAction, pawnColor, 0);
+        ClientInformation.setLastBoardAction(boardAction);
+        ClientInformation.getNumberOfCouncilPrivilegeToChoose().set(1);
         startCouncilPrivilegeChoice();
     }
 

@@ -36,6 +36,8 @@ public class GameChoiceController implements Observer {
     public void initialize() {
         GameChoiceNotifier.getInstance().addObserver(this);
         setPlayerName();
+        resumeGame.setMouseTransparent(true);
+        interrupted.setMouseTransparent(true);
     }
 
     @Override

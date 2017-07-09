@@ -41,4 +41,5 @@
     </GridPane>
     <JFXButton fx:id="convert" layoutX="133.0" layoutY="318.0" mnemonicParsing="false" text="Convert" focusTraversable="false"
                ripplerFill="coral" buttonType="RAISED" onAction="#getConversion"/>
+
 </AnchorPane>

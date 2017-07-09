@@ -4,6 +4,7 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ClientInformation {
     private static String playerName;
@@ -11,9 +12,11 @@ public class ClientInformation {
     private static int currentGameId;
     private static BoardAction lastBoardAction;
     private static AtomicBoolean canPlay;
+    private static AtomicInteger numberOfCouncilPrivilegeToChoose;
 
     public static void initClass() {
         canPlay = new AtomicBoolean(false);
+        numberOfCouncilPrivilegeToChoose = new AtomicInteger(0);
     }
 
     public static String getPlayerName() {
@@ -54,5 +57,14 @@ public class ClientInformation {
 
     public static void setCanPlay(AtomicBoolean canPlay) {
         ClientInformation.canPlay = canPlay;
+    }
+
+
+    public static AtomicInteger getNumberOfCouncilPrivilegeToChoose() {
+        return numberOfCouncilPrivilegeToChoose;
+    }
+
+    public static void setNumberOfCouncilPrivilegeToChoose(AtomicInteger numberOfCouncilPrivilegeToChoose) {
+        ClientInformation.numberOfCouncilPrivilegeToChoose = numberOfCouncilPrivilegeToChoose;
     }
 }

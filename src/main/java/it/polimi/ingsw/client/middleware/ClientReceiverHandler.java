@@ -9,6 +9,7 @@ import it.polimi.ingsw.shared.requests.serverclient.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 public class ClientReceiverHandler implements ClientReceiver {
@@ -39,6 +40,7 @@ public class ClientReceiverHandler implements ClientReceiver {
     @Override
     public void visitServerClientRequest(CouncilPrivilegeChoice councilPrivilegeChoice) {
         System.out.printf("You have to chose %d council privilege", councilPrivilegeChoice.getNumberOfChoices());
+        ClientInformation.getNumberOfCouncilPrivilegeToChoose().set(councilPrivilegeChoice.getNumberOfChoices());
         GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
         guiNotifier.updateGui(councilPrivilegeChoice.getNumberOfChoices());
     }
