@@ -7,11 +7,14 @@ import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gamecontroller.helpers.requirements.RequirementsGenerator;
 import it.polimi.ingsw.server.gamecontroller.helpers.requirements.RequirementsSupport;
 import it.polimi.ingsw.server.gamecontroller.helpers.rewards.BasicRewardsGenerator;
+import it.polimi.ingsw.server.gameelements.AdditionalInfoMaps;
 import it.polimi.ingsw.server.gameelements.Cards;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.CardAction;
 import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.server.gamelogic.board.*;
+import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.AdditionalCardInfo;
+import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.CardFlashExchangingGoods;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
@@ -127,6 +130,7 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
      */
     public void rollDices() {
         LOGGER.info("Launch dices");
+        board.getDices().clear();
         List<DiceColor> colors = new ArrayList<>();
         colors.add(DiceColor.BLACK);
         colors.add(DiceColor.ORANGE);
@@ -145,6 +149,9 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
      */
     public void givePawnsToPlayers() {
         LOGGER.info("Five pawns to players");
+        for (Player player : players) {
+            player.getPlayerBoard().getPawns().clear();
+        }
         for (Dice dice : board.getDices()) {
             for (Player player : players) {
                 player.getPlayerBoard().getPawns().add(
@@ -194,12 +201,11 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         UpdateGameBoard updateGameBoard = setupUpdateGameBoard();
         for (Player player : players) {
             List<PawnLight> pawnLightList = new ArrayList<>();
-            player.getPlayerBoard().getPawns().forEach(pawn -> {
-                pawnLightList.add(
-                        new PawnLight(player.getPlayerDetails().getPlayerName(),
-                                pawn.getPawnColor(), pawn.isPlacedOnBoard()));
-            });
+            player.getPlayerBoard().getPawns().forEach(pawn -> pawnLightList.add(
+                    new PawnLight(player.getPlayerDetails().getPlayerName(),
+                            pawn.getPawnColor(), pawn.isPlacedOnBoard())));
             updateGameBoard.setPawnLightList(pawnLightList);
+            System.out.println(player.getPlayerBoard().getPawns().size());
             sendTo(player.getPlayerDetails().getPlayerName(), updateGameBoard);
         }
     }
@@ -333,12 +339,6 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
         List<DiceLight> newDiceLightList = new ArrayList<>();
         for (Dice d : board.getDices()) {
             newDiceLightList.add(new DiceLight(d.getDiceColor(), d.getValue()));
-            for (Player player : players) {
-                player.getPlayerBoard().getPawns().add(new Pawn(d.getValue(), PawnColor.valueOf(d.getDiceColor().toString())));
-            }
-        }
-        for (Player player : players) {
-            player.getPlayerBoard().getPawns().add(new Pawn(0, PawnColor.NEUTRAL));
         }
         return newDiceLightList;
     }
@@ -371,20 +371,38 @@ public class SemiPeriod extends Observable implements Observer, ActionVisitor {
     private DeckLight copyDeckLight(Player player) {
         List<Card> territories = new ArrayList<>();
         player.getPlayerBoard().getDeck().getTerritories()
-                .forEach(card -> territories.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
+                .forEach(card -> territories.add(copyCard(card)));
         List<Card> buildings = new ArrayList<>();
         player.getPlayerBoard().getDeck().getBuildings()
-                .forEach(card -> buildings.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
+                .forEach(card -> buildings.add(copyCard(card)));
         List<Card> characters = new ArrayList<>();
         player.getPlayerBoard().getDeck().getCharacters()
-                .forEach(card -> characters.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
+                .forEach(card -> characters.add(copyCard(card)));
         List<Card> ventures = new ArrayList<>();
         player.getPlayerBoard().getDeck().getVentures()
-                .forEach(card -> ventures.add(new Card(card.getBasicDevelopmentCard().getCardInformation().getName())));
-        List<Card> leaders = new ArrayList<>();
-        player.getLeaderCards().forEach(card -> leaders.add(new Card(card.getLeaderName())));
+                .forEach(card -> ventures.add(copyCard(card)));
+        List<LeaderLight> leaders = new ArrayList<>();
+        player.getLeaderCards().forEach(card -> leaders.add(new LeaderLight(
+                new Card(card.getLeaderName()), card.getLeaderCategory(), card.isPlacedOnBoard())));
 
         return new DeckLight(territories, buildings, characters, ventures, leaders);
+    }
+
+    private Card copyCard(DevelopmentCard developmentCard) {
+        Card card = new Card(developmentCard.getBasicDevelopmentCard().getCardInformation().getName());
+        for (Map.Entry<String, List<AdditionalCardInfo>> entry : AdditionalInfoMaps.getFlashEffectsOnChoice().entrySet()) {
+            if (entry.getKey().equals(developmentCard.getCardInformation().getName())) {
+                int numberOfCouncilPrivilege = 0;
+                for (AdditionalCardInfo additionalCardInfo : entry.getValue()) {
+                    if (additionalCardInfo instanceof CardFlashExchangingGoods) {
+                        numberOfCouncilPrivilege = ((CardFlashExchangingGoods)additionalCardInfo)
+                                .getExchangingGoods().getNumberOfCouncilPrivilege();
+                    }
+                }
+                card.setNumberOfCouncilPrivilege(numberOfCouncilPrivilege);
+            }
+        }
+        return card;
     }
 
     private Map<ResourcesLight, Integer> copyResourcesOfPlayer(Player player) {

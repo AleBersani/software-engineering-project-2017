@@ -51,7 +51,7 @@ public class Period extends Observable implements Observer {
         semiPeriod.setCurrent(true);
         semiPeriods.add(semiPeriod);
 
-        if (semiPeriods.isEmpty()) {
+        if (semiPeriods.get(0).isCurrent()) {
             semiPeriod.setBasePlayersOrder(playersOrder);
         } else {
             getSecondLastSemiPeriod().setCurrent(false);

@@ -1,6 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.cards.leader;
 
-import it.polimi.ingsw.server.gamelogic.enums.LeaderCategory;
+import it.polimi.ingsw.shared.model.LeaderCategory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

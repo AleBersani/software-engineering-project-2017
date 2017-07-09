@@ -1,6 +1,6 @@
 package it.polimi.ingsw.server.gamelogic.cards.leader;
 
-import it.polimi.ingsw.server.gamelogic.enums.LeaderCategory;
+import it.polimi.ingsw.shared.model.LeaderCategory;
 
 import java.util.List;
 import java.util.Objects;

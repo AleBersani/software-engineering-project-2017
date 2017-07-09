@@ -232,7 +232,7 @@ public class PlayerboardController implements Observer {
 
     private void initLeaders() {
         for (int i = 0; i < owner.getDeckLight().getLeaders().size(); i++) {
-            Image newLeader = new Image("client/leader/" + owner.getLeaders().get(i).getName() + ".jpg");
+            Image newLeader = new Image("client/leader/" + owner.getLeaders().get(i).getCard().getName() + ".jpg");
             leaders.get(i).setImage(newLeader);
         }
     }

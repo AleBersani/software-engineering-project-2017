@@ -54,8 +54,8 @@ public class Owner {
 
     public String printLeaders() {
         StringBuilder string = new StringBuilder().append("Leaders: ");
-        for (Card card : deckLight.getLeaders()) {
-            string.append(card.getName());
+        for (LeaderLight card : deckLight.getLeaders()) {
+            string.append(card.getCard().getName());
             string.append(", ");
         }
         string.delete(string.length()-2, string.length());
@@ -82,7 +82,7 @@ public class Owner {
         return deckLight.getVentures();
     }
 
-    public List<Card> getLeaders() {
+    public List<LeaderLight> getLeaders() {
         return deckLight.getLeaders();
     }
 
