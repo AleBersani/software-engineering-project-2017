@@ -3,7 +3,7 @@ package it.polimi.ingsw.server.gamecontroller;
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gamecontroller.helpers.Sender;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
-import it.polimi.ingsw.server.gamelogic.board.Board;
+import it.polimi.ingsw.server.gamelogic.board.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
@@ -27,6 +27,26 @@ public class Period extends Observable implements Observer {
     private boolean current;
     private List<SemiPeriod> semiPeriods;
     private PeriodNumber periodNumber;
+
+    public static void main(String args[]) {
+        List<PlayerDetails> councilPlayerOrder = new ArrayList<>();
+        councilPlayerOrder.add(new PlayerDetails("B", GeneralColor.BLUE));
+        councilPlayerOrder.add(new PlayerDetails("A", GeneralColor.BLUE));
+        List<PlayerDetails> basePlayersOrder = new ArrayList<>();
+        basePlayersOrder.add(new PlayerDetails("A", GeneralColor.BLUE));
+        basePlayersOrder.add(new PlayerDetails("B", GeneralColor.BLUE));
+
+        List<PlayerDetails> newPlayerOrder = new ArrayList<>();
+        newPlayerOrder.addAll(councilPlayerOrder);
+        for (PlayerDetails remainingPlayer : basePlayersOrder) {
+            if (!newPlayerOrder.contains(remainingPlayer))
+                newPlayerOrder.add(remainingPlayer);
+        }
+
+        for (PlayerDetails playerDetails : newPlayerOrder) {
+            System.out.println(playerDetails.getPlayerName());
+        }
+    }
 
     public Period(ExcommunicationTile actualExcommunicationTile,
                   List<DevelopmentCard> developmentCards,
@@ -58,9 +78,9 @@ public class Period extends Observable implements Observer {
             semiPeriod.setBasePlayersOrder(calculateNewPlayerOrder(getSecondLastSemiPeriod().getBasePlayersOrder(),
                     getSecondLastSemiPeriod().getBoard().getCouncilPalace().getPlayerOrder()));
         }
+        board.getCouncilPalace().getPlayerPawnList().clear();
 
         semiPeriod.addObserver(this);
-
         semiPeriod.initSemiPeriod();
     }
 
@@ -137,7 +157,28 @@ public class Period extends Observable implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         LOGGER.info("Starting new Semiperiod...");
+        cleanBoard();
         startSemiPeriod();
+    }
+
+    public void cleanBoard() {
+        for (Tower tower : board.getTowers()) {
+            for (TowerSlot towerSlot : tower.getTowerSlots()) {
+                towerSlot.getSpace().setPlayerPawn(new PlayerPawn());
+            }
+        }
+
+        for (ProductionHarvestSpace productionHarvestSpace : board.getBoardActionSpaces().getProductionArea()) {
+            productionHarvestSpace.getSpace().setPlayerPawn(new PlayerPawn());
+        }
+
+        for (ProductionHarvestSpace productionHarvestSpace :board.getBoardActionSpaces().getHarvestArea()) {
+            productionHarvestSpace.getSpace().setPlayerPawn(new PlayerPawn());
+        }
+
+        for (MarketSpace marketSpace : board.getBoardActionSpaces().getMarketArea()) {
+            marketSpace.getSpace().setPlayerPawn(new PlayerPawn());
+        }
     }
 
     public void churchSupport() {

@@ -31,6 +31,7 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import it.polimi.ingsw.shared.model.actionsdescription.LeaderAction;
+import it.polimi.ingsw.shared.requests.serverclient.ActionResponse;
 import it.polimi.ingsw.shared.requests.serverclient.UpdateGameBoard;
 import it.polimi.ingsw.shared.requests.serverclient.UpdatePlayerBoard;
 import it.polimi.ingsw.shared.requests.serverclient.YourTurn;
@@ -74,6 +75,7 @@ public class SemiPeriod extends Observable implements ActionVisitor {
         putDevelopmentCardsOnTowers();
         rollDices();
         givePawnsToPlayers();
+        resetLeaderCardsConsumable();
         calculatePlayersOrder();
         sendBoardToPlayers();
         sendPlayerBoardToEachSeparatePlayer();
@@ -160,6 +162,13 @@ public class SemiPeriod extends Observable implements ActionVisitor {
         for (Player player : players) {
             player.getPlayerBoard().getPawns().add(new Pawn(0, PawnColor.NEUTRAL));
         }
+    }
+
+    /**
+     * TODO: JavaDoc + Test
+     */
+    public void resetLeaderCardsConsumable() {
+        players.forEach(player -> player.getLeaderCards().forEach(leaderCard -> leaderCard.setPlayable(true)));
     }
 
     /**
@@ -487,11 +496,11 @@ public class SemiPeriod extends Observable implements ActionVisitor {
                 if (playerHasRequirements) {
                     LOGGER.info("Action: player has requirements");
                     BasicRewardsGenerator basicRewardsGenerator = new BasicRewardsGenerator(board, player, sender);
-                    basicRewardsGenerator.addAttributesToCalculateBasicRewards(boardAction);
-                    basicRewardsGenerator.generateRewards();
+                    basicRewardsGenerator.addAttributesToCalculateBoardRewards(boardAction);
+                    basicRewardsGenerator.generateRewardsForBoardAction();
                     sendBoardToPlayers();
+                    sender.sendTo(player.getPlayerDetails().getPlayerName(), new ActionResponse(true));
                     sendPlayerBoardToEachSeparatePlayer();
-                    LOGGER.info("Action: player has requirements");
                 } else {
                     sendBoardToPlayers();
                     sendPlayerBoardToEachSeparatePlayer();
@@ -531,6 +540,7 @@ public class SemiPeriod extends Observable implements ActionVisitor {
     @Override
     public void visitActionDescription(LeaderAction leaderAction) {
         List<LeaderCard> leaderCards = Cards.getLeaderCards();
+        Sender sender = new Sender(connectedClients);
         for (LeaderCard leaderCard : leaderCards) {
             if (leaderCard.getLeaderName().equals(leaderAction.getLeaderName())) {
                 for (Player player : players) {
@@ -539,7 +549,13 @@ public class SemiPeriod extends Observable implements ActionVisitor {
                             LeaderRequirements leaderRequirements =
                                     new LeaderRequirements(leaderAction.getActionType(), leaderAction.getLeaderName(), leaderCost);
                             if (leaderRequirements.hasRequirements(player)) {
-
+                                LOGGER.info("Action: player has requirements");
+                                BasicRewardsGenerator basicRewardsGenerator = new BasicRewardsGenerator(board, player, sender);
+                                basicRewardsGenerator.addAttributesToCalculateLeaderRewards(leaderAction);
+                                basicRewardsGenerator.generateRewardsForLeaderAction();
+                                sendBoardToPlayers();
+                                sender.sendTo(player.getPlayerDetails().getPlayerName(), new ActionResponse(true));
+                                sendPlayerBoardToEachSeparatePlayer();
                                 break;
                             }
                         }

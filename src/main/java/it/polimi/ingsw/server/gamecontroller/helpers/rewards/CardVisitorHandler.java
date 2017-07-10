@@ -15,6 +15,7 @@ import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.Require
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.BasicRewards;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
+import it.polimi.ingsw.shared.model.actionsdescription.LeaderAction;
 import it.polimi.ingsw.shared.requests.serverclient.CouncilPrivilegeChoice;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class CardVisitorHandler implements CardVisitor {
     private Sender sender;
 
     private BoardAction boardAction;
+    private LeaderAction leaderAction;
     private List<BasicRewards> basicRewardsList;
 
     public CardVisitorHandler(Player player, Sender sender) {
@@ -33,6 +35,11 @@ public class CardVisitorHandler implements CardVisitor {
 
     public void addAdditionalAttributesForBoardAction(BoardAction boardAction, List<BasicRewards> basicRewards) {
         this.boardAction = boardAction;
+        this.basicRewardsList = basicRewards;
+    }
+
+    public void addAdditionalAttributesForLeaderAction(LeaderAction leaderAction, List<BasicRewards> basicRewards) {
+        this.leaderAction = leaderAction;
         this.basicRewardsList = basicRewards;
     }
 

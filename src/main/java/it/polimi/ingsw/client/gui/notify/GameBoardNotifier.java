@@ -1,5 +1,7 @@
 package it.polimi.ingsw.client.gui.notify;
 
+import it.polimi.ingsw.client.gui.notify.gameboardresponses.GameBoardResponse;
+
 import java.util.Observable;
 
 public class GameBoardNotifier extends Observable {
@@ -13,13 +15,8 @@ public class GameBoardNotifier extends Observable {
         return GameBoardNotifierHolder.INSTANCE;
     }
 
-    public void updateGui() {
+    public void updateGui(GameBoardResponse gameBoardResponse) {
         setChanged();
-        notifyObservers();
-    }
-
-    public void updateGui(int numberOfChoices) {
-        setChanged();
-        notifyObservers(numberOfChoices);
+        notifyObservers(gameBoardResponse);
     }
 }

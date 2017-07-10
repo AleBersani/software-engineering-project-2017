@@ -16,6 +16,7 @@ import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
+import it.polimi.ingsw.shared.model.actionsdescription.LeaderAction;
 import it.polimi.ingsw.shared.requests.serverclient.CouncilPrivilegeChoice;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class BasicRewardsGenerator {
     private List<BasicRewards> basicRewards;
 
     private BoardAction boardAction;
+    private LeaderAction leaderAction;
     private ActionType actionType;
     private BoardIdentifier boardIdentifier;
 
@@ -43,13 +45,81 @@ public class BasicRewardsGenerator {
         basicRewards = new ArrayList<>();
     }
 
-    public void addAttributesToCalculateBasicRewards(BoardAction boardAction) {
+    public void addAttributesToCalculateLeaderRewards(LeaderAction leaderAction) {
+        this.leaderAction = leaderAction;
+        actionType = leaderAction.getActionType();
+    }
+
+    public void generateRewardsForLeaderAction() {
+        switch (actionType) {
+            case LEADER_PLACEMENT: {
+                player.getLeaderCards().forEach(leaderCard -> {
+                    if (leaderCard.getLeaderName().equals(leaderAction.getLeaderName())) {
+                        leaderCard.setPlacedOnBoard(true);
+                        board.getLeaderInformationList().add(leaderCard.getLeaderInformation());
+                        getAndRunLeaderAdditionalCardInfoPermanent();
+                    }
+                });
+                break;
+            }
+            case LEADER_ACTIVATION: {
+                player.getLeaderCards().forEach(leaderCard -> {
+                    if (leaderCard.getLeaderName().equals(leaderAction.getLeaderName())) {
+                        getAndRunLeaderAdditionalCardInfoConsumable();
+                    }
+                });
+                break;
+            }
+            case LEARD_DISCARD: {
+                player.getLeaderCards().forEach(leaderCard -> {
+                    if (leaderCard.getLeaderName().equals(leaderAction.getLeaderName())) {
+                        if (!leaderCard.isPlacedOnBoard()) {
+                            player.getLeaderCards().remove(leaderCard);
+                            sendCouncilPrivilegeChoice(1);
+                        }
+                    }
+                });
+                break;
+            }
+        }
+        giveRewardsToPlayer();
+    }
+
+    public void getAndRunLeaderAdditionalCardInfoPermanent() {
+        for (Map.Entry<String, List<AdditionalCardInfo>> entry : AdditionalInfoMaps.getFlashEffectsNotSelectable().entrySet()) {
+            if (entry.getKey().equals(leaderAction.getLeaderName())) {
+                for (AdditionalCardInfo additionalCardInfo : entry.getValue()) {
+                    CardVisitorHandler cardVisitorHandler = new CardVisitorHandler(player, sender);
+                    cardVisitorHandler.addAdditionalAttributesForLeaderAction(leaderAction, basicRewards);
+                    additionalCardInfo.acceptCardVisitor(cardVisitorHandler);
+                }
+            }
+        }
+    }
+
+    public void getAndRunLeaderAdditionalCardInfoConsumable() {
+        for (Map.Entry<String, List<AdditionalCardInfo>> entry : AdditionalInfoMaps.getPermanentEffectsOnChoice().entrySet()) {
+            if (entry.getKey().equals(leaderAction.getLeaderName())) {
+                for (AdditionalCardInfo additionalCardInfo : entry.getValue()) {
+                    player.getLeaderCards().forEach(leaderCard -> {
+                        if (leaderCard.isPlayable()) {
+                            CardVisitorHandler cardVisitorHandler = new CardVisitorHandler(player, sender);
+                            cardVisitorHandler.addAdditionalAttributesForLeaderAction(leaderAction, basicRewards);
+                            additionalCardInfo.acceptCardVisitor(cardVisitorHandler);
+                            leaderCard.setPlayable(false);
+                        }
+                    });
+                }
+            }
+        }
+    }
+
+    public void addAttributesToCalculateBoardRewards(BoardAction boardAction) {
         this.boardAction = boardAction;
         actionType = boardAction.getBasicAction().getActionType();
         boardIdentifier = boardAction.getBasicAction().getBoardIdentifier();
     }
-
-    public void generateRewards() {
+    public void generateRewardsForBoardAction() {
         switch (actionType) {
             case GREEN_TOWER: {
                 greenTowerCase();
@@ -88,6 +158,7 @@ public class BasicRewardsGenerator {
         player.getPlayerGoods().getResources().setServants(newServant);
         giveRewardsToPlayer();
     }
+
 
     public void greenTowerCase() {
         LOGGER.info("Action type: green tower");
@@ -189,6 +260,7 @@ public class BasicRewardsGenerator {
     }
 
     public void councilPalaceCase() {
+        board.getCouncilPalace().getPlayerPawnList().add(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
         Goods goods = board.getCouncilPalace().getInstantGoods().getGoods();
         basicRewards.add(generateBasicRewardsWithActualActionDescriptionGivenGoods(goods));
         Goods chosenGoods = CouncilPrivilege.getPossibleChoices().get(boardAction.getPositionExchangingGoodsChosen().get(0));

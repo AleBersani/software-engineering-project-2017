@@ -2,6 +2,10 @@ package it.polimi.ingsw.client.middleware;
 
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.*;
+import it.polimi.ingsw.client.gui.notify.gameboardresponses.ActionResult;
+import it.polimi.ingsw.client.gui.notify.gameboardresponses.CouncilPrivilegeEvent;
+import it.polimi.ingsw.client.gui.notify.gameboardresponses.TurnStatus;
+import it.polimi.ingsw.client.gui.notify.gameboardresponses.UpdateBoard;
 import it.polimi.ingsw.client.model.BoardLight;
 import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.client.model.Owner;
@@ -9,7 +13,6 @@ import it.polimi.ingsw.shared.requests.serverclient.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 public class ClientReceiverHandler implements ClientReceiver {
@@ -23,6 +26,12 @@ public class ClientReceiverHandler implements ClientReceiver {
 
     public static ClientReceiver getInstance() {
         return ClientReceiverHandlerHolder.INSTANCE;
+    }
+
+    @Override
+    public void visitServerClientRequest(ActionResponse actionResponse) {
+        GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
+        guiNotifier.updateGui(new ActionResult(actionResponse.isSuccessful()));
     }
 
     @Override
@@ -42,7 +51,7 @@ public class ClientReceiverHandler implements ClientReceiver {
         System.out.printf("You have to chose %d council privilege", councilPrivilegeChoice.getNumberOfChoices());
         ClientInformation.getNumberOfCouncilPrivilegeToChoose().set(councilPrivilegeChoice.getNumberOfChoices());
         GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
-        guiNotifier.updateGui(councilPrivilegeChoice.getNumberOfChoices());
+        guiNotifier.updateGui(new CouncilPrivilegeEvent());
     }
 
     @Override
@@ -109,7 +118,7 @@ public class ClientReceiverHandler implements ClientReceiver {
         boardLight.setExcommunicationTiles(updateGameBoard.getNewExcommunicationTiles());
         owner.setPawnLights(updateGameBoard.getPawnLightList());
         GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
-        guiNotifier.updateGui();
+        guiNotifier.updateGui(new UpdateBoard());
     }
 
     @Override
@@ -131,9 +140,12 @@ public class ClientReceiverHandler implements ClientReceiver {
 
     @Override
     public void visitServerClientRequest(YourTurn yourTurn) {
-        ClientInformation.getCanPlay().set(yourTurn.isCanPlay());
         if (yourTurn.isCanPlay()) {
             System.out.println("It's your turn!");
+        } else {
+            System.out.println("It's not your turn!");
         }
+        GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
+        guiNotifier.updateGui(new TurnStatus(yourTurn.isCanPlay()));
     }
 }

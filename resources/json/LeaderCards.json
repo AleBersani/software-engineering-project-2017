@@ -22,11 +22,11 @@
                 }
             }],
             "additionalInfoFlash": {
-                "onChoice": ["cardFlashAction"],
+                "onChoice": [],
                 "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashAction"],
                 "notChoosable": []
             },
             "actionType": ["HARVEST"],
@@ -69,10 +69,10 @@
             }],
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["requirementsOnCard"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["requirementsOnCard"],
                 "notChoosable": []
             },
             "modifiers": ["canPlaceOnOccupiedSpace"],
@@ -187,13 +187,12 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
-
         },
         {
             "name": "Michelangelo Buonarroti",
@@ -233,10 +232,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -278,10 +277,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -369,10 +368,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -686,10 +685,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },
@@ -731,10 +730,10 @@
             "abilityType": "consumable",
             "additionalInfoFlash": {
                 "onChoice": [],
-                "notChoosable": ["cardFlashExchangingGoods"]
+                "notChoosable": []
             },
             "additionalInfoPermanent": {
-                "onChoice": [],
+                "onChoice": ["cardFlashExchangingGoods"],
                 "notChoosable": []
             }
         },

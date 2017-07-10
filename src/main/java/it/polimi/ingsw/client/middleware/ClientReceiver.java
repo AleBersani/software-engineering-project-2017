@@ -3,6 +3,7 @@ package it.polimi.ingsw.client.middleware;
 import it.polimi.ingsw.shared.requests.serverclient.*;
 
 public interface ClientReceiver {
+    void visitServerClientRequest(ActionResponse actionResponse);
     void visitServerClientRequest(ChosenGameResponse chosenGameResponse);
     void visitServerClientRequest(CouncilPrivilegeChoice councilPrivilegeChoice);
     void visitServerClientRequest(EndLeadersChoicePhase endLeadersChoicePhase);
