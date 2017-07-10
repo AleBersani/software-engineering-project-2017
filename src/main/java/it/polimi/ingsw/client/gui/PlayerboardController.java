@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 import java.util.*;
 
@@ -29,6 +30,7 @@ public class PlayerboardController implements Observer {
     private Map<GeneralColor, String> leaderBackgrounds;
     private List<JFXButton> activateButtons;
     private List<JFXButton> placeButtons;
+    private List<JFXButton> sacrificeButtons;
 
     private Owner owner;
 
@@ -128,6 +130,14 @@ public class PlayerboardController implements Observer {
     private JFXButton place4;
     @FXML
     private JFXButton active4;
+    @FXML
+    private JFXButton sacrifice1;
+    @FXML
+    private JFXButton sacrifice2;
+    @FXML
+    private JFXButton sacrifice3;
+    @FXML
+    private JFXButton sacrifice4;
 
     public PlayerboardController() {
         greenCards = new ArrayList<>();
@@ -138,6 +148,7 @@ public class PlayerboardController implements Observer {
         leaderBackgrounds = new EnumMap<>(GeneralColor.class);
         activateButtons = new ArrayList<>();
         placeButtons = new ArrayList<>();
+        sacrificeButtons = new ArrayList<>();
     }
 
     public void initialize() {
@@ -208,6 +219,11 @@ public class PlayerboardController implements Observer {
         placeButtons.add(place2);
         placeButtons.add(place3);
         placeButtons.add(place4);
+
+        sacrificeButtons.add(sacrifice1);
+        sacrificeButtons.add(sacrifice2);
+        sacrificeButtons.add(sacrifice3);
+        sacrificeButtons.add(sacrifice4);
     }
 
     @Override
@@ -276,15 +292,6 @@ public class PlayerboardController implements Observer {
         servants1.setText(owner.getNumberOfResources().get(ResourcesLight.SERVANTS).toString());
     }
 
-    @FXML
-    public void activateLeader() {
-
-    }
-
-    @FXML
-    public void placeLeader() {
-
-    }
 
     public void checkButtons() {
         for (int i = 0; i < owner.getDeckLight().getLeaders().size(); i++) {
@@ -296,5 +303,19 @@ public class PlayerboardController implements Observer {
                 placeButtons.get(i).setMouseTransparent(true);
             }
         }
+    }
+
+    @FXML
+    public void activateLeader() {
+
+    }
+
+    @FXML
+    public void placeLeader() {
+
+    }
+
+    @FXML
+    public void sacrificeLeader(MouseEvent event) {
     }
 }

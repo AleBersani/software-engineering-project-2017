@@ -20,6 +20,10 @@ import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Manages the game the player wants to play, if a new one o an old game
+ */
+
 public class GameChoiceController implements Observer {
     private final static Logger LOGGER = Logger.getLogger(GameChoiceController.class.getName());
 

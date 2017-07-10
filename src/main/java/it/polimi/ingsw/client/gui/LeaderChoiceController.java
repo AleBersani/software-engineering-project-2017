@@ -29,6 +29,11 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Manages the choice of the Leader cards at the beginning of the game, the player clicks on the one he wants,
+ * the other cards are passed to the next player and he receives the ones of the player before himself
+ */
+
 public class LeaderChoiceController implements Observer {
     private final static Logger LOGGER = Logger.getLogger(LeaderChoiceController.class.getName());
     private static final String BACKGROUND_URL = "/client/backgrounds/";

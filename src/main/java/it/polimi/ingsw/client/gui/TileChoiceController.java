@@ -28,6 +28,12 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Manages the choice of the Bonus Tile at the beginning of the game, the player clicks on the one he wants, then the
+ * choice goes to the next player, while waiting for his turn to choose there's a waiting message
+ */
+
+
 public class TileChoiceController implements Observer {
     private static final Logger LOGGER = Logger.getLogger(TileChoiceController.class.getName());
     private static final String BACKGROUND_URL = "/client/backgrounds/";
