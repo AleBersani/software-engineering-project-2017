@@ -2,11 +2,15 @@ package it.polimi.ingsw.server.gamecontroller;
 
 import it.polimi.ingsw.server.connection.ConnectedClient;
 import it.polimi.ingsw.server.gamecontroller.helpers.Sender;
+import it.polimi.ingsw.server.gamecontroller.helpers.rewards.CardVisitorHandler;
+import it.polimi.ingsw.server.gameelements.AdditionalInfoMaps;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gamelogic.board.*;
+import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.AdditionalCardInfo;
 import it.polimi.ingsw.server.gamelogic.cards.development.DevelopmentCard;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
+import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.modifiers.EndGameRewardsModifier;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
 import it.polimi.ingsw.shared.model.GeneralColor;
@@ -79,7 +83,7 @@ public class Period extends Observable implements Observer {
                     getSecondLastSemiPeriod().getBoard().getCouncilPalace().getPlayerOrder()));
         }
         board.getCouncilPalace().getPlayerPawnList().clear();
-
+        developmentCards.forEach(d -> System.out.println(d.getCardInformation().getName()));
         semiPeriod.addObserver(this);
         semiPeriod.initSemiPeriod();
     }
@@ -156,9 +160,18 @@ public class Period extends Observable implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        LOGGER.info("Starting new Semiperiod...");
-        cleanBoard();
-        startSemiPeriod();
+        if (semiPeriods.size() == 2) {
+            LOGGER.info("Starting new Semiperiod...");
+            cleanBoard();
+            churchSupport();
+            startSemiPeriod();
+            setChanged();
+            notifyObservers();
+        } else if (semiPeriods.size() == 1) {
+            LOGGER.info("Starting new Semiperiod...");
+            cleanBoard();
+            startSemiPeriod();
+        }
     }
 
     public void cleanBoard() {
@@ -186,9 +199,25 @@ public class Period extends Observable implements Observer {
         for (Player player : players) {
             if (player.getPlayerGoods().getPoints().getFaith() < BoardInformation
                     .getFaithPointsToAvoidExcommunication().get(periodNumber)) {
-                //sender.sendTo(player.getPlayerDetails().getPlayerName(), new );
-            } else {
-                //
+                CardVisitorHandler cardVisitorHandler = new CardVisitorHandler(player, sender);
+                if (PeriodNumber.THIRD != periodNumber) {
+                    for (Map.Entry<String, List<AdditionalCardInfo>> entry :
+                            AdditionalInfoMaps.getPermanentEffectsNotSelectable().entrySet()) {
+                        if (entry.getKey().equals(actualExcommunicationTile.getExcommunicationTileName())) {
+                            for (AdditionalCardInfo additionalCardInfo : entry.getValue()) {
+                                additionalCardInfo.acceptCardVisitor(cardVisitorHandler);
+                            }
+                        }
+                    }
+                } else {
+                    for (Map.Entry<String, EndGameRewardsModifier> entry :
+                            AdditionalInfoMaps.getThirdPeriodExcommunicationModifiers().entrySet()) {
+                        if (entry.getKey().equals(actualExcommunicationTile.getExcommunicationTileName())) {
+                            player.getPlayerCardsEffects().getEndGameRewardsModifiers().add(entry.getValue());
+                        }
+                    }
+                }
+
             }
         }
     }

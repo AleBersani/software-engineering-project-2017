@@ -46,6 +46,7 @@ public class ClientReceiverHandler implements ClientReceiver {
     @Override
     public void visitServerClientRequest(ConsumableAction consumableAction) {
         ClientInformation.setActionTypesForConsumableAction(consumableAction.getActionTypes());
+        ClientInformation.setNameOfCardGivingConsumableAction(consumableAction.getNameOfCardWithCardAction());
         GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
         guiNotifier.updateGui(new ConsumableActionChoice(consumableAction.getActionTypes(),
                 consumableAction.getNameOfCardWithCardAction()));

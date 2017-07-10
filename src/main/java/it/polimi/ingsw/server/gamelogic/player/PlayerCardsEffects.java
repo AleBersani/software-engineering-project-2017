@@ -2,6 +2,7 @@ package it.polimi.ingsw.server.gamelogic.player;
 
 import it.polimi.ingsw.server.gamelogic.basics.Goods;
 import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.CardFlashAction;
+import it.polimi.ingsw.server.gamelogic.modifiers.endgamerewards.modifiers.EndGameRewardsModifier;
 import it.polimi.ingsw.server.gamelogic.modifiers.requirements.modifiers.RequirementsModifier;
 import it.polimi.ingsw.server.gamelogic.modifiers.rewards.modifiers.RewardsModifier;
 
@@ -16,6 +17,7 @@ public class PlayerCardsEffects {
     private int playerOrderWeight;
     private List<RequirementsModifier> requirementsModifiers;
     private List<RewardsModifier> rewardsModifiers;
+    private List<EndGameRewardsModifier> endGameRewardsModifiers;
 
     public PlayerCardsEffects() {
         cardFlashAction = null;
@@ -23,6 +25,7 @@ public class PlayerCardsEffects {
         playerOrderWeight = 0;
         requirementsModifiers = new ArrayList<>();
         rewardsModifiers = new ArrayList<>();
+        endGameRewardsModifiers = new ArrayList<>();
     }
 
     @Override
@@ -93,5 +96,13 @@ public class PlayerCardsEffects {
 
     public void setRewardsModifiers(List<RewardsModifier> rewardsModifiers) {
         this.rewardsModifiers = rewardsModifiers;
+    }
+
+    public List<EndGameRewardsModifier> getEndGameRewardsModifiers() {
+        return endGameRewardsModifiers;
+    }
+
+    public void setEndGameRewardsModifiers(List<EndGameRewardsModifier> endGameRewardsModifiers) {
+        this.endGameRewardsModifiers = endGameRewardsModifiers;
     }
 }

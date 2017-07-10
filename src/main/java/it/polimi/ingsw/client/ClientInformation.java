@@ -14,6 +14,7 @@ public class ClientInformation {
     private static BoardAction lastBoardAction;
     private static AtomicInteger numberOfCouncilPrivilegeToChoose;
     private static List<ActionType> actionTypesForConsumableAction;
+    private static String nameOfCardGivingConsumableAction;
 
     public static void initClass() {
         numberOfCouncilPrivilegeToChoose = new AtomicInteger(0);
@@ -65,5 +66,13 @@ public class ClientInformation {
 
     public static void setActionTypesForConsumableAction(List<ActionType> actionTypesForConsumableAction) {
         ClientInformation.actionTypesForConsumableAction = actionTypesForConsumableAction;
+    }
+
+    public static String getNameOfCardGivingConsumableAction() {
+        return nameOfCardGivingConsumableAction;
+    }
+
+    public static void setNameOfCardGivingConsumableAction(String nameOfCardGivingConsumableAction) {
+        ClientInformation.nameOfCardGivingConsumableAction = nameOfCardGivingConsumableAction;
     }
 }

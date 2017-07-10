@@ -1,16 +1,22 @@
 package it.polimi.ingsw.client.gui;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import it.polimi.ingsw.client.ClientInformation;
+import it.polimi.ingsw.client.middleware.ClientSender;
+import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.BoardLight;
-import it.polimi.ingsw.client.model.Card;
-import it.polimi.ingsw.client.model.SlotLight;
-import it.polimi.ingsw.client.model.TowerSlotLight;
-import it.polimi.ingsw.server.gamelogic.board.Board;
+import it.polimi.ingsw.client.model.Utils;
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
+import it.polimi.ingsw.shared.model.PawnColor;
+import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
+import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
+import it.polimi.ingsw.shared.requests.clientserver.BaseInformation;
+import it.polimi.ingsw.shared.requests.clientserver.ChosenConsumableAction;
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +69,9 @@ public class CardActionController {
 
     @FXML
     private ToggleGroup cardsToggleGroup;
+
+    @FXML
+    private JFXButton chosen;
 
     public void initialize() {
         List<ActionType> actionTypes = ClientInformation.getActionTypesForConsumableAction();
@@ -160,40 +169,49 @@ public class CardActionController {
             for (int i = 0; i < boardLight.getGreenTower().size(); i++) {
                 if (boardLight.getGreenTower().get(i).getSlotLight().getBoardIdentifier().toString().equalsIgnoreCase(
                         ((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId())) {
-                    System.out.println(boardLight.getGreenTower().get(i).getSlotLight().getBoardIdentifier());
                     selected = boardLight.getGreenTower().get(i).getSlotLight().getBoardIdentifier();
-
                 }
             }
             for (int i = 0; i < boardLight.getYellowTower().size(); i++) {
                 if (boardLight.getYellowTower().get(i).getSlotLight().getBoardIdentifier().toString()
                         .equalsIgnoreCase(((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId())) {
-                    System.out.println(boardLight.getYellowTower().get(i).getSlotLight().getBoardIdentifier());
                     selected = boardLight.getYellowTower().get(i).getSlotLight().getBoardIdentifier();
-
                 }
             }
             for (int i = 0; i < boardLight.getBlueTower().size(); i++) {
                 if (boardLight.getBlueTower().get(i).getSlotLight().getBoardIdentifier().toString()
                         .equalsIgnoreCase(((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId())) {
-                    System.out.println(boardLight.getBlueTower().get(i).getSlotLight().getBoardIdentifier());
                     selected = boardLight.getBlueTower().get(i).getSlotLight().getBoardIdentifier();
-
                 }
             }
             for (int i = 0; i < boardLight.getPurpleTower().size(); i++) {
-                if (boardLight.getPurpleTower().get(i).getSlotLight().getBoardIdentifier().toString().equalsIgnoreCase(((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId())) {
-                    System.out.println(boardLight.getPurpleTower().get(i).getSlotLight().getBoardIdentifier());
+                if (boardLight.getPurpleTower().get(i).getSlotLight().getBoardIdentifier().toString()
+                        .equalsIgnoreCase(((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId())) {
                     selected = boardLight.getPurpleTower().get(i).getSlotLight().getBoardIdentifier();
-
                 }
             }
             if (((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId().equalsIgnoreCase("harvest")) {
-                selected = BoardIdentifier.HARVEST_1;
+                if (boardLight.getHarvest().get(0).getPawnLight().isPresent()) {
+                    selected = BoardIdentifier.HARVEST_2;
+                } else {
+                    selected = BoardIdentifier.HARVEST_1;
+                }
             }
             if (((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId().equalsIgnoreCase("production")) {
-                selected = BoardIdentifier.PRODUCTION_1;
+                if (boardLight.getProduction().get(0).getPawnLight().isPresent()) {
+                    selected = BoardIdentifier.PRODUCTION_2;
+                } else {
+                    selected = BoardIdentifier.PRODUCTION_1;
+                }
             }
+            BasicAction basicAction = new BasicAction(Utils.getActionTypeByBoardIdentifier(selected), selected, 0);
+            BoardAction boardAction = new BoardAction(basicAction, PawnColor.UNCOLORED);
+            ClientSender clientSender = new ClientSenderHandler();
+            clientSender.sendToServer(new ChosenConsumableAction(
+                    new BaseInformation(ClientInformation.getCurrentGameId(), ClientInformation.getPlayerName()),
+                    boardAction, ClientInformation.getNameOfCardGivingConsumableAction()));
+            Stage stage = (Stage)chosen.getScene().getWindow();
+            stage.close();
         }
     }
 }

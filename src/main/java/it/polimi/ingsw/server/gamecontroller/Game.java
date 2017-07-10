@@ -7,22 +7,23 @@ import it.polimi.ingsw.server.gamecontroller.helpers.UniqueRandomGenerator;
 import it.polimi.ingsw.server.gamecontroller.helpers.choices.BonusTileChoiceHandler;
 import it.polimi.ingsw.server.gamecontroller.helpers.choices.CouncilPrivilegeChoiceHandler;
 import it.polimi.ingsw.server.gamecontroller.helpers.choices.LeaderCardChoiceHandler;
+import it.polimi.ingsw.server.gameelements.AdditionalInfoMaps;
 import it.polimi.ingsw.server.gameelements.BoardInformation;
 import it.polimi.ingsw.server.gameelements.Cards;
 import it.polimi.ingsw.server.gamelogic.actionsdescription.ActionDescription;
 import it.polimi.ingsw.server.gamelogic.basics.GameConfiguration;
 import it.polimi.ingsw.server.gamelogic.basics.PlayerConfiguration;
 import it.polimi.ingsw.server.gamelogic.board.*;
+import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.AdditionalCardInfo;
+import it.polimi.ingsw.server.gamelogic.cards.additionalinfo.CardFlashAction;
 import it.polimi.ingsw.server.gamelogic.cards.development.*;
 import it.polimi.ingsw.server.gamelogic.cards.development.Character;
 import it.polimi.ingsw.server.gamelogic.cards.excommunicationtiles.ExcommunicationTile;
 import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
-import it.polimi.ingsw.server.gamelogic.player.BonusTiles;
-import it.polimi.ingsw.server.gamelogic.player.Player;
-import it.polimi.ingsw.server.gamelogic.player.PlayerBoard;
-import it.polimi.ingsw.server.gamelogic.player.PlayerDetails;
+import it.polimi.ingsw.server.gamelogic.player.*;
 import it.polimi.ingsw.shared.model.GeneralColor;
+import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import it.polimi.ingsw.shared.requests.serverclient.*;
 
@@ -247,7 +248,18 @@ public class Game implements Runnable, Observer {
      * @param arg optional arguments passed by the notifier
      */
     @Override
-    public void update(Observable o, Object arg) {}
+    public void update(Observable o, Object arg) {
+        boolean endGame = false;
+        for (Period period : periods) {
+            if (PeriodNumber.THIRD == period.getPeriodNumber() && period.isCurrent()) {
+                LOGGER.info("END GAME");
+                endGame = true;
+            }
+        }
+        if (!endGame) {
+            setupAndStartNewPeriod();
+        }
+    }
 
     /*
         METHODS CALLED BY MIDDLEWARE
@@ -503,6 +515,40 @@ public class Game implements Runnable, Observer {
                         }
                     }
                 });
+            }
+        }
+    }
+
+    public void executeChosenConsumableAction(String playerName, BoardAction boardAction, String cardName) {
+        searchCard(playerName, AdditionalInfoMaps.getPermanentEffectsOnChoice(), boardAction);
+        searchCard(playerName, AdditionalInfoMaps.getFlashEffectsOnChoice(), boardAction);
+        for (Player player : players) {
+            if (player.getPlayerDetails().getPlayerName().equals(playerName)) {
+                Pawn pawn = new Pawn(boardAction.getBasicAction().getActionValue(), PawnColor.UNCOLORED);
+                player.getPlayerBoard().getPawns().add(pawn);
+                periods.forEach(period -> {
+                    if (period.isCurrent()) {
+                        period.getSemiPeriods().forEach(semiPeriod -> {
+                            if (semiPeriod.isCurrent()) {
+                                semiPeriod.visitActionDescription(boardAction);
+                                player.getPlayerBoard().getPawns().remove(pawn);
+                                semiPeriod.sendBoardToPlayers();
+                                semiPeriod.sendPlayerBoardToEachSeparatePlayer();
+                            }
+                        });
+                    }
+                });
+            }
+        }
+    }
+
+    public void searchCard(String cardName, Map<String, List<AdditionalCardInfo>> additionalEffectsMap, BoardAction boardAction) {
+        for (Map.Entry<String, List<AdditionalCardInfo>> entry : additionalEffectsMap.entrySet()) {
+            if (entry.getKey().equals(cardName)) {
+                if (entry.getValue().get(0) instanceof CardFlashAction) {
+                    CardFlashAction cardFlashAction = (CardFlashAction)entry.getValue().get(0);
+                    boardAction.getBasicAction().setActionValue(cardFlashAction.getActionValue());
+                }
             }
         }
     }

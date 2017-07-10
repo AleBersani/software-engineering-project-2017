@@ -15,6 +15,7 @@ import it.polimi.ingsw.server.gamelogic.modifiers.rewards.BasicRewards;
 import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
+import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import it.polimi.ingsw.shared.model.actionsdescription.LeaderAction;
 import it.polimi.ingsw.shared.requests.serverclient.CouncilPrivilegeChoice;
@@ -142,10 +143,26 @@ public class BasicRewardsGenerator {
                 break;
             }
             case PRODUCTION: {
+                for (ProductionHarvestSpace productionHarvestSpace : board.getBoardActionSpaces().getProductionArea()) {
+                    if (productionHarvestSpace.getSpace().getBoardIdentifier() == boardAction.getBasicAction().getBoardIdentifier()) {
+                        if (PawnColor.UNCOLORED != boardAction.getPawnColor()) {
+                            productionHarvestSpace.getSpace().setPlayerPawn(
+                                    new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+                        }
+                    }
+                }
                 productionCase();
                 break;
             }
             case HARVEST: {
+                for (ProductionHarvestSpace productionHarvestSpace : board.getBoardActionSpaces().getHarvestArea()) {
+                    if (productionHarvestSpace.getSpace().getBoardIdentifier() == boardAction.getBasicAction().getBoardIdentifier()) {
+                        if (PawnColor.UNCOLORED != boardAction.getPawnColor()) {
+                            productionHarvestSpace.getSpace().setPlayerPawn(
+                                    new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+                        }
+                    }
+                }
                 harvestCase();
                 break;
             }
@@ -195,7 +212,9 @@ public class BasicRewardsGenerator {
         player.getPlayerGoods().subtractAll(towerSlot.getDevelopmentCard().getCosts().get(0));
         towerSlot.setDevelopmentCard(null);
         towerSlot.getSpace().setAlreadyTaken(true);
-        towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+        if (PawnColor.UNCOLORED != boardAction.getPawnColor()) {
+            towerSlot.getSpace().setPlayerPawn(new PlayerPawn(player.getPlayerDetails(), boardAction.getPawnColor()));
+        }
         basicRewards.add(generateBasicRewardsWithActualActionDescriptionGivenGoods(towerSlot.getInstantGoods()));
         setPlayerPawnAsPlacedOnBoard();
     }
