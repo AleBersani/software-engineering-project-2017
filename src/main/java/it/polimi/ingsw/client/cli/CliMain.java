@@ -6,7 +6,6 @@ import it.polimi.ingsw.client.cli.model.*;
 import it.polimi.ingsw.client.middleware.ClientSender;
 import it.polimi.ingsw.client.middleware.ClientSenderHandler;
 import it.polimi.ingsw.client.model.*;
-import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.shared.support.GameStartType;
@@ -512,7 +511,7 @@ public class CliMain {
             leaderCardInOwner = found;
             if (CardsInformation.searchForLeaderCardLight(leaderCardName.trim()).isPresent() &&
                     !leaderCardInOwner.isPresent()) {
-                clientSender.sendToServer(requestsGeneratorCli.generateLeaderAction(ActionType.LEADER_ACTIVATION, leaderCardName));
+                //clientSender.sendToServer(requestsGeneratorCli.generateLeaderAction(ActionType.LEADER_ACTIVATION, leaderCardName));
                 sent = true;
             } else
                 System.out.println("Invalid Leader Card name!");
@@ -527,7 +526,7 @@ public class CliMain {
             System.out.println("Enter a name of a Leader Card to place: ");
             leaderCardName = input.nextLine();
             if (CardsInformation.searchForLeaderCardLight(leaderCardName.trim()).isPresent()) {
-                clientSender.sendToServer(requestsGeneratorCli.generateLeaderAction(ActionType.LEADER_PLACEMENT, leaderCardName));
+               // clientSender.sendToServer(requestsGeneratorCli.generateLeaderAction(ActionType.LEADER_PLACEMENT, leaderCardName));
                 sent = true;
             } else
                 System.out.println("Invalid Leader Card name!");
@@ -553,7 +552,7 @@ public class CliMain {
             leaderCardInOwner = found;
             if (CardsInformation.searchForLeaderCardLight(leaderCardName.trim()).isPresent() &&
                     !leaderCardInOwner.isPresent()) {
-                clientSender.sendToServer(requestsGeneratorCli.generateLeaderAction(ActionType.LEARD_DISCARD, leaderCardName));
+              //  clientSender.sendToServer(requestsGeneratorCli.generateLeaderAction(ActionType.LEARD_DISCARD, leaderCardName));
                 sent = true;
             } else
                 System.out.println("Invalid Leader Card name!");

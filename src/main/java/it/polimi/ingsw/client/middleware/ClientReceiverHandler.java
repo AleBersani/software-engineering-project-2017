@@ -61,6 +61,12 @@ public class ClientReceiverHandler implements ClientReceiver {
     }
 
     @Override
+    public void visitServerClientRequest(EndGame endGame) {
+        GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
+        guiNotifier.updateGui(new EndGameResponse());
+    }
+
+    @Override
     public void visitServerClientRequest(EndLeadersChoicePhase endLeadersChoicePhase) {
         System.out.println("Leader choice phase ended!");
         LeaderChoiceNotifier guiNotifier = LeaderChoiceNotifier.getInstance();
