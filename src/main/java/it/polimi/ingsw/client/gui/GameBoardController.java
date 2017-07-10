@@ -73,6 +73,8 @@ public class GameBoardController extends Observable implements Observer {
     private BaseInformation baseInformation;
     private ActionDescription actionDescription;
 
+    private Stage playerBoardStage;
+
     @FXML
     private Circle player1;
     @FXML
@@ -239,7 +241,7 @@ public class GameBoardController extends Observable implements Observer {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/playerboard.fxml"));
                 Parent root = fxmlLoader.load();
-                Stage playerBoardStage = new Stage();
+                playerBoardStage = new Stage();
                 playerBoardStage.setScene(new Scene(root));
                 playerBoardStage.show();
                 playerBoardStage.toFront();
@@ -359,6 +361,13 @@ public class GameBoardController extends Observable implements Observer {
             @Override
             public void visitGameBoardResponse(CouncilPrivilegeEvent councilPrivilegeEvent) {
                 startCouncilPrivilegeChoice();
+            }
+
+            @Override
+            public void visitGameBoardResponse(EndGameResponse endGameResponse) {
+                //playerBoard.close();
+                Stage stage = (Stage) pass.getScene().getWindow();
+                //stage.close();
             }
 
             @Override

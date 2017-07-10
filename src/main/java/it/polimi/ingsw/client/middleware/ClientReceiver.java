@@ -7,6 +7,7 @@ public interface ClientReceiver {
     void visitServerClientRequest(ChosenGameResponse chosenGameResponse);
     void visitServerClientRequest(ConsumableAction consumableAction);
     void visitServerClientRequest(CouncilPrivilegeChoice councilPrivilegeChoice);
+    void visitServerClientRequest(EndGame endGame);
     void visitServerClientRequest(EndLeadersChoicePhase endLeadersChoicePhase);
     void visitServerClientRequest(EndTileChoicePhase endTileChoicePhase);
     void visitServerClientRequest(LeadersChoice leadersChoice);

@@ -179,11 +179,14 @@ public class Game implements Runnable, Observer {
     public void constructPeriods() {
         LOGGER.info("Construct periods");
         Map<PeriodNumber, List<DevelopmentCard>> developmentCardsForPeriod = generateDevelopmentCardsForPeriod();
+        Period period;
 
         for (int i = 0; i < GameConfiguration.getNumberOfPeriods(); i++) {
             PeriodNumber periodNumber = PeriodNumber.values()[i];
             ExcommunicationTile excommunicationTile = getExcommunicationTilePerPeriodNumber(periodNumber);
-            periods.add(new Period(excommunicationTile, developmentCardsForPeriod.get(periodNumber), periodNumber));
+            period = new Period(excommunicationTile, developmentCardsForPeriod.get(periodNumber), periodNumber);
+            period.addObserver(this);
+            periods.add(period);
             board.getExcommunicationTiles().add(excommunicationTile);
         }
 
@@ -264,6 +267,9 @@ public class Game implements Runnable, Observer {
             if (PeriodNumber.THIRD == period.getPeriodNumber() && period.isCurrent()) {
                 LOGGER.info("END GAME");
                 endGame = true;
+                Sender sender = new Sender(connectedClients);
+                System.out.println("Sono alla fine del gioco");
+                sender.sendToAll(new EndGame());
             }
         }
         if (!endGame) {
@@ -463,7 +469,7 @@ public class Game implements Runnable, Observer {
      * TODO: JavaDoc + Test
      */
     public void setNewStartingPlayerOrderForPeriod() {
-        for (int i = 0; i < periods.size(); i++) {
+        for (int i = 1; i < periods.size(); i++) {
             if (periods.get(i).isCurrent()) {
                 Period secondLastPeriod = periods.get(i - 1);
                 List<PlayerDetails> basePlayerOrder = secondLastPeriod.calculateNewPlayerOrder(secondLastPeriod.getLastSemiperiod().getBasePlayersOrder(),

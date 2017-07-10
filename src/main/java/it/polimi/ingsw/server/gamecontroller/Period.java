@@ -169,7 +169,7 @@ public class Period extends Observable implements Observer {
             LOGGER.info("Starting new Semiperiod...");
             cleanBoard();
             churchSupport();
-            startSemiPeriod();
+            //startSemiPeriod();
             setChanged();
             notifyObservers();
         } else if (semiPeriods.size() == 1) {
