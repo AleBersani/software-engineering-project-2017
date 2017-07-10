@@ -23,6 +23,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
@@ -74,15 +75,6 @@ public class GameBoardController extends Observable implements Observer {
     private ActionDescription actionDescription;
 
     private Stage playerBoardStage;
-
-    @FXML
-    private Circle player1;
-    @FXML
-    private Circle player2;
-    @FXML
-    private Circle player3;
-    @FXML
-    private Circle player4;
 
     @FXML
     private StackPane g4;
@@ -191,6 +183,14 @@ public class GameBoardController extends Observable implements Observer {
     private ImageView excom2;
     @FXML
     private ImageView excom3;
+    @FXML
+    private ImageView cover1;
+    @FXML
+    private ImageView cover2;
+    @FXML
+    private ImageView coverProd;
+    @FXML
+    private ImageView coverHarv;
 
     @FXML
     private Label infoplayer1;
@@ -211,6 +211,10 @@ public class GameBoardController extends Observable implements Observer {
 
     @FXML
     private JFXButton pass;
+    @FXML
+    private JFXButton leave;
+    @FXML
+    private JFXButton interrupt;
 
     public GameBoardController() {
         pawnList = new ArrayList<>();
@@ -234,6 +238,9 @@ public class GameBoardController extends Observable implements Observer {
         initPawnColors();
         setTowers();
         setStackPaneList();
+        coverActionSpaces();
+        leave.setMouseTransparent(true);
+        interrupt.setMouseTransparent(true);
     }
 
     private void showPlayerBoard() {
@@ -324,11 +331,31 @@ public class GameBoardController extends Observable implements Observer {
         stackPaneList.add(p4);
         stackPaneList.add(m1);
         stackPaneList.add(m2);
-        stackPaneList.add(m3);
-        stackPaneList.add(m4);
         stackPaneList.add(production1);
         stackPaneList.add(harvest1);
+        if (boardLight.getPlayerLights().size() >= 3) {
+            stackPaneList.add(m3);
+            stackPaneList.add(m4);
+        }
+        if (boardLight.getPlayerLights().size() < 3) {
+            harvest2.setDisable(true);
+            production2.setDisable(true);
+            m3.setDisable(true);
+            m4.setDisable(true);
+        }
     }
+
+    public void coverActionSpaces() {
+        if (boardLight.getPlayerLights().size() >= 3){
+            coverProd.setImage(null);
+            coverHarv.setImage(null);
+        }
+        if (boardLight.getPlayerLights().size() == 4) {
+            cover1.setImage(null);
+            cover2.setImage(null);
+        }
+    }
+
 
     @Override
     public void update(Observable o, Object arg) {
@@ -923,5 +950,6 @@ public class GameBoardController extends Observable implements Observer {
         ClientSender clientSender = new ClientSenderHandler();
         clientSender.sendToServer(new EndTurn(new BaseInformation(ClientInformation.getCurrentGameId(), ClientInformation.getPlayerName())));
     }
+
 }
 
