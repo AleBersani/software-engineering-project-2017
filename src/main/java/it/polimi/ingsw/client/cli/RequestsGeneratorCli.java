@@ -8,7 +8,11 @@ import it.polimi.ingsw.shared.model.BoardIdentifier;
 import it.polimi.ingsw.shared.model.PawnColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
-import it.polimi.ingsw.shared.requests.clientserver.*;
+import it.polimi.ingsw.shared.model.actionsdescription.LeaderAction;
+import it.polimi.ingsw.shared.requests.clientserver.BaseInformation;
+import it.polimi.ingsw.shared.requests.clientserver.ChosenBonusTile;
+import it.polimi.ingsw.shared.requests.clientserver.ChosenLeader;
+import it.polimi.ingsw.shared.requests.clientserver.PawnPlacement;
 
 public class RequestsGeneratorCli {
     private BaseInformation baseInformation;
