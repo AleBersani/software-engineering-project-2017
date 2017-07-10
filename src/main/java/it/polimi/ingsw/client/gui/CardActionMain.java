@@ -11,7 +11,7 @@ public class CardActionMain extends Application{
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/client/gui/cardAction.fxml"));
         primaryStage.setTitle("Card Action");
-        primaryStage.setScene(new Scene(root, 200, 300));
+        primaryStage.setScene(new Scene(root, 870, 400));
         primaryStage.show();
     }
 

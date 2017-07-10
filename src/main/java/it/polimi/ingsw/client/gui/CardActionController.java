@@ -3,7 +3,12 @@ package it.polimi.ingsw.client.gui;
 import com.jfoenix.controls.JFXRadioButton;
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.model.BoardLight;
+import it.polimi.ingsw.client.model.Card;
+import it.polimi.ingsw.client.model.SlotLight;
+import it.polimi.ingsw.client.model.TowerSlotLight;
+import it.polimi.ingsw.server.gamelogic.board.Board;
 import it.polimi.ingsw.shared.model.ActionType;
+import it.polimi.ingsw.shared.model.BoardIdentifier;
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleGroup;
 
@@ -17,7 +22,7 @@ public class CardActionController {
     private List<JFXRadioButton> purpleCards;
 
     private BoardLight boardLight;
-    private String selected;
+    private BoardIdentifier selected;
 
     @FXML
     private JFXRadioButton t_g_4;
@@ -51,6 +56,10 @@ public class CardActionController {
     private JFXRadioButton t_p_2;
     @FXML
     private JFXRadioButton t_p_1;
+    @FXML
+    private JFXRadioButton harvest;
+    @FXML
+    private JFXRadioButton production;
 
     @FXML
     private ToggleGroup cardsToggleGroup;
@@ -78,11 +87,11 @@ public class CardActionController {
                     break;
                 }
                 case PRODUCTION: {
-
+                    production.setText("Production");
                     break;
                 }
                 case HARVEST: {
-
+                    harvest.setText("Harvest");
                     break;
                 }
             }
@@ -92,10 +101,10 @@ public class CardActionController {
 
     private void setCards(List<JFXRadioButton> buttonList, JFXRadioButton button1, JFXRadioButton button2,
                           JFXRadioButton button3, JFXRadioButton button4) {
-        buttonList.add(button1);
-        buttonList.add(button2);
-        buttonList.add(button3);
         buttonList.add(button4);
+        buttonList.add(button3);
+        buttonList.add(button2);
+        buttonList.add(button1);
 
     }
 
@@ -145,34 +154,46 @@ public class CardActionController {
         }
     }
 
-
+    @FXML
     public void getCard() {
-        cardsToggleGroup.selectedToggleProperty().addListener((ov, old_toggle, new_toggle) -> {
-            if (cardsToggleGroup.getSelectedToggle() != null) {
-                for (int i = 0; i < boardLight.getGreenTower().size(); i++) {
-                    if (boardLight.getGreenTower().get(i).getSlotLight().getBoardIdentifier().toString().equalsIgnoreCase(
-                            ((JFXRadioButton)cardsToggleGroup.getSelectedToggle()).getId())) {
-                        System.out.println(boardLight.getGreenTower().get(i).getSlotLight().getBoardIdentifier());
-                    }
-                }
-                for (int i = 0; i < boardLight.getYellowTower().size(); i++) {
-                    if (boardLight.getYellowTower().get(i).getSlotLight().getBoardIdentifier().toString()
-                            .equalsIgnoreCase(((JFXRadioButton)cardsToggleGroup.getSelectedToggle()).getId())) {
-                        System.out.println(boardLight.getYellowTower().get(i).getSlotLight().getBoardIdentifier());
-                    }
-                }
-                for (int i = 0; i < boardLight.getBlueTower().size(); i++) {
-                    if (boardLight.getBlueTower().get(i).getSlotLight().getBoardIdentifier().toString()
-                            .equalsIgnoreCase(((JFXRadioButton)cardsToggleGroup.getSelectedToggle()).getId())) {
-                        System.out.println(boardLight.getBlueTower().get(i).getSlotLight().getBoardIdentifier());
-                    }
-                }
-                for (int i = 0; i < boardLight.getPurpleTower().size(); i++) {
-                    if (boardLight.getPurpleTower().get(i).getSlotLight().getBoardIdentifier().toString().equalsIgnoreCase(((JFXRadioButton)cardsToggleGroup.getSelectedToggle()).getId())) {
-                        System.out.println(boardLight.getPurpleTower().get(i).getSlotLight().getBoardIdentifier());
-                    }
+        if (cardsToggleGroup.getSelectedToggle() != null) {
+            for (int i = 0; i < boardLight.getGreenTower().size(); i++) {
+                if (boardLight.getGreenTower().get(i).getSlotLight().getBoardIdentifier().toString().equalsIgnoreCase(
+                        ((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId())) {
+                    System.out.println(boardLight.getGreenTower().get(i).getSlotLight().getBoardIdentifier());
+                    selected = boardLight.getGreenTower().get(i).getSlotLight().getBoardIdentifier();
+
                 }
             }
-        });
+            for (int i = 0; i < boardLight.getYellowTower().size(); i++) {
+                if (boardLight.getYellowTower().get(i).getSlotLight().getBoardIdentifier().toString()
+                        .equalsIgnoreCase(((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId())) {
+                    System.out.println(boardLight.getYellowTower().get(i).getSlotLight().getBoardIdentifier());
+                    selected = boardLight.getYellowTower().get(i).getSlotLight().getBoardIdentifier();
+
+                }
+            }
+            for (int i = 0; i < boardLight.getBlueTower().size(); i++) {
+                if (boardLight.getBlueTower().get(i).getSlotLight().getBoardIdentifier().toString()
+                        .equalsIgnoreCase(((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId())) {
+                    System.out.println(boardLight.getBlueTower().get(i).getSlotLight().getBoardIdentifier());
+                    selected = boardLight.getBlueTower().get(i).getSlotLight().getBoardIdentifier();
+
+                }
+            }
+            for (int i = 0; i < boardLight.getPurpleTower().size(); i++) {
+                if (boardLight.getPurpleTower().get(i).getSlotLight().getBoardIdentifier().toString().equalsIgnoreCase(((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId())) {
+                    System.out.println(boardLight.getPurpleTower().get(i).getSlotLight().getBoardIdentifier());
+                    selected = boardLight.getPurpleTower().get(i).getSlotLight().getBoardIdentifier();
+
+                }
+            }
+            if (((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId().equalsIgnoreCase("harvest")) {
+                selected = BoardIdentifier.HARVEST_1;
+            }
+            if (((JFXRadioButton) cardsToggleGroup.getSelectedToggle()).getId().equalsIgnoreCase("production")) {
+                selected = BoardIdentifier.PRODUCTION_1;
+            }
+        }
     }
 }
