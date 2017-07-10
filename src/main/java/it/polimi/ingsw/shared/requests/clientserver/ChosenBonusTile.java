@@ -2,7 +2,9 @@ package it.polimi.ingsw.shared.requests.clientserver;
 
 import it.polimi.ingsw.server.middleware.ServerReceiver;
 
-public class ChosenBonusTile implements ClientServerRequest {
+import java.io.Serializable;
+
+public class ChosenBonusTile implements ClientServerRequest, Serializable {
     private BaseInformation baseInformation;
     private String bonusTileIdentifier;
 

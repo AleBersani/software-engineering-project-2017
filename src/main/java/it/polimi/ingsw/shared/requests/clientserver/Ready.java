@@ -2,7 +2,9 @@ package it.polimi.ingsw.shared.requests.clientserver;
 
 import it.polimi.ingsw.server.middleware.ServerReceiver;
 
-public class Ready implements ClientServerRequest {
+import java.io.Serializable;
+
+public class Ready implements ClientServerRequest, Serializable {
     private int gameId;
     private String readyForWhat;
 

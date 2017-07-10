@@ -471,17 +471,38 @@ public class Game implements Runnable, Observer {
                 CouncilPrivilegeChoiceHandler councilPrivilegeChoiceHandler = new CouncilPrivilegeChoiceHandler(
                         choices, player, boardAction);
                 councilPrivilegeChoiceHandler.addModifiedCouncilPrivilegeChoices();
-                periods.forEach(period -> {
-                    if (period.isCurrent()) {
-                        period.getSemiPeriods().forEach(semiPeriod -> {
-                            if (semiPeriod.isCurrent()) {
-                                semiPeriod.sendBoardToPlayers();
-                                semiPeriod.sendPlayerBoardToEachSeparatePlayer();
-                            }
-                        });
+                updateClientsSemiPeriod();
+                break;
+            }
+        }
+    }
+
+    public void updateClientsSemiPeriod() {
+        periods.forEach(period -> {
+            if (period.isCurrent()) {
+                period.getSemiPeriods().forEach(semiPeriod -> {
+                    if (semiPeriod.isCurrent()) {
+                        semiPeriod.sendBoardToPlayers();
+                        semiPeriod.sendPlayerBoardToEachSeparatePlayer();
                     }
                 });
-                break;
+            }
+        });
+    }
+
+    public void swapLorenzo(String playerName, String chosenLeader) {
+        for (Player player : players) {
+            if (player.getPlayerDetails().getPlayerName().equals(playerName)) {
+                player.getLeaderCards().forEach(leaderCard -> {
+                    if ("Lorenzo de' Medici".equals(leaderCard.getLeaderName())) {
+                        for (LeaderCard lc : Cards.getLeaderCards()) {
+                            if (lc.getLeaderName().equals(chosenLeader)) {
+                                player.getLeaderCards().add(lc);
+                                player.getLeaderCards().remove(leaderCard);
+                            }
+                        }
+                    }
+                });
             }
         }
     }

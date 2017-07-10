@@ -2,7 +2,9 @@ package it.polimi.ingsw.shared.requests.serverclient;
 
 import it.polimi.ingsw.client.middleware.ClientReceiver;
 
-public class EndLeadersChoicePhase implements ServerClientRequest {
+import java.io.Serializable;
+
+public class EndLeadersChoicePhase implements ServerClientRequest, Serializable {
     @Override
     public void acceptServerClientRequestVisitor(ClientReceiver clientReceiver) {
         clientReceiver.visitServerClientRequest(this);

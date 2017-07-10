@@ -2,10 +2,7 @@ package it.polimi.ingsw.client.middleware;
 
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.*;
-import it.polimi.ingsw.client.gui.notify.gameboardresponses.ActionResult;
-import it.polimi.ingsw.client.gui.notify.gameboardresponses.CouncilPrivilegeEvent;
-import it.polimi.ingsw.client.gui.notify.gameboardresponses.TurnStatus;
-import it.polimi.ingsw.client.gui.notify.gameboardresponses.UpdateBoard;
+import it.polimi.ingsw.client.gui.notify.gameboardresponses.*;
 import it.polimi.ingsw.client.model.BoardLight;
 import it.polimi.ingsw.client.model.Card;
 import it.polimi.ingsw.client.model.Owner;
@@ -44,6 +41,14 @@ public class ClientReceiverHandler implements ClientReceiver {
         }
         GameChoiceNotifier guiNotifier = GameChoiceNotifier.getInstance();
         guiNotifier.updateGui(chosenGameResponse.isAccepted());
+    }
+
+    @Override
+    public void visitServerClientRequest(ConsumableAction consumableAction) {
+        ClientInformation.setActionTypesForConsumableAction(consumableAction.getActionTypes());
+        GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
+        guiNotifier.updateGui(new ConsumableActionChoice(consumableAction.getActionTypes(),
+                consumableAction.getNameOfCardWithCardAction()));
     }
 
     @Override
@@ -88,6 +93,12 @@ public class ClientReceiverHandler implements ClientReceiver {
         }
         PlayerLoginNotifier guiNotifier = PlayerLoginNotifier.getInstance();
         guiNotifier.updateGui(loginResponse.isSuccessful());
+    }
+
+    @Override
+    public void visitServerClientRequest(LorenzoRequest lorenzoRequest) {
+        GameBoardNotifier guiNotifier = GameBoardNotifier.getInstance();
+        guiNotifier.updateGui(new LorenzoChoice());
     }
 
     @Override

@@ -1,8 +1,10 @@
 package it.polimi.ingsw.client;
 
+import it.polimi.ingsw.shared.model.ActionType;
 import it.polimi.ingsw.shared.model.GeneralColor;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ClientInformation {
@@ -11,6 +13,7 @@ public class ClientInformation {
     private static int currentGameId;
     private static BoardAction lastBoardAction;
     private static AtomicInteger numberOfCouncilPrivilegeToChoose;
+    private static List<ActionType> actionTypesForConsumableAction;
 
     public static void initClass() {
         numberOfCouncilPrivilegeToChoose = new AtomicInteger(0);
@@ -54,5 +57,13 @@ public class ClientInformation {
 
     public static void setNumberOfCouncilPrivilegeToChoose(AtomicInteger numberOfCouncilPrivilegeToChoose) {
         ClientInformation.numberOfCouncilPrivilegeToChoose = numberOfCouncilPrivilegeToChoose;
+    }
+
+    public static List<ActionType> getActionTypesForConsumableAction() {
+        return actionTypesForConsumableAction;
+    }
+
+    public static void setActionTypesForConsumableAction(List<ActionType> actionTypesForConsumableAction) {
+        ClientInformation.actionTypesForConsumableAction = actionTypesForConsumableAction;
     }
 }

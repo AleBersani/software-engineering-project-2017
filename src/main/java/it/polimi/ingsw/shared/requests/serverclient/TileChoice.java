@@ -2,9 +2,10 @@ package it.polimi.ingsw.shared.requests.serverclient;
 
 import it.polimi.ingsw.client.middleware.ClientReceiver;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class TileChoice implements ServerClientRequest {
+public class TileChoice implements ServerClientRequest, Serializable {
     private List<String> bonusTiles;
 
     public TileChoice(List<String> bonusTiles) {

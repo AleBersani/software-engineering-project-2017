@@ -17,6 +17,7 @@ import it.polimi.ingsw.server.gamelogic.player.Player;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import it.polimi.ingsw.shared.model.actionsdescription.LeaderAction;
 import it.polimi.ingsw.shared.requests.serverclient.CouncilPrivilegeChoice;
+import it.polimi.ingsw.shared.requests.serverclient.LorenzoRequest;
 
 import java.util.List;
 
@@ -113,6 +114,11 @@ public class CardVisitorHandler implements CardVisitor {
         }
         BasicRewards basicRewards = new BasicRewards(boardAction.getBasicAction().getActionType(), result);
         basicRewardsList.add(basicRewards);
+    }
+
+    @Override
+    public void visitAdditionalCardInfo(Lorenzo lorenzo) {
+        sender.sendTo(player.getPlayerDetails().getPlayerName(), new LorenzoRequest());
     }
 
     @Override

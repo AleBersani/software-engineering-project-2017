@@ -4,10 +4,11 @@ import it.polimi.ingsw.client.middleware.ClientReceiver;
 import it.polimi.ingsw.client.model.*;
 import it.polimi.ingsw.shared.model.BoardIdentifier;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpdateGameBoard implements ServerClientRequest {
+public class UpdateGameBoard implements ServerClientRequest, Serializable {
     private List<TowerSlotLight> newGreenTower;
     private List<TowerSlotLight> newYellowTower;
     private List<TowerSlotLight> newBlueTower;

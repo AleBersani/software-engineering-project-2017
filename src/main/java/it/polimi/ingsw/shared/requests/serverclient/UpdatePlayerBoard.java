@@ -6,10 +6,11 @@ import it.polimi.ingsw.client.model.DeckLight;
 import it.polimi.ingsw.client.model.enums.PointsLight;
 import it.polimi.ingsw.client.model.enums.ResourcesLight;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public class UpdatePlayerBoard implements ServerClientRequest {
+public class UpdatePlayerBoard implements ServerClientRequest, Serializable {
     private List<Card> newActivatedLeaders;
     private Map<PointsLight, Integer> newNumberOfPoints;
     private String newBonusTileIdentifier;

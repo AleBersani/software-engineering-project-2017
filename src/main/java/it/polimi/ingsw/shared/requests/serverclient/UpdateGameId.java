@@ -2,7 +2,9 @@ package it.polimi.ingsw.shared.requests.serverclient;
 
 import it.polimi.ingsw.client.middleware.ClientReceiver;
 
-public class UpdateGameId implements ServerClientRequest {
+import java.io.Serializable;
+
+public class UpdateGameId implements ServerClientRequest, Serializable {
     private int gameId;
 
     public UpdateGameId(int gameId) {

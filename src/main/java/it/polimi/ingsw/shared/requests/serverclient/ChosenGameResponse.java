@@ -3,7 +3,9 @@ package it.polimi.ingsw.shared.requests.serverclient;
 import it.polimi.ingsw.client.middleware.ClientReceiver;
 import it.polimi.ingsw.shared.model.GeneralColor;
 
-public class ChosenGameResponse implements ServerClientRequest {
+import java.io.Serializable;
+
+public class ChosenGameResponse implements ServerClientRequest, Serializable {
     private boolean accepted;
     private GeneralColor playerColor;
 

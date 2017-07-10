@@ -333,8 +333,38 @@ public class GameBoardController extends Observable implements Observer {
             }
 
             @Override
+            public void visitGameBoardResponse(ConsumableActionChoice consumableActionChoice) {
+                Platform.runLater(() ->  {
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/cardAction.fxml"));
+                        Parent root = fxmlLoader.load();
+                        Stage bonusAction = new Stage();
+                        bonusAction.setScene(new Scene(root, 200, 300));
+                        bonusAction.show();
+                    } catch (IOException e) {
+                        LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch bonus action choice", e);
+                    }
+                });
+            }
+
+            @Override
             public void visitGameBoardResponse(CouncilPrivilegeEvent councilPrivilegeEvent) {
                 startCouncilPrivilegeChoice();
+            }
+
+            @Override
+            public void visitGameBoardResponse(LorenzoChoice lorenzoChoice) {
+                Platform.runLater(() ->  {
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/gui/activatedLeaders.fxml"));
+                        Parent root = fxmlLoader.load();
+                        Stage leadersChoice = new Stage();
+                        leadersChoice.setScene(new Scene(root, 390, 450));
+                        leadersChoice.show();
+                    } catch (IOException e) {
+                        LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch leader choice", e);
+                    }
+                });
             }
 
             @Override

@@ -4,11 +4,11 @@ import it.polimi.ingsw.server.middleware.ServerReceiver;
 
 import java.io.Serializable;
 
-public class ChosenLeader implements ClientServerRequest, Serializable {
+public class ChosenLorenzo implements ClientServerRequest, Serializable{
     private BaseInformation baseInformation;
     private String leaderName;
 
-    public ChosenLeader(BaseInformation baseInformation, String leaderName) {
+    public ChosenLorenzo(BaseInformation baseInformation, String leaderName) {
         this.baseInformation = baseInformation;
         this.leaderName = leaderName;
     }

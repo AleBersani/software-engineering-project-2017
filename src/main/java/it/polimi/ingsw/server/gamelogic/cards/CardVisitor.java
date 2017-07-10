@@ -11,6 +11,7 @@ public interface CardVisitor {
     void visitAdditionalCardInfo(ChurchSustainBonus churchSustainBonus);
     void visitAdditionalCardInfo(ConditionalProduction conditionalProduction);
     void visitAdditionalCardInfo(GoodsBasedOnPossessions goodsBasedOnPossessions);
+    void visitAdditionalCardInfo(Lorenzo lorenzo);
     void visitAdditionalCardInfo(MultipleProduction multipleProduction);
     void visitAdditionalCardInfo(RequirementsOnCard requirementsOnCard);
     void visitAdditionalCardInfo(RewardsOnCard rewardsOnCard);

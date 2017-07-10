@@ -43,6 +43,17 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
     }
 
     @Override
+    public void visitClientServerRequest(ChosenCouncilPrivilege chosenCouncilPrivilege) {
+        ActiveGames activeGames = ActiveGames.getInstance();
+        Optional<Game> optionalGame = activeGames.getGameById(chosenCouncilPrivilege.getGameId());
+        if (optionalGame.isPresent()) {
+            Game game = optionalGame.get();
+            game.executeCouncilPrivilegeChoice(chosenCouncilPrivilege.getPlayerName(),
+                    chosenCouncilPrivilege.getChoices(), chosenCouncilPrivilege.getBoardAction());
+        }
+    }
+
+    @Override
     public void visitClientServerRequest(ChosenLeader chosenLeader) {
         ActiveGames activeGames = ActiveGames.getInstance();
         Optional<Game> optionalGame = activeGames.getGameById(chosenLeader.getGameId());
@@ -54,14 +65,13 @@ public class ServerReceiverHandler extends Observable implements ServerReceiver 
     }
 
     @Override
-    public void visitClientServerRequest(ChosenCouncilPrivilege chosenCouncilPrivilege) {
-        System.out.println("ci sono nel server");
+    public void visitClientServerRequest(ChosenLorenzo chosenLorenzo) {
         ActiveGames activeGames = ActiveGames.getInstance();
-        Optional<Game> optionalGame = activeGames.getGameById(chosenCouncilPrivilege.getGameId());
+        Optional<Game> optionalGame = activeGames.getGameById(chosenLorenzo.getGameId());
         if (optionalGame.isPresent()) {
             Game game = optionalGame.get();
-            game.executeCouncilPrivilegeChoice(chosenCouncilPrivilege.getPlayerName(),
-                    chosenCouncilPrivilege.getChoices(), chosenCouncilPrivilege.getBoardAction());
+            game.swapLorenzo(chosenLorenzo.getPlayerName(),
+                    chosenLorenzo.getLeaderName());
         }
     }
 
