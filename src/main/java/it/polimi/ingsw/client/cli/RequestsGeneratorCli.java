@@ -36,10 +36,11 @@ public class RequestsGeneratorCli {
                 new BasicAction(Utils.getActionTypeByBoardIdentifier(BoardIdentifier.valueOf(boardIdentifier)),
                         BoardIdentifier.valueOf(boardIdentifier), actionValue),
                 PawnColor.valueOf(pawnColor), numberOfServants);
+
         return new PawnPlacement(baseInformation, actionDescription);
     }
 
     public LeaderAction generateLeaderAction(ActionType actionType, String leaderCardName) {
-        return new LeaderAction(actionType, leaderCardName);
+       return new LeaderAction(actionType, leaderCardName);
     }
 }

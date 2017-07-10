@@ -2,48 +2,73 @@ package it.polimi.ingsw.client.cli;
 
 import it.polimi.ingsw.client.model.Card;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ClientCliInformation {
-    private static boolean gameStarted;
-    private static boolean canPlay;
-    private static boolean loginSuccessful;
-    private static boolean leaderChoiceEnded;
+    private static AtomicBoolean gameStarted;
+    private static AtomicBoolean canPlay;
+    private static AtomicBoolean loginSuccessful;
+    private static AtomicBoolean leaderChoiceEnded;
+    private static AtomicBoolean leadersAvailable;
     private static List<Card> currentLeadersToChoice;
-    private static boolean bonusTilesChoiceEnded;
+    private static AtomicBoolean bonusTilesChoiceEnded;
+    private static AtomicBoolean bonusTilesAvailable;
     private static List<String> currentBonusTilesToChoice;
-    private static boolean gameInterrupted;
+    private static AtomicBoolean gameInterrupted;
 
-    public static boolean isGameStarted() {
+    public static void init() {
+        gameStarted = new AtomicBoolean(false);
+        canPlay = new AtomicBoolean(false);
+        loginSuccessful = new AtomicBoolean(false);
+        leaderChoiceEnded = new AtomicBoolean(false);
+        leadersAvailable = new AtomicBoolean(false);
+        currentLeadersToChoice = new ArrayList<>();
+        bonusTilesChoiceEnded = new AtomicBoolean(false);
+        bonusTilesAvailable = new AtomicBoolean(false);
+        currentBonusTilesToChoice = new ArrayList<>();
+        gameInterrupted = new AtomicBoolean(false);
+    }
+
+    public static AtomicBoolean getGameStarted() {
         return gameStarted;
     }
 
-    public static void setGameStarted(boolean gameStarted) {
+    public static void setGameStarted(AtomicBoolean gameStarted) {
         ClientCliInformation.gameStarted = gameStarted;
     }
 
-    public static boolean isCanPlay() {
+    public static AtomicBoolean getCanPlay() {
         return canPlay;
     }
 
-    public static void setCanPlay(boolean canPlay) {
+    public static void setCanPlay(AtomicBoolean canPlay) {
         ClientCliInformation.canPlay = canPlay;
     }
 
-    public static boolean isLoginSuccessful() {
+    public static AtomicBoolean getLoginSuccessful() {
         return loginSuccessful;
     }
 
-    public static void setLoginSuccessful(boolean loginSuccessful) {
+    public static void setLoginSuccessful(AtomicBoolean loginSuccessful) {
         ClientCliInformation.loginSuccessful = loginSuccessful;
     }
 
-    public static boolean isLeaderChoiceEnded() {
+    public static AtomicBoolean getLeaderChoiceEnded() {
         return leaderChoiceEnded;
     }
 
-    public static void setLeaderChoiceEnded(boolean leaderChoiceEnded) {
+    public static void setLeaderChoiceEnded(AtomicBoolean leaderChoiceEnded) {
         ClientCliInformation.leaderChoiceEnded = leaderChoiceEnded;
+    }
+
+    public static AtomicBoolean getLeadersAvailable() {
+        return leadersAvailable;
+    }
+
+    public static void setLeadersAvailable(AtomicBoolean leadersAvailable) {
+        ClientCliInformation.leadersAvailable = leadersAvailable;
     }
 
     public static List<Card> getCurrentLeadersToChoice() {
@@ -54,12 +79,20 @@ public class ClientCliInformation {
         ClientCliInformation.currentLeadersToChoice = currentLeadersToChoice;
     }
 
-    public static boolean isBonusTilesChoiceEnded() {
+    public static AtomicBoolean getBonusTilesChoiceEnded() {
         return bonusTilesChoiceEnded;
     }
 
-    public static void setBonusTilesChoiceEnded(boolean bonusTilesChoiceEnded) {
+    public static void setBonusTilesChoiceEnded(AtomicBoolean bonusTilesChoiceEnded) {
         ClientCliInformation.bonusTilesChoiceEnded = bonusTilesChoiceEnded;
+    }
+
+    public static AtomicBoolean getBonusTilesAvailable() {
+        return bonusTilesAvailable;
+    }
+
+    public static void setBonusTilesAvailable(AtomicBoolean bonusTilesAvailable) {
+        ClientCliInformation.bonusTilesAvailable = bonusTilesAvailable;
     }
 
     public static List<String> getCurrentBonusTilesToChoice() {
@@ -70,11 +103,11 @@ public class ClientCliInformation {
         ClientCliInformation.currentBonusTilesToChoice = currentBonusTilesToChoice;
     }
 
-    public static boolean isGameInterrupted() {
+    public static AtomicBoolean getGameInterrupted() {
         return gameInterrupted;
     }
 
-    public static void setGameInterrupted(boolean gameInterrupted) {
+    public static void setGameInterrupted(AtomicBoolean gameInterrupted) {
         ClientCliInformation.gameInterrupted = gameInterrupted;
     }
 }

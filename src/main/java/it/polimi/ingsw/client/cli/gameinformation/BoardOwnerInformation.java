@@ -11,6 +11,7 @@ import java.util.Optional;
 public class BoardOwnerInformation {
     private static List<BoardSpaceDescriptionLight> boardSpaceDescriptionLights;
     private static List<BonusTileDescriptionLight> possibleBonusTiles;
+    private static List<String> councilPrivilege;
 
     private BoardOwnerInformation() {
     }
@@ -18,6 +19,7 @@ public class BoardOwnerInformation {
     public static void initLists() {
         boardSpaceDescriptionLights = new ArrayList<>();
         possibleBonusTiles = new ArrayList<>();
+        councilPrivilege = new ArrayList<>();
     }
 
     /**
@@ -58,5 +60,13 @@ public class BoardOwnerInformation {
 
     public static void setPossibleBonusTiles(List<BonusTileDescriptionLight> possibleBonusTiles) {
         BoardOwnerInformation.possibleBonusTiles = possibleBonusTiles;
+    }
+
+    public static List<String> getCouncilPrivilege() {
+        return councilPrivilege;
+    }
+
+    public static void setCouncilPrivilege(List<String> councilPrivilege) {
+        BoardOwnerInformation.councilPrivilege = councilPrivilege;
     }
 }

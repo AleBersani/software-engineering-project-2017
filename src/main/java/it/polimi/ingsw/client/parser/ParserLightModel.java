@@ -12,22 +12,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ParserLightModel implements Runnable {
+public class ParserLightModel {
     private static final Logger LOGGER = Logger.getLogger(ParserLightModel.class.getName());
 
     private ParserSettingsClient parserSettingsClient;
 
     public ParserLightModel() {
         parserSettingsClient = new ParserSettingsClient();
-    }
-
-    @Override
-    public void run() {
-        try {
-            completeParseCLI();
-        } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "An exception was thrown: cannot run thread parser light model", e);
-        }
     }
 
     public void completeParseCLI() throws IOException {
@@ -43,7 +34,11 @@ public class ParserLightModel implements Runnable {
                               BoardOwnerInformation.getBoardSpaceDescriptionLights());
         parseBonusTilesInformation(boardOwnerInformation.get("bonusTiles").getAsJsonArray(),
                                    BoardOwnerInformation.getPossibleBonusTiles());
+        parseCouncilPrivilege(boardOwnerInformation.get("councilPrivilege").getAsJsonArray(),
+                                    BoardOwnerInformation.getCouncilPrivilege());
     }
+
+
 
     private void parseBoardInformation(JsonArray boardInformation, List<BoardSpaceDescriptionLight> boardSpaces) {
         JsonObject boardSpace;
@@ -75,6 +70,14 @@ public class ParserLightModel implements Runnable {
     private BonusTileDescriptionLight parseSingleBonusTile(JsonObject bonusTile) {
         return new BonusTileDescriptionLight(bonusTile.get("name").getAsString(),
                                              bonusTile.get("description").getAsString());
+    }
+
+    private void parseCouncilPrivilege(JsonArray councilPrivilege, List<String> councilPrivilegeList) {
+        String singleElement;
+        for (int i = 0; i < councilPrivilege.size(); i++) {
+            singleElement = councilPrivilege.get(i).getAsString();
+            councilPrivilegeList.add(singleElement);
+        }
     }
 
     public void parseCardsInformation() throws IOException {

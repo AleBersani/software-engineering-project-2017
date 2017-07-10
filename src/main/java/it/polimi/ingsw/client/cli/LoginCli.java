@@ -33,7 +33,9 @@ public class LoginCli implements Runnable {
     }
 
     private void init() {
-        //ClientCliInformation.initClientInformation();
+
+        System.out.println("Cli game elements loaded!");
+        ClientCliInformation.init();
         connectionCommands = setConnectionAndLoginRegisterCommands();
         loginRegisterCommands = setConnectionAndLoginRegisterCommands();
         chooseConnection();
@@ -56,6 +58,7 @@ public class LoginCli implements Runnable {
             s = s.trim().toUpperCase();
             if (choiceIsCorrect(s, connectionCommands)) {
                 connectionChosen = true;
+                System.out.println("CONNECTION CHOSEN IS" + connectionChosen);
                 switch (s) {
                     case "A":
                         connectionStarter = new ConnectionStarter("RMI");
@@ -69,8 +72,8 @@ public class LoginCli implements Runnable {
                 System.out.printf("Your choice is incorrect! \n");
             }
         } while(!connectionChosen);
-        CliMain cliMain = new CliMain();
-        cliMain.init();
+        CliGame cliGame = new CliGame();
+        cliGame.init();
     }
 
     private boolean choiceIsCorrect(String s, List<String> commands) {
@@ -104,7 +107,7 @@ public class LoginCli implements Runnable {
             } catch (InterruptedException e) {
                 LOGGER.log(Level.SEVERE, "An Exception was thrown for waiting Thread ", e);
             }
-        } while (!ClientCliInformation.isLoginSuccessful());
+        } while (!ClientCliInformation.getLoginSuccessful().get());
     }
 
     private boolean chooseNewClient() {

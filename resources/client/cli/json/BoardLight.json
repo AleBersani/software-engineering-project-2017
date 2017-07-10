@@ -168,5 +168,8 @@
       "name": "B_TILE_4",
       "description": "Production: {1Se, 2Mp}\nHarvest: {1W, 1S, 1C}"
     }
+  ],
+  "councilPrivilege": [
+    "{1W, 1S}", "{2Se}", "{2C}", "{2Mp}", "{1Fp}"
   ]
 }

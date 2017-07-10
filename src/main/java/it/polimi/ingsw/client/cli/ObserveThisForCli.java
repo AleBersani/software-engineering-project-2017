@@ -1,5 +1,8 @@
 package it.polimi.ingsw.client.cli;
 
+import it.polimi.ingsw.client.model.Card;
+
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ObserveThisForCli implements Runnable{
@@ -15,9 +18,11 @@ public class ObserveThisForCli implements Runnable{
         if (variableToObserve.get()) {
             while(variableToObserve.get()) {
             }
+            return;
         } else {
             while(!variableToObserve.get()){
             }
+            return;
         }
     }
 
