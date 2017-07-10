@@ -7,6 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Maps that describe the different effects of the cards. They have the name of the card as key and the Additional
+ * info corresponding to the card's effect as object
+ */
+
 public class AdditionalInfoMaps {
     private static Map<String, List<AdditionalCardInfo>> flashEffectsOnChoice;
     private static Map<String, List<AdditionalCardInfo>> flashEffectsNotSelectable;

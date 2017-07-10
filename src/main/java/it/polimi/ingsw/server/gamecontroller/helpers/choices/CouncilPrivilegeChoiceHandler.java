@@ -9,6 +9,10 @@ import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 
 import java.util.List;
 
+/**
+ * handles the conversion of the Council Privileges in Goods depending on the player's choice
+ */
+
 public class CouncilPrivilegeChoiceHandler {
     private List<Integer> positionChoices;
     private Player player;

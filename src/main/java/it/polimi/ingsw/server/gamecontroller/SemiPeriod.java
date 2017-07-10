@@ -41,6 +41,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+/**
+ * Manages the turn of play of every player, sets up the dices
+ */
+
 public class SemiPeriod extends Observable implements ActionVisitor {
     private final static Logger LOGGER = Logger.getLogger(SemiPeriod.class.getName());
 

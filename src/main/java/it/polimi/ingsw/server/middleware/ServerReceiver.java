@@ -2,6 +2,10 @@ package it.polimi.ingsw.server.middleware;
 
 import it.polimi.ingsw.shared.requests.clientserver.*;
 
+/**
+ * Interface that defines methods that are implemented by the classes that want to call the Visitors
+ */
+
 public interface ServerReceiver {
     void visitClientServerRequest(ChosenBonusTile bonusTile);
     void visitClientServerRequest(ChosenConsumableAction chosenConsumableAction);

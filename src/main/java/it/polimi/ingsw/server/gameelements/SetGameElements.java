@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Thread that uses the parser's classes to set the game infos relative to game configuration and game elements
+ */
+
 public class SetGameElements implements Runnable {
     private static final Logger LOGGER = Logger.getLogger(SetGameElements.class.getName());
 

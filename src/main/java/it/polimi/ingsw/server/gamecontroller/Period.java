@@ -18,6 +18,11 @@ import it.polimi.ingsw.shared.model.GeneralColor;
 import java.util.*;
 import java.util.logging.Logger;
 
+/**
+ * Describes each one of the 3 periods the game is divided in. It's responsible for some actions such as selecting
+ * the cards, get the player's order and start every semiperiod
+ */
+
 public class Period extends Observable implements Observer {
     private final static Logger LOGGER = Logger.getLogger(Period.class.getName());
 

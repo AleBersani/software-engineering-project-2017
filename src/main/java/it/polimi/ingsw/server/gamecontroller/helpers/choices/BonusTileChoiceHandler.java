@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Handles the choice of the bonus tiles at the beginning of the game
+ */
+
 public class BonusTileChoiceHandler {
     private int numberOfPlayers;
     private List<String> players;

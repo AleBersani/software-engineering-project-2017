@@ -10,6 +10,10 @@ import it.polimi.ingsw.server.gamelogic.cards.leader.LeaderCard;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Describes the different types of cards
+ */
+
 public class Cards {
     private static List<Territory> territories;
     private static List<Building> buildings;

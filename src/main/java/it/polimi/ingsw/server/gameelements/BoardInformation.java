@@ -10,6 +10,10 @@ import it.polimi.ingsw.server.gamelogic.enums.PeriodNumber;
 
 import java.util.*;
 
+/**
+ * Describes the elements of the board with their values
+ */
+
 public class BoardInformation {
     private static Map<Space, Goods> greenTower;
     private static Map<Space, Goods> yellowTower;

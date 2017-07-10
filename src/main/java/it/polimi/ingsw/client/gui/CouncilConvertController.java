@@ -17,6 +17,10 @@ import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Controls the window of the Council Privilege conversion
+ */
+
 public class CouncilConvertController {
     private List<Integer> choices;
     private List<JFXRadioButton> radioButtons;

@@ -19,6 +19,10 @@ import javafx.scene.input.MouseEvent;
 
 import java.util.*;
 
+/**
+ * Controls the Player Board that shows the player his goods and cards
+ */
+
 public class PlayerboardController implements Observer {
     private static final String BACKGROUND_URL = "/client/backgrounds/";
 

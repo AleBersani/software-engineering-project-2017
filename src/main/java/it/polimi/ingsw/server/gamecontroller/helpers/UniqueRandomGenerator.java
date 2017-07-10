@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * generates random integers that are used to select the cards
+ */
+
 public class UniqueRandomGenerator {
     private int poolSize;
 

@@ -5,6 +5,10 @@ import it.polimi.ingsw.server.gamelogic.modifiers.requirements.TowerActionRequir
 
 import java.util.Optional;
 
+/**
+ * Support class for checking the requirements for the actions performed on towers and action spaces
+ */
+
 public class RequirementsSupport {
     private TowerActionRequirements towerActionRequirements;
     private BoardActionRequirements boardActionRequirements;

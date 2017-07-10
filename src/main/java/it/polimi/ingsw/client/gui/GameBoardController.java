@@ -40,6 +40,10 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Controls the game board with all the updates and the actions
+ */
+
 public class GameBoardController extends Observable implements Observer {
     private static final Logger LOGGER = Logger.getLogger(TileChoiceController.class.getName());
     private static final int FAITH_OFFSET = 35;
@@ -199,7 +203,7 @@ public class GameBoardController extends Observable implements Observer {
     private Pane root;
 
     @FXML
-    private Spinner spinner;
+    private Spinner<Integer> spinner;
 
     public GameBoardController() {
         pawnList = new ArrayList<>();
@@ -452,6 +456,7 @@ public class GameBoardController extends Observable implements Observer {
         council_palace.getChildren().clear();
         harvest2.getChildren().clear();
         production2.getChildren().clear();
+        spinner.getValueFactory().setValue(0);
     }
 
     private void initGreenTower() {
@@ -642,19 +647,22 @@ public class GameBoardController extends Observable implements Observer {
             pawnStack.getChildren().add(c1);
         } else {
             switch (pawnIdentifier) {
-                case HARVEST_2: c1.setRadius(15.0);
+                case HARVEST_2:
                     harvest2.getChildren().add(c1);
+                    c1.setRadius(15.0);
                     harvest2.setAlignment(Pos.CENTER_LEFT);
                     c1.setTranslateX(7.0*(harvest2.getChildren().size()-1));
                     break;
-                case PRODUCTION_2: c1.setRadius(15.0);
+                case PRODUCTION_2:
                     production2.getChildren().add(c1);
+                    c1.setRadius(15.0);
                     production2.setAlignment(Pos.CENTER_LEFT);
                     c1.setTranslateX(7.0*(production2.getChildren().size()-1));
                     break;
-                case COUNCIL_PALACE: c1.setRadius(15.0);
+                case COUNCIL_PALACE:
                     council_palace.getChildren().add(c1);
-                    council_palace.setAlignment(c1, Pos.CENTER_LEFT);
+                    c1.setRadius(15.0);
+                    StackPane.setAlignment(c1, Pos.CENTER_LEFT);
                     c1.setTranslateX(7.5*(council_palace.getChildren().size()-1));
                     break;
             }

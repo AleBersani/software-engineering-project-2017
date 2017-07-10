@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * handles the choice of leader cards at the beginning of the game
+ */
+
 public class LeaderCardChoiceHandler {
     private int numberOfPlayers;
     private Map<String, List<LeaderCard>> initialLeaderCardsForPlayers;

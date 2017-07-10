@@ -7,6 +7,11 @@ import it.polimi.ingsw.shared.requests.serverclient.ServerClientRequest;
 
 import java.util.List;
 
+/**
+ * Sends the client's connection stream to the server, with two different methods, one for all the clients,
+ * the other for a specif one
+ */
+
 public class Sender {
     private List<ConnectedClient> connectedClients;
 

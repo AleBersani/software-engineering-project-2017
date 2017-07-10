@@ -33,6 +33,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+/**
+ * Main class responsible for the set up of every game with its elements
+ */
+
 public class Game implements Runnable, Observer {
     private final static Logger LOGGER = Logger.getLogger(Game.class.getName());
 
@@ -73,7 +77,7 @@ public class Game implements Runnable, Observer {
     }
 
     /**
-     * TODO: JavaDoc
+     * Sets up the game calling all the methods for the single components
      */
     private void setupGame() {
         sendGameIdToPlayers();
@@ -86,7 +90,7 @@ public class Game implements Runnable, Observer {
     }
 
     /**
-     * TODO: JavaDoc
+     * Sends the game Id to the players
      */
     private void sendGameIdToPlayers() {
         LOGGER.log(Level.INFO, () -> "Sending game ID to players in game: " + gameId);
@@ -95,7 +99,7 @@ public class Game implements Runnable, Observer {
     }
 
     /**
-     * TODO: JavaDoc + Test
+     * TODO: Test
      */
     public void setupTowers() {
         LOGGER.info("Setup towers");

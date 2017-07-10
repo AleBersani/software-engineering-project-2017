@@ -16,6 +16,10 @@ import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 
 import java.util.Optional;
 
+/**
+ * Constructs the requirements for each available action basing on the space the action is performed on
+ */
+
 public class RequirementsGenerator {
     private static final Goods OCCUPIED_TOWER_COST = new Goods(new Resources(0, 0, 0, 3));
 
