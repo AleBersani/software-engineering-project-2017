@@ -96,6 +96,6 @@ public class GameChoiceController implements Observer {
         newGame.setMouseTransparent(true);
         resumeGame.setMouseTransparent(true);
         interrupted.setMouseTransparent(true);
-        }
+    }
 
 }

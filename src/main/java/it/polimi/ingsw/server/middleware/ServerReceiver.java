@@ -12,9 +12,9 @@ public interface ServerReceiver {
     void visitClientServerRequest(ChosenCouncilPrivilege chosenCouncilPrivilege);
     void visitClientServerRequest(ChosenLeader chosenLeader);
     void visitClientServerRequest(ChosenLorenzo chosenLorenzo);
+    void visitClientServerRequest(EndTurn endTurn);
     void visitClientServerRequest(GameStartChoice gameStartChoice);
     void visitClientServerRequest(GameStartChoiceRMI gameStartChoiceRMI);
-    void visitClientServerRequest(LeaderAction leaderAction);
     void visitClientServerRequest(PawnPlacement pawnPlacement);
     void visitClientServerRequest(PlayerLogin playerLogin);
     void visitClientServerRequest(PlayerLoginRMI playerLoginRMI);

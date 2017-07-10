@@ -1,6 +1,7 @@
 package it.polimi.ingsw.client.gui;
 
 
+import com.jfoenix.controls.JFXButton;
 import it.polimi.ingsw.client.ClientInformation;
 import it.polimi.ingsw.client.gui.notify.GameBoardNotifier;
 import it.polimi.ingsw.client.gui.notify.gameboardresponses.*;
@@ -13,6 +14,7 @@ import it.polimi.ingsw.shared.model.*;
 import it.polimi.ingsw.shared.model.actionsdescription.BasicAction;
 import it.polimi.ingsw.shared.model.actionsdescription.BoardAction;
 import it.polimi.ingsw.shared.requests.clientserver.BaseInformation;
+import it.polimi.ingsw.shared.requests.clientserver.EndTurn;
 import it.polimi.ingsw.shared.requests.clientserver.PawnPlacement;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -204,6 +206,9 @@ public class GameBoardController extends Observable implements Observer {
 
     @FXML
     private Spinner<Integer> spinner;
+
+    @FXML
+    private JFXButton pass;
 
     public GameBoardController() {
         pawnList = new ArrayList<>();
@@ -902,6 +907,12 @@ public class GameBoardController extends Observable implements Observer {
                 LOGGER.log(Level.SEVERE, "An exception was thrown: cannot launch council convert", e);
             }
         });
+    }
+
+    @FXML
+    public void passTurn() {
+        ClientSender clientSender = new ClientSenderHandler();
+        clientSender.sendToServer(new EndTurn(new BaseInformation(ClientInformation.getCurrentGameId(), ClientInformation.getPlayerName())));
     }
 }
 

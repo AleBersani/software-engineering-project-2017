@@ -557,6 +557,18 @@ public class Game implements Runnable, Observer {
         }
     }
 
+    public void playerEndTurn(String playerName) {
+        periods.forEach(period -> {
+            if (period.isCurrent()) {
+                period.getSemiPeriods().forEach(semiPeriod -> {
+                    if (semiPeriod.isCurrent()) {
+                        semiPeriod.passTurn();
+                    }
+                });
+            }
+        });
+    }
+
     /*
         GETTERS AND SETTERS
      */

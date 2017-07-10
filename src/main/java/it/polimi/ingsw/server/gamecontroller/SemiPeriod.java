@@ -581,7 +581,7 @@ public class SemiPeriod extends Observable implements ActionVisitor {
         }
     }
 
-    private void passTurn() {
+    public void passTurn() {
         Sender sender = new Sender(connectedClients);
         sender.sendTo(playersOrder.get(0).getPlayerName(), new YourTurn(false));
         playersOrder.remove(0);
