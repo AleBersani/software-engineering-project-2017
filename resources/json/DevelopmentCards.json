@@ -6274,8 +6274,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
-					"notChoosable": ["cardFlashAction", "cardFlashExchangingGoods"]
+					"onChoice": ["cardFlashAction"],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
@@ -6360,8 +6360,8 @@
 					}
 				],
 				"additionalInfoFlash": {
-					"onChoice": [],
-					"notChoosable": ["cardFlashAction", "cardFlashExchangingGoods"]
+					"onChoice": ["cardFlashAction"],
+					"notChoosable": ["cardFlashExchangingGoods"]
 				},
 				"additionalInfoPermanent": {
 					"onChoice": [],
