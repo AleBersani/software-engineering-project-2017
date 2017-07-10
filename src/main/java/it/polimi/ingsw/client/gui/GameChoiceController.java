@@ -33,6 +33,8 @@ public class GameChoiceController implements Observer {
     private JFXButton resumeGame;
     @FXML
     private JFXButton interrupted;
+    @FXML
+    private JFXButton charts;
 
     @FXML
     private Label playerName;
@@ -42,6 +44,8 @@ public class GameChoiceController implements Observer {
         setPlayerName();
         resumeGame.setMouseTransparent(true);
         interrupted.setMouseTransparent(true);
+        charts.setMouseTransparent(true);
+
     }
 
     @Override
@@ -96,6 +100,7 @@ public class GameChoiceController implements Observer {
         newGame.setMouseTransparent(true);
         resumeGame.setMouseTransparent(true);
         interrupted.setMouseTransparent(true);
+        charts.setMouseTransparent(true);
     }
 
 }
