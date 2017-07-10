@@ -99,6 +99,7 @@ public class Game implements Runnable, Observer {
     }
 
     /**
+     * Sets up the towers, putting a space and the board information in each tower slot
      * TODO: Test
      */
     public void setupTowers() {
@@ -137,7 +138,8 @@ public class Game implements Runnable, Observer {
     }
 
     /**
-     * TODO: JavaDoc + Test
+     * Sets up the Council Palace with the board information
+     * TODO: Test
      */
     public void setupCouncilPalace() {
         LOGGER.info("Setup council palace");
@@ -145,7 +147,8 @@ public class Game implements Runnable, Observer {
     }
 
     /**
-     * TODO: JavaDoc + Test
+     * Sets up the the action spaces with the board information
+     * TODO: Test
      */
     public void setupActionSpaces() {
         LOGGER.info("Setup action spaces");
@@ -155,7 +158,7 @@ public class Game implements Runnable, Observer {
     }
 
     /**
-     * TODO: JavaDoc
+     * Sets up players' data and increments the number of players in the playerCounter
      */
     private void basicSetupPlayers() {
         LOGGER.info("Setup players");
@@ -169,7 +172,9 @@ public class Game implements Runnable, Observer {
     }
 
     /**
-     * TODO: JavaDoc + Test
+     * Sets up the game configurations, with the period, the excommunication tiles an the development cards of
+     * each period
+     * TODO: Test
      */
     public void constructPeriods() {
         LOGGER.info("Construct periods");
@@ -187,7 +192,8 @@ public class Game implements Runnable, Observer {
     }
 
     /**
-     * TODO: JavaDoc + Test
+     * Generates and selects the development cards of each period
+     * TODO: Test
      */
     public Map<PeriodNumber, List<DevelopmentCard>> generateDevelopmentCardsForPeriod() {
         Map<PeriodNumber, List<DevelopmentCard>> developmentCardsForPeriod = new EnumMap<>(PeriodNumber.class);
